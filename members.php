@@ -127,7 +127,7 @@
     <ul>
       <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sbergmann@php.net">sbergmann@php.net</a>&gt;
         <ul>
-          <li>Skills: Web Application Development with PHP</li>
+          <li>Skills: Working knowledge of Apache, CVS, DocBook, PHP, Java, LATEX, MySQL and XML.</li>
           <li>Focus: QA for PHP Release Candidates</li>
           <li>Platform: Win 32</li>
         </ul>
