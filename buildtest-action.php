@@ -7,10 +7,11 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
 common_header();
 
 	$d = var_export ($_POST, TRUE);
-	
-	mail ("php-qa@lists.php.net", "PHP Test results", $d, "From: noreply@php.net");
-
-	print("thank you for your submission.");
-
+	if (count($d) > 0) {
+    	mail ("php-qa@lists.php.net", "PHP Test results", $d, "From: noreply@php.net");
+    	print("thank you for your submission.");
+    } else {    
+        print("Your submission was empty, please try again.");  
+    }  
 common_footer();
 ?>
