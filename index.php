@@ -26,7 +26,7 @@ common_header();
               </li>
             </ul>
             <p>
-                You can help use by running the test framework, see:<br />
+                You can help us by running the test framework, see:<br />
                 <a href="http://qa.php.net/running-tests.php">http://qa.php.net/running-tests.php</a>
             </p>
           </td>
