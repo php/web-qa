@@ -130,3 +130,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 7: Windows NT + IIS + PHP 4<br /><br />
 
 		<? include ('inc/footer.txt') ?>
+
+<br /><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+</body>
+</html>
