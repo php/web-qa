@@ -27,8 +27,11 @@ PHP|QAT: Compiled/Installed Version Tracker
 <body bgcolor="#FFFFFF" text="#000000" link="#990000" vlink="#999900">
 <font face="Tahoma, Arial, Helvetica, Sans Serif">
 <form action="<?= $PHP_SELF ?>" method="POST" />
-<img SRC="logo.gif" WIDTH="81" HEIGHT="118" border="0" alt="logo ? who knows :)" align="left">
-<h2>Index of Built|Installed PHP Releases</h2><br clear="all" /><br />
+<img SRC="logo.gif" WIDTH="81" HEIGHT="118" border="0" alt="logo ? who knows :)" align="left" hspace="10">
+<h2>Index of Built|Installed PHP Releases</h2><br />
+ - placeholder for short instructions<br />
+ - link to build|install report page<br />
+<br clear="all" />
 
 <b>User Information</b>
 <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
@@ -149,7 +152,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -164,7 +167,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -175,7 +178,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -207,7 +210,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -222,7 +225,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -236,7 +239,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -246,7 +249,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 
@@ -256,7 +259,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="" rows="" wrap="virtual" /><?= $field[''] ?></textarea>
+		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
 		</font></td>
 	</tr>
 </table><br />
