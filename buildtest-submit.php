@@ -10,7 +10,7 @@ common_header();
 
 <h1>Build Tracker</h1>
 <hr>
-<form action="buildtest-submit.php" method="post">
+<form action="buildtest-action.php" method="post">
 <h2>Meta</h2>
 <table>
 <tr>
