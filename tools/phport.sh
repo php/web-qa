@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.13 2002-11-10 21:41:48 nohn Exp $
+# $Id: phport.sh,v 1.14 2002-11-12 20:04:05 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -174,11 +174,11 @@ fi
   
 # Configure PHP
 cd "$WRKDIR/php4-$MODE"
-if [ ! -s configure ] ; then
-    cvsclean
-    buildconf
+if [ ! -s ./configure ] ; then
+    ./cvsclean
+    ./buildconf
 fi
-config="configure $options";
+config="./configure $options";
 $config
 # Build PHP
 make 2>error.log
