@@ -282,9 +282,11 @@ Please run the tests from our testframe work. You can do this by typing
 <code>make test</code> after you compiled PHP with <code>make</code>. You
 can only see non-passed tests by running this instead:
 <code>make test | grep -v PASS</code>. If there are "FAIL"ed tests, please
-paste them in the following testbox. You can send the .log file accompanying
-that test case to
-<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>. It's very
+paste them in the following testbox. <b>Please</b> send the .log file
+accompanying that test case to
+<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a> if a test fails.
+The location of the .log file is the same as the location of that test that
+is shown on the same line as the "FAIL" (between the [ and ]).  It's very
 likely that we will contact you to check out on this failed test.
 </p>
 <table>
