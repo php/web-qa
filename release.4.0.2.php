@@ -31,11 +31,16 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 <pre><font size="2">
 Testers for upcoming PHP 4.0.2 release
 
+<b>Cameron Brunner</b> <a href="mailto:gamr@gattcomp.com.au">gamr@gattcomp.com.au</a>
+    Build and Test
+     - FreeBSD 4.0-RELEASE / Apache 1.3.12 / MySQL 3.22.32 with GD, IMAP,
+       and all sorts of other goodies
+
 <b>Derick Rethans</b> <a href="mailto:d.rethans@jdimedia.nl">d.rethans@jdimedia.nl</a>
     Build and Test
      - Linux (RH 6.2) / Apache 1.3.12 / PHP ( :-) / GD with PNG/JPEG/TTF/
      / MySQL / mcrypt 2.[24].x / libpdf 3 / imap.
-     ? win98 / pws
+     - win98 / pws - possibly?
 
 <b>James Moore</b> (<a href="mailto:james@phpuk.org">james@phpuk.org</a>)
     Build and Test
