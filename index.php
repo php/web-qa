@@ -49,13 +49,9 @@ PHP/QAT: The PHP Quality Assurance Team
 
 		<b>PHP/QAT Information</b>
 		<hr size="1" />
-		<b>Projects</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="projects.php">View Projects</a> )</font>
+		<b>Projects & Goals</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="goals.php">View Projects & Goals</a> )</font>
 		<br />
-		Find more information on what the PHP/QA Team is currently working on.<br /><br />
-
-		<b>Goals</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="goals.php">View Goals</a> )</font>
-		<br />
-		Read about the future plans of the PHP/QA Team.<br /><br />
+		Find more information about PHP/QA Team's current projects and future goals.<br /><br />
 
 		<b>Links &amp; Resources</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="resources.php">View Links &amp; Resources</a> )</font>
 		<br />
