@@ -17,7 +17,12 @@
 		} else {
 			$status = "unknown";
 		}
-		mail ("php-qa@lists.php.net", "Test results [$status]", base64_decode(urldecode($_POST['php_test_data'])), "From: noreply@php.net");
+		if (isset($_GET['version'])) {
+			$version = $_GET['version'];
+		} else {
+			$version = "unknown";
+		}
+		mail ("php-qa@lists.php.net", "Test results for $version [$status]", base64_decode(urldecode($_POST['php_test_data'])), "From: noreply@php.net");
 	}
 ?>
 $Revision$
