@@ -2,8 +2,9 @@
 	$TITLE = 'PHP|QAT: The PHP Quality Assurance Team';
 	$CVS_KEYWORDS = '$Author$ / $Date$ / $Revision$';
 
-	include ('../inc/header.inc');
+	include ('inc/header.inc');
 ?>
+
 <h1>Welcome to the PHP Quality Assurance Team Web Page.</h1>
 <p id="blueback">
 	The PHP/QA Team is a small group of developers whose
@@ -27,10 +28,7 @@
 
 <h2><a name="news">News</a></h2>
 <ul>
-	<li><span class="lihack">(August 24, 2000) PHP 4.0.2 scheduled for release next Monday (August 28th)</span></li>
-	<li><span class="lihack">(August 20, 2000) Two new roughs for site available at <a href="http://qa.php.net/site_rough">http://qa.php.netsite_rough</a></span></li>
-	<li><span class="lihack">(August 20, 2000) Modified Win32 Binaries available at <a href="http://www.php4win.de/">http://www.php4win.de</a></span></li>
-	<li><span class="lihack">(August 11, 2000) 4.0.2 RC now available via CVS.	Win32 binaries should be ready soon.</span></li>
+	<li><span class="lihack">(August 29, 2000) PHP 4.0.2 released</span></li>
 </ul>
 
 <h2>Information</h2>
@@ -60,4 +58,5 @@
 	Find out how you can help us - join the PHP/QA team, help
 	out on a project or just make a suggestion.
 </p>
-<?php include ('../inc/footer.inc'); ?>
+
+<?php include ('inc/footer.inc'); ?>
