@@ -33,7 +33,7 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
 
 <b>Cameron Brunner</b> <a href="mailto:gamr@gattcomp.com.au">gamr@gattcomp.com.au</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - FreeBSD 4.0-RELEASE / Apache 1.3.12 / MySQL 3.22.32 with GD, IMAP,
+&nbsp;&nbsp;&nbsp;&nbsp; - FreeBSD 4.0-RELEASE / Apache 1.3.12 / thttpd / MySQL 3.22.32 with GD, IMAP,
        and all sorts of other goodies<br /><br />
 
 <b>Derick Rethans</b> <a href="mailto:d.rethans@jdimedia.nl">d.rethans@jdimedia.nl</a><br />
@@ -79,16 +79,6 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
 <b>waldschrott</b> &lt;<a href="mailto:waldschrott@php.net">waldschrott@php.net</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD<br /><br />
-
-<b>Zak</b> &lt;<a href="mailto:zak@php.net">zak@php.net</a>&gt;<br /><br />
-&nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - OpenBSD 2.7 / Apache 1.3.12<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - BSDi 4.0 / Apache 1.3.12<br /><br />
-
-&nbsp;&nbsp;&nbsp;&nbsp;Test, no build<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - Win98 / Apache 1.3.12 / MySQL 3.23.31 beta<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - Win2k Pro / IIS / OmniHTTPd / Xitami / Apache 1.3.12
-       / MySQL 3.23.31 beta<br /><br />
 </font>
 <? include ('inc/footer.txt') ?>
 
