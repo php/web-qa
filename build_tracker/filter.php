@@ -170,7 +170,8 @@ PHP|QAT: PHP Build and Install Tracker
 
 		<table width="100%">
 			<?= generate_row (array ('&nbsp;<b>3.1</b> How did you get your copy of PHP?', file2select ('php_source'))) ?>
-			<?= generate_row (array ('&nbsp;<b>3.2</b> What kind of operating system did you install PHP on?', file2select ('os_families'))) ?>
+			<?= generate_row (array ('&nbsp;<b>3.2 (a)</b> What kind of operating system did you install PHP on?', file2select ('os'))) ?>
+			<?= generate_row (array ('&nbsp;<b>3.2 (b)</b> What version of the above operating system are you using?', '<input type="text" name="field[os_version]" value="'.htmlentities (stripslashes ($field[os_version])).'" size="32" maxlength="56" />')) ?>
 			<tr bgcolor="#F0F0F0"><td colspan="2"><font face="Tahoma, Arial, Helvetica, sans-serif">&nbsp;<b>3.3</b> What web server(s) do you use with this build of PHP?</font></td></tr>
 			<tr bgcolor="#F0F0F0"><td colspan="2"><?= file2cb_column ('server') ?></td></tr>
 			<?= generate_row (array ('&nbsp;<b>3.4 (a)</b> If you compiled PHP, please enter the configure line here:', '<textarea name="field[configure]" rows="2" cols="30">'.$field[configure].'</textarea>')) ?>

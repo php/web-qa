@@ -1,0 +1,35 @@
+::- - Please Choose an OS - -
+AIX
+BSD/OS (BSDi)
+Compaq Tru64 UNIX
+Digital Unix
+Dynix/Ptx
+FreeBSD
+HP-UX
+IRIX
+Linux - Caldera OpenLinux
+Linux - Conectiva Linux
+Linux - Debian Slink
+Linux - Mandrake
+Linux - PPC
+Linux - Red Hat
+Linux - Slackware
+Linux - Stampede
+Linux - SuSE
+Linux - TurboLinux
+Linux - YellowDog
+Mac OS X
+NetBSD
+OpenBSD
+SCO Unix
+Solaris
+SunOS
+Unix
+UnixWare
+Windows 2000
+Windows 3.1
+Windows 95
+Windows 98
+Windows ME
+Windows NT
+other::- - Other - -
