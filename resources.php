@@ -34,12 +34,15 @@ Links and Resources (PHP/QAT: The PHP Quality Assurance Team)
 		<hr size="3" />
 		Please suggest links and resources for this page!  Email the PHP/QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>)<br /><br />
 
-		&nbsp;* <a href="http://www.php.net/version4/cvs.php">Instructions for retrieving the latest PHP source via CVS</a><br />
-		&nbsp;* <a href="http://www.mm4.de/andreas.otto/php_related/">[napp] (not another php portal) Basic support for PHP on win32. The main focus is providing binary builds of PHP.</a><br />
-		&nbsp;* <a href="http://www.php.net/version4/win32build.php">PHP 4.0 build instructions - Win32 platform</a><br />
-		&nbsp;* <a href="http://www.geocities.com/ro_marius/mod_php4.html">PHP4 module for Apache Win32 : HOW TO</a><br />
-		&nbsp;* <a href="http://www.php.net/">The PHP Website</a><br />
-		&nbsp;* <a href="http://www.zend.com/">The Zend Website</a><br />
+		&nbsp;* <a href="http://www.php.net/version4/cvs.php">Instructions for retrieving the latest PHP source via CVS</a><br /><br />
+		&nbsp;* <a href="http://www.mm4.de/andreas.otto/php_related/">[napp] (not another php portal) Basic support for PHP on win32. The main focus is providing binary builds of PHP.</a><br /><br />
+		&nbsp;* <a href="http://www.php.net/version4/win32build.php">PHP 4.0 build instructions - Win32 platform</a><br /><br />
+
+		&nbsp;* <a href="http://www.geocities.com/ro_marius/mod_php4.html">PHP4 module for Apache Win32 : HOW TO</a><br /><br />
+
+		&nbsp;* <a href="http://www.php.net/">The PHP Website</a><br /><br />
+
+		&nbsp;* <a href="http://www.zend.com/">The Zend Website</a><br /><br />
 		<br /><br />
 
 		<? include ('inc/footer.txt') ?>
