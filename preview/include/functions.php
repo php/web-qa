@@ -3,7 +3,7 @@
 (c)'2001 by Marco Kaiser (bate@php.net) and the PHP Group 	
 Read an Learn. Any Questions so ask. 						
 
-Version: $ID$
+Version: $Id$
 */
 
 function common_header() {
