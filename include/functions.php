@@ -204,6 +204,7 @@ function common_footer() {
     </td>
     <td background="gfx/grey_dark.jpg" nowrap align="right" class="footer">Last 
       update: <?= $GLOBALS["SITE_UPDATE"]; ?></td>
+    <td background="gfx/grey_dark.jpg" nowrap align="right" class="footer"><img src="gfx/spacer.gif" width="10" height="1"></td>
   </tr>
 </table>
 </body>
