@@ -13,9 +13,10 @@
 # | license@php.net so we can mail you a copy immediately                |
 # +----------------------------------------------------------------------+
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
+# |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.12 2002-11-10 21:36:37 nohn Exp $
+# $Id: phport.sh,v 1.13 2002-11-10 21:41:48 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -37,10 +38,10 @@ usage() {
     cat <<EOF
     $1 mode [argument]
     mode: 
-        - snap    Builds from a Snapshot requires remote archive 
-		  in argument (http/ftp)
-	- cvs     Builds from CVS
-	- local   Builds from the local sourcetree specified in argument
+     - snap    Builds from a Snapshot requires remote archive 
+               in argument (http/ftp)
+     - cvs     Builds from CVS
+     - local   Builds from the local sourcetree specified in argument
 EOF
 }
 
