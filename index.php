@@ -15,26 +15,20 @@
 	The team is currently focused on several areas:
 </p>
 <ul type="disc">
-	<li><span class="lihack">Testing the 4.0.4 pl 1 Release Candidate</span></li>
-	<li><span class="lihack">Developing a test suite for PHP releases</span></li>
-	<li><span class="lihack">Reworking areas of the bug reporting process.</span></li>
-	<li><span class="lihack">Processing the open bug reports from the official PHP
-		4 bug list (<a href="http://bugs.php.net">http://bugs.php.net</a>).</span></li>
+	<li><span class="lihack">Reworking areas of the Release Candidate build tracking and Bug tracking processes. (Contact <a href="mailto:zak@php.net">Zak Greant</a> for more information)</span></li>
+	<li><span class="lihack">Processing the open bug reports from the official PHP 4 bug list (<a href="http://bugs.php.net">http://bugs.php.net</a>).</span></li>
 </ul>
 <p>
 	If you would like to contribute to this effort, please
 	visit our <a href="howtohelp.php">How To Help</a> page.
 </p>
 
+<!--
 <h2><a name="news">News</a></h2>
 <ul>
-	<li><span class="lihack">(01/01/03) PHP 4.0.4 Patch Level 1 Release Candidate 1 announced.<br />
-        All available QA members, please test this candidate quickly and extensively!<br />
-        Download:<br />
-        <a href="http://www.php.net/distributions/php-4.0.4pl1RC1.tar.gz">Source</a> (Source snapshot courtesy Zeev)<br />
-        <a href="ftp://ftp.phpuk.org/php_binaries/php-4.0.4pl1RC1-Win32.zip">Win32 Binary</a> (Win32 binaries courtesy James Moore)</span></li>
-	<li><span class="lihack">(00/12/20) PHP 4.0.4 FINAL announced</span></li>
+	<li><span class="lihack">(01/01/31) </span></li>
 </ul>
+-->
 
 <h2>Information</h2>
 <h3>Projects &amp; Goals</h3>
