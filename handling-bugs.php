@@ -99,9 +99,12 @@ Here are descriptions for each status:</p>
 
         <dt>Duplicate</dt>
         <dd>
-            If this almost the same bug, both bugs are found 'duplicate' later
+			This status is deprecated and can no longer be selected during
+			modifications of bugs. Always use "Bogus" instead now. The originial
+			use was: 
+            <i>If this almost the same bug, both bugs are found 'duplicate' later
             on and have both useful information.  Also mention what bug it's a
-            duplicate of with a full url to the report this is duplicate of.
+            duplicate of with a full url to the report this is duplicate of.</i>
         </dd>
 
         <dt>Critical</dt>
@@ -157,9 +160,9 @@ Here are descriptions for each status:</p>
     
         <dt>Bogus</dt>
         <dd>
-           This bug is not a bug, support related or just an assumed bug.  Be
-           100% it's really bogus and also be sure it's not a documentation
-           bug.
+		   This bug is not a bug, support related or just an assumed bug or the
+		   bug already exists in the database.  Be 100% it's really bogus and
+		   also be sure it's not a documentation bug.
         </dd>
 </dl>
 
