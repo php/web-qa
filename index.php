@@ -2,10 +2,11 @@
 include("include/functions.php");
 
 $TITLE = "PHP-QAT: Quality Assurance Team";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br />
-/* $Id$ */";
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br />\n".
+'/* $Id$ */';
 
 common_header();
+
 ?>
       <table width="70%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
@@ -24,25 +25,16 @@ common_header();
           <td width="100%"> 
             <br /><h3>The team is currently focused on:</h3>
             <ul>
-              <li>
-                <span class="lihack">Providing QA for the PHP 4.3.2RC4 release:
-                <ul>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.bz2">php-4.3.2RC4.tar.bz2</a><br />
-                  md5sum:9efabc2c2ee949b256b46d7fc1818154
-                 </li>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.gz">php-4.3.2RC4.tar.gz</a><br />
-                  md5sum:21a48ba6623db3f40321aa7e394e4c75
-                 </li>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4-Win32.zip">php-4.3.2RC4-Win32.zip</a><br />
-                  md5sum:95e3b34848380b130cdee75b294b4c25
-                 </li>
-                </ul>
-                </span><br />
-              </li>
-              <li>
-                Upgrading the testsuite. This includes extending the testsuites with tests for every function, 
-                collecting test data in a different way then mailing all output to the QA mailinglist.
-              </li>
+
+             <li>
+<?php include ('include/release-qa.php'); ?>
+             </li>
+
+             <li>
+              Upgrading the testsuite. This includes extending the testsuites with tests for every function, 
+              collecting test data in a different way then mailing all output to the QA mailinglist.
+             </li>
+
             </ul>
             <p>
              Anyone can help us by running the test framework, see:<br />
@@ -71,4 +63,5 @@ common_header();
 <?php
 
 common_footer();
+
 ?>
