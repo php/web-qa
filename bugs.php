@@ -58,18 +58,18 @@ Thank you and good luck!<br /><br />
 <s>Group 5</s><br />
 <a href="#group06">Group 6</a> Derick Rethans (d.rethans@jdimedia.nl)<br />
 <s>Group 7</s><br />
-<a href="#group08">Group 8</a> Zak Greant (zak@nucleus.com)<br />
+<s>Group 8</s><br />
 <a href="#group09">Group 9</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group10">Group 10</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group11">Group 11</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group12">Group 12</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group13">Group 13</a> jalal (the_jalal@yahoo.com)<br />
 <a href="#group14">Group 14</a> jalal (the_jalal@yahoo.com)<br />
-<a href="#group15">Group 15</a> (Currently Available)<br />
-<a href="#group16">Group 16</a> (Currently Available)<br />
-<a href="#group17">Group 17</a> (Currently Available)<br />
-<a href="#group18">Group 18</a> (Currently Available)<br />
-<a href="#group19">Group 19</a> (Currently Available)<br />
+<a href="#group15">Group 15</a> waldschrott (waldschrott@waldschrott.de)<br />
+<a href="#group16">Group 16</a> waldschrott (waldschrott@waldschrott.de)<br />
+<a href="#group17">Group 17</a> waldschrott (waldschrott@waldschrott.de)<br />
+<a href="#group18">Group 18</a> waldschrott (waldschrott@waldschrott.de)<br />
+<a href="#group19">Group 19</a> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group10">Group 20</a> (Currently Available)<br />
 <a href="#group21">Group 21</a> (Currently Available)<br />
 <a href="#group22">Group 22</a> (Currently Available)<br />
@@ -107,40 +107,6 @@ Thank you and good luck!<br /><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4387">4387</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4387&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4388">4388</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4388&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405">4405</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405&edit=1"><b>&gt;&gt;</b></a><br />
-
-<a href="#top">Return to Top</a><br />
-<a name="group08"></a>
-<br /><b>Group 8:</b> Zak Greant (zak@nucleus.com)<br />
-
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4530">4530</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4530&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4531">4531</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4531&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4532">4532</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4532&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4540">4540</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4540&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4541">4541</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4541&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4546">4546</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4546&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4547">4547</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4547&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4550">4550</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4550&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4551">4551</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4551&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4555">4555</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4555&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4556">4556</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4556&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4562">4562</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4562&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4564">4564</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4564&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4565">4565</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4565&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4569">4569</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4569&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4570">4570</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4570&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4571">4571</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4571&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4572">4572</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4572&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4576">4576</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4576&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4578">4578</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4578&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4583">4583</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4583&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4591">4591</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4591&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4593">4593</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4593&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4600">4600</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4600&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4606">4606</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4606&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4607">4607</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4607&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4608">4608</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4608&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4613">4613</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4613&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4615">4615</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4615&edit=1"><b>&gt;&gt;</b></a><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group09"></a>
@@ -348,7 +314,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group15"></a>
-<br /><b>Group 15:</b> Currently Available<br />
+<br /><b>Group 15:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5190">5190</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5190&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5191">5191</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5191&edit=1"><b>&gt;&gt;</b></a><br />
@@ -382,7 +348,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group16"></a>
-<br /><b>Group 16:</b> Currently Available<br />
+<br /><b>Group 16:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5270">5270</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5270&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5273">5273</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5273&edit=1"><b>&gt;&gt;</b></a><br />
@@ -416,7 +382,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group17"></a>
-<br /><b>Group 17:</b> Currently Available<br />
+<br /><b>Group 17:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5352">5352</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5352&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5355">5355</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5355&edit=1"><b>&gt;&gt;</b></a><br />
@@ -450,7 +416,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group18"></a>
-<br /><b>Group 18:</b> Currently Available<br />
+<br /><b>Group 18:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5419">5419</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5419&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5421">5421</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5421&edit=1"><b>&gt;&gt;</b></a><br />
@@ -484,7 +450,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group19"></a>
-<br /><b>Group 19:</b> Currently Available<br />
+<br /><b>Group 19:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5484">5484</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5484&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5486">5486</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5486&edit=1"><b>&gt;&gt;</b></a><br />
