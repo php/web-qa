@@ -118,11 +118,11 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: Windows 2000 Apache + Latest PHP + MySQL + Adabas (ODBC)<br />
 		&nbsp;* Platform 2: Linux + PHP (module) + MySQL + Adabas (ODBC) + PostgreSQL<br /><br />
 
-		<b>Zak Greant</b> &lt;<a href="mailto:zak@nucleus.com">zak@nucleus.com</a>&gt;<br />
+		<b>Zak Greant</b> &lt;<a href="mailto:zak@php.net">zak@php.net</a>&gt;<br />
 		&nbsp;* Skills: Graphic Design, PHP, Project Management, MySQL, etc...<br />
 		&nbsp;* Focus : Coordinating the PHP/QAT effort, Developing PHP/QAT resources, Closing bugs<br />
-		&nbsp;* Platform 1: BSD 3 + Apache + MySQL + PHP3<br />
-		&nbsp;* Platform 2: BSD 4 + Apache + MySQL + PHP3<br />
+		&nbsp;* Platform 1: BSDi 3.1 + Apache + MySQL + PHP3<br />
+		&nbsp;* Platform 2: BSDi 4 + Apache + MySQL + PHP3<br />
 		&nbsp;* Platform 3: RedHat 6.2 + Apache + MySQL + PHP4<br />
 		&nbsp;* Platform 4: OpenBSD 2.7 + Apache + MySQL + PHP4<br />
 		&nbsp;* Platform 5: Windows 98 + Apache + PHP 4<br />
