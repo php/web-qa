@@ -86,6 +86,9 @@
           <li>Skills: C, Perl, PHP, Sybase (DB and CT libs)</li>
           <li>Focus: Developing automated testing systems, testing releases, committing patches, closing bugs, follow up with users</li>
           <li>Platform 1: Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql, PDFLib, GD, DOM/XML/expat, IMAP</li>
+          <li>Platform 2: Windows ME - Including a build environment</li>
+          <li>Platform 3: Windows 2000 AS (IIS 5.0) - Sporadic access</li>
+          <li>Platform 4: Solaris 8 (sparc)</li>
         </ul>
       </li>
     </ul>
