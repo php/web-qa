@@ -247,7 +247,7 @@ align="left" >Linux valiant 2.2.13 #1 Mon Nov</td><td align="left" >wrong error 
 </table>
 <a href="#top">Return to Top</a><br />
 <a name="group06"></a>
-<br /><b>Group 6:</b> Currently Available<br />
+<br /><b>Group 6:</b> Derick Rethans (d.rethans@jdimedia.nl)<br />
 <table border=1 width="95%"><tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=4244">4244</a></td><td align="left" >dBase related</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Release Candidate 1</td><td align="left" >Linux 2.2.6</td><td align="left" >Incorrect dbase_get_record() behavior. Resulting array contains trash.</td><td align="center" ><a href="bugs.php?id=4244&edit=1"><b>&gt;&gt;</b></a></td>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=4245">4245</a></td><td align="left" >Reproduceable crash</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Latest CVS (26/04/2000)</td><td align="left" >linux</td><td align="left" >mcrypt will segfault when key is not given (or empty)</td><td align="center" ><a href="bugs.php?id=4245&edit=1"><b>&gt;&gt;</b></a></td>
