@@ -4,3 +4,4 @@
 		mail ("derick@php.net", "Test results", base64_decode(urldecode($_POST['php_test_data'])), "From: noreply@php.net");
 	}
 ?>
+$Revision$
