@@ -167,7 +167,7 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="crack">crack</input></td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="ctype">ctype</input></td>
+        <td><input type="checkbox" name="ctype" checked="checked">ctype</input></td>
         <td><input type="checkbox" name="curl">curl</input></td>
         <td><input type="checkbox" name="cybermut">cybermut</input></td>
         <td><input type="checkbox" name="cyrus">cyrus</input></td>
@@ -208,7 +208,7 @@ Where you have specified "other" for any category, please enter what it is in th
     <tr>
         <td><input type="checkbox" name="ldap">ldap</input></td>
         <td><input type="checkbox" name="mailparse">mailparse</input></td>
-        <td><input type="checkbox" name="mbstring">mbstring</input></td>
+        <td><input type="checkbox" name="mbstring" checked="checked">mbstring</input></td>
         <td><input type="checkbox" name="mcal">mcal</input></td>
         <td><input type="checkbox" name="mcrypt">mcrypt</input></td>
         <td><input type="checkbox" name="mcve">mcve</input></td>
@@ -221,7 +221,7 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="msql">msql</input></td>
         <td><input type="checkbox" name="mssql">mssql</input></td>
         <td><input type="checkbox" name="muscat">muscat</input></td>
-        <td><input type="checkbox" name="mysql">mysql</input></td>
+        <td><input type="checkbox" name="mysql" checked="checked">mysql</input></td>
         <td><input type="checkbox" name="ncurses">ncurses</input></td>
         <td><input type="checkbox" name="notes">notes</input></td>
     </tr>
@@ -230,16 +230,16 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="odbc">odbc</input></td>
         <td><input type="checkbox" name="openssl">openssl</input></td>
         <td><input type="checkbox" name="oracle">oracle</input></td>
-        <td><input type="checkbox" name="overload">overload</input></td>
+        <td><input type="checkbox" name="overload" checked="checked">overload</input></td>
         <td><input type="checkbox" name="ovrimos">ovrimos</input></td>
         <td><input type="checkbox" name="pcntl">pcntl</input></td>
-        <td><input type="checkbox" name="pcre">pcre</input></td>
+        <td><input type="checkbox" name="pcre" checked="checked">pcre</input></td>
     </tr>
     <tr>
         <td><input type="checkbox" name="pdf">pdf</input></td>
         <td><input type="checkbox" name="pfpro">pfpro</input></td>
         <td><input type="checkbox" name="pgsql">pgsql</input></td>
-        <td><input type="checkbox" name="posix">posix</input></td>
+        <td><input type="checkbox" name="posix" checked="checked">posix</input></td>
         <td><input type="checkbox" name="pspell">pspell</input></td>
         <td><input type="checkbox" name="qtdom">qtdom</input></td>
         <td><input type="checkbox" name="readline">readline</input></td>
@@ -247,7 +247,7 @@ Where you have specified "other" for any category, please enter what it is in th
     </tr>
     <tr>
         <td><input type="checkbox" name="satellite">satellite</input></td>
-        <td><input type="checkbox" name="session">session</input></td>
+        <td><input type="checkbox" name="session" checked="checked">session</input></td>
         <td><input type="checkbox" name="shmop">shmop</input></td>
         <td><input type="checkbox" name="snmp">snmp</input></td>
         <td><input type="checkbox" name="sockets">sockets</input></td>
@@ -259,11 +259,11 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="sybase_ct">sybase_ct</input></td>
         <td><input type="checkbox" name="sysvsem">sysvsem</input></td>
         <td><input type="checkbox" name="sysvshm">sysvshm</input></td>
-        <td><input type="checkbox" name="tokenizer">tokenizer</input></td>
+        <td><input type="checkbox" name="tokenizer" checked="checked">tokenizer</input></td>
         <td><input type="checkbox" name="vpopmail">vpopmail</input></td>
         <td><input type="checkbox" name="w32api">w32api</input></td>
         <td><input type="checkbox" name="wddx">wddx</input></td>
-        <td><input type="checkbox" name="xml">xml</input></td>
+        <td><input type="checkbox" name="xml" checked="checked">xml</input></td>
     </tr>
     <tr>
         <td><input type="checkbox" name="xmlrpc">xmlrpc</input></td>
