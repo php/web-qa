@@ -63,9 +63,9 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: SuSE Linux 6.3 + Apache + MySQL + PHP3 + PHP4<br />
 		&nbsp;* Platform 2: Windows NT + Apache + PHP 4<br /><br />
 
-		<b>Joey Smith</b> &lt;<a href="mailto:joey@PHP.net">joey@PHP.net</a>&gt;<br />
+		<b>Joey Smith</b> &lt;<a href="mailto:joey@php.net">joey@php.net</a>&gt;<br />
 		&nbsp;* Skills: C, Perl, PHP, Sybase (DB and CT libs)<br />
-		&nbsp;* Focus : Developing automated testing systems, testing releases, committing patche, closing bugs, follow up with users<br />
+		&nbsp;* Focus : Developing automated testing systems, testing releases, committing patches, closing bugs, follow up with users<br />
 		&nbsp;* Platform 1: Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql, PDFLib, GD, DOM/XML/expat, IMAP<br />
 		&nbsp;* Platform 2: Solaris 2.6 - modules as platform 1<br /><br />
 
