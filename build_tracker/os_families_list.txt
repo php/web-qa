@@ -1,0 +1,4 @@
+# Comments start with a #
+*nux::A UNIX or UNIX-like OS
+win32::Windows 95/98/2000/NT/ME
+other::Another OS

@@ -1,0 +1,8 @@
+# The number of servers that the client is using
+0::None - I run PHP as a stand-alone application
+1::One Server
+2::Two Different Server Types
+3::Three Different Server Types
+4::Four Different Server Types
+5::Five Different Server Types
+6::Six Different Server Types

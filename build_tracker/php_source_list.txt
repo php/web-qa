@@ -1,0 +1,5 @@
+# Comments start with a #
+release::I downloaded a source release from PHP.net
+CVS::I grabbed a copy of the source code from CVS
+snapshot::I downloaded a snapshot from snaps.php.net
+binary::I used a binary that someone else compiled

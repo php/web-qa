@@ -1,0 +1,7 @@
+# Comments start with a #
+::- Please Choose -
+successful build/install::A successful build and/or install of php
+unsuccessful build/install::A failed build and/or install of php
+bug report::A bug in PHP
+feature request::I would like to make a feature request
+support request::I need *HELP* with PHP!
