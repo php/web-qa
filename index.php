@@ -21,20 +21,22 @@ common_header();
             <p>The team is currently focused on several areas: </p>
             <ul>
               <li><span class="lihack">Providing QA for the 
-			  	<a href="http://www.php.net/~zeev/php-4.1.0RC3.tar.gz">PHP 4.1.0 Final Release Candidate</a><br />
-				Visit the experimental <a href="http://fooassociates.com/phpqa">PHP QA Wiki</a> to see what platforms have been tested so far.</span></li>
+			  	<a href="http://www.php.net/~zeev/php-4.1.0RC4.tar.gz">PHP 4.1.0 Release Candidate 4</a><br />
+				Visit the experimental <a href="http://fooassociates.com/phpqa/">PHP-QAT Wiki</a> to see what platforms have been tested so far.</span></li>
               <li><span class="lihack">Reworking the bug tracking system. (Subscribe to to <a href="mailto:jitterbug-subscribe@lists.php.net">jitterbug-subscribe@lists.php.net</a> 
                 for more information)</span></li>
               <li><span class="lihack">Processing the open bug reports from the official PHP 4 bug 
                 list (<a href="http://bugs.php.net" target="_blank">http://bugs.php.net</a>).</span></li>
             </ul>
+            <br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
         <tr> 
           <td width="10">&nbsp;</td>
-          <td width="100%">If you would like to contribute to this effort, please 
-            visit our How To Help page. (<a href="howtohelp.php">view</a>)</td>
+          <td width="100%">
+          <p>If you would like to contribute to this effort, please 
+            visit our <a href="howtohelp.php">How To Help</a> page.</p> </td>
           <td width="10">&nbsp;</td>
         </tr>
         <tr> 

@@ -96,8 +96,8 @@ function common_header() {
         <tr> 
           <td width="5">&nbsp;</td>
           <td class="head_links"> 
-            Find more information about PHP/QA Team's current 
-              projects and future goals. (<a href="projects.php">view</a>)
+            Find more information about PHP/QA Team's <a href="projects.php">current 
+              projects and future goals</a>.
           </td>
           <td width="5">&nbsp;</td>
         </tr>
@@ -116,8 +116,8 @@ function common_header() {
         <tr> 
           <td width="5">&nbsp;</td>
           <td class="head_links"> 
-            Visit the PHP|QAT Links &amp; Resources page. 
-              We have links to web based resources for ... (<a href="links.php">view</a>)
+            Visit the PHP|QAT <a href="links.php">Links &amp; Resources</a> page. 
+              We have links to web based resources for ...
           </td>
           <td width="5">&nbsp;</td>
         </tr>
@@ -136,7 +136,7 @@ function common_header() {
         <tr> 
           <td width="5">&nbsp;</td>
           <td class="head_links"> 
-            View the PHP-QAT Member register. (<a href="members.php">view</a>)
+            View the PHP-QAT <a href="members.php">Member register</a>.
           </td>
           <td width="5">&nbsp;</td>
         </tr>
@@ -196,7 +196,7 @@ function common_footer() {
     <td bgcolor="#cccccc" align="left" width="100%"> 
       <table border="0" cellspacing="0" cellpadding="0">
         <tr> 
-          <td width="80" align="center"><img src="gfx/php-logo.gif" width="69" height="36"></td>
+          <td width="80" align="center"><a href="http://www.php.net/"><img src="gfx/php-logo.gif" width="69" height="36" border="0" alt="Go to the main PHP site"></a></td>
           <td class="footer"><a href="http://www.php.net/copyright.php" target="_blank">Copyright 
             &copy; 2001 PHP Group</a><br>
             All rights reserved.</td>
