@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-How To Help (PHP/QAT: The PHP Quality Assurance Team)
+Links and Resources (PHP/QAT: The PHP Quality Assurance Team)
 </title>
 </head>
 <body bgcolor="#FFFFFF" background="img/bg_page.gif" text="#000000" link="#0000FF"
@@ -33,6 +33,8 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 		<b>Links and Resources</b>
 		<hr size="3" />
 		Please suggest links and resources for this page!  Email the PHP/QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>)<br />
+		&nbsp;* <a href="http://www.mm4.de/andreas.otto/php_related/">[napp] (not another php portal) Basic support for PHP on win32. The main focus is providing binary builds of PHP.</a><br />
+		&nbsp;* <a href="http://www.php.net/version4/win32build.php">PHP 4.0 build instructions - Win32 platform</a><br />
 		&nbsp;* <a href="http://www.geocities.com/ro_marius/mod_php4.html">PHP4 module for Apache Win32 : HOW TO</a><br />
 		&nbsp;* <a href="http://www.php.net/">The PHP Website</a><br />
 		&nbsp;* <a href="http://www.zend.com/">The Zend Website</a><br />

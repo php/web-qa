@@ -56,7 +56,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 
 		<b>Brendan W. McAdams</b> &lt;<a href="mailto:brendan@plexmedia.com">brendan@plexmedia.com</a>&gt;<br />
 		&nbsp;* Skills: PHP, MySQL, C, etc... <br />
-		&nbsp;* Focus : Developing QA team applications and testing release candidates<br />
+		&nbsp;* Focus : Developing and Testing the CCVS (Red Hat Credit Card Verification System) module, Developing QA team applications and testing release candidates<br />
 		&nbsp;* Platform 1: OpenBSD 2.7 (sparc and i386)<br />
 		&nbsp;* Platform 2: FreeBSD 4.0 (i386)<br />
 		&nbsp;* Platform 3: Linux (Slackware 7 and RedHat 5.2, 6.0, 6.1)<br />
