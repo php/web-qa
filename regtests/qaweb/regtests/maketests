@@ -1,0 +1,216 @@
+#!/usr/bin/perl
+#
+##################################################################
+#
+# TITLE: maketests.pl 
+# 
+# This PERL script scans for files in a directory of tests,
+# and sets up two batch scripts from them.  One to run the
+# tests, and another to compare actual results with ideal
+# results for each test.  
+#
+# ASSUMPTIONS:
+#
+#   - The test files are executable, and produce results in 
+#     a readable form to standard output.
+#
+# AUTHOR:
+#
+#   Fred Wild, fwild@compuserve.com
+#
+# Modified by:
+#
+#   jalal, jalal@gnomedia.com
+#
+#   Modifications to enable regression testing of PHP scripts.
+#
+##################################################################
+#
+# ----------------------------------------------------------------
+# Variables to hold names of files and commands that are used
+# to name the generated scripts, or are placed into the generated
+# scripts.
+#
+
+# this is the extension for the file output by the test.
+$logSuffix         = ".out";
+
+$phpExecCmd        = "php -q -f ";
+$scriptSuffix      = ".php";
+
+# set these two for running under DOS/Win
+$batSuffix         = "";
+$batExecCmd        = "call";
+
+
+# these two files are created by running the tests.
+$masterScriptName  = "master";
+$compareScriptName = "compare";
+
+$masterFile        = "$masterScriptName"  . "$batSuffix" ;
+$compareFile       = "$compareScriptName" . "$batSuffix" ;
+$compareLogFile    = "$compareScriptName" . "$logSuffix" ;
+
+$diffPgm           = "diff" ;
+$echoPgm           = "echo" ;
+
+
+# ----------------------------------------------------------------
+# Create variables to reflect the test directory tree paths
+# and verify that the required paths exist.
+#
+
+$testRoot        = "./test";
+$testSuite       =     "$testRoot/suite";
+$testSuiteBin    =         "$testSuite/bin";
+$testSuiteCommon =         "$testSuite/common";
+$testSuitePre    =         "$testSuite/pre";
+$testSuitePost   =         "$testSuite/post";
+$testInput       =     "$testRoot/input";
+$testActuals     =     "$testRoot/actuals";
+$testIdeals      =     "$testRoot/ideals";
+
+-e $testRoot     || die "Aborting:  Missing directory $testRoot\n";
+-e $testSuite    || die "Aborting:  Missing directory $testSuite\n";
+-e $testSuiteBin || die "Aborting:  Missing directory $testSuiteBin\n";
+-e $testActuals  || die "Aborting:  Missing directory $testActuals\n";
+-e $testIdeals   || die "Aborting:  Missing directory $testIdeals\n";
+
+
+$masterScriptPath  = "$testRoot/$masterFile" ;
+$compareScriptPath = "$testRoot/$compareFile" ;
+$compareLogPath    = "$testRoot/$compareLogFile" ;
+
+
+$scriptEntryCmds   = "$echoPgm Test run start...\n\n";
+$scriptExitCmds    = "$echoPgm Test run end...\n";
+
+
+$compareEntryCmds  = "$echoPgm Comparing log files...\n"
+                   . "$echoPgm Compare log start... > $compareLogPath\n\n";
+$compareExitCmds   = "$echoPgm Compare log end...   >> $compareLogPath\n";
+
+
+# ----------------------------------------------------------------
+# Read in the test suite bin entries and save a) test file names 
+# and b) test file prefixes, for use in finding other related
+# files, in an associative array.  The keys are the file names,
+# and the values are the 
+#
+
+opendir (BIN_DIR, $testSuiteBin) || die "Aborting:  Can't read dir $testSuiteBin\n";
+while ( $filename = readdir(BIN_DIR) ) {
+    if ( -f "$testSuiteBin/$filename" ) {
+        # Note that $prefix will be the same name as $filename
+        # in cases where there is no 'prefix.suffix' form to
+        # the file name.  This is OK, and expected on UNIX machines.
+        
+        ($prefix) = split( /\./, $filename ) ;
+        $testFilePrefixes{$filename} = $prefix ;
+    }
+}
+closedir (BIN_DIR);
+
+
+# ----------------------------------------------------------------
+# Load the file lists from the 'pre' and 'post' directories.
+# No need to die if they aren't present - they're optional.
+#
+
+opendir (PRE_DIR, $testSuitePre) ;
+while ( $filename = readdir(PRE_DIR) ) {
+    if ( -f "$testSuitePre/$filename" ) {
+        @testPreFiles = ( @testPreFiles, $filename ) ;
+    }
+}
+closedir (PRE_DIR) ;
+
+opendir (POST_DIR, $testSuitePost) ;
+while ( $filename = readdir(POST_DIR) ) {
+    if ( -f "$testSuitePost/$filename" ) {
+        @testPostFiles = ( @testPostFiles, $filename ) ;
+    }
+}
+closedir (POST_DIR) ;
+
+
+# ----------------------------------------------------------------
+# Create the 'master' test script, inserting pre and post
+# processing steps if they exist.  Also, create the 'compare'
+# script for execution after the master script is executed.
+#
+
+open (TMASTER, "> $masterScriptPath") || die "Aborting:  Can't create $masterPath\n";
+print TMASTER "$scriptEntryCmds";
+
+open (TCOMPARE, "> $compareScriptPath") || die "Aborting:  Can't create $comparePath\n";
+print TCOMPARE "$compareEntryCmds";
+ 
+foreach $test (keys(%testFilePrefixes)) {
+    print "Adding drop-in test $test...\n";
+
+    print TMASTER "$echoPgm $test...\n";
+
+    # --------------------------------------------------------
+    # Create preprocessing entries for this test.  If it's a 
+    # PHP file, invoke it using the $phpExecCmd
+    #
+    
+    foreach $preFile (@testPreFiles) {
+        ($prefix) = split( /\./, $preFile ) ;
+        if ($prefix eq $testFilePrefixes{$test}) {
+            print TMASTER "$phpExecCmd " if ($preFile =~ /.*$scriptSuffix$/ ) ;
+            print TMASTER "$testSuitePre/$preFile\n";
+        }
+    }
+
+    # -----------------------------------------------------
+    # Create master script main entry for this test
+    #
+    
+    $logFile   = "$testFilePrefixes{$test}$logSuffix";
+    $logActual = "$testActuals/$logFile";
+    $logIdeal  = "$testIdeals/$logFile";
+
+    print TMASTER "$phpExecCmd " if ($test =~ /.*$scriptSuffix$/ ) ;
+    print TMASTER "$testSuiteBin/$test > $logActual\n";
+
+    # --------------------------------------------------------
+    # Create postprocessing entries for this test.  If it’s a 
+    # batch file, invoke it using the $batExecCmd
+    #
+    
+    foreach $postFile (@testPostFiles) {
+        ($prefix) = split( /\./, $postFile ) ;
+        if ($prefix eq $testFilePrefixes{$test}) {
+            print TMASTER "$batExecCmd " if ($postFile =~ /.*$batSuffix$/ ) ;
+            print TMASTER "$testSuitePre/$postFile\n";
+        }
+    }
+
+    print TMASTER "\n";
+
+    # -----------------------------------------------------
+    # Create compare script entry for this test.  If the
+    # test's ideal log file doesn't exist, we create a
+    # placeholder for the ideal file contents that will
+    # be exposed during the compare step.
+    #
+    
+    print TCOMPARE "$echoPgm -- $logIdeal vs. $logActual -- >> $compareLogPath\n"; 
+    print TCOMPARE "$diffPgm $logIdeal $logActual >> $compareLogPath\n\n"; 
+
+    if (! -e $logIdeal) {
+        open (IDEAL, "> $logIdeal") || die "Aborting:  Can't create $logIdeal\n";
+        print IDEAL "--replace with ideal contents--\n";
+        close (IDEAL);
+    }
+}
+
+print TMASTER "$scriptExitCmds";
+close (TMASTER);
+
+print TCOMPARE "$compareExitCmds";
+close (TCOMPARE);
+
+

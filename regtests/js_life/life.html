@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<meta name="keywords" Content="">
+<meta name="content" content="">
+<meta name="author" content="">
+<head>
+<title>The game of life in javascript</title>
+<script language="Javascript1.2">
+<!-- hide script
+var countX = 12;
+var countY = 12;
+var delay = 100;
+var cells = new Array(countX);
+var changes = new Array();
+var runner;
+var dilly = true;
+
+function Point(x, y, s) {
+    this.x = x;
+    this.y = y;
+    this.state = s;
+}
+
+function switchImg(x,y) {
+  if(isOn(x, y)) {
+    setOff(x, y);
+  } else {
+    setOn(x, y);
+  } 
+}
+function isOn(x, y) {
+  return (cells[y][x] == true);
+}
+function setOn(x, y) {
+  eval( "document.all.cell" + x + "_" + y + ".src='alive.gif'");
+  cells[y][x] = true;
+}
+function setOff(x, y) {
+  eval( "document.all.cell" + x + "_" + y + ".src='dead.gif'");
+  cells[y][x] = false;
+}
+function mapArrayToBoard() {
+    for(var i = 0; i < changes.length; i++) {
+        if( changes[i].state == true ) {
+            setOn(changes[i].x, changes[i].y);
+        } else {
+            setOff(changes[i].x, changes[i].y);
+        }
+    }
+}
+function recalc() {
+  var c;
+  changes.length = 0;
+  var idx = 0;
+  for(var y = 0; y < countY; y++) {
+    for(var x = 0; x < countX; x++) {
+      c = countLivingNeighbours(x, y);
+      switch(c) {
+      case 3:
+        if (! isOn(x, y))
+            changes[idx++] = new Point(x, y, true);
+        break;
+      case 2:
+        break;
+      default:
+        if(isOn(x, y))
+           changes[idx++] = new Point(x, y, false);
+      }
+    }
+  }
+  for(c = 0; c < changes.length; c++) {
+    cells[changes[c].y][changes[c].x] = changes[c].state;
+  }
+}
+function countLivingNeighbours(x, y) {
+  var c = 0;
+  if(x > 0) {
+    if (y > 0)
+        if(cells[y-1][x-1] == true)c++;
+    if(cells[y][x-1] == true)c++;
+    if (y < countY-1)
+        if(cells[y+1][x-1] == true)c++;
+  }
+  if(y > 0)
+      if(cells[y-1][x] == true) c++;
+  if(y < countY-1)
+      if(cells[y+1][x] == true) c++;
+  if(x < countX-1) {
+    if(y > 0)
+        if(cells[y-1][x+1] == true) c++;
+    if(cells[y][x+1] == true)  c++;
+    if(y < countY-1)
+        if(cells[y+1][x+1] == true)  c++;
+  }
+  return c;
+}
+function run() {
+  step();
+  runner = setTimeout("run()", delay);
+}
+function step() {
+  recalc();
+  mapArrayToBoard();
+  toggleLamps();
+}
+function stop() {
+  if(runner != null) clearTimeout(runner);
+}
+function reset() {
+    changes.length = 0;
+    for(var y = 0; y < countY; y++) {
+        for(var x = 0; x < countX; x++) {
+            cells[y][x] = false;
+            setOff(x, y);
+        }
+    }
+    mapArrayToBoard();
+}
+function init() {
+  for(var y = 0; y < countY; y++) {
+    cells[y] = new Array(countX);
+    for (var x = 0; x < countX; x++) {
+      cells[y][x] = false;
+    }
+  }
+  mapArrayToBoard();
+}
+function pattern(idx) {
+    switch(idx) {
+    case 0:
+        createGlider();
+        break;
+    case 1:
+        createPiHept();
+        break;
+    case 2:
+        createRPent();
+        break;
+    default:
+    }
+}
+function createGlider() {
+    reset();
+    var posX = countX/2;
+    var posY = countY/2;
+    var idx = 0;
+    changes[idx++] = new Point(posX-1, posY-1, true);
+    changes[idx++] = new Point(posX, posY-1, true);
+    changes[idx++] = new Point(posX+1, posY-1, true);
+    changes[idx++] = new Point(posX-1, posY, true);
+    changes[idx++] = new Point(posX, posY+1, true);
+    mapArrayToBoard();
+}
+function createPiHept() {
+    reset();
+    var posX = countX/2;
+    var posY = countY/2;
+    var idx = 0;
+    changes[idx++] = new Point(posX-1, posY-1, true);
+    changes[idx++] = new Point(posX, posY-1, true);
+    changes[idx++] = new Point(posX+1, posY-1, true);
+    changes[idx++] = new Point(posX-1, posY, true);
+    changes[idx++] = new Point(posX-1, posY+1, true);
+    changes[idx++] = new Point(posX+1, posY, true);
+    changes[idx++] = new Point(posX+1, posY+1, true);
+    mapArrayToBoard();
+}
+function createRPent() {
+    var posX = countX/2;
+    var posY = countY/2;
+    var idx = 0;
+    changes.length = 0;
+    changes[idx++] = new Point(posX-1,posY-1,true);
+    changes[idx++] = new Point(posX, posY-1, true);
+    changes[idx++] = new Point(posX, posY, true);
+    changes[idx++] = new Point(posX+1, posY, true);
+    changes[idx++] = new Point(posX, posY+1, true);
+    mapArrayToBoard();
+}
+function toggleLamps() {
+  if(dilly) {
+    dilly = false;
+    document.all.dilly1.src = "alive.gif";
+    document.all.dilly2.src = "dead.gif";
+  } else {
+    dilly = true;
+    document.all.dilly1.src = "dead.gif";
+    document.all.dilly2.src = "alive.gif";
+  }
+}
+// -->
+</script>
+</head>
+
+<body onLoad="init();">
+<img src="alive.gif" width=10 height=10 id="dilly1">
+<img src="dead.gif" width=10 height=10  id="dilly2">
+<input type="button" onClick="run();" value="Run">
+<input type="button" onClick="stop();" value="Stop">
+<input type="button" onClick="step();" value="Step">
+<input type="button" onClick="reset();" value="Reset">
+<select name="patterns" size=1 onChange="pattern(selectedIndex);">
+<option>Glider
+<option>Pi Heptomino
+<option>R Pentomino
+</select>
+<hr>
+<script language="Javascript">
+<!-- hide script
+document.write('<table border="1" cellspacing="0" cellpadding="0"><tr>');
+for(var j = 0;j < countY; j++) {
+  for(var i = 0; i < countX; i++) {
+    document.write("<td width=10 height=10><img src='dead.gif' width='10' height='10'");
+    document.write(" id='cell" + i + "_" + j + "'");
+    document.write(" onClick='switchImg(" + i + "," + j + ");'></td>\n");
+  }
+  document.write('</tr><tr>');
+}
+document.write('</tr></table>');
+// -->
+</script>
+<hr>
+
+</body>
+</html>

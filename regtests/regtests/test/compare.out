@@ -1,0 +1,10 @@
+Compare log start...
+-- ./test/ideals/testscanf.out vs. ./test/actuals/testscanf.out --
+-- ./test/ideals/testobj.out vs. ./test/actuals/testobj.out --
+-- ./test/ideals/test_class_inheritance.out vs. ./test/actuals/test_class_inheritance.out --
+-- ./test/ideals/testarray.out vs. ./test/actuals/testarray.out --
+-- ./test/ideals/testarray2.out vs. ./test/actuals/testarray2.out --
+-- ./test/ideals/testclassfunc.out vs. ./test/actuals/testclassfunc.out --
+-- ./test/ideals/arraysort.out vs. ./test/actuals/arraysort.out --
+-- ./test/ideals/recurse.out vs. ./test/actuals/recurse.out --
+Compare log end...
