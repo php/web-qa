@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-Projects (PHP/QAT: The PHP Quality Assurance Team)
+Goals (PHP/QAT: The PHP Quality Assurance Team)
 </title>
 </head>
 <body bgcolor="#FFFFFF" background="img/bg_page.gif" text="#000000" link="#0000FF"
@@ -18,21 +18,20 @@ Projects (PHP/QAT: The PHP Quality Assurance Team)
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
-		<a href="index.html">Home</a> |
-		<a href="index.html#news">News</a> |
-		<a href="projects.html">Projects</a> |
-		<a href="goals.html">Goals</a> |
-		<a href="resources.html">Links &amp; Resources</a> |
-		<a href="members.html">Members</a> |
-		<a href="howtohelp.html">How to help</a>
+		<a href="index.php">Home</a> |
+		<a href="index.php#news">News</a> |
+		<a href="projects.php">Projects</a> |
+		<a href="goals.php">Goals</a> |
+		<a href="resources.php">Links &amp; Resources</a> |
+		<a href="members.php">Members</a> |
+		<a href="howtohelp.php">How to help</a>
 		</font>
 		</div>
 		<blockquote>
 
 		<br />
-		<b>PHP/QAT Projects</b>
+		<b>PHP/QAT Goals</b>
 		<hr size="1" />
-		The PHP/QA Team has two projects on the go right now.  The first is to get organized.  The second is to close as many bugs as possible.<br /><br />
-		More Soon...<br /><br />
+		Coming Soon...<br /><br />
 
-		<!--#include virtual="inc/footer.txt" -->
+		<? include ('inc/footer.txt') ?>

@@ -18,20 +18,20 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
-		<a href="index.html">Home</a> |
-		<a href="index.html#news">News</a> |
-		<a href="projects.html">Projects</a> |
-		<a href="goals.html">Goals</a> |
-		<a href="resources.html">Links &amp; Resources</a> |
-		<a href="members.html">Members</a> |
-		<a href="howtohelp.html">How to help</a>
+		<a href="index.php">Home</a> |
+		<a href="index.php#news">News</a> |
+		<a href="projects.php">Projects</a> |
+		<a href="goals.php">Goals</a> |
+		<a href="resources.php">Links &amp; Resources</a> |
+		<a href="members.php">Members</a> |
+		<a href="howtohelp.php">How to help</a>
 		</font>
 		</div>
 		<blockquote>
 
 		<br />
-		<b>How You Can Help</b>
+		<b>Links and Resources</b>
 		<hr size="1" />
 		Coming soon...<br /><br />
 
-		<!--#include virtual="inc/footer.txt" -->
+		<? include ('inc/footer.txt') ?>

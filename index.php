@@ -19,11 +19,11 @@ PHP/QAT: The PHP Quality Assurance Team
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="#news">News</a> |
-		<a href="projects.html">Projects</a> |
-		<a href="goals.html">Goals</a> |
-		<a href="resources.html">Links &amp; Resources</a> |
-		<a href="members.html">Members</a> |
-		<a href="howtohelp.html">How to help</a>
+		<a href="projects.php">Projects</a> |
+		<a href="goals.php">Goals</a> |
+		<a href="resources.php">Links &amp; Resources</a> |
+		<a href="members.php">Members</a> |
+		<a href="howtohelp.php">How to help</a>
 		</font>
 		</div>
 		<blockquote>
@@ -36,7 +36,7 @@ PHP/QAT: The PHP Quality Assurance Team
 		</div>
 		<br />
 		The team is currently focused on processing the open bug reports from the official PHP 4 bug list ( <a href="http://bugs.php.net">http://bugs.php.net</a> ).
-		If you would like to contribute to this effort, please visit our <a href="howtohelp.html">How To Help</a> page.
+		If you would like to contribute to this effort, please visit our <a href="howtohelp.php">How To Help</a> page.
 		<br /><br /><br />
 
 		<b><a name="news">News</a></b>
@@ -50,25 +50,25 @@ PHP/QAT: The PHP Quality Assurance Team
 
 		<b>PHP/QAT Information</b>
 		<hr size="1" />
-		<b>Projects</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="projects.html">View Projects</a> )</font>
+		<b>Projects</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="projects.php">View Projects</a> )</font>
 		<br />
 		Find more information on what the PHP/QA Team is currently working on.<br /><br />
 
-		<b>Goals</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="goals.html">View Goals</a> )</font>
+		<b>Goals</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="goals.php">View Goals</a> )</font>
 		<br />
 		Read about the future plans of the PHP/QA Team.<br /><br />
 
-		<b>Links &amp; Resources</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="resources.html">View Links &amp; Resources</a> )</font>
+		<b>Links &amp; Resources</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="resources.php">View Links &amp; Resources</a> )</font>
 		<br />
 		Visit the PHP/QAT Links &amp; Resources page.  We have links to web based resources for ...<br /><br />
 
-		<b>Members</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="members.html">View Members</a> )</font>
+		<b>Members</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="members.php">View Members</a> )</font>
 		<br />
 		View the PHP/QAT Member register.<br /><br />
 
-		<b>How To Help</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="howtohelp.html">View How to Help</a> )</font>
+		<b>How To Help</b> <font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">( <a href="howtohelp.php">View How to Help</a> )</font>
 		<br />
 		Find out how you can help us - join the PHP/QA team, help out on a project or just make a suggestion.
 		<br /><br />
 
-		<!--#include virtual="inc/footer.txt" -->
+		<? include ('inc/footer.txt') ?>
