@@ -164,12 +164,13 @@
       <li><b>Derick Rethans</b> &lt;<a href="mailto:d.rethans@jdimedia.nl">d.rethans@jdimedia.nl</a>&gt;
         <ul>
           <li>Skills: PHP, MySQL, C(++), Web Development, HTML, DB Design/optimalization, Security...</li>
-          <li>Focus: Testing and building RC's</li>
+          <li>Focus: Testing and building RC's, Bug fixing</li>
           <li>Platform 1: RedHat Linux 6.2 (i386), apache/cgi, modules: gd, ttf,
-mysql, pdflib, sablot, ftp, psell, bcmath, gmp, ldap, mcrypt, shmop,
+mysql, pdflib, sablot, ftp, pspell, bcmath, gmp, ldap, mcrypt, shmop,
 sysvsem, sysvshm, wddx, zlib</li>
-          <li>Platform 2: Windows 98 (i386), CGI/ISAPI (No building)</li>
-          <li>Platform 3: OpenBSD 2.7 (i386), apache/cgi, modules: unknown ATM</li>
+          <li>Platform 2: Windows 98 (i386), CGI/ISAPI</li>
+		  <li>Platform 3: RedHat Linux 6.1 (i386), apache/cgi, modules: gd, ttf,
+mysql, pdflib, sablot
         </ul>
       </li>
     </ul>
