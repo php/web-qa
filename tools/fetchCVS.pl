@@ -83,6 +83,8 @@ print "Please login to the Zend repository (the password is zend)\n";
 
 system("$cvs -d :pserver:cvsread\@cvs.zend.com:/repository login");
 
+chdir("$directory/php4");
+
 print "Syncing the Zend source in $directory/php4/Zend ...\n";
 
 @zend_sync = `$cvs -d :pserver:cvsread\@cvs.zend.com:/repository checkout Zend`;
