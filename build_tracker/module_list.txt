@@ -1,0 +1,45 @@
+Apache
+Assert
+BC Math
+CyberCash
+Win32
+DAV
+DBA
+DBM
+dBase
+FDF
+FilePro
+FTP
+GD imaging
+GetText
+HyperWave
+IMAP
+Informix
+Java
+InterBase
+LDAP
+MCAL
+mcrypt
+mhash
+MS SQL
+mSQL
+MySQL
+OCI8
+ODBC
+Oracle
+Perl Compatible<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex
+PDF
+Posix
+PostgreSQL
+Readline
+Recode
+Sessions
+SNMP
+SWF
+Sybase
+System V<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shared Memory
+System V<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Semaphores
+WDDX
+XML
+Yellow Pages
+Zlib

@@ -1,6 +1,7 @@
 <?
 	# Set location of text file that contains list of
 	# acceptable php versions for current testing
+	$module_list		= 'module_list.txt';
 	$php_version_list 	= 'php_version_list.txt';
 	$sapi_list			= 'sapi_list.txt';
 
@@ -234,7 +235,34 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
+		<?
+			$cells     = file ($module_list);
+			$no_of_cells = count ($cells);
+
+			for ($n=0, $col = 0, $row = 0; $n < $no_of_cells; ++$n)
+			{
+				$line  = '<td><font face="Tahoma, Arial, Helvetica, Sans Serif" SIZE="2">';
+				$line .= sprintf ('<input type="checkbox" name="field[module][%s]" %s/> %s<br />', $field[module][$cells[$n]], ($field[module][$cells[$n]] ? ' checked' : ''), $cells[$n]);
+				$line .= '</font></td>';
+
+				$cell[$col][$row] = $line;
+
+				++$row;
+				if ($row == (int) ($no_of_cells/4))
+				{
+					$row = 0;
+					++$col;
+				}
+			}
+
+			print '<table border="1">';
+
+			for ($row = 0; $cell[0][$row]; ++$row)
+				print '<tr>'.$cell[0][$row].$cell[1][$row].$cell[2][$row].$cell[3][$row].'</tr>';
+
+			print '</table>';
+		?>
+		</select>
 		</font></td>
 	</tr>
 

@@ -1,7 +1,8 @@
 -- I am using PHP as a CGI --
-Apache Module APXS
-Apache Module Static
+Apache
 ISAPI
-NSAPI
-...
+AOLserver
+Java Servlet
+Roxen
+thttpd
 
