@@ -15,9 +15,10 @@
           <td align="right" valign="top" class="headline_white">[%HEAD_DATE%]</td>
         </tr>
         <tr>
-          <td valign="bottom" align="right" class="head_links">Home | Projects 
-            and Goals | Links &amp; Resources | <a href="members.php">Members</a> 
-            | <a href="howtohelp.php">How to help</a></td>
+          <td valign="bottom" align="right" class="head_links"><a href="index.php">Home</a> 
+            | <a href="projects.php">Projects and Goals</a> | <a href="links.php">Links 
+            &amp; Resources</a> | <a href="members.php">Members</a> | <a href="howtohelp.php">How 
+            to help</a></td>
         </tr>
       </table>
     </td>
