@@ -47,10 +47,8 @@ PHP/QAT: The PHP Quality Assurance Team
 		<b><a name="news">News</a></b>
 		<hr size="3" />
 		<font size="3">
-		<li>( August 24, 2000 ) PHP 4.0.2 scheduled for release next Monday (August 28th)</li>
-        <li>( August 20, 2000 ) Two new roughs for site available at <a href="http://qa.php.net/site_rough">http://qa.php.net/site_rough</a></li>
-		<li>( August 20, 2000 ) Modified Win32 Binaries available at <a href="http://www.php4win.de/">http://www.php4win.de</a></li>
-		<li>( August 11, 2000 ) 4.0.2 RC now available via CVS.  Win32 binaries should be ready soon.</li>
+		<li>( August 29, 2000 ) Barring any last minute problems, PHP 4.0.2 will be released today</li>
+		<li>( August 24, 2000 ) PHP 4.0.2 scheduled for release Monday, August 28</li>
 		</font>
 		<br /><br /><br />
 
