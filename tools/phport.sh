@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.23 2002-11-21 06:51:42 nohn Exp $
+# $Id: phport.sh,v 1.24 2002-11-22 05:30:10 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -47,7 +47,7 @@ usage() {
 EOF
 }
 
-makedir() { mkdir "$@" || `echo "cannot create $@" &&  exit 1 `  ; }
+makedir() { mkdir "$@" || exit 1  ; }
 
 # Build directory structure if not available
 if ! [ -d "$PREFIX" ] ; then
@@ -135,14 +135,10 @@ case $MODE in
     ;;
 
     cvs)
-;;
-lala)
-
-
         if ! [ -f ~/.cvspass ] || [ `grep -c cvsread@cvs.php.net ~/.cvspass` -lt 1 ] ; then
             echo $PHPCVSSERVER $PHPCVSPASS>> ~/.cvspass
         fi 
-        cd "$DISTFILESDIR/$MODE" || `echo "can't cd to $DISTFILESDIR/$MODE" && exit 1`
+        cd "$DISTFILESDIR/$MODE" || exit 1
 
                 cvs -d $PHPCVSSERVER co php4
                     cd php4
@@ -186,8 +182,8 @@ fi
 # Configure PHP
 cd "$WRKDIR/php4-$MODE"
 if [ ! -s ./configure ] ; then
-    $WRKDIR/php4-$MODE./cvsclean ||  `echo "cvsclean failed" && exit 1`
-    $WRKDIR/php4-$MODE./buildconf ||  `echo "buildconf failed" && exit 1`
+    ./cvsclean || exit 1
+    ./buildconf || exit 1
 fi
 ./configure $options
 
