@@ -44,7 +44,7 @@ First create a test script, we'll call it mybugtest.php
 This script should output the results of running the script
 in whatever format is suitable.
 Run the script:
-#:>php -q -f mybugtest.php > mybugtest.out
+#:>php -f mybugtest.php > mybugtest.out
 
 Copy the script into test/suite/bin
 Copy the output into test/ideal
