@@ -2,6 +2,7 @@
 	# Set location of text file that contains list of
 	# acceptable php versions for current testing
 	$php_version_list 	= 'php_version_list.txt';
+	$sapi_list			= 'sapi_list.txt';
 
 	# Set default values for form fields
  	$field[os_name] or
@@ -54,7 +55,6 @@ PHP|QAT: Compiled/Installed Version Tracker
 
 <b>PHP Version</b>
 <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
-
 	<tr>
 		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
 		Version of Source or Binary
@@ -62,7 +62,6 @@ PHP|QAT: Compiled/Installed Version Tracker
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
 		<select name="field[version]">
-		<option> -- I did not use a release version --</option>
 		<?
 			$selected_version[$field[version]] = ' selected';
 			foreach (file ($php_version_list) as $option)
@@ -71,6 +70,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</select>
 		</font></td>
 	</tr>
+
 	<tr>
 		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
 		CVS Source
@@ -91,6 +91,22 @@ PHP|QAT: Compiled/Installed Version Tracker
 				printf ('<option%s>%s</option>', $selected_cvs_source[$date_string], $date_string);
 				$date -= $day;
 			}
+		?>
+		</select>
+		</font></td>
+	</tr>
+
+	<tr>
+		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
+		PHP Server API
+		</font></td>
+
+		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
+		<select name="field[sapi]">
+		<?
+			$selected_sapi[$field[sapi]] = ' selected';
+			foreach (file ($sapi_list) as $option)
+				printf ('<option%s>%s</option>', $selected_sapi[$option], $option);
 		?>
 		</select>
 		</font></td>

@@ -1,0 +1,7 @@
+-- I am using PHP as a CGI --
+Apache Module APXS
+Apache Module Static
+ISAPI
+NSAPI
+...
+
