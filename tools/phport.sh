@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.20 2002-11-21 06:33:36 nohn Exp $
+# $Id: phport.sh,v 1.21 2002-11-21 06:35:44 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -25,7 +25,7 @@
 USE_BZ2=NO
 TRY_ZE2=NO
 
-PREFIX="/usr/tmp/php/"
+PREFIX="/tmp"
 DISTFILESDIR="$PREFIX/distfiles"
 WRKDIR="$PREFIX/work"
 ETCDIR="$PREFIX/etc"
