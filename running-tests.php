@@ -1,5 +1,5 @@
 <?php
-include("functions.php");
+include("include/functions.php");
 
 $TITLE = "Submit Build Test [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
@@ -21,6 +21,14 @@ script asks to send the logs to the PHP QA mailinglist. Please answer "y"
 to this question so that we can efficiently process the results. Beware
 that this script also uploads php -i output so your hostname may be
 transmitted.
+</p>
+<p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 </p>
 <?php
 common_footer();
