@@ -203,6 +203,7 @@ common_header();
           <td width="100%">&nbsp;</td>
           <td width="10">&nbsp;</td>
         </tr>
+<!--
         <tr>
           <td width="10">&nbsp;</td>
           <td width="100%"><b><font color="#FF9900">Wanted:</font></b><br>
@@ -220,6 +221,7 @@ common_header();
           </td>
           <td width="10">&nbsp;</td>
         </tr>
+//-->        
         <tr>
           <td width="10">&nbsp;</td>
           <td width="100%">
