@@ -153,16 +153,6 @@ Throrough testing of all aspects of the new overload extension.
 - Try as much platforms as possible<br />
 </p>
 
-<h2>Case e4: DIO</h2>
-<p>
-<b>Description:</b>
-Testing the balls out of this extension
-</p>
-<p>
-<b>Specifics:</b>
-- None<br />
-</p>
-
 <h2>Case e5: preg_grep</h2>
 <p>
 <b>Description:</b>
