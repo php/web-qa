@@ -75,6 +75,14 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql, PDFLib, GD, DOM/XML/expat, IMAP<br />
 		&nbsp;* Platform 2: Solaris 2.6 - modules as platform 1<br /><br />
 
+		<b>Karl Austin</b> &lt;<a href="mailto:karl@kdawebservices.com">karl@kdawebservices.com</a>&gt;<br />
+		&nbsp;* Skills: PHP, HTML, JavaScript, Visual Basic, MySQL, Graphic Design<br />
+		&nbsp;* Focus: Advocacy, QA Team website/app developement, Testing - some building <br />
+		&nbsp;* Platform 1: Windows 2000 + Apache 1.3.12 + PHP4<br />
+		&nbsp;* Platform 2: Windows 98 + Apache 1.3.12 + PHP4<br />
+		&nbsp;* Platform 3: RedHat 5.1 (very customized) + PHP 3.0.12 + Apache 1.3.9<br />
+		&nbsp;* Platform x: May have access to Red Hat 6.1 / PHP 4 and Win ME soon.<br /><br />
+
 		<b>Kirill Maximov</b> &lt;<a href="mailto:maxkir@email.com">maxkir@email.com</a>&gt;<br />
 		&nbsp;* Skills: C/C++, Java, PHP<br />
 		&nbsp;* Focus : Release candidates testing, some bug fixing<br />
