@@ -86,13 +86,13 @@ $member_list = array(
 		"platform" => array("Linux Debian testing/unstable")
 	),
 
- 	array(
-    	"name" => "Liz Kimber",
+	array(
+		"name" => "Liz Kimber",
 		"email" => "liz@xcalibur.demon.co.uk",
- 		"focus" => "Bug hunting, compilation, linux, windows",
- 		"skills" => "all round techy/geek, unix+windows (no mac!)", 
-        "platform" => array("Slackware Linux","NT 4","W2K","WXP")
- 	),		
+		"focus" => "Bug hunting, compilation, linux, windows",
+		"skills" => "all round techy/geek, unix+windows (no mac!)", 
+		"platform" => array("Slackware Linux","NT 4","W2K","WXP")
+		),		
 		  
 	array(
 		"name" => "Marco Kaiser",
