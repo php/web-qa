@@ -18,9 +18,8 @@ PHP/QAT: The PHP Quality Assurance Team
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
-		<a href="#news">News</a> |
-		<a href="projects.php">Projects</a> |
-		<a href="goals.php">Goals</a> |
+		<a href="index.php#news">News</a> |
+		<a href="goals.php">Projects and Goals</a> |
 		<a href="resources.php">Links &amp; Resources</a> |
 		<a href="members.php">Members</a> |
 		<a href="howtohelp.php">How to help</a>

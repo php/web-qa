@@ -20,8 +20,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |
-		<a href="projects.php">Projects</a> |
-		<a href="goals.php">Goals</a> |
+		<a href="goals.php">Projects and Goals</a> |
 		<a href="resources.php">Links &amp; Resources</a> |
 		<a href="members.php">Members</a> |
 		<a href="howtohelp.php">How to help</a>
