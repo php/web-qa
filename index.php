@@ -28,7 +28,8 @@
 
 <h2><a name="news">News</a></h2>
 <ul>
-	<li><span class="lihack">(00/12/14) <a href="http://www.php.net/distributions/php-4.0.4RC6.tar.gz">PHP 4.0.4 RC 6 announced</a></span></li>
+	<li><span class="lihack">(00/12/20) PHP 4.0.4 FINAL announced</span></li>
+	<li><span class="lihack">(00/12/14) PHP 4.0.4 RC 6 announced</span></li>
     <li><span class="lihack">(00/12/12) PHP 4.0.4 RC 5 announced</span></li>
     <li><span class="lihack">(00/12/5) PHP 4.0.4 RC 4 announced</span></li>
 	<li><span class="lihack">PHP 4.0.4 RC 3 announced</span></li>
