@@ -129,6 +129,14 @@ $member_list = array(
 									     )
 							),
 
+					  array("name" => "Yasuo Ohgaki",
+							"email" => "yohgaki@php.net",
+							"focus" => "QA, Maintain PostgreSQL Module",
+							"skills" => "Some skills that are useful",
+							"platform" => array("Linux + Apache basically"
+									     )
+							),
+
 					  array("name" => "Zak Greant",
 							"email" => "zak@php.net",
 							"focus" => "Organizing the PHP QA effort",
