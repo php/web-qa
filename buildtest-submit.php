@@ -29,11 +29,8 @@ Where you have specified "other" for any category, please enter what it is in th
 	<th>Package:</th>
 	<td>
 		<select name="package">
-			<option value="4.2.0-dev">4.2.0-dev (DON'T USE CVS, download RC2)</option>
-			<option value="4.2.0-RC1">4.2.0-RC1</option>
-			<option value="4.2.0-RC2">4.2.0-RC2</option>
-			<option value="4.2.0-RC3">4.2.0-RC3</option>
-			<option value="4.2.0-RC4" selected="yes">4.2.0-RC4</option>
+			<option value="4.3.0-dev">4.3.0-dev</option>
+			<option value="4.2.1RC2" selected>4.2.1RC2</option>
 		</select>
 	</td>
 </tr>
@@ -108,12 +105,11 @@ Where you have specified "other" for any category, please enter what it is in th
 			<option value="cgi">CGI</option>
 			<option value="Apache 1.3.x DSO">Apache 1.3.x Module (DSO)</option>
 			<option value="Apache 1.3.x Static">Apache 1.3.x Module (static)</option>
-			<option value="Apache 2.x DSO">Apache 2.x Module (DSO) [see note]</option>
+			<option value="Apache 2.x DSO">Apache 2.x Module (DSO)</option>
 			<option value="ISAPI">ISAPI</option>
 			<option value="FastCGI">Fast CGI</option>
 			<option value="Other">other</option>
 		</select>
-	note, the Apache 2.x Module (DSO) <b>DOES NOT WORK</b> with PHP Versions <= RC2. Please use latest CVS.
 	</td>
 </tr>
 </table>
@@ -138,8 +134,8 @@ Where you have specified "other" for any category, please enter what it is in th
 	<td>
 		Use 'autoconf --version' to show it<br />
 		<select name="autoconf">
-			<option value="2.1.3">2.13</option>
-			<option value="2.5.2" selected="yes">2.52</option>
+			<option value="2.1.3" selected="yes">2.13</option>
+			<option value="2.5.2">2.52</option>
 			<option value="2.5.3">2.53</option>
 			<option value="other">other</option>
 		</select>
