@@ -109,10 +109,7 @@ if ($action == 'Save')
         $field['id'] = mysql_insert_id ();
 
 		if (! $PHP_AUTH_USER)
-		  {
-			print "Thank you for your suggestion!";
-			unset ($field);
-		  }
+			die ('Thank you for your suggestion!');
       }
   }
 else if ($action == 'Delete' && $PHP_AUTH_USER)
