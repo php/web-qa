@@ -31,6 +31,12 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 <pre><font size="2">
 Testers for upcoming PHP 4.0.2 release
 
+<b>Derick Rethans</b> <a href="mailto:d.rethans@jdimedia.nl">d.rethans@jdimedia.nl</a>
+    Build and Test
+     - Linux (RH 6.2) / Apache 1.3.12 / PHP ( :-) / GD with PNG/JPEG/TTF/
+     / MySQL / mcrypt 2.[24].x / libpdf 3 / imap.
+     ? win98 / pws
+
 <b>James Moore</b> (<a href="mailto:james@phpuk.org">james@phpuk.org</a>)
     Build and Test
      - Redhat 6.2
@@ -49,7 +55,7 @@ Testers for upcoming PHP 4.0.2 release
     Test, no build
      - Win98 / Apache 1.3.12 / MySQL 3.23.31 beta
      - Win2k Pro / IIS / OmniHTTPd / Xitami / Apache 1.3.12
-	   / MySQL 3.23.31 beta
+       / MySQL 3.23.31 beta
 </font></pre>
 <? include ('inc/footer.txt') ?>
 
