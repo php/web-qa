@@ -33,12 +33,10 @@ $member_list = array( array("name" => "André Langhorst",
 
 					  array("name" => "James Moore",
 							"email" => "jmoore@php.net",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
+							"focus" => "Windows Performance and Bugs, Release Testing",
+							"skills" => "C/C++, PHP, Java, XML, XSLT .......",
+							"platform" => array("Windows 2000 Professional",
+												"Linux Redhat", "BeOS (Newbie)")),
 
 					  array("name" => "Jani Taskinen",
 							"email" => "sniper@php.net",
@@ -79,12 +77,10 @@ $member_list = array( array("name" => "André Langhorst",
 
 					  array("name" => "Phil Driscoll",
 							"email" => "phil@dialsolutions.co.uk",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
+							"focus" => "Windows installer",
+							"skills" => "Competent C programmer, Linux newbie",
+							"platform" => array("SuSE Linux on various x86 platforms",
+							"Occasional access to NT4")),
 
 					  array("name" => "Sebastian Bergmann",
 							"email" => "sebastian@php.net",
