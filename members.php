@@ -87,14 +87,12 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: SuSE Linux 6.3 + Apache + MySQL + PHP3 + PHP4<br />
 		&nbsp;* Platform 2: Windows NT + Apache + PHP 4<br /><br />
 
-        <b>James Moore</b> &lt;<a href="mailto:james@phpuk.org">james@phpuk.org</a>&gt;<br />
+        <b>James Moore</b> &lt;<a href="mailto:jmoore@php.net">jmoore@php.net</a>&gt;<br />
 		&nbsp;* Skills: Web Development with PHP, Some C/C++<br />
-		&nbsp;* Focus: Windows Builds (Likely produced every few days) and Testing<br />
-		&nbsp;* Platform 1: Redhat 6.2 / PHP ? / ? Server / ? Modules<br />
-		&nbsp;* Platform 2: Mandrake 7 / PHP ? / ? Server / ? Modules<br />
-		&nbsp;* Platform 3: Windows 95 / PHP ? / ? Server / ? Modules<br />
-        &nbsp;* Platform 4: Windows 98 / PHP ? / ? Server / ? Modules<br />
-        &nbsp;* Platform 5: Windows 2000 / PHP ? / ? Server / ? Modules<br /><br />
+		&nbsp;* Focus: Windows Builds and Testing<br />
+		&nbsp;* Platform 1: Redhat 6.2 thttpd/Apache + PHP4 + MySQL, <br />
+        &nbsp;* Platform 2: Windows 98 + Apache + MySQL<br />
+        &nbsp;* Platform 3: Windows 2000 + IIS5 (ISAPI & CGI) + MySQL<br /><br />
 
 		<b>Joey Smith</b> &lt;<a href="mailto:joey@php.net">joey@php.net</a>&gt;<br />
 		&nbsp;* Skills: C, Perl, PHP, Sybase (DB and CT libs)<br />

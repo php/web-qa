@@ -42,11 +42,10 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
      / MySQL / mcrypt 2.[24].x / libpdf 3 / imap<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - win98 / pws - possibly?<br /><br />
 
-<b>James Moore</b> &lt;<a href="mailto:james@phpuk.org">james@phpuk.org</a>&gt;<br />
+<b>James Moore</b> &lt;<a href="mailto:jmoore@php.net">jmoore@php.net</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Redhat 6.2<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - Mandrake 7<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - Windows 95,98,2000<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp; - Windows 98,2000<br /><br />
 
 <b>Joey Smith</b> &lt;<a href="mailto:joey@php.net">joey@php.net</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
