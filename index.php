@@ -26,7 +26,7 @@ common_header();
 		<ul><br />
 		  <li><span class="lihack">Visit the experimental <a href="http://fooassociates.com/phpqa/">PHP-QAT Wiki</a> to 
 			see what platforms have been tested so far.</span></li></br>
-		  <li><span class="lihack">Report new build tests via the <a href="buildtest.php">build-test form</a>.</span></li>
+		  <li><span class="lihack">Report new build tests via the <a href="buildtest-submit.php">build-test form</a>.</span></li>
 		</ul>
 	      </span></li><br />
               <li>
