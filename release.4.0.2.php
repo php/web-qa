@@ -42,37 +42,41 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
      / MySQL / mcrypt 2.[24].x / libpdf 3 / imap<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - win98 / pws - possibly?<br /><br />
 
-<b>James Moore</b> (<a href="mailto:james@phpuk.org">james@phpuk.org</a>)<br />
+<b>James Moore</b> &lt;<a href="mailto:james@phpuk.org">james@phpuk.org</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Redhat 6.2<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Mandrake 7<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Windows 95,98,2000<br /><br />
 
-<b>Joey Smith</b> (<a href="mailto:joey@php.net">joey@php.net</a>)<br />
+<b>Joey Smith</b> &lt;<a href="mailto:joey@php.net">joey@php.net</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql,
        PDFLib, GD, DOM/XML/expat, IMAP<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Solaris 2.6 - modules as platform 1<br /><br />
 
-<b>Kirill Maximov</b> (<a href="mailto:maxkir@email.com">maxkir@email.com</a>)<br />
+<b>Kirill Maximov</b> &lt;<a href="mailto:maxkir@email.com">maxkir@email.com</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Solaris 7 x86, Oracle7.3.2, Mysql 3.22.32, sysV semaphores,
        GD 1.8.3/FreeType<br /><br />
 
-<b>Patrik Bengtsson</b> (<a href="mailto:patrik.bengtsson@grafix.se">patrik.bengtsson@grafix.se</a>)<br />
+<b>Patrik Bengtsson</b> &lt;<a href="mailto:patrik.bengtsson@grafix.se">patrik.bengtsson@grafix.se</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - MacOSX Server 1.0 / Apache 1.3.12<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - SuSe Linux 6.4 / Apache 1.3.12<br /><br />
 
-<b>Phil Driscoll</b> (<a href="mailto:phil@dialsolutions.co.uk">phil@dialsolutions.co.uk</a>)<br />
+<b>Phil Driscoll</b> &lt;<a href="mailto:phil@dialsolutions.co.uk">phil@dialsolutions.co.uk</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Win NT4 SP6 IIS4 cgi MySQL<br /><br />
 
-<b>waldschrott</b> (<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>)<br />
+<b>Shawn Wallace</b> &lt;<a href="mailto:lists@wa.ca">lists@wa.ca</a>&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
+&nbsp;&nbsp;&nbsp;&nbsp; - Debian Linux + Apache-SSL + MySQL + other mods<br /><br />
+
+<b>waldschrott</b> &lt;<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD<br /><br />
 
-<b>Zak</b> (<a href="mailto:zak@php.net">zak@php.net</a>)<br /><br />
+<b>Zak</b> &lt;<a href="mailto:zak@php.net">zak@php.net</a>&gt;<br /><br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - OpenBSD 2.7 / Apache 1.3.12<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - BSDi 4.0 / Apache 1.3.12<br /><br />
