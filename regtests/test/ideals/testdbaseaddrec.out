@@ -1,0 +1,60 @@
+Before anything that should crash us...
+array(4) {
+  [1]=>
+  array(5) {
+    ["code"]=>
+    string(12) "test        "
+    ["name_g"]=>
+    string(200) "test2                                                                                                                                                                                                   "
+    ["name_r"]=>
+    string(200) "test3                                                                                                                                                                                                   "
+    ["ao_dm"]=>
+    float(2)
+    ["deleted"]=>
+    int(0)
+  
+}
+  [2]=>
+  array(5) {
+    ["code"]=>
+    string(12) "test        "
+    ["name_g"]=>
+    string(200) "test2                                                                                                                                                                                                   "
+    ["name_r"]=>
+    string(200) "test3                                                                                                                                                                                                   "
+    ["ao_dm"]=>
+    float(2)
+    ["deleted"]=>
+    int(0)
+  
+}
+  [3]=>
+  array(5) {
+    ["code"]=>
+    string(12) "test        "
+    ["name_g"]=>
+    string(200) "test2                                                                                                                                                                                                   "
+    ["name_r"]=>
+    string(200) "test3                                                                                                                                                                                                   "
+    ["ao_dm"]=>
+    float(2)
+    ["deleted"]=>
+    int(0)
+  
+}
+  [4]=>
+  array(5) {
+    ["code"]=>
+    string(12) "test        "
+    ["name_g"]=>
+    string(200) "test2                                                                                                                                                                                                   "
+    ["name_r"]=>
+    string(200) "test3                                                                                                                                                                                                   "
+    ["ao_dm"]=>
+    float(2)
+    ["deleted"]=>
+    int(0)
+  
+}
+}
+After anything that should crash us...
