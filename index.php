@@ -23,11 +23,47 @@ common_header();
             <ul>
               <li>
                 <span class="lihack">Providing QA for the <a href="http://www.php.net/~derick/php-4.2.0RC1.tar.gz">PHP 4.2.0RC1</a> release.<br />
-                <ul><br />
-                  <li><span class="lihack">Report new build tests via the <a href="buildtest-submit.php">build-test form</a>.</span></li>
-                  <li><span class="lihack"><a href="testcases-4.2.0.php">Testcases</a>Test cases for PHP 4.2.0 RC1.</span></li>
-                </ul>
-              </span></li><br />
+            </ul>
+			<p>
+You can help use by completing one of the following tasks:<br />
+<br />
+Simple build tests<br />
+<ol>
+   <li>Download the RC from: <a href="http://www.php.net/~derick/">http://www.php.net/~derick/</a>
+     <ul>
+       <li><a href="http://www.php.net/~derick/php-4.2.0RC1.tar.gz">php-4.2.0RC1.tar.gz</a> (Source)
+
+	   <li><a href="http://www.php.net/~derick/php-4.2.0RC1-win32.zip">php-4.2.0RC1-win32.zip</a>
+		   (windows binaries: CLI, CGI, ISAP module and extensions: cpdf,
+		   ctype, cybercash, db, dbx, domxml, fdsql, fdf, filepro, gd, gettext,
+		   java, mhash, oci8, openssl, pdf, pgsql, shmop, sockets, tokeniser,
+		   w32api, xslt and zlib (all without libraries!!!)
+
+       <li>php4apache.dll (apache 1.3.23 module for windows)
+     </ul>
+
+  <li>Build and test the RC
+  <li>Provide feedback through: 
+      <a href="http://qa.php.net/buildtest-submit.php">http://qa.php.net/buildtest-submit.php</a>
+</ol>
+If you are really serious, you can also help us run testcases in the 
+following ways:
+<ol>
+  <li>Run 'make test' after you build from source (non-windows only) and 
+      provide feedback to php-qa@lists.php.net
+
+  <li>Run testcases, which you can find on: <a
+	  href="http://qa.php.net/testcases-4.2.0.php">http://qa.php.net/testcases-4.2.0.php</a>.<br
+	  /> These testcases address areas of PHP, which need some special
+	  attention during the Release Process. It's very important that you run
+	  these cases very thouroughly. You can provide feedback with <a
+	  href="http://qa.php.net/buildtest-submit.php">http://qa.php.net/buildtest-submit.php</a>
+	  (specify your testcase there).
+</ol>
+If you have any questions, please mail to the php-qa@lists.php.net 
+mailinglist.
+			</p>
+            <ul>
               <li>
                 <span class="lihack">Reworking the bug tracking system. (Subscribe to the 
                 <a href="mailto:jitterbug-subscribe@lists.php.net">list</a> 
