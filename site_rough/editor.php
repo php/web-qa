@@ -191,7 +191,7 @@ if (! $PHP_AUTH_USER )
         <td>
             <font face="">
             <input type="radio" name="field[approved]" value="yes" <?= ($field['approved'] == 'yes') ? ' checked' : '' ?> />Approved <? $field['approved_by'] and print "by $field[approved_by]";  ?><br />
-            <input type="radio" name="field[approved]" value="no" <?=  ($field['approved'] == 'no') ? ' checked' : '' ?>/>  Not Approved<br />
+            <input type="radio" name="field[approved]" value="no" <?=  ($field['approved'] == 'no') ? ' checked' : '' ?> />  Not Approved<br />
         </td>
     </tr>
 <? endif; ?>
