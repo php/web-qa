@@ -16,11 +16,14 @@ common_header();
 Please run the tests from our test framework. You can do this by typing
 <code>make test</code> after you compiled PHP with <code>make</code>. You
 can only see failed and skipped tests by running this instead:
-<code>make test | grep -v PASS</code>. If there are "FAIL"ed tests, the
-script asks to send the logs to the PHP QA mailinglist. Please answer "y"
-to this question so that we can efficiently process the results. Please note
-that this script also uploads php -i output so your hostname may be
-transmitted.
+<code>make test | grep -v PASS</code>.
+</p>
+<p>When <code>make test</code> finished running tests, the script asks to send
+the logs to the PHP QA mailinglist. Please answer "y" to this question so that
+we can efficiently process the results, entering your e-mail address (which
+will not be send in plaintext to any list) enables us to ask you some more
+information if a test failed. Note that this script also uploads php -i output
+so your hostname may be transmitted.
 </p>
 		</td>
 	</tr>
