@@ -34,7 +34,7 @@ function common_header() {
             | <a href="links.php" class="head_links">Links &amp; Resources</a> 
             | <a href="members.php" class="head_links">Members</a>
             | <a href="howtohelp.php" class="head_links">How to help</a>
-	    | <a href="buildtest-submit.php" class="head_links">Submit a build test</a>	
+            | <a href="running-tests.php" class="head_links">Submit a build test</a>
           </td>
           <td valign="bottom" align="right" class="head_links">&nbsp;</td>
         </tr>
