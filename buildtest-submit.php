@@ -102,6 +102,7 @@ Where you have specified "other" for any category, please enter what it is in th
 		<select name="autoconf">
 			<option value="213">2.13</option>
 			<option value="252">2.52</option>
+			<option value="253">2.53</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -115,6 +116,17 @@ Where you have specified "other" for any category, please enter what it is in th
 			<option value="140">1.4</option>
 			<option value="141">1.4.1</option>
 			<option value="142">1.4.2</option>
+			<option value="other">other</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>Bison version</th>
+	<td>
+		<select name="bison">
+			<option value="128">1.28</option>
+			<option value="129">1.29</option>
+			<option value="132">1.32</option>
 			<option value="other">other</option>
 		</select>
 	</td>
