@@ -2,8 +2,8 @@
 include("include/functions.php");
 
 $TITLE = "How To Help [PHP-QAT: Quality Assurance Team]";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
-/* $Id$ */";
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME));
+/* $Id$ */
 
 common_header();
 ?>
@@ -26,7 +26,7 @@ common_header();
           <td width="10">&nbsp;</td>
           <td width="100%">
             <ul>
-              <li class="lihack">Write testcases:
+              <li class="lihack"><a href="write-test.php">Write testcases</a>:
               <ul>
                 <li class="lihack">to reproduce bugs</li>
                 <li class="lihack">for PHP functions for which no testcase exist</li>
