@@ -33,6 +33,8 @@ PHP|QAT: Compiled/Installed Version Tracker
  - link to build|install report page<br />
 <br clear="all" />
 
+<font color="#ff0000"><b>This form is not yet active - please do not use it!</b></font><br /><br />
+
 <b>User Information</b>
 <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
 	<tr>
