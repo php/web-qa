@@ -2,7 +2,7 @@
 include("include/functions.php");
 
 $TITLE = "Links &amp; Resources [PHP-QAT: Quality Assurance Team]";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>/* $ID$ */";
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>/* $Id$ */";
 
 siteHeader();
 ?>
@@ -17,7 +17,7 @@ siteHeader();
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%"> Please suggest links and resources for this page! 
-            Email the PHP-QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) 
+            Email the PHP-QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>)<br><br>
           </td>
           <td width="10">&nbsp;</td>
         </tr>
