@@ -28,22 +28,28 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 		</font>
 		</div>
 <blockquote>
-<pre>
+<pre><font size="2">
 Testers for upcoming PHP 4.0.2 release
 
+<b>James Moore</b> (<a href="mailto:james@phpuk.org">james@phpuk.org</a>)
+    Build and Test
+     - Redhat 6.2
+     - Mandrake 7
+     - Windows 95,98,2000
+
 <b>waldschrott</b> (<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>)
-	Build and Test
-	 - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD
+    Build and Test
+     - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD
 
 <b>Zak</b> (<a href="mailto:zak@php.net">zak@php.net</a>)<br />
-	Build and Test
-	 - OpenBSD 2.7 / Apache 1.3.12
-	 - BSDi 4.0 / Apache 1.3.12
+    Build and Test
+     - OpenBSD 2.7 / Apache 1.3.12
+     - BSDi 4.0 / Apache 1.3.12
 
-	Test, no build
-	 - Win98 / Apache 1.3.12 / MySQL 3.23.31 beta
-	 - Win2k / IIS / OmniHTTPd / Xitami / Apache 1.3.12 / MySQL 3.23.31 beta
-</pre>
+    Test, no build
+     - Win98 / Apache 1.3.12 / MySQL 3.23.31 beta
+     - Win2k Pro / IIS / OmniHTTPd / Xitami / Apache 1.3.12 / MySQL 3.23.31 beta
+</font></pre>
 <? include ('inc/footer.txt') ?>
 
 <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
