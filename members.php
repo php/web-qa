@@ -65,9 +65,9 @@ $member_list = array(
 	array(
 		"name" => "Joey Smith",
 		"email" => "joey@php.net",
-		"focus" => "empty",
-		"skills" => "empty",
-		"platform" => array()
+		"focus" => "Sybase, domxml, builds",
+		"skills" => "C, PHP, Sybase, Unix Admin, PgSQL",
+		"platform" => array("Linux (Debian Woody, Debian Sarge, Slackware 7.0)")
 	),
 
 	array(
