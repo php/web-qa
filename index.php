@@ -20,11 +20,13 @@ common_header();
           <td width="100%"> 
             <p>The team is currently focused on several areas: </p>
             <ul>
+              <li><span class="lihack">Providing QA for the 
+			  	<a href="http://www.php.net/~zeev/php-4.1.0RC3.tar.gz">PHP 4.1.0 Final Release Candidate</a><br />
+				Visit the experimental <a href="http://fooassociates.com/phpqa">PHP QA Wiki</a> to see what platforms have been tested so far.</span></li>
               <li><span class="lihack">Reworking the bug tracking system. (Subscribe to to <a href="mailto:jitterbug-subscribe@lists.php.net">jitterbug-subscribe@lists.php.net</a> 
                 for more information)</span></li>
               <li><span class="lihack">Processing the open bug reports from the official PHP 4 bug 
                 list (<a href="http://bugs.php.net" target="_blank">http://bugs.php.net</a>).</span></li>
-              <li><span class="lihack">Providing QA for the latest PHP release candidate.</span></li>
             </ul>
           </td>
           <td width="10">&nbsp;</td>
