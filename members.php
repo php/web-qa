@@ -15,6 +15,7 @@
 	  If you have any of the following platforms which can be used for testing please contact us <b>Now</b>:
       <ul>
 	    <li>Mac OS</li>
+	    <li>Mac OS X</li>
 	  </ul>
 	</P>
 		 
