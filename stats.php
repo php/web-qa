@@ -1,4 +1,6 @@
 <?php
+
+include('http://www.php.net/~jani/bugsmap001');
 include("include/functions.php");
 
 $TITLE = "Stats Help [PHP-QAT: Quality Assurance Team]";
@@ -17,7 +19,8 @@ common_header();
         </tr>
         <tr> 
           <td width="10">&nbsp;</td>
-          <td width="100%"><img src="http://www.php.net/~jani/count-<?php echo date ('Y-m'); ?>.png"><br /><br />
+          <td width="100%">
+           <img src="http://www.php.net/~jani/count-<?php echo date ('Y-m'); ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
