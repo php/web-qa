@@ -54,6 +54,10 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
        PDFLib, GD, DOM/XML/expat, IMAP<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Solaris 2.6 - modules as platform 1<br /><br />
 
+<b>John Singleton</b> &lt;<a href="mailto:jsinglet@digitalassurance.com">jsinglet@digitalassurance.com</a>&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
+&nbsp;&nbsp;&nbsp;&nbsp; - NT4 Server SP5 w/ IIS 4 (ISAPI AND CGI versions with OCI8 module)<br /><br />
+
 <b>Kirill Maximov</b> &lt;<a href="mailto:maxkir@email.com">maxkir@email.com</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Solaris 7 x86, Oracle7.3.2, Mysql 3.22.32, sysV semaphores,
