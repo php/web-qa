@@ -35,16 +35,20 @@ PHP/QAT: The PHP Quality Assurance Team
 		The PHP/QA Team is a small group of developers whose <b>primary goal</b> is to support the PHP core developers by providing them with timely quality assurance.
 		</div>
 		<br />
-		The team is currently focused on processing the open bug reports from the official PHP 4 bug list ( <a href="http://bugs.php.net">http://bugs.php.net</a> ).
+		The team is currently focused on several areas:<br />
+        <li>Getting ready for the upcoming 4.0.2 Release Candidate (Tentatively scheduled for release somewhere between August 6th and 13th)<br />
+        <li>Developing a test suite for PHP releases<br />
+        <li>Reworking areas of the bug reporting process.<br />
+        <li>Processing the open bug reports from the official PHP 4 bug list ( <a href="http://bugs.php.net">http://bugs.php.net</a> ).<br /><br />
+
 		If you would like to contribute to this effort, please visit our <a href="howtohelp.php">How To Help</a> page.
 		<br /><br /><br />
 
 		<b><a name="news">News</a></b>
 		<hr size="3" />
 		<font size="3">
-		<li>PHP/QAT membership is now up to 14 members <font size="3">( July 18, 2000 )</font></li>
-		<li>PHP/QAT webpage created <font size="3">( July 14, 2000 )</font></li>
-		<li>PHP/QAT formed <font size="3">( June 29, 2000 )</font></li>
+		<li>( August 5, 2000 ) Release date for 4.0.2 Release Candidate pushed back 1 week</li>
+		<li>( August 3, 2000 ) Tentative release date of August 6 for 4.0.2 Release Candidate announced</li>
 		</font>
 		<br /><br /><br />
 
