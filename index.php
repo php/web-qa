@@ -28,10 +28,10 @@ common_header();
                 <span class="lihack">Providing QA for the PHP 4.3.2RC4 release:
                 <ul>
                  <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.bz2">php-4.3.2RC4.tar.bz2</a><br />
-                  md5sum:b5e7da975d6ebff870a9ba7ecc1739e9
+                  md5sum:9efabc2c2ee949b256b46d7fc1818154
                  </li>
                  <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.gz">php-4.3.2RC4.tar.gz</a><br />
-                  md5sum:79b34df3291dbfcc6b3e7b13126e2622
+                  md5sum:21a48ba6623db3f40321aa7e394e4c75
                  </li>
                  <li><a href="http://downloads.php.net/jani/php-4.3.2RC4-Win32.zip">php-4.3.2RC4-Win32.zip</a><br />
                   md5sum:95e3b34848380b130cdee75b294b4c25
