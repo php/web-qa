@@ -47,7 +47,7 @@ function common_header() {
   <tr> 
     <form method="get" action="http://bugs.php.net/search.php" target="_blank">
       <td colspan="2" bgcolor="#ff9900" align="right" class="head_links"> search 
-        bugs for 
+        qa for 
       <input type="hidden" name="cmd" value="display">
         <input type="text" name="search_for" value="" size="30" class="small">
         <input type="image" src="gfx/submit.gif" border="0" width="11" height="11" alt="search" align="bottom" name="image">&nbsp;<img src="gfx/spacer.gif" width="3" height="8" border="0"></td>
