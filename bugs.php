@@ -73,7 +73,7 @@ Thank you and good luck!<br /><br />
 <a href="#group10">Group 20</a> (Currently Available)<br />
 <a href="#group21">Group 21</a> (Currently Available)<br />
 <a href="#group22">Group 22</a> (Currently Available)<br />
-<a href="#group23">Group 23</a> (Currently Available)<br /><br />
+<a href="#group23">Group 23</a> waldschrott (waldschrott@waldschrott.de)<br /><br />
 
 <a name="group02"></a>
 <br /><b>Group 2:</b> Zak Greant (zak@nucleus.com)<br />
@@ -788,7 +788,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group23"></a>
-<br /><b>Group 23:</b> Currently Available<br />
+<br /><b>Group 23:</b> waldschrott (waldschrott@waldschrott.de)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5698">5698</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5698&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5700">5700</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5700&edit=1"><b>&gt;&gt;</b></a><br />
