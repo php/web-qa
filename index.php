@@ -22,7 +22,7 @@ common_header();
             <p>The team is currently focused on:</p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0RC1.tar.gz">PHP 4.3.0RC1 (source)</a> release.</span><br />
+                <span class="lihack">Providing QA for the PHP 4.3.0RC1 (<a href="http://www.php.net/~andrei/php-4.3.0RC1.tar.gz">source</a>, <a href="http://snaps.php.net/~edink/php-4.3.0RC1-Win32.zip">windows binaries</a>) release.</span><br />
               </li>
             </ul>
             <p>
