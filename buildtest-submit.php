@@ -141,11 +141,12 @@ Where you have specified "other" for any category, please enter what it is in th
     <th>Bison version</th>
     <td>
         <select name="bison">
-            <option value="1.2.8">1.28</option>
-            <option value="1.2.9">1.29</option>
-            <option value="1.3.0">1.30</option>
-            <option value="1.3.2">1.32</option>
-            <option value="1.3.3">1.33</option>
+            <option value="1.28">1.28</option>
+            <option value="1.29">1.29</option>
+            <option value="1.30">1.30</option>
+            <option value="1.32">1.32</option>
+            <option value="1.33">1.33</option>
+            <option value="1.35">1.35</option>
             <option value="other">other</option>
         </select>
     </td>
