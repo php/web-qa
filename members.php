@@ -112,7 +112,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Focus : Closing bugs, testing pre-releases, assisting with QAT resource development<br />
 		&nbsp;* Platform: Debian Linux + Apache-SSL + MySQL<br /><br />
 
-		<b>waldschrott</b> &lt;<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>&gt;<br />
+		<b>waldschrott</b> &lt;<a href="mailto:waldschrott@php.net">waldschrott@php.net</a>&gt;<br />
 		&nbsp;* Skills: PHP, Java, Javascript, XML, XSL, ODBC (Adabas,Mysql,PostgreSQL,Oracle(8)), HTML<br />
 		&nbsp;* Focus : Closing bugs, QA for PHP Release Candidate<br />
 		&nbsp;* Platform 1: Windows 2000 Apache + Latest PHP + MySQL + Adabas (ODBC)<br />
