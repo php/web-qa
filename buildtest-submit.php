@@ -103,7 +103,7 @@ Where you have specified "other" for any category, please enter what it is in th
 			<option value="cgi">CGI</option>
 			<option value="Apache 1.3.x DSO">Apache 1.3.x Module (DSO)</option>
 			<option value="Apache 1.3.x Static">Apache 1.3.x Module (static)</option>
-			<option value="Apache 2.x DSO">Apache 2.x Module (DSO)</option>
+			<option value="Apache 2.x DSO">Apache 2.x Module (DSO) DOES NOT WORK WITH RC2, please do not report this, try the latest PHP CVS instead</option>
 			<option value="ISAPI">ISAPI</option>
 			<option value="FastCGI">Fast CGI</option>
 			<option value="Other">other</option>
