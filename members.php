@@ -124,7 +124,8 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: BSD 3 + Apache + MySQL + PHP3<br />
 		&nbsp;* Platform 2: BSD 4 + Apache + MySQL + PHP3<br />
 		&nbsp;* Platform 3: RedHat 6.2 + Apache + MySQL + PHP4<br />
-		&nbsp;* Platform 4: OpenBSD 2.6 + Apache + MySQL + PHP4<br />
-		&nbsp;* Platform 5: Windows 98 + Apache + PHP 4<br /><br />
+		&nbsp;* Platform 4: OpenBSD 2.7 + Apache + MySQL + PHP4<br />
+		&nbsp;* Platform 5: Windows 98 + Apache + PHP 4<br />
+		&nbsp;* Platform 6: Windows 2000 + Apache + PHP 4<br /><br />
 
 		<? include ('inc/footer.txt') ?>
