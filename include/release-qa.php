@@ -6,8 +6,8 @@
  */
 
 $CURRENT_QA_RELEASE = '4.3.10RC2';
-$BUILD_TEST_RELEASES = array('4.3.9', '4.3.10-dev', '4.3.10RC1', '5.0.2', '5.0.3-dev');
-$RELEASE_PROCESS = true;
+$BUILD_TEST_RELEASES = array('4.3.11-dev', '4.3.10', '5.0.3', '5.0.4-dev');
+$RELEASE_PROCESS = false;
 
 $RC_FILES = array (
 	array (	
