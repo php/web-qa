@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh 
 # +----------------------------------------------------------------------+
 # | PHP Version 4                                                        |
 # +----------------------------------------------------------------------+
@@ -12,10 +12,10 @@
 # | obtain it through the world wide web, please send a note to          |
 # | license@php.net so we can mail you a copy immediately                |
 # +----------------------------------------------------------------------+
-# | Authors:    Jan Lehnardt <jan@lehnardt.de>                           |
+# | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.5 2002-11-10 18:57:34 nohn Exp $
+# $Id: phport.sh,v 1.6 2002-11-10 20:08:53 jan Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -28,9 +28,23 @@ TRY_ZE2=NO
 
 DISTFILES=distfiles
 WRKDIR=work
+ETCDIR=etc
 PHPSNAPSERVER=http://snaps.php.net/
 PHPPSERVER=':pserver:cvsread@cvs.php.net:/repository'
 PHPCVSPASS='A:c:E?'
+
+# functions
+usage() {
+    cat <<EOF
+    $1 mode [argument]
+    mode: 
+        - snap    Builds from a Snapshot requires remote archive 
+		  in argument (http/ftp)
+	- cvs     Builds from CVS
+	- local   Builds from the local sourcetree specified in argument
+EOF
+}
+
 
 # Build directory structure if not available
 if ! [ -d $WRKDIR ] ; then
@@ -64,14 +78,15 @@ case $1 in
         ;;
     *)
     echo "Invalid Mode"
+    usage $0
     exit 1
     ;;
 esac
 echo $MODE    
 
-# Clean $WRKDIR dir
+# Clean $WRKDIR 
 rm -rf $WRKDIR/php4-$MODE/*
-# Fetch/extract source to $DISTFILES/$WRKDIRdir
+# Fetch/extract source to $DISTFILES/$WRKDIR
 case $MODE in
     snap) # 24h distfile!!
         if [ $2 ] ; then
@@ -81,7 +96,7 @@ case $MODE in
             SNAPURI=$PHPSNAPSERVER/$PHPSNAPFILE
         fi    
         
-        if [  'echo $PHPSNAPFILE | sed 's/http:\/\/.*//g'' -nq "" ] ; then
+        if [ 'echo $PHPSNAPFILE | sed 's/http:\/\/.*//g'' = "" ] ; then
             cp $PHPSNAPFILE $DISTFILES
         
         fi
@@ -97,7 +112,20 @@ case $MODE in
             $FETCHCMD
         fi
         echo "Extracting source package..."
-        
+
+	# see if we have gzip or bzip2
+
+	EXT="`echo $PHPSNAPFILE | sed -e 's/.*\.//`";
+	
+	if [ $EXT = "gz" ] ; then
+	    TARMOD=z;
+	elif [ $EXT = "bz2" ] ; then
+	    TARMOD=y;
+	else
+	    echo "Unknown package format";
+	    exit 1;
+	fi
+
         tar -C $WRKDIR/php4-$MODE -x -$TARMOD -f $DISTFILES/$PHPSNAPFILE
         mv -f $WRKDIR/php4-$MODE/php*/* $WRKDIR/php4-$MODE
         
@@ -133,22 +161,23 @@ case $MODE in
 esac    
 
 # Get configure optioms
-for option in `cat etc/configure-options` ; do
-    options="$options $option"
-done    
+if ! [ -d $ETCDIR ] ; then
+    for option in `cat $ETCDIR/configure-options` ; do
+        options="$options $option"
+    done    
+fi
 # Check dependencies of configured extensions
 
 # Clean dependencies
   
-  # Fetch/extract source into $DISTFILES/$WRKDIRdir
+  # Fetch/extract source into $DISTFILES/$WRKDIR
   
   # Build dependencies
   
   # Install dependencies (Libraries) locally
   
 # Configure PHP
-cd $WRKDIR
-   /php4-$MODE
+cd $WRKDIR/php4-$MODE
 if [ ! -s configure ] ; then
     ./cvsclean
     ./buildconf
