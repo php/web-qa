@@ -79,7 +79,8 @@ Where you have specified "other" for any category, please enter what it is in th
 			<option value="Linux i386">Linux/i386</option>
 			<option value="Linux other">Linux/other</option>
 			<option value="FreeBSD 4.3">FreeBSD 4.3</option>
-			<option value="FreeBSD 4.3">FreeBSD 4.4</option>
+			<option value="FreeBSD 4.4">FreeBSD 4.4</option>
+   			<option value="FreeBSD 4.5">FreeBSD 4.5</option>
 			<option value="OpenBSD">OpenBSD</option>
 			<option value="Mac OS X">Mac OS X</option>
 			<option value="HPUX">HPUX</option>
@@ -153,7 +154,12 @@ Where you have specified "other" for any category, please enter what it is in th
 		<select name="bison">
 			<option value="128">1.28</option>
 			<option value="129">1.29</option>
+<<<<<<< buildtest-submit.php
+            <option value="130">1.30</option>
+			<option value="132">1.32</option>
+=======
 			<option value="132" selected="yes">1.32</option>
+>>>>>>> 1.5
 			<option value="other">other</option>
 		</select>
 	</td>
