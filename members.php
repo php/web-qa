@@ -11,7 +11,7 @@
       to the <a href="mailto:PHP-qa@lists.PHP.net">PHP|QAT Mailing
       List</a>.
     </p>
-    
+
     <p>
       Please include the following information in your message:
     </p>
@@ -159,6 +159,21 @@
           <li>Skills: PHP, DBMaker</li>
           <li>Focus: Build and Test PHP, occasional bug hunting</li>
           <li>Platform 1: Debian Linux + Apache + mod_PHP + DBMaker</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
+      <li><b>Olivier Cahagne</b> &lt;<a href="mailto:olivier.cahagne@epita.fr">olivier.cahagne@epita.fr</a>&gt;
+        <ul>
+          <li>Skills: C, Perl, PHP, MySQL, Apache, etc...</li>
+		  <li>Environment: php scripts run by hundreds of users in a computer science school that has to be secure (so, running suEXEC).</li>
+          <li>Focus: building/testing snapshots. Bug hunting, ideas, suggestions. Make sure that "old" gcc and make can still compile PHP. :)</li>
+          <li>Platform 1: NetBSD 1.3.3 (i386), gcc 2.7.2.2, cgi+suEXEC. Modules: imap, curl, mhash, mcrypt, ftp, sockets</li>
+          <li>Platform 2: OpenBSD 2.6 (i386), gcc 2.95.2, cgi</li>
+          <li>Platform 3: Linux RH6.2 (i386), egcs 2.91.66, cgi</li>
+          <li>Platform 4: Digital Unix 4.0 (alpha), gcc 2.7.2.3, cgi</li>
+          <li>Platform 5: NetBSD 1.4.2 (i386), egcs 2.90.66, cgi</li>
         </ul>
       </li>
     </ul>
