@@ -22,7 +22,7 @@ common_header();
             <p>The team is currently focused on:</p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the PHP 4.3.0RC1 (<a href="http://www.php.net/~andrei/php-4.3.0RC1.tar.gz">source</a>, <a href="http://snaps.php.net/~edink/php-4.3.0RC1-Win32.zip">windows binaries</a>) release.</span><br />
+                <span class="lihack">Providing QA for the PHP 4.3.0RC2 (<a href="http://www.php.net/~andrei/php-4.3.0RC2.tar.gz">source</a>, <a href="http://snaps.php.net/~edink/php-4.3.0RC2-Win32.zip">windows binaries</a>) release.</span><br />
               </li>
             </ul>
             <p>
@@ -36,7 +36,8 @@ common_header();
           <td width="10">&nbsp;</td>
           <td width="100%">
           <p>If you would like to contribute to this effort, please 
-            visit our <a href="howtohelp.php">How To Help</a> page.</p> </td>
+            visit our <a href="howtohelp.php">How To Help</a> page.</p>
+		</td>
           <td width="10">&nbsp;</td>
         </tr>
         <tr> 
