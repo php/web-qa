@@ -22,11 +22,11 @@ common_header();
             <p>The team is currently focused on:</p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0pre1.tar.bz2">PHP 4.3.0pre1</a> release.</span><br />
+                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0pre2.tar.bz2">PHP 4.3.0pre2</a> release.</span><br />
             </ul>
             <p>
-                You can help use by filling in this form:<br />
-                <a href="http://qa.php.net/buildtest-submit.php">http://qa.php.net/buildtest-submit.php</a>
+                You can help use by running the test framework, see:<br />
+                <a href="http://qa.php.net/running-tests.php">http://qa.php.net/running-tests.php</a>
             </p>
           </td>
           <td width="10">&nbsp;</td>
