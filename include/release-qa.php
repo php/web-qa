@@ -5,8 +5,8 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = '4.3.5-dev';
-$RELEASE_PROCESS = false;
+$CURRENT_QA_RELEASE = '4.3.5RC1';
+$RELEASE_PROCESS = true;
 
 $RC_FILES = array (
 	array (	
