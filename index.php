@@ -47,6 +47,7 @@ PHP/QAT: The PHP Quality Assurance Team
 		<b><a name="news">News</a></b>
 		<hr size="3" />
 		<font size="3">
+		<li>( August 9, 2000 ) Zend engine patch for 4.0.2 ready - 4.0.2 RC expected soon</li>
 		<li>( August 5, 2000 ) Release date for 4.0.2 Release Candidate pushed back 1 week</li>
 		<li>( August 3, 2000 ) Tentative release date of August 6 for 4.0.2 Release Candidate announced</li>
 		</font>
