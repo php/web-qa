@@ -22,7 +22,7 @@ common_header();
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%"> 
-            <p><b>The team is currently focused on:</b></p>
+            <h3>The team is currently focused on:</h3>
             <ul>
               <li>
                 <span class="lihack">Providing QA for the PHP 4.3.2RC1 
@@ -45,6 +45,7 @@ common_header();
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%">
+          <br>
           <p>
            If you would like to contribute to these efforts, please 
            visit our <a href="howtohelp.php">How To Help</a> page.
