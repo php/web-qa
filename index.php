@@ -31,9 +31,9 @@ Simple build tests<br />
 <ol>
    <li>Download the RC from: <a href="http://www.php.net/~derick/">http://www.php.net/~derick/</a>
      <ul>
-       <li><a href="http://www.php.net/~derick/php-4.2.0RC2.tar.gz">php-4.2.0RC2.tar.gz</a> (Source)
+       <li><a href="http://www.php.net/~derick/php-4.2.0RC3.tar.gz">php-4.2.0RC3.tar.gz</a> (Source)
 
-	   <li><a href="http://www.php.net/~derick/php-4.2.0RC1-win32.zip">php-4.2.0RC1-win32.zip</a>
+	   <li><a href="http://www.php.net/~derick/php-4.2.0RC3-win32.zip">php-4.2.0RC3-win32.zip</a>
 		   (windows binaries: CLI, CGI, ISAP module and extensions: cpdf,
 		   ctype, cybercash, db, dbx, domxml, fdsql, fdf, filepro, gd, gettext,
 		   java, mhash, oci8, openssl, pdf, pgsql, shmop, sockets, tokeniser,
