@@ -26,8 +26,9 @@ Where you have specified "other" for any category, please enter what it is in th
 	<th>Package:</th>
 	<td>
 		<select name="package">
-			<option value="4.2.0-dev">4.2.0-dev (DON'T USE CVS, download RC1)</option>
-			<option value="4.2.0-RC1" selected="yes">4.2.0-RC1</option>
+			<option value="4.2.0-dev">4.2.0-dev (DON'T USE CVS, download RC2)</option>
+			<option value="4.2.0-RC1">4.2.0-RC1</option>
+			<option value="4.2.0-RC2" selected="yes">4.2.0-RC2</option>
 		</select>
 	</td>
 </tr>
