@@ -1,0 +1,110 @@
+0: 0
+1: 1
+2: 01
+3: 02
+4: 2
+
+0: 02
+1: 2
+2: 1
+3: 01
+4: 0
+sort
+0: 0
+1: 1
+2: 01
+3: 2
+4: 02
+5: 03
+6: 23
+7: 044
+rsort
+0: 044
+1: 23
+2: 03
+3: 2
+4: 02
+5: 1
+6: 01
+7: 0
+asort
+0: 0
+1: 1
+3: 01
+2: 2
+4: 02
+5: 03
+6: 23
+7: 044
+arsort
+7: 044
+6: 23
+5: 03
+2: 2
+4: 02
+1: 1
+3: 01
+0: 0
+ksort
+0: 0
+1: 1
+2: 2
+3: 01
+4: 02
+5: 03
+6: 23
+7: 044
+sort
+0: 044
+1: 2luv3
+2: Bill
+3: Rob
+4: able
+5: ant
+6: baker
+7: charlie
+rsort
+0: charlie
+1: baker
+2: ant
+3: able
+4: Rob
+5: Bill
+6: 2luv3
+7: 044
+asort
+7: 044
+6: 2luv3
+4: Bill
+5: Rob
+0: able
+3: ant
+1: baker
+2: charlie
+arsort
+2: charlie
+1: baker
+3: ant
+0: able
+5: Rob
+4: Bill
+6: 2luv3
+7: 044
+ksort
+0: able
+1: baker
+2: charlie
+3: ant
+4: Bill
+5: Rob
+6: 2luv3
+7: 044
+
+
+
+
+
+
+
+
+
