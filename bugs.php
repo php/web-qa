@@ -12,7 +12,7 @@
 </p>
 
 <p>
-	We should be starting on another bug sweep after testing of the 4.0.2 release is complete.
+	Another bug sweep should start after releasing PHP 4.0.5. The open bug count is around 800 at the moment and many of them are OPEN.
 </p>
 
 <?php include ('inc/footer.inc'); ?>
