@@ -72,6 +72,8 @@ function show_items ($category)
     while (list ($id, $title) = @ mysql_fetch_row ($result))
         $return .= sprintf ('<option value="%s"%s> - %s</option>'."\n", $id, $id == $selected_item ? ' SELECTED':'', htmlentities ($title));
 
+	print mysql_error ();
+
     return '<select name="field[id]">' . $return . '</select>';
 }
 
