@@ -57,12 +57,12 @@ Thank you and good luck!<br /><br />
 <s>Group 4</s><br />
 <s>Group 5</s><br />
 <a href="#group06">Group 6</a> Derick Rethans (d.rethans@jdimedia.nl)<br />
-<a href="#group07">Group 7</a> (Currently Available)<br />
-<a href="#group08">Group 8</a> (Currently Available)<br />
-<a href="#group09">Group 9</a> (Currently Available)<br />
-<a href="#group10">Group 10</a> (Currently Available)<br />
-<a href="#group11">Group 11</a> (Currently Available)<br />
-<a href="#group12">Group 12</a> (Currently Available)<br />
+<s>Group 7</s><br />
+<a href="#group08">Group 8</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group09">Group 9</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group10">Group 10</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group11">Group 11</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group12">Group 12</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group13">Group 13</a> jalal (the_jalal@yahoo.com)<br />
 <a href="#group14">Group 14</a> jalal (the_jalal@yahoo.com)<br />
 <a href="#group15">Group 15</a> (Currently Available)<br />
@@ -109,42 +109,8 @@ Thank you and good luck!<br /><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405">4405</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405&edit=1"><b>&gt;&gt;</b></a><br />
 
 <a href="#top">Return to Top</a><br />
-<a name="group07"></a>
-<br /><b>Group 7:</b> Currently Available<br />
-
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4410">4410</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4410&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4421">4421</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4421&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4422">4422</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4422&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4438">4438</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4438&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4439">4439</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4439&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4447">4447</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4447&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4453">4453</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4453&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4457">4457</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4457&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4464">4464</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4464&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4465">4465</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4465&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4466">4466</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4466&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4476">4476</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4476&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4478">4478</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4478&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4483">4483</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4483&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4485">4485</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4485&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4491">4491</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4491&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4493">4493</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4493&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4497">4497</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4497&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4498">4498</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4498&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4502">4502</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4502&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4505">4505</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4505&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4508">4508</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4508&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4510">4510</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4510&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4512">4512</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4512&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4514">4514</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4514&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4519">4519</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4519&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4524">4524</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4524&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4528">4528</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4528&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=4529">4529</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4529&edit=1"><b>&gt;&gt;</b></a><br />
-
-<a href="#top">Return to Top</a><br />
 <a name="group08"></a>
-<br /><b>Group 8:</b> Currently Available<br />
+<br /><b>Group 8:</b> Zak Greant (zak@nucleus.com)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4530">4530</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4530&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4531">4531</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4531&edit=1"><b>&gt;&gt;</b></a><br />
@@ -178,7 +144,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group09"></a>
-<br /><b>Group 9:</b> Currently Available<br />
+<br /><b>Group 9:</b> Zak Greant (zak@nucleus.com)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4627">4627</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4627&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4629">4629</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4629&edit=1"><b>&gt;&gt;</b></a><br />
@@ -212,7 +178,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group10"></a>
-<br /><b>Group 10:</b> Currently Available<br />
+<br /><b>Group 10:</b> Zak Greant (zak@nucleus.com)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4709">4709</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4709&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4712">4712</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4712&edit=1"><b>&gt;&gt;</b></a><br />
@@ -246,7 +212,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group11"></a>
-<br /><b>Group 11:</b> Currently Available<br />
+<br /><b>Group 11:</b> Zak Greant (zak@nucleus.com)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4824">4824</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4824&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4826">4826</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4826&edit=1"><b>&gt;&gt;</b></a><br />
@@ -280,7 +246,7 @@ Thank you and good luck!<br /><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group12"></a>
-<br /><b>Group 12:</b> Currently Available<br />
+<br /><b>Group 12:</b> Zak Greant (zak@nucleus.com)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4909">4909</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4909&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4910">4910</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4910&edit=1"><b>&gt;&gt;</b></a><br />
