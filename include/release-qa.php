@@ -6,7 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = '4.3.4RC1';
-$RELEASE_PROCESS = false;
+$RELEASE_PROCESS = true;
 
 $RC_FILES = array (
 	array (	
