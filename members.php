@@ -58,6 +58,16 @@ $member_list = array( array("name" => "André Langhorst",
 									     )
 							),
 
+					  array("name" => "Karl Austin",
+							"email" => "karl@karl.uk.co",
+							"focus" => "Testing",
+							"skills" => "Design, Programming, Hosting",
+							"platform" => array("RH 7.1 2.4.14",
+												"RH 7.1 2.4.10",
+												"WinXP Pro"
+												)
+					  ),
+					  
 					  array("name" => "Olivier Cahagne",
 							"email" => "olivier.cahagne@epita.fr",
 							"focus" => "Testing builds",
@@ -162,7 +172,6 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 $inactivemember_list = array("Alexander Feldman",
 							 "Andreas Otto",
 							 "Evan Klein",
-							 "Karl Austin",
 							 "Mårten Gustafson",
 							 "Patrik Bengtsson",
 							 "Rebecca \"Bean\" Visger",
