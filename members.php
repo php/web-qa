@@ -12,7 +12,7 @@
     </p>
 	<p>
 	  <b>Wanted:</b><br />
-	  If you have any of the following platforns which can be used for testing please contact us <b>Now</b>:
+	  If you have any of the following platforms which can be used for testing please contact us <b>Now</b>:
       <ul>
 	    <li>Mac OS</li>
 	  </ul>
@@ -56,7 +56,7 @@
       <li><b>James Moore</b> &lt;<a href="mailto:jmoore@php.net">jmoore@php.net</a>&gt;
         <ul>
           <li>Skills: Web Development with PHP, Basic C, Basic Java</li>
-          <li>Focus: Windows Builds and Testing</li>
+          <li>Focus: Windows Builds and Testing, Helping Zak Coordinate</li>
           <li>Platform 1: Mandrake 7.1 thttpd/Apache + PHP4 + MySQL</li>
           <li>Platform 2: Windows 98 + Apache + MySQL</li>
           <li>Platform 3: Windows 2000 + IIS5 (ISAPI &amp; CGI) + MySQL</li>
