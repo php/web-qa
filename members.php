@@ -73,18 +73,8 @@
           <li>Focus: Bug hunting/fixing, build testing (almost every day) </li>
           <li>Platform 1: RH Linux 6.2 (i386)</li>
           <ul>
-             <li>Apache 1.3.14 + PHP 4.x.x-CVS + almost every extension (varies)</li>
+             <li>Apache 1.3.19 + mod_ssl (latest release) + PHP 4.x.x-CVS + almost every extension (varies)</li>
              <li>All compiled with egcs-2.91.66</li>
-          </ul>
-          <li>Platform 2: Solaris (sparc) 2.6</li>
-          <ul>
-             <li>Apache 1.3.12 + PHP 4.x.x-CVS + almost every extension (varies)</li>
-             <li>All compiled with Sun CC (WorkShop Compilers 5.0 98/12/15 C 5.0)</li>
-          </ul>
-          <li>Platform 3: Solaris 8 (Sparc)
-          <ul>
-             <li>Apache 1.3.12 + PHP 4.0.4-dev + LDAP + XML (expat)</li>
-             <li>Compiled with gcc-2.95.2</li>
           </ul>
         </ul>
       </li>
