@@ -115,7 +115,7 @@ Testing the count function
 - Arrays contained NULL, booleans and resources<br />
 </p>
 
-<h2>Case c6: ksort() and ksort()</h2>
+<h2>Case c6: ksort() and krsort()</h2>
 <p>
 <b>Description:</b>
 Testing these functions
