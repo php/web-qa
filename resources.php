@@ -24,9 +24,9 @@
 
     <h2>Build &amp; Install Instructions</h2>
     <ul type="disc">
-      <li><span class="lihack"><a href="http://www.php.net/version4/cvs.php" add_date="966377830" last_visit="966377830" last_modified="957397465">Building the latest PHP source from CVS</a></span></li>
+      <li><span class="lihack"><a href="http://www.php.net/anoncvs.php" add_date="966377830" last_visit="966377830" last_modified="957397465">Building the latest PHP source from CVS</a></span></li>
       <li><span class="lihack"><a href="http://www.geocities.com/ro_marius/mod_php4.html">mod_php4 - How To</a></span></li>
-      <li><span class="lihack"><a href="http://www.php.net/version4/win32build.php" add_date="966377863" last_visit="966377863" last_modified="954170759">PHP Build Instructions for Win32</a></span></li>
+      <li><span class="lihack"><a href="http://www.php.net/manual/en/install-windows.php" add_date="966377863" last_visit="966377863" last_modified="954170759">PHP Build Instructions for Win32</a></span></li>
     </ul>
 
     <h2>Build &amp; Install Tools</h2>
