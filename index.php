@@ -1,5 +1,6 @@
 <?php
 include("include/functions.php");
+include("include/release-qa.php");
 
 $TITLE = "PHP-QAT: Quality Assurance Team";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br />\n".
@@ -27,7 +28,7 @@ common_header();
             <ul>
 
              <li>
-<?php include ('include/release-qa.php'); ?>
+<?php show_release_qa(); ?>
              </li>
 
              <li>

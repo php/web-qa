@@ -6,6 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = '4.3.6RC3';
+$BUILD_TEST_RELEASES = array('4.3.6', '4.3.7-dev', '5.0.0RC2', '5.0.0RC3-dev');
 $RELEASE_PROCESS = false;
 
 $RC_FILES = array (
@@ -48,7 +49,9 @@ if ($RELEASE_PROCESS) {
 }
 
 /* Content */
-
+function show_release_qa() {
+	global $CURRENT_QA_RELEASE, $FILES, $MD5SUM;
+	
 echo "
 <!-- RELEASE QA -->
 <span class='lihack'>Providing QA for PHP {$CURRENT_QA_RELEASE}
@@ -66,5 +69,6 @@ echo " </ul>
 <br />
 <!-- END -->
 ";
+}
 
 ?>
