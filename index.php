@@ -22,7 +22,9 @@ common_header();
             <p>The team is currently focused on:</p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0pre2.tar.bz2">PHP 4.3.0pre2</a> release.</span><br />
+                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0pre2.tar.bz2">PHP 4.3.0pre2 (source)</a> release.
+                Windows binaries can be found <a href="http://www.php.net/~derick/php-4.3.0pre2-Win32.zip">here</a></span><br />
+              </li>
             </ul>
             <p>
                 You can help use by running the test framework, see:<br />
