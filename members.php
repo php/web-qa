@@ -22,15 +22,6 @@ $member_list = array( array("name" => "André Langhorst",
 									     )
 							),
 
-					  array("name" => "Jalal Pushman",
-							"email" => "the_jalal@yahoo.com",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
-
 					  array("name" => "James Moore",
 							"email" => "jmoore@php.net",
 							"focus" => "Windows Performance and Bugs, Release Testing",
@@ -40,11 +31,9 @@ $member_list = array( array("name" => "André Langhorst",
 
 					  array("name" => "Jani Taskinen",
 							"email" => "sniper@php.net",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
+							"focus" => "Bug Hunting",
+							"skills" => "Kossu Fu",
+							"platform" => array()
 							),
 
 					  array("name" => "Joey Smith",
@@ -66,6 +55,15 @@ $member_list = array( array("name" => "André Langhorst",
 												)
 					  ),
 					  
+					  array("name" => "Marco Kaiser",
+							"email" => "bate@php.net",
+							"focus" => "Testing Builds / PHP-QAT Website",
+							"skills" => "PHP, C++, Perl, HTML, Javascript, Photoshop",
+							"platform" => array("FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
+									     "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
+									     )
+							),
+							
 					  array("name" => "Olivier Cahagne",
 							"email" => "olivier.cahagne@epita.fr",
 							"focus" => "Testing builds",
@@ -93,66 +91,20 @@ $member_list = array( array("name" => "André Langhorst",
 
 					  array("name" => "Zak Greant",
 							"email" => "zak@php.net",
-							"focus" => "General",
-							"skills" => "empty",
-							"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres", 
-										  "empty"
-									     )
-							),
-
-					  array("name" => "Marco Kaiser",
-							"email" => "bate@php.net",
-							"focus" => "Testing Builds / PHP-QAT Website",
-							"skills" => "PHP, C++, Perl, HTML, Javascipt, Photoshop",
-							"platform" => array("FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
-									     "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
-									     )
+							"focus" => "Organizing the PHP QA effort",
+							"skills" => "PHP, HTML, JavaScript",
+							"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres")
 							)
+
  					);
 
-$supportmember_list = array( array("name" => "Brendan W. McAdams",
-							"email" => "brendan@plexmedia.com",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
-
-					  array("name" => "Cameron Brunner ",
-							"email" => "gamr@gattcomp.com.au",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
+$supportmember_list = array(
 
 					  array("name" => "Hartmut Holzgraefe",
 							"email" => "harmut@six.de",
 							"focus" => "empty",
 							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
-
-					  array("name" => "Howard Cohodas",
-							"email" => "Howard.Cohodas@dkt.com",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
-
-					  array("name" => "Kirill Maximov",
-							"email" => "maxkir@email.com",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
+							"platform" => array()
 							),
 
 					  array("name" => "Richard Lynch",
@@ -167,7 +119,12 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 
 $inactivemember_list = array("Alexander Feldman",
 							 "Andreas Otto",
+							 "Brendan W. McAdams",
+							 "Cameron Brunner ",
 							 "Evan Klein",
+							 "Howard Cohodas",
+							 "Jalal Pushman",
+							 "Kirill Maximov",
 							 "Mårten Gustafson",
 							 "Patrik Bengtsson",
 							 "Rebecca \"Bean\" Visger",
