@@ -159,16 +159,15 @@ Where you have specified "other" for any category, please enter what it is in th
 </p>
 <table>
     <tr>
-        <td><input type="checkbox" name="aspell">aspell</input></td>
         <td><input type="checkbox" name="bcmath">bcmath</input></td>
         <td><input type="checkbox" name="bz2">bz2</input></td>
         <td><input type="checkbox" name="calendar">calendar</input></td>
         <td><input type="checkbox" name="com">com</input></td>
         <td><input type="checkbox" name="cpdf">cpdf</input></td>
         <td><input type="checkbox" name="crack">crack</input></td>
+        <td><input type="checkbox" name="ctype" checked="checked">ctype</input></td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="ctype" checked="checked">ctype</input></td>
         <td><input type="checkbox" name="curl">curl</input></td>
         <td><input type="checkbox" name="cybermut">cybermut</input></td>
         <td><input type="checkbox" name="cyrus">cyrus</input></td>
@@ -197,7 +196,6 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="hyperwave">hyperwave</input></td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="icap">icap</input></td>
         <td><input type="checkbox" name="iconv">iconv</input></td>
         <td><input type="checkbox" name="imap">imap</input></td>
         <td><input type="checkbox" name="informix">informix</input></td>
@@ -247,7 +245,6 @@ Where you have specified "other" for any category, please enter what it is in th
         <td><input type="checkbox" name="recode">recode</input></td>
     </tr>
     <tr>
-        <td><input type="checkbox" name="satellite">satellite</input></td>
         <td><input type="checkbox" name="session" checked="checked">session</input></td>
         <td><input type="checkbox" name="shmop">shmop</input></td>
         <td><input type="checkbox" name="snmp">snmp</input></td>
