@@ -15,8 +15,9 @@
 	The team is currently focused on several areas:
 </p>
 <ul type="disc">
-	<li><span class="lihack">Reworking areas of the Release Candidate build tracking and Bug tracking processes. (Contact <a href="mailto:zak@php.net">Zak Greant</a> for more information)</span></li>
+	<li><span class="lihack">Reworking the bug tracking system. (Subscribe to to <a href="mailto:jitterbug-subscribe@lists.php.net">jitterbug-subscribe@lists.php.net</a> for more information)</span></li>
 	<li><span class="lihack">Processing the open bug reports from the official PHP 4 bug list (<a href="http://bugs.php.net">http://bugs.php.net</a>).</span></li>
+	<li><span class="lihack">Providing QA for the latest PHP release candidate.</span></li>
 </ul>
 <p>
 	If you would like to contribute to this effort, please
