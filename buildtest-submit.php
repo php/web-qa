@@ -7,7 +7,10 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
 
 common_header();
 ?>
-
+      <table width="70%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
+          <td width="100%">
 <h1>Build Tracker</h1>
 <hr />
 Where you have specified "other" for any category, please enter what it is in the Remarks section. 
@@ -316,7 +319,10 @@ Where you have specified "other" for any category, please enter what it is in th
 <hr />
 <input type="submit" value="submit" />
 </form>
-
+          </td>
+          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
+        </tr>
+      </table>
 <?php
 common_footer();
 ?>
