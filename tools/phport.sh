@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.19 2002-11-13 20:32:08 msopacua Exp $
+# $Id: phport.sh,v 1.20 2002-11-21 06:33:36 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -25,16 +25,15 @@
 USE_BZ2=NO
 TRY_ZE2=NO
 
-PREFIX="/tmp"
+PREFIX="/usr/tmp/php/"
 DISTFILESDIR="$PREFIX/distfiles"
 WRKDIR="$PREFIX/work"
 ETCDIR="$PREFIX/etc"
+PHPSNAPFILEPREFIX="php4-latest.tar"
 PHPSNAPSERVER="http://snaps.php.net/"
 PHPCVSSERVER=":pserver:cvsread@cvs.php.net:/repository"
 PHPCVSPASS="A:c:E?"
-if [ -z "$MAKE" ]; then
-    MAKE=make
-fi
+MAKE=${MAKE:=make}
 
 # functions
 usage() {
@@ -48,31 +47,29 @@ usage() {
 EOF
 }
 
+makedir() { mkdir "$@" || `echo "cannot create $@" &&  exit 1 `  ; }
 
 # Build directory structure if not available
+if ! [ -d "$PREFIX" ] ; then
+    makedir $PREFIX
+fi
+
 if ! [ -d "$WRKDIR" ] ; then
-    mkdir "$WRKDIR"
-    mkdir "$WRKDIR/php4-cvs"
-    mkdir "$WRKDIR/php4-snap"
-    mkdir "$WRKDIR/php4-local"
+    for i in / /php4-cvs /php4-snap /php4-local ; do
+        makedir $WRKDIR"$i"
+    done
 fi           
 
 if ! [ -d "$DISTFILESDIR" ] ; then
-    mkdir "$DISTFILESDIR"
-    mkdir "$DISTFILESDIR/cvs"
+    for i in / /cvs ; do
+        makedir $DISTFILESDIR"$i"
+    done
 fi
 
-if ! [ -d etc ] ; then
-    mkdir etc
+if ! [ -d $ETCDIR ] ; then
+    makedir $ETCDIR
 fi    
 
-if [ "$USE_BZ2" = "NO" ] ; then 
-    PHPSNAPFILE="php4-latest.tar.gz"
-    TARMOD=z
- else
-    PHPSNAPFILE="php4-latest.tar.bz2"
-    TARMOD=y
-fi
 
 # Detect mode (snap|cvs|local)
 case $1 in 
@@ -85,7 +82,7 @@ case $1 in
     exit 1
     ;;
 esac
-echo $MODE    
+echo $MODE
 
 # Clean $WRKDIR 
 rm -rf "$WRKDIR/php4-$MODE/*"
@@ -95,25 +92,27 @@ case $MODE in
         if [ $2 ] ; then
             SNAPURI=$2;
             PHPSNAPFILE="`echo $SNAPURI | sed 's#.*/##'`"
-        else
+        elif [ "$USE_BZ2" = "NO" ] ; then 
+            PHPSNAPFILE="$PHPSNAPFILEPREFIX"".gz"
             SNAPURI=$PHPSNAPSERVER/$PHPSNAPFILE
-        fi    
-        
-        if [ 'echo $PHPSNAPFILE | sed 's/http:\/\/.*//g'' = "" ] ; then
+        else
+            PHPSNAPFILE="$PHPSNAPFILEPREFIX"".bz2"
+            SNAPURI=$PHPSNAPSERVER/$PHPSNAPFILE
+        fi
+
+        if [ -s "$PHPSNAPFILE" ] ; then
             cp $PHPSNAPFILE "$DISTFILESDIR"
-        
-        fi
-        
-        if [ "`which fetch` " != " " ] ; then
-            FETCHCMD="fetch -m -o \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
-        elif [ "`which wget` " != " " ] ; then
-            FETCHCMD="wget -O \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
-        fi    
-        
-        if  ! [ -s "$DISTFILESDIR/$PHPSNAPFILE" ] ; then 
-            echo "$PHPSNAPFILE does not seem to exist in $DISTFILESDIR, downloading..."
-            $FETCHCMD
-        fi
+        else
+            if [ -x "`which fetch`" ] ; then
+                FETCHCMD="fetch -m -o \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
+            elif [ -x "`which wget`"] ; then
+                FETCHCMD="wget -O \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
+            fi    
+            if  ! [ -s "$DISTFILESDIR/$PHPSNAPFILE" ] ; then 
+                echo "$PHPSNAPFILE does not seem to exist in $DISTFILESDIR, downloading..."
+                $FETCHCMD
+            fi
+	fi
         echo "Extracting source package..."
 
     # see if we have gzip or bzip2
@@ -136,18 +135,23 @@ case $MODE in
     ;;
 
     cvs)
-        if [ ! `grep -c cvsread@cvs.php.net ~/.cvspass` -gt 0 ] ; then
+;;
+lala)
+
+
+        if ! [ -f ~/.cvspass ] || [ `grep -c cvsread@cvs.php.net ~/.cvspass` -lt 1 ] ; then
             echo $PHPCVSSERVER $PHPCVSPASS>> ~/.cvspass
         fi 
-        cd "$DISTFILESDIR/$MODE"
+        cd "$DISTFILESDIR/$MODE" || `echo "can't cd to $DISTFILESDIR/$MODE" && exit 1`
+
                 cvs -d $PHPCVSSERVER co php4
                     cd php4
-                        if [ $TRY_ZE2 = "NO" ] ; then
+                        if [ "$TRY_ZE2" = "NO" ] ; then
                 # do nothing - it's a "symlink" cvs -d $PHPCVSSERVER co Zend TSRM
                          else
-                            cvs -d $PHPCVSSERVER co -d Zend ZendEngine2 TSRM
+                            cvs -z3 -d $PHPCVSSERVER co -d Zend ZendEngine2 TSRM
                         fi 
-            # cpio: command not found
+                        # cpio: command not found
                         # find . | cpio -pdm "$WRKDIR/php4-$MODE"
             tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
                     cd ../../..
@@ -155,9 +159,9 @@ case $MODE in
     ;;
     
     local)
-        if [ ! -z "$2" ] ; then
+        if [ -n "$2" ] ; then
             cd $2
-        tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
+            tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
         else
             echo "No local Path supplied"    
             exit 1
@@ -166,7 +170,7 @@ case $MODE in
 esac    
 
 # Get configure options
-if [ -d "$ETCDIR" ] ; then
+if [ -f "$ETCDIR/configure-options" ] ; then
     for option in `cat $ETCDIR/configure-options` ; do
         options="$options $option"
     done    
@@ -178,13 +182,12 @@ fi
 # Install dependencies (Libraries) locally
   
 # Configure PHP
-cd "$WRKDIR/php4-$MODE"
-if [ ! -s ./configure ] ; then
-    ./cvsclean
-    ./buildconf
+if [ ! -s $WRKDIR/php4-$MODE./configure ] ; then
+    $WRKDIR/php4-$MODE./cvsclean ||  `echo "cvsclean failed" && exit 1`
+    $WRKDIR/php4-$MODE./buildconf ||  `echo "buildconf failed" && exit 1`
 fi
-config="./configure $options";
-$config
+./configure $options
+
 # Clean
 $MAKE clean
 if [ $? -gt 0 ]; then
@@ -199,8 +202,7 @@ $MAKE 2>error.log
 cat error.log | mail -s "PHP Compile Report" $USER
 
 # Running testcases against the environment
-NO_INTERACTION=1
-export NO_INTERACTION
+export NO_INTERACTION=1
 $MAKE test | mail -s "PHP Test Report" $USER
 
 # vim600: et ts=4 sw=4
