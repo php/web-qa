@@ -15,7 +15,7 @@
       <tr>
         <td align="right" valign="top" colspan="2">
           &gt; &gt; &gt;
-          <a href="index.php#news">News</a> |
+          <a href="index.php">Home</a> |
           <a href="goals.php">Projects and Goals</a> |
           <a href="resources.php">Links &amp; Resources</a> |
           <a href="members.php">Members</a> |

@@ -42,14 +42,14 @@
 <h3>Links &amp; Resources</h3>
 <p>
 	(<a href="resources.php">View Links &amp; Resources</a>)<br />
-	Visit the PHP/QAT Links &amp; Resources page.	We have
+	Visit the PHP|QAT Links &amp; Resources page.	We have
 	links to web based resources for ...
 </p>
 
 <h3>Members</h3>
 <p>
 	(<a href="members.php">View Members</a>)<br />
-	View the PHP/QAT Member register.
+	View the PHP|QAT Member register.
 </p>
 
 <h3>How To Help</h3>
