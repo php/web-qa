@@ -22,14 +22,9 @@ to this question so that we can efficiently process the results. Please note
 that this script also uploads php -i output so your hostname may be
 transmitted.
 </p>
-<p>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-</p>
+		</td>
+	</tr>
+</table>
 <?php
 common_footer();
 ?>
