@@ -238,6 +238,7 @@ for ($x=0; $x < count($member_list); $x++) {
 				  <?php
 				  	// BEGIN platform
 				 	for ($y=0; $y < count ($member_list[$x]["platform"]); $y++) {
+				 		if (strcmp($member_list[$x]["platform"][$y],"empty")==0) continue;
 				  ?>
                   <li class="lihack">platform <?= ($y+1).": ".$member_list[$x]["platform"][$y]; ?></li>
                   <?php
