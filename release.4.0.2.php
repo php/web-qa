@@ -43,6 +43,12 @@ Testers for upcoming PHP 4.0.2 release
      - Mandrake 7
      - Windows 95,98,2000
 
+<b>Joey Smith</b> (<a href="mailto:joey@php.net">joey@php.net</a>)<br />
+    Build and Test
+     - Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql,
+       PDFLib, GD, DOM/XML/expat, IMAP<br />
+     - Solaris 2.6 - modules as platform 1<br /><br />
+
 <b>waldschrott</b> (<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>)
     Build and Test
      - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD
