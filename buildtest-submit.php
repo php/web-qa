@@ -34,6 +34,7 @@ Where you have specified "other" for any category, please enter what it is in th
 <tr>
 	<th>Testcase:</th>
 	<td>
+		(see <a href="http://qa.php.net/testcases-4.2.0.php">here</a>)<br />
 		<select name="testcase">
 			<option value="0">no testcase</option>
 			<option value="b1">b1: Building with CLI</option>
@@ -116,6 +117,7 @@ Where you have specified "other" for any category, please enter what it is in th
 <tr>
 	<th>Automake version</th>
 	<td>
+		Use 'automake --version' to show it<br />
 		<select name="automake">
 			<option value="14">1.4</option>
 			<option value="15">1.5</option>
@@ -127,6 +129,7 @@ Where you have specified "other" for any category, please enter what it is in th
 <tr>
 	<th>Autoconf version</th>
 	<td>
+		Use 'autoconf --version' to show it<br />
 		<select name="autoconf">
 			<option value="213">2.13</option>
 			<option value="252" selected="yes">2.52</option>
@@ -138,6 +141,7 @@ Where you have specified "other" for any category, please enter what it is in th
 <tr>
 	<th>Libtool version</th>
 	<td>
+		Use 'libtool --version' to show it<br />
 		<select name="libtool">
 			<option value="134">1.3.4</option>
 			<option value="135">1.3.5</option>
@@ -297,7 +301,7 @@ Where you have specified "other" for any category, please enter what it is in th
 </tr>
 <tr>
 	<th>Related bug ids:</th>
-	<td><input type="text" name="name"></td>
+	<td><input type="text" name="bugids"></td>
 </tr>
 <tr>
 	<th>Remarks:</th>
