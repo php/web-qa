@@ -78,10 +78,10 @@ $member_list = array( array("name" => "André Langhorst",
 							
 					  array("name" => "Sebastian Bergmann",
 							"email" => "sebastian@php.net",
-							"focus" => "empty",
-							"skills" => "empty",
-							"plattform" => array("empty",
-												 "empty"
+							"focus" => "Testing Builds",
+							"skills" => "PHP, Java",
+							"plattform" => array("Win32 + Apache2",
+												 "Linux 2.4.xx + Apache2"
 												 )
 							),
 							
