@@ -63,6 +63,11 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Skills: C/C++, Java, PHP, autoconf, MySQL, Adabas, Oracle, and so on...<br />
 		&nbsp;* Focus : fixing bugs, review of config.m4 implementation in different modules<br /><br />
 
+	   <b>Howard Cohodas</b> &lt;<a href="mailto:Howard.Cohodas@dkt.com">Howard.Cohodas@dkt.com</a>&gt;<br />
+		&nbsp;* Skills: PHP, Windows COM, HTML, MySQL, Access(ODBC)<br />
+		&nbsp;* Focus : Test, No Build (PHP, Windows COM, HTML, MySQL, Access(ODBC))<br />
+		&nbsp;* Platform: WinNT4 SP6a build 1381, WebSitePro/2.5.4,  MySQL 3.23.21-beta, PHP 4.0.1pl2 (ISAPI Version) with Zend Optimizer v0.99<br /><br />
+
 		<b>jalal</b> &lt;<a href="mailto:the_jalal@yahoo.com">the_jalal@yahoo.com</a>&gt;<br />
 		&nbsp;* Skills: C++, Java, Perl & PHP<br />
 		&nbsp;* Focus: Closing bugs, Developing automated testing systems<br />
