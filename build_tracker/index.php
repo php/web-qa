@@ -7,19 +7,6 @@
 	$php_version_list 	= 'php_version_list.txt';
 	$sapi_list			= 'sapi_list.txt';
 
-	# Set default values for form fields
- 	$field[os_name] or
-		$field[os_name] = 'Enter OS Name';
-
-	$field[os_version] or
-		$field[os_version] = 'Enter OS Version';
-
-	$field[server_name] or
-		$field[server_name] = 'Enter Server Name';
-
-	$field[server_version] or
-		$field[server_version] = 'Enter Server Version';
-
 ?>
 <html>
 <head>
