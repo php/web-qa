@@ -25,7 +25,7 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.0.3RC1';
+$CURRENT_QA_RELEASE_5 = '5.0.3RC2';
 $RC_FILES_5 = array (
 	array (	
 		'http://snaps.php.net/~andi/',
@@ -36,8 +36,12 @@ $RC_FILES_5 = array (
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
 	array (	
-		'http://downloads.php.net/edink/',
+		'http://snaps.php.net/~andi/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
+	),
+	array (	
+		'http://snaps.php.net/~andi/',
+		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
 );
 
