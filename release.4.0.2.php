@@ -33,7 +33,7 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
 
 <b>Cameron Brunner</b> <a href="mailto:gamr@gattcomp.com.au">gamr@gattcomp.com.au</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
-&nbsp;&nbsp;&nbsp;&nbsp; - FreeBSD 4.0-RELEASE / Apache 1.3.12 / thttpd / MySQL 3.22.32 with GD, IMAP,
+&nbsp;&nbsp;&nbsp;&nbsp; - FreeBSD 4.0-RELEASE / Apache 1.3.12 / thttpd / MySQL 3.23.22 with GD, IMAP,
        and all sorts of other goodies<br /><br />
 
 <b>Derick Rethans</b> <a href="mailto:d.rethans@jdimedia.nl">d.rethans@jdimedia.nl</a><br />

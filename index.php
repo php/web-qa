@@ -36,7 +36,7 @@ PHP/QAT: The PHP Quality Assurance Team
 		</div>
 		<br />
 		The team is currently focused on several areas:<br />
-        <li>Getting ready for the upcoming 4.0.2 Release Candidate (Tentatively scheduled for release somewhere between August 6th and 13th)<br />
+        <li>Testing the 4.0.2 Release Candidate<br />
         <li>Developing a test suite for PHP releases<br />
         <li>Reworking areas of the bug reporting process.<br />
         <li>Processing the open bug reports from the official PHP 4 bug list ( <a href="http://bugs.php.net">http://bugs.php.net</a> ).<br /><br />
@@ -47,10 +47,10 @@ PHP/QAT: The PHP Quality Assurance Team
 		<b><a name="news">News</a></b>
 		<hr size="3" />
 		<font size="3">
+		<li>( August 17, 2000 ) New Win32 Binaries available at <a href="http://www.php4win.de/">http://www.php4win.de</a></li>
 		<li>( August 11, 2000 ) 4.0.2 RC now available via CVS.  Win32 binaries should be ready soon.</li>
 		<li>( August 9, 2000 ) Zend engine patch for 4.0.2 ready - 4.0.2 RC expected soon</li>
 		<li>( August 5, 2000 ) Release date for 4.0.2 Release Candidate pushed back 1 week</li>
-		<li>( August 3, 2000 ) Tentative release date of August 6 for 4.0.2 Release Candidate announced</li>
 		</font>
 		<br /><br /><br />
 
