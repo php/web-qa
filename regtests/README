@@ -35,7 +35,7 @@ __File Naming Convention__
 All scripts must end in .php
 All pre and post scripts should end in .php
 All ideal output files must end in .out
-
+If a test script is based on a bug, use the number of the bug for the script name.
 
 
 __How it works__
