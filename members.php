@@ -136,7 +136,17 @@ $member_list = array(
 		"skills" => "PHP, Java",
 		"platform" => array("Win32 + Apache2", "Linux 2.4.xx + Apache2")
 	),
-
+    array(
+        "name" => "Sebastian Nohn",
+        "email" => "sebastian@nohn.net",
+        "focus" => "Testing snapshots, QA RCs",
+        "skills" => "PHP, SQL, HTML, JavaScript",
+        "platform" => array(
+                        "SuSE Linux 7.3 on AMD Duron (Apache 1.3.x, CLI | mySQL, GD, LDAP, IMAP, WDDX, FTP, mnoGoSearch, Ming, PDFlib)",
+                        "Compaq Tru64 on Alpha (Apache 1.3.x, CLI | EXIF, WDDX, FTP, OCI8, mySQL)",
+                        "Solaris 7 on UltraSparc (Apache 1.3.x, CLI | EXIF, WDDX, FTP, GD, OCI8)"
+                        )
+    ),
 	array(
 		"name" => "Yasuo Ohgaki",
 		"email" => "yohgaki@php.net",
