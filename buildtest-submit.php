@@ -28,7 +28,9 @@ Where you have specified "other" for any category, please enter what it is in th
 		<select name="package">
 			<option value="4.2.0-dev">4.2.0-dev (DON'T USE CVS, download RC2)</option>
 			<option value="4.2.0-RC1">4.2.0-RC1</option>
-			<option value="4.2.0-RC2" selected="yes">4.2.0-RC2</option>
+			<option value="4.2.0-RC2">4.2.0-RC2</option>
+			<option value="4.2.0-RC3">4.2.0-RC3</option>
+			<option value="4.2.0-RC4" selected="yes">4.2.0-RC4</option>
 		</select>
 	</td>
 </tr>
@@ -103,11 +105,12 @@ Where you have specified "other" for any category, please enter what it is in th
 			<option value="cgi">CGI</option>
 			<option value="Apache 1.3.x DSO">Apache 1.3.x Module (DSO)</option>
 			<option value="Apache 1.3.x Static">Apache 1.3.x Module (static)</option>
-			<option value="Apache 2.x DSO">Apache 2.x Module (DSO) DOES NOT WORK WITH RC2, please do not report this, try the latest PHP CVS instead</option>
+			<option value="Apache 2.x DSO">Apache 2.x Module (DSO) [see note]</option>
 			<option value="ISAPI">ISAPI</option>
 			<option value="FastCGI">Fast CGI</option>
 			<option value="Other">other</option>
 		</select>
+	note, the Apache 2.x Module (DSO) <b>DOES NOT WORK</b> with PHP Versions <= RC2. Please use latest CVS.
 	</td>
 </tr>
 </table>
@@ -120,9 +123,9 @@ Where you have specified "other" for any category, please enter what it is in th
 	<td>
 		Use 'automake --version' to show it<br />
 		<select name="automake">
-			<option value="14">1.4</option>
-			<option value="15">1.5</option>
-			<option value="16">1.6</option>
+			<option value="1.4">1.4</option>
+			<option value="1.5">1.5</option>
+			<option value="1.6">1.6</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -132,9 +135,9 @@ Where you have specified "other" for any category, please enter what it is in th
 	<td>
 		Use 'autoconf --version' to show it<br />
 		<select name="autoconf">
-			<option value="213">2.13</option>
-			<option value="252" selected="yes">2.52</option>
-			<option value="253">2.53</option>
+			<option value="2.1.3">2.13</option>
+			<option value="2.5.2" selected="yes">2.52</option>
+			<option value="2.5.3">2.53</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -144,11 +147,11 @@ Where you have specified "other" for any category, please enter what it is in th
 	<td>
 		Use 'libtool --version' to show it<br />
 		<select name="libtool">
-			<option value="134">1.3.4</option>
-			<option value="135">1.3.5</option>
-			<option value="140" selected="yes">1.4</option>
-			<option value="141">1.4.1</option>
-			<option value="142">1.4.2</option>
+			<option value="1.3.4">1.3.4</option>
+			<option value="1.3.5">1.3.5</option>
+			<option value="1.4.0" selected="yes">1.4</option>
+			<option value="1.4.1">1.4.1</option>
+			<option value="1.4.2">1.4.2</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -157,10 +160,10 @@ Where you have specified "other" for any category, please enter what it is in th
 	<th>Bison version</th>
 	<td>
 		<select name="bison">
-			<option value="128">1.28</option>
-			<option value="129">1.29</option>
-			<option value="130">1.30</option>
-			<option value="132">1.32</option>
+			<option value="1.2.8">1.28</option>
+			<option value="1.2.9">1.29</option>
+			<option value="1.3.0">1.30</option>
+			<option value="1.3.2">1.32</option>
 			<option value="other">other</option>
 		</select>
 	</td>
