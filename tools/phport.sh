@@ -15,20 +15,19 @@
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.6 2002-11-10 20:08:53 jan Exp $
+# $Id: phport.sh,v 1.7 2002-11-10 20:54:22 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
 
-
-
-# Variable Deklaration
+# Variable declaration
 USE_BZ2=NO
 TRY_ZE2=NO
 
-DISTFILES=distfiles
-WRKDIR=work
-ETCDIR=etc
+PREFIX="/tmp"
+DISTFILES="$PREFIX/distfiles"
+WRKDIR="$PREFIX/work"
+ETCDIR="$PREFIX/etc"
 PHPSNAPSERVER=http://snaps.php.net/
 PHPPSERVER=':pserver:cvsread@cvs.php.net:/repository'
 PHPCVSPASS='A:c:E?'
@@ -188,8 +187,9 @@ $config
 make 2>error.log
 # Install PHP locally
 
+# Mail the compile-errors & warnings...
 cat error.log | mail -s "PHP Compile Report" $USER
 
 # Running testcases against the environment
 export NO_INTERACTION=1
-NO_INTERACTION=1 make test | mail -s "PHP Test Report" $USER
+make test | mail -s "PHP Test Report" $USER
