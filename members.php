@@ -190,12 +190,15 @@ sysvsem, sysvshm, wddx, zlib</li>
         <ul>
           <li>Skills: C/C++, Java, PHP</li>
           <li>Focus: Release candidates testing, some bug fixing</li>
-          <li>Platform: Solaris 7 x86, Apache 1.3.12 [Russian], Oracle7, Mysql, SysV shared mem + semaphores.</li>
+          <li>Platform: Sun Solaris 7 x86, Apache/1.3.14 (Unix) rus/PL30.0</li>
+          <li>Modules: Oracle 7.3.2, Mysql 3.23.27-beta, SysV semaphores & shared memory,
+            GD 1.8.3 + Jpeg + Freetype 1.3.1, Zlib 1.1.3</li>
+          <li>Compiler: gcc 2.95.2</li>
         </ul>
       </li>
     </ul>
 
-        <ul>
+    <ul>
       <li><b>Richard Lynch</b> &lt;<a href="mailto:richard@zend.com">richard@zend.com</a>&gt;
         <ul>
           <li>Skills: PHP, Lisp and others I refuse to name for fear of head-hunters</li>
