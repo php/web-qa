@@ -28,28 +28,10 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 		</font>
 		</div>
 		<blockquote>
-Here is a list of all of the currently open bug reports for PHP 4. (scroll down the page to see the reports)<br /><br />
-The reports have been grouped into 23 packages of about 30 reports each. The bugs reports in these packages are not related or grouped. The packages are simply there so that we can each grab a distinct group of reports and clear as many bugs out from it as possible - without accidentally working on the same bug report at the same time.<br /><br />
 
-If you wish to grab a package of bugs to work on, please send a message to the PHP/QA mailing list <a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>.<br /><br />
-The message should have a subject of:<br />
-&nbsp;&nbsp;&nbsp;PHP 4 Bug Package 1 (or whatever package you want to work on)<br /><br />
+All of the bug packs have now been reviewed. Thank you to everyone who grabbed a bug pack!<br />
 
-<b>Let the list know:</b><br />
-Your name.<br />
-Your email address.<br />
-When you are going to start working on the package<br />
-and when you hope to be finished.<br /><br />
-
-One of the list members will put your name next to the package that you are working on so that someone else does not start work on the same package.<br /><br />
-
-Don't worry about closing every bug in the package - just close or update what you can and move on.  <br /><br />
-
-Please let the php-qa list know what bugs you have closed or updated - or - if you do not have CVS access, what bugs you think can be closed or updated.<br /><br />
-
-If you have any questions, please send them to the list.<br /><br />
-
-Thank you and good luck!<br /><br />
+When the next course of action has been determined, it will be posted on this page.<br /><br />
 
 <s>Group 1</s><br />
 <s>Group 2</s><br />
@@ -66,10 +48,10 @@ Thank you and good luck!<br /><br />
 <s>Group 13</s><br />
 <s>Group 14</s><br />
 <s>Group 15</s> waldschrott (waldschrott@waldschrott.de)<br />
-<a href="#group16">Group 16</a> waldschrott (waldschrott@waldschrott.de)<br />
-<a href="#group17">Group 17</a> waldschrott (waldschrott@waldschrott.de)<br />
-<a href="#group18">Group 18</a> waldschrott (waldschrott@waldschrott.de)<br />
-<a href="#group19">Group 19</a> waldschrott (waldschrott@waldschrott.de)<br />
+<s><a href="#group16">Group 16</a></s> waldschrott (waldschrott@waldschrott.de)<br />
+<s><a href="#group17">Group 17</a></s> waldschrott (waldschrott@waldschrott.de)<br />
+<s>Group 18</s><br />
+<s>Group 19</s><br />
 <s>Group 20</s><br />
 <s>Group 21</s><br />
 <s>Group 22</s><br />
