@@ -126,7 +126,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 3: RedHat 6.2 + Apache + MySQL + PHP4<br />
 		&nbsp;* Platform 4: OpenBSD 2.7 + Apache + MySQL + PHP4<br />
 		&nbsp;* Platform 5: Windows 98 + Apache + PHP 4<br />
-		&nbsp;* Platform 6: Windows 2000 + Apache + PHP 4<br />
+		&nbsp;* Platform 6: Windows 2000 + Apache + OmniHTTPd + Xitami + IIS (w/ CGI) + PHP 4<br />
 		&nbsp;* Platform 7: Windows NT + IIS + PHP 4<br /><br />
 
 		<? include ('inc/footer.txt') ?>
