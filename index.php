@@ -22,7 +22,7 @@ common_header();
             <p>The team is currently focused on:</p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the <a href="http://qa.php.net/~andrei/php-4.3.0pre1.tar.bz2">PHP 4.3.0pre1</a> release.</span><br />
+                <span class="lihack">Providing QA for the <a href="http://www.php.net/~andrei/php-4.3.0pre1.tar.bz2">PHP 4.3.0pre1</a> release.</span><br />
             </ul>
             <p>
                 You can help use by filling in this form:<br />
