@@ -5,20 +5,20 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = '4.3.3RC1';
+$CURRENT_QA_RELEASE = '4.3.3RC2';
 $RELEASE_PROCESS = TRUE;
 
 $RC_FILES = array (
 	array (	
-		'http://downloads.php.net/jani/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE}.tar.bz2",
 	),
 	array (	
-		'http://downloads.php.net/jani/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE}.tar.gz",
 	),
 	array (	
-		'http://downloads.php.net/jani/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE}-Win32.zip",
 	),
 );
