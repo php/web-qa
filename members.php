@@ -2,172 +2,175 @@
 include("include/functions.php");
 
 $TITLE = "Member List [PHP-QAT: Quality Assurance Team]";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>/* $Id$ */";
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
+/* $Id$ */";
 
 $member_list = array(
-					  array("name" => "André Langhorst",
-							"email" => "andre@php.net",
-							"focus" => "QA for RCs and QA in general",
-							"skills" => "preparing sushi, C/C++, PHP, Java, XML, XSLT...",
-							"platform" => array("FreeBSD4.4","Debian Woody","W2K (sometimes)","- modules and SAPIs varying")
-							),
+	array("name" => "André Langhorst",
+		"email" => "andre@php.net",
+		"focus" => "QA for RCs and QA in general",
+		"skills" => "preparing sushi, C/C++, PHP, Java, XML, XSLT...",
+		"platform" => array("FreeBSD4.4","Debian Woody","W2K (sometimes)","- modules and SAPIs varying")
+	),
 
-					  array(
-							"name" => "Derick Rethans",
-							"email" => "derick@php.net",
-							"focus" => "Guarding release process",
-							"skills" => "C, PHP (yes, really), DB Design... and much much more",
-							"platform" => array(
-												"1. Redhat Linux 7.1 - Apache static module - gd, ttf, mysql, pdflib, ftp, srm, mcrypt, ctype, gmp, ldap, ncurses, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
-												"2. Redhat Linux 7.1 - CGI/CLI - gd, ttf, mysql, pdflib, ftp, zip, srm, mcrypt, ctype, gmp, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
-												"3. FreeBSD 4.4 stable - Apache static module - mysql, mcrypt, gd, wddx",
-												"4. FreeBSD 4.4 stable - CGI/CLI - mysql, mcrypt, gd, wddx",
-												"5. SunOS 5.8/i386 - Apache static module - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
-												"6. SunOS 5.8/i386 - CGI/CLI - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
-												"7. OpenBSD 2.8 - Apache static module - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib",
-												"8. OpenBSD 2.8 - CGI/CLI - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib"
-												)
-),
+	array(
+		"name" => "Derick Rethans",
+		"email" => "derick@php.net",
+		"focus" => "Guarding release process",
+		"skills" => "C, PHP (yes, really), DB Design... and much much more",
+		"platform" => array(
+			"Redhat Linux 7.1 - Apache static module - gd, ttf, mysql, pdflib, ftp, srm, mcrypt, ctype, gmp, ldap, ncurses, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
+			"Redhat Linux 7.1 - CGI/CLI - gd, ttf, mysql, pdflib, ftp, zip, srm, mcrypt, ctype, gmp, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
+			"FreeBSD 4.4 stable - Apache static module - mysql, mcrypt, gd, wddx",
+			"FreeBSD 4.4 stable - CGI/CLI - mysql, mcrypt, gd, wddx",
+			"SunOS 5.8/i386 - Apache static module - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
+			"SunOS 5.8/i386 - CGI/CLI - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
+			"OpenBSD 2.8 - Apache static module - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib",
+			"OpenBSD 2.8 - CGI/CLI - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib"
+		)
+	),
 
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "hellekin@php.net",
-							"focus" => "Testing RC builds",
-							"skills" => "PHP",
-							"platform" => array("Debian GNU/Linux SID + Apache 1.3.20",
-									     "empty"
-									     )
-							),
+	array(
+		"name" => "Hellekin O. Wolf",
+		"email" => "hellekin@php.net",
+		"focus" => "Testing RC builds",
+		"skills" => "PHP",
+		"platform" => array("Debian GNU/Linux SID + Apache 1.3.20")
+	),
 
-					  array("name" => "James Moore",
-							"email" => "jmoore@php.net",
-							"focus" => "Windows Performance and Bugs, Release Testing",
-							"skills" => "C/C++, PHP, Java, XML, XSLT .......",
-							"platform" => array("Windows 2000 Professional",
-												"Linux Redhat", "BeOS (Newbie)")),
+	array(
+		"name" => "James Moore",
+		"email" => "jmoore@php.net",
+		"focus" => "Windows Performance and Bugs, Release Testing",
+		"skills" => "C/C++, PHP, Java, XML, XSLT .......",
+		"platform" => array("Windows 2000 Professional", "Linux Redhat", "BeOS (Newbie)")
+	),
 
-					  array("name" => "Jan Lehnardt",
-							"email" => "jan@php.net",
-							"focus" => "Documentation, PEAR, Databases",
-							"skills" => "PHP, (My)SQL, some C, PASCAL (hooray ;), Unix Administration",
-							"platform" => array("FreeBSD 4.2-STABLE")
-							),
+	array(
+		"name" => "Jan Lehnardt",
+		"email" => "jan@php.net",
+		"focus" => "Documentation, PEAR, Databases",
+		"skills" => "PHP, (My)SQL, some C, PASCAL (hooray ;), Unix Administration",
+		"platform" => array("FreeBSD 4.2-STABLE")
+	),
 
-					  array("name" => "Jani Taskinen",
-							"email" => "sniper@php.net",
-							"focus" => "Bug Hunting",
-							"skills" => "Kossu Fu",
-							"platform" => array()
-							),
+	array(
+		"name" => "Jani Taskinen",
+		"email" => "sniper@php.net",
+		"focus" => "Bug Hunting",
+		"skills" => "Kossu Fu",
+		"platform" => array()
+	),
 
-					  array("name" => "Joey Smith",
-							"email" => "joey@php.net",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
-							),
+	array(
+		"name" => "Joey Smith",
+		"email" => "joey@php.net",
+		"focus" => "empty",
+		"skills" => "empty",
+		"platform" => array()
+	),
 
-					  array("name" => "Karl Austin",
-							"email" => "karl@karl.uk.co",
-							"focus" => "Testing",
-							"skills" => "Design, Programming, Hosting",
-							"platform" => array("RH 7.1 2.4.14",
-												"RH 7.1 2.4.10",
-												"WinXP Pro"
-												)
-					  ),
+	array(
+		"name" => "Karl Austin",
+		"email" => "karl@karl.co.uk",
+		"focus" => "Testing",
+		"skills" => "Design, Programming, Hosting",
+		"platform" => array("RH 7.1 2.4.14", "RH 7.1 2.4.10", "WinXP Pro")
+	),
 					  
-					  array("name" => "Lars Torben Wilson",
-							"email" => "torben@php.net",
-							"focus" => "Documentation",
-							"skills" => "PHP, XML, XSLT",
-							"platform" => array("Linux Debian testing/unstable")),
+	array(
+		"name" => "Lars Torben Wilson",
+		"email" => "torben@php.net",
+		"focus" => "Documentation",
+		"skills" => "PHP, XML, XSLT",
+		"platform" => array("Linux Debian testing/unstable")
+	),
 					  
-					  array("name" => "Marco Kaiser",
-							"email" => "bate@php.net",
-							"focus" => "Testing Builds / PHP-QAT Website",
-							"skills" => "PHP, C++, Perl, HTML, Javascript, Photoshop",
-							"platform" => array("FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
-									     "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
-									     )
-							),
+	array(
+		"name" => "Marco Kaiser",
+		"email" => "bate@php.net",
+		"focus" => "Testing Builds / PHP-QAT Website",
+		"skills" => "PHP, C++, Perl, HTML, Javascript, Photoshop",
+		"platform" => array(
+					"FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
+					"SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
+				   )
+	),
 							
-					  array("name" => "Olivier Cahagne",
-							"email" => "olivier.cahagne@epita.fr",
-							"focus" => "Testing builds",
-							"skills" => "PHP",
-							"platform" => array("NetBSD 1.5 + Apache 1.3 + suEXEC",
-									     "Win2k + Apache 1.3 + IIS"
-									     )
-							),
+	array(
+		"name" => "Olivier Cahagne",
+		"email" => "olivier.cahagne@epita.fr",
+		"focus" => "Testing builds",
+		"skills" => "PHP",
+		"platform" => array("NetBSD 1.5 + Apache 1.3 + suEXEC", "Win2k + Apache 1.3 + IIS")
+	),
 
-					  array("name" => "Phil Driscoll",
-							"email" => "phil@dialsolutions.co.uk",
-							"focus" => "Windows installer",
-							"skills" => "Competent C programmer, Linux newbie",
-							"platform" => array("SuSE Linux on various x86 platforms",
-							"Occasional access to NT4")),
+	array(
+		"name" => "Phil Driscoll",
+		"email" => "phil@dialsolutions.co.uk",
+		"focus" => "Windows installer",
+		"skills" => "Competent C programmer, Linux newbie",
+		"platform" => array("SuSE Linux on various x86 platforms", "Occasional access to NT4")
+	),
 
-					  array("name" => "Richard Lynch",
-							"email" => "ceo@l-i-e.com",
-							"focus" => "Kibbitzing",
-							"skills" => "Patience with newbies",
-							"platform" => array("The less I have to pretend to be an IT Admin, the better.",
-												"RedHat",
-												"Windows",
-												"Mandrake"
-												)
-							),
+	array(
+		"name" => "Richard Lynch",
+		"email" => "ceo@l-i-e.com",
+		"focus" => "Kibbitzing",
+		"skills" => "Patience with newbies",
+		"platform" => array("The less I have to pretend to be an IT Admin, the better.","RedHat","Windows","Mandrake")
+	),
 
-					  array("name" => "Sebastian Bergmann",
-							"email" => "sebastian@php.net",
-							"focus" => "Testing Builds",
-							"skills" => "PHP, Java",
-							"platform" => array("Win32 + Apache2",
-									     "Linux 2.4.xx + Apache2"
-									     )
-							),
+	array(
+		"name" => "Sebastian Bergmann",
+		"email" => "sebastian@php.net",
+		"focus" => "Testing Builds",
+		"skills" => "PHP, Java",
+		"platform" => array("Win32 + Apache2", "Linux 2.4.xx + Apache2")
+	),
 
-					  array("name" => "Yasuo Ohgaki",
-							"email" => "yohgaki@php.net",
-							"focus" => "QA, Maintain PostgreSQL Module",
-							"skills" => "Some skills that are useful",
-							"platform" => array("Linux + Apache basically"
-									     )
-							),
+	array(
+		"name" => "Yasuo Ohgaki",
+		"email" => "yohgaki@php.net",
+		"focus" => "QA, Maintain PostgreSQL Module",
+		"skills" => "Some skills that are useful",
+		"platform" => array("Linux + Apache basically")
+	),
 
-					  array("name" => "Zak Greant",
-							"email" => "zak@php.net",
-							"focus" => "Organizing the PHP QA effort",
-							"skills" => "PHP, HTML, JavaScript",
-							"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres")
-							)
-
- 					);
+	array(
+		"name" => "Zak Greant",
+		"email" => "zak@php.net",
+		"focus" => "Organizing the PHP QA effort",
+		"skills" => "PHP, HTML, JavaScript",
+		"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres")
+	)
+);
 
 $supportmember_list = array(
 
-					  array("name" => "Hartmut Holzgraefe",
-							"email" => "harmut@six.de",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array()
-							)
-					  );		
+			  array(
+				"name" => "Hartmut Holzgraefe",
+				"email" => "harmut@six.de",
+				"focus" => "empty",
+				"skills" => "empty",
+				"platform" => array()
+			   )
+);		
 
-$inactivemember_list = array("Alexander Feldman",
-							 "Andreas Otto",
-							 "Brendan W. McAdams",
-							 "Cameron Brunner ",
-							 "Evan Klein",
-							 "Howard Cohodas",
-							 "Jalal Pushman",
-							 "Kirill Maximov",
-							 "Mårten Gustafson",
-							 "Patrik Bengtsson",
-							 "Rebecca \"Bean\" Visger",
-							 "Shawn Wallace");
+$inactivemember_list = array(
+				"Alexander Feldman",
+				"Andreas Otto",
+				"Brendan W. McAdams",
+				"Cameron Brunner ",
+				"Evan Klein",
+				"Howard Cohodas",
+				"Jalal Pushman",
+				"Kirill Maximov",
+				"Mårten Gustafson",
+				"Patrik Bengtsson",
+				"Rebecca \"Bean\" Visger",
+				"Shawn Wallace"
+);
 
 common_header();
 ?>
