@@ -39,6 +39,13 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		<br />
 
 
+		<li><b><a href="bugs.php">Bug Hunting</a></b></li><br />
+		&nbsp;* analysing/closing existing bug reports at bugs.php.net<br />
+		&nbsp;* analysing new bugs posted on the php-dev list<br />
+		&nbsp;* actively seeking and tracking bugs on available platforms<br />
+		&nbsp;* Monitoring/reviewing information from existing PHP mailing lists<br />
+		<br />
+
 		<li><b><!-- a href="" -->Finish PHP/QAT Website</a></b></li><br />
 		&nbsp;QA Team Roster Application</a></b></li><br />
 		&nbsp; * a simple database application that tracks active QA Team members<br />
@@ -52,13 +59,6 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp; * build simple interface to allow project managers to update goals, status, members, etc... for projects<br />
 		<br />
 
-
-		<li><b><!-- a href="" -->Bug Hunting</a></b></li><br />
-		&nbsp;* analysing/closing existing bug reports at bugs.php.net<br />
-		&nbsp;* analysing new bugs posted on the php-dev list<br />
-		&nbsp;* actively seeking and tracking bugs on available platforms<br />
-		&nbsp;* Monitoring/reviewing information from existing PHP mailing lists<br />
-		<br />
 
 		<li><b><!-- a href="" -->Modify The Bug Database Interface</a></b></li><br />
 		&nbsp;The interface should to:<br />
