@@ -32,6 +32,26 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		<b>PHP/QAT Goals</b>
 		<hr size="1" />
 		<ol>
+		<li><b><!-- a href="" -->Get PHP/QA Team organized</a></b></li><br />
+		&nbsp; * get members to take care of regular tasks<br />
+		&nbsp; * continue work on defining goals, methods and requirements<br />
+		<br />
+
+
+		<li><b><!-- a href="" -->Finish PHP/QAT Website</a></b></li><br />
+		&nbsp;QA Team Roster Application</a></b></li><br />
+		&nbsp; * a simple database application that tracks active QA Team members<br />
+		&nbsp; * team members should be able to administrate their own information<br />
+		&nbsp; * the application should also track available platforms<br /><br />
+		&nbsp;Finish resource and link pages.<br />
+		&nbsp;Finish how to help page <br />
+		&nbsp;archive and condense important threads from the php-qa list a la perl.com<br />
+		&nbsp;Expand projects/goals page<br />
+		&nbsp; * add additional information on projects.<br />
+		&nbsp; * build simple interface to allow project managers to update goals, status, members, etc... for projects<br />
+		<br />
+
+
 		<li><b><!-- a href="" -->Bug Hunting</a></b></li><br />
 		&nbsp;* analysing/closing existing bug reports at bugs.php.net<br />
 		&nbsp;* analysing new bugs posted on the php-dev list<br />
@@ -62,14 +82,6 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* However, all of this would require developer involvement and is probably the least plausible goal! <br />
 		<br />
 
-		<li><b><!-- a href="" -->Finish PHP/QAT Website</a></b></li><br />
-		&nbsp;QA Team Roster Application</a></b></li><br />
-		&nbsp; * a simple database application that tracks active QA Team members<br />
-		&nbsp; * team members should be able to administrate their own information<br />
-		&nbsp; * the application should also track available platforms<br /><br />
-		&nbsp;Finish resource and link pages.<br />
-		&nbsp;Finish how to help page <br />
-		<br />
 		</ol>
 
 
