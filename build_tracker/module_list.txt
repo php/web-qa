@@ -1,45 +1,73 @@
 Apache
-Assert
+Array
+Aspell
 BC Math
-CyberCash
-Win32
-DAV
-DBA
-DBM
+Calendar
+CCVS API
+COM
+Class/Object
+ClibPDF
+cURL
+Cybercash payment
+DB Abstraction Layer
+Date and Time
 dBase
-FDF
-FilePro
+DBM
+Directory
+DOM XML
+Error Handling & Logging
+filePro
+Filesystem
+Forms Data Format
 FTP
-GD imaging
-GetText
-HyperWave
-IMAP
+Function Handling
+GNU Gettext
+HTTP
+Hyperwave
+ICAP
+Image
+IMAP, POP3 & NNTP
 Informix
-Java
 InterBase
 LDAP
+Mail
+Mathematical
 MCAL
-mcrypt
-mhash
-MS SQL
+Mcrypt Encryption
+Mhash
+Microsoft SQL Server
+Miscellaneous
 mSQL
 MySQL
-OCI8
-ODBC
+Network
+Unified ODBC
+Oracle 8
 Oracle
-Perl Compatible Regex
+Output Control
 PDF
-Posix
+Verisign Payflow Pro
+PHP options & information
+POSIX
 PostgreSQL
-Readline
-Recode
-Sessions
+Program Execution
+Pspell
+GNU Readline
+GNU Recode
+Regex (Perl-Compatible)
+Regex (POSIX Extended)
+Satellite CORBA
+Semaphore & Shared Memory
+Session handling
+Shockwave Flash
 SNMP
-SWF
+Socket
+String
 Sybase
-System V Shared Memory
-System V Semaphores
+URL
+Variable
+Vmailmgr
 WDDX
-XML
-Yellow Pages
+XML parser
+YAZ
+YP/NIS
 Zlib
