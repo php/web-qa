@@ -2,8 +2,8 @@
 include("include/functions.php");
 
 $TITLE = "Submit Build Test [PHP-QAT: Quality Assurance Team]";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
-/* $Id$ */";
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME));
+/* $Id$ */
 
 common_header();
 ?>
@@ -11,7 +11,7 @@ common_header();
         <tr> 
           <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
           <td width="100%">
-<h2>Test framework tests</h2>
+<h1>Test framework tests</h1>
 <p>
 Please run the tests from our test framework. You can do this by typing
 <code>make test</code> after you compiled PHP with <code>make</code>. You

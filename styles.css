@@ -1,8 +1,25 @@
-body, ul, td, th { 
+body, ul, th, p, dd, dt { 
 	font-family: Arial, Helvetica, sans-serif; 
 	font-size: 11pt;
 	text-decoration: none; 
 	color: #000000 
+}
+
+dt {
+	font-weight: bold;
+	color: #FF9900; 
+}
+
+dd {
+	margin-bottom: 11px;
+}
+
+ul {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 11pt;
+	text-decoration: none; 
+	color: #000000;
+	padding-bottom: 6pt; 
 }
 
 input.small { 
@@ -15,6 +32,7 @@ h1 {
 	font-size: 18px; 
 	font-style: italic; 
 	font-weight: bold;
+	padding-bottom: 18px;
 }
 
 h2 { 
@@ -30,6 +48,7 @@ h3 {
 	text-decoration: none; 
 	font-size: 14px; 
 	font-weight: bold;
+	padding-bottom: 7px; 
 }
 
 h4 { 

@@ -64,8 +64,7 @@ common_header();
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%"> 
-            <h3><a class="h3_link" href="http://bugs.php.net" target="_blank">Bug 
-              Hunting</a></h3>
+            <h3>Bug Hunting</h3>
           </td>
           <td width="10">&nbsp;</td>
         </tr>
@@ -73,42 +72,10 @@ common_header();
           <td width="10">&nbsp;</td>
           <td width="100%"> 
             <ul>
-              <li><span class="lihack">analysing/closing existing bug reports at bugs.php.net </span></li>
+              <li><span class="lihack"><a href="handling-bugs.php">analysing/closing existing bug reports</a> at bugs.php.net </span></li>
               <li><span class="lihack">analysing new bugs posted on the php-dev list </span></li>
               <li><span class="lihack">actively seeking and tracking bugs on available platforms </span></li>
               <li><span class="lihack">monitoring/reviewing information from existing PHP mailing lists</span></li>
-            </ul>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%"> 
-            <h1>Finish PHP-QAT Website</h1>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%"> 
-            <h3>QA Team Roster Application</h3>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%"> 
-            <ul>
-              <li><span class="lihack">Finish how to help page </span></li>
-              <li><span class="lihack">Archive and condense important threads from the php-qa list 
-                &agrave; la perl.com</span></li>
-              <li><span class="lihack">Expand projects/goals page: 
-                <ul>
-                  <li>add additional information on projects. </li>
-                  <li>build simple interface to allow project managers to update 
-                    goals, status, members, etc... for projects</li>
-                </ul>
-              </span></li>
             </ul>
           </td>
           <td width="10">&nbsp;</td>

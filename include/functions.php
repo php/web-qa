@@ -11,29 +11,29 @@ function common_header() {
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
- <title><?= $GLOBALS["TITLE"]; ?></title>
+ <title><?php echo $GLOBALS["TITLE"]; ?></title>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
  <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
 <body bgcolor="#ffffff" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" height="102">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td bgcolor="#ffcc66"><img src="gfx/spacer.gif" width="5" height="1">
 	<a href="http://qa.php.net/"><img src="gfx/logo_qa.jpg" width="111" height="58" border="0"></a></td>
     <td bgcolor="#ffcc66" align="right" valign="bottom"> 
       <table border="0" cellspacing="0" cellpadding="0" height="70">
         <tr> 
-          <td align="right" valign="top" class="headline_white"><?= date("l, F d, Y", time()); ?></td>
+          <td align="right" valign="top" class="headline_white"><?php echo date("l, F d, Y"); ?></td>
           <td align="right" valign="top" class="headline_white"><img src="gfx/spacer.gif" width="5" height="1"></td>
         </tr>
         <tr> 
           <td valign="bottom" align="right"><a href="/" class="head_links">Home</a> 
             | <a href="projects.php" class="head_links">Projects and Goals</a> 
-            | <a href="links.php" class="head_links">Links &amp; Resources</a> 
-            | <a href="members.php" class="head_links">Members</a>
-            | <a href="howtohelp.php" class="head_links">How to help</a>
+            | <a href="howtohelp.php" class="head_links">How to Help</a>
+            | <a href="stats.php" class="head_links">Statistics</a>
+            | <a href="handling-bugs.php" class="head_links">Handling Bug Reports</a>
             | <a href="running-tests.php" class="head_links">Submit a build test</a>
           </td>
           <td valign="bottom" align="right" class="head_links">&nbsp;</td>
@@ -45,20 +45,14 @@ function common_header() {
     <td colspan="2" bgcolor="#000000" height="1"><img src="gfx/spacer.gif" width="1" height="1" border="0"></td>
   </tr>
   <tr> 
-    <form method="get" action="http://bugs.php.net/search.php" target="_blank">
-      <td colspan="2" bgcolor="#ff9900" align="right" class="head_links"> search 
-        qa for 
-      <input type="hidden" name="cmd" value="display">
-        <input type="text" name="search_for" value="" size="30" class="small">
-        <input type="image" src="gfx/submit.gif" border="0" width="11" height="11" alt="search" align="bottom" name="image">&nbsp;<img src="gfx/spacer.gif" width="3" height="8" border="0"></td>
-    </form>
+      <td colspan="2" bgcolor="#ff9900" align="right" class="head_links">&nbsp;</td>
   </tr>
   <tr>
     <td colspan="2" bgcolor="#000000" height="1"><img src="gfx/spacer.gif" width="1" height="1"></td>
   </tr>
 </table>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="70%">
   <tr>
     <td width="200" bgcolor="#eeeeee" align="center" valign="top"> 
       <table width="95%" border="0" cellspacing="0" cellpadding="0">
@@ -87,39 +81,23 @@ function common_header() {
         </tr>
         <tr> 
           <td class="sidebox"> 
-            <h2>Links &amp; Resources</h2>
-          </td>
-        </tr>
-        <tr> 
-          <td class="sidebox"> 
-            Visit the PHP|QAT <a href="links.php">Links &amp; Resources</a> page. 
-              We have links to web based resources for ...
-          </td>
-         </tr>
-         <tr> 
-          <td class="sidebox"> 
-            <h2>Members</h2>
-          </td>
-        </tr>
-        <tr> 
-          <td class="sidebox"> 
-            View the PHP-QAT <a href="members.php">Member register</a>.
-          </td>
-        </tr>
-        <tr> 
-          <td class="sidebox"> 
             <h2>Contact Information</h2>
           </td>
         </tr>
         <tr> 
           <td class="sidebox"> 
-            
-              <p>Questions about the PHP-QAT should be sent to the <a href="mailto:php-qa@lists.php.net">PHP/QAT 
-                Mailing List</a></p>
-              <p> Bug Reports should be submitted to the official PHP bug list 
-                (<a href="http://bugs.php.net/" target="_blank">http://bugs.php.net</a>)</p>
-              <p> All other questions should be directed to the appropriate <a href="http://www.php.net/support.php" target="_blank">PHP 
-                mailing list.</a> </p>
+            Questions about the PHP-QAT should be sent to the
+            <a href="mailto:php-qa@lists.php.net">PHP/QAT Mailing List</a>
+            <br />
+            <br />
+
+            Bug Reports should be submitted to the official PHP bug list 
+            (<a href="http://bugs.php.net/" target="_blank">http://bugs.php.net</a>)
+            <br />
+            <br />
+
+            All other questions should be directed to the appropriate
+            <a href="http://www.php.net/support.php" target="_blank">PHP mailing list.</a>
             </td>
         </tr>
       </table>
@@ -134,7 +112,7 @@ function common_footer() {
 ?>
  </tr>
 </table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" height="22">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td bgcolor="#000000"><img src="gfx/spacer.gif" width="1" height="1"></td>
   </tr>
@@ -158,7 +136,7 @@ function common_footer() {
       </table>
     </td>
     <td bgcolor="#cccccc" nowrap align="right" class="footer">Last 
-      update: <?= $GLOBALS["SITE_UPDATE"]; ?></td>
+      update: <?php echo $GLOBALS["SITE_UPDATE"]; ?></td>
     <td bgcolor="#cccccc" nowrap align="right" class="footer"><img src="gfx/spacer.gif" width="10" height="1"></td>
   </tr>
 </table>
