@@ -104,7 +104,15 @@ $member_list = array(
 					"SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
 				   )
 	),
-							
+
+	array(
+		"name" => "Nicolas Chaillan",
+		"email" => "nicos@php.net",
+		"focus" => "QA for RCs and QA in general, Testing Builds / PHP-QAT Website",
+		"skills" => "C/C++, PHP, Java, XML, XSLT, Perl",
+		"platform" => array("FreeBSD 4.7","Debian Linux 2.4.19","Windows XP Professional")
+	),
+
 	array(
 		"name" => "Olivier Cahagne",
 		"email" => "olivier.cahagne@epita.fr",
@@ -161,13 +169,6 @@ $member_list = array(
 		"focus" => "Organizing the PHP QA effort",
 		"skills" => "PHP, HTML, JavaScript",
 		"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres")
-	),
-	array(
-		"name" => "Nicolas Chaillan",
-		"email" => "nicos@php.net",
-		"focus" => "QA for RCs and QA in general, Testing Builds / PHP-QAT Website",
-		"skills" => "C/C++, PHP, Java, XML, XSLT, Perl",
-		"platform" => array("FreeBSD 4.7","Debian Linux 2.4.19","Windows XP Professional")
 	)
 );
 
