@@ -63,6 +63,11 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Skills: C/C++, Java, PHP, autoconf, MySQL, Adabas, Oracle, and so on...<br />
 		&nbsp;* Focus : fixing bugs, review of config.m4 implementation in different modules<br /><br />
 
+		<b>Hellekin O. Wolf</b> &lt;<a href="mailto:hellekin@imaginet.fr">hellekin@imaginet.fr</a>&gt;<br />
+		&nbsp;* Skills: Web development and design, Team management, Internet culture, French<br />
+		&nbsp;* Focus : PHP for multi-hosting (aka, providers issues), ideas, code, bug hunting<br />
+		&nbsp;* Platform: Linux(es) (some FreeBSD available also)<br /><br />
+
 	   <b>Howard Cohodas</b> &lt;<a href="mailto:Howard.Cohodas@dkt.com">Howard.Cohodas@dkt.com</a>&gt;<br />
 		&nbsp;* Skills: PHP, Windows COM, HTML, MySQL, Access(ODBC)<br />
 		&nbsp;* Focus : Test, No Build (PHP, Windows COM, HTML, MySQL, Access(ODBC))<br />
@@ -81,7 +86,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 2: Mandrake 7 / PHP ? / ? Server / ? Modules<br />
 		&nbsp;* Platform 3: Windows 95 / PHP ? / ? Server / ? Modules<br />
         &nbsp;* Platform 4: Windows 98 / PHP ? / ? Server / ? Modules<br />
-        &nbsp;* Platform 5: Windows 2000 / PHP ? / ? Server / ? Modules<br />
+        &nbsp;* Platform 5: Windows 2000 / PHP ? / ? Server / ? Modules<br /><br />
 
 		<b>Joey Smith</b> &lt;<a href="mailto:joey@php.net">joey@php.net</a>&gt;<br />
 		&nbsp;* Skills: C, Perl, PHP, Sybase (DB and CT libs)<br />
