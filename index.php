@@ -15,7 +15,7 @@
 	The team is currently focused on several areas:
 </p>
 <ul type="disc">
-	<li><span class="lihack">Testing the 4.0.4 Release Candidate</span></li>
+	<li><span class="lihack">Testing the 4.0.4 pl 1 Release Candidate</span></li>
 	<li><span class="lihack">Developing a test suite for PHP releases</span></li>
 	<li><span class="lihack">Reworking areas of the bug reporting process.</span></li>
 	<li><span class="lihack">Processing the open bug reports from the official PHP
@@ -28,11 +28,12 @@
 
 <h2><a name="news">News</a></h2>
 <ul>
+	<li><span class="lihack">(01/01/03) PHP 4.0.4 Patch Level 1 Release Candidate 1 announced.<br />
+        All available QA members, please test this candidate quickly and extensively!<br />
+        Download:<br />
+        <a href="http://www.php.net/distributions/php-4.0.4pl1RC1.tar.gz">Source</a> (Source snapshot courtesy Zeev)<br />
+        <a href="ftp://ftp.phpuk.org/php_binaries/php-4.0.4pl1RC1-Win32.zip">Win32 Binary</a> (Win32 binaries courtesy James Moore)</span></li>
 	<li><span class="lihack">(00/12/20) PHP 4.0.4 FINAL announced</span></li>
-	<li><span class="lihack">(00/12/14) PHP 4.0.4 RC 6 announced</span></li>
-    <li><span class="lihack">(00/12/12) PHP 4.0.4 RC 5 announced</span></li>
-    <li><span class="lihack">(00/12/5) PHP 4.0.4 RC 4 announced</span></li>
-	<li><span class="lihack">PHP 4.0.4 RC 3 announced</span></li>
 </ul>
 
 <h2>Information</h2>
@@ -64,3 +65,4 @@
 </p>
 
 <?php include ('inc/footer.inc'); ?>
+
