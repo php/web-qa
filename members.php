@@ -120,11 +120,11 @@
     </ul>
 
     <ul>
-      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sbergmann@php.net">sbergmann@php.net</a>&gt;
+      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sebastian@php.net">sebastian@php.net</a>&gt;
         <ul>
           <li>Skills: Working knowledge of Apache, CVS, DocBook, PHP, Java, LATEX, MySQL and XML.</li>
           <li>Focus: QA for PHP Release Candidates</li>
-          <li>Platform: Win 32</li>
+          <li>Platform: Win32, Linux (Apache 1.3 Module and Apache 2.0 Filter)</li>
         </ul>
       </li>
     </ul>
