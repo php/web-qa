@@ -31,7 +31,7 @@ common_header();
                   md5sum:1334a079197914ca553cd922a2c736fe</li>
                  <li><a href="http://www.php.net/~jani/RC/php-4.3.2RC2.tar.gz">php-4.3.2RC2.tar.gz</a><br />
                   md5sum:ee851640d3ed4c8df3c3ef74dd0bd27e</li>
-                 <li><a href="http://www.php.net/~jani/RC/php-4.3.2RC1-Win32.zip">php-4.3.2RC1-Win32.zip</a><br />
+                 <li><a href="http://www.php.net/~jani/RC/php-4.3.2RC2-Win32.zip">php-4.3.2RC2-Win32.zip</a><br />
                   md5sum:673a2290366d93bf495ba9818110a7f0</li>
                 </ul>
                 </span><br />
