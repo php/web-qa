@@ -20,7 +20,8 @@ function common_header() {
 <body bgcolor="#ffffff" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="102">
   <tr> 
-    <td bgcolor="#ffcc66"><img src="gfx/spacer.gif" width="5" height="1"><img src="gfx/logo_qa.jpg" width="111" height="58"></td>
+    <td bgcolor="#ffcc66"><img src="gfx/spacer.gif" width="5" height="1">
+	<a href="http://qa.php.net/"><img src="gfx/logo_qa.jpg" width="111" height="58" border="0"></a></td>
     <td bgcolor="#ffcc66" align="right" valign="bottom"> 
       <table border="0" cellspacing="0" cellpadding="0" height="70">
         <tr> 
@@ -33,6 +34,7 @@ function common_header() {
             | <a href="links.php" class="head_links">Links &amp; Resources</a> 
             | <a href="members.php" class="head_links">Members</a>
             | <a href="howtohelp.php" class="head_links">How to help</a>
+	    | <a href="buildtest-submit.php" class="head_links">Submit a build test</a>	
           </td>
           <td valign="bottom" align="right" class="head_links">&nbsp;</td>
         </tr>
@@ -60,113 +62,65 @@ function common_header() {
   <tr>
     <td width="200" bgcolor="#eeeeee" align="center" valign="top"> 
       <table width="95%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="5"><img src="gfx/spacer.gif" width="5" height="1"></td>
-          <td>&nbsp;</td>
-          <td width="5"><img src="gfx/spacer.gif" width="5" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td> 
+	<tr>
+	 <td class="sidebox">
             <h2>PHP-QAT</h2>
           </td>
-          <td width="5">&nbsp;</td>
-        </tr>
+         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td class="head_links"> 
+          <td class="sidebox"> 		
             The PHP/QA Team is a small group of developers 
               whose primary goal is to support the PHP core developers by providing 
               them with timely quality assurance.
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td width="5">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td> 
+          <td class="sidebox"> 
             <h2>Projects &amp; Goals</h2>
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td class="head_links"> 
+          <td class="sidebox">
             Find more information about PHP/QA Team's <a href="projects.php">current 
               projects and future goals</a>.
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td width="5">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td> 
+          <td class="sidebox"> 
             <h2>Links &amp; Resources</h2>
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td class="head_links"> 
+          <td class="sidebox"> 
             Visit the PHP|QAT <a href="links.php">Links &amp; Resources</a> page. 
               We have links to web based resources for ...
           </td>
-          <td width="5">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td width="5">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td> 
+         </tr>
+         <tr> 
+          <td class="sidebox"> 
             <h2>Members</h2>
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td class="head_links"> 
+          <td class="sidebox"> 
             View the PHP-QAT <a href="members.php">Member register</a>.
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td>&nbsp;</td>
-          <td width="5">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="5">&nbsp;</td>
-          <td> 
+          <td class="sidebox"> 
             <h2>Contact Information</h2>
           </td>
-          <td width="5">&nbsp;</td>
         </tr>
         <tr> 
-          <td width="5">&nbsp;</td>
-          <td class="head_links"> 
+          <td class="sidebox"> 
             
-              <p>Questions about the PHP/QAT should be sent to the <a href="mailto:php-qa@lists.php.net">PHP/QAT 
+              <p>Questions about the PHP-QAT should be sent to the <a href="mailto:php-qa@lists.php.net">PHP/QAT 
                 Mailing List</a></p>
-              <p> Questions regarding this site should be sent to the <a href="mailto:bate@php.net">PHP/QAT 
-                Site Administrator</a></p>
               <p> Bug Reports should be submitted to the official PHP bug list 
                 (<a href="http://bugs.php.net/" target="_blank">http://bugs.php.net</a>)</p>
               <p> All other questions should be directed to the appropriate <a href="http://www.php.net/support.php" target="_blank">PHP 
                 mailing list.</a> </p>
-            
-          </td>
-          <td width="5">&nbsp;</td>
+            </td>
         </tr>
       </table>
       <img src="gfx/spacer.gif" width="1" height="20"></td>
@@ -198,7 +152,7 @@ function common_footer() {
         <tr> 
           <td width="80" align="center"><a href="http://www.php.net/"><img src="gfx/php-logo.gif" width="69" height="36" border="0" alt="Go to the main PHP site"></a></td>
           <td class="footer"><a href="http://www.php.net/copyright.php" target="_blank">Copyright 
-            &copy; 2001 PHP Group</a><br>
+            &copy; 1997 - 2002 PHP Group</a><br>
             All rights reserved.</td>
         </tr>
       </table>
@@ -220,5 +174,4 @@ function make_link($string, $text = "", $target = "") {
 	$buffer .= "</a>";
 	return $buffer;
 }
-
 ?>

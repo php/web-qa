@@ -21,13 +21,20 @@ common_header();
           <td width="100%"> 
             <p>The team is currently focused on several areas: </p>
             <ul>
-              <li><span class="lihack">Providing QA for the 
-			  	<a href="http://snaps.php.net/">PHP 4.2.0-dev</a><br />
-				Visit the experimental <a href="http://fooassociates.com/phpqa/">PHP-QAT Wiki</a> to see what platforms have been tested so far.</span></li>
-              <li><span class="lihack">Reworking the bug tracking system. (Subscribe to to <a href="mailto:jitterbug-subscribe@lists.php.net">jitterbug-subscribe@lists.php.net</a> 
-                for more information)</span></li>
+              <li>
+		<span class="lihack">Providing QA for the <a href="http://snaps.php.net/">PHP 4.2.0-dev</a> release.<br />
+		<ul><br />
+		  <li><span class="lihack">Visit the experimental <a href="http://fooassociates.com/phpqa/">PHP-QAT Wiki</a> to 
+			see what platforms have been tested so far.</span></li></br>
+		  <li><span class="lihack">Report new build tests via the <a href="buildtest.php">build-test form</a>.</span></li>
+		</ul>
+	      </span></li><br />
+              <li>
+		<span class="lihack">Reworking the bug tracking system. (Subscribe to the 
+		<a href="mailto:jitterbug-subscribe@lists.php.net">list</a> 
+                for more information)</span></li><br />
               <li><span class="lihack">Processing the open bug reports from the official PHP 4 bug 
-                list (<a href="http://bugs.php.net" target="_blank">http://bugs.php.net</a>).</span></li>
+                list (<a href="http://bugs.php.net" target="_blank">http://bugs.php.net</a>).</span></li><br />
             </ul>
             <br />
           </td>
