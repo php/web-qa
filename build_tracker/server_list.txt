@@ -1,6 +1,7 @@
 AOL Server
 Apache
 fhttpd
+Java Servlet
 Netscape
 OmniHTTPD
 phttpd
