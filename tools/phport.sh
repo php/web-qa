@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.22 2002-11-21 06:40:10 nohn Exp $
+# $Id: phport.sh,v 1.23 2002-11-21 06:51:42 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -148,6 +148,8 @@ lala)
                     cd php4
                         if [ "$TRY_ZE2" = "NO" ] ; then
                 # do nothing - it's a "symlink" cvs -d $PHPCVSSERVER co Zend TSRM
+                # but we need to do something here, otherwise the script would fail...
+                            echo
                          else
                             cvs -z3 -d $PHPCVSSERVER co -d Zend ZendEngine2 TSRM
                         fi 
@@ -182,7 +184,8 @@ fi
 # Install dependencies (Libraries) locally
   
 # Configure PHP
-if [ ! -s $WRKDIR/php4-$MODE./configure ] ; then
+cd "$WRKDIR/php4-$MODE"
+if [ ! -s ./configure ] ; then
     $WRKDIR/php4-$MODE./cvsclean ||  `echo "cvsclean failed" && exit 1`
     $WRKDIR/php4-$MODE./buildconf ||  `echo "buildconf failed" && exit 1`
 fi
