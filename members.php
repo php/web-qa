@@ -11,15 +11,6 @@
       We always need people to hunt for bugs, to test Release Candidates and otherwise help out. Start by subscribing to the PHP|QA mailing list (Send a blank message to <a href="mailto:php-qa-subscribe@lists.php.net">php-qa-subscribe@lists.php.net</a>. Once you have subscribed, sent a message to the list introducing yourself.  We would like to know your name, your skill set and your interests (as they relate to doing QA for PHP).<br />Every once in a while core QA team members review and update the membership list.  If you have been actively contributing to the effort for a while, we may ask you to join the group. Also, you can mail the group and ask to become a member.
     </p>
 
-    <p>
-      Please include the following information in your message:
-    </p>
-    <ul>
-      <li>Your name</li>
-      <li>A short list of your skills</li>
-      <li>What PHP|QAT projects or goals you would like to work on.</li>
-    </ul>
-
     <h2>PHP|QAT Members</h2>
 
     <ul>
