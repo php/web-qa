@@ -1,6 +1,8 @@
 <?
-	# Set location of text file that contains list of
-	# acceptable php versions for current testing
+	# Module, SAPI and Version information for populating form fields
+	# are stored in plain text files.  Each line contains one entry
+	# for the appropriate select box or group of checkboxes.
+
 	$module_list		= 'module_list.txt';
 	$php_version_list 	= 'php_version_list.txt';
 	$sapi_list			= 'sapi_list.txt';
@@ -238,13 +240,14 @@ PHP|QAT: Compiled/Installed Version Tracker
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
 		<?
-			$cells     = file ($module_list);
-			$no_of_cells = count ($cells);
+			$modules     = file ($module_list);
+			$no_of_cells = count ($modules);
 
 			for ($n=0, $col = 0, $row = 0; $n < $no_of_cells; ++$n)
 			{
+				$module = trim ($modules[$n]);
 				$line  = '<td><font face="Tahoma, Arial, Helvetica, Sans Serif" SIZE="2">';
-				$line .= sprintf ('<input type="checkbox" name="field[module][%s]" %s/> %s<br />', $field[module][$cells[$n]], ($field[module][$cells[$n]] ? ' checked' : ''), $cells[$n]);
+				$line .= sprintf ('<input type="checkbox" name="field[module][%s]" %s/> %s ', $module, ($field[module][$module] ? ' checked' : ''), $module);
 				$line .= '</font></td>';
 
 				$cell[$col][$row] = $line;
@@ -257,7 +260,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 				}
 			}
 
-			print '<table border="1">';
+			print '<table border="1" WIDTH="90%">';
 
 			for ($row = 0; $cell[0][$row]; ++$row)
 				print '<tr>'.$cell[0][$row].$cell[1][$row].$cell[2][$row].$cell[3][$row].'</tr>';
@@ -289,17 +292,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
 	<tr>
 		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		? Output of ./configure and make scripts ?
-		</font></td>
-
-		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<textarea name="field['']" cols="32" rows="4" wrap="virtual" /><?= $field[''] ?></textarea>
-		</font></td>
-	</tr>
-
-	<tr>
-		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		??
+		Output of ./configure and make scripts
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
@@ -330,7 +323,8 @@ PHP|QAT: Compiled/Installed Version Tracker
 	</tr>
 
 </table><br />
-
+<PRE>
+<? print_r ($HTTP_POST_VARS) ?>
 </form>
 </font>
 </body>

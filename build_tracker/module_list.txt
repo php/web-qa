@@ -27,7 +27,7 @@ MySQL
 OCI8
 ODBC
 Oracle
-Perl Compatible<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regex
+Perl Compatible Regex
 PDF
 Posix
 PostgreSQL
@@ -37,8 +37,8 @@ Sessions
 SNMP
 SWF
 Sybase
-System V<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shared Memory
-System V<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Semaphores
+System V Shared Memory
+System V Semaphores
 WDDX
 XML
 Yellow Pages
