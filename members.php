@@ -4,14 +4,30 @@ include("include/functions.php");
 $TITLE = "Member List [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>/* $Id$ */";
 
-$member_list = array( array("name" => "André Langhorst",
+$member_list = array(
+					  array("name" => "André Langhorst",
 							"email" => "andre@php.net",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
+							"focus" => "QA for RCs and QA in general",
+							"skills" => "preparing sushi, C/C++, PHP, Java, XML, XSLT...",
+							"platform" => array("FreeBSD4.4","Debian Woody","W2K (sometimes)","- modules and SAPIs varying")
 							),
+
+					  array(
+							"name" => "Derick Rethans",
+							"email" => "derick@php.net",
+							"focus" => "Guarding release process",
+							"skills" => "C, PHP (yes, really), DB Design... and much much more",
+							"platform" => array(
+												"1. Redhat Linux 7.1 - Apache static module - gd, ttf, mysql, pdflib, ftp, srm, mcrypt, ctype, gmp, ldap, ncurses, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
+												"2. Redhat Linux 7.1 - CGI/CLI - gd, ttf, mysql, pdflib, ftp, zip, srm, mcrypt, ctype, gmp, shmop, sockets, sysvsem, sysvshm, wddx, zlib ",
+												"3. FreeBSD 4.4 stable - Apache static module - mysql, mcrypt, gd, wddx",
+												"4. FreeBSD 4.4 stable - CGI/CLI - mysql, mcrypt, gd, wddx",
+												"5. SunOS 5.8/i386 - Apache static module - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
+												"6. SunOS 5.8/i386 - CGI/CLI - ftp, mysql, ctype, sockets, shmop, sysvsem, sysvshm",
+												"7. OpenBSD 2.8 - Apache static module - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib",
+												"8. OpenBSD 2.8 - CGI/CLI - mysql, ftp, ctyup, shmop, sockets, sysvsem, sysvshm, wddx, zlib"
+												)
+),
 
 					  array("name" => "Hellekin O. Wolf",
 							"email" => "hellekin@php.net",
