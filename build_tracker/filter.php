@@ -18,12 +18,42 @@ function file2select ($field_name)
 		$temp = trim ($temp);
 		if (! $temp || $temp[0] == '#') continue;	# ignore blanks and comments
 
-
 		list ($value, $option) = explode ('::', $temp);
+		$option
+			or $option = $value;
 		$output .= sprintf ('<option value="%s"%s>%s</option>'."\n", $value, $selected[$value], $option);
 	}
 
 	return '<select name="field[' . $field_name . ']">' . "\n$output" .	'</select>';
+}
+
+# file2checkbox
+# Author: j.a.greant 2000/10/03 zak@php.net
+
+# A simple function for generating one or more checkboxes from formatted text files
+# format for text files is:  option value::option display name
+# each entry should be separated by a newline
+# blank lines and lines that start with a single # are ignored
+
+function file2checkbox ($field_name)
+{
+	$field[$field_name] = $GLOBALS[field][$field_name];
+	if(is_array ($field[$field_name]))
+		foreach ($field[$field_name] as $item)
+			$checked[$item] = ' checked';
+
+	foreach (file ($field_name.'_list.txt') as $temp)
+	{
+		$temp = trim ($temp);
+		if (! $temp || $temp[0] == '#') continue;	# ignore blanks and comments
+
+		list ($value, $option) = explode ('::', $temp);
+		$option
+			or $option = $value;
+		$output .= sprintf ('<input type="checkbox" name="field[%s]" value="%s"%s /> %s<br />'."\n", $field_name, $value, $selected[$value], $option);
+	}
+
+	return "\n$output";
 }
 
 # generate_row
@@ -42,9 +72,7 @@ function generate_row ($column_data, $no_of_columns = 2)
 		$row .= '</font></td>';
 	}
 
-	$row .= '</tr>';
-
-	return $row;
+	return $row . '</tr>';
 }
 ?>
 <html>
@@ -97,8 +125,8 @@ PHP|QAT: PHP Build and Install Tracker
 		<table width="100%">
 			<?= generate_row (array ('&nbsp;<b>3.1</b> How did you get your copy of PHP?', file2select ('php_source'))) ?>
 			<?= generate_row (array ('&nbsp;<b>3.2</b> What kind of operating system did you install PHP on?', file2select ('os_families'))) ?>
-			<?= generate_row (array ('&nbsp;<b>3.3</b> How many different types of servers are you using with this install of PHP?', file2select ('count_servers'))) ?>
-			<?= generate_row (array ('&nbsp;<b>3.4</b> How many different types databases are you using with this install of PHP?', file2select ('count_databases'))) ?>
+			<?= generate_row (array ('&nbsp;<b>3.3</b> What Server API was PHP built with?', file2select ('sapi'))) ?>
+			<?= generate_row (array ('&nbsp;<b>3.4</b> What Database Support was PHP built with?', file2checkbox ('db_support'))) ?>
 		</table>
 
 		</td>

@@ -1,0 +1,15 @@
+Database (dbm-style) abstraction layer
+dBase
+DBM
+filePro
+Hyperwave
+Informix
+InterBase
+Microsoft SQL Server
+mSQL
+MySQL
+Unified ODBC
+Oracle 8
+Oracle
+PostgreSQL
+Sybase
