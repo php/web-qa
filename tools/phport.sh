@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@lehnardt.de>                           |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.4 2002-11-10 18:55:15 nohn Exp $
+# $Id: phport.sh,v 1.5 2002-11-10 18:57:34 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -113,7 +113,7 @@ case $MODE in
                         if [ $TRY_ZE2 = "NO" ] ; then
                             cvs -d $PHPPSERVER co Zend TSRM
                          else
-                            cvs -d $PHPPSERVERR co ZendEngine2 TSRM
+                            cvs -d $PHPPSERVER co ZendEngine2 TSRM
                             mv ZendEngine2 Zend
                         fi    
                         find . | cpio -pdm ../../../$WRKDIR/php4-$MODE
