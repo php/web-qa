@@ -31,7 +31,7 @@ Simple build tests<br />
 <ol>
    <li>Download the RC from: <a href="http://www.php.net/~zeev/php-4.2.3RC1.tar.gz">http://www.php.net/~zeev/php-4.2.3RC1.tar.gz</a>
      <ul>
-       <li><a href="http://www.php.net/~zeev/php-4.2.3RC1.tar.bz2">php-4.2.3RC1.tar.gz</a> (Source)
+       <li><a href="http://www.php.net/~zeev/php-4.2.3RC1.tar.gz">php-4.2.3RC1.tar.gz</a> (Source)
 <!--
 	   <li><a href="http://www.php.net/~derick/php-4.2.0RC4-win32.zip">php-4.2.0RC4-win32.zip</a>
 		   (windows binaries: CLI, CGI, ISAP module and extensions: cpdf,
