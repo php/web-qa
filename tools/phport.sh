@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.18 2002-11-13 19:32:14 nohn Exp $
+# $Id: phport.sh,v 1.19 2002-11-13 20:32:08 msopacua Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -32,6 +32,9 @@ ETCDIR="$PREFIX/etc"
 PHPSNAPSERVER="http://snaps.php.net/"
 PHPCVSSERVER=":pserver:cvsread@cvs.php.net:/repository"
 PHPCVSPASS="A:c:E?"
+if [ -z "$MAKE" ]; then
+    MAKE=make
+fi
 
 # functions
 usage() {
@@ -113,20 +116,21 @@ case $MODE in
         fi
         echo "Extracting source package..."
 
-	# see if we have gzip or bzip2
+    # see if we have gzip or bzip2
 
-	EXT="`echo $PHPSNAPFILE | sed -e 's/.*\.//`";
-	
-	if [ $EXT = "gz" ] ; then
-	    TARMOD=z;
-	elif [ $EXT = "bz2" ] ; then
-	    TARMOD=y;
-	else
-	    echo "Unknown package format";
-	    exit 1;
-	fi
+    EXT="`echo $PHPSNAPFILE | sed -e 's/.*\.//'`";
+    
+    # Keep it portable
+    if [ $EXT = "gz" ] ; then
+        COMPRESSOR=gzip
+    elif [ $EXT = "bz2" ] ; then
+        COMPRESSOR=bzip2
+    else
+        echo "Unknown package format";
+        exit 1;
+    fi
 
-        tar -C "$WRKDIR/php4-$MODE" -x -$TARMOD -f "$DISTFILESDIR/$PHPSNAPFILE"
+    $COMPRESSOR -cd "$DISTFILESDIR/$PHPSNAPFILE" | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
         mv -f "$WRKDIR/php4-$MODE/php*/*" "$WRKDIR/php4-$MODE"
         
     ;;
@@ -139,20 +143,21 @@ case $MODE in
                 cvs -d $PHPCVSSERVER co php4
                     cd php4
                         if [ $TRY_ZE2 = "NO" ] ; then
-                            cvs -d $PHPCVSSERVER co Zend TSRM
+                # do nothing - it's a "symlink" cvs -d $PHPCVSSERVER co Zend TSRM
                          else
-                            cvs -d $PHPCVSSERVER co ZendEngine2 TSRM
-                            mv ZendEngine2 Zend
-                        fi    
-                        find . | cpio -pdm "$WRKDIR/php4-$MODE"
+                            cvs -d $PHPCVSSERVER co -d Zend ZendEngine2 TSRM
+                        fi 
+            # cpio: command not found
+                        # find . | cpio -pdm "$WRKDIR/php4-$MODE"
+            tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
                     cd ../../..
                     
     ;;
     
     local)
-        if [ $2 ] ; then
+        if [ ! -z "$2" ] ; then
             cd $2
-            find . | cpio -pdm "$WRKDIR/php4-$MODE"
+        tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
         else
             echo "No local Path supplied"    
             exit 1
@@ -160,8 +165,8 @@ case $MODE in
     ;;
 esac    
 
-# Get configure optioms
-if ! [ -d "$ETCDIR" ] ; then
+# Get configure options
+if [ -d "$ETCDIR" ] ; then
     for option in `cat $ETCDIR/configure-options` ; do
         options="$options $option"
     done    
@@ -181,9 +186,13 @@ fi
 config="./configure $options";
 $config
 # Clean
-make clean
+$MAKE clean
+if [ $? -gt 0 ]; then
+    echo "Clean had problems. Thing may go down hill from this point on"
+    sleep 1
+fi
 # Build PHP
-make 2>error.log
+$MAKE 2>error.log
 # Install PHP locally
 
 # Mail the compile-errors & warnings...
@@ -192,4 +201,6 @@ cat error.log | mail -s "PHP Compile Report" $USER
 # Running testcases against the environment
 NO_INTERACTION=1
 export NO_INTERACTION
-make test | mail -s "PHP Test Report" $USER
+$MAKE test | mail -s "PHP Test Report" $USER
+
+# vim600: et ts=4 sw=4
