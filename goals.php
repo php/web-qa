@@ -89,6 +89,6 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		<br />
 		<? include ('inc/footer.txt') ?>
 
-<br /><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br /><center><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font></center><br /><br />
 </body>
 </html>

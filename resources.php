@@ -32,10 +32,14 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 		<br />
 		<b>Links and Resources</b>
 		<hr size="1" />
-		Coming soon...<br /><br />
+		Please suggest links and resources for this page!  Email the PHP/QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>)<br />
+		<a href="http://www.geocities.com/ro_marius/mod_php4.html">PHP4 module for Apache Win32 : HOW TO</a>
+		<a href="http://www.php.net/">The PHP Website</a><br />
+		<a href="http://www.zend.com/">The Zend Website</a><br />
+		<br /><br />
 
 		<? include ('inc/footer.txt') ?>
 
-<br /><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br /><center><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font></center><br /><br />
 </body>
 </html>

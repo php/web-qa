@@ -32,10 +32,15 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 		<br />
 		<b>How You Can Help</b>
 		<hr size="1" />
-		Coming soon...<br /><br />
+		You can help the QA effort in several ways:<br />
+		<li> If you have some spare time, why not join the PHP/QA team?  Follow the <a href="members.php">members</a> link to find out how.<br />
+		<li> Submit a bug report.  If you find what you think is a problem, drop by <a href="http://bugs.php.net/">http://bugs.php.net/</a> and submit a report.  Just make sure to read the <a href="http://bugs.php.net/bugs-dos-and-donts.php">Dos and Dont's</a> of bug submission before posting a bug.
+		<li> Give a PHP/QA Team member space on a server that you administrate.  To do this, please send mail to the PHP/QA email list (<a href="mailto:php-qa@lists.php.net?Subject=Guest%20Account%20for%20PHP/QA%20Team%20Member">php-qa@lists.php.net</a>) with the subject 'Guest Account for PHP/QA Team Member'.  In the body of the message, please list the specifications on the machine (hardware, operating system, installed software, etc...).
+
+		<br /><br />
 
 		<? include ('inc/footer.txt') ?>
 
-<br /><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br /><center><font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font></center><br /><br />
 </body>
 </html>
