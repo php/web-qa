@@ -63,8 +63,8 @@ Thank you and good luck!<br /><br />
 <s>Group 10</s><br />
 <s>Group 11</s><br />
 <s>Group 12</s><br />
-<s><a href="#group13">Group 13</a><s> jalal (the_jalal@yahoo.com)<br />
-<a href="#group14">Group 14</a> jalal (the_jalal@yahoo.com)<br />
+<s>Group 13</s><br />
+<s>Group 14</s><br />
 <s>Group 15</s> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group16">Group 16</a> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group17">Group 17</a> waldschrott (waldschrott@waldschrott.de)<br />
@@ -107,75 +107,6 @@ Thank you and good luck!<br /><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4387">4387</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4387&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4388">4388</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4388&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405">4405</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=4405&edit=1"><b>&gt;&gt;</b></a><br />
-
-<a href="#top">Return to Top</a><br />
-
-<a name="group13"></a>
-<br /><b>Group 13:</b> jalal (the_jalal@yahoo.com)<br />
-
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5011">5011</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5011&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5013">5013</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5013&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5022">5022</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5022&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5024">5024</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5024&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5025">5025</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5025&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5030">5030</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5030&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5039">5039</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5039&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5042">5042</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5042&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5045">5045</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5045&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5046">5046</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5046&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5050">5050</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5050&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5054">5054</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5054&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5059">5059</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5059&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5060">5060</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5060&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5062">5062</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5062&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5065">5065</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5065&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5071">5071</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5071&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5072">5072</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5072&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5076">5076</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5076&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5078">5078</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5078&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5082">5082</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5082&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5084">5084</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5084&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5088">5088</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5088&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5094">5094</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5094&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5095">5095</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5095&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5096">5096</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5096&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5099">5099</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5099&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5100">5100</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5100&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5101">5101</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5101&edit=1"><b>&gt;&gt;</b></a><br />
-
-<a href="#top">Return to Top</a><br />
-<a name="group14"></a>
-<br /><b>Group 14:</b> jalal (the_jalal@yahoo.com)<br />
-
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5104">5104</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5104&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5108">5108</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5108&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5109">5109</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5109&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5110">5110</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5110&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5115">5115</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5115&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5117">5117</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5117&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5120">5120</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5120&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5122">5122</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5122&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5123">5123</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5123&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5133">5133</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5133&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5135">5135</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5135&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5143">5143</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5143&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5146">5146</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5146&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5147">5147</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5147&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5148">5148</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5148&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5150">5150</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5150&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5154">5154</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5154&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5159">5159</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5159&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5162">5162</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5162&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5164">5164</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5164&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5166">5166</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5166&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5171">5171</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5171&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5172">5172</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5172&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5174">5174</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5174&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5185">5185</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5185&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5186">5186</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5186&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5187">5187</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5187&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5188">5188</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5188&edit=1"><b>&gt;&gt;</b></a><br />
-<a target="_blank" href="http://bugs.php.net/bugs.php?id=5189">5189</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5189&edit=1"><b>&gt;&gt;</b></a><br />
 
 <a href="#top">Return to Top</a><br />
 <a name="group15"></a>
