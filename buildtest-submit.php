@@ -9,7 +9,7 @@ common_header();
 ?>
 
 <h1>Build Tracker</h1>
-<hr>
+<hr />
 Where you have specified "other" for any category, please enter what it is in the Remarks section. 
 <form action="buildtest-action.php" method="post">
 <h2>General</h2>
@@ -26,8 +26,35 @@ Where you have specified "other" for any category, please enter what it is in th
 	<th>Package:</th>
 	<td>
 		<select name="package">
-			<option value="4.2.0-dev">4.2.0-dev (provide date in remark section)</option>
-			<option value="4.2.0-RC1">4.2.0-RC1</option>
+			<option value="4.2.0-dev">4.2.0-dev (DON'T USE CVS, download RC1)</option>
+			<option value="4.2.0-RC1" selected="yes">4.2.0-RC1</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>Testcase:</th>
+	<td>
+		<select name="testcase">
+			<option value="0">no testcase</option>
+			<option value="b1">b1: Building with CLI</option>
+			<option value="b2">b2: MacOSX building</option>
+			<option value="b3">b3: iconv support</option>
+			<option value="b4">b4: pspell building</option>
+			<option value="c1">c1: HTTP File Uploads</option>
+			<option value="c2">c2: Output buffering</option>
+			<option value="c3a">c3a: Sessions with register globals = Off</option>
+			<option value="c3b">c3b: Sessions with register globals = On</option>
+			<option value="c4">c4: safe mode</option>
+			<option value="c5">c5: count()</option>
+			<option value="c6">c6: ksort() and krsort()</option>
+			<option value="e1">e1: PostgreSQL</option>
+			<option value="e3">e3: Overload extension</option>
+			<option value="e4">e4: DIO</option>
+			<option value="e5">e5: preg_grep</option>
+			<option value="e6">e6: pow()</option>
+			<option value="e7">e7: The DomXML extension</option>
+			<option value="e8">e8: Dbase extension</option>
+			<option value="e9">e9: ncurses extension</option>
 		</select>
 	</td>
 </tr>
@@ -101,7 +128,7 @@ Where you have specified "other" for any category, please enter what it is in th
 	<td>
 		<select name="autoconf">
 			<option value="213">2.13</option>
-			<option value="252">2.52</option>
+			<option value="252" selected="yes">2.52</option>
 			<option value="253">2.53</option>
 			<option value="other">other</option>
 		</select>
@@ -113,7 +140,7 @@ Where you have specified "other" for any category, please enter what it is in th
 		<select name="libtool">
 			<option value="134">1.3.4</option>
 			<option value="135">1.3.5</option>
-			<option value="140">1.4</option>
+			<option value="140" selected="yes">1.4</option>
 			<option value="141">1.4.1</option>
 			<option value="142">1.4.2</option>
 			<option value="other">other</option>
@@ -126,7 +153,7 @@ Where you have specified "other" for any category, please enter what it is in th
 		<select name="bison">
 			<option value="128">1.28</option>
 			<option value="129">1.29</option>
-			<option value="132">1.32</option>
+			<option value="132" selected="yes">1.32</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -276,7 +303,7 @@ Where you have specified "other" for any category, please enter what it is in th
 </tr>
 </table>
 
-<hr>
+<hr />
 <input type="submit" value="submit" />
 </form>
 
