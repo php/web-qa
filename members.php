@@ -42,6 +42,11 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 
 		<b>Current Members:</b>
 		<hr size="1" />
+
+                <b>Alexander Feldman</b>&lt;<a href="mailto:alex@zend.com">alex@zend.com</a>&gt;<br />
+                &nbsp;* Skills: C/C++<br />
+                &nbsp;* Focus : Help for the design of the QA suite, ideas, coding, scripts<br /><br />
+
 		<b>andreas otto</b> &lt;<a href="mailto:a-otto@web.de">a-otto@web.de</a>&gt;<br />
 		&nbsp;* Skills: Web Development using PHP<br />
 		&nbsp;* Focus : testing release candidates<br />
@@ -111,11 +116,6 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Focus : Closing bugs, QA for PHP Release Candidate<br />
 		&nbsp;* Platform 1: Windows 2000 Apache + Latest PHP + MySQL + Adabas (ODBC)<br />
 		&nbsp;* Platform 2: Linux + PHP (module) + MySQL + Adabas (ODBC) + PostgreSQL<br /><br />
-
-		<b>Alexander Feldman</b>&lt;<a href="mailto:alex@zend.com">alex@zend.com</a>&gt;<br />
-                &nbsp;* Skills: C/C++<br />
-                &nbsp;* Focus : Help for the design of the QA suite, ideas, coding, scripts<br /><br />
-
 
 		<b>Zak Greant</b> &lt;<a href="mailto:zak@nucleus.com">zak@nucleus.com</a>&gt;<br />
 		&nbsp;* Skills: Graphic Design, PHP, Project Management, MySQL, etc...<br />
