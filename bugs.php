@@ -59,13 +59,13 @@ Thank you and good luck!<br /><br />
 <a href="#group06">Group 6</a> Derick Rethans (d.rethans@jdimedia.nl)<br />
 <s>Group 7</s><br />
 <s>Group 8</s><br />
-<a href="#group09">Group 9</a> Zak Greant (zak@nucleus.com)<br />
-<a href="#group10">Group 10</a> Zak Greant (zak@nucleus.com)<br />
-<a href="#group11">Group 11</a> Zak Greant (zak@nucleus.com)<br />
+<s>Group 9</s><br />
+<s>Group 10</s><br />
+<s>Group 11</s><br />
 <a href="#group12">Group 12</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group13">Group 13</a> jalal (the_jalal@yahoo.com)<br />
 <a href="#group14">Group 14</a> jalal (the_jalal@yahoo.com)<br />
-<a href="#group15">Group 15</a> waldschrott (waldschrott@waldschrott.de)<br />
+<s>Group 15</s> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group16">Group 16</a> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group17">Group 17</a> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group18">Group 18</a> waldschrott (waldschrott@waldschrott.de)<br />
@@ -73,7 +73,7 @@ Thank you and good luck!<br /><br />
 <a href="#group10">Group 20</a> (Currently Available)<br />
 <a href="#group21">Group 21</a> (Currently Available)<br />
 <a href="#group22">Group 22</a> (Currently Available)<br />
-<s>Group 23</s><br /><br />
+<s>Group 23</s> waldschrott (waldschrott@waldschrott.de)<br /><br />
 
 <a name="group06"></a>
 <br /><b>Group 6:</b> Derick Rethans (d.rethans@jdimedia.nl)<br />
