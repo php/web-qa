@@ -7,7 +7,7 @@
 
     <h1>PHP|QAT Goals</h1>
 
-    <h2>Release Candidates Testing and QA (Upcoming Release 4.0.3)</h2>
+    <h2>Release Candidates Testing and QA (Upcoming Release 4.0.4)</h2>
     <ul>
       <li><span class="lihack">Release Candidate Build</span></li>
       <li><span class="lihack">Automated Smoke Tests</span></li>

@@ -15,7 +15,7 @@
 	The team is currently focused on several areas:
 </p>
 <ul type="disc">
-	<li><span class="lihack">Testing the 4.0.3 Release Candidate</span></li>
+	<li><span class="lihack">Testing the 4.0.4 Release Candidate</span></li>
 	<li><span class="lihack">Developing a test suite for PHP releases</span></li>
 	<li><span class="lihack">Reworking areas of the bug reporting process.</span></li>
 	<li><span class="lihack">Processing the open bug reports from the official PHP
@@ -28,8 +28,7 @@
 
 <h2><a name="news">News</a></h2>
 <ul>
-	<li><span class="lihack">(September 7, 2000) PHP 4.0.3 RC announced</span></li>
-	<li><span class="lihack">(August 29, 2000) PHP 4.0.2 released</span></li>
+	<li><span class="lihack">PHP 4.0.4 RC 3 announced</span></li>
 </ul>
 
 <h2>Information</h2>
