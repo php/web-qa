@@ -4,7 +4,7 @@ include("include/functions.php");
 $TITLE = "Links &amp; Resources [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>/* $Id$ */";
 
-siteHeader();
+common_header();
 ?>
       <table width="70%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
@@ -126,5 +126,5 @@ siteHeader();
       </table>
 <?php
 
-siteFooter();
+common_footer();
 ?>

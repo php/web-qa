@@ -6,7 +6,7 @@ Read an Learn. Any Questions so ask.
 Version: $ID$
 */
 
-function siteHeader() {
+function common_header() {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
@@ -175,7 +175,7 @@ function siteHeader() {
 <?php
 }
 
-function siteFooter() {
+function common_footer() {
 ?>
  </tr>
 </table>
@@ -197,7 +197,7 @@ function siteFooter() {
         <tr> 
           <td width="80" align="center"><img src="gfx/php-logo.gif" width="69" height="36"></td>
           <td class="footer"><a href="http://www.php.net/copyright.php" target="_blank">Copyright 
-            &copy; 2001 The PHP Group</a><br>
+            &copy; 2001 PHP Group</a><br>
             All rights reserved.</td>
         </tr>
       </table>

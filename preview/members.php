@@ -22,8 +22,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Jalal Pushman",
+							"email" => "the_jalal@yahoo.com",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -31,8 +31,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "James Moore",
+							"email" => "jmoore@php.net",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -40,8 +40,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Jani Taskinen",
+							"email" => "sniper@php.net",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -49,8 +49,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Joey Smith",
+							"email" => "joey@php.net",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -58,8 +58,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Olivier Cahagne",
+							"email" => "olivier.cahagne@epita.fr",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -67,8 +67,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Phil Driscoll",
+							"email" => "phil@dialsolutions.co.uk",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -76,8 +76,8 @@ $member_list = array( array("name" => "André Langhorst",
 												 )
 							),
 							
-					  array("name" => "Hellekin O. Wolf",
-							"email" => "ellekin@php.net",
+					  array("name" => "Sebastian Bergmann",
+							"email" => "sebastian@php.net",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
@@ -101,21 +101,74 @@ $member_list = array( array("name" => "André Langhorst",
 							"plattform" => array("FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
 												 "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
 												 )
-							),
+							)
  					);
-						
 
-/*
-Jalal Pushman the_jalal@yahoo.com
-James Moore jmoore@php.net
-Jani Taskinen sniper@php.net
-Joey Smith joey@php.net
-Olivier Cahagne olivier.cahagne@epita.fr
-Phil Driscoll phil@dialsolutions.co.uk
-Sebastian Bergmann sebastian@php.net
-*/
-			
-siteHeader();
+$supportmember_list = array( array("name" => "Brendan W. McAdams",
+							"email" => "brendan@plexmedia.com",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							),
+							
+					  array("name" => "Cameron Brunner ",
+							"email" => "gamr@gattcomp.com.au",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							),
+							
+					  array("name" => "Hartmut Holzgraefe",
+							"email" => "harmut@six.de",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							),
+							
+					  array("name" => "Howard Cohodas",
+							"email" => "Howard.Cohodas@dkt.com",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							),
+							
+					  array("name" => "Kirill Maximov",
+							"email" => "maxkir@email.com",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							),
+							
+					  array("name" => "Richard Lynch",
+							"email" => "richard@zend.com",
+							"focus" => "empty",
+							"skills" => "empty",
+							"plattform" => array("empty",
+												 "empty"
+												 )
+							)
+					);
+
+$inactivemember_list = array("Alexander Feldman",
+							 "Andreas Otto",
+							 "Evan Klein",
+							 "Karl Austin",
+							 "Mårten Gustafson",
+							 "Patrik Bengtsson",
+							 "Rebecca \"Bean\" Visger",
+							 "Shawn Wallace");
+
+common_header();
 ?>
 <table width="70%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
@@ -178,15 +231,15 @@ for ($x=0; $x < count($member_list); $x++) {
           <td width="10">&nbsp;</td>
           <td width="100%"> 
             <ul>
-              <li><b><?= $member_list[$x]["name"]."</b> [".make_link("mailto:".$member_list[$x]["email"], $member_list[$x]["email"])."]"; ?>
+              <li class="lihack"><b><?= $member_list[$x]["name"]."</b> [".make_link("mailto:".$member_list[$x]["email"], $member_list[$x]["email"])."]"; ?>
                 <ul>
-                  <li>Skills: <?= $member_list[$x]["skills"]; ?></li>
-                  <li>Focus: <?= $member_list[$x]["focus"]; ?></li>
+                  <li class="lihack">Skills: <?= $member_list[$x]["skills"]; ?></li>
+                  <li class="lihack">Focus: <?= $member_list[$x]["focus"]; ?></li>
 				  <?php 
 				  	// BEGIN PLATTFORM
 				 	for ($y=0; $y < count ($member_list[$x]["plattform"]); $y++) {
 				  ?>
-                  <li>Plattform <?= ($y+1).": ".$member_list[$x]["plattform"][$y]; ?></li>
+                  <li class="lihack">Plattform <?= ($y+1).": ".$member_list[$x]["plattform"][$y]; ?></li>
                   <?php
 				  	} // END PLATTFORM
 				  ?>
@@ -204,8 +257,70 @@ for ($x=0; $x < count($member_list); $x++) {
           <td width="100%"></td>
           <td width="10">&nbsp;</td>
         </tr>
+        <tr> 
+          <td width="10">&nbsp;</td>
+          <td width="100%"> 
+            <h3>PHP-QAT Supporting Members:</h3>
+          </td>
+          <td width="10">&nbsp;</td>
+        </tr>
+<?php
+// BEGIN SUPPORT MEMMBERS
+for ($x=0; $x < count($supportmember_list); $x++) {
+?>
+        <tr> 
+          <td width="10">&nbsp;</td>
+          <td width="100%"> 
+            <ul>
+              <li class="lihack"><b><?= $supportmember_list[$x]["name"]."</b> [".make_link("mailto:".$supportmember_list[$x]["email"], $supportmember_list[$x]["email"])."]"; ?>
+                <ul>
+                  <li class="lihack">Skills: <?= $supportmember_list[$x]["skills"]; ?></li>
+                  <li class="lihack">Focus: <?= $supportmember_list[$x]["focus"]; ?></li>
+				  <?php 
+				  	// BEGIN PLATTFORM
+				 	for ($y=0; $y < count ($supportmember_list[$x]["plattform"]); $y++) {
+				  ?>
+                  <li class="lihack">Plattform <?= ($y+1).": ".$supportmember_list[$x]["plattform"][$y]; ?></li>
+                  <?php
+				  	} // END PLATTFORM
+				  ?>
+                </ul>
+              </li>
+            </ul>
+<?php
+} // END MEMBERS
+?>
+            </td>
+          <td width="10">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="10">&nbsp;</td>
+          <td width="100%"></td>
+          <td width="10">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="10">&nbsp;</td>
+          <td width="100%"> 
+            <h3>PHP-QAT Inactive Members:</h3>
+          </td>
+          <td width="10">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="10">&nbsp;</td>
+          <td width="100%"> 
+            <ul>
+<?php
+// BEGIN SUPPORT MEMMBERS
+for ($x=0; $x < count($inactivemember_list); $x++) {
+            echo "<li class=\"lihack\">".$inactivemember_list[$x]."</li>";
+} // END MEMBERS
+?>
+            </ul>
+            </td>
+          <td width="10">&nbsp;</td>
+        </tr>
       </table>
 <?php
 
-siteFooter();
+common_footer();
 ?>
