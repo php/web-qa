@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.24 2002-11-22 05:30:10 nohn Exp $
+# $Id: phport.sh,v 1.25 2003-01-16 17:00:16 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -29,7 +29,7 @@ PREFIX="/tmp"
 DISTFILESDIR="$PREFIX/distfiles"
 WRKDIR="$PREFIX/work"
 ETCDIR="$PREFIX/etc"
-PHPSNAPFILEPREFIX="php4-latest.tar"
+PHPSNAPFILEPREFIX="php5-latest.tar"
 PHPSNAPSERVER="http://snaps.php.net/"
 PHPCVSSERVER=":pserver:cvsread@cvs.php.net:/repository"
 PHPCVSPASS="A:c:E?"
@@ -55,7 +55,7 @@ if ! [ -d "$PREFIX" ] ; then
 fi
 
 if ! [ -d "$WRKDIR" ] ; then
-    for i in / /php4-cvs /php4-snap /php4-local ; do
+    for i in / /php5-cvs /php5-snap /php5-local ; do
         makedir $WRKDIR"$i"
     done
 fi           
@@ -85,7 +85,7 @@ esac
 echo $MODE
 
 # Clean $WRKDIR 
-rm -rf "$WRKDIR/php4-$MODE/*"
+rm -rf "$WRKDIR/php5-$MODE/*"
 # Fetch/extract source to $DISTFILESDIR/$WRKDIR
 case $MODE in
     snap) # 24h distfile!!
@@ -129,8 +129,8 @@ case $MODE in
         exit 1;
     fi
 
-    $COMPRESSOR -cd "$DISTFILESDIR/$PHPSNAPFILE" | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
-        mv -f "$WRKDIR/php4-$MODE/php*/*" "$WRKDIR/php4-$MODE"
+    $COMPRESSOR -cd "$DISTFILESDIR/$PHPSNAPFILE" | (cd "$WRKDIR/php5-$MODE" && tar -xf -)
+        mv -f "$WRKDIR/php5-$MODE/php*/*" "$WRKDIR/php5-$MODE"
         
     ;;
 
@@ -151,7 +151,7 @@ case $MODE in
                         fi 
                         # cpio: command not found
                         # find . | cpio -pdm "$WRKDIR/php4-$MODE"
-            tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
+            tar -cf - . | (cd "$WRKDIR/php5-$MODE" && tar -xf -)
                     cd ../../..
                     
     ;;
@@ -159,7 +159,7 @@ case $MODE in
     local)
         if [ -n "$2" ] ; then
             cd $2
-            tar -cf - . | (cd "$WRKDIR/php4-$MODE" && tar -xf -)
+            tar -cf - . | (cd "$WRKDIR/php5-$MODE" && tar -xf -)
         else
             echo "No local Path supplied"    
             exit 1
@@ -180,7 +180,7 @@ fi
 # Install dependencies (Libraries) locally
   
 # Configure PHP
-cd "$WRKDIR/php4-$MODE"
+cd "$WRKDIR/php5-$MODE"
 if [ ! -s ./configure ] ; then
     ./cvsclean || exit 1
     ./buildconf || exit 1
