@@ -56,14 +56,14 @@ Thank you and good luck!<br /><br />
 <s>Group 3</s><br />
 <s>Group 4</s><br />
 <s>Group 5</s><br />
-<a href="#group06">Group 6</a> Derick Rethans (d.rethans@jdimedia.nl)<br />
+<s><a href="#group06">Group 6</a></s> Derick Rethans (d.rethans@jdimedia.nl)<br />
 <s>Group 7</s><br />
 <s>Group 8</s><br />
 <s>Group 9</s><br />
 <s>Group 10</s><br />
 <s>Group 11</s><br />
 <s>Group 12</s><br />
-<a href="#group13">Group 13</a> jalal (the_jalal@yahoo.com)<br />
+<s><a href="#group13">Group 13</a><s> jalal (the_jalal@yahoo.com)<br />
 <a href="#group14">Group 14</a> jalal (the_jalal@yahoo.com)<br />
 <s>Group 15</s> waldschrott (waldschrott@waldschrott.de)<br />
 <a href="#group16">Group 16</a> waldschrott (waldschrott@waldschrott.de)<br />
