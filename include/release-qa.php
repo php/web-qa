@@ -24,6 +24,19 @@ $RC_FILES = array (
 	),
 );
 
+/* PHP 5 Releases */
+$CURRENT_QA_RELEASE_5 = '5.0.3RC1';
+$RC_FILES_5 = array (
+	array (	
+		'http://snaps.php.net/~andi/',
+		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
+	),
+	array (	
+		'http://snaps.php.net/~andi/',
+		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
+	),
+);
+
 /* Snapshot urls and files */
 $SNAPSHOTS = array (
 	array (
@@ -41,7 +54,7 @@ $SNAPSHOTS = array (
 );
 
 if ($RELEASE_PROCESS) {
-	$FILES = $RC_FILES;
+	$FILES = array_merge($RC_FILES, $RC_FILES_5);
 	$MD5SUM = file('include/rc-md5sums.txt');
 } else {
 	$FILES = $SNAPSHOTS;
@@ -50,11 +63,11 @@ if ($RELEASE_PROCESS) {
 
 /* Content */
 function show_release_qa() {
-	global $CURRENT_QA_RELEASE, $FILES, $MD5SUM;
+	global $CURRENT_QA_RELEASE_5, $CURRENT_QA_RELEASE, $FILES, $MD5SUM;
 	
 echo "
 <!-- RELEASE QA -->
-<span class='lihack'>Providing QA for PHP {$CURRENT_QA_RELEASE}
+<span class='lihack'>Providing QA for PHP {$CURRENT_QA_RELEASE} {$CURRENT_QA_RELEASE_5}
  <ul>
 ";
 
