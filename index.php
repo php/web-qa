@@ -22,7 +22,7 @@ common_header();
             <p>The team is currently focused on several areas: </p>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the <a href="http://www.php.net/~derick/php-4.2.0RC2.tar.gz">PHP 4.2.0RC2</a> release.<br />
+                <span class="lihack">Providing QA for the <a href="http://www.php.net/~derick/php-4.2.0RC2.tar.gz">PHP 4.2.0RC2</a> release.</span><br />
             </ul>
 			<p>
 You can help use by completing one of the following tasks:<br />
@@ -63,7 +63,6 @@ following ways:
 </ol>
 If you have any questions, please mail to the php-qa@lists.php.net 
 mailinglist.
-			</p>
             <ul>
               <li>
                 <span class="lihack">Reworking the bug tracking system. (Subscribe to the 
