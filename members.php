@@ -10,7 +10,14 @@
       <b>To become a member,</b> you need to contribute to the PHP Quality Assurance effort.
       We always need people to hunt for bugs, to test Release Candidates and otherwise help out. Start by subscribing to the PHP|QA mailing list (Send a blank message to <a href="mailto:php-qa-subscribe@lists.php.net">php-qa-subscribe@lists.php.net</a>. Once you have subscribed, sent a message to the list introducing yourself.  We would like to know your name, your skill set and your interests (as they relate to doing QA for PHP).<br />Every once in a while core QA team members review and update the membership list.  If you have been actively contributing to the effort for a while, we may ask you to join the group. Also, you can mail the group and ask to become a member.
     </p>
-
+	<p>
+	  <b>Wanted:</b><br />
+	  If you have any of the following platforns which can be used for testing please contact us <b>Now</b>:
+      <ul>
+	    <li>Mac OS</li>
+	  </ul>
+	</P>
+		 
     <h2>PHP|QAT Members</h2>
 
     <ul>
@@ -48,11 +55,12 @@
     <ul>
       <li><b>James Moore</b> &lt;<a href="mailto:jmoore@php.net">jmoore@php.net</a>&gt;
         <ul>
-          <li>Skills: Web Development with PHP, Some C/C++</li>
+          <li>Skills: Web Development with PHP, Basic C, Basic Java</li>
           <li>Focus: Windows Builds and Testing</li>
-          <li>Platform 1: Redhat 6.2 thttpd/Apache + PHP4 + MySQL</li>
+          <li>Platform 1: Mandrake 7.1 thttpd/Apache + PHP4 + MySQL</li>
           <li>Platform 2: Windows 98 + Apache + MySQL</li>
           <li>Platform 3: Windows 2000 + IIS5 (ISAPI &amp; CGI) + MySQL</li>
+		  <li>Platform 4: OpenBSD 2.7 Apache + MySQL</li>
         </ul>
       </li>
     </ul>
