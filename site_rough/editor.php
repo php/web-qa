@@ -59,7 +59,7 @@ function show_items ($category)
     $return = '<option>Unapproved Items</option>';
 
     # get unapproved items
-    $query = "SELECT id, title FROM content WHERE category = '$category' and approved = 'no' ORDER BY stamp DESC";
+    $query = "SELECT id, title FROM content WHERE category = '$category' and approved = 'no' ORDER BY time_stamp DESC";
     $result = mysql_query ($query);
 
     while (list ($id, $title) = @ mysql_fetch_row ($result))
@@ -67,12 +67,10 @@ function show_items ($category)
 
     $return .= '<option></option><option>Approved Items</option>';
     # get approved items
-    $query = "SELECT id, title FROM content WHERE category = '$category' and approved = 'yes' ORDER BY stamp DESC";
+    $query = "SELECT id, title FROM content WHERE category = '$category' and approved = 'yes' ORDER BY time_stamp DESC";
     $result = mysql_query ($query);
     while (list ($id, $title) = @ mysql_fetch_row ($result))
         $return .= sprintf ('<option value="%s"%s> - %s</option>'."\n", $id, $id == $selected_item ? ' SELECTED':'', htmlentities ($title));
-
-	print mysql_error ();
 
     return '<select name="field[id]">' . $return . '</select>';
 }
