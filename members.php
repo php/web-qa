@@ -206,10 +206,10 @@ sysvsem, sysvshm, wddx, zlib</li>
     </ul>
 
     <ul>
-      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sebastian.bergmann@web.de">sebastian.bergmann@web.de</a>&gt;
+      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sbergmann@php.net">sbergmann@php.net</a>&gt;
         <ul>
-          <li>Skills: Web Development using PHP :)</li>
-          <li>Focus: Building/Testing PHP releases</li>
+          <li>Skills: Web Application Development with PHP</li>
+          <li>Focus: QA for PHP Release Candidates</li>
           <li>Platform: Win 32</li>
         </ul>
       </li>
