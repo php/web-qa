@@ -87,10 +87,10 @@ $member_list = array( array("name" => "André Langhorst",
 
 					  array("name" => "Zak Greant",
 							"email" => "zak@php.net",
-							"focus" => "empty",
+							"focus" => "General",
 							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
+							"platform" => array("SuSe 7.1: Apache 1.3.20 + MySQL + Postgres", 
+										  "empty"
 									     )
 							),
 
