@@ -5,20 +5,24 @@
 <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+<body bgcolor="#FFFFFF" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" background="gfx/grey_dark.jpg">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="70" background="gfx/orange_light.jpg">
   <tr>
     <td width="130"><img src="gfx/spacer.gif" width="3" height="1"><img src="gfx/logo_qa.jpg" width="111" height="58"></td>
     <td valign="middle" align="right">
       <table width="500" border="0" cellspacing="0" cellpadding="0" height="70">
-        <tr>
-          <td align="right" valign="top" class="headline_white">[%HEAD_DATE%]</td>
+        <tr> 
+          <td align="right" valign="top" class="headline_white">day, month intday, 
+            year </td>
+          <td align="right" valign="top" class="headline_white"><img src="gfx/spacer.gif" width="5" height="1"></td>
         </tr>
-        <tr>
-          <td valign="bottom" align="right" class="head_links"><a href="index.php">Home</a> 
-            | <a href="projects.php">Projects and Goals</a> | <a href="links.php">Links 
-            &amp; Resources</a> | <a href="members.php">Members</a> | <a href="howtohelp.php">How 
+        <tr> 
+          <td valign="bottom" align="right"><a href="index.php" class="head_links">Home</a> 
+            | <a href="projects.php" class="head_links">Projects and Goals</a> 
+            | <a href="links.php" class="head_links">Links &amp; Resources</a> 
+            | <a href="members.php" class="head_links">Members</a> | <a href="howtohelp.php" class="head_links">How 
             to help</a></td>
+          <td valign="bottom" align="right" class="head_links">&nbsp;</td>
         </tr>
       </table>
     </td>
@@ -28,14 +32,21 @@
   <tr> 
     <td bgcolor="#000000"><img src="gfx/spacer.gif" width="1" height="1"></td>
   </tr>
-  <tr>
-    <td background="gfx/orange_dark.jpg">&nbsp;</td>
+  <tr> 
+    <form method="get" action="search.php">
+      <input type="hidden" name="cmd" value="display" />
+      <td background="gfx/orange_dark.jpg" align="right" valign="middle" class="head_links"> 
+        search bugs for 
+        <input class="small" type="text" name="search_for" value="" size="30" />
+        <input type="image" src="gfx/submit.gif" border="0" width="11" height="11" ALT="search" align="bottom"><img src="gfx/spacer.gif" width="5" height="1">
+      </td>
+    </form>
   </tr>
-  <tr>
+  <tr> 
     <td bgcolor="#000000"><img src="gfx/spacer.gif" width="1" height="1"></td>
   </tr>
 </table>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" height="81%">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="200" background="gfx/grey_light.jpg" align="left" valign="top"> 
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -72,10 +83,10 @@
           <td width="5">&nbsp;</td>
         </tr>
       </table>
-    </td>
+      <img src="gfx/spacer.gif" width="1" height="20"></td>
     <td background="gfx/line_1.jpg" width="1"><img src="gfx/spacer.gif" width="1" height="1"><br>
     </td>
-    <td align="left" valign="top"> <br>
+    <td align="left" valign="top" bgcolor="#FFFFFF"> <br>
       <table width="70%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
@@ -109,7 +120,7 @@
           <td width="10">&nbsp;</td>
         </tr>
       </table>
-    </td>
+      <img src="gfx/spacer.gif" width="1" height="20"></td>
   </tr>
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="22">
