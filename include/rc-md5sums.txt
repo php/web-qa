@@ -1,3 +1,3 @@
-677df559363411d0251c009c15d4eada  php-4.3.5RC4.tar.bz2
-d42a46829e829ee5edeeff23fbfe14f8  php-4.3.5RC4.tar.gz
-074233736e7aa322bd5d9aaca403a2c6  php-4.3.5RC4-Win32.zip
+7d196e4ed7b460be6cab18f2cdd1ef1d  php-4.3.6RC1.tar.bz2
+7cf3737b565071df484b5cbb5dbcdce8  php-4.3.6RC1.tar.gz
+70f97a0a68627cc7bcd03e73973398bb  php-4.3.6RC1-Win32.zip
