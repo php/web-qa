@@ -9,8 +9,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Hellekin O. Wolf",
@@ -18,8 +18,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Jalal Pushman",
@@ -27,8 +27,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "James Moore",
@@ -36,8 +36,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Jani Taskinen",
@@ -45,8 +45,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Joey Smith",
@@ -54,17 +54,17 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Olivier Cahagne",
 							"email" => "olivier.cahagne@epita.fr",
-							"focus" => "empty",
-							"skills" => "empty",
-							"plattform" => array("empty",
-												 "empty"
-												 )
+							"focus" => "Testing builds",
+							"skills" => "PHP",
+							"plattform" => array("NetBSD 1.5 + Apache 1.3 + suEXEC",
+									     "Win2k + Apache 1.3 + IIS"
+									     )
 							),
 							
 					  array("name" => "Phil Driscoll",
@@ -72,8 +72,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Sebastian Bergmann",
@@ -81,8 +81,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "Testing Builds",
 							"skills" => "PHP, Java",
 							"plattform" => array("Win32 + Apache2",
-												 "Linux 2.4.xx + Apache2"
-												 )
+									     "Linux 2.4.xx + Apache2"
+									     )
 							),
 							
 					  array("name" => "Zak Greant",
@@ -90,8 +90,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Marco Kaiser",
@@ -99,8 +99,8 @@ $member_list = array( array("name" => "André Langhorst",
 							"focus" => "Testing Builds / PHP-QAT Website",
 							"skills" => "PHP, C++, Perl, HTML, Javascipt, Photoshop",
 							"plattform" => array("FreeBSD 4.4: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL",
-												 "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
-												 )
+									     "SuSe 7.x: Apache + mod_perl + mod_ssl + openssl + GDLIB Support + MySQL"
+									     )
 							)
  					);
 
@@ -109,8 +109,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Cameron Brunner ",
@@ -118,8 +118,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Hartmut Holzgraefe",
@@ -127,8 +127,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Howard Cohodas",
@@ -136,8 +136,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Kirill Maximov",
@@ -145,8 +145,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							),
 							
 					  array("name" => "Richard Lynch",
@@ -154,8 +154,8 @@ $supportmember_list = array( array("name" => "Brendan W. McAdams",
 							"focus" => "empty",
 							"skills" => "empty",
 							"plattform" => array("empty",
-												 "empty"
-												 )
+									     "empty"
+									     )
 							)
 					);
 
