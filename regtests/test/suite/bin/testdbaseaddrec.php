@@ -43,7 +43,7 @@ $dbname = "/tmp/price.dbf";
 
 $dbf_c = dbase_open($dbname, 2);
 
-for ($i = 1; $i <= 4; $i++)
+for ($i = 1; $i <= dbase_numrecords($dbf_c); $i++)
 {
      $dbf_row[$i] = dbase_get_record_with_names($dbf_c, $i);
 }
