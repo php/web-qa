@@ -15,7 +15,7 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 </tr>
 <tr>
 	<td valign="top">
-		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="2">
+		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
@@ -28,7 +28,7 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 		</font>
 		</div>
 <blockquote>
-<pre><font size="2">
+<pre><font size="3">
 Testers for upcoming PHP 4.0.2 release
 
 <b>Cameron Brunner</b> <a href="mailto:gamr@gattcomp.com.au">gamr@gattcomp.com.au</a>
@@ -48,11 +48,25 @@ Testers for upcoming PHP 4.0.2 release
      - Mandrake 7
      - Windows 95,98,2000
 
-<b>Joey Smith</b> (<a href="mailto:joey@php.net">joey@php.net</a>)<br />
+<b>Joey Smith</b> (<a href="mailto:joey@php.net">joey@php.net</a>)
     Build and Test
      - Debian Linux (2.1, 2.2) - CGI/Apache Module, Sybase, Mysql,
        PDFLib, GD, DOM/XML/expat, IMAP<br />
      - Solaris 2.6 - modules as platform 1<br /><br />
+
+<b>Kirill Maximov</b> (<a href="mailto:maxkir@email.com">maxkir@email.com</a>)
+	Build and Test
+	 - Solaris 7 x86, Oracle7.3.2, Mysql 3.22.32, sysV semaphores,
+	   GD 1.8.3/FreeType
+
+<b>Patrik Bengtsson</b> (<a href="mailto:patrik.bengtsson@grafix.se">patrik.bengtsson@grafix.se</a>)
+	Build and Test
+	 - MacOSX Server 1.0 / Apache 1.3.12
+	 - SuSe Linux 6.4 / Apache 1.3.12
+
+<b>Phil Driscoll</b> (<a href="mailto:phil@dialsolutions.co.uk">phil@dialsolutions.co.uk</a>)
+	Build and Test
+	 - Win NT4 SP6 IIS4 cgi MySQL
 
 <b>waldschrott</b> (<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>)
     Build and Test
@@ -70,6 +84,6 @@ Testers for upcoming PHP 4.0.2 release
 </font></pre>
 <? include ('inc/footer.txt') ?>
 
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="3">$Author$ / $Date$ / $Revision$</font><br /><br />
 </body>
 </html>

@@ -15,7 +15,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 </tr>
 <tr>
 	<td valign="top">
-		<font face="Tahoma, Sans Serif" size="2">
+		<font face="Tahoma, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
@@ -75,8 +75,8 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 2: Windows NT + Apache + PHP 4<br /><br />
 
         <b>James Moore</b> &lt;<a href="mailto:james@phpuk.org">james@phpuk.org</a>&gt;<br />
-		&nbsp;* Skills: ?<br />
-		&nbsp;* Focus: ? and testing releases<br />
+		&nbsp;* Skills: Web Development with PHP, Some C/C++<br />
+		&nbsp;* Focus: Windows Builds (Likely produced every few days) and Testing<br />
 		&nbsp;* Platform 1: Redhat 6.2 / PHP ? / ? Server / ? Modules<br />
 		&nbsp;* Platform 2: Mandrake 7 / PHP ? / ? Server / ? Modules<br />
 		&nbsp;* Platform 3: Windows 95 / PHP ? / ? Server / ? Modules<br />
@@ -153,6 +153,6 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 
 		<? include ('inc/footer.txt') ?>
 
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="3">$Author$ / $Date$ / $Revision$</font><br /><br />
 </body>
 </html>

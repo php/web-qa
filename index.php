@@ -15,7 +15,7 @@ PHP/QAT: The PHP Quality Assurance Team
 </tr>
 <tr>
 	<td valign="top">
-		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="2">
+		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
@@ -41,10 +41,10 @@ PHP/QAT: The PHP Quality Assurance Team
 
 		<b><a name="news">News</a></b>
 		<hr size="1" />
-		<font size="2">
-		<li>PHP/QAT membership is now up to 14 members <font size="1">( July 18, 2000 )</font></li>
-		<li>PHP/QAT webpage created <font size="1">( July 14, 2000 )</font></li>
-		<li>PHP/QAT formed <font size="1">( June 29, 2000 )</font></li>
+		<font size="3">
+		<li>PHP/QAT membership is now up to 14 members <font size="3">( July 18, 2000 )</font></li>
+		<li>PHP/QAT webpage created <font size="3">( July 14, 2000 )</font></li>
+		<li>PHP/QAT formed <font size="3">( June 29, 2000 )</font></li>
 		</font>
 		<br /><br /><br />
 
@@ -69,6 +69,6 @@ PHP/QAT: The PHP Quality Assurance Team
 
 		<? include ('inc/footer.txt') ?>
 
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="3">$Author$ / $Date$ / $Revision$</font><br /><br />
 </body>
 </html>

@@ -15,7 +15,7 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 </tr>
 <tr>
 	<td valign="top">
-		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="2">
+		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
 		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
@@ -41,6 +41,6 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 
 		<? include ('inc/footer.txt') ?>
 
-<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="1">$Author$ / $Date$ / $Revision$</font><br /><br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="ms sans serif, arial, geneva, sans serif" size="3">$Author$ / $Date$ / $Revision$</font><br /><br />
 </body>
 </html>
