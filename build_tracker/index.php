@@ -37,7 +37,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<input type="text" name="field['']" value="<?= $field[''] ?>" size="" maxlength="" />
+		<input type="text" name="field['']" value="<?= $field[''] ?>" size="32" maxlength="32" />
 		</font></td>
 	</tr>
 
@@ -47,7 +47,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<input type="text" name="field['']" value="<?= $field[''] ?>" size="" maxlength="" />
+		<input type="text" name="field['']" value="<?= $field[''] ?>" size="32" maxlength="32" />
 		</font></td>
 	</tr>
 </table><br />
@@ -107,8 +107,8 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<input type="text" name="field[os_name]" value="<?= $field[os_name] ?>" size="" maxlength="" />
-		<input type="text" name="field[os_version]" value="<?= $field[os_version] ?>" size="" maxlength="" />
+		<input type="text" name="field[os_name]" value="<?= $field[os_name] ?>" size="32" maxlength="32" />
+		<input type="text" name="field[os_version]" value="<?= $field[os_version] ?>" size="32" maxlength="32" />
 		</font></td>
 	</tr>
 	<tr>
@@ -117,8 +117,8 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<input type="text" name="field[server_name]" value="<?= $field[server_name] ?>" size="" maxlength="" />
-		<input type="text" name="field[server_version]" value="<?= $field[server_version] ?>" size="" maxlength="" />
+		<input type="text" name="field[server_name]" value="<?= $field[server_name] ?>" size="32" maxlength="32" />
+		<input type="text" name="field[server_version]" value="<?= $field[server_version] ?>" size="32" maxlength="32" />
 		</font></td>
 	</tr>
 
@@ -181,7 +181,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 		</font></td>
 
 		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
-		<input type="text" name="field['']" value="<?= $field[''] ?>" size="" maxlength="" />
+		<input type="text" name="field['']" value="<?= $field[''] ?>" size="32" maxlength="32" />
 		</font></td>
 	</tr>
 
