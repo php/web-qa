@@ -27,8 +27,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 <body bgcolor="#FFFFFF" text="#000000" link="#990000" vlink="#999900">
 <font face="Tahoma, Arial, Helvetica, Sans Serif">
 <form action="<?= $PHP_SELF ?>" method="POST" />
-<img SRC="logo.gif" WIDTH="81" HEIGHT="118" border="0" alt="logo ? who knows :)" align="left" hspace="10">
-<h2>Index of Built|Installed PHP Releases</h2><br />
+<h2>Index of Built|Installed PHP Releases</h2>
  - placeholder for short instructions<br />
  - link to build|install report page<br />
 <br clear="all" />
@@ -92,6 +91,31 @@ PHP|QAT: Compiled/Installed Version Tracker
 			{
 				$date_string = date ('Y/m/d', $date);
 				printf ('<option%s>%s</option>', $selected_cvs_source[$date_string], $date_string);
+				$date -= $day;
+			}
+		?>
+		</select>
+		</font></td>
+	</tr>
+
+	<tr>
+		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
+		Snapshot Date
+		</font></td>
+
+		<td><font face="Tahoma, Arial, Helvetica, Sans Serif">
+		<select name="field[snapshot]">
+		<option> -- I did not use a snapshot --</option>
+		<?
+			$selected_snapshot[$field[snapshot]] = ' selected';
+
+			$day = 60 * 60 * 24;
+			$date = time ();
+			$end = $date - 29 * $day;
+			while ($date > $end)
+			{
+				$date_string = date ('Y/m/d', $date);
+				printf ('<option%s>%s</option>', $selected_snapshot[$date_string], $date_string);
 				$date -= $day;
 			}
 		?>
@@ -192,7 +216,7 @@ PHP|QAT: Compiled/Installed Version Tracker
 
 </table><br />
 
-<b>Installed a Binary</b> (If you installed an binary of PHP, please complete this section)
+<b>Installed a Binary</b> (If you installed a binary of PHP, please complete this section)
 <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#CCCCCC">
 	<tr>
 		<td align="right" width="25%"><font face="Tahoma, Arial, Helvetica, Sans Serif">
