@@ -132,6 +132,12 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Focus: Build and Test Release Candidates<br />
 		&nbsp;* Platforms:NT, Risc OS, Incompetent Linux user (probably useful!)<br /><br />
 
+		<b>Rebecca &quot;Bean&quot; Visger</b> &lt;<a href="mailto:rvisger@sjmarketing.com">rvisger@sjmarketing.com</a>&gt;<br />
+		&nbsp;* Skills: Web Development, PHP, mySQL, HTML, javascript, design, etc...<br />
+		&nbsp;* Platform 1: FreeBSD 3.4-RELEASE<br />
+		&nbsp;* Platform 2: FreeBSD 4.0<br />
+		&nbsp;* Platform 3: BSDI BSD/OS 4.0.1<br /><br />
+
 		<b>Richard Lynch</b> &lt;<a href="mailto:richard@zend.com">richard@zend.com</a>&gt;<br />
 		&nbsp;* Skills: PHP, Lisp and others I refuse to name for fear of head-hunters<br />
 		&nbsp;* Focus : Team Feedback and guidance<br />
