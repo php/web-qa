@@ -94,7 +94,7 @@ common_header();
               <li><span class="lihack"><a href="http://www.gnu.org/software/m4/m4.html" target="_blank">m4</a></span></li>
               <li><span class="lihack"><a href="http://www.gnu.org/software/make/make.html" target="_blank">Make</a></span></li>
               <li><span class="lihack"><a href="http://www.gnu.org/software/tar/tar.html" target="_blank">tar</a></span></li>
-              <li><span class="lihack"><a href="http://www.perl.com/" target="_blank">Per</a></span></li>
+              <li><span class="lihack"><a href="http://www.perl.com/" target="_blank">Perl</a></span></li>
             </ul>
           </td>
           <td width="10">&nbsp;</td>
