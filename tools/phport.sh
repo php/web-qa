@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.21 2002-11-21 06:35:44 nohn Exp $
+# $Id: phport.sh,v 1.22 2002-11-21 06:40:10 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -202,7 +202,8 @@ $MAKE 2>error.log
 cat error.log | mail -s "PHP Compile Report" $USER
 
 # Running testcases against the environment
-export NO_INTERACTION=1
+NO_INTERACTION=1
+export NO_INTERACTION
 $MAKE test | mail -s "PHP Test Report" $USER
 
 # vim600: et ts=4 sw=4
