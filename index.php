@@ -28,7 +28,6 @@
 
 <h2><a name="news">News</a></h2>
 <ul>
-	<li><span class="lihack">(September *, 2000) Difficulties with php.net slow development activities</span></li>
 	<li><span class="lihack">(September 7, 2000) PHP 4.0.3 RC announced</span></li>
 	<li><span class="lihack">(August 29, 2000) PHP 4.0.2 released</span></li>
 </ul>
