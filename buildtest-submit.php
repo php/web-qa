@@ -1,7 +1,7 @@
 <?php
 include("functions.php");
 
-$TITLE = "How To Help [PHP-QAT: Quality Assurance Team]";
+$TITLE = "Submit Build Test [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>
 /* $Id$ */";
 
@@ -10,12 +10,13 @@ common_header();
 
 <h1>Build Tracker</h1>
 <hr>
+Where you have specified "other" for any category, please enter what it is in the Remarks section. 
 <form action="buildtest-action.php" method="post">
-<h2>Meta</h2>
+<h2>General</h2>
 <table>
 <tr>
 	<th>Name:</th>
-	<td><input type="text" name="name"></td>
+	<td><input type="text" name="user_name"></td>
 </tr>
 <tr>
 	<th>E-mail:</th>
@@ -25,8 +26,8 @@ common_header();
 	<th>Package:</th>
 	<td>
 		<select name="package">
-			<option value="420dev">4.2.0dev (provide date in remark section)</option>
-			<option value="420RC1">4.2.0RC1</option>
+			<option value="4.2.0-dev">4.2.0-dev (provide date in remark section)</option>
+			<option value="4.2.0-RC1">4.2.0-RC1</option>
 		</select>
 	</td>
 </tr>
@@ -34,9 +35,9 @@ common_header();
 	<th>Build status:</th>
 	<td>
 		<select name="status">
-			<option value="1">Good</option>
-			<option value="0">Minor problems</option>
-			<option value="-1">Failure</option>
+			<option value="Good">Good</option>
+			<option value="Minor Problems">Minor problems</option>
+			<option value="Fail">Failure</option>
 		</select>
 	</td>
 </tr>
@@ -48,18 +49,18 @@ common_header();
 	<th>Operating System</th>
 	<td>
 		<select name="os">
-			<option value="lnxi386">Linux/i386</option>
-			<option value="lnxoth">Linux/other</option>
-			<option value="fbsd43">FreeBSD 4.3</option>
-			<option value="fbsd43">FreeBSD 4.4</option>
-			<option value="openbsd">OpenBSD</option>
-			<option value="macosx">MacOSX</option>
-			<option value="hpux">HPUX</option>
-			<option value="irix">Irix</option>
-			<option value="win9598">Windows 95/98</option>
-			<option value="winme">Windows ME</option>
-			<option value="winnt2k">Windows NT/2000</option>
-			<option value="winxp">Windows XP</option>
+			<option value="Linux i386">Linux/i386</option>
+			<option value="Linux other">Linux/other</option>
+			<option value="FreeBSD 4.3">FreeBSD 4.3</option>
+			<option value="FreeBSD 4.3">FreeBSD 4.4</option>
+			<option value="OpenBSD">OpenBSD</option>
+			<option value="Mac OS X">Mac OS X</option>
+			<option value="HPUX">HPUX</option>
+			<option value="Irix">Irix</option>
+			<option value="Windows 95/98">Windows 95/98</option>
+			<option value="Windows Me">Windows ME</option>
+			<option value="Windows NT/2K">Windows NT/2000</option>
+			<option value="Windows XP">Windows XP</option>
 			<option value="other">other</option>
 		</select>
 	</td>
@@ -70,12 +71,12 @@ common_header();
 		<select name="sapi">
 			<option value="cli">CLI</option>	
 			<option value="cgi">CGI</option>
-			<option value="apa1dso">Apache 1.3.x Module (DSO)</option>
-			<option value="apa1sta">Apache 1.3.x Module (static)</option>
-			<option value="apa2dso">Apache 2.x Module (DSO)</option>
-			<option value="isapi">ISAPI</option>
-			<option value="fastcgi">Fast CGI</option>
-			<option value="other">other</option>
+			<option value="Apache 1.3.x DSO">Apache 1.3.x Module (DSO)</option>
+			<option value="Apache 1.3.x Static">Apache 1.3.x Module (static)</option>
+			<option value="Apache 2.x DSO">Apache 2.x Module (DSO)</option>
+			<option value="ISAPI">ISAPI</option>
+			<option value="FastCGI">Fast CGI</option>
+			<option value="Other">other</option>
 		</select>
 	</td>
 </tr>
