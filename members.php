@@ -85,7 +85,15 @@ $member_list = array(
 		"skills" => "PHP, XML, XSLT",
 		"platform" => array("Linux Debian testing/unstable")
 	),
-					  
+
+ 	array(
+    	"name" => "Liz Kimber",
+		"email" => "liz@xcalibur.demon.co.uk",
+ 		"focus" => "Bug hunting, compilation, linux, windows",
+ 		"skills" => "all round techy/geek, unix+windows (no mac!)", 
+        "platform" => array("Slackware Linux","NT 4","W2K","WXP")
+ 	),		
+		  
 	array(
 		"name" => "Marco Kaiser",
 		"email" => "bate@php.net",
