@@ -51,11 +51,11 @@ If you have any questions, please send them to the list.<br /><br />
 
 Thank you and good luck!<br /><br />
 
-<a href="#group01">Group 1</a> (Currently Available)<br />
-<a href="#group02">Group 2</a> (Currently Available)<br />
-<a href="#group03">Group 3</a> (Currently Available)<br />
-<a href="#group04">Group 4</a> (Currently Available)<br />
-<a href="#group05">Group 5</a> (Currently Available)<br />
+<a href="#group01">Group 1</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group02">Group 2</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group03">Group 3</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group04">Group 4</a> Zak Greant (zak@nucleus.com)<br />
+<a href="#group05">Group 5</a> Zak Greant (zak@nucleus.com)<br />
 <a href="#group06">Group 6</a> (Currently Available)<br />
 <a href="#group07">Group 7</a> (Currently Available)<br />
 <a href="#group08">Group 8</a> (Currently Available)<br />
@@ -75,7 +75,7 @@ Thank you and good luck!<br /><br />
 <a href="#group22">Group 22</a> (Currently Available)<br />
 <a href="#group23">Group 23</a> (Currently Available)<br /><br />
 <a name="group01"></a>
-<b>Group 1:</b> Currently Available<br />
+<b>Group 1:</b> Zak Greant (zak@nucleus.com)<br />
 <table border=1 width="95%"><tr>
 <th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.id&last_order_by=id">ID#</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.bug_type&last_order_by=id">Bug Type</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Status&last_order_by=id">Status</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Assigned&last_order_by=id">Assigned</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Version&last_order_by=id">Version</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Platform&last_order_by=id">Platform</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Description&last_order_by=id">Description</a></th><th bgcolor="#aaaaaa">Mod</th></tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=2050">2050</a></td><td align="left" >Reproduceable crash</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 2</td><td align="left" >Win NT4 SP5</td><td align="left" >Changes the name of the page before the web server serves it.</td><td align="center" ><a href="bugs.php?id=2050&edit=1"><b>%gt;%gt</b></a></td>
@@ -110,7 +110,7 @@ Thank you and good luck!<br /><br />
 </table>
 <a href="#top">Return to Top</a><br />
 <a name="group02"></a>
-<br /><b>Group 2:</b> Currently Available<br />
+<br /><b>Group 2:</b> Zak Greant (zak@nucleus.com)<br />
 <table border=1 width="95%"><tr>
 <th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.id&last_order_by=id">ID#</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.bug_type&last_order_by=id">Bug Type</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Status&last_order_by=id">Status</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Assigned&last_order_by=id">Assigned</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Version&last_order_by=id">Version</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Platform&last_order_by=id">Platform</a></th><th bgcolor="#aaaaaa"><a href="http://bugs.php.net/bugs.php?foo=bar&where_clause=bug_type!='Feature/Change+Request'+and+(status='Open'+or+status='Assigned'+or+status='Analyzed')+and+php_version+like+'4%'&total_num_rows=661&cmd=Display+Bugs&status=Open&bug_type=Any&order_by_clause=bugdb.Description&last_order_by=id">Description</a></th><th bgcolor="#aaaaaa">Mod</th></tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=3061">3061</a></td><td align="left" >MySQL related</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 3</td><td align="left" >RedHat 6.1</td><td align="left" >MySQL fails in queries containing several tables sharing an attribute name</td><td align="center" ><a href="bugs.php?id=3061&edit=1"><b>%gt;%gt</b></a></td>
@@ -144,7 +144,7 @@ Thank you and good luck!<br /><br />
 </table>
 <a href="#top">Return to Top</a><br />
 <a name="group03"></a>
-<br /><b>Group 3:</b> Currently Available<br />
+<br /><b>Group 3:</b> Zak Greant (zak@nucleus.com)<br />
 <table border=1 width="95%"><tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=3395">3395</a></td><td align="left" >Scripting Engine problem</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 3</td><td align="left" >Windows 2000</td><td align="left" >Server returned Invalid Information</td><td align="center" ><a href="bugs.php?id=3395&edit=1"><b>%gt;%gt</b></a></td>
 <tr bgcolor="#99bbaa"><td align="center" ><a href="bugs.php?id=3411">3411</a></td><td align="left" >Session related</td><td align="left" >Analyzed</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 3</td><td align="left" >Linux</td><td align="left" >Transparent sessions breaking randomly</td><td align="center" ><a href="bugs.php?id=3411&edit=1"><b>%gt;%gt</b></a></td>
@@ -178,7 +178,7 @@ align="left" >Linux valiant 2.2.13 #1 Mon Nov</td><td align="left" >wrong error 
 </table>
 <a href="#top">Return to Top</a><br />
 <a name="group04"></a>
-<br /><b>Group 4:</b> Currently Available<br />
+<br /><b>Group 4:</b> Zak Greant (zak@nucleus.com)<br />
 <table border=1 width="95%"><tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=3714">3714</a></td><td align="left" >Scripting Engine problem</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 4 Patch Level 1</td><td align="left" >RedHat 6.1</td><td align="left" >Output page header(page encoding) problem</td><td align="center" ><a href="bugs.php?id=3714&edit=1"><b>%gt;%gt</b></a></td>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=3730">3730</a></td><td align="left" >Scripting Engine problem</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Beta 3</td><td align="left" >Red Hat Linux</td><td align="left" >Warning: Undefined Variable</td><td align="center" ><a href="bugs.php?id=3730&edit=1"><b>%gt;%gt</b></a></td>
@@ -212,7 +212,7 @@ align="left" >Linux valiant 2.2.13 #1 Mon Nov</td><td align="left" >wrong error 
 </table>
 <a href="#top">Return to Top</a><br />
 <a name="group05"></a>
-<br /><b>Group 5:</b> Currently Available<br />
+<br /><b>Group 5:</b> Zak Greant (zak@nucleus.com)<br />
 <table border=1 width="95%"><tr>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=4030">4030</a></td><td align="left" >Reproduceable crash</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Release Candidate 1</td><td align="left" >FreeBSD-CURRENT (5.0 March 27)</td><td align="left" >Apache SEGFAULTs on exit</td><td align="center" ><a href="bugs.php?id=4030&edit=1"><b>%gt;%gt</b></a></td>
 <tr bgcolor="#ffbbaa"><td align="center" ><a href="bugs.php?id=4037">4037</a></td><td align="left" >Scripting Engine problem</td><td align="left" >Open</td><td align="left" > &nbsp; </td><td align="left" >4.0 Release Candidate 1</td><td align="left" >Linux 2.2</td><td align="left" >improper parsing of logical statements</td><td align="center" ><a href="bugs.php?id=4037&edit=1"><b>%gt;%gt</b></a></td>
