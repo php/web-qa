@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.7 2002-11-10 20:54:22 nohn Exp $
+# $Id: phport.sh,v 1.8 2002-11-10 20:59:13 jan Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -191,5 +191,6 @@ make 2>error.log
 cat error.log | mail -s "PHP Compile Report" $USER
 
 # Running testcases against the environment
-export NO_INTERACTION=1
+NO_INTERACTION=1
+export NO_INTERACTION
 make test | mail -s "PHP Test Report" $USER
