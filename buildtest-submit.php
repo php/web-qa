@@ -147,6 +147,8 @@ Where you have specified "other" for any category, please enter what it is in th
             <option value="1.32">1.32</option>
             <option value="1.33">1.33</option>
             <option value="1.35">1.35</option>
+            <option value="1.50">1.50</option>
+            <option value="1.75">1.75</option>
             <option value="other">other</option>
         </select>
     </td>
