@@ -1,8 +1,8 @@
 <?php
-	$TITLE = 'Links and Resources (PHP|QAT: The PHP Quality Assurance Team)';
-	$CVS_KEYWORDS = '$Author$ / $Date$ / $Revision$';
+    $TITLE = 'Links and Resources (PHP|QAT: The PHP Quality Assurance Team)';
+    $CVS_KEYWORDS = '$Author$ / $Date$ / $Revision$';
 
-	include ('inc/header.inc');
+    include ('inc/header.inc');
 ?>
 
     <h1>Links and Resources</h1>
@@ -50,6 +50,12 @@
     <ul type="disc">
       <li><span class="lihack"><a href="http://www.zugeschaut-und-mitgebaut.de/php/" add_date="966373439" last_visit="966378803" last_modified="966346338">Hartmut Holzgraefe's PHP Function &amp; Documentation Resource</a></span></li>
       <li><span class="lihack"><a href="http://www.php4win.de/">[napp] (not another php portal) Basic support for PHP on win32. The main focus is providing binary builds of PHP.</a></span></li>
+    </ul>
+
+    <h2></h2>
+    <ul type="disc">
+      <li><span class="lihack"><a href="http://sel.gsfc.nasa.gov/website/documents/online-doc.htm">NASA's Software Engineering Lab - Online Documents</a></span></li>
+      <li><span class="lihack"><a href="http://www.construx.com/ladder/index.htm">Construx Software Professional Developer Resources</a></span></li>
     </ul>
 
 <?php include ('inc/footer.inc') ?>

@@ -7,20 +7,23 @@
 
     <h1>PHP|QAT Goals</h1>
 
-    <h2>Release Candidates Testing and QA (<a href="release.4.0.2.php">Upcoming Release 4.0.2</a>)</h2>
-    <ul> 
+    <h2>Release Candidates Testing and QA (Upcoming Release 4.0.3)</h2>
+    <ul>
       <li><span class="lihack">Release Candidate Build</span></li>
       <li><span class="lihack">Automated Smoke Tests</span></li>
       <li><span class="lihack">Automated QA Checklists</span></li>
       <li><span class="lihack">Automated Regression Tests</span></li>
     </ul>
-    
-    <h2><!-- a href="" -->Get PHP/QA Team organized</h2>
+
+    <h2>Modify The Bug Database Interface</h2>
+    <h3>The interface should:</h3>
     <ul>
-      <li><span class="lihack">get members to take care of regular tasks</span></li>
-      <li><span class="lihack">continue work on defining goals, methods and requirements</span></li>
+      <li><span class="lihack">reduce the occurance of multiple reports on the same bug</span></li>
+      <li><span class="lihack">improve the accuracy of the reports</span></li>
+      <li><span class="lihack">make it easier for the QAT to reproduce the bug</span></li>
+      <li><span class="lihack">track the solution to the bug</span></li>
     </ul>
-        
+
     <h2><a href="bugs.php">Bug Hunting</a></h2>
     <ul>
       <li><span class="lihack">analysing/closing existing bug reports at bugs.php.net</span></li>
@@ -29,7 +32,7 @@
       <li><span class="lihack">monitoring/reviewing information from existing PHP mailing lists</span></li>
     </ul>
 
-    <h2><!-- a href="" -->Finish PHP|QAT Website</h2>
+    <h2>Finish PHP|QAT Website</h2>
 
     <h3>QA Team Roster Application</h3>
     <ul>
@@ -50,16 +53,7 @@
       </li>
     </ul>
 
-    <h2><!-- a href="" -->Modify The Bug Database Interface</h2>
-    <h3>The interface should:</h3>
-    <ul>
-      <li><span class="lihack">reduce the occurance of multiple reports on the same bug</span></li>
-      <li><span class="lihack">improve the accuracy of the reports</span></li>
-      <li><span class="lihack">make it easier for the QAT to reproduce the bug</span></li>
-      <li><span class="lihack">track the solution to the bug</span></li>
-    </ul>
-
-    <h3><!-- a href="" -->Provide Client-Side Bug Reporting via PHP Interpreter</h3>
+    <h3>Provide Client-Side Bug Reporting via PHP Interpreter</h3>
     <ul>
       <li><span class="lihack">Add functionality to PHP to help php users submit accurate bugs.</span></li>
       <li><span class="lihack">Probably the best solution that has been proposed is the addition of a submit_bug() function that would automatically send platform data, along with PHP interpreter state when it is called.  This solution would address the security concerns that have been raised by the possible display of platform information to malicious visitors.</span></li>
