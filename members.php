@@ -54,6 +54,14 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* Platform 1: SUSE Linux 6.4 + Apache 1.3.12 + mod_PHP<br />
 		&nbsp;* Platform 2: WinNT 4 (Service Pack 5) + Apache 1.3.12 + mod_PHP<br /><br />
 
+		<b>Brendan W. McAdams</b> &lt;<a href="mailto:brendan@plexmedia.com">brendan@plexmedia.com</a>&gt;<br />
+		&nbsp;* Skills: PHP, MySQL, C, etc... <br />
+		&nbsp;* Focus : Developing QA team applications and testing release candidates<br />
+		&nbsp;* Platform 1: OpenBSD 2.7 (sparc and i386)<br />
+		&nbsp;* Platform 2: FreeBSD 4.0 (i386)<br />
+		&nbsp;* Platform 3: Linux (Slackware 7 and RedHat 5.2, 6.0, 6.1)<br />
+		&nbsp;* Platform 4: Solaris 7 (sparc)<br /><br />
+
 		<b>Cameron Brunner</b> &lt;<a href="mailto:gamr@gattcomp.com.au">gamr@gattcomp.com.au</a>&gt;<br />
 		&nbsp;* Skills: Web Development using PHP<br />
 		&nbsp;* Focus: Build and Test Releases<br />
