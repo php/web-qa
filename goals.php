@@ -33,6 +33,14 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		<b>PHP/QAT Goals</b>
 		<hr size="1" />
 		<ol>
+		<li><b>Release Candidates Testing and QA (<a href="release.4.0.2.php">Upcoming Release 4.0.2</a>)</b></li><br />
+		&nbsp;* Release Candidate Build<br />
+		&nbsp;* Automated Smoke Tests<br />
+		&nbsp;* Automated QA Checklists<br />
+		&nbsp;* Automated Regression Tests<br />
+		<br />
+
+
 		<li><b><!-- a href="" -->Get PHP/QA Team organized</a></b></li><br />
 		&nbsp; * get members to take care of regular tasks<br />
 		&nbsp; * continue work on defining goals, methods and requirements<br />
@@ -66,13 +74,6 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 		&nbsp;* improve the accuracy of the reports<br />
 		&nbsp;* make it easier for the QAT to reproduce the bug<br />
 		&nbsp;* track the solution to the bug<br />
-		<br />
-
-		<li><b><!-- a href="" -->Release Candidates Testing and QA</a></b></li><br />
-		&nbsp;* Release Candidate Build<br />
-		&nbsp;* Automated Smoke Tests<br />
-		&nbsp;* Automated QA Checklists<br />
-		&nbsp;* Automated Regression Tests<br />
 		<br />
 
 		<li><b><!-- a href="" -->Provide Client-Side Bug Reporting via PHP Interpreter</a></b></li><br />
