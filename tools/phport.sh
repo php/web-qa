@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.10 2002-11-10 21:15:16 nohn Exp $
+# $Id: phport.sh,v 1.11 2002-11-10 21:24:08 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -62,7 +62,7 @@ if ! [ -d etc ] ; then
     mkdir etc
 fi    
 
-if [ $USE_BZ2 = "NO" ] ; then 
+if [ "$USE_BZ2" = "NO" ] ; then 
     PHPSNAPFILE="php4-latest.tar.gz"
     TARMOD=z
  else
@@ -90,7 +90,7 @@ case $MODE in
     snap) # 24h distfile!!
         if [ $2 ] ; then
             SNAPURI=$2;
-            PHPSNAPFILE=`echo $SNAPURI | sed 's/.*\///g'`
+            PHPSNAPFILE="$(echo $SNAPURI | sed 's/.*\///g')"
         else
             SNAPURI=$PHPSNAPSERVER/$PHPSNAPFILE
         fi    
