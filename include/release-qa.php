@@ -35,6 +35,10 @@ $RC_FILES_5 = array (
 		'http://snaps.php.net/~andi/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
+	array (	
+		'http://downloads.php.net/edink/',
+		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
+	),
 );
 
 /* Snapshot urls and files */

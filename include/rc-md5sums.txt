@@ -3,3 +3,4 @@ d0172a795aebe8a66ee17b6a546ac459  php-4.3.10RC1.tar.bz2
 f1dfd20c9032033f96b4a148c1cc5c96  php-4.3.10RC1-Win32.zip
 9abb5c1558865eab14674f96a6238348  php-5.0.3RC1.tar.bz2
 166ec177b08d51a62f2bad3a1f5cbec8  php-5.0.3RC1.tar.gz
+ffd3ad8b2d9cfaba7524917d5f456f66  php-5.0.3RC1-Win32.zip
