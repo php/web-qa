@@ -22,7 +22,7 @@
 		} else {
 			$version = "unknown";
 		}
-		mail ("php-qa@lists.php.net", "Test results for $version [$status]", base64_decode(urldecode($_POST['php_test_data'])), "From: noreply@php.net");
+		mail ("qa-reports@lists.php.net", "Test results for $version [$status]", base64_decode(urldecode($_POST['php_test_data'])), "From: noreply@php.net");
 	}
 ?>
 $Revision$
