@@ -22,12 +22,12 @@
     <h2>PHP|QAT Members</h2>
 
     <ul>
-      <li><b>Andr&eacute; Langhorst </b> &lt;<a href="mailto:waldschrott@php.net">waldschrott@php.net</a>&gt;
+      <li><b>Andr&eacute; Langhorst </b> &lt;<a href="mailto:andre@php.net">andre@php.net</a>&gt;
         <ul>
-          <li>Skills: PHP, Java, Javascript, XML, XSL, ODBC (Adabas,Mysql,PostgreSQL,Oracle(8)), HTML</li>
+          <li>Skills: PHP, C++, Java&amp;JS, XML&amp;XSL, Databases etc.</li>
           <li>Focus: Closing bugs, QA for PHP Release Candidate</li>
-          <li>Platform 1: Windows 2000 Apache + Latest PHP + MySQL + Adabas (ODBC)</li>
-          <li>Platform 2: Linux + PHP (module) + MySQL + Adabas (ODBC) + PostgreSQL</li>
+          <li>Platform 1: Windows 2000 Apache + Latest PHP + MySQL</li>
+          <li>Platform 2: Linux + PHP (module) + MySQL</li>
         </ul>
       </li>
     </ul>
