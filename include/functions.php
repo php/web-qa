@@ -3,7 +3,7 @@
 (c)'2001 by Marco Kaiser (bate@php.net) and the PHP Group 	
 Read an Learn. Any Questions so ask. 						
 
-Version: $ID$
+Version: $Id$
 */
 
 function common_header() {
@@ -17,22 +17,23 @@ function common_header() {
  <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" background="gfx/grey_dark.jpg">
+<body bgcolor="#ffffff" text="#000000" link="#000000" vlink="#000000" alink="#000000" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="102">
   <tr> 
-    <td background="gfx/orange_light.jpg"><img src="gfx/spacer.gif" width="5" height="1"><img src="gfx/logo_qa.jpg" width="111" height="58"></td>
-    <td background="gfx/orange_light.jpg" align="right" valign="bottom"> 
+    <td bgcolor="#ffcc66"><img src="gfx/spacer.gif" width="5" height="1"><img src="gfx/logo_qa.jpg" width="111" height="58"></td>
+    <td bgcolor="#ffcc66" align="right" valign="bottom"> 
       <table border="0" cellspacing="0" cellpadding="0" height="70">
         <tr> 
           <td align="right" valign="top" class="headline_white"><?= date("l, F d, Y", time()); ?></td>
           <td align="right" valign="top" class="headline_white"><img src="gfx/spacer.gif" width="5" height="1"></td>
         </tr>
         <tr> 
-          <td valign="bottom" align="right"><a href="index.php" class="head_links">Home</a> 
+          <td valign="bottom" align="right"><a href="/" class="head_links">Home</a> 
             | <a href="projects.php" class="head_links">Projects and Goals</a> 
             | <a href="links.php" class="head_links">Links &amp; Resources</a> 
-            | <a href="members.php" class="head_links">Members</a> | <a href="howtohelp.php" class="head_links">How 
-            to help</a></td>
+            | <a href="members.php" class="head_links">Members</a>
+            | <a href="howtohelp.php" class="head_links">How to help</a>
+          </td>
           <td valign="bottom" align="right" class="head_links">&nbsp;</td>
         </tr>
       </table>
@@ -43,7 +44,7 @@ function common_header() {
   </tr>
   <tr> 
     <form method="get" action="http://bugs.php.net/search.php" target="_blank">
-      <td colspan="2" background="gfx/orange_dark.jpg" align="right" class="head_links"> search 
+      <td colspan="2" bgcolor="#ff9900" align="right" class="head_links"> search 
         bugs for 
       <input type="hidden" name="cmd" value="display">
         <input type="text" name="search_for" value="" size="30" class="small">
@@ -57,7 +58,7 @@ function common_header() {
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="200" background="gfx/grey_light.jpg" align="center" valign="top"> 
+    <td width="200" bgcolor="#eeeeee" align="center" valign="top"> 
       <table width="95%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td width="5"><img src="gfx/spacer.gif" width="5" height="1"></td>
@@ -184,7 +185,7 @@ function common_footer() {
     <td bgcolor="#000000"><img src="gfx/spacer.gif" width="1" height="1"></td>
   </tr>
   <tr> 
-    <td background="gfx/orange_dark.jpg">&nbsp;</td>
+    <td bgcolor="#ff9900">&nbsp;</td>
   </tr>
   <tr> 
     <td bgcolor="#000000"><img src="gfx/spacer.gif" width="1" height="1"></td>
@@ -192,7 +193,7 @@ function common_footer() {
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" height="60">
   <tr valign="middle"> 
-    <td background="gfx/grey_dark.jpg" align="left" width="100%"> 
+    <td bgcolor="#cccccc" align="left" width="100%"> 
       <table border="0" cellspacing="0" cellpadding="0">
         <tr> 
           <td width="80" align="center"><img src="gfx/php-logo.gif" width="69" height="36"></td>
@@ -202,9 +203,9 @@ function common_footer() {
         </tr>
       </table>
     </td>
-    <td background="gfx/grey_dark.jpg" nowrap align="right" class="footer">Last 
+    <td bgcolor="#cccccc" nowrap align="right" class="footer">Last 
       update: <?= $GLOBALS["SITE_UPDATE"]; ?></td>
-    <td background="gfx/grey_dark.jpg" nowrap align="right" class="footer"><img src="gfx/spacer.gif" width="10" height="1"></td>
+    <td bgcolor="#cccccc" nowrap align="right" class="footer"><img src="gfx/spacer.gif" width="10" height="1"></td>
   </tr>
 </table>
 </body>
