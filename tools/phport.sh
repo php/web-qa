@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@lehnardt.de>                           |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.3 2002-11-10 18:42:07 jan Exp $
+# $Id: phport.sh,v 1.4 2002-11-10 18:55:15 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -31,8 +31,6 @@ WRKDIR=work
 PHPSNAPSERVER=http://snaps.php.net/
 PHPPSERVER=':pserver:cvsread@cvs.php.net:/repository'
 PHPCVSPASS='A:c:E?'
-ZENDPSERVER=':pserver:cvsread@cvs.zend.com:/repository'
-ZENDCVSPASS='A>d=e'
 
 # Build directory structure if not available
 if ! [ -d $WRKDIR ] ; then
