@@ -33,11 +33,12 @@
     </ul>
 
     <ul>
-      <li><b>Hellekin O. Wolf</b> &lt;<a href="mailto:hellekin@imaginet.fr">hellekin@imaginet.fr</a>&gt;
+      <li><b>Hellekin O. Wolf</b> &lt;<a href="mailto:hellekin@php.net">hellekin@php.net</a>&gt;
         <ul>
           <li>Skills: Web development and design, Team management, Internet culture, French</li>
           <li>Focus: PHP for multi-hosting (aka, providers issues), ideas, code, bug hunting</li>
-          <li>Platform: Linux(es) (some FreeBSD available also)</li>
+          <li>Platform: Linux(es)</li>
+          <li>Test Platform : Debian SID + Apache 1.3.17 EAPI + mod_ssl-2.8.0</li>
         </ul>
       </li>
     </ul>
