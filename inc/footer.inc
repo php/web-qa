@@ -13,7 +13,7 @@
           </p>
 
           <address>
-            <p><?= $CVS_KEYWORDS ?></p>
+            <?= $CVS_KEYWORDS ?>
           </address>
         </td>
       </tr>

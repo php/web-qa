@@ -4,7 +4,7 @@ body {
    margin-left: 0;
 }
 
-p, td, li, h1, h2, h3 {
+p, td, h1, h2, h3 {
    font-family: tahoma, arial, helvetica, "sans serif";
    margin-left: 10pt;
 }
