@@ -17,7 +17,7 @@ Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
 	<td valign="top">
 		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
-		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
+		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |

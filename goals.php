@@ -17,7 +17,7 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 	<td valign="top">
 		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
-		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
+		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |
@@ -31,7 +31,7 @@ Goals (PHP/QAT: The PHP Quality Assurance Team)
 
 		<br />
 		<b>PHP/QAT Goals</b>
-		<hr size="1" />
+		<hr size="3" />
 		<ol>
 		<li><b>Release Candidates Testing and QA (<a href="release.4.0.2.php">Upcoming Release 4.0.2</a>)</b></li><br />
 		&nbsp;* Release Candidate Build<br />

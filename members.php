@@ -17,7 +17,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 	<td valign="top">
 		<font face="Tahoma, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
-		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
+		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |
@@ -31,7 +31,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 
 		<br />
 		<b>PHP/QAT Members</b>
-		<hr size="1" />
+		<hr size="3" />
 
 		<b>If you would like to become a member,</b> please send email to the <a href="mailto:PHP-qa@lists.PHP.net">PHP/QAT Mailing List</a>.<br /><br />
 		Please include the following information in your message:<br />
@@ -42,7 +42,7 @@ Member List (PHP/QAT: The PHP Quality Assurance Team)
 		<br /><br />
 
 		<b>Current Members:</b>
-		<hr size="1" />
+		<hr size="3" />
 
         <b>Alexander Feldman</b>&lt;<a href="mailto:alex@zend.com">alex@zend.com</a>&gt;<br />
         &nbsp;* Skills: C/C++<br />

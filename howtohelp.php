@@ -17,7 +17,7 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 	<td valign="top">
 		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
-		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
+		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |
@@ -31,7 +31,7 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 
 		<br />
 		<b>How You Can Help</b>
-		<hr size="1" />
+		<hr size="3" />
 		You can help the QA effort in several ways:<br />
 		<li> If you have some spare time, why not join the PHP/QA team?  Follow the <a href="members.php">members</a> link to find out how.<br />
 		<li> Submit a bug report.  If you find what you think is a problem, drop by <a href="http://bugs.php.net/">http://bugs.php.net/</a> and submit a report.  Just make sure to read the <a href="http://bugs.php.net/bugs-dos-and-donts.php">Dos and Dont's</a> of bug submission before posting a bug.

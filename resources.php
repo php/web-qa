@@ -17,7 +17,7 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 	<td valign="top">
 		<font face="Tahoma, Arial, Helvetica, Sans Serif" size="3">
 		<div style="text-align: right; padding: 5">
-		<font size="1" face="MS SANS SERIF, GENEVA, SANS SERIF">
+		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		&gt; &gt; &gt;
 		<a href="index.php">Home</a> |
 		<a href="index.php#news">News</a> |
@@ -31,7 +31,7 @@ How To Help (PHP/QAT: The PHP Quality Assurance Team)
 
 		<br />
 		<b>Links and Resources</b>
-		<hr size="1" />
+		<hr size="3" />
 		Please suggest links and resources for this page!  Email the PHP/QA list (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>)<br />
 		&nbsp;* <a href="http://www.geocities.com/ro_marius/mod_php4.html">PHP4 module for Apache Win32 : HOW TO</a><br />
 		&nbsp;* <a href="http://www.php.net/">The PHP Website</a><br />

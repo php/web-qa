@@ -1,6 +1,6 @@
 		<br /><br />
 		<b>Contact Information</b>
-		<hr size="1" />
+		<hr size="3" />
 		<font size="3" face="MS SANS SERIF, GENEVA, SANS SERIF">
 		Questions about the PHP/QAT should be sent to the <a href="mailto:php-qa@lists.php.net">PHP/QAT Mailing List</a><br />
 		Questions regarding this site should be sent to the <a href="mailto:zak@nucleus.com">PHP/QAT Site Administrator</a><br />
