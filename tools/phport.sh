@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.16 2002-11-13 12:56:37 nohn Exp $
+# $Id: phport.sh,v 1.17 2002-11-13 17:45:58 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -91,7 +91,7 @@ case $MODE in
     snap) # 24h distfile!!
         if [ $2 ] ; then
             SNAPURI=$2;
-            PHPSNAPFILE=`echo $SNAPURI | sed 's/.*\///g'`
+            PHPSNAPFILE="`echo $SNAPURI | sed 's#.*/##'`"
         else
             SNAPURI=$PHPSNAPSERVER/$PHPSNAPFILE
         fi    
