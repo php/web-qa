@@ -115,21 +115,21 @@
     </ul>
 
     <ul>
-      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sbergmann@php.net">sbergmann@php.net</a>&gt;
-        <ul>
-          <li>Skills: Web Application Development with PHP</li>
-          <li>Focus: QA for PHP Release Candidates</li>
-          <li>Platform: Win 32</li>
-        </ul>
-      </li>
-    </ul>
-
-    <ul>
       <li><b>Phil Driscoll</b> &lt;<a href="mailto:phil@dialsolutions.co.uk">phil@dialsolutions.co.uk</a>&gt;
         <ul>
           <li>Skills: C, PHP, BASIC, ARM Assembler</li>
           <li>Focus: Build and Test Release Candidates</li>
           <li>Platforms: NT, Risc OS, Incompetent Linux user (probably useful!)</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
+      <li><b>Sebastian Bergmann</b> &lt;<a href="mailto:sbergmann@php.net">sbergmann@php.net</a>&gt;
+        <ul>
+          <li>Skills: Web Application Development with PHP</li>
+          <li>Focus: QA for PHP Release Candidates</li>
+          <li>Platform: Win 32</li>
         </ul>
       </li>
     </ul>
