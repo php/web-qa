@@ -29,7 +29,7 @@ Where you have specified "other" for any category, please enter what it is in th
 	<th>Package:</th>
 	<td>
 		<select name="package">
-			<option value="4.2.3RC1" selected>4.2.3RC1</option>
+			<option value="4.2.3RC2" selected>4.2.3RC2</option>
 		</select>
 	</td>
 </tr>
