@@ -16,7 +16,7 @@
 # |             Sebastian Nohn <nohn@php.net>                            |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.17 2002-11-13 17:45:58 nohn Exp $
+# $Id: phport.sh,v 1.18 2002-11-13 19:32:14 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -180,6 +180,8 @@ if [ ! -s ./configure ] ; then
 fi
 config="./configure $options";
 $config
+# Clean
+make clean
 # Build PHP
 make 2>error.log
 # Install PHP locally
