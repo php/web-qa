@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.8 2002-11-10 20:59:13 jan Exp $
+# $Id: phport.sh,v 1.9 2002-11-10 21:10:30 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -25,11 +25,11 @@ USE_BZ2=NO
 TRY_ZE2=NO
 
 PREFIX="/tmp"
-DISTFILES="$PREFIX/distfiles"
+DISTFILESDIR="$PREFIX/distfiles"
 WRKDIR="$PREFIX/work"
 ETCDIR="$PREFIX/etc"
 PHPSNAPSERVER=http://snaps.php.net/
-PHPPSERVER=':pserver:cvsread@cvs.php.net:/repository'
+PHPCVSSERVER=':pserver:cvsread@cvs.php.net:/repository'
 PHPCVSPASS='A:c:E?'
 
 # functions
@@ -46,16 +46,16 @@ EOF
 
 
 # Build directory structure if not available
-if ! [ -d $WRKDIR ] ; then
-    mkdir $WRKDIR
-    mkdir $WRKDIR/php4-cvs
-    mkdir $WRKDIR/php4-snap
-    mkdir $WRKDIR/php4-local
+if ! [ -d "$WRKDIR" ] ; then
+    mkdir "$WRKDIR"
+    mkdir "$WRKDIR/php4-cvs"
+    mkdir "$WRKDIR/php4-snap"
+    mkdir "$WRKDIR/php4-local"
 fi           
 
-if ! [ -d $DISTFILES ] ; then
-    mkdir $DISTFILES
-    mkdir $DISTFILES/cvs
+if ! [ -d "$DISTFILESDIR" ] ; then
+    mkdir "$DISTFILESDIR"
+    mkdir "$DISTFILESDIR/cvs"
 fi
 
 if ! [ -d etc ] ; then
@@ -63,10 +63,10 @@ if ! [ -d etc ] ; then
 fi    
 
 if [ $USE_BZ2 = "NO" ] ; then 
-    PHPSNAPFILE=php4-latest.tar.gz
+    PHPSNAPFILE="php4-latest.tar.gz"
     TARMOD=z
  else
-    PHPSNAPFILE=php4-latest.tar.bz2
+    PHPSNAPFILE="php4-latest.tar.bz2"
     TARMOD=y
 fi
 
@@ -84,8 +84,8 @@ esac
 echo $MODE    
 
 # Clean $WRKDIR 
-rm -rf $WRKDIR/php4-$MODE/*
-# Fetch/extract source to $DISTFILES/$WRKDIR
+rm -rf "$WRKDIR/php4-$MODE/*"
+# Fetch/extract source to $DISTFILESDIR/$WRKDIR
 case $MODE in
     snap) # 24h distfile!!
         if [ $2 ] ; then
@@ -96,18 +96,18 @@ case $MODE in
         fi    
         
         if [ 'echo $PHPSNAPFILE | sed 's/http:\/\/.*//g'' = "" ] ; then
-            cp $PHPSNAPFILE $DISTFILES
+            cp $PHPSNAPFILE "$DISTFILESDIR"
         
         fi
         
         if [ "`which fetch` " != " " ] ; then
-            FETCHCMD="fetch -m -o $DISTFILES/$PHPSNAPFILE $SNAPURI"
+            FETCHCMD="fetch -m -o "$DISTFILESDIR/$PHPSNAPFILE" $SNAPURI"
         elif [ "`which wget` " != " " ] ; then
-            FETCHCMD="wget -O $DISTFILES/$PHPSNAPFILE $SNAPURI"
+            FETCHCMD="wget -O "$DISTFILESDIR/$PHPSNAPFILE" $SNAPURI"
         fi    
         
-        if  ! [ -s $DISTFILES/$PHPSNAPFILE ] ; then 
-            echo "$PHPSNAPFILE does not seem to exist in $DISTFILES, downloading..."
+        if  ! [ -s $DISTFILESDIR/$PHPSNAPFILE ] ; then 
+            echo "$PHPSNAPFILE does not seem to exist in $DISTFILESDIR, downloading..."
             $FETCHCMD
         fi
         echo "Extracting source package..."
@@ -125,25 +125,25 @@ case $MODE in
 	    exit 1;
 	fi
 
-        tar -C $WRKDIR/php4-$MODE -x -$TARMOD -f $DISTFILES/$PHPSNAPFILE
-        mv -f $WRKDIR/php4-$MODE/php*/* $WRKDIR/php4-$MODE
+        tar -C "$WRKDIR/php4-$MODE" -x -$TARMOD -f "$DISTFILESDIR/$PHPSNAPFILE"
+        mv -f "$WRKDIR/php4-$MODE/php*/*" "$WRKDIR/php4-$MODE"
         
     ;;
 
     cvs)
         if [ ! `grep -c cvsread@cvs.php.net ~/.cvspass` -gt 0 ] ; then
-            echo $PHPPSERVER $PHPCVSPASS>> ~/.cvspass
+            echo $PHPCVSSERVER $PHPCVSPASS>> ~/.cvspass
         fi 
-        cd $DISTFILES/$MODE
-                cvs -d $PHPPSERVER co php4
+        cd "$DISTFILESDIR/$MODE"
+                cvs -d $PHPCVSSERVER co php4
                     cd php4
                         if [ $TRY_ZE2 = "NO" ] ; then
-                            cvs -d $PHPPSERVER co Zend TSRM
+                            cvs -d $PHPCVSSERVER co Zend TSRM
                          else
-                            cvs -d $PHPPSERVER co ZendEngine2 TSRM
+                            cvs -d $PHPCVSSERVER co ZendEngine2 TSRM
                             mv ZendEngine2 Zend
                         fi    
-                        find . | cpio -pdm ../../../$WRKDIR/php4-$MODE
+                        find . | cpio -pdm "../../../$WRKDIR/php4-$MODE"
                     cd ../../..
                     
     ;;
@@ -151,7 +151,7 @@ case $MODE in
     local)
         if [ $2 ] ; then
             cd $2
-            find . | cpio -pdm $WRKDIR/php4-$MODE
+            find . | cpio -pdm "$WRKDIR/php4-$MODE"
         else
             echo "No local Path supplied"    
             exit 1
@@ -160,23 +160,19 @@ case $MODE in
 esac    
 
 # Get configure optioms
-if ! [ -d $ETCDIR ] ; then
+if ! [ -d "$ETCDIR" ] ; then
     for option in `cat $ETCDIR/configure-options` ; do
         options="$options $option"
     done    
 fi
 # Check dependencies of configured extensions
-
 # Clean dependencies
-  
-  # Fetch/extract source into $DISTFILES/$WRKDIR
-  
-  # Build dependencies
-  
-  # Install dependencies (Libraries) locally
+# Fetch/extract source into $DISTFILESDIR/$WRKDIR
+# Build dependencies
+# Install dependencies (Libraries) locally
   
 # Configure PHP
-cd $WRKDIR/php4-$MODE
+cd "$WRKDIR/php4-$MODE"
 if [ ! -s configure ] ; then
     ./cvsclean
     ./buildconf
