@@ -25,16 +25,16 @@ common_header();
             <br /><h3>The team is currently focused on:</h3>
             <ul>
               <li>
-                <span class="lihack">Providing QA for the PHP 4.3.2RC3 release:
+                <span class="lihack">Providing QA for the PHP 4.3.2RC4 release:
                 <ul>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC3.tar.bz2">php-4.3.2RC3.tar.bz2</a><br />
-                  md5sum:f910021c6d931b68c53d5b511655bb13
+                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.bz2">php-4.3.2RC4.tar.bz2</a><br />
+                  md5sum:b5e7da975d6ebff870a9ba7ecc1739e9
                  </li>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC3.tar.gz">php-4.3.2RC3.tar.gz</a><br />
-                  md5sum:c8ead30bdc146319719b65034c0ee44a
+                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4.tar.gz">php-4.3.2RC4.tar.gz</a><br />
+                  md5sum:79b34df3291dbfcc6b3e7b13126e2622
                  </li>
-                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC3-Win32.zip">php-4.3.2RC3-Win32.zip</a><br />
-                  md5sum:a454d1fd9aa4ca24848c53bb7160de22
+                 <li><a href="http://downloads.php.net/jani/php-4.3.2RC4-Win32.zip">php-4.3.2RC4-Win32.zip</a><br />
+                  md5sum:95e3b34848380b130cdee75b294b4c25
                  </li>
                 </ul>
                 </span><br />
