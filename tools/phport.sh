@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@lehnardt.de>                           |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.2 2002-11-10 18:39:28 jan Exp $
+# $Id: phport.sh,v 1.3 2002-11-10 18:42:07 jan Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -72,7 +72,7 @@ esac
 echo $MODE    
 
 # Clean $WRKDIR dir
-rm -rf $$WRKDIR/php4-$MODE/*
+rm -rf $WRKDIR/php4-$MODE/*
 # Fetch/extract source to $DISTFILES/$WRKDIRdir
 case $MODE in
     snap) # 24h distfile!!
@@ -84,24 +84,24 @@ case $MODE in
         fi    
         
         if [  'echo $PHPSNAPFILE | sed 's/http:\/\/.*//g'' -nq "" ] ; then
-            cp $PHPSNAPFILE $$DISTFILES
+            cp $PHPSNAPFILE $DISTFILES
         
         fi
         
         if [ "`which fetch` " != " " ] ; then
-            FETCHCMD="fetch -m -o $$DISTFILES/$PHPSNAPFILE $SNAPURI"
+            FETCHCMD="fetch -m -o $DISTFILES/$PHPSNAPFILE $SNAPURI"
         elif [ "`which wget` " != " " ] ; then
-            FETCHCMD="wget -O $$DISTFILES/$PHPSNAPFILE $SNAPURI"
+            FETCHCMD="wget -O $DISTFILES/$PHPSNAPFILE $SNAPURI"
         fi    
         
-        if  ! [ -s $$DISTFILES/$PHPSNAPFILE ] ; then 
-            echo "$PHPSNAPFILE does not seem to exist in $$DISTFILES, downloading..."
+        if  ! [ -s $DISTFILES/$PHPSNAPFILE ] ; then 
+            echo "$PHPSNAPFILE does not seem to exist in $DISTFILES, downloading..."
             $FETCHCMD
         fi
         echo "Extracting source package..."
         
-        tar -C $$WRKDIR/php4-$MODE -x -$TARMOD -f $$DISTFILES/$PHPSNAPFILE
-        mv -f $$WRKDIR/php4-$MODE/php*/* $$WRKDIR/php4-$MODE
+        tar -C $WRKDIR/php4-$MODE -x -$TARMOD -f $DISTFILES/$PHPSNAPFILE
+        mv -f $WRKDIR/php4-$MODE/php*/* $WRKDIR/php4-$MODE
         
     ;;
 
@@ -109,7 +109,7 @@ case $MODE in
         if [ ! `grep -c cvsread@cvs.php.net ~/.cvspass` -gt 0 ] ; then
             echo $PHPPSERVER $PHPCVSPASS>> ~/.cvspass
         fi 
-        cd $$DISTFILES/$MODE
+        cd $DISTFILES/$MODE
                 cvs -d $PHPPSERVER co php4
                     cd php4
                         if [ $TRY_ZE2 = "NO" ] ; then
@@ -118,7 +118,7 @@ case $MODE in
                             cvs -d $PHPPSERVERR co ZendEngine2 TSRM
                             mv ZendEngine2 Zend
                         fi    
-                        find . | cpio -pdm ../../../$$WRKDIR/php4-$MODE
+                        find . | cpio -pdm ../../../$WRKDIR/php4-$MODE
                     cd ../../..
                     
     ;;
@@ -126,7 +126,7 @@ case $MODE in
     local)
         if [ $2 ] ; then
             cd $2
-            find . | cpio -pdm $$WRKDIR/php4-$MODE
+            find . | cpio -pdm $WRKDIR/php4-$MODE
         else
             echo "No local Path supplied"    
             exit 1
@@ -149,7 +149,7 @@ done
   # Install dependencies (Libraries) locally
   
 # Configure PHP
-cd $$WRKDIRq
+cd $WRKDIR
    /php4-$MODE
 if [ ! -s configure ] ; then
     ./cvsclean
