@@ -1,6 +1,10 @@
 <?php
-/* (c)'2001 by Marco Kaiser (bate@php.net) and the PHP Group */
-/* Read an Learn. Any Questions so ask. */
+/* 
+(c)'2001 by Marco Kaiser (bate@php.net) and the PHP Group 	
+Read an Learn. Any Questions so ask. 						
+
+Version: $ID$
+*/
 
 $default_placeholder = array(0 => array("[%TITLE%]",
 										"PHP-QAT: Quality Assurance Team"),
@@ -9,7 +13,7 @@ $default_placeholder = array(0 => array("[%TITLE%]",
 							 			date("l, F d, Y", time())),
 
 							 2 => array("[%SITE_UPDATE%]",
-							 			date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME)))
+							 			date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br>$SITE_UPDATE")
 							);
 
 $template_array = array("home" => "templates/tmpl_home.html",
@@ -23,7 +27,6 @@ function replace_default(&$class) {
 	foreach ($GLOBALS["default_placeholder"] as $key) {
 		$class->replaceVar($key[0], $key[1]);
 	}
-
 return true;
 }
 
