@@ -29,6 +29,13 @@ $member_list = array( array("name" => "André Langhorst",
 							"platform" => array("Windows 2000 Professional",
 												"Linux Redhat", "BeOS (Newbie)")),
 
+					  array("name" => "Jan Lehnardt",
+							"email" => "jan@php.net",
+							"focus" => "Documentation, PEAR, Databases",
+							"skills" => "PHP, (My)SQL, some C, PASCAL (hooray ;), Unix Administration",
+							"platform" => array("FreeBSD 4.2-STABLE")
+							),
+
 					  array("name" => "Jani Taskinen",
 							"email" => "sniper@php.net",
 							"focus" => "Bug Hunting",
@@ -55,6 +62,12 @@ $member_list = array( array("name" => "André Langhorst",
 												)
 					  ),
 					  
+					  array("name" => "Lars Torben Wilson",
+							"email" => "torben@php.net",
+							"focus" => "Documentation",
+							"skills" => "PHP, XML, XSLT",
+							"platform" => array("Linux Debian testing/unstable")),
+					  
 					  array("name" => "Marco Kaiser",
 							"email" => "bate@php.net",
 							"focus" => "Testing Builds / PHP-QAT Website",
@@ -79,6 +92,17 @@ $member_list = array( array("name" => "André Langhorst",
 							"skills" => "Competent C programmer, Linux newbie",
 							"platform" => array("SuSE Linux on various x86 platforms",
 							"Occasional access to NT4")),
+
+					  array("name" => "Richard Lynch",
+							"email" => "ceo@l-i-e.com",
+							"focus" => "Kibbitzing",
+							"skills" => "Patience with newbies",
+							"platform" => array("The less I have to pretend to be an IT Admin, the better.",
+												"RedHat",
+												"Windows",
+												"Mandrake"
+												)
+							),
 
 					  array("name" => "Sebastian Bergmann",
 							"email" => "sebastian@php.net",
@@ -105,17 +129,8 @@ $supportmember_list = array(
 							"focus" => "empty",
 							"skills" => "empty",
 							"platform" => array()
-							),
-
-					  array("name" => "Richard Lynch",
-							"email" => "richard@zend.com",
-							"focus" => "empty",
-							"skills" => "empty",
-							"platform" => array("empty",
-									     "empty"
-									     )
 							)
-					);
+					  );		
 
 $inactivemember_list = array("Alexander Feldman",
 							 "Andreas Otto",
