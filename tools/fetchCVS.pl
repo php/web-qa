@@ -102,3 +102,12 @@ foreach $line (@tsrm_sync) { # catch and print each line so we know when the syn
 	print $line;
 
 }	
+
+print "Running buildconf in $directory/php4\n";
+
+system("./buildconf");
+
+
+print "CVS Synced and setup...\n";
+
+print "You may now continue the build process on your own in $directory/php4\n";
