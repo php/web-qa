@@ -211,36 +211,6 @@ function siteFooter() {
 <?php
 }
 
-$default_placeholder = array(0 => array("[%CURRENT_DATE%]",
-							 			),
-
-							 1 => array("[%SITE_UPDATE%]",
-							 			)
-							);
-
-
-							
-$template_array = array("home" 		=> array("templates/tmpl_home.html",
-										     ""),
-						"projects" 	=> array("templates/tmpl_projects.html",
-											 ""),
-						"links" 	=> array("templates/tmpl_links.html",
-											 ""),
-						"members" 	=> array("templates/tmpl_members.html",
-											 ""),
-						"howtohelp" => array("templates/tmpl_howtohelp.html",
-											 "")
-						);
-
-
-function replace_default(&$class) {
-	foreach ($GLOBALS["default_placeholder"] as $key) {
-		$class->replaceVar($key[0], $key[1]);
-	}
-return true;
-}
-
-
 function make_link($string, $text = "", $target = "") {
 	$buffer = "<a href=\"$string\"";
 	if ($target!="") $buffer .= " target=\"$target\">"; else $buffer .= ">";
