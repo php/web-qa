@@ -152,7 +152,7 @@ function common_footer() {
         <tr> 
           <td width="80" align="center"><a href="http://www.php.net/"><img src="gfx/php-logo.gif" width="69" height="36" border="0" alt="Go to the main PHP site"></a></td>
           <td class="footer"><a href="http://www.php.net/copyright.php" target="_blank">Copyright 
-            &copy; 1997 - 2002 PHP Group</a><br>
+            &copy; 1997 - 2003 PHP Group</a><br>
             All rights reserved.</td>
         </tr>
       </table>
