@@ -68,7 +68,7 @@
     </ul>
 
     <ul>
-      <li><b>Evan Klein</b> &lt;<a href="mailto:HQ@linux-guruz.com"HQ@linux-guruz.com</a>&gt;
+      <li><b>Evan Klein</b> &lt;<a href="mailto:HQ@linux-guruz.com">HQ@linux-guruz.com</a>&gt;
         <ul>
           <li>Skills: Linux, PHP, Perl and MySQL</li>
           <li>Focus: Bug Hunting, QA Team Website and Apps</li>
