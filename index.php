@@ -21,7 +21,7 @@ common_header();
             <p>The team is currently focused on several areas: </p>
             <ul>
               <li><span class="lihack">Providing QA for the 
-			  	<a href="http://www.php.net/~zeev/php-4.1.0RC4.tar.gz">PHP 4.1.0 Release Candidate 4</a><br />
+			  	<a href="http://snaps.php.net/">PHP 4.2.0-dev</a><br />
 				Visit the experimental <a href="http://fooassociates.com/phpqa/">PHP-QAT Wiki</a> to see what platforms have been tested so far.</span></li>
               <li><span class="lihack">Reworking the bug tracking system. (Subscribe to to <a href="mailto:jitterbug-subscribe@lists.php.net">jitterbug-subscribe@lists.php.net</a> 
                 for more information)</span></li>
