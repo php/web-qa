@@ -48,7 +48,8 @@ Testers for upcoming PHP 4.0.2 release
 
     Test, no build
      - Win98 / Apache 1.3.12 / MySQL 3.23.31 beta
-     - Win2k Pro / IIS / OmniHTTPd / Xitami / Apache 1.3.12 / MySQL 3.23.31 beta
+     - Win2k Pro / IIS / OmniHTTPd / Xitami / Apache 1.3.12
+	   / MySQL 3.23.31 beta
 </font></pre>
 <? include ('inc/footer.txt') ?>
 
