@@ -15,7 +15,7 @@
 # | Authors:    Jan Lehnardt <jan@php.net>                               |
 # +----------------------------------------------------------------------+
 # 
-# $Id: phport.sh,v 1.9 2002-11-10 21:10:30 nohn Exp $
+# $Id: phport.sh,v 1.10 2002-11-10 21:15:16 nohn Exp $
 
 #  The PHP Port project should provide the ability to build and test 
 #  any PHP4+ Version with any module/webserver.
@@ -28,9 +28,9 @@ PREFIX="/tmp"
 DISTFILESDIR="$PREFIX/distfiles"
 WRKDIR="$PREFIX/work"
 ETCDIR="$PREFIX/etc"
-PHPSNAPSERVER=http://snaps.php.net/
-PHPCVSSERVER=':pserver:cvsread@cvs.php.net:/repository'
-PHPCVSPASS='A:c:E?'
+PHPSNAPSERVER="http://snaps.php.net/"
+PHPCVSSERVER=":pserver:cvsread@cvs.php.net:/repository"
+PHPCVSPASS="A:c:E?"
 
 # functions
 usage() {
@@ -101,12 +101,12 @@ case $MODE in
         fi
         
         if [ "`which fetch` " != " " ] ; then
-            FETCHCMD="fetch -m -o "$DISTFILESDIR/$PHPSNAPFILE" $SNAPURI"
+            FETCHCMD="fetch -m -o \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
         elif [ "`which wget` " != " " ] ; then
-            FETCHCMD="wget -O "$DISTFILESDIR/$PHPSNAPFILE" $SNAPURI"
+            FETCHCMD="wget -O \"$DISTFILESDIR/$PHPSNAPFILE\" $SNAPURI"
         fi    
         
-        if  ! [ -s $DISTFILESDIR/$PHPSNAPFILE ] ; then 
+        if  ! [ -s "$DISTFILESDIR/$PHPSNAPFILE" ] ; then 
             echo "$PHPSNAPFILE does not seem to exist in $DISTFILESDIR, downloading..."
             $FETCHCMD
         fi
