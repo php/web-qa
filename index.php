@@ -47,7 +47,8 @@ PHP/QAT: The PHP Quality Assurance Team
 		<b><a name="news">News</a></b>
 		<hr size="3" />
 		<font size="3">
-		<li>( August 17, 2000 ) New Win32 Binaries available at <a href="http://www.php4win.de/">http://www.php4win.de</a></li>
+        <li>( August 20, 2000 ) Two new roughs for site available at <a href="http://qa.php.net/site_rough">http://qa.php.net/site_rough</a></li>
+		<li>( August 20, 2000 ) Modified Win32 Binaries available at <a href="http://www.php4win.de/">http://www.php4win.de</a></li>
 		<li>( August 11, 2000 ) 4.0.2 RC now available via CVS.  Win32 binaries should be ready soon.</li>
 		<li>( August 9, 2000 ) Zend engine patch for 4.0.2 ready - 4.0.2 RC expected soon</li>
 		<li>( August 5, 2000 ) Release date for 4.0.2 Release Candidate pushed back 1 week</li>
