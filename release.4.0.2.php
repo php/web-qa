@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-Open PHP 4 Bugs (PHP/QAT: The PHP Quality Assurance Team)
+Test Pool for RC 4.0.2 (PHP/QAT: The PHP Quality Assurance Team)
 </title>
 </head>
 <body bgcolor="#FFFFFF" background="img/bg_page.gif" text="#000000" link="#0000FF"
@@ -72,7 +72,7 @@ Test Pool for upcoming PHP 4.0.2 release<br /><br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - Debian Linux + Apache-SSL + MySQL + other mods<br /><br />
 
-<b>waldschrott</b> &lt;<a href="mailto:waldschrott@waldschrott.de">waldschrott@waldschrott.de</a>&gt;<br />
+<b>waldschrott</b> &lt;<a href="mailto:waldschrott@php.net">waldschrott@php.net</a>&gt;<br />
 &nbsp;&nbsp;&nbsp;&nbsp; Build and Test<br />
 &nbsp;&nbsp;&nbsp;&nbsp; - W2k / Apache 1.3.12 /CGI+Mod, I´ll try ODBC,mysql,GD<br /><br />
 

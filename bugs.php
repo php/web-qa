@@ -47,15 +47,15 @@ When the next course of action has been determined, it will be posted on this pa
 <s>Group 12</s><br />
 <s>Group 13</s><br />
 <s>Group 14</s><br />
-<s>Group 15</s> waldschrott (waldschrott@waldschrott.de)<br />
-<s><a href="#group16">Group 16</a></s> waldschrott (waldschrott@waldschrott.de)<br />
-<s><a href="#group17">Group 17</a></s> waldschrott (waldschrott@waldschrott.de)<br />
+<s>Group 15</s> waldschrott (waldschrott@php.net)<br />
+<s><a href="#group16">Group 16</a></s> waldschrott (waldschrott@php.net)<br />
+<s><a href="#group17">Group 17</a></s> waldschrott (waldschrott@php.net)<br />
 <s>Group 18</s><br />
 <s>Group 19</s><br />
 <s>Group 20</s><br />
 <s>Group 21</s><br />
 <s>Group 22</s><br />
-<s>Group 23</s> waldschrott (waldschrott@waldschrott.de)<br /><br />
+<s>Group 23</s> waldschrott (waldschrott@php.net)<br /><br />
 
 <a name="group06"></a>
 <br /><b>Group 6:</b> Derick Rethans (d.rethans@jdimedia.nl)<br />
@@ -92,7 +92,7 @@ When the next course of action has been determined, it will be posted on this pa
 
 <a href="#top">Return to Top</a><br />
 <a name="group15"></a>
-<br /><b>Group 15:</b> waldschrott (waldschrott@waldschrott.de)<br />
+<br /><b>Group 15:</b> waldschrott (waldschrott@php.net)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5190">5190</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5190&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5191">5191</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5191&edit=1"><b>&gt;&gt;</b></a><br />
@@ -126,7 +126,7 @@ When the next course of action has been determined, it will be posted on this pa
 
 <a href="#top">Return to Top</a><br />
 <a name="group16"></a>
-<br /><b>Group 16:</b> waldschrott (waldschrott@waldschrott.de)<br />
+<br /><b>Group 16:</b> waldschrott (waldschrott@php.net)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5270">5270</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5270&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5273">5273</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5273&edit=1"><b>&gt;&gt;</b></a><br />
@@ -160,7 +160,7 @@ When the next course of action has been determined, it will be posted on this pa
 
 <a href="#top">Return to Top</a><br />
 <a name="group17"></a>
-<br /><b>Group 17:</b> waldschrott (waldschrott@waldschrott.de)<br />
+<br /><b>Group 17:</b> waldschrott (waldschrott@php.net)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5352">5352</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5352&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5355">5355</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5355&edit=1"><b>&gt;&gt;</b></a><br />
@@ -194,7 +194,7 @@ When the next course of action has been determined, it will be posted on this pa
 
 <a href="#top">Return to Top</a><br />
 <a name="group18"></a>
-<br /><b>Group 18:</b> waldschrott (waldschrott@waldschrott.de)<br />
+<br /><b>Group 18:</b> waldschrott (waldschrott@php.net)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5419">5419</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5419&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5421">5421</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5421&edit=1"><b>&gt;&gt;</b></a><br />
@@ -228,7 +228,7 @@ When the next course of action has been determined, it will be posted on this pa
 
 <a href="#top">Return to Top</a><br />
 <a name="group19"></a>
-<br /><b>Group 19:</b> waldschrott (waldschrott@waldschrott.de)<br />
+<br /><b>Group 19:</b> waldschrott (waldschrott@php.net)<br />
 
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5484">5484</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5484&edit=1"><b>&gt;&gt;</b></a><br />
 <a target="_blank" href="http://bugs.php.net/bugs.php?id=5486">5486</a> <a target="_blank" href="http://bugs.php.net/bugs.php?id=5486&edit=1"><b>&gt;&gt;</b></a><br />
