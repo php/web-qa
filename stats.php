@@ -22,8 +22,9 @@ $year = date ('Y');
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%">
-           <?php include('http://www.php.net/~jani/bugsmap001'); ?>
-           <img src="http://www.php.net/~jani/total-count-<?php echo $year; ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
+           <?php include('http://www.php.net/~jani/bugstats/bugsmap001'); ?>
+           <img src="http://www.php.net/~jani/bugstats/total5-count-<?php echo $year; ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
+           <img src="http://www.php.net/~jani/bugstats/total4-count-<?php echo $year; ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
@@ -31,4 +32,3 @@ $year = date ('Y');
 <?php
 
 common_footer();
-?>

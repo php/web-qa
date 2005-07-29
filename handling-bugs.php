@@ -205,7 +205,7 @@ So, be sure to leave a comment.</p>
     </li>
     <li>
         Look at the <a href="http://bugs.php.net/bugstats.php">raw bug stats</a> 
-        OR a <a href="http://www.php.net/~jani/bugs-graph.php">graph</a>.
+        OR a <a href="http://www.php.net/~jani/bugstats/">graph</a>.
     </li>
     <li>
         Not leaving a comment means no email will be sent to the mailing list. 
