@@ -5,17 +5,17 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = '5.1.0rc1';
-$BUILD_TEST_RELEASES = array('4.4.1dev', '4.3.11', '5.0.4', '5.1.0rc1', '5.1.0dev');
-$RELEASE_PROCESS = false;
+$CURRENT_QA_RELEASE = "4.4.1RC1";
+$BUILD_TEST_RELEASES = array('4.4.1RC1', '4.3.11', '5.0.5', '5.0.6-dev', '5.1.0rc1', '5.1.0dev');
+$RELEASE_PROCESS = true;
 
 $RC_FILES = array (
 	array (	
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.bz2",
 	),
 	array (	
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.gz",
 	),
 	array (	
