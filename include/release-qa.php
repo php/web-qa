@@ -6,7 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = "4.4.1RC1";
-$BUILD_TEST_RELEASES = array('4.4.1RC1', '4.3.11', '5.0.5', '5.0.6-dev', '5.1.0rc1', '5.1.0dev');
+$BUILD_TEST_RELEASES = array('4.4.1RC1', '4.3.11', '5.0.5', '5.0.6-dev', '5.1.0RC2', '5.1.0dev');
 $RELEASE_PROCESS = true;
 
 $RC_FILES = array (
@@ -14,35 +14,35 @@ $RC_FILES = array (
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.bz2",
 	),
-	array (	
+/*	array (	
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.gz",
 	),
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE}-Win32.zip",
-	),
+	),*/
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.0.3RC2';
+$CURRENT_QA_RELEASE_5 = '5.1.0RC2';
 $RC_FILES_5 = array (
 	array (	
-		'http://snaps.php.net/~andi/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
 	),
 	array (	
-		'http://snaps.php.net/~andi/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
-	array (	
-		'http://snaps.php.net/~andi/',
+/*	array (	
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
 	array (	
-		'http://snaps.php.net/~andi/',
+		'http://downloads.php.net/ilia/',
 		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
-	),
+	),*/
 );
 
 /* Snapshot urls and files */
