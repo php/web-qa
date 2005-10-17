@@ -1,7 +1,5 @@
 3376fc167b6a9bc18e0a0dec5d252d46  php-4.3.10RC2.tar.bz2
 4a11c8b3df639ea9496851589afe9fd3  php-4.3.10RC2.tar.gz
 77c21e7c8e0bcc8fa9f5b4fc1344c4cb  php-4.3.10RC2-Win32.zip
-8905c90cfbebd3ccad33a86b4e223f7e  pecl-5.0.3RC2-Win32.zip
-103dc7100f93f0397d4e9703b7f4a006  php-5.0.3RC2-Win32.zip
-f97b2555304f324ec819212ffd1dd971  php-5.0.3RC2.tar.bz2
-379cc224975c0aafedafcec2b35acc58  php-5.0.3RC2.tar.gz
+6f48ee0b43f54dff8f9e683d337885c1  php-5.1.0RC3.tar.bz2
+7091baf5ebb8b93d715ac5e9dd4b7ce3  php-5.1.0RC3.tar.gz
