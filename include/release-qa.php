@@ -6,7 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = "4.4.2RC1";
-$BUILD_TEST_RELEASES = array('4.4.2RC1', '4.3.11', '5.0.5', '5.0.6-dev', '5.1.0RC5', '5.1.0dev');
+$BUILD_TEST_RELEASES = array('4.4.2RC1', '5.1.1dev');
 $RELEASE_PROCESS = true;
 
 $RC_FILES = array (
@@ -25,8 +25,9 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.1.0RC6';
+$CURRENT_QA_RELEASE_5 = ''/*'5.1.0RC6'*/;
 $RC_FILES_5 = array (
+/*
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
@@ -35,7 +36,7 @@ $RC_FILES_5 = array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
-/*	array (	
+	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
