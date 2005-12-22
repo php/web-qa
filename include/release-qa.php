@@ -25,9 +25,8 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = ''/*'5.1.0RC6'*/;
+$CURRENT_QA_RELEASE_5 = '5.1.2RC1';
 $RC_FILES_5 = array (
-/*
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
@@ -36,6 +35,7 @@ $RC_FILES_5 = array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
+	/*
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
