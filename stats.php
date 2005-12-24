@@ -22,9 +22,10 @@ $year = date ('Y');
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%">
-           <?php include('http://qa.php.net/~jani/bugstats/bugsmap001'); ?>
-           <img src="http://qa.php.net/~jani/bugstats/total5-count-<?php echo $year; ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
-           <img src="http://qa.php.net/~jani/bugstats/total4-count-<?php echo $year; ?>.png" ISMAP USEMAP="#bugsmap001" border="0" alt=""><br /><br />
+           <a href="http://qa.php.net/~jani/bugstats/">
+            <img src="http://qa.php.net/~jani/bugstats/total5-count-<?php echo $year; ?>.png" border="0" alt=""><br /><br />
+            <img src="http://qa.php.net/~jani/bugstats/total4-count-<?php echo $year; ?>.png" border="0" alt=""><br /><br />
+           </a>
           </td>
           <td width="10">&nbsp;</td>
         </tr>
