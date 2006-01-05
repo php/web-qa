@@ -25,7 +25,7 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.1.2RC1';
+$CURRENT_QA_RELEASE_5 = '5.1.2RC2';
 $RC_FILES_5 = array (
 	array (	
 		'http://downloads.php.net/ilia/',

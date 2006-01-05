@@ -1,4 +1,4 @@
 92cfcd2f8639a12583aa3f8b50b9bbdb  php-4.4.2RC1.tar.bz2
 01f3579a5f791ea42664f601e791312a  php-4.4.2RC1.tar.gz
-df9e548b8c9275e510e25f2b3de2629c  php-5.1.2RC1.tar.bz2
-a2b3fd6e6115cee4bb8f5b3d5aeef66b  php-5.1.2RC1.tar.gz
+0a24a22552ae966afa3e0f3da2f1c47d  php-5.1.2RC2.tar.bz2
+7aee42982a8a16a0d600e1ef46dadec6  php-5.1.2RC2.tar.gz
