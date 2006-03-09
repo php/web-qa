@@ -5,10 +5,10 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = "4.4.2RC2";
-$BUILD_TEST_RELEASES = array('4.4.2RC2'/*, '5.1.1dev' */);
+$CURRENT_QA_RELEASE = "";
+$BUILD_TEST_RELEASES = array(/* '4.4.2RC2', */ '5.1.3RC1');
 $RELEASE_PROCESS = true;
-
+/*
 $RC_FILES = array (
 	array (	
 		'http://downloads.php.net/derick/',
@@ -18,14 +18,14 @@ $RC_FILES = array (
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.gz",
 	),
-/*	array (	
+	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE}-Win32.zip",
-	),*/
+	),
 );
-
-/* PHP 5 Releases 
-$CURRENT_QA_RELEASE_5 = '5.1.2RC2';
+*/
+/* PHP 5 Releases */
+$CURRENT_QA_RELEASE_5 = '5.1.3RC1';
 $RC_FILES_5 = array (
 	array (	
 		'http://downloads.php.net/ilia/',
@@ -44,7 +44,6 @@ $RC_FILES_5 = array (
 		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
 );
-*/
 
 /* Snapshot urls and files */
 $SNAPSHOTS = array (
