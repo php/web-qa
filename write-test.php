@@ -40,34 +40,62 @@ list of all possible sections:</p>
 
 <dl>
 <dt>--TEST--</dt>
-<dd>title of the test (required)</dd>
+<dd>title of the test. (required)</dd>
 
 <dt>--SKIPIF--</dt>
-<dd>is condition when to skip this test (optional)</dd>
+<dd>is condition when to skip this test. (optional)</dd>
 
 <dt>--POST--</dt>
-<dd>is POST variable passed to test script (optional)</dd>
+<dd>is POST variable passed to test script. (optional)</dd>
 
 <dt>--GET--</dt>
-<dd>is GET variable passed to test script (optional)</dd>
+<dd>is GET variable passed to test script. (optional)</dd>
 
 <dt>--INI--</dt>
-<dd>each line contains an ini setting e.g. foo=bar (optional)</dd>
+<dd>each line contains an ini setting e.g. foo=bar. (optional)</dd>
+
+<dt>--ARGS--</dt>
+<dd>a single line defining the arguments passed to php. (optional)</dd>
+
+<dt>--ENV--</dt>
+<dd>configures the environment to be used ofr php. (optional)</dt>
 
 <dt>--FILE--</dt>
-<dd>the test script (required)</dd>
+<dd>the test script. (required)</dd>
+
+<dt>--FILEEOF--</dt>
+<dd>an alternative to --FILE-- where any trainling line break is omitted. 
+(alternative to --FILE--)</dd>
 
 <dt>--EXPECT--</dt>
-<dd>the expected output from the test script (required)</dd>
+<dd>the expected output from the test script. (required)</dd>
 
 <dt>--EXPECTF--</dt>
 <dd>an alternative of --EXPECT--. The difference is that this form uses
-sscanf for output validation (alternative)</dd>
+sscanf for output validation. (alternative to --EXPECT--)</dd>
 
 <dt>--EXPECTREGEX--</dt>
 <dd>an alternative of --EXPECT--. This form allows the tester to specify the
-result in a regular expression (alternative)</dd>
+result in a regular expression. (alternative to --EXPECT--)</dd>
 </dl>
+
+<dt>--REDIRECTTEST--</dt>
+<dd>this block allows to redirect from one test to a bunch of other tests.
+(alernative to --FILE--)</dd>
+
+<dt>--HEADERS--</dt>
+<dd>header to be used when seinding the request. Currently only available with
+server-tests.php (optional)</dd>
+
+<dt>--EXPECTHEADERS--</dt>
+<dd>the expected headers. Any header specified here must exist in the 
+response and have the same value. Additional headers do not matter. (optional)
+</dd>
+
+<dt>--CLEAN--</dt>
+<dd>code that is executed after the test has run. Using run-tests.php switch 
+--no-clean you can prevent its execution to inspect generated data/files that
+were normally removed after the test. (optional)</dd>
 
 <p>A test must at least contain the sections TEST, FILE and either EXPECT
 or EXPECTF. When a test is called run-test.php takes the name from the
@@ -176,6 +204,27 @@ extensions: ".php", ".log", ".exp", ".out" or ".diff".</p>
 "skipif.inc" and an include file used in the FILE section of many tests
 should be named "test.inc".</p>
 
+<h3>Redirecting tests</h3>
+<p>Using --REDIRECTTEST-- it is possible to redirect from one test to a bunch 
+of other tests. That way multiple extensions can refer to the same set of 
+test scripts probably using it with a different configuration.</p>
+
+<p>The block is eval'd and supposed to return an array describing how to 
+redirect. The resulting array must contain the key 'TEST' that stores the 
+redirect target as a string. This string usually is the directory where the 
+test scripts are located and should be relative. Optionally you can use 
+the 'ENV' as an array configuring the environment to be set when executing 
+the tests. This way you can pass configuration to the executed tests.
+</p>
+
+<p>Redirect tests may especially contain --SKIPIF--, --ENV-- and --ARGS-- 
+sections but they no not use and --EXPECT-- section.
+</p>
+
+<p>The redirected tests themselves are just normal tests.
+</p>
+
+<hr />
 <p><b>NOTE:</b> All tests should run correctly with error_reporting(E_ALL) and
 display_errors=1. This is the default when called from run-test.php.  If you
 have a good reason for lowering the error reporting, use --INI-- section and
