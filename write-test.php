@@ -218,7 +218,7 @@ the tests. This way you can pass configuration to the executed tests.
 </p>
 
 <p>Redirect tests may especially contain --SKIPIF--, --ENV-- and --ARGS-- 
-sections but they no not use and --EXPECT-- section.
+sections but they no not use any --EXPECT-- section.
 </p>
 
 <p>The redirected tests themselves are just normal tests.
