@@ -234,7 +234,18 @@ comment this in your testcode.</p>
 $php_errormsg variable, which you can then output. This will result in a
 consistent error message output across all platforms and PHP configurations,
 preventing your test from failing due inconsistencies in the error message
-content.</p>
+content. Alternatively you can use --EXPECTF-- and check for the message by
+replacing the path of the source of the message with "%s" and the line number 
+with "%d". The end of a message in a test file "example.phpt" then looks like 
+"in %sexample.php on line %d". We explicitly dropped the last path devider as 
+that is a system dependent character '/' or '\'.</p>
+
+<p><b>NOTE:</b> Often you want to run test scripts without run-tests.php by
+simply executing them on commandline like any other php script. Sometimes then
+it disturbs having a long --EXPECT-- block. The workaround is to use terminate
+the --FILE-- section with the two lines "===DONE===" and "<?php echo "<\?php exit(0); ?\>"; ?>".
+When doing so run-tests.php does not execute the line containing the exit call
+as that would suppress leak messages.
 <p></p>
           </td>
           <td width="10">&nbsp;</td>
