@@ -196,7 +196,7 @@ extensions: ".php", ".log", ".exp", ".out" or ".diff".</p>
 <dd>&lt;functionname&gt;.phpt (dba_open.phpt)</dd>
 
 <dt>General tests for extensions</dt>
-<dd>&lt;extname&gt;&lt;no&gt;.phpt (dba3.phpt)</dd>
+<dd>&lt;extname&gt;&lt;no&gt;.phpt (dba_003.phpt)</dd>
 </dl>
 </p>
 
@@ -224,13 +224,13 @@ sections but they no not use and --EXPECT-- section.
 <p>The redirected tests themselves are just normal tests.
 </p>
 
-<hr />
-<p><b>NOTE:</b> All tests should run correctly with error_reporting(E_ALL) and
+<h3>Error reporting in tests</h3>
+<p>All tests should run correctly with error_reporting(E_ALL) and
 display_errors=1. This is the default when called from run-test.php.  If you
 have a good reason for lowering the error reporting, use --INI-- section and
 comment this in your testcode.</p>
 
-<p><b>NOTE:</b> If your test intentionally generates a PHP warning message use
+<p>If your test intentionally generates a PHP warning message use
 $php_errormsg variable, which you can then output. This will result in a
 consistent error message output across all platforms and PHP configurations,
 preventing your test from failing due inconsistencies in the error message
@@ -240,12 +240,12 @@ with "%d". The end of a message in a test file "example.phpt" then looks like
 "in %sexample.php on line %d". We explicitly dropped the last path devider as 
 that is a system dependent character '/' or '\'.</p>
 
-<p><b>NOTE:</b> Often you want to run test scripts without run-tests.php by
+<p>Often you want to run test scripts without run-tests.php by
 simply executing them on commandline like any other php script. Sometimes then
 it disturbs having a long --EXPECT-- block. The workaround is to use terminate
 the --FILE-- section with the two lines "===DONE===" and "<?php echo "<\?php exit(0); ?\>"; ?>".
 When doing so run-tests.php does not execute the line containing the exit call
-as that would suppress leak messages.
+as that would suppress leak messages.</p>
 <p></p>
           </td>
           <td width="10">&nbsp;</td>
