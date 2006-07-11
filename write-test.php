@@ -97,6 +97,10 @@ response and have the same value. Additional headers do not matter. (optional)
 --no-clean you can prevent its execution to inspect generated data/files that
 were normally removed after the test. (optional)</dd>
 
+<dt>===DONE===</dt>
+<dd>This is only available in the --FILE-- section. Any part after this line
+is not going into the actual test script (see below for more).</dd>
+
 <p>A test must at least contain the sections TEST, FILE and either EXPECT
 or EXPECTF. When a test is called run-test.php takes the name from the
 TEST section and writes the FILE section into a ".php" file with the 
@@ -241,11 +245,14 @@ with "%d". The end of a message in a test file "example.phpt" then looks like
 that is a system dependent character '/' or '\'.</p>
 
 <p>Often you want to run test scripts without run-tests.php by
-simply executing them on commandline like any other php script. Sometimes then
-it disturbs having a long --EXPECT-- block. The workaround is to use terminate
-the --FILE-- section with the two lines "===DONE===" and "<?php echo "<\?php exit(0); ?\>"; ?>".
+simply executing them on commandline like any other php script. But sometimes
+it disturbs having a long --EXPECT-- block, so that you don't see the actual 
+output as it scrolls away overwritten by the blocks following the actual file
+block. The workaround is to use terminate the --FILE-- section with the two 
+lines "===DONE===" and "<?php echo "<\?php exit(0); ?\>"; ?>".
 When doing so run-tests.php does not execute the line containing the exit call
-as that would suppress leak messages.</p>
+as that would suppress leak messages. Actually run-tests.php ignores any part
+after a line consisting only of "===DONE===".</p>
 <p></p>
           </td>
           <td width="10">&nbsp;</td>
