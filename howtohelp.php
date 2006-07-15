@@ -17,7 +17,18 @@ common_header();
         </tr>
         <tr> 
           <td width="10">&nbsp;</td>
-          <td width="100%">You can help the QA effort in several ways:<br />
+          <td width="100%">So there you sit.  A PHP coder who loves PHP.  But lately
+            you find yourself wanting to help the PHP community by contributing.  Only
+            one problem - you aren't a uber 1337 coder - whether it is because you have
+            only recently started to learn how to program in PHP or you just don't yet
+            have the experience with advanced concepts.  But you really want to help out
+            and you are unsure though how to go about doing it.  You have looked at the
+            various 'normal' ways of helping out with PHP but nothing seems to fit.  Your
+            C coding isn't the best (if you even know how) so helping with the core or
+            PECL is out, nothing in PEAR really 'calls' to you, and you don't know anything
+            about the PHP docs and the software it uses.  So where does that leave you.
+            Have no fear there is still a way you can help with PHP - you can help the
+            PHP Quality Assurance team.<br />
             <br />
           </td>
           <td width="10">&nbsp;</td>
@@ -26,10 +37,10 @@ common_header();
           <td width="10">&nbsp;</td>
           <td width="100%">
             <ul>
-              <li class="lihack"><a href="write-test.php">Write testcases</a>:
+              <li class="lihack">You can <a href="write-test.php">Write testcases</a>:
               <ul>
                 <li class="lihack">to reproduce bugs</li>
-                <li class="lihack">for PHP functions for which no testcase exist</li>
+                <li class="lihack">for PHP functions where testcases do not currently exist</li>
               </ul>
               </li>
               <li class="lihack">
