@@ -6,7 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = "4.4.3RC2";
-$BUILD_TEST_RELEASES = array( '4.4.3RC2' /*, '5.1.3RC3'*/ );
+$BUILD_TEST_RELEASES = array( '4.4.3RC2' , '5.2.0RC1');
 $RELEASE_PROCESS = true;
 $RC_FILES = array (
 	array (	
@@ -24,9 +24,9 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = ''; //5.1.3RC2';
-$RC_FILES_5 = array ( );
-/*
+$CURRENT_QA_RELEASE_5 = '5.2.0RC1';
+$RC_FILES_5 = array (
+
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
@@ -35,6 +35,7 @@ $RC_FILES_5 = array ( );
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
+/*
 	array (	
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
@@ -43,8 +44,9 @@ $RC_FILES_5 = array ( );
 		'http://downloads.php.net/ilia/',
 		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
-);
 */
+);
+
 /* Snapshot urls and files */
 $SNAPSHOTS = array (
 	array (
