@@ -17,10 +17,12 @@ $RC_FILES = array (
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}.tar.gz",
 	),
+/*
 	array (	
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE}-Win32.zip",
 	),
+*/
 );
 
 /* PHP 5 Releases */
