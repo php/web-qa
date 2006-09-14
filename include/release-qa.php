@@ -26,7 +26,7 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.2.0RC3';
+$CURRENT_QA_RELEASE_5 = '5.2.0RC4';
 $RC_FILES_5 = array (
 
 	array (	
