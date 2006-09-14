@@ -3,7 +3,7 @@ include("include/functions.php");
 include("include/release-qa.php");
 
 $TITLE = "PHP-QAT: Quality Assurance Team";
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime($SCRIPT_FILENAME))."<br />\n".
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__))."<br />\n".
 '/* $Id$ */';
 
 common_header();
