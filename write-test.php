@@ -120,8 +120,16 @@ alternatives that may be used if the situation warrents it.
 <dt>--POST--</dt>
 <dd>POST variables to be passed to the test script. (optional)</dd>
 
+<dt>--POST_RAW--</dt>
+<dd>RAW POST data to be passed to the test script. This differs from the section
+above because it doesn't set the Content-Type, which can be set manually in
+this section. (optional)</dd>
+
 <dt>--GET--</dt>
 <dd>GET variables to be passed to the test script. (optional)</dd>
+
+<dt>--STDIN--</dt>
+<dd>data to be fed to the test script's standard input. (optional)</dd>
 
 <dt>--INI--</dt>
 <dd>to be used if you need a specific php.ini setting for the test.  
@@ -179,8 +187,9 @@ EXPECTF instead of EXPECT. From time to time the algorithm used for shuffle
 changed and sometimes the machine used to execute the code has influence 
 on the result of shuffle. But it always returns a three character string 
 detectable by %s. Other scan-able forms are %i for integers, %d for numbers
-only, %f for floating point values, %c for single characters and %x for 
-hexadecimal values.</p>
+only, %f for floating point values, %c for single characters, %x for
+hexadecimal values, %w for any number of whitespace characters and %e for
+DIRECTORY_SEPARATOR ('\' or '/').</p>
 <i>/ext/standard/tests/strings/str_shuffle.phpt</i>
 <pre>
 --TEST--
@@ -260,7 +269,7 @@ input. </p>
 
 <p>
 <b>Note:</b> no file used by any test should have one of the following extensions: 
-".php", ".log", ".exp", ".out" or ".diff".  When you use an include file for the 
+".php", ".log", ".mem", ".exp", ".out" or ".diff".  When you use an include file for the
 SKIPIF section it should be named "skipif.inc" and an include file used in the 
 FILE section of many tests should be named "test.inc".</p>
 
@@ -305,7 +314,7 @@ simply executing them on commandline like any other php script. But sometimes
 it disturbs having a long --EXPECT-- block, so that you don't see the actual 
 output as it scrolls away overwritten by the blocks following the actual file
 block. The workaround is to use terminate the --FILE-- section with the two 
-lines "===DONE===" and "<?php echo "<\?php exit(0); ?\>"; ?>".
+lines "===DONE===" and "&lt;?php exit(0); ?&gt;.
 When doing so run-tests.php does not execute the line containing the exit call
 as that would suppress leak messages. Actually run-tests.php ignores any part
 after a line consisting only of "===DONE===".</p>
