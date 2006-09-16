@@ -108,7 +108,7 @@ the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
 
 <h3>All Sections</h3>
-A phpt test can have many more parts then just the minimum.  In fact some of the manditory parts have
+A phpt test can have many more parts then just the minimum.  In fact some of the mandatory parts have
 alternatives that may be used if the situation warrents it.
 <dl>
 <dt>--TEST--</dt>
@@ -139,7 +139,7 @@ this section. (optional)</dd>
 <dd>a single line defining the arguments passed to php. (optional)</dd>
 
 <dt>--ENV--</dt>
-<dd>configures the environment to be used for php. (optional)</dt>
+<dd>configures the environment to be used for php. (optional)</dd>
 
 <dt>--FILEEOF--</dt>
 <dd>an alternative to --FILE-- where any trainling line break is omitted. 
@@ -148,14 +148,22 @@ this section. (optional)</dd>
 <dt>--EXPECT--</dt>
 <dd>the expected output from the test script. (required)</dd>
 
+<dt>--UEXPECT--</dt>
+<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
+
 <dt>--EXPECTF--</dt>
 <dd>an alternative of --EXPECT--. The difference is that this form uses
 sscanf for output validation. (alternative to --EXPECT--)</dd>
 
+<dt>--UEXPECTF--</dt>
+<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
+
 <dt>--EXPECTREGEX--</dt>
 <dd>an alternative of --EXPECT--. This form allows the tester to specify the
 result in a regular expression. (alternative to --EXPECT--)</dd>
-</dl>
+
+<dt>--UEXPECTREGEX--</dt>
+<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
 
 <dt>--REDIRECTTEST--</dt>
 <dd>this block allows to redirect from one test to a bunch of other tests.
@@ -178,6 +186,10 @@ were normally removed after the test. (optional)</dd>
 <dt>===DONE===</dt>
 <dd>This is only available in the --FILE-- section. Any part after this line
 is not going into the actual test script (see below for more).</dd>
+</dl>
+
+<p><strong>Note:</strong> The Uxx sections (such as UEXPECT) are only needed if
+the output of the test differs in Unicode and non-Unicode mode.</p>
 
 <h2>Examples</h2>
 
