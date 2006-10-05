@@ -6,7 +6,7 @@
  */
 
 $CURRENT_QA_RELEASE = "4.4.4RC1";
-$BUILD_TEST_RELEASES = array( '4.4.4RC1' , '5.2.0RC3');
+$BUILD_TEST_RELEASES = array( '4.4.4RC1' , '5.2.0RC5');
 $RELEASE_PROCESS = true;
 $RC_FILES = array (
 	array (	
@@ -26,7 +26,7 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.2.0RC4';
+$CURRENT_QA_RELEASE_5 = '5.2.0RC5';
 $RC_FILES_5 = array (
 
 	array (	
