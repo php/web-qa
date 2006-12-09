@@ -118,15 +118,22 @@ alternatives that may be used if the situation warrents it.
 <dd>a condition when to skip this test. (optional)</dd>
 
 <dt>--POST--</dt>
-<dd>POST variables to be passed to the test script. (optional)</dd>
+<dd>POST variables to be passed to the test script. This section forces the
+use of the CGI binary instead of the usual CLI one. (optional)</dd>
 
 <dt>--POST_RAW--</dt>
 <dd>RAW POST data to be passed to the test script. This differs from the section
 above because it doesn't set the Content-Type, which can be set manually in
-this section. (optional)</dd>
+this section. This section forces the use of the CGI binary instead of the
+usual CLI one. (optional)</dd>
 
 <dt>--GET--</dt>
-<dd>GET variables to be passed to the test script. (optional)</dd>
+<dd>GET variables to be passed to the test script. This section forces the
+use of the CGI binary instead of the usual CLI one. (optional)</dd>
+
+<dt>--COOKIE--</dt>
+<dd>Cookies to be passed to the test script. This section forces the
+use of the CGI binary instead of the usual CLI one. (optional)</dd>
 
 <dt>--STDIN--</dt>
 <dd>data to be fed to the test script's standard input. (optional)</dd>
