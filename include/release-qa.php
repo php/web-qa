@@ -6,8 +6,10 @@
  */
 
 $CURRENT_QA_RELEASE = "4.4.5RC2";
-$BUILD_TEST_RELEASES = array( '4.4.5RC2' , '5.2.1RC4');
-$RELEASE_PROCESS = true;
+$BUILD_TEST_RELEASES = array( '4.4.5RC2', '5.2.1');
+
+$RELEASE_PROCESS = array(4 => true, 5 => false);
+
 $RC_FILES = array (
 	array (	
 		'http://downloads.php.net/derick/',
@@ -26,7 +28,7 @@ $RC_FILES = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.2.1RC4';
+$CURRENT_QA_RELEASE_5 = false; #'5.2.2RC1';
 $RC_FILES_5 = array (
 
 	array (	
@@ -63,11 +65,32 @@ $SNAPSHOTS = array (
 		'http://snaps.php.net/win32/',
 		'php4-win32-STABLE-latest.zip',
 	),
+	array (
+		'http://snaps.php.net/',
+		'php5.2-latest.tar.bz2',
+	),
+	array (
+		'http://snaps.php.net/',
+		'php5.2-latest.tar.gz',
+	),
+	array (
+		'http://snaps.php.net/win32/',
+		'php5.2-win32-latest.zip'
+	),
 );
 
-if ($RELEASE_PROCESS) {
-	$FILES = array_merge($RC_FILES, $RC_FILES_5);
+if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
 	$MD5SUM = file('include/rc-md5sums.txt');
+	if($RELEASE_PROCESS[4] && $RELEASE_PROCESS[5]) {
+		$FILES = array_merge($RC_FILES, $RC_FILES_5);
+	} elseif($RELEASE_PROCESS[4]) {
+		$FILES = $RC_FILES;
+	} elseif($RELEASE_PROCESS[5]) {
+		$FILES = $RC_FILES_5;
+	} else {
+		$FILES = $SNAPSHOTS;
+		$MD5SUM = array();
+	}
 } else {
 	$FILES = $SNAPSHOTS;
 	$MD5SUM = array();
