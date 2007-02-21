@@ -31,6 +31,7 @@ function common_header() {
         <tr> 
           <td valign="bottom" align="right"><a href="/" class="head_links">Home</a> 
             | <a href="projects.php" class="head_links">Projects and Goals</a> 
+            | <a href="rc.php" class="head_links">Release Candidates</a> 
             | <a href="howtohelp.php" class="head_links">How to Help</a>
             | <a href="stats.php" class="head_links">Statistics</a>
             | <a href="handling-bugs.php" class="head_links">Handling Bug Reports</a>
@@ -77,6 +78,16 @@ function common_header() {
           <td class="sidebox">
             Find more information about PHP/QA Team's <a href="projects.php">current 
               projects and future goals</a>.
+          </td>
+        </tr>
+        <tr> 
+          <td class="sidebox"> 
+            <h2>Release Candidates</h2>
+          </td>
+        </tr>
+        <tr> 
+          <td class="sidebox">
+            What are <a href="rc.php">release candidates</a> and how you can help us testing them.
           </td>
         </tr>
         <tr> 
