@@ -99,10 +99,18 @@ if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
 /* Content */
 function show_release_qa() {
 	global $CURRENT_QA_RELEASE_5, $CURRENT_QA_RELEASE, $FILES, $MD5SUM;
-	
+
+	$text = "PHP";
+
+	if ($CURRENT_QA_RELEASE && $CURRENT_QA_RELEASE_5) {
+		$text = "these <a href='http://qa.php.net/rc.php'>release candidates</a>: ";
+	} else if ($CURRENT_QA_RELEASE || $CURRENT_QA_RELEASE_5) {
+		$text = "this <a href='http://qa.php.net/rc.php'>release candidate</a>: ";
+	}
+
 echo "
 <!-- RELEASE QA -->
-<span class='lihack'>Providing QA for PHP {$CURRENT_QA_RELEASE} {$CURRENT_QA_RELEASE_5}
+<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE} {$CURRENT_QA_RELEASE_5}
  <ul>
 ";
 
