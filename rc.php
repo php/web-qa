@@ -69,6 +69,17 @@ common_header();
 			Such real-life tests are the most valuable because our test suite does not yet
 			cover every possible use case (but we're working on that).
             <br />
+            <br />
+          </td>
+          <td width="10">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="10">&nbsp;</td>
+          <td width="100%">
+           <h2>Getting the Release Candidates</h2>
+           The release candidates are available for download from <a href="http://qa.php.net/">the QA frontpage</a>.
+           <br />
+           <br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
