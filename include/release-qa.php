@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = true; //"4.4.7RC1"; 
+$CURRENT_QA_RELEASE = "4.4.7RC1 5.2.2RC1"; 
 $BUILD_TEST_RELEASES = array( '4.4.7RC1', '5.2.2RC1');
 
 $RELEASE_PROCESS = array(4 => true, 5 => true);
