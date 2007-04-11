@@ -5,26 +5,23 @@
  *  with list of urls to the packages.
  */
 
-$CURRENT_QA_RELEASE = "4.4.7RC1 5.2.2RC1"; 
 $BUILD_TEST_RELEASES = array( '4.4.7RC1', '5.2.2RC1');
-
 $RELEASE_PROCESS = array(4 => true, 5 => true);
 
-$RC_FILES = array (
+$CURRENT_QA_RELEASE_4 = "4.4.7RC1"; 
+$RC_FILES_4 = array (
 	array (	
 		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE}.tar.bz2",
+		"php-{$CURRENT_QA_RELEASE_4}.tar.bz2",
 	),
 	array (	
 		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE}.tar.gz",
+		"php-{$CURRENT_QA_RELEASE_4}.tar.gz",
 	),
-/*
 	array (	
-		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE}-Win32.zip",
+		'http://downloads.php.net/edink/',
+		"php-{$CURRENT_QA_RELEASE_4}-Win32.zip",
 	),
-*/
 );
 
 /* PHP 5 Releases */
@@ -82,9 +79,9 @@ $SNAPSHOTS = array (
 if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
 	$MD5SUM = file('include/rc-md5sums.txt');
 	if($RELEASE_PROCESS[4] && $RELEASE_PROCESS[5]) {
-		$FILES = array_merge($RC_FILES, $RC_FILES_5);
+		$FILES = array_merge($RC_FILES_4, $RC_FILES_5);
 	} elseif($RELEASE_PROCESS[4]) {
-		$FILES = $RC_FILES;
+		$FILES = $RC_FILES_4;
 	} elseif($RELEASE_PROCESS[5]) {
 		$FILES = $RC_FILES_5;
 	} else {
@@ -98,19 +95,19 @@ if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
 
 /* Content */
 function show_release_qa() {
-	global $CURRENT_QA_RELEASE_5, $CURRENT_QA_RELEASE, $FILES, $MD5SUM;
+	global $CURRENT_QA_RELEASE_4, $CURRENT_QA_RELEASE_5, $FILES, $MD5SUM;
 
 	$text = "PHP";
 
-	if ($CURRENT_QA_RELEASE && $CURRENT_QA_RELEASE_5) {
+	if ($CURRENT_QA_RELEASE_4 && $CURRENT_QA_RELEASE_5) {
 		$text = "these <a href='http://qa.php.net/rc.php'>release candidates</a>: ";
-	} else if ($CURRENT_QA_RELEASE || $CURRENT_QA_RELEASE_5) {
+	} else if ($CURRENT_QA_RELEASE_4 || $CURRENT_QA_RELEASE_5) {
 		$text = "this <a href='http://qa.php.net/rc.php'>release candidate</a>: ";
 	}
 
 echo "
 <!-- RELEASE QA -->
-<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE} {$CURRENT_QA_RELEASE_5}
+<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE_4} {$CURRENT_QA_RELEASE_5}
  <ul>
 ";
 
