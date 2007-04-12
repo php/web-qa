@@ -36,16 +36,16 @@ $RC_FILES_5 = array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
-/*
+
 	array (	
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/edink/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
 	array (	
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/edink/',
 		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
-*/
+
 );
 
 /* Snapshot urls and files */
