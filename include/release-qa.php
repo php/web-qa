@@ -5,13 +5,16 @@
  *  with list of urls to the packages.
  */
 
-$DEV_RELEASES = array(
-					  '4.4.7-dev', 
-					  '5.2.2-dev', 
-					  /* '6.0.0-dev' */
-				);
-
 $BUILD_TEST_RELEASES = array( '4.4.7RC1', '5.2.2RC1');
+$DEV_RELEASES = array();
+
+foreach($BUILD_TEST_RELEASES as $release) {
+	/* If RC, bump to next RC-dev, if release, bump to next release-dev */
+	$pos = strlen($release)-1;
+	$release[$pos] = $release[$pos]+1;
+	$DEV_RELEASES[] = $release . "-dev";
+}
+
 $RELEASE_PROCESS = array(4 => true, 5 => true);
 
 $CURRENT_QA_RELEASE_4 = "4.4.7RC1"; 
