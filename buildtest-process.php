@@ -2,7 +2,7 @@
 	include("include/release-qa.php");
 
 	if (isset($_POST['php_test_data'])) {
-		if (strlen($_POST['php_test_data']) > 90000) {
+		if (strlen($_POST['php_test_data']) > 200000) {
 			die("can't handle input that large.");
 		}
 		if (isset($_GET['status'])) {
