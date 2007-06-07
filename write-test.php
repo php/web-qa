@@ -25,7 +25,7 @@ common_header();
 		<p>A phpt test is a little script used by the php internal and quality 
 assurance teams to test PHP's functionality.  It can be used with new releases to make 
 sure they can do all the things that previous releases can, or to help find bugs in current 
-releases.  By writing phpt tests you are helping to make PHP stabler.</p>
+releases.  By writing phpt tests you are helping to make PHP more stable.</p>
 	</li>
 
 	<li>
@@ -106,10 +106,64 @@ about the phpt test. The phpt files name is used when generating a .php file.  T
 as the body of the .php file, so don't forget to open and close your php tags.  The EXPECT section is 
 the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
+<h3> Cleaning up after writing a test </h3>
+<p>Sometimes test cases create files or directories as part of the test case and it's important to remove these after the test ends, the --CLEAN--
+section is provided to help with this.</p>
+<p> The PHP code in the --CLEAN-- section is executed separately from the code in the --FILE-- section. For example, this code:</p>
+<pre>
+--TEST--
+Will fail to clean up
+--FILE--
+&lt;?php
+      $temp_filename = "fred.tmp";
+      $fp = fopen ($temp_filename, "w");
+      fwrite($fp, "Hello Boys!");
+      fclose($fp);
+?&gt;
+--CLEAN--
+&lt;?php
+      unlink $temp_filename;
+?&gt;
+--EXPECT--
+</pre>
+<p>will not remove the temporary file because the variable $filename is not defined in the --CLEAN-- section.</p>
+<p>Here is a better way to write the code:
+<pre>
+--TEST--
+This will remove temporary files
+--FILE--
+&lt;?php
+	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	$fp = fopen($temp_filename, "w");
+	fwrite ($fp, "Hello Boys!\n");
+	fclose($fp);
+?&gt;
+--CLEAN--
+&lt;?php
+	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	unlink($temp_filename);
+?>
+--EXPECT--
+</pre>
+<p> Note the use of the dirname(__FILE__) construct which will ensure that the temporary file is created in the same directory as
+the phpt test script. </p>
 
+<p> When creating temporary files it is a good idea to use an extension that indicates the use of the file, eg .tmp. It's also a good
+idea to avoid using extensions that are already used for other purposes, eg .inc, .php. Similarly, it is helpful to give the temporary file a name
+that is clearly related to the test case. For example, mytest.phpt should create mytest.tmp (or mytestN.tmp, N=1, 2,3,...) then if by any
+chance the temporary file isnt't removed properly it will be obvious which test case created it.</p>
+
+<p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section 
+is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE-- 
+section is run from a file called mytest.php and code from the --CLEAN-- section is run from a file called mytest.clean.php. If the test passes, 
+both the .php and .clean.php files are removed by run-tests.php. You can prevent the removal by using the --keep option of run-tests.php, 
+this is a very useful option if you need to check that the --CLEAN-- section code is working as you intended.
+
+<p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file - 
+this will help to prevent you from accidentally checking temporary files into CVS. </p>
 <h3>All Sections</h3>
-A phpt test can have many more parts then just the minimum.  In fact some of the mandatory parts have
-alternatives that may be used if the situation warrents it.
+A phpt test can have many more parts than just the minimum.  In fact some of the mandatory parts have
+alternatives that may be used if the situation warrants it.
 <dl>
 <dt>--TEST--</dt>
 <dd>title of the test. (required)</dd>
@@ -149,7 +203,7 @@ use of the CGI binary instead of the usual CLI one. (optional)</dd>
 <dd>configures the environment to be used for php. (optional)</dd>
 
 <dt>--FILEEOF--</dt>
-<dd>an alternative to --FILE-- where any trainling line break is omitted. 
+<dd>an alternative to --FILE-- where any trailing line break is omitted. 
 (alternative to --FILE--)</dd>
 
 <dt>--EXPECT--</dt>
@@ -177,7 +231,7 @@ result in a regular expression. (alternative to --EXPECT--)</dd>
 (alernative to --FILE--)</dd>
 
 <dt>--HEADERS--</dt>
-<dd>header to be used when seinding the request. Currently only available with
+<dd>header to be used when sending the request. Currently only available with
 server-tests.php (optional)</dd>
 
 <dt>--EXPECTHEADERS--</dt>
@@ -250,7 +304,7 @@ string\(19\) \" nica\x00turska panica\"
 <h3>SKIPIF</h3>
 <p>Some tests depend on modules or functions available only in certain versions 
 or they even require minimum version of php or zend. These tests should be 
-skipped when the requirement cannot be fullfilled. To achieve this you can
+skipped when the requirement cannot be fulfilled. To achieve this you can
 use the SKIPIF section. To tell run-test.php that your test should be skipped
 the SKIPIF section must print out the word "skip" followed by a reason why
 the test should skip.</p>
@@ -329,7 +383,7 @@ that is a system dependent character '/' or '\'.</p>
 
 <h3>Last bit</h3>
 <p>Often you want to run test scripts without run-tests.php by
-simply executing them on commandline like any other php script. But sometimes
+simply executing them on command line like any other php script. But sometimes
 it disturbs having a long --EXPECT-- block, so that you don't see the actual 
 output as it scrolls away overwritten by the blocks following the actual file
 block. The workaround is to use terminate the --FILE-- section with the two 
