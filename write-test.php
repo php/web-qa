@@ -175,6 +175,12 @@ alternatives that may be used if the situation warrants it.
 <dd>POST variables to be passed to the test script. This section forces the
 use of the CGI binary instead of the usual CLI one. (optional)</dd>
 
+<dt>--GZIP_POST--</dt>
+<dd>When this section exists, the POST data will be gzencode()'d. (optional)</dd>
+
+<dt>--DEFLATE_POST--</dt>
+<dd>When this section exists, the POST data will be gzcompress()'ed. (optional)</dd>
+
 <dt>--POST_RAW--</dt>
 <dd>RAW POST data to be passed to the test script. This differs from the section
 above because it doesn't set the Content-Type, which can be set manually in
