@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array( '4.4.7', '5.2.3RC1');
+$BUILD_TEST_RELEASES = array( '4.4.7', '5.2.4RC1');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
