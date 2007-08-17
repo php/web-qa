@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array( '4.4.7', '5.2.4RC1');
+$BUILD_TEST_RELEASES = array( '4.4.7', '5.2.4RC2');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -34,7 +34,7 @@ $RC_FILES_4 = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.2.4RC1';
+$CURRENT_QA_RELEASE_5 = '5.2.4RC2';
 $RC_FILES_5 = array (
 
 	array (	
