@@ -1,2 +1,4 @@
 72371ec077dd393f0c7d6370d115dcb6  php-5.2.4RC3.tar.bz2
 716e9aa15305b1c4930eea30c1809883  php-5.2.4RC3.tar.gz
+eb10bf470abba087d372fb0b2f6aa21e php-5.2.4RC3-Win32.zip
+9e201fc798cd5214540845f8d044b1e7 pecl-5.2.4RC3-Win32.zip
