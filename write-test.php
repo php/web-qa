@@ -265,7 +265,8 @@ the output of the test differs in Unicode and non-Unicode mode.</p>
 EXPECTF instead of EXPECT. From time to time the algorithm used for shuffle 
 changed and sometimes the machine used to execute the code has influence 
 on the result of shuffle. But it always returns a three character string 
-detectable by %s. Other scan-able forms are %i for integers, %d for numbers
+detectable by %s (that matches any string until the end of the line). Other scan-able
+forms are %a for any amount of chars (at least one), %i for integers, %d for numbers
 only, %f for floating point values, %c for single characters, %x for
 hexadecimal values, %w for any number of whitespace characters and %e for
 DIRECTORY_SEPARATOR ('\' or '/').</p>
@@ -281,7 +282,7 @@ var_dump(str_shuffle($s));
 var_dump($s);
 ?&gt;
 --EXPECTF--
-string(3) %s
+string(3) "%s"
 string(3) "123"
 </pre>
 
