@@ -116,13 +116,13 @@ Will fail to clean up
 --FILE--
 &lt;?php
       $temp_filename = "fred.tmp";
-      $fp = fopen ($temp_filename, "w");
+      $fp = fopen($temp_filename, "w");
       fwrite($fp, "Hello Boys!");
       fclose($fp);
 ?&gt;
 --CLEAN--
 &lt;?php
-      unlink $temp_filename;
+      unlink($temp_filename);
 ?&gt;
 --EXPECT--
 </pre>
