@@ -208,9 +208,18 @@ use of the CGI binary instead of the usual CLI one. (optional)</dd>
 <dt>--ENV--</dt>
 <dd>configures the environment to be used for php. (optional)</dd>
 
+<dt>--FILE--</dt>
+<dd>the test source-code. (required)</dd>
+
 <dt>--FILEEOF--</dt>
-<dd>an alternative to --FILE-- where any trailing line break is omitted. 
-(alternative to --FILE--)</dd>
+<dd>an alternative to --FILE-- where any trailing line break is omitted.</dd>
+
+<dt>--FILE_EXTERNAL--</dt>
+<dd>an alternative to --FILE--. This is used to specify that an external
+file should be used as the contents of the test file, and is designed
+for running the same test file with different ini, environment, post/get
+or other external inputs. The file must be in the same directory as the
+test file, or a subdirectory.</dd>
 
 <dt>--EXPECT--</dt>
 <dd>the expected output from the test script. (required)</dd>
