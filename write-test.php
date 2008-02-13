@@ -19,6 +19,13 @@ common_header();
           <td width="10">&nbsp;</td>
           <td width="100%">
 <h2>phpt Test Basics</h2>
+<p> The first thing you need to know about tests is that we need more!!! Although PHP works just great 
+99.99% of the time, not having a very comprehensive test suite means that we take more risks every time
+we add to or modify the PHP implementation. The second 
+thing you need to know is that if you can write PHP you can write tests. Thirdly - we are a friendly 
+and welcoming community, don't be scared about writing to
+ (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) - we won't bite!
+</p>
 <ul>
 	<li>
   		<b>So what are phpt tests?</b>  
@@ -42,10 +49,12 @@ you have everything you need.</p>
 php functions available.  You can  write a test on a basic language function (a string 
 function or an array function) , or a function provided by one of PHP's numerous extensions 
 (a mysql function or a image function or a mcrypt function).  You can find out what functions
-already have phpt tests on them by looking in the <a href="http://cvs.php.net/viewvc.cgi/">html 
-version</a> of the cvs (php-src/ext/standard/tests/ is a good place to start looking - though
-<i>all</i> the tests currently written are NOT in there).  After that - you 
-can pick any function you want.  If you want more guidance than that - you can always ask
+already have phpt tests by looking in the <a href="http://cvs.php.net/viewvc.cgi/">html 
+version</a> of the cvs (php-src/ext/standard/tests/ is a good place to start looking - though not
+<i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you 
+can see which functions have lots of tests and which need more, although these pages only
+show which lines of code are covered by test cases so even if the coverage looks good there may 
+be more interesting tests to write - for example covering error cases.  If you want more guidance than that you can always ask
 the PHP Quality Assurance Team on their mailing list 
 (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) where they 
 would like you to direct your attentions.</p>
@@ -63,7 +72,7 @@ the script "matches" the output provided in the phpt script - it passes.</p>
 		<b>What should a phpt test do?</b>
 	  	<p>Basically - it should try and break the PHP function.  It should check not
 only the functions normal parameters, but it should also check edge cases.  Intentionally generating
-an error is allowed.</p>
+an error is allowed and encouraged.</p>
 	</li>
 </ul>
 
@@ -75,14 +84,43 @@ test is for.  Tests should be named according to the following list:
 		<li><i>Tests for bugs</i><br />
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Give me some space! -->
 		    bug&lt;bugid&gt;.phpt (bug17123.phpt)</li>
-		<li><i>Tests for functions</i><br />
+		<li><i>Tests for a function's basic behaviour</i><br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
-		    &lt;functionname&gt;.phpt (dba_open.phpt)</li>
+		    &lt;functionname&gt;_basic.phpt (dba_open_basic.phpt)</li>
+		<li><i>Tests for a function's error behaviour</i><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+		    &lt;functionname&gt;_error.phpt (dba_open_error.phpt)</li>
+		<li><i>Tests for variations in a function's behaviour</i><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+		    &lt;functionname&gt;_variation.phpt (dba_open_variation.phpt)</li>
 		<li><i>General tests for extensions</i><br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
 			&lt;extname&gt;&lt;no&gt;.phpt (dba_003.phpt)</li>
 	</ul>
 </p>
+<p> The convention of using _basic, _error and _variation was introduced when we 
+found that writing a single test case for each function resulted in unacceptably large 
+test cases. It's quite hard to debug problems when the test case generates 100s of lines of output.
+<p>The "basic" test case for a function should just address the single most simple 
+thing that the function is designed to do. For example, if writing a test for the sin() function 
+a basic test would just be to check that sin() returns the correct values for some known angles
+- eg 30, 90, 180. </p>
+<p>The "error" tests for a function are test cases which are designed to provoke errors, warnings or notices. 
+There can be more than one error case, if so the convention is to name the test cases mytest_error1.phpt, 
+mytest_error2.phpt and so on.<p>
+<p>The "variation" tests are any tests that don't fit into "basic" or "error" tests. For example one might 
+use a variation tests to test boundary conditions.</p>
+<h3>How big is a test case?</h3>
+<p>Small. Really - the smaller the better, a good guide is no more than 10 lines of output. The reason 
+for this is that if we break something in PHP and it breaks your test case we need to be able to find
+out quite quickly what we broke, going through 1000s of line of test case output is not easy. Having said that
+it's sometimes just not practical to stay within the 10 line guideline, in this case you can help a lot
+by commenting the output. You may find plenty of much longer tests in PHP - the small tests message is something
+that we learnt over time, in fact we are slowly going through and splitting tests up when we need to.
+</p>
+<h3>Comments</h3>
+<p>Comments help. Not an essay - just a couple of lines on what the objective of the test is. It may seem completely
+obvious to you as you write it, but it might not be to someone looking at it later on</p>
 
 <h3>Basic Format</h3>
 <p>A test must contain the sections TEST, FILE and either EXPECT or EXPECTF at a minimum.  The example 
@@ -90,10 +128,10 @@ below illustrates a minimal test.</p>
 <i>ext/standard/tests/strings/strtr.phpt</i>
 <pre>
 --TEST--
-strtr() function
+strtr() function - basic test for strstr()
 --FILE--
 &lt;?php
-/* Do not change this test it is a REATME.TESTING example. */
+/* Do not change this test it is a README.TESTING example. */
 $trans = array("hello"=&gt;"hi", "hi"=&gt;"hello", "a"=&gt;"A", "world"=&gt;"planet");
 var_dump(strtr("# hi all, I said hello world! #", $trans));
 ?&gt;
@@ -101,171 +139,47 @@ var_dump(strtr("# hi all, I said hello world! #", $trans));
 string(32) "# hello All, I sAid hi planet! #"
 </pre>
 
-<p>As you can see the file is divided into several sections.  The TEST section holds a one line comment
-about the phpt test. The phpt files name is used when generating a .php file.  The FILE section is used 
+<p>As you can see the file is divided into several sections.  The TEST section holds a one line title
+of the phpt test, this shoudl be a simple description and shouldn't ever excede one line, if you need to write more explanation
+add comments in the body of the test case. The phpt files name is used when generating a .php file.  The FILE section is used 
 as the body of the .php file, so don't forget to open and close your php tags.  The EXPECT section is 
 the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
-<h3> Cleaning up after writing a test </h3>
-<p>Sometimes test cases create files or directories as part of the test case and it's important to remove these after the test ends, the --CLEAN--
-section is provided to help with this.</p>
-<p> The PHP code in the --CLEAN-- section is executed separately from the code in the --FILE-- section. For example, this code:</p>
-<pre>
---TEST--
-Will fail to clean up
---FILE--
-&lt;?php
-      $temp_filename = "fred.tmp";
-      $fp = fopen($temp_filename, "w");
-      fwrite($fp, "Hello Boys!");
-      fclose($fp);
-?&gt;
---CLEAN--
-&lt;?php
-      unlink($temp_filename);
-?&gt;
---EXPECT--
-</pre>
-<p>will not remove the temporary file because the variable $filename is not defined in the --CLEAN-- section.</p>
-<p>Here is a better way to write the code:
-<pre>
---TEST--
-This will remove temporary files
---FILE--
-&lt;?php
-	$temp_filename = dirname(__FILE__)."/fred.tmp";
-	$fp = fopen($temp_filename, "w");
-	fwrite ($fp, "Hello Boys!\n");
-	fclose($fp);
-?&gt;
---CLEAN--
-&lt;?php
-	$temp_filename = dirname(__FILE__)."/fred.tmp";
-	unlink($temp_filename);
-?>
---EXPECT--
-</pre>
-<p> Note the use of the dirname(__FILE__) construct which will ensure that the temporary file is created in the same directory as
-the phpt test script. </p>
 
-<p> When creating temporary files it is a good idea to use an extension that indicates the use of the file, eg .tmp. It's also a good
-idea to avoid using extensions that are already used for other purposes, eg .inc, .php. Similarly, it is helpful to give the temporary file a name
-that is clearly related to the test case. For example, mytest.phpt should create mytest.tmp (or mytestN.tmp, N=1, 2,3,...) then if by any
-chance the temporary file isnt't removed properly it will be obvious which test case created it.</p>
-
-<p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section 
-is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE-- 
-section is run from a file called mytest.php and code from the --CLEAN-- section is run from a file called mytest.clean.php. If the test passes, 
-both the .php and .clean.php files are removed by run-tests.php. You can prevent the removal by using the --keep option of run-tests.php, 
-this is a very useful option if you need to check that the --CLEAN-- section code is working as you intended.
-
-<p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file - 
-this will help to prevent you from accidentally checking temporary files into CVS. </p>
-<h3>All Sections</h3>
+<h3>PHPT structure details</h3>
 A phpt test can have many more parts than just the minimum.  In fact some of the mandatory parts have
-alternatives that may be used if the situation warrants it.
-<dl>
-<dt>--TEST--</dt>
-<dd>title of the test. (required)</dd>
+alternatives that may be used if the situation warrants it. The phpt sections are documented <a href="phpt_details.php">here</a>.
+<p>There is also a very useful set of slides, written by Marcus Boerger <a href="http://somabo.de/talks/">here</a>.
+Look at the talk entitled "The need for speed, ERM testing".</p>
 
-<dt>--SKIPIF--</dt>
-<dd>a condition when to skip this test. (optional)</dd>
+<h3>Autogenerating test cases</h3>
+<p> It isn't possible (or even sensible) to try and generate complete test cases for PHP. However
+there is a script in PHP5.3 which will help to generate the framework. It can save you 
+some typing and ensure that you get a good basic format. 
+See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
 
-<dt>--POST--</dt>
-<dd>POST variables to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
 
-<dt>--GZIP_POST--</dt>
-<dd>When this section exists, the POST data will be gzencode()'d. (optional)</dd>
+<h3> Testing your test cases</h3>
+<p>Most people who write tests for PHP don't have access to a huge number of operating systems but the tests are run
+on every system that runs PHP. It's good to test your test on as many platforms as you can - Linux and Windows
+are the most important, it's increasingly important to make sure that tests run on 64 bit as well as 32 bit platforms. If you only
+have access to one operating system - don't worry, if you have karma, commit the test but watch php-qa@lists.php.net for reports
+of failures on other platforms. If you don't have karma to commit have a look at the next section.</p>
+<p>When you are testing your test case it's <b>really</b> important to make sure that you
+clean up any temporary resources (eg files) that you used in the test. There is a special --CLEAN-- section
+to help you do this - see <a href="#clean">here</a>.
+<p>Another good check is to look at what lines of code in the PHP source your test case covers. 
+This is easy to do, there are some instructions on the <a href="http://doc.php.net/wiki/writing-tests">PHP Wiki</a>.</p>
 
-<dt>--DEFLATE_POST--</dt>
-<dd>When this section exists, the POST data will be gzcompress()'ed. (optional)</dd>
-
-<dt>--POST_RAW--</dt>
-<dd>RAW POST data to be passed to the test script. This differs from the section
-above because it doesn't set the Content-Type, which can be set manually in
-this section. This section forces the use of the CGI binary instead of the
-usual CLI one. (optional)</dd>
-
-<dt>--GET--</dt>
-<dd>GET variables to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
-
-<dt>--COOKIE--</dt>
-<dd>Cookies to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
-
-<dt>--STDIN--</dt>
-<dd>data to be fed to the test script's standard input. (optional)</dd>
-
-<dt>--INI--</dt>
-<dd>to be used if you need a specific php.ini setting for the test.  
-	Each line contains an ini setting   e.g. foo=bar. (optional)</dd>
-
-<dt>--ARGS--</dt>
-<dd>a single line defining the arguments passed to php. (optional)</dd>
-
-<dt>--ENV--</dt>
-<dd>configures the environment to be used for php. (optional)</dd>
-
-<dt>--FILE--</dt>
-<dd>the test source-code. (required)</dd>
-
-<dt>--FILEEOF--</dt>
-<dd>an alternative to --FILE-- where any trailing line break is omitted.</dd>
-
-<dt>--FILE_EXTERNAL--</dt>
-<dd>an alternative to --FILE--. This is used to specify that an external
-file should be used as the contents of the test file, and is designed
-for running the same test file with different ini, environment, post/get
-or other external inputs. The file must be in the same directory as the
-test file, or a subdirectory.</dd>
-
-<dt>--EXPECT--</dt>
-<dd>the expected output from the test script. (required)</dd>
-
-<dt>--UEXPECT--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
-
-<dt>--EXPECTF--</dt>
-<dd>an alternative of --EXPECT--. The difference is that this form uses
-sscanf for output validation. (alternative to --EXPECT--)</dd>
-
-<dt>--UEXPECTF--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
-
-<dt>--EXPECTREGEX--</dt>
-<dd>an alternative of --EXPECT--. This form allows the tester to specify the
-result in a regular expression. (alternative to --EXPECT--)</dd>
-
-<dt>--UEXPECTREGEX--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
-
-<dt>--REDIRECTTEST--</dt>
-<dd>this block allows to redirect from one test to a bunch of other tests.
-(alernative to --FILE--)</dd>
-
-<dt>--HEADERS--</dt>
-<dd>header to be used when sending the request. Currently only available with
-server-tests.php (optional)</dd>
-
-<dt>--EXPECTHEADERS--</dt>
-<dd>the expected headers. Any header specified here must exist in the 
-response and have the same value. Additional headers do not matter. (optional)
-</dd>
-
-<dt>--CLEAN--</dt>
-<dd>code that is executed after the test has run. Using run-tests.php switch 
---no-clean you can prevent its execution to inspect generated data/files that
-were normally removed after the test. (optional)</dd>
-
-<dt>===DONE===</dt>
-<dd>This is only available in the --FILE-- section. Any part after this line
-is not going into the actual test script (see below for more).</dd>
-</dl>
-
-<p><strong>Note:</strong> The Uxx sections (such as UEXPECT) are only needed if
-the output of the test differs in Unicode and non-Unicode mode.</p>
+<h3>What should I do with my test case when I've written and tested it?</h3>
+<p>The next step is to get someone to review it. If it's short you can paste it into a note and
+send it to php-qa@lists.php.net. If the test is a bit too 
+long for that then put it somewhere were people can download it (<a href="http://www.pastebin.ca/">pastebin</a> is 
+sometimes used). Appending tests to notes as files doesn't work well - so please don't do that. Your
+note to  php-qa@lists.php.net should say 
+what level of PHP you have tested it on and what platform(s) you've run it on. Someone from 
+the PHP QA group will review your test and reply to you. They may ask for some changes 
+or suggest better ways to do things, or they may commit it to PHP.
 
 <h2>Examples</h2>
 
@@ -363,6 +277,62 @@ SKIPIF section it should be named "skipif.inc" and an include file used in the
 FILE section of many tests should be named "test.inc".</p>
 
 <h2> Final Notes</h2>
+<h3><a name="clean">Cleaning up after running a test</a></h3>
+<p>Sometimes test cases create files or directories as part of the test case and it's important to remove these after the test ends, the --CLEAN--
+section is provided to help with this.</p>
+
+<p> The PHP code in the --CLEAN-- section is executed separately from the code in the --FILE-- section. For example, this code:</p>
+<pre>
+--TEST--
+Will fail to clean up
+--FILE--
+&lt;?php
+      $temp_filename = "fred.tmp";
+      $fp = fopen($temp_filename, "w");
+      fwrite($fp, "Hello Boys!");
+      fclose($fp);
+?&gt;
+--CLEAN--
+&lt;?php
+      unlink($temp_filename);
+?&gt;
+--EXPECT--
+</pre>
+<p>will not remove the temporary file because the variable $filename is not defined in the --CLEAN-- section.</p>
+<p>Here is a better way to write the code:
+<pre>
+--TEST--
+This will remove temporary files
+--FILE--
+&lt;?php
+	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	$fp = fopen($temp_filename, "w");
+	fwrite ($fp, "Hello Boys!\n");
+	fclose($fp);
+?&gt;
+--CLEAN--
+&lt;?php
+	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	unlink($temp_filename);
+?>
+--EXPECT--
+</pre>
+<p> Note the use of the dirname(__FILE__) construct which will ensure that the temporary file is created in the same directory as
+the phpt test script. </p>
+
+<p> When creating temporary files it is a good idea to use an extension that indicates the use of the file, eg .tmp. It's also a good
+idea to avoid using extensions that are already used for other purposes, eg .inc, .php. Similarly, it is helpful to give the temporary file a name
+that is clearly related to the test case. For example, mytest.phpt should create mytest.tmp (or mytestN.tmp, N=1, 2,3,...) then if by any
+chance the temporary file isnt't removed properly it will be obvious which test case created it.</p>
+
+<p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section 
+is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE-- 
+section is run from a file called mytest.php and code from the --CLEAN-- section is run from a file called mytest.clean.php. If the test passes, 
+both the .php and .clean.php files are removed by run-tests.php. You can prevent the removal by using the --keep option of run-tests.php, 
+this is a very useful option if you need to check that the --CLEAN-- section code is working as you intended.
+
+<p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file - 
+this will help to prevent you from accidentally checking temporary files into CVS. </p>
 <h3>Redirecting tests</h3>
 <p>Using --REDIRECTTEST-- it is possible to redirect from one test to a bunch 
 of other tests. That way multiple extensions can refer to the same set of 
@@ -407,6 +377,28 @@ lines "===DONE===" and "&lt;?php exit(0); ?&gt;.
 When doing so run-tests.php does not execute the line containing the exit call
 as that would suppress leak messages. Actually run-tests.php ignores any part
 after a line consisting only of "===DONE===".</p>
+<p>Here is an example:</p>
+<pre>
+--TEST--
+Test hypot() - dealing with mixed number/character input 
+--INI--
+precision=14
+--FILE--
+&lt;?php
+        $a="23abc";
+        $b=-33;
+        echo "$a :$b ";
+        $res = hypot($a, $b);
+        var_dump($res);
+?&gt;
+===DONE===
+&lt;?php exit(0); ?&gt;
+--EXPECTF--
+23abc :-33 float(40.224370722238)
+===DONE===
+</pre>
+<p>If executed as PHP script the output will stop after the code on the --FILE-- section 
+has been run.</p>
 <p></p>
           </td>
           <td width="10">&nbsp;</td>
@@ -416,3 +408,4 @@ after a line consisting only of "===DONE===".</p>
 
 common_footer();
 ?>
+
