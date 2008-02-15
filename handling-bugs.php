@@ -204,8 +204,7 @@ So, be sure to leave a comment.</p>
         <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="http://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
     </li>
     <li>
-        Look at the <a href="http://bugs.php.net/bugstats.php">raw bug stats</a> 
-        OR a <a href="http://qa.php.net/~jani/bugstats/">graph</a>.
+        Look at the <a href="http://bugs.php.net/bugstats.php">raw bug stats</a>.
     </li>
     <li>
         Not leaving a comment means no email will be sent to the mailing list. 

@@ -33,7 +33,6 @@ function common_header() {
             | <a href="projects.php" class="head_links">Projects and Goals</a> 
             | <a href="rc.php" class="head_links">Release Candidates</a> 
             | <a href="howtohelp.php" class="head_links">How to Help</a>
-            | <a href="stats.php" class="head_links">Statistics</a>
             | <a href="handling-bugs.php" class="head_links">Handling Bug Reports</a>
             | <a href="running-tests.php" class="head_links">Submit a build test</a>
           </td>
