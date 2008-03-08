@@ -6,7 +6,7 @@
  */
 
 $BUILD_TEST_RELEASES = array( '4.4.8', '5.2.6RC2');
-$DEV_RELEASES = array();
+$DEV_RELEASES = array('5.3.0-dev');
 
 foreach($BUILD_TEST_RELEASES as $release) {
 	/* If RC, bump to next RC-dev, if release, bump to next release-dev */
