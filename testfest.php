@@ -74,7 +74,7 @@ common_header();
             <h3>Where are tests submitted to?</h3>
             We will implement a simple front-end that allows people to upload
             their phpt files. People can register themselves and then upload,
-            delete and modify files in their “directory”. Submitters are asked
+            delete and modify files in their "directory". Submitters are asked
             to follow the <a href="write-test.php">phpt coding standards</a>.
 
             <h3>How are submissions reviewed? How do I get feedback?</h3>
