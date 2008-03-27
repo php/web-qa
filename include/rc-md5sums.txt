@@ -1,5 +1,5 @@
 496ff65dedbb17d65be3577a4a7e410f  php-4.4.8RC1.tar.bz2
 8f4cd69b5d07b60164238b570197059a  php-4.4.8RC1.tar.gz
 d43f09e067dffe7ed8ec97c1f5879dac  php-4.4.8RC1-Win32.zip
-d99362aad64dc630b8a684751a2c7302  php-5.2.6RC2.tar.bz2
-412447c37b74b0c62aed92b9e5745caa  php-5.2.6RC2.tar.gz
+3d1443c8172722e31f20d1a7aab94140  php-5.2.6RC3.tar.bz2
+c765de110a33eb7a666c68e795840b0e  php-5.2.6RC3.tar.gz
