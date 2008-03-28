@@ -17,20 +17,27 @@ common_header();
         </tr>
         <tr>
           <td width="10">&nbsp;</td>
-          <td width="100%">The TestFest is an event that aims at improving the
-            <a href="http://gcov.php.net">code coverage</a> of the
-            <a href="/running-tests.php">test suite</a> for the PHP language
-            itself. As part of this event, local User Groups (UG) are invited to
-            join the TestFest. These UGs can meet physically or come together
-            virtually. The point however is that people network to learn together.
-            Aside form being an opportunity for all of you to make friends with
-            like minded people in your (virtual) community, it also will hopefully
-            reduce the work load for the PHP.net mentors. All it takes is someone
-            to organize a UG to spearhead the event and to get others involved in
-            <a href="write-test.php">writing phpt tests</a>. The submissions will
-            then be reviewed by members of php.net before getting included in the
-            official test suite.<br />
-            <br />
+          <td width="100%">
+            <table>
+              <tr>
+                <td width="65%">
+                  The TestFest is an event that aims at improving the
+                  <a href="http://gcov.php.net">code coverage</a> of the
+                  <a href="/running-tests.php">test suite</a> for the PHP language
+                  itself. As part of this event, local User Groups (UG) are invited to
+                  join the TestFest. These UGs can meet physically or come together
+                  virtually. The point however is that people network to learn together.
+                  Aside form being an opportunity for all of you to make friends with
+                  like minded people in your (virtual) community, it also will hopefully
+                  reduce the work load for the PHP.net mentors. All it takes is someone
+                  to organize a UG to spearhead the event and to get others involved in
+                  <a href="write-test.php">writing phpt tests</a>. The submissions will
+                  then be reviewed by members of php.net before getting included in the
+                  official test suite.
+                </td>
+                <td width="35%" align="center"><img src="gfx/testfest_big.png" width="200" /></td>
+              </tr>
+            </table>
 
             <h2>Frequently Asked Questions</h2>
 
@@ -95,7 +102,12 @@ common_header();
             Until then please contact the <a href="mailto:php-qa@lists.php.net">
             QA mailinglist</a> if you are interested in participating or if
             you have any questions. Alternatively you can join #php.pecl on EfNet
-            and there should usually be someone around to help.<br />
+            and there should usually be someone around to help.
+
+            <h3>Do you also provide a smaller version of the logo?</h3>
+            Yes here you go (scale as needed):<br />
+            <img src="gfx/testfest_small_08.png" width="200" />
+            <br /><br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
