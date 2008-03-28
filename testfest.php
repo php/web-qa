@@ -27,7 +27,7 @@ common_header();
                   itself. As part of this event, local User Groups (UG) are invited to
                   join the TestFest. These UGs can meet physically or come together
                   virtually. The point however is that people network to learn together.
-                  Aside form being an opportunity for all of you to make friends with
+                  Aside from being an opportunity for all of you to make friends with
                   like minded people in your (virtual) community, it also will hopefully
                   reduce the work load for the PHP.net mentors. All it takes is someone
                   to organize a UG to spearhead the event and to get others involved in
@@ -88,10 +88,10 @@ common_header();
             Mentors will have access to all the submissions and will review
             submissions at their own pace in their given area of expertise. We
             hope this will be done in a timely manner, but please understand
-            that we cannot give any gurantees, especially if the event turns out
+            that we cannot give any guarantees, especially if the event turns out
             to be as successful as we hope. Submittors will be able to see who
             is reviewing their submission as well as when their submission has
-            been processed. If the submission led to a that was submitted the
+            been processed. If the submission led to a commit the
             interface will show any difference that might exist between the
             submission and the final commited version. Furthermore the mentor
             might provide some individual commentary.
