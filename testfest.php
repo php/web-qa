@@ -74,7 +74,7 @@ common_header();
             <h3>I want to organize an event, but there is nobody here that
             knows how to write tests for PHP. What can I do?</h3>
             First look at the documentation on how to <a href="write-test.php">
-            write phpt tests</a>. Its actually not that hard. If you still need
+            write phpt tests</a>. It's actually not that hard. If you still need
             help feel free to contact the <a href="mailto:php-qa@lists.php.net">
             QA mailinglist</a>.
 
