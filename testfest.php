@@ -60,7 +60,7 @@ common_header();
             <h3>Why is the timeframe so short? What if June would be a better date?</h3>
             We want to ensure that we have mentors ready and available to answer
             questions. In order to get some sort of commitment from mentors we
-            cannot make this timeframe indefinately long. That being said we
+            cannot make this timeframe indefinitely long. That being said we
             might hold future TestFests. Also people are of course invited to
             join the QA team any time of year.
 
@@ -93,7 +93,7 @@ common_header();
             is reviewing their submission as well as when their submission has
             been processed. If the submission led to a commit the
             interface will show any difference that might exist between the
-            submission and the final commited version. Furthermore the mentor
+            submission and the final committed version. Furthermore the mentor
             might provide some individual commentary.
 
             <h3>How do I join? How do I get more information?</h3>
