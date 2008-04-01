@@ -31,13 +31,24 @@ common_header();
                   like minded people in your (virtual) community, it also will hopefully
                   reduce the work load for the PHP.net mentors. All it takes is someone
                   to organize a UG to spearhead the event and to get others involved in
-                  <a href="write-test.php">writing phpt tests</a>. The submissions will
+                  <a href="/write-test.php">writing phpt tests</a>. The submissions will
                   then be reviewed by members of php.net before getting included in the
                   official test suite.
                 </td>
                 <td width="35%" align="center"><img src="gfx/testfest_big.png" width="200" /></td>
               </tr>
             </table>
+
+            <h2>Participating Users Group</h2>
+
+            <ul>
+                <li>Atlanta PHP UG - 1st of May</li>
+                <li>Cologne/Bonn UG</li>
+                <li>DLW Europe/IPC Spring Conference - 26th-28th of May</li>
+                <li>NYPHP UG</li>
+                <li>PHP Quebec UG</li>
+                <li>Washington, DC UG - 31st of May</li>
+            </ul>
 
             <h2>Frequently Asked Questions</h2>
 
