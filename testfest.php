@@ -43,7 +43,7 @@ common_header();
 
             <ul>
                 <li>Atlanta PHP UG - 1st of May</li>
-                <li>Cologne/Bonn UG</li>
+                <li>Cologne/Bonn UG - 2nd of May</li>
                 <li>DLW Europe/IPC Spring Conference - 26th-28th of May</li>
                 <li>NYPHP UG</li>
                 <li>PHP Quebec UG</li>
