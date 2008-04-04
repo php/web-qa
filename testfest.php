@@ -48,6 +48,7 @@ common_header();
                 <li>NYPHP UG</li>
                 <li>PHP Quebec UG</li>
                 <li>Washington, DC UG - 31st of May</li>
+                <li>London UG, 8th May</li>
             </ul>
 
             <h2>Frequently Asked Questions</h2>
