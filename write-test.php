@@ -181,6 +181,78 @@ what level of PHP you have tested it on and what platform(s) you've run it on. S
 the PHP QA group will review your test and reply to you. They may ask for some changes 
 or suggest better ways to do things, or they may commit it to PHP.
 
+
+<h3>Writing Portable PHP Tests</h3>
+
+<p>Writing portable tests can be hard if you don't have access to all
+the many platforms that PHP can run on.  Do your best.  If in doubt,
+don't disable a test.  It is better that the test runs in as many
+environments as possible.</p>
+
+<p>If you know a new test won't run in a specific environment, try to
+write the complementary test for that environment.</p>
+
+<p>Make sure sets of data are consistently ordered.  SQL queries are
+not guaranteed to return results in the same order unless an ORDER BY
+clause is used.  Directory listings are another example that can vary:
+use an appropriate PHP function to sort them befor printing.  Both of
+these examples have affected PHP tests in the past.</p>
+
+<p>Make sure that any test touching parsing or display of dates uses a
+hard-defined timezone - preferable 'UTC':</p>
+
+<pre>
+--INI--
+date.timezone=UTC
+</pre>
+
+<p>Tests that run, or only have have matching EXPECT output, on 32bit
+platforms can use a SKIPIF section like:</p>
+
+<pre>
+--SKIPIF--
+&lt;?php 
+if (PHP_INT_SIZE != 4) die("skip this test is for 32bit platforms only");
+?&gt;
+<pre>
+
+<p>Tests for 64bit platforms can use:</p>
+
+<pre>
+--SKIPIF--
+&lt;?php 
+if (PHP_INT_SIZE != 8) die("skip this test is for 64bit platforms only");
+?&gt;
+</pre>
+
+<p>To run a test only on Windows</p>
+
+<pre>
+--SKIPIF--
+&lt;?php 
+if (substr(PHP_OS, 0, 3) != 'WIN') die("skip this test is for Windows platforms only");
+?&gt;
+</pre>
+
+<p>To run a test only on Linux</p>
+
+<pre>
+--SKIPIF--
+&lt;?php 
+if (!stristr(PHP_OS, "Linux")) die("skip this test is Linux platforms only");
+?&gt;
+</pre>
+
+
+<p>To skip a test on Mac OS X Darwin</p>
+
+<pre>
+--SKIPIF--
+&lt;?php 
+if (!stristr(PHP_OS, "Darwin")) die("skip this test is for Mac OS X platforms only");
+?&gt;
+</pre>
+
 <h2>Examples</h2>
 
 <h3>EXPECTF</h3>
