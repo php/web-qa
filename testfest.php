@@ -50,6 +50,7 @@ common_header();
                 <li>Washington, DC UG - 31st of May</li>
                 <li>London UG, 8th May</li>
                 <li>Hamburg PHP Unconference - April 26/27</li>
+                <li>Ireland PHP UG - May - date TBC</li>
             </ul>
 
             <h2>Frequently Asked Questions</h2>
