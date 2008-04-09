@@ -41,7 +41,8 @@ common_header();
 
             <h2>Participating Users Group</h2>
 
-            Please check the PHP.net wiki page for <a href="http://wiki.php.net/qa/testfest">details</a>.
+            Please check the PHP.net wiki page for
+            <a href="http://wiki.php.net/qa/testfest">details</a>.
 
             <h2>Frequently Asked Questions</h2>
 
@@ -92,7 +93,7 @@ common_header();
 
             <h3>What version of PHP should be used?</h3>
             We prefer that the tests are made for 5.3/HEAD. You can grab a build
-            of 5.3 at the <a href="http://snaps.php.net/">snaps page. Source
+            of 5.3 at the <a href="http://snaps.php.net/">snaps page</a>. Source
             code and Windows builds are available. Possibly there will be a
             release candidate of PHP 5.3 available as well. If requiring PHP
             5.3/HEAD is an issue for your UG, please let us know so that we can
