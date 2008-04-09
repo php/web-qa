@@ -41,17 +41,7 @@ common_header();
 
             <h2>Participating Users Group</h2>
 
-            <ul>
-                <li>Atlanta PHP UG - 1st of May</li>
-                <li>Cologne/Bonn UG - 2nd of May</li>
-                <li>DLW Europe/IPC Spring Conference - 26th-28th of May</li>
-                <li>NYPHP UG</li>
-                <li>PHP Quebec UG</li>
-                <li>Washington, DC UG - 31st of May</li>
-                <li>London UG, 8th May</li>
-                <li>Hamburg PHP Unconference - April 26/27</li>
-                <li>Ireland PHP UG - May - date TBC</li>
-            </ul>
+            Please check the PHP.net wiki page for <a href="http://wiki.php.net/qa/testfest">details</a>.
 
             <h2>Frequently Asked Questions</h2>
 
@@ -83,7 +73,9 @@ common_header();
             more testing. Along with that list we will provide contact
             information for mentors. The mentors will also review the submissions
             later on. Ideally questions regarding the testing framework itself
-            will be answered by local organizers.
+            will be answered by local organizers. Please check the
+            <a href="http://wiki.php.net/qa/testfest">wiki</a> to get details on
+            the available mentors and focus areas.
 
             <h3>I want to organize an event, but there is nobody here that
             knows how to write tests for PHP. What can I do?</h3>
@@ -97,6 +89,14 @@ common_header();
             their phpt files. People can register themselves and then upload,
             delete and modify files in their "directory". Submitters are asked
             to follow the <a href="write-test.php">phpt coding standards</a>.
+
+            <h3>What version of PHP should be used?</h3>
+            We prefer that the tests are made for 5.3/HEAD. You can grab a build
+            of 5.3 at the <a href="http://snaps.php.net/">snaps page. Source
+            code and Windows builds are available. Possibly there will be a
+            release candidate of PHP 5.3 available as well. If requiring PHP
+            5.3/HEAD is an issue for your UG, please let us know so that we can
+            see how your UG can still participate.
 
             <h3>How are submissions reviewed? How do I get feedback?</h3>
             Mentors will have access to all the submissions and will review
