@@ -1,2 +1,2 @@
-ad20362770e72ac2b2027bde5aa0e57f  php-5.2.6RC4.tar.bz2
-24597a1c8c2d035a2095fcb4a7b17018  php-5.2.6RC4.tar.gz
+96f1454a55c3f5a62a8b133cdb800cd9  php-5.2.6RC5.tar.bz2
+9830f0720e3e7c8e446b5d627c3f79e7  php-5.2.6RC5.tar.gz
