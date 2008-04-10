@@ -169,7 +169,7 @@ of failures on other platforms. If you don't have karma to commit have a look at
 clean up any temporary resources (eg files) that you used in the test. There is a special --CLEAN-- section
 to help you do this - see <a href="#clean">here</a>.
 <p>Another good check is to look at what lines of code in the PHP source your test case covers. 
-This is easy to do, there are some instructions on the <a href="http://doc.php.net/wiki/writing-tests">PHP Wiki</a>.</p>
+This is easy to do, there are some instructions on the <a href="http://wiki.php.net/doc/articles/writing-tests">PHP Wiki</a>.</p>
 
 <h3>What should I do with my test case when I've written and tested it?</h3>
 <p>The next step is to get someone to review it. If it's short you can paste it into a note and
