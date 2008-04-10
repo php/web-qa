@@ -214,7 +214,7 @@ platforms can use a SKIPIF section like:</p>
 &lt;?php 
 if (PHP_INT_SIZE != 4) die("skip this test is for 32bit platforms only");
 ?&gt;
-<pre>
+</pre>
 
 <p>Tests for 64bit platforms can use:</p>
 
