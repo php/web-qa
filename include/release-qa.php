@@ -19,15 +19,15 @@ $RELEASE_PROCESS = array(4 => false, 5 => true);
 
 $CURRENT_QA_RELEASE_4 = false;
 $RC_FILES_4 = array (
-	array (	
+	array (
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE_4}.tar.bz2",
 	),
-	array (	
+	array (
 		'http://downloads.php.net/derick/',
 		"php-{$CURRENT_QA_RELEASE_4}.tar.gz",
 	),
-	array (	
+	array (
 		'http://downloads.php.net/edink/',
 		"php-{$CURRENT_QA_RELEASE_4}-Win32.zip",
 	),
@@ -37,20 +37,24 @@ $RC_FILES_4 = array (
 $CURRENT_QA_RELEASE_5 = '5.2.6RC5';
 $RC_FILES_5 = array (
 
-	array (	
+	array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
 	),
-	array (	
+	array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
+	array (
+		'http://pecl2.php.net/downloads/php-windows-builds/qa/',
+		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
+	),
 /*
-	array (	
+	array (
 		'http://downloads.php.net/edink/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
-	array (	
+	array (
 		'http://downloads.php.net/edink/',
 		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
@@ -125,7 +129,7 @@ foreach ($FILES as $key => $FILE) {
 	echo (!empty($MD5SUM[$key])) ? "<br />{$MD5SUM[$key]}" : '';
 	echo "</li>\n";
 }
-		
+
 echo " </ul>
 </span>
 <br />
