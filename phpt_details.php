@@ -22,6 +22,11 @@ common_header();
 <dt>--TEST--</dt>
 <dd>title of the test. (required)</dd>
 
+<dt>--CREDITS--</dt>
+<dd>if you don't have CVS commit rights, put your name and  email on the first line. If 
+the test is part of a TesFest event, then # followed by the name of the event and the date (YYYY-MM-DD) 
+on the second line. (optional)</dd>
+
 <dt>--SKIPIF--</dt>
 <dd>a condition when to skip this test. (optional)</dd>
 
@@ -115,7 +120,7 @@ were normally removed after the test. (optional)</dd>
 
 <dt>===DONE===</dt>
 <dd>This is only available in the --FILE-- section. Any part after this line
-is not going into the actual test script (see below for more).</dd>
+is not going into the actual test script (optional).</dd>
 </dl>
 
 <p><strong>Note:</strong> The Uxx sections (such as UEXPECT) are only needed if
