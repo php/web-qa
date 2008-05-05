@@ -116,8 +116,9 @@ common_header();
             Hopefully before the end of April we will have everything in place.
             Until then please contact the <a href="mailto:php-qa@lists.php.net">
             QA mailinglist</a> if you are interested in participating or if
-            you have any questions. Alternatively you can join #php.pecl on EfNet
-            IRC server. There should usually be someone around to help.
+            you have any questions. Alternatively you can join #php.pecl or the
+            #phptestfest channel on EfNet IRC server. There should usually be
+            someone around to help.
 
             <h3>Do you also provide a smaller version of the logo?</h3>
             Yes here you go (scale as needed):<br />
