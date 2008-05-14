@@ -90,6 +90,15 @@ common_header();
             their phpt files. People can register themselves and the create a tak (new test) and upload
             their files as attachments. More details can be found <a href="http://wiki.php.net/qa/uploading">here</a>
             Submitters are asked to follow the <a href="write-test.php">phpt coding standards</a>.
+            
+            <h3>I volunteered to be a mentor, how do I review tests?</h3>
+            Just register with the test tracking <a href="http://testfest.php.net/">tool</a> and
+            mail the <a href="mailto:php-qa@lists.php.net">
+            QA mailinglist</a> to ask for admin authority. Admin authority will be granted
+            to those who already have PHP commit rights. When you have admin authority you can log
+            into the test tracking system and assign tests to yourself. Simply review the test, if it's good
+            then commit it, if not then either fix it or return it to the contributor explaining why you 
+            are unable to commit.
 
             <h3>What version of PHP should be used?</h3>
             We prefer that the tests are made for 5.3/HEAD. You can grab a build
