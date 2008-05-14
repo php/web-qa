@@ -86,10 +86,10 @@ common_header();
             QA mailinglist</a>.
 
             <h3>Where are tests submitted to?</h3>
-            We will implement a simple front-end that allows people to upload
-            their phpt files. People can register themselves and then upload,
-            delete and modify files in their "directory". Submitters are asked
-            to follow the <a href="write-test.php">phpt coding standards</a>.
+            We have implemented a simple <a href="http://testfest.php.net/">front-end</a> that allows people to upload
+            their phpt files. People can register themselves and the create a tak (new test) and upload
+            their files as attachments. More details can be found <a href="http://wiki.php.net/qa/uploading">here</a>
+            Submitters are asked to follow the <a href="write-test.php">phpt coding standards</a>.
 
             <h3>What version of PHP should be used?</h3>
             We prefer that the tests are made for 5.3/HEAD. You can grab a build
