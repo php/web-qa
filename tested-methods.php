@@ -103,7 +103,7 @@ while (true) {
     echo "<td bgcolor=$bgcolor>$tested</td>";
     echo "<td>";
     if ($test_files_exist) {
-        echo "<a onClick='showHide(\"$tests_id\")'>click to show/hide test files</a>";
+        echo "<a href=\"#\" onClick='showHide(\"$tests_id\"); return false;'>click to show/hide test files</a>";
         echo "<div id='$tests_id' style='display:none;'>$tests</div>";
     }
     echo "</td>";
@@ -113,10 +113,11 @@ while (true) {
 }
 echo "</table>\n";
 
-common_footer();
-
 ?>
       </td>
       </tr>
       </table>
+<?php
+common_footer();
+?>
 
