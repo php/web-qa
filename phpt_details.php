@@ -118,6 +118,14 @@ response and have the same value. Additional headers do not matter. (optional)
 --no-clean you can prevent its execution to inspect generated data/files that
 were normally removed after the test. (optional)</dd>
 
+<dt>--XFAIL--</dt>
+<dd>a test that is expected to fail. Any text added in this section should simply explain why the 
+test is expected to fail. This section is intented as a convenience to developers who
+may wish to distinguish between tests that they know will fail, because the function they 
+test is not implemented yet, and tests which should pass. As soon as the function
+is implemented the XFAIL section should be removed from the test. XFAIL sections should
+not appear in tests associated with released levels of PHP.
+
 <dt>===DONE===</dt>
 <dd>This is only available in the --FILE-- section. Any part after this line
 is not going into the actual test script (optional).</dd>
