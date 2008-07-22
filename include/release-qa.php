@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array( '4.4.8', '5.2.6');
+$BUILD_TEST_RELEASES = array( '4.4.9RC1', '5.2.6');
 $DEV_RELEASES = array('5.3.0-dev');
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -15,9 +15,9 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(4 => false, 5 => false);
+$RELEASE_PROCESS = array(4 => true, 5 => false);
 
-$CURRENT_QA_RELEASE_4 = false;
+$CURRENT_QA_RELEASE_4 = '4.4.9RC1'; // false
 $RC_FILES_4 = array (
 	array (
 		'http://downloads.php.net/derick/',
