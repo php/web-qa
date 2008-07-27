@@ -28,8 +28,8 @@ $RC_FILES_4 = array (
 		"php-{$CURRENT_QA_RELEASE_4}.tar.gz",
 	),
 	array (
-		'http://downloads.php.net/edink/',
-		"php-{$CURRENT_QA_RELEASE_4}-Win32.zip",
+		'http://downloads.php.net/derick/',
+		"php-{$CURRENT_QA_RELEASE_4}-win32.zip",
 	),
 );
 
