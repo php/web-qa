@@ -15,7 +15,7 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(4 => true, 5 => false);
+$RELEASE_PROCESS = array(4 => true, 5 => true);
 
 $CURRENT_QA_RELEASE_4 = '4.4.9RC1'; // false
 $RC_FILES_4 = array (
