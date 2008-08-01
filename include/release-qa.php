@@ -5,8 +5,8 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array( '4.4.9RC1', '5.2.6');
-$DEV_RELEASES = array('5.3.0-dev');
+$BUILD_TEST_RELEASES = array( '4.4.9RC1', '5.3.0alpha1');
+$DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
 	/* If RC, bump to next RC-dev, if release, bump to next release-dev */
@@ -34,21 +34,23 @@ $RC_FILES_4 = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = false;
+$CURRENT_QA_RELEASE_5 = '5.3.0alpha1'; // false
 $RC_FILES_5 = array (
 
 	array (
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/johannes/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
 	),
 	array (
-		'http://downloads.php.net/ilia/',
+		'http://downloads.php.net/johannes/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
+/*
 	array (
 		'http://pecl2.php.net/downloads/php-windows-builds/qa/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
+*/
 /*
 	array (
 		'http://downloads.php.net/edink/',
@@ -77,15 +79,15 @@ $SNAPSHOTS = array (
 	),
 	array (
 		'http://snaps.php.net/',
-		'php5.2-latest.tar.bz2',
+		'php5.3-latest.tar.bz2',
 	),
 	array (
 		'http://snaps.php.net/',
-		'php5.2-latest.tar.gz',
+		'php5.3-latest.tar.gz',
 	),
 	array (
 		'http://snaps.php.net/win32/',
-		'php5.2-win32-latest.zip'
+		'php5.3-win32-latest.zip'
 	),
 );
 
