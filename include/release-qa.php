@@ -15,7 +15,7 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(4 => true, 5 => true);
+$RELEASE_PROCESS = array(4 => false, 5 => true);
 
 $CURRENT_QA_RELEASE_4 = false;
 $RC_FILES_4 = array (
@@ -34,7 +34,7 @@ $RC_FILES_4 = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.3.0alpha1'; // false
+$CURRENT_QA_RELEASE_5 = '5.3.0alpha2'; // false
 $RC_FILES_5 = array (
 
 	array (
@@ -45,22 +45,10 @@ $RC_FILES_5 = array (
 		'http://downloads.php.net/johannes/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
-/*
 	array (
-		'http://pecl2.php.net/downloads/php-windows-builds/qa/',
+		'http://downloads.php.net/pierre/',
 		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
 	),
-*/
-/*
-	array (
-		'http://downloads.php.net/edink/',
-		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
-	),
-	array (
-		'http://downloads.php.net/edink/',
-		"pecl-{$CURRENT_QA_RELEASE_5}-Win32.zip",
-	),
-*/
 );
 
 /* Snapshot urls and files */
