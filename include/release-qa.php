@@ -15,7 +15,7 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(4 => true, 5 => true);
+$RELEASE_PROCESS = array(4 => false, 5 => true);
 
 $CURRENT_QA_RELEASE_4 = false;
 $RC_FILES_4 = array (
@@ -36,7 +36,6 @@ $RC_FILES_4 = array (
 /* PHP 5 Releases */
 $CURRENT_QA_RELEASE_5 = '5.3.0alpha2'; // false
 $RC_FILES_5 = array (
-
 	array (
 		'http://downloads.php.net/johannes/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.bz2",
