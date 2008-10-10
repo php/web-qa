@@ -20,11 +20,11 @@ $RELEASE_PROCESS = array(52 => true, 53 => true);
 $CURRENT_QA_RELEASE_52 = '5.2.7RC1';
 $RC_FILES_52 = array (
 	array (
-		'http://downloads.php.net/iliaa/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.bz2",
 	),
 	array (
-		'http://downloads.php.net/iliaa/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.gz",
 	),
 /*
