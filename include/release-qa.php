@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array( '4.4.9', '5.3.0alpha2');
+$BUILD_TEST_RELEASES = array('5.3.0alpha2', '5.2.7RC1');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -15,22 +15,24 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(4 => false, 5 => true);
+$RELEASE_PROCESS = array(52 => true, 53 => true);
 
-$CURRENT_QA_RELEASE_4 = false;
-$RC_FILES_4 = array (
+$CURRENT_QA_RELEASE_52 = '5.2.7RC1';
+$RC_FILES_52 = array (
 	array (
-		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE_4}.tar.bz2",
+		'http://downloads.php.net/iliaa/',
+		"php-{$CURRENT_QA_RELEASE_52}.tar.bz2",
 	),
 	array (
-		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE_4}.tar.gz",
+		'http://downloads.php.net/iliaa/',
+		"php-{$CURRENT_QA_RELEASE_52}.tar.gz",
 	),
+/*
 	array (
-		'http://downloads.php.net/derick/',
-		"php-{$CURRENT_QA_RELEASE_4}-win32.zip",
+		'http://downloads.php.net/pierre/',
+		"php-{$CURRENT_QA_RELEASE_52}-win32.zip",
 	),
+*/
 );
 
 /* PHP 5 Releases */
@@ -78,13 +80,13 @@ $SNAPSHOTS = array (
 	),
 );
 
-if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
+if ($RELEASE_PROCESS[52] || $RELEASE_PROCESS[53]) {
 	$MD5SUM = file('include/rc-md5sums.txt');
-	if($RELEASE_PROCESS[4] && $RELEASE_PROCESS[5]) {
-		$FILES = array_merge($RC_FILES_4, $RC_FILES_5);
-	} elseif($RELEASE_PROCESS[4]) {
-		$FILES = $RC_FILES_4;
-	} elseif($RELEASE_PROCESS[5]) {
+	if($RELEASE_PROCESS[52] && $RELEASE_PROCESS[53]) {
+		$FILES = array_merge($RC_FILES_52, $RC_FILES_5);
+	} elseif($RELEASE_PROCESS[52]) {
+		$FILES = $RC_FILES_52;
+	} elseif($RELEASE_PROCESS[53]) {
 		$FILES = $RC_FILES_5;
 	} else {
 		$FILES = $SNAPSHOTS;
@@ -97,19 +99,19 @@ if ($RELEASE_PROCESS[4] || $RELEASE_PROCESS[5]) {
 
 /* Content */
 function show_release_qa() {
-	global $CURRENT_QA_RELEASE_4, $CURRENT_QA_RELEASE_5, $FILES, $MD5SUM;
+	global $CURRENT_QA_RELEASE_52, $CURRENT_QA_RELEASE_5, $FILES, $MD5SUM;
 
 	$text = "PHP";
 
-	if ($CURRENT_QA_RELEASE_4 && $CURRENT_QA_RELEASE_5) {
+	if ($CURRENT_QA_RELEASE_52 && $CURRENT_QA_RELEASE_5) {
 		$text = "these <a href='http://qa.php.net/rc.php'>release candidates</a>: ";
-	} else if ($CURRENT_QA_RELEASE_4 || $CURRENT_QA_RELEASE_5) {
+	} else if ($CURRENT_QA_RELEASE_52 || $CURRENT_QA_RELEASE_5) {
 		$text = "this <a href='http://qa.php.net/rc.php'>release candidate</a>: ";
 	}
 
 echo "
 <!-- RELEASE QA -->
-<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE_4} {$CURRENT_QA_RELEASE_5}
+<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE_52} {$CURRENT_QA_RELEASE_5}
  <ul>
 ";
 
