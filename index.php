@@ -29,6 +29,10 @@ common_header();
 
              <li>
 <?php show_release_qa(); ?>
+				
+				See <a href='http://windows.php.net/download/'>here</a> for the Windows builds.
+				<br><br>
+				
              </li>
 
              <li>
