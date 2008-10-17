@@ -27,12 +27,7 @@ $RC_FILES_52 = array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.gz",
 	),
-/*
-	array (
-		'http://downloads.php.net/pierre/',
-		"php-{$CURRENT_QA_RELEASE_52}-win32.zip",
-	),
-*/
+
 );
 
 /* PHP 5 Releases */
@@ -46,10 +41,7 @@ $RC_FILES_5 = array (
 		'http://downloads.php.net/johannes/',
 		"php-{$CURRENT_QA_RELEASE_5}.tar.gz",
 	),
-/*	array (
-		'http://downloads.php.net/pierre/',
-		"php-{$CURRENT_QA_RELEASE_5}-Win32.zip",
-	),*/
+
 );
 
 /* Snapshot urls and files */
