@@ -1,5 +1,5 @@
-722b69b8a51050aa25c1e6184e4e8d0e  php-5.2.7RC2.tar.bz2
-323dce6b64e851bb9fc99e65316c641e  php-5.2.7RC2.tar.gz
+0e336c04c49c8614cab0c4c4a9c3b681  php-5.2.7RC3.tar.bz2
+d8174e8c239b873b429b3bddaad830d7  php-5.2.7RC3.tar.gz
 f4fecbdc14b1922ba52d0eb7f4599486  php-5.3.0alpha2.tar.bz2
 6b96c2654ab68092e5973fd761fc5c15  php-5.3.0alpha2.tar.gz
 f8000adb25cc745336ff6e3a0e5d19e9  php-5.3.0alpha2-Win32.zip
