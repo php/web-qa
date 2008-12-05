@@ -1,4 +1,2 @@
-542d4fc0fc504e482d0930421451cab8  php-5.2.7RC5.tar.bz2
-d48564a9082b0f3e9c75d76f8e69dc6d  php-5.2.7RC5.tar.gz
 f4fecbdc14b1922ba52d0eb7f4599486  php-5.3.0alpha3.tar.bz2
 82711eede32f33a923c79e368d14b14e  php-5.3.0alpha3.tar.gz
