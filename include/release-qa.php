@@ -30,7 +30,7 @@ $RC_FILES_52 = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.3.0alpha3'; // false
+$CURRENT_QA_RELEASE_53 = '5.3.0alpha3'; // false
 $RC_FILES_5 = array (
 	array (
 		'http://downloads.php.net/johannes/',
