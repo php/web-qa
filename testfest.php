@@ -11,7 +11,7 @@ common_header();
         <tr>
           <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
           <td width="100%">
-            <h1>TestFest (May 2008)</h1>
+            <h1>TestFest 2009</h1>
           </td>
           <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
         </tr>
@@ -59,15 +59,13 @@ common_header();
             for getting CVS access</a>.
 
             <h3>When will the TestFest take place?</h3>
-            UGs are free to pick any timeframe in May 2008. Each local TestFest
+            UGs are free to pick any timeframe in April - June 2009. Each local TestFest
             can last a day, a week or any other timeframe.
 
-            <h3>Why is the timeframe so short? What if June would be a better date?</h3>
+            <h3>Why is the timeframe flexible?</h3>
             We want to ensure that we have mentors ready and available to answer
-            questions. In order to get some sort of commitment from mentors we
-            cannot make this timeframe indefinitely long. That being said we
-            might hold future TestFests. Also people are of course invited to
-            join the QA team any time of year.
+            questions. The timeframe for each UG needs to suite both the UG and the
+            availability of mentors. 
 
             <h3>How will local organizers be assisted?</h3>
             We will make a list of areas available of areas of PHP that need
@@ -86,20 +84,11 @@ common_header();
             QA mailinglist</a>.
 
             <h3>Where are tests submitted to?</h3>
-            We have implemented a simple <a href="http://testfest.php.net/">front-end</a> that allows people to upload
-            their phpt files. People can register themselves and the create a tak (new test) and upload
-            their files as attachments. More details can be found <a href="http://wiki.php.net/qa/uploading">here</a>
-            Submitters are asked to follow the <a href="write-test.php">phpt coding standards</a>.
+            TODO: CVS repository?
             
             <h3>I volunteered to be a mentor, how do I review tests?</h3>
-            Just register with the test tracking <a href="http://testfest.php.net/">tool</a> and
-            mail the <a href="mailto:php-qa@lists.php.net">
-            QA mailinglist</a> to ask for admin authority. Admin authority will be granted
-            to those who already have PHP commit rights. When you have admin authority you can log
-            into the test tracking system and assign tests to yourself. Simply review the test, if it's good
-            then commit it, if not then either fix it or return it to the contributor explaining why you 
-            are unable to commit.
-
+            TODO: Instructions/scripts to use
+            
             <h3>What version of PHP should be used?</h3>
             We prefer that the tests are made for 5.3/HEAD. You can grab a build
             of 5.3 at the <a href="http://snaps.php.net/">snaps page</a>. Source
@@ -122,7 +111,7 @@ common_header();
 
             <h3>How do I join? How do I get more information?</h3>
             We are still in the process of building the necessary infrastructure.
-            Hopefully before the end of April we will have everything in place.
+            Hopefully before the end of March we will have everything in place.
             Until then please contact the <a href="mailto:php-qa@lists.php.net">
             QA mailinglist</a> if you are interested in participating or if
             you have any questions. Alternatively you can join #php.pecl on
@@ -131,8 +120,7 @@ common_header();
 
             <h3>Do you also provide a smaller version of the logo?</h3>
             Yes here you go (scale as needed):<br />
-            <img src="gfx/testfest_small_08.png" width="200" />
-            <br /><br />
+            TODO: scalable image
           </td>
           <td width="10">&nbsp;</td>
         </tr>
