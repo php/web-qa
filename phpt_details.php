@@ -85,7 +85,8 @@ test file, or a subdirectory.</dd>
 
 <dt>--EXPECTF--</dt>
 <dd>an alternative of --EXPECT--. The difference is that this form uses
-sscanf for output validation. (alternative to --EXPECT--)</dd>
+sscanf for output validation. See <a href="expectf_details.php">here</a>
+for an explanation of the substition tags,</dd>
 
 <dt>--EXPECTREGEX--</dt>
 <dd>an alternative of --EXPECT--. This form allows the tester to specify the
