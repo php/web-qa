@@ -83,22 +83,13 @@ test file, or a subdirectory.</dd>
 <dt>--EXPECT--</dt>
 <dd>the expected output from the test script. (required)</dd>
 
-<dt>--UEXPECT--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
-
 <dt>--EXPECTF--</dt>
 <dd>an alternative of --EXPECT--. The difference is that this form uses
 sscanf for output validation. (alternative to --EXPECT--)</dd>
 
-<dt>--UEXPECTF--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
-
 <dt>--EXPECTREGEX--</dt>
 <dd>an alternative of --EXPECT--. This form allows the tester to specify the
 result in a regular expression. (alternative to --EXPECT--)</dd>
-
-<dt>--UEXPECTREGEX--</dt>
-<dd>same as above, but for Unicode mode (PHP &gt;= 6 only, optional)</dd>
 
 <dt>--REDIRECTTEST--</dt>
 <dd>this block allows to redirect from one test to a bunch of other tests.
