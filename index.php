@@ -39,7 +39,11 @@ common_header();
                 Upgrading the testsuite. This includes extending the testsuites with tests for every function,
                 collecting test data in a different way then mailing all output to the QA mailinglist.
               </li>
-
+              <br><br>
+              <li>
+                Running the 2009 TestFest event which will happen between April and June June this year, 
+                see <a href="http://qa.php.net/testfest.php">here</a> for details.
+              </li>
             </ul>
             <p>
              Anyone can help us by running the test framework, see:<br />
