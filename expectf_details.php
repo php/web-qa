@@ -89,7 +89,7 @@ output by PHP Warnings.</p>
   <td> Matches 'Unicode string' in PHP6 output, 'string' in PHP5 output. Used in PHP Warning messages. </td>
 </tr>
  <tr>
-  <td> %u\|b% </td>
+  <td> %u|b% </td>
   <td> Matches a single 'u' in PHP6 test output where the PHP5 output from the same test hs no character in that position.</td>
 </tr>
 </table>
