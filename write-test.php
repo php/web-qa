@@ -201,12 +201,16 @@ use an appropriate PHP function to sort them befor printing.  Both of
 these examples have affected PHP tests in the past.</p>
 
 <p>Make sure that any test touching parsing or display of dates uses a
-hard-defined timezone - preferable 'UTC':</p>
-
+hard-defined timezone - preferable 'UTC'. It is important tha this is defined in 
+the file section using:</p>
 <pre>
---INI--
-date.timezone=UTC
+date_default_timezone_set('UTC');
 </pre>
+and not in the INI section. This is because of the order in which settings are checked which is:
+<pre>
+date_default_timezone_set() -> TZ environmental -> INI setting -> System Setting
+</pre>
+If a TZ environmental varaibale is found the INI setting will be ignored.
 
 <p>Tests that run, or only have have matching EXPECT output, on 32bit
 platforms can use a SKIPIF section like:</p>
