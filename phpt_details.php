@@ -123,5 +123,3 @@ not appear in tests associated with released levels of PHP.
 is not going into the actual test script (optional).</dd>
 </dl>
 
-<p><strong>Note:</strong> The Uxx sections (such as UEXPECT) are only needed if
-the output of the test differs in Unicode and non-Unicode mode.</p>
