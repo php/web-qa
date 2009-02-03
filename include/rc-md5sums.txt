@@ -1,2 +1,2 @@
-ac16e56bf6a4b37ff35d9bc061063a9  php-5.3.0beta1.tar.bz2
+ac16e56bf6a4b37ff35d9bc061063a97  php-5.3.0beta1.tar.bz2
 71c6c06087cfa9c38567b050d00bcabf  php-5.3.0beta1.tar.gz
