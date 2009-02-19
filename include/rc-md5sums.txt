@@ -1,4 +1,4 @@
-253befc2627abb09a5888b1e6ad84077  php-5.2.9RC2.tar.bz2
-1fed54e8bc766844b21750800e8ff8bf  php-5.2.9RC2.tar.gz
+11dac673bc41fe607ddae680f4ae10ea  php-5.2.9RC3.tar.bz2
+fe946ebdea131c97ced75139c3302676  php-5.2.9RC3.tar.gz
 ac16e56bf6a4b37ff35d9bc061063a97  php-5.3.0beta1.tar.bz2
 71c6c06087cfa9c38567b050d00bcabf  php-5.3.0beta1.tar.gz
