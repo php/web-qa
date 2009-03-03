@@ -77,6 +77,10 @@ output by PHP Warnings.</p>
   <td> A single character of any sort (.) </td>
 </tr>
 <tr>
+  <td> %r...$r</td>
+  <td> Any string (...) enclosed between two %r will be treated as a regular expression </td>
+</tr>
+<tr>
   <td> %unicode|string% </td>
   <td> Matches the string 'unicode' in PHP6 test output and 'string' in PHP5 test output. </td>
 </tr>
