@@ -77,7 +77,7 @@ output by PHP Warnings.</p>
   <td> A single character of any sort (.) </td>
 </tr>
 <tr>
-  <td> %r...$r</td>
+  <td> %r...%r</td>
   <td> Any string (...) enclosed between two %r will be treated as a regular expression </td>
 </tr>
 <tr>
