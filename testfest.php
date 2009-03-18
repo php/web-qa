@@ -119,8 +119,8 @@ common_header();
             should usually be someone around to help.
 
             <h3>Do you also provide a smaller version of the logo?</h3>
-            Yes here you go (scale as needed):<br />
-            TODO: scalable image
+            Yes here you go (scale as needed):<a href="testfest_scalable.svg">
+            scalable image</a><br />
           </td>
           <td width="10">&nbsp;</td>
         </tr>
