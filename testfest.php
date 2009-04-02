@@ -59,7 +59,7 @@ common_header();
             for getting CVS access</a>.
 
             <h3>When will the TestFest take place?</h3>
-            UGs are free to pick any timeframe in April - June 2009. Each local TestFest
+            UGs are free to pick any time in April - June 2009. Each local TestFest
             can last a day, a week or any other timeframe.
 
             <h3>Why is the timeframe flexible?</h3>
@@ -84,10 +84,38 @@ common_header();
             QA mailinglist</a>.
 
             <h3>Where are tests submitted to?</h3>
-            TODO: CVS repository?
+            When user groups register for an event we will create a directory in 
+            a Subversion repository, members of the usr group should check in their 
+            tests under that directory. The repository is:
+            <p>http://testfest.php.net/repos/testfest</p>
+            <p>Each usergroup lead will be given admin rights in the repository 
+            and will create regular user IDs for other members of the group.
+            <p>There is a directory called IndependentContributor for people 
+            who are not working with a user group. If you would like access 
+            to that please mail your request and a sample test case to 
+            php-qa@lists.php.net
+            
             
             <h3>I volunteered to be a mentor, how do I review tests?</h3>
-            TODO: Instructions/scripts to use
+            Look at the tests for the user group that you are mentoring
+            in the subversion repository.
+            Check out the tests and ensure that they run. Key review 
+            points are:
+            <ul>
+            <li> Is the test readable? Can you understand quickly what it's 
+            supposed to do? </li>
+            <li> Are there appropriate SKIPIF sections? </li>
+            <li> Is there a CREDITS section (should contain #PHPTestFest2009)?
+            <li> If the test 'reasonably' short? Imagine it failed and you had 
+            to work out why, do you think you could do it without creating
+            a smaller test?
+            </li>
+            </ul>
+            
+            <p>If the test does not run or does not meet enough of these criteria
+            then add your review comments and check back in to the SVN repository.
+            
+            <p>If the test is good, commit to PHP CVS and delete from Subversion.
             
             <h3>What version of PHP should be used?</h3>
             We prefer that the tests are made for 5.3/HEAD. You can grab a build
@@ -102,24 +130,19 @@ common_header();
             submissions at their own pace in their given area of expertise. We
             hope this will be done in a timely manner, but please understand
             that we cannot give any guarantees, especially if the event turns out
-            to be as successful as we hope. Submittors will be able to see who
-            is reviewing their submission as well as when their submission has
-            been processed. If the submission led to a commit the
-            interface will show any difference that might exist between the
-            submission and the final committed version. Furthermore the mentor
-            might provide some individual commentary.
+            to be as successful as we hope. Submitters should look for review comments
+            in their submitted tests, if the test dissappears from Subversion, it has been
+            been processed and committed to PHP CVS. 
 
             <h3>How do I join? How do I get more information?</h3>
-            We are still in the process of building the necessary infrastructure.
-            Hopefully before the end of March we will have everything in place.
-            Until then please contact the <a href="mailto:php-qa@lists.php.net">
+            Please contact the <a href="mailto:php-qa@lists.php.net">
             QA mailinglist</a> if you are interested in participating or if
             you have any questions. Alternatively you can join #php.pecl on
             Efnet or the #phptestfest channel on Freenode IRC server. There
             should usually be someone around to help.
 
             <h3>Do you also provide a smaller version of the logo?</h3>
-            Yes here you go (scale as needed):<a href="testfest_scalable.svg">
+            Yes, here you go (scale as needed):<a href="testfest_scalable.svg">
             scalable image</a><br />
           </td>
           <td width="10">&nbsp;</td>
