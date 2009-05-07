@@ -13,7 +13,7 @@ Although it's not possible to generate a complete PHPT test, it's quite easy to 
  standard sections and some simple functions automatically, creating a test case "frame". 
  To do this, you need: <ul>
 <li> A build pf PHP53
-</li> <li> The file generate-phpt.phar, located in the PHP53 source under dev/scripts
+</li> <li> The file generate-phpt.phar, located in the PHP53 source under scripts/dev
 
 </li></ul> 
 <p />
