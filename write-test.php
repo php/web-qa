@@ -64,7 +64,7 @@ would like you to direct your attentions.</p>
 
 	<li>
 		<b>How is a phpt test is used?</b>  
-		<p>When a test is called by the run-test.php script it takes various 
+		<p>When a test is called by the run-tests.php script it takes various 
 parts of the phpt file to name and create a .php file.  That .php file is then executed.  The 
 output of the .php file is then compared to a different section of the phpt file.  If the output of
 the script "matches" the output provided in the phpt script - it passes.</p>
@@ -313,7 +313,7 @@ string\(19\) \" nica\x00turska panica\"
 <p>Some tests depend on modules or functions available only in certain versions 
 or they even require minimum version of php or zend. These tests should be 
 skipped when the requirement cannot be fulfilled. To achieve this you can
-use the SKIPIF section. To tell run-test.php that your test should be skipped
+use the SKIPIF section. To tell run-tests.php that your test should be skipped
 the SKIPIF section must print out the word "skip" followed by a reason why
 the test should skip.</p>
 
@@ -431,7 +431,7 @@ sections but they no not use any --EXPECT-- section.</p>
 
 <h3>Error reporting in tests</h3>
 <p>All tests should run correctly with error_reporting(E_ALL) and
-display_errors=1. This is the default when called from run-test.php.  If you
+display_errors=1. This is the default when called from run-tests.php.  If you
 have a good reason for lowering the error reporting, use --INI-- section and
 comment this in your testcode.</p>
 
