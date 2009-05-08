@@ -55,6 +55,12 @@ define("TESTS", 4);
 
 
 $fd = fopen("coverage_data/tested_methods.csv", "r");
+if (!$fd) {
+	echo "Can't find any data..";
+	echo '</td></tr></table>';
+	common_footer();
+	return;
+}
 
 // print table header
 echo "<table border=\"0\">\n";
