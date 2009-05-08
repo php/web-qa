@@ -7,6 +7,10 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
+      <table width="70%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
+          <td width="100%">
 <h2>Auto-generating test cases</h2>
 <p>
 Although it's not possible to generate a complete PHPT test, it's quite easy to generate the
@@ -79,3 +83,9 @@ The catch with generating tests this way is that the script has to be run *using
 so if your were trying to write tests before doing development this script will not help. However, for filling in test gaps
 in existing extensions it works fine.
 <p>Return to <a href="write-test.php">write tests.</a></p>
+
+
+</td></table>
+<?php
+common_footer();
+
