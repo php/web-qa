@@ -108,3 +108,7 @@ A:hover {text-decoration: underline; color: blue;}
 	padding: 5px;
 	font-size: 9pt;
 }
+
+.anchor {
+	float: right;
+}

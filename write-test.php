@@ -18,7 +18,7 @@ common_header();
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%">
-<h2>phpt Test Basics</h2>
+<h2><a name="tests-basics" href="#tests-basics" class="anchor">#</a>phpt Test Basics</h2>
 <p> The first thing you need to know about tests is that we need more!!! Although PHP works just great 
 99.99% of the time, not having a very comprehensive test suite means that we take more risks every time
 we add to or modify the PHP implementation. The second 
@@ -78,8 +78,9 @@ an error is allowed and encouraged.</p>
 	</li>
 </ul>
 
-<h2>Writing phpt Tests</h2>
-<h3>Naming Conventions</h3>
+<h2><a name="writing-phpt" href="#writing-phpt" class="anchor">#</a>Writing phpt Tests</h2>
+<a name="namingconventions"></a>
+<h3><a name="naming-conventions" href="#naming-conventions" class="anchor">#</a>Naming Conventions</h3>
 <p>Phpt tests follow a very strict naming convention.  This is done to easily identify what each phpt
 test is for.  Tests should be named according to the following list:
 	<ul type="none">
@@ -112,7 +113,8 @@ There can be more than one error case, if so the convention is to name the test 
 mytest_error2.phpt and so on.<p>
 <p>The "variation" tests are any tests that don't fit into "basic" or "error" tests. For example one might 
 use a variation tests to test boundary conditions.</p>
-<h3>How big is a test case?</h3>
+
+<h3><a name="howbig" href="#howbig" class="anchor">#</a>How big is a test case?</h3>
 <p>Small. Really - the smaller the better, a good guide is no more than 10 lines of output. The reason 
 for this is that if we break something in PHP and it breaks your test case we need to be able to find
 out quite quickly what we broke, going through 1000s of line of test case output is not easy. Having said that
@@ -120,11 +122,11 @@ it's sometimes just not practical to stay within the 10 line guideline, in this 
 by commenting the output. You may find plenty of much longer tests in PHP - the small tests message is something
 that we learnt over time, in fact we are slowly going through and splitting tests up when we need to.
 </p>
-<h3>Comments</h3>
+<h3><a name="comments" href="#comments" class="anchor">#</a>Comments</h3>
 <p>Comments help. Not an essay - just a couple of lines on what the objective of the test is. It may seem completely
 obvious to you as you write it, but it might not be to someone looking at it later on</p>
 
-<h3>Basic Format</h3>
+<h3><a name="basic-format" href="#basic-format" class="anchor">#</a>Basic Format</h3>
 <p>A test must contain the sections TEST, FILE and either EXPECT or EXPECTF at a minimum.  The example 
 below illustrates a minimal test.</p>
 <i>ext/standard/tests/strings/strtr.phpt</i>
@@ -148,20 +150,20 @@ as the body of the .php file, so don't forget to open and close your php tags.  
 the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
 
-<h3>PHPT structure details</h3>
+<h3><a name="structure" href="#structure" class="anchor">#</a>PHPT structure details</h3>
 A phpt test can have many more parts than just the minimum.  In fact some of the mandatory parts have
 alternatives that may be used if the situation warrants it. The phpt sections are documented <a href="phpt_details.php">here</a>.
 <p>There is also a very useful set of slides, written by Marcus Boerger <a href="http://somabo.de/talks/">here</a>.
 Look at the talk entitled "The need for speed, ERM testing".</p>
 
-<h3>Autogenerating test cases</h3>
+<h3><a name="autogen-tests" href="#autogen-tests" class="anchor">#</a>Autogenerating test cases</h3>
 <p> It isn't possible (or even sensible) to try and generate complete test cases for PHP. However
 there is a script in PHP5.3 which will help to generate the framework. It can save you 
 some typing and ensure that you get a good basic format. 
 See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
 
 
-<h3> Testing your test cases</h3>
+<h3><a name="testing-tests" href="#testing-tests" class="anchor">#</a> Testing your test cases</h3>
 <p>Most people who write tests for PHP don't have access to a huge number of operating systems but the tests are run
 on every system that runs PHP. It's good to test your test on as many platforms as you can - Linux and Windows
 are the most important, it's increasingly important to make sure that tests run on 64 bit as well as 32 bit platforms. If you only
@@ -173,7 +175,7 @@ to help you do this - see <a href="#clean">here</a>.
 <p>Another good check is to look at what lines of code in the PHP source your test case covers. 
 This is easy to do, there are some instructions on the <a href="http://wiki.php.net/doc/articles/writing-tests">PHP Wiki</a>.</p>
 
-<h3>What should I do with my test case when I've written and tested it?</h3>
+<h3><a name="whattodo" href="#whattodo" class="anchor">#</a>What should I do with my test case when I've written and tested it?</h3>
 <p>The next step is to get someone to review it. If it's short you can paste it into a note and
 send it to php-qa@lists.php.net. If the test is a bit too 
 long for that then put it somewhere were people can download it (<a href="http://www.pastebin.ca/">pastebin</a> is 
@@ -184,7 +186,7 @@ the PHP QA group will review your test and reply to you. They may ask for some c
 or suggest better ways to do things, or they may commit it to PHP.
 
 
-<h3>Writing Portable PHP Tests</h3>
+<h3><a name="portable-tests" href="#portable-tests" class="anchor">#</a>Writing Portable PHP Tests</h3>
 
 <p>Writing portable tests can be hard if you don't have access to all
 the many platforms that PHP can run on.  Do your best.  If in doubt,
@@ -259,9 +261,9 @@ if (!stristr(PHP_OS, "Darwin")) die("skip this test is for Mac OS X platforms on
 ?&gt;
 </pre>
 
-<h2>Examples</h2>
+<h2><a name="examples" href="#examples" class="anchor">#</a>Examples</h2>
 
-<h3>EXPECTF</h3>
+<h3><a name="expectf" href="#expectf" class="anchor">#</a>EXPECTF</h3>
 <p>/ext/standard/tests/strings/str_shuffle.phpt is a good example for using 
 EXPECTF instead of EXPECT. From time to time the algorithm used for shuffle 
 changed and sometimes the machine used to execute the code has influence 
@@ -271,6 +273,8 @@ forms are %a for any amount of chars (at least one), %i for integers, %d for num
 only, %f for floating point values, %c for single characters, %x for
 hexadecimal values, %w for any number of whitespace characters and %e for
 DIRECTORY_SEPARATOR ('\' or '/').</p>
+<p>See also <a href="expectf-details.php">EXPECTF details</a></p>
+
 <i>/ext/standard/tests/strings/str_shuffle.phpt</i>
 <pre>
 --TEST--
@@ -287,7 +291,7 @@ string(3) "%s"
 string(3) "123"
 </pre>
 
-<h3>EXPECTREGEX</h3>
+<h3><a name="expectregex" href="#expectregex" class="anchor">#</a>EXPECTREGEX</h3>
 <p>/ext/standard/tests/strings/strings001.phpt is a good example for using 
 EXPECTREGEX instead of EXPECT. This test also shows that in EXPECTREGEX 
 some characters need to be escaped since otherwise they would be 
@@ -309,7 +313,7 @@ string\(18\) \"nica\x00turska panica\"
 string\(19\) \" nica\x00turska panica\"
 </pre>
 
-<h3>SKIPIF</h3>
+<h3><a name="skipif" href="#skipif" class="anchor">#</a>SKIPIF</h3>
 <p>Some tests depend on modules or functions available only in certain versions 
 or they even require minimum version of php or zend. These tests should be 
 skipped when the requirement cannot be fulfilled. To achieve this you can
@@ -354,8 +358,8 @@ input. </p>
 SKIPIF section it should be named "skipif.inc" and an include file used in the 
 FILE section of many tests should be named "test.inc".</p>
 
-<h2> Final Notes</h2>
-<h3><a name="clean">Cleaning up after running a test</a></h3>
+<h2><a name="finalnotes" href="#finalnotes" class="anchor">#</a>Final Notes</h2>
+<h3><a name="clean" href="#clean" class="anchor">#</a>Cleaning up after running a test</h3>
 <p>Sometimes test cases create files or directories as part of the test case and it's important to remove these after the test ends, the --CLEAN--
 section is provided to help with this.</p>
 
@@ -411,7 +415,8 @@ this is a very useful option if you need to check that the --CLEAN-- section cod
 
 <p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file - 
 this will help to prevent you from accidentally checking temporary files into CVS. </p>
-<h3>Redirecting tests</h3>
+
+<h3><a name="redirecting" href="#redirecting" class="anchor">#</a>Redirecting tests</h3>
 <p>Using --REDIRECTTEST-- it is possible to redirect from one test to a bunch 
 of other tests. That way multiple extensions can refer to the same set of 
 test scripts probably using it with a different configuration.</p>
@@ -429,7 +434,7 @@ sections but they no not use any --EXPECT-- section.</p>
 
 <p>The redirected tests themselves are just normal tests.</p>
 
-<h3>Error reporting in tests</h3>
+<h3><a name="errors" href="#errors" class="anchor">#</a>Error reporting in tests</h3>
 <p>All tests should run correctly with error_reporting(E_ALL) and
 display_errors=1. This is the default when called from run-tests.php.  If you
 have a good reason for lowering the error reporting, use --INI-- section and
@@ -445,7 +450,7 @@ with "%d". The end of a message in a test file "example.phpt" then looks like
 "in %sexample.php on line %d". We explicitly dropped the last path devider as 
 that is a system dependent character '/' or '\'.</p>
 
-<h3>Last bit</h3>
+<h3><a name="lastbit" href="#lastbit" class="anchor">#</a>Last bit</h3>
 <p>Often you want to run test scripts without run-tests.php by
 simply executing them on command line like any other php script. But sometimes
 it disturbs having a long --EXPECT-- block, so that you don't see the actual 
