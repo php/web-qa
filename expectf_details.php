@@ -13,14 +13,11 @@ common_header();
           <td width="100%"> 
             <h1>EXPECTF substitution options</h1>
           </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
         </tr>
         <tr> 
           <td width="10">&nbsp;</td>
           <td width="100%">
-<dl>
-
-<p>The --EXPECTF--section uses a number of substitution tags for strings or digits
+<p>The --EXPECTF-- section uses a number of substitution tags for strings or digits
 that appear in test case output but which may vary between test runs. The most common
 example of this is to use %s and %d to match the file path and line number which are 
 output by PHP Warnings.</p>
@@ -98,14 +95,9 @@ output by PHP Warnings.</p>
 </tr>
 </table>
 
+</td></tr></table>
  
- 
- 
- 
- 
- 
- 
+<?php
 
-
-
+common_footer();
 
