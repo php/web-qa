@@ -49,7 +49,7 @@ you have everything you need.</p>
 php functions available.  You can  write a test on a basic language function (a string 
 function or an array function) , or a function provided by one of PHP's numerous extensions 
 (a mysql function or a image function or a mcrypt function).</p>
-<p>You can find out what functions already have phpt tests by looking in the <a href="http://cvs.php.net/viewvc.cgi/">html 
+<p>You can find out what functions already have phpt tests by looking in the <a href="http://cvs.php.net/viewvc.cgi/php-src/">html 
 version</a> of the cvs (php-src/ext/standard/tests/ is a good place to start looking - though not
 <i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you 
 can see which functions have lots of tests and which need more, although these pages only
