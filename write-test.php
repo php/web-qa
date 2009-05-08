@@ -273,7 +273,7 @@ forms are %a for any amount of chars (at least one), %i for integers, %d for num
 only, %f for floating point values, %c for single characters, %x for
 hexadecimal values, %w for any number of whitespace characters and %e for
 DIRECTORY_SEPARATOR ('\' or '/').</p>
-<p>See also <a href="expectf-details.php">EXPECTF details</a></p>
+<p>See also <a href="expectf_details.php">EXPECTF details</a></p>
 
 <i>/ext/standard/tests/strings/str_shuffle.phpt</i>
 <pre>
