@@ -1,125 +1,879 @@
 <?php
 include("include/functions.php");
 
-$TITLE = "Writing Tests [PHP-QAT: Quality Assurance Team]";
+$TITLE = "PHPT Test File Layout [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 /* $Id$ */
 
 common_header();
 ?>
-	<table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
-            <h1>Details of PHPT format</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">
+
+<div style="padding: 10px">
+<h1>PHPT - Test File Layout.</h1>
+<p>Below is a reference manual for PHPT test file layouts.</p>
 <dl>
-<dt>--TEST--</dt>
-<dd>title of the test. (required)</dd>
 
-<dt>--CREDITS--</dt>
-<dd>if you don't have CVS commit rights, put your name and  email on the first line. If 
-the test is part of a TesFest event, then # followed by the name of the event and the date (YYYY-MM-DD) 
-on the second line. (optional)</dd>
-
-<dt>--SKIPIF--</dt>
-<dd>a condition when to skip this test. (optional)</dd>
-
-<dt>--POST--</dt>
-<dd>POST variables to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
-
-<dt>--GZIP_POST--</dt>
-<dd>When this section exists, the POST data will be gzencode()'d. (optional)</dd>
-
-<dt>--DEFLATE_POST--</dt>
-<dd>When this section exists, the POST data will be gzcompress()'ed. (optional)</dd>
-
-<dt>--POST_RAW--</dt>
-<dd>RAW POST data to be passed to the test script. This differs from the section
-above because it doesn't set the Content-Type, which can be set manually in
-this section. This section forces the use of the CGI binary instead of the
-usual CLI one. (optional)</dd>
-
-<dt>--GET--</dt>
-<dd>GET variables to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
-
-<dt>--COOKIE--</dt>
-<dd>Cookies to be passed to the test script. This section forces the
-use of the CGI binary instead of the usual CLI one. (optional)</dd>
-
-<dt>--STDIN--</dt>
-<dd>data to be fed to the test script's standard input. (optional)</dd>
-
-<dt>--INI--</dt>
-<dd>to be used if you need a specific php.ini setting for the test.  
-	Each line contains an ini setting   e.g. foo=bar. (optional)</dd>
-
-<dt>--ARGS--</dt>
-<dd>a single line defining the arguments passed to php. (optional)</dd>
-
-<dt>--ENV--</dt>
-<dd>configures the environment to be used for php. (optional)</dd>
-
-<dt>--FILE--</dt>
-<dd>the test source-code. (required)</dd>
-
-<dt>--FILEEOF--</dt>
-<dd>an alternative to --FILE-- where any trailing line break is omitted.</dd>
-
-<dt>--FILE_EXTERNAL--</dt>
-<dd>an alternative to --FILE--. This is used to specify that an external
-file should be used as the contents of the test file, and is designed
-for running the same test file with different ini, environment, post/get
-or other external inputs. The file must be in the same directory as the
-test file, or a subdirectory.</dd>
-
-<dt>--EXPECT--</dt>
-<dd>the expected output from the test script. (required)</dd>
-
-<dt>--EXPECTF--</dt>
-<dd>an alternative of --EXPECT--. The difference is that this form uses
-sscanf for output validation. See <a href="expectf_details.php">here</a>
-for an explanation of the substition tags,</dd>
-
-<dt>--EXPECTREGEX--</dt>
-<dd>an alternative of --EXPECT--. This form allows the tester to specify the
-result in a regular expression. (alternative to --EXPECT--)</dd>
-
-<dt>--REDIRECTTEST--</dt>
-<dd>this block allows to redirect from one test to a bunch of other tests.
-(alernative to --FILE--)</dd>
-
-<dt>--HEADERS--</dt>
-<dd>header to be used when sending the request. Currently only available with
-server-tests.php (optional)</dd>
-
-<dt>--EXPECTHEADERS--</dt>
-<dd>the expected headers. Any header specified here must exist in the 
-response and have the same value. Additional headers do not matter. (optional)
+<dt>Section Summary List.</dt>
+<dd>
+<p>[] indicates optional sections.</p>
+<p><a href="#test_section">--TEST--</a><br/>
+[<a href="#description_section">--DESCRIPTION--</a>]<br/>
+[<a href="#credits_section">--CREDITS--</a>]<br/>
+[<a href="#skipif_section">--SKIPIF--</a>]<br/>
+[<a href="#request_section">--REQUEST--</a>]<br/>
+[<a href="#post_section">--POST--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
+[<a href="#cookie_section">--COOKIE--</a>]<br/>
+[<a href="#stdin_section">--STDIN--</a>]<br/>
+[<a href="#ini_section">--INI--</a>]<br/>
+[<a href="#args_section">--ARGS--</a>]<br/>
+[<a href="#env_section">--ENV--</a>]<br/>
+<a href="#file_section">--FILE--</a> | <a href="#fileeof_section">--FILEEOF--</a> | <a href="#file_external_section">--FILE_EXTERNAL--</a> | <a href="#redirecttest_section">--REDIRECTTEST--</a><br/>
+[<a href="#headers_section">--HEADERS--</a>]<br/>
+[<a href="#cgi_section">--CGI--</a>]<br/>
+[<a href="#xfail_section">--XFAIL--</a>]<br/>
+[<a href="#expectheaders_section">--EXPECTHEADERS</a>--]<br/>
+<a href="#expect_section">--EXPECT--</a> | <a href="#expectf_section">--EXPECTF--</a> | <a href="#expectregex_section">--EXPECTREGEX--</a><br/>
+[<a href="#clean_section">--CLEAN--</a>]
 </dd>
 
-<dt>--CLEAN--</dt>
-<dd>code that is executed after the test has run. Using run-tests.php switch 
---no-clean you can prevent its execution to inspect generated data/files that
-were normally removed after the test. (optional)</dd>
+<dt id="test_section">--TEST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Title of test as a single line short description.</p>
+<p><b>Required:</b><br/>
+Yes</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Plain text. We recommend a single line only.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--TEST--
+Test filter_input() with GET and POST data.</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+</dd>
 
-<dt>--XFAIL--</dt>
-<dd>a test that is expected to fail. Any text added in this section should simply explain why the 
-test is expected to fail. This section is intented as a convenience to developers who
-may wish to distinguish between tests that they know will fail, because the function they 
-test is not implemented yet, and tests which should pass. As soon as the function
-is implemented the XFAIL section should be removed from the test. XFAIL sections should
-not appear in tests associated with released levels of PHP.
+<dt id="description_section">--DESCRIPTION--</dt>
+<dd>
+<p><b>Description:</b><br/>
+If your test requires more than a single line title to adequately describe it,
+you can use this section for further explanation. Multiple lines are allowed and
+besides being used for information, this section is completely ignored by the
+test binary.</p>
+<p><b>Required:</b><br/>
+No</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Plain text, multiple lines.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--DESCRIPTION--
+This test covers both valid and invalid usages of
+filter_input() with INPUT_GET and INPUT_POST data
+and several differnet filter sanitizers.</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+</dd>
 
-<dt>===DONE===</dt>
-<dd>This is only available in the --FILE-- section. Any part after this line
-is not going into the actual test script (optional).</dd>
+<dt id="credits_section">--CREDITS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+If you don't have CVS commit rights, put your name and email on the first line.
+If the test is part of a TesFest event, then # followed by the name of the event
+and the date (YYYY-MM-DD) on the second line.</p>
+<p><b>Required:</b><br/>
+It's required for credit during TestFests.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Name Email<br/>
+[Event]</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--CREDIT--
+Felipe Pena <felipe@php.net></pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--CREDITS--
+Zoe Slattery zoe@php.net
+# TestFest Munich 2009-05-19</pre>
+</p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample002.php">sample002.phpt</a></p>
+</dd>
+
+<dt id="skipif_section">--SKIPIF--</dt>
+<dd>
+<p><b>Description:</b><br/>
+A condition or set of conditions used to determine if a test should be skipped.
+Tests that are only applicable to a certain platform, extension or PHP version
+are good reasons for using a --SKIPIF-- section.</p>
+<p>A common practice for extension tests is to write your --SKIPIF-- extension
+criteria into a file call skipif.inc and then including that file in the
+--SKIPIF-- section of all your extension tests. This promotes the DRY principle
+and reduces future code maintenance.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+PHP code enclosed by PHP tags.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--SKIPIF--
+&lt;?php if (!extension_loaded("filter")) die("Skipped: filter extension required."); ?&gt;</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--SKIPIF--
+&lt;?php include('<a href="sample_tests/skipif.php">skipif.inc</a>'); ?&gt;</pre>
+</p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
+</dd>
+
+<dt id="request_section">--REQUEST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Settings used for building the URL in an HTTP request. Currently only available
+with server-tests.php.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+server-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source which is run through eval() and then split into key value pairs, one
+pair per line. Do not use &lt;?php and ?&gt; wrapper tags.</p>
+<p>Valid settings for this section include:
+<ul>
+<li>SCRIPT_NAME - The inital part of the request url</li>
+<li>PATH_INFO - The pathinfo part of a request url</li>
+<li>FRAGMENT - The fragment section of a url (after #)</li>
+<li>QUERY_STRING - The query part of a url (after ?)</li>
+</ul>
+</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--REQUEST--
+return <<<END
+SCRIPT_NAME=/nothing.php
+QUERY_STRING=$filename
+END;</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
+<p><b></b><br/>
+</p>
+</dd>
+
+<dt id="post_section">--POST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+POST variables or data to be passed to the test script. This section forces the
+use of the CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Follows the HTTP post data format.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--POST--
+c=&lt;p&gt;string&lt;/p&gt;&d=12345.7</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--POST--
+&lt;SOAP-ENV:Envelope
+  SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
+  xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+  xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:si=&quot;http://soapinterop.org/xsd&quot;&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample005.php">sample005.phpt</a></p>
+</dd>
+
+<dt id="post_raw_section">--POST_RAW--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Raw POST data to be passed to the test script. This differs from the section
+above because it doesn't automatically set the Content-Type, this leaves you
+free to define your own within the section. This section forces the use of the
+CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+Follows the HTTP post data format.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--POST_RAW--
+Content-type: multipart/form-data, boundary=AaB03x
+
+--AaB03x
+content-disposition: form-data; name=&quot;field1&quot;
+
+Joe Blow
+--AaB03x
+content-disposition: form-data; name=&quot;pics&quot;; filename=&quot;file1.txt&quot;
+Content-Type: text/plain
+
+abcdef123456789
+--AaB03x--</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample006.php">sample006.phpt</a></p>
+</dd>
+
+<dt id="gzip_post_section">--GZIP_POST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+When this section exists, the POST data will be gzencode()'d. This section
+forces the use of the CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary. Must be coupled with a --POST--.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+Simply use 1 as the section's content.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--POST--
+&lt;SOAP-ENV:Envelope
+  SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
+  xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+  xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:si=&quot;http://soapinterop.org/xsd&quot;&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+--GZIP_POST--
+1</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample005.php">sample005.phpt</a></p>
+</dd>
+
+<dt id="deflate_post_section">--DEFLATE_POST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+When this section exists, the POST data will be gzcompress()'ed. This section
+forces the use of the CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary. Must be coupled with a --POST--.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+Simply use 1 as the section's content.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--POST--
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;SOAP-ENV:Envelope
+  SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
+  xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+  xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:si=&quot;http://soapinterop.org/xsd&quot;&gt;
+  &lt;SOAP-ENV:Body&gt;
+    &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
+  &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+--DEFLATE_POST--
+1</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample007.php">sample007.phpt</a></p>
+</dd>
+
+<dt id="get_section">--GET--</dt>
+<dd>
+<p><b>Description:</b><br/>
+GET variables to be passed to the test script. This section forces the use of
+the CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+A single line of text passed as the GET data to the script.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--GET--
+a=&lt;b&gt;test&lt;/b&gt;&b=http://example.com</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--GET--
+ar[elm1]=1234&ar[elm2]=0660&a=0234</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample008.php">sample008.phpt</a></p>
+</dd>
+
+<dt id="cookie_section">--COOKIE--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Cookies to be passed to the test script. This section forces the use of the CGI
+binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+A single line of text in a valid HTTP cookie format.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--COOKIE--
+hello=World;goodbye=MrChips</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample002.php">sample002.phpt</a></p>
+</dd>
+
+<dt id="stdin_section">--STDIN--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Data to be fed to the test script's standard input.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+Any text within this section is passed as STDIN to PHP.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--STDIN--
+fooBar
+use this to input some thing to the php script</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample009.php">sample009.phpt</a></p>
+</dd>
+
+<dt id="ini_section">--INI--</dt>
+<dd>
+<p><b>Description:</b><br/>
+To be used if you need a specific php.ini setting for the test.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Key value pairs. One setting per line.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--INI--
+precision=14</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--INI--
+session.use_cookies=0
+session.cache_limiter=
+register_globals=1
+session.serialize_handler=php
+session.save_handler=files</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
+</dd>
+
+<dt id="args_section">--ARGS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+A single line defining the arguments passed to php.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+A single line of text that is passed as the argument(s) to the PHP CLI.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--ARGS--
+--arg value --arg=value -avalue -a=value -a value</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample010.php">sample010.phpt</a></p>
+</dd>
+
+<dt id="env_section">--ENV--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Configures environment variables such as those found in the $_SERVER global
+array.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source which is run through eval() and then split into key value pairs, one
+pair per line. Do not use &lt;?php and ?&gt; tags.</p>
+<p>Some variables are made easily available for use in this section, they include:</p>
+<ul>
+<li>$filename - full native path to file, will become PATH_TRANSLATED</li>
+<li>$filepath - =dirname($filename)</li>
+<li>$scriptname - this is what will become SCRIPT_NAME unless you override it</li>
+<li>$docroot - the equivelant of DOCUMENT_ROOT under Apache</li>
+<li>$cwd - the directory that the test is being initiated from</li>
+<li>$this->conf - all server-tests configuration vars</li>
+<li>$this->env - all environment variables that will get passed to the test</li>
+</ul>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--ENV--
+return <<<END
+REDIRECT_URL=$scriptname
+PATH_TRANSLATED=c:\apache\1.3.27\htdocs\nothing.php
+QUERY_STRING=$filename
+PATH_INFO=/nothing.php
+SCRIPT_NAME=/phpexe/php.exe/nothing.php
+SCRIPT_FILENAME=c:\apache\1.3.27\htdocs\nothing.php
+END;</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
+</dd>
+
+<dt id="file_section">--FILE--</dt>
+<dd>
+<p><b>Description:</b><br/>
+The test source code.</p>
+<p><b>Required:</b><br/>
+One of the FILE type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source code enclosed by PHP tags.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--FILE--
+&lt;?php
+ini_set('html_errors', false);
+var_dump(filter_input(INPUT_GET, &quot;a&quot;, FILTER_SANITIZE_STRIPPED));
+var_dump(filter_input(INPUT_GET, &quot;b&quot;, FILTER_SANITIZE_URL));
+var_dump(filter_input(INPUT_GET, &quot;a&quot;, FILTER_SANITIZE_SPECIAL_CHARS, array(1,2,3,4,5)));
+var_dump(filter_input(INPUT_GET, &quot;b&quot;, FILTER_VALIDATE_FLOAT, new stdClass));
+var_dump(filter_input(INPUT_POST, &quot;c&quot;, FILTER_SANITIZE_STRIPPED, array(5,6,7,8)));
+var_dump(filter_input(INPUT_POST, &quot;d&quot;, FILTER_VALIDATE_FLOAT));
+var_dump(filter_input(INPUT_POST, &quot;c&quot;, FILTER_SANITIZE_SPECIAL_CHARS));
+var_dump(filter_input(INPUT_POST, &quot;d&quot;, FILTER_VALIDATE_INT));
+var_dump(filter_var(new stdClass, &quot;d&quot;));
+var_dump(filter_input(INPUT_POST, &quot;c&quot;, &quot;&quot;, &quot;&quot;));
+var_dump(filter_var(&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;));
+var_dump(filter_var(0, 0, 0, 0, 0));
+echo &quot;Done\n&quot;;
+?&gt;</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+</dd>
+
+<dt id="fileeof_section">--FILEEOF--</dt>
+<dd>
+<p><b>Description:</b><br/>
+An alternative to --FILE-- where any trailing line breaks (\n || \r || \r\n
+found at the end of the section) are omitted. This is an extreme edge-case
+feature, so 99.99% of the time you won't need this section.</p>
+<p><b>Required:</b><br/>
+One of the FILE type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source code enclosed by PHP tags.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--FILEEOF--
+&lt;?php
+eval(&quot;echo 'Hello'; // comment&quot;);
+echo &quot; World&quot;;
+//last line comment</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample011.php">sample011.phpt</a></p>
+</dd>
+
+<dt id="file_external_section">--FILE_EXTERNAL--</dt>
+<dd>
+<p><b>Description:</b><br/>
+An alternative to --FILE--. This is used to specify that an external file should
+be used as the --FILE-- contents of the test file, and is designed for running
+the same test file with different ini, environment, post/get or other external
+inputs. Basically it allows you to DRY up some of your tests. The file must be
+in the same directory as the test file, or in a subdirectory.</p>
+<p><b>Required:</b><br/>
+One of the FILE type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+path/to/file. Single line.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--FILE_EXTERNAL--
+files/<a href="sample_test/files/file012.php">file012.php</a></pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample012.php">sample012.phpt</a></p>
+</dd>
+
+<dt id="redirecttest_section">--REDIRECTTEST--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This block allows you to redirect from one test to a bunch of other tests. It
+also allows you to set configurations which are used on all tests in your 
+destination.</p>
+<p><b>Required:</b><br/>
+One of the FILE type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source which is run through eval(). The tests destination is the value of an
+array index 'TESTS'. Also, keep in mind, you can not use a REDIRECTTEST which is
+being pointed to by another test which contains a REDIRECTTEST. In other words,
+no nesting.</p>
+<p>The relative path declared in 'TESTS' is relative to the base directory for the
+PHP source code, not relative to the current directory.</p>
+<p>Last note, the array in this section must be returned to work.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--REDIRECTTEST--
+return array(
+  'ENV' => array(
+      'PDOTEST_DSN' => 'sqlite2::memory:'
+    ),
+  'TESTS' => 'ext/pdo/tests'
+  );</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample013.php">sample013.phpt</a><br/>
+Note: The destination tests for this example are not included. See the PDO
+extension tests for reference to live tests using this section.</p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--REDIRECTTEST--
+# magic auto-configuration
+
+$config = array(
+  'TESTS' => 'ext/pdo/tests'
+);
+
+if (false !== getenv('PDO_MYSQL_TEST_DSN')) {
+  # user set them from their shell
+  $config['ENV']['PDOTEST_DSN'] = getenv('PDO_MYSQL_TEST_DSN');
+  $config['ENV']['PDOTEST_USER'] = getenv('PDO_MYSQL_TEST_USER');
+  $config['ENV']['PDOTEST_PASS'] = getenv('PDO_MYSQL_TEST_PASS');
+  if (false !== getenv('PDO_MYSQL_TEST_ATTR')) {
+    $config['ENV']['PDOTEST_ATTR'] = getenv('PDO_MYSQL_TEST_ATTR');
+  }
+} else {
+  $config['ENV']['PDOTEST_DSN'] = 'mysql:host=localhost;dbname=test';
+  $config['ENV']['PDOTEST_USER'] = 'root';
+  $config['ENV']['PDOTEST_PASS'] = '';
+}
+
+return $config;</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample014.php">sample014.phpt</a><br/>
+Note: The destination tests for this example are not included. See the PDO
+extension tests for reference to live tests using this section.</p>
+</dd>
+
+<dt id="headers_section">--HEADERS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Header to be used when sending the request. Currently only available with
+server-tests.php.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+server-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source which is run through eval() and then split into key value pairs. Do
+not use &lt;?php and ?&gt; wrapper tags.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--HEADERS--
+return <<<END
+Content-Type=multipart/form-data; boundary=---------------------------240723202011929
+Content-Length=862
+END;</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample015.php">sample015.phpt</a></p>
+</dd>
+
+<dt id="cgi_section">--CGI--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This section takes no value.  It merely provides a simple marker for tests that
+MUST be run as CGI, even if there is no --POST-- or --GET-- sections in the test
+file. Currently only available with server-tests.php.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+server-tests.php</p>
+<p><b>Format:</b><br/>
+No value, just the --CGI-- statement.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--CGI--</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample016.php">sample016.phpt</a></p>
+</dd>
+
+<dt id="xfail_section">--XFAIL--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This section identifies this test as one that is currently expected to fail. It
+should include a brief description of why it's expected to fail. Reasons for
+such expectations include tests that are written before the functionality
+they are testing is implemented or notice of a bug which is due to upstream code
+such as an extension which provides PHP support for some other software.</p>
+<p>Please do NOT include an --XFAIL-- without providing a text description for
+the reason it's being used.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+A short plain text description of why this test is currently expected to fail.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--XFAIL--
+This bug might be still open on aix5.2-ppc64 and hpux11.23-ia64</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample017.php">sample017.phpt</a></p>
+</dd>
+
+<dt id="expectheaders_section">--EXPECTHEADERS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+The expected headers. Any header specified here must exist in the response and
+have the same value or the test fails. Additional headers found in the actual
+tests while running are ignored.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+HTTP style headers. May include multiple lines.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXPECTHEADERS--
+Status: 404</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--EXPECTHEADERS--
+Content-type: text/html; charset=UTF-8
+Status: 403 Access Denied</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample018.php">sample018.phpt</a><br/>
+Note: The destination tests for this example are not included. See the phar
+extension tests for reference to live tests using this section.</p>
+</dd>
+
+<dt id="expect_section">--EXPECT--</dt>
+<dd>
+<p><b>Description:</b><br/>
+The expected output from the test script. This must match the actual output from
+the test script exactly for the test to pass.</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Plain text. Multiple lines of text are allowed.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXPECT--
+array(2) {
+  [&quot;hello&quot;]=>
+  string(5) &quot;World&quot;
+  [&quot;goodbye&quot;]=>
+  string(7) &quot;MrChips&quot;
+}</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample002.php">sample002.phpt</a></p>
+</dd>
+
+<dt id="expectf_section">--EXPECTF--</dt>
+<dd>
+<p><b>Description:</b><br/>
+An alternative of --EXPECT--. Where it differs from --EXPECT-- is that it uses a
+number of substitution tags for strings, spaces, digits, etc. that appear in
+test case output but which may vary between test runs. The most common example
+of this is to use %s and %d to match the file path and line number which are
+output by PHP Warnings.</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Plain text including tags which are inserted to represent different types of
+output which are not guaranteed to have the same value on subsequent runs or
+when run on different platforms.</p>
+<p>The following is a list of all tags and what they are used to represent:<br/>
+<ul>
+<li>%e: Represents a directory separator, for example / on Linux.</li>
+<li>%s: One or more of anything (character or white space) except the end of line
+  character.</li>
+<li>%S: Zero or more of anything (character or white space) except the end of line
+  character.</li>
+<li>%a: One or more of anything (character or white space) including the end of line
+  character.</li>
+<li>%A: Zero or more of anything (character or white space) including the end of line
+  character.</li>
+<li>%w: Zero or more white space characters.</li>
+<li>%i: A signed integer value, for example +3142, -3142.</li>
+<li>%d: An unsigned integer value, for example 123456.</li>
+<li>%x: One or more hexadecimal character. That is, characters in the range 0-9, a-f,
+  A-F.</li>
+<li>%f: A floating point number, for example: 3.142, -3.142, 3.142E-10, 3.142e+10.</li>
+<li>%c: A single character of any sort (.).</li>
+<li>%r...%r: Any string (...) enclosed between two %r will be treated as a regular
+  expression.</li>
+<li>%unicode|string%: Matches the string 'unicode' in PHP6 test output and 'string'
+  in PHP5 test output.</li>
+<li>%binary_string_optional%: Matches 'Binary string' in PHP6 output, 'string' in
+  PHP5 output. Used in PHP Warning messages.</li>
+<li>%unicode_string_optional%: Matches 'Unicode string' in PHP6 output, 'string' in
+  PHP5 output. Used in PHP Warning messages.</li>
+<li>%u|b%: Matches a single 'u' in PHP6 test output where the PHP5 output from the
+  same test hs no character in that position.</li>
+</ul>
+</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXPECTF--
+string(4) &quot;test&quot;
+string(18) &quot;http://example.com&quot;
+string(27) &quot;&amp;#60;b&amp;#62;test&amp;#60;/b&amp;#62;&quot;
+
+Notice: Object of class stdClass could not be converted to int in %ssample001.php on line %d
+bool(false)
+string(6) &quot;string&quot;
+float(12345.7)
+string(29) &quot;&amp;#60;p&amp;#62;string&amp;#60;/p&amp;#62;&quot;
+bool(false)
+
+Warning: filter_var() expects parameter 2 to be long, string given in %s011.php on line %d
+NULL
+
+Warning: filter_input() expects parameter 3 to be long, string given in %s011.php on line %d
+NULL
+
+Warning: filter_var() expects at most 3 parameters, 5 given in %s011.php on line %d
+NULL
+
+Warning: filter_var() expects at most 3 parameters, 5 given in %s011.php on line %d
+NULL
+Done</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--EXPECTF--
+Warning: bzopen() expects exactly 2 parameters, 0 given in %s on line %d
+NULL
+
+Warning: bzopen(): '' is not a valid mode for bzopen(). Only 'w' and 'r' are supported. in %s on line %d
+bool(false)
+
+Warning: bzopen(): filename cannot be empty in %s on line %d
+bool(false)
+
+Warning: bzopen(): filename cannot be empty in %s on line %d
+bool(false)
+
+Warning: bzopen(): 'x' is not a valid mode for bzopen(). Only 'w' and 'r' are supported. in %s on line %d
+bool(false)
+
+Warning: bzopen(): 'rw' is not a valid mode for bzopen(). Only 'w' and 'r' are supported. in %s on line %d
+bool(false)
+
+Warning: bzopen(no_such_file): failed to open stream: No such file or directory in %s on line %d
+bool(false)
+resource(%d) of type (stream)
+Done</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample019.php">sample019.phpt</a></p>
+<p><b>Example 3 (snippet):</b><br/>
+<pre>--EXPECTF--
+object(DOMNodeList)#%d (0) {
+}
+int(0)
+bool(true)
+bool(true)
+string(0) &quot;&quot;
+bool(true)
+bool(true)
+bool(false)
+bool(false)</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample020.php">sample020.phpt</a></p>
+</dd>
+
+<dt id="expectregex_section">--EXPECTREGEX--</dt>
+<dd>
+<p><b>Description:</b><br/>
+An alternative of --EXPECT--. This form allows the tester to specify the result
+in a regular expression.</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php, server-tests.php</p>
+<p><b>Format:</b><br/>
+Plain text including regular expression patterns which represent data that can
+vary between subsequent runs of a test or when run on different platforms.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXPECTREGEX--
+M_E       : 2.718281[0-9]*
+M_LOG2E   : 1.442695[0-9]*
+M_LOG10E  : 0.434294[0-9]*
+M_LN2     : 0.693147[0-9]*
+M_LN10    : 2.302585[0-9]*
+M_PI      : 3.141592[0-9]*
+M_PI_2    : 1.570796[0-9]*
+M_PI_4    : 0.785398[0-9]*
+M_1_PI    : 0.318309[0-9]*
+M_2_PI    : 0.636619[0-9]*
+M_SQRTPI  : 1.772453[0-9]*
+M_2_SQRTPI: 1.128379[0-9]*
+M_LNPI    : 1.144729[0-9]*
+M_EULER   : 0.577215[0-9]*
+M_SQRT2   : 1.414213[0-9]*
+M_SQRT1_2 : 0.707106[0-9]*
+M_SQRT3   : 1.732050[0-9]*</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample021.php">sample021.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--EXPECTF--
+*** Testing imap_append() : basic functionality ***
+Create a new mailbox for test
+Create a temporary mailbox and add 0 msgs
+.. mailbox '%s' created
+Add a couple of msgs to new mailbox {%s}INBOX.%s
+bool(true)
+bool(true)
+Msg Count after append : 2
+List the msg headers
+array(2) {
+  [0]=>
+  string(%d) &quot;%w%s       1)%s webmaster@something. Test message (%d chars)&quot;
+  [1]=>
+  string(%d) &quot;%w%s       2)%s webmaster@something. Another test (%d chars)&quot;
+}</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample025.php">sample025.phpt</a></p>
+<p><b>Example 3 (snippet):</b><br/>
+<pre>--EXPECTREGEX--
+string\(4\) \&quot;-012\&quot;
+string\(8\) \&quot;2d303132\&quot;
+(string\(13\) \&quot;   4294967284\&quot;|string\(20\) \&quot;18446744073709551604\&quot;)
+(string\(26\) \&quot;20202034323934393637323834\&quot;|string\(40\) \&quot;3138343436373434303733373039353531363034\&quot;)</pre></p>
+<p><b>Example 3 (full):</b> <a href="sample023.php">sample_tests/sample023.phpt</a></p>
+</dd>
+
+<dt id="clean_section">--CLEAN--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Code that is executed after a test completes. It's main purpose is to allow you
+to clean up after yourself. You might need to remove files created during the
+test or close sockets or database connections following a test. Infact, even
+if a test fails or encounters a fatal error during the test, the code found in
+the --CLEAN-- section will still run.</p>
+<p>Code in the clean section is run in a completely different process than the
+one the test was run in. So do not try accessing variables you created in the
+--FILE-- section from inside the --CLEAN-- section, they won't exist.</p>
+<p>Using the switch --no-clean on run-tests.php, you can prevent the code found
+in the --CLEAN-- section of a test from running. This allows you to inspect
+generated data or files without them being removed by the --CLEAN-- section.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+PHP source code enclosed by PHP tags.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--CLEAN--
+&lt;?php
+  $temp_filename = dirname(__FILE__).&quot;/DomDocument_save_basic.tmp&quot;;
+  unlink($temp_filename);
+?&gt;</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample024.php">sample024.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--CLEAN--
+&lt;?php 
+require_once('<a href="sample_test/clean.php">clean.inc</a>');
+?&gt;</pre></p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/sample025.php">sample025.phpt</a></p>
+<p><b>Example 3 (snippet):</b><br/>
+<pre>--CLEAN--
+&lt;?php
+$key = ftok(dirname(__FILE__).&quot;/003.phpt&quot;, 'q');
+$s = shm_attach($key);
+shm_remove($s);
+?&gt;</pre></p>
+<p><b>Example 3 (full):</b> <a href="sample_tests/sample022.php">sample022.phpt</a></p>
+</dd>
+
 </dl>
+</div>
 
+<?php
+common_footer();
+?>
