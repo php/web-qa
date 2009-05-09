@@ -124,7 +124,7 @@ PHP code enclosed by PHP tags.</p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
 <p><b>Example 2 (snippet):</b><br/>
 <pre>--SKIPIF--
-&lt;?php include('<a href="sample_tests/skipif.php">skipif.inc</a>'); ?&gt;</pre>
+&lt;?php include('skipif.inc'); ?&gt;</pre>
 </p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
 </dd>
@@ -489,7 +489,7 @@ run-tests.php</p>
 path/to/file. Single line.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--FILE_EXTERNAL--
-files/<a href="sample_test/files/file012.php">file012.php</a></pre></p>
+files/file012.php</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample012.php">sample012.phpt</a></p>
 </dd>
 
@@ -825,7 +825,7 @@ string\(4\) \&quot;-012\&quot;
 string\(8\) \&quot;2d303132\&quot;
 (string\(13\) \&quot;   4294967284\&quot;|string\(20\) \&quot;18446744073709551604\&quot;)
 (string\(26\) \&quot;20202034323934393637323834\&quot;|string\(40\) \&quot;3138343436373434303733373039353531363034\&quot;)</pre></p>
-<p><b>Example 3 (full):</b> <a href="sample023.php">sample_tests/sample023.phpt</a></p>
+<p><b>Example 3 (full):</b> <a href="sample_tests/sample023.php">sample023.phpt</a></p>
 </dd>
 
 <dt id="clean_section">--CLEAN--</dt>
@@ -858,7 +858,7 @@ PHP source code enclosed by PHP tags.</p>
 <p><b>Example 2 (snippet):</b><br/>
 <pre>--CLEAN--
 &lt;?php 
-require_once('<a href="sample_test/clean.php">clean.inc</a>');
+require_once('clean.inc');
 ?&gt;</pre></p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample025.php">sample025.phpt</a></p>
 <p><b>Example 3 (snippet):</b><br/>
