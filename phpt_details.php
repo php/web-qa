@@ -151,7 +151,7 @@ pair per line. Do not use &lt;?php and ?&gt; wrapper tags.</p>
 </p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--REQUEST--
-return <<<END
+return &lt;&lt;&lt;END
 SCRIPT_NAME=/nothing.php
 QUERY_STRING=$filename
 END;</pre>
@@ -176,7 +176,7 @@ run-tests.php, server-tests.php</p>
 Follows the HTTP post data format.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--POST--
-c=&lt;p&gt;string&lt;/p&gt;&d=12345.7</pre>
+c=&lt;p&gt;string&lt;/p&gt;&amp;d=12345.7</pre>
 </p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
 <p><b>Example 2 (snippet):</b><br/>
@@ -302,11 +302,11 @@ run-tests.php, server-tests.php</p>
 A single line of text passed as the GET data to the script.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--GET--
-a=&lt;b&gt;test&lt;/b&gt;&b=http://example.com</pre></p>
+a=&lt;b&gt;test&lt;/b&gt;&amp;b=http://example.com</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
 <p><b>Example 2 (snippet):</b><br/>
 <pre>--GET--
-ar[elm1]=1234&ar[elm2]=0660&a=0234</pre></p>
+ar[elm1]=1234&amp;ar[elm2]=0660&amp;a=0234</pre></p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample008.php">sample008.phpt</a></p>
 </dd>
 
@@ -405,12 +405,12 @@ pair per line. Do not use &lt;?php and ?&gt; tags.</p>
 <li>$scriptname - this is what will become SCRIPT_NAME unless you override it</li>
 <li>$docroot - the equivelant of DOCUMENT_ROOT under Apache</li>
 <li>$cwd - the directory that the test is being initiated from</li>
-<li>$this->conf - all server-tests configuration vars</li>
-<li>$this->env - all environment variables that will get passed to the test</li>
+<li>$this-&gt;conf - all server-tests configuration vars</li>
+<li>$this-&gt;env - all environment variables that will get passed to the test</li>
 </ul>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--ENV--
-return <<<END
+return &lt;&lt;&lt;END
 REDIRECT_URL=$scriptname
 PATH_TRANSLATED=c:\apache\1.3.27\htdocs\nothing.php
 QUERY_STRING=$filename
@@ -514,10 +514,10 @@ PHP source code, not relative to the current directory.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--REDIRECTTEST--
 return array(
-  'ENV' => array(
-      'PDOTEST_DSN' => 'sqlite2::memory:'
+  'ENV' =&gt; array(
+      'PDOTEST_DSN' =&gt; 'sqlite2::memory:'
     ),
-  'TESTS' => 'ext/pdo/tests'
+  'TESTS' =&gt; 'ext/pdo/tests'
   );</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample013.php">sample013.phpt</a><br/>
 Note: The destination tests for this example are not included. See the PDO
@@ -527,7 +527,7 @@ extension tests for reference to live tests using this section.</p>
 # magic auto-configuration
 
 $config = array(
-  'TESTS' => 'ext/pdo/tests'
+  'TESTS' =&gt; 'ext/pdo/tests'
 );
 
 if (false !== getenv('PDO_MYSQL_TEST_DSN')) {
@@ -564,7 +564,7 @@ PHP source which is run through eval() and then split into key value pairs. Do
 not use &lt;?php and ?&gt; wrapper tags.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--HEADERS--
-return <<<END
+return &lt;&lt;&lt;END
 Content-Type=multipart/form-data; boundary=---------------------------240723202011929
 Content-Length=862
 END;</pre></p>
@@ -649,9 +649,9 @@ Plain text. Multiple lines of text are allowed.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--EXPECT--
 array(2) {
-  [&quot;hello&quot;]=>
+  [&quot;hello&quot;]=&gt;
   string(5) &quot;World&quot;
-  [&quot;goodbye&quot;]=>
+  [&quot;goodbye&quot;]=&gt;
   string(7) &quot;MrChips&quot;
 }</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample002.php">sample002.phpt</a></p>
@@ -813,9 +813,9 @@ bool(true)
 Msg Count after append : 2
 List the msg headers
 array(2) {
-  [0]=>
+  [0]=&gt;
   string(%d) &quot;%w%s       1)%s webmaster@something. Test message (%d chars)&quot;
-  [1]=>
+  [1]=&gt;
   string(%d) &quot;%w%s       2)%s webmaster@something. Another test (%d chars)&quot;
 }</pre></p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample025.php">sample025.phpt</a></p>
@@ -876,4 +876,4 @@ shm_remove($s);
 
 <?php
 common_footer();
-?>
+
