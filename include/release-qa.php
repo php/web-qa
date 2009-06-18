@@ -5,7 +5,7 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array('5.3.0RC4', '5.2.10RC2');
+$BUILD_TEST_RELEASES = array('5.3.0RC4');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -15,9 +15,9 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(52 => true, 53 => true);
+$RELEASE_PROCESS = array(52 => false, 53 => true);
 
-$CURRENT_QA_RELEASE_52 = '5.2.10RC2';
+$CURRENT_QA_RELEASE_52 = false; // '5.2.10RC2';
 $RC_FILES_52 = array (
 	array (
 		'http://downloads.php.net/ilia/',
