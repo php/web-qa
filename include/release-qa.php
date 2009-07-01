@@ -49,15 +49,11 @@ $RC_FILES_5 = array (
 $SNAPSHOTS = array (
 	array (
 		'http://snaps.php.net/',
-		'php4-STABLE-latest.tar.bz2',
+		'php5.2-latest.tar.bz2',
 	),
 	array (
 		'http://snaps.php.net/',
-		'php4-STABLE-latest.tar.gz',
-	),
-	array (
-		'http://snaps.php.net/win32/',
-		'php4-win32-STABLE-latest.zip',
+		'php5.2-latest.tar.gz',
 	),
 	array (
 		'http://snaps.php.net/',
@@ -66,10 +62,6 @@ $SNAPSHOTS = array (
 	array (
 		'http://snaps.php.net/',
 		'php5.3-latest.tar.gz',
-	),
-	array (
-		'http://snaps.php.net/win32/',
-		'php5.3-win32-latest.zip'
 	),
 );
 
