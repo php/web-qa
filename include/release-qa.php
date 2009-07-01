@@ -5,7 +5,9 @@
  *  with list of urls to the packages.
  */
 
-$BUILD_TEST_RELEASES = array(); // array('5.3.0RC4')
+// FIXME: Use http://www.php.net/releases/index.php?serialize=1 info here?
+// Note:  These two variables determine which failed make tests may report to the qa.reports list
+$BUILD_TEST_RELEASES = array('5.2.10', '5.3.0'); // array('5.3.0RC4')
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
