@@ -1,4 +1,4 @@
-e6796ccffa4a319f460670472c4d8ecc  php-5.2.11RC2.tar.bz2
-9665d26249c4018c97b8111e54066f7e  php-5.2.11RC2.tar.gz
+264f7d4a9aa5a7590e071ecdfa13bafa  php-5.2.11RC3.tar.bz2
+829eb1cff352285c3dccada95b70c90f  php-5.2.11RC3.tar.gz
 33c56bca06d2ca93827b6e2e4c8776a2  php-5.3.1RC1.tar.bz2
 7d1055981e472428f44888eb9639775d  php-5.3.1RC1.tar.gz
