@@ -1,2 +1,2 @@
-33c56bca06d2ca93827b6e2e4c8776a2  php-5.3.1RC1.tar.bz2
-7d1055981e472428f44888eb9639775d  php-5.3.1RC1.tar.gz
+b349330da5c1f7f7a22a7a7914817623  php-5.3.1RC2.tar.bz2
+2f358ebcae15f17b662d0f6ea6f8bbf4  php-5.3.1RC2.tar.gz
