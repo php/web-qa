@@ -1,2 +1,2 @@
-b7950cb299adaf5afd9debf280cd1f6c  php-5.2.12RC4.tar.bz2
-426144b9a44ef742191af932de3938ea  php-5.2.12RC4.tar.gz
+b8dcc0e281c73f2f8d7f2df5eaba60d4  php-5.3.2RC1.tar.bz2
+0ef10ff576b1eae5380e339df470d6c0  php-5.3.2RC1.tar.gz
