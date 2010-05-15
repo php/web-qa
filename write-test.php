@@ -281,7 +281,7 @@ DIRECTORY_SEPARATOR ('\' or '/').</p>
 Testing str_shuffle.
 --FILE--
 &lt;?php
-/* Do not change this test it is a REATME.TESTING example. */
+/* Do not change this test it is a README.TESTING example. */
 $s = '123';
 var_dump(str_shuffle($s));
 var_dump($s);
@@ -303,7 +303,7 @@ interpreted as a regular expression.</p>
 Test whether strstr() and strrchr() are binary safe.
 --FILE--
 &lt;?php
-/* Do not change this test it is a REATME.TESTING example. */
+/* Do not change this test it is a README.TESTING example. */
 $s = "alabala nica".chr(0)."turska panica";
 var_dump(strstr($s, "nic"));
 var_dump(strrchr($s," nic"));
@@ -331,7 +331,7 @@ Check for exif_read_data, unusual IFD start
 ?&gt;
 --FILE--
 &lt;?php
-/* Do not change this test it is a REATME.TESTING example.
+/* Do not change this test it is a README.TESTING example.
  * test5.jpg is a 1*1 image that contains an Exif section with ifd = 00000009h
  */
 $image  = exif_read_data('./ext/exif/tests/test5.jpg','',true,false);
