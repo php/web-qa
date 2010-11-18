@@ -7,7 +7,7 @@
 
 // FIXME: Use http://www.php.net/releases/index.php?serialize=1 info here?
 // Note:  These two variables determine which failed make tests may report to the qa.reports list
-$BUILD_TEST_RELEASES = array('5.3.3', '5.2.14');
+$BUILD_TEST_RELEASES = array('5.3.4RC1', '5.2.15RC1');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -17,22 +17,22 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(52 => false, 53 => false);
+$RELEASE_PROCESS = array(52 => true, 53 => true);
 
-$CURRENT_QA_RELEASE_52 = '5.2.14RC3'; // IMPORTANT: Fix URLs below for next release!
+$CURRENT_QA_RELEASE_52 = '5.2.15RC1';
 $RC_FILES_52 = array (
 	array (
-		'http://downloads.php.net/johannes/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.bz2",
 	),
 	array (
-		'http://downloads.php.net/johannes/',
+		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.gz",
 	),
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.3.3RC3'; // true
+$CURRENT_QA_RELEASE_5 = '5.3.4RC1'; // true
 $RC_FILES_5 = array (
 	array (
 		'http://downloads.php.net/johannes/',
