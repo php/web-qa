@@ -7,7 +7,7 @@
 
 // FIXME: Use http://www.php.net/releases/index.php?serialize=1 info here?
 // Note:  These two variables determine which failed make tests may report to the qa.reports list
-$BUILD_TEST_RELEASES = array('5.3.4RC1', '5.2.15RC1');
+$BUILD_TEST_RELEASES = array('5.3.4RC2', '5.2.15RC2');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
