@@ -1,3 +1,2 @@
-f78d7b47ddbfca42ebdfcdef2adfe859  php-5.3.6RC1.tar.bz2
-2bc2a7503b7a7501d65385f54db55fb5  php-5.3.6RC1.tar.gz
-
+f870685b8715600e056d2dbb22920576  php-5.3.6RC2.tar.bz2
+32e88f8a2dd1e756d386b7fe625c7e8b  php-5.3.6RC2.tar.gz
