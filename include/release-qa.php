@@ -17,7 +17,7 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(52 => false, 53 => true);
+$RELEASE_PROCESS = array(52 => false, 53 => false);
 
 $CURRENT_QA_RELEASE_52 = false; // '5.2.15RC1';
 $RC_FILES_52 = array (
@@ -32,7 +32,7 @@ $RC_FILES_52 = array (
 );
 
 /* PHP 5 Releases */
-$CURRENT_QA_RELEASE_5 = '5.3.6RC3'; // false
+$CURRENT_QA_RELEASE_5 = false; // '5.3.6RC3';
 $RC_FILES_5 = array (
 	array (
 		'http://downloads.php.net/johannes/',
