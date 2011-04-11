@@ -20,7 +20,7 @@ foreach($BUILD_TEST_RELEASES as $release) {
 $RELEASE_PROCESS = array(52 => false, 53 => false);
 
 $CURRENT_QA_RELEASE_52 = false; // '5.2.15RC1';
-$RC_FILES_52 = array (
+$RC_FILES_52 = array(); array (
 	array (
 		'http://downloads.php.net/ilia/',
 		"php-{$CURRENT_QA_RELEASE_52}.tar.bz2",
@@ -47,6 +47,7 @@ $RC_FILES_5 = array (
 
 /* Snapshot urls and files */
 $SNAPSHOTS = array (
+/*
 	array (
 		'http://snaps.php.net/',
 		'php5.2-latest.tar.bz2',
@@ -55,6 +56,7 @@ $SNAPSHOTS = array (
 		'http://snaps.php.net/',
 		'php5.2-latest.tar.gz',
 	),
+*/
 	array (
 		'http://snaps.php.net/',
 		'php5.3-latest.tar.bz2',
