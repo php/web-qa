@@ -7,7 +7,7 @@
 
 // FIXME: Use http://www.php.net/releases/index.php?serialize=1 info here?
 // Note:  These two variables determine which failed make tests may report to the qa.reports list
-$BUILD_TEST_RELEASES = array('5.3.6RC3', '5.2.17');
+$BUILD_TEST_RELEASES = array('5.3.6', '5.3.98');
 $DEV_RELEASES = array();
 
 foreach($BUILD_TEST_RELEASES as $release) {
@@ -17,17 +17,17 @@ foreach($BUILD_TEST_RELEASES as $release) {
 	$DEV_RELEASES[] = $release . "-dev";
 }
 
-$RELEASE_PROCESS = array(52 => false, 53 => false);
+$RELEASE_PROCESS = array(53 => false, 54 => false);
 
-$CURRENT_QA_RELEASE_52 = false; // '5.2.15RC1';
-$RC_FILES_52 = array(); array (
+$CURRENT_QA_RELEASE_54 = false; // '5.4.0RC1';
+$RC_FILES_54 = array(); array (
 	array (
-		'http://downloads.php.net/ilia/',
-		"php-{$CURRENT_QA_RELEASE_52}.tar.bz2",
+		'http://downloads.php.net/gandhi/',
+		"php-{$CURRENT_QA_RELEASE_54}.tar.bz2",
 	),
 	array (
-		'http://downloads.php.net/ilia/',
-		"php-{$CURRENT_QA_RELEASE_52}.tar.gz",
+		'http://downloads.php.net/gandhi/',
+		"php-{$CURRENT_QA_RELEASE_54}.tar.gz",
 	),
 );
 
@@ -47,16 +47,14 @@ $RC_FILES_5 = array (
 
 /* Snapshot urls and files */
 $SNAPSHOTS = array (
-/*
 	array (
 		'http://snaps.php.net/',
-		'php5.2-latest.tar.bz2',
+		'php-trunk-latest.tar.bz2',
 	),
 	array (
 		'http://snaps.php.net/',
-		'php5.2-latest.tar.gz',
+		'php-trunk-latest.tar.gz',
 	),
-*/
 	array (
 		'http://snaps.php.net/',
 		'php5.3-latest.tar.bz2',
@@ -67,12 +65,12 @@ $SNAPSHOTS = array (
 	),
 );
 
-if ($RELEASE_PROCESS[52] || $RELEASE_PROCESS[53]) {
+if ($RELEASE_PROCESS[54] || $RELEASE_PROCESS[53]) {
 	$MD5SUM = file('include/rc-md5sums.txt');
-	if($RELEASE_PROCESS[52] && $RELEASE_PROCESS[53]) {
-		$FILES = array_merge($RC_FILES_52, $RC_FILES_5);
-	} elseif($RELEASE_PROCESS[52]) {
-		$FILES = $RC_FILES_52;
+	if($RELEASE_PROCESS[54] && $RELEASE_PROCESS[53]) {
+		$FILES = array_merge($RC_FILES_54, $RC_FILES_5);
+	} elseif($RELEASE_PROCESS[54]) {
+		$FILES = $RC_FILES_54;
 	} elseif($RELEASE_PROCESS[53]) {
 		$FILES = $RC_FILES_5;
 	} else {
@@ -86,19 +84,19 @@ if ($RELEASE_PROCESS[52] || $RELEASE_PROCESS[53]) {
 
 /* Content */
 function show_release_qa() {
-	global $CURRENT_QA_RELEASE_52, $CURRENT_QA_RELEASE_5, $FILES, $MD5SUM;
+	global $CURRENT_QA_RELEASE_54, $CURRENT_QA_RELEASE_5, $FILES, $MD5SUM;
 
 	$text = "PHP";
 
-	if ($CURRENT_QA_RELEASE_52 && $CURRENT_QA_RELEASE_5) {
+	if ($CURRENT_QA_RELEASE_54 && $CURRENT_QA_RELEASE_5) {
 		$text = "these <a href='http://qa.php.net/rc.php'>release candidates</a>: ";
-	} else if ($CURRENT_QA_RELEASE_52 || $CURRENT_QA_RELEASE_5) {
+	} else if ($CURRENT_QA_RELEASE_54 || $CURRENT_QA_RELEASE_5) {
 		$text = "this <a href='http://qa.php.net/rc.php'>release candidate</a>: ";
 	}
 
 echo "
 <!-- RELEASE QA -->
-<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE_52} {$CURRENT_QA_RELEASE_5}
+<span class='lihack'>Providing QA for {$text} {$CURRENT_QA_RELEASE_54} {$CURRENT_QA_RELEASE_5}
  <ul>
 ";
 
