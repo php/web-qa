@@ -1,8 +1,8 @@
 <?php
 $startTime = microtime(true);
+if (isset($_GET['debug'])) error_reporting(E_ALL);
 
-include("include/functions.php");
-
+include "../include/functions.php";
 
 $TITLE = "PHP Test reports Summary";
 

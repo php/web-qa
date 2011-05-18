@@ -1,7 +1,8 @@
 <?php
+if (isset($_GET['debug'])) error_reporting(E_ALL);
 
 $startTime = microtime(true);
-include("include/functions.php");
+include "../include/functions.php";
 
 // test testName
 
