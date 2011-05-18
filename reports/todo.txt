@@ -1,0 +1,14 @@
+Reports per week :
+SELECT VERSION,COUNT(id),  YEAR(DATE),WEEK(DATE) FROM reports 
+GROUP BY VERSION,YEAR(DATE),WEEK(DATE)
+
+
+Use graph ?
+
+
+
+use http://svn.php.net/viewvc/web/php/trunk/include/version.inc?view=co
+
+
+voir ici pour incrémenter derniere version => obtenir -dev
+ http://svn.php.net/viewvc/php/php-src/branches/PHP_5_3/run-tests.php?view=markup
