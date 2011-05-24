@@ -24,7 +24,7 @@
 		} else {
 			$version = "unknown";
 		}
-		if (in_array($version, $BUILD_TEST_RELEASES) || in_array($version, $DEV_RELEASES)) {
+		if (in_array($version, $QA_RELEASES['reported'])) {
 			mail ("qa-reports@lists.php.net", "Test results for $version [$status]", base64_decode($_POST['php_test_data']), "From: noreply@php.net");
 			
 			// Aggregator (http://qa.php.net/reports/)
