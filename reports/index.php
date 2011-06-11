@@ -65,7 +65,7 @@ common_header();
 <script src="sorttable.js"></script>
 <div style="margin:10px">
 
-<h1>Reports per version</h1>
+<h1><a href="/reports/"><img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>Reports per version</h1>
 
 <table class="sortable" style="border: 1px solid black;padding:5px; width:700px">
 <thead>
@@ -85,7 +85,7 @@ foreach ($reportsPerVersion as $version => $line) {
     echo '<tr>';
     echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
     echo '<td align="right">'.$line['nbReports'].'</td>';
-	echo '<td align="right">'.$line['nbFailingTests'].'</td>';
+    echo '<td align="right">'.$line['nbFailingTests'].'</td>';
     echo '<td align="right">'.$line['nbFailures'].'</td>';
     echo '<td nowrap align="right" sorttable_customkey="'.strtotime($line['lastReport']).'">';
     
@@ -112,7 +112,7 @@ foreach ($reportsPerVersion as $version => $line) {
 <br />
 <style>
 #testList td {
-	padding: 3px;
+    padding: 3px;
 }
 </style>
 <table id="testList" class="sortable" style="width: 700px; border-collapse: collapse">
@@ -143,7 +143,7 @@ foreach ($reportsPerVersion as $version => $line) {
 </tbody></table>
 <?php
 if (count($failedTestsArray) == 50) {
-	echo '<i>There are more failing tests not printed here (with less occurences)</i>';
+    echo '<i>There are more failing tests not printed here (with less occurences)</i>';
 }
 endif; 
 ?>

@@ -65,8 +65,8 @@ function insertToDb_phpmaketest($array)
             $query = "INSERT INTO `failed` 
             (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
             '".$reportId."', '".$name."', 
-            X'".md5($array['version'].'__'.$name)."',
-            ('".$dbi->escapeString(gzdeflate($test['output'], 9))."'), ('".$dbi->escapeString(gzdeflate($test['diff'], 5))."'))";
+            X'".md5($name.'__'.$test['diff'])."',
+            ('".$dbi->escapeString($test['output'])."'), ('".$dbi->escapeString($test['diff'])."'))";
             
             $dbi->query($query);
             if ($dbi->lastErrorCode() != '') {

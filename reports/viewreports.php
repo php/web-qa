@@ -16,12 +16,8 @@
 #  +----------------------------------------------------------------------+
 #   $Id$
 
-if (isset($_GET['debug'])) error_reporting(E_ALL);
-
 $startTime = microtime(true);
 include "../include/functions.php";
-
-// test testName
 
 // sanitize
 if (!preg_match('@^[a-zA-Z\.0-9\-_/]{1,}$@', $_GET['test'])) {
@@ -44,7 +40,7 @@ if (!$database) {
 }
 
 // GET infos from DB
-$query = 'SELECT id,COUNT(*) as cpt, output, diff FROM failed WHERE signature=X\''.md5($version.'__'.$testName).'\'
+$query = 'SELECT id,signature, COUNT(*) as cpt, output, diff FROM failed WHERE test_name="'.$database->escapeString($testName).'"
 GROUP BY diff ORDER BY COUNT(*) desc';
 
 $q = $database->query($query);
@@ -60,10 +56,12 @@ $database->close();
 
 
 //URL test
-if (substr($version, 0, 3) == '5.3') {
-    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_3/'.ltrim($testName, '/').'?view=markup';
-} elseif (substr($version, 0, 3) == '5.2') {
+if (substr($version, 0, 3) == '5.2') {
     $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_2/'.ltrim($testName, '/').'?view=markup';
+} elseif (substr($version, 0, 3) == '5.3') {
+    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_3/'.ltrim($testName, '/').'?view=markup';
+} elseif (substr($version, 0, 3) == '5.4') {
+    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_4/'.ltrim($testName, '/').'?view=markup';
 } else {
     $urlTest = '';
 }
@@ -81,7 +79,7 @@ if (preg_match('@bug([0-9]{1,}).phpt$@', $testName, $preg)) {
 $TITLE = "Reports for test ".$testName;
 common_header();
 echo '<script src="sorttable.js"></script><div style="margin:10px">';
-echo '<h1>Test: '.$testName.' - Version '.$version.' &nbsp; &nbsp; ';
+echo '<h1><a href="/reports/"><img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>Test: '.$testName.' - Version '.$version.' &nbsp; &nbsp; ';
 if ($urlTest != '') {
    echo '<a target="_blank" href="'.$urlTest.'"><img src="phpsource.png"  title="View test source on svn.php.net" /></a> ';
 }
@@ -89,8 +87,8 @@ if ($BugUrl != '') {
    echo '&nbsp; &nbsp; <a target="_blank" href="'.$BugUrl.'"><img src="bug.png" title="View bug overview on bugs.php.net" /></a>';
 }
 ?></h1>
-<hr size="1" />
-<b><i>There are <?php echo count($allDiffArray); ?> different diff reported by users for this test.</i></b><br />
+
+<b><i>There are <?php echo count($allDiffArray); ?> different diff reported by users for this test.</i></b><br /><br />
 <style>
 .diffClass {
     overflow: auto; 
@@ -98,15 +96,16 @@ if ($BugUrl != '') {
     max-width: 100%;
     border: 1px solid #c0c0c0;
     padding-left: 5px;
-
 }
 .diffplus {
     background-color: #bbffbb;
     clear: both;
+    font-family: monospace;
 }
 .diffminus {
     background-color: #ffbbbb;
     clear: both;
+    font-family: monospace;
 }
 </style>
 <table width="100%">
@@ -120,23 +119,26 @@ if ($BugUrl != '') {
 <?php
 $i = 0;
 foreach ($allDiffArray as $diff) {
-    echo " <tr>\n    <td align=\"right\" width=\"20\"><b>".$diff['cpt'].' ('.round($diff['cpt']/$sumCount*100)."%)</b></td>\n    <td>";
-    echo '<div class="diffClass"><pre>';
+    echo " <tr>\n    <td align=\"center\" width=\"20\"><b>".$diff['cpt'].' ('.round($diff['cpt']/$sumCount*100)."%)</b><br />";
+    echo '<a href="details.php?version='.$version.'&signature='.bin2hex($diff['signature']).'"><img src="detail.png" border="0" title="View users configurations" /></a></td>';
+    echo "\n    <td>\n";
+    echo '<div class="diffClass">';
     $diff2 = explode("\x0d", $diff['diff']);
     foreach ($diff2 as $line) {
         if (preg_match('@([0-9]{2,})(\-{1}) @', $line)) {
-                    echo '<div class="diffminus">'.htmlentities($line).'</div>';
+                    echo '<div class="diffminus">'.htmlentities($line).'</div>'."\n";
     
               } elseif (preg_match('@[0-9]{2,}[\+]{1,} @', $line)) {
-                    echo '<div class="diffplus">'.htmlentities($line).'</div>';
+                    echo '<div class="diffplus">'.htmlentities($line).'</div>'."\n";
             
                 } else echo $line;
     }
-    echo '</pre></div></td>'."\n  ";
+    echo '</div></td>'."\n  ";
     
     //echo '<td width="80" align="center"><a href="#">View complete output</a></td>';
     
     echo '</tr>'."\n";
+    echo '<tr><td colspan="2" style="background-color: #c0c0c0;height:1px"></td></tr>';
     $i++;
     if ($i > 20) break;
 }
