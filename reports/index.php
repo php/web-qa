@@ -1,136 +1,155 @@
 <?php
+#  +----------------------------------------------------------------------+
+#  | PHP QA Website                                                       |
+#  +----------------------------------------------------------------------+
+#  | Copyright (c) 2005-2006 The PHP Group                                |
+#  +----------------------------------------------------------------------+
+#  | This source file is subject to version 3.01 of the PHP license,      |
+#  | that is bundled with this package in the file LICENSE, and is        |
+#  | available through the world-wide-web at the following url:           |
+#  | http://www.php.net/license/3_01.txt                                  |
+#  | If you did not receive a copy of the PHP license and are unable to   |
+#  | obtain it through the world-wide-web, please send a note to          |
+#  | license@php.net so we can mail you a copy immediately.               |
+#  +----------------------------------------------------------------------+
+#  | Author: Olivier Doucet <odoucet@php.net>                             |
+#  +----------------------------------------------------------------------+
+#   $Id$
+
 $startTime = microtime(true);
-if (isset($_GET['debug'])) error_reporting(E_ALL);
 
 include "../include/functions.php";
 
 $TITLE = "PHP Test reports Summary";
 
 if (isset($_GET['version'])) {
-	//sanity check
-	if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $_GET['version'])) {
-		exit('invalid version in GET');
-	}
-	$VERSION = $_GET['version'];
-	$TITLE .= ' - PHP Version '.$_GET['version'];
+    //sanity check
+    if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $_GET['version'])) {
+        exit('invalid version');
+    }
+    $VERSION = $_GET['version'];
+    $TITLE .= ' - PHP Version '.$_GET['version'];
 }
 
-$DBFILE = dirname(__FILE__).'/db/reports.sqlite';
-$SITE_UPDATE =  date("D M d H:i:s Y T", filemtime($DBFILE))."<br />\n".
-	'/* $Id$ */';
-$database = new SQLite3($DBFILE, SQLITE3_OPEN_READONLY);
+require 'reportsfunctions.php';
 
-if (!$database) {
-    $error = (file_exists($yourfile)) ? "Impossible to open, check permissions" : "Impossible to create, check permissions";
-    die("Error: ".$error);
-}
 
-$query = $database->query("SELECT `version`,COUNT(*) AS nbReports,MAX(`date`) AS lastReport 
-		 FROM reports GROUP BY `version` ORDER BY MAX(`date`) DESC");
-if (!$query)
-    die("Error: ".$database->lastErrorMsg()); #This means that most probably we catch a syntax error
-if (!$query)
-    die("Impossible to execute query."); #As reported above, this means that the db owner is different from the web server's one, but we did not commit any syntax mistake.
-while ($row = $query->fetchArray(SQLITE3_ASSOC)) {
-    $reportsPerVersion[] = $row;
-}
+$reportsPerVersion = get_summary_data();
 
 if (isset($VERSION)) {
-	// Get reports for specific version
-	// @todo
-	$failedTestsArray = array();
-	
-	$query = 'SELECT test_name,COUNT(id) as cpt,COUNT(DISTINCT diff) as variations FROM failed WHERE phpversion=\''.$VERSION.'\'
-			GROUP BY test_name ORDER BY COUNT(id) DESC LIMIT 30';
-	$q = @$database->query($query);
-	if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
-	while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
-		$failedTestsArray[] = $tab;
-	}
-
+    $DBFILE = dirname(__FILE__).'/db/'.$VERSION.'.sqlite';
+    if (!file_exists($DBFILE)) {
+        die('no data for this version');
+    }
+    $database = new SQLite3($DBFILE, SQLITE3_OPEN_READONLY);
+    if (!($database instanceof SQLite3)) {
+        die("Error opening DB file: ".$database->lastErrorMsg());
+    }
+    $failedTestsArray = array();
+    
+    $query = 'SELECT test_name,COUNT(id) as cpt,COUNT(DISTINCT diff) as variations FROM failed
+            GROUP BY test_name ORDER BY COUNT(id) DESC LIMIT 50';
+    $q = @$database->query($query);
+    if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
+    while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
+        $failedTestsArray[] = $tab;
+    }
+    $database->close();
 }
-// We stop everything
-$database->close();
+
 
 
 
 common_header();
 ?>
+<script src="sorttable.js"></script>
 <div style="margin:10px">
 
 <h1>Reports per version</h1>
 
-<table style="border: 1px solid black;padding:5px; width:450px">
+<table class="sortable" style="border: 1px solid black;padding:5px; width:700px">
 <thead>
  <tr>
   <th>PHP Version</th>
-  <th>Number of reports</th>
-  <th>Last report received</th>
+  <th>Reports</th>
+  <th>Failing tests</th>
+  <th>Failures</th>
+  <th>Last record</th>
+  <th class="sorttable_nosort">DB Size</th>
  </tr>
 </thead>
 <tbody>
 <?php
 
-foreach ($reportsPerVersion as $line) {
-	echo '<tr>';
-	echo '<td><a href="./?version='.$line['version'].'">'.$line['version'].'</a></td>';
-	echo '<td align="right">'.$line['nbReports'].'</td>';
-	echo '<td nowrap align="right">';
-	
-	$lastReport = time()-strtotime($line['lastReport']);
-	
-	if($lastReport < 3600) {
-		echo round($lastReport/60).' minutes ago';
-	} elseif ($lastReport < 3600*24) {
-		echo round($lastReport/3600).' hours ago';
-	} elseif  ($lastReport < 3600*24*60) {
-		echo round($lastReport/3600/24).' days ago';
-	} else {
-		echo floor($lastReport/3600/24/30).' month ago';
-	}
-	echo '</td>';
-	
-	echo '</tr>'."\n";
+foreach ($reportsPerVersion as $version => $line) {
+    echo '<tr>';
+    echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
+    echo '<td align="right">'.$line['nbReports'].'</td>';
+	echo '<td align="right">'.$line['nbFailingTests'].'</td>';
+    echo '<td align="right">'.$line['nbFailures'].'</td>';
+    echo '<td nowrap align="right" sorttable_customkey="'.strtotime($line['lastReport']).'">';
+    
+    $lastReport = time()-strtotime($line['lastReport']);
+    
+    if($lastReport < 3600) {
+        echo round($lastReport/60).' minutes ago';
+    } elseif ($lastReport < 3600*24) {
+        echo round($lastReport/3600).' hours ago';
+    } elseif  ($lastReport < 3600*24*60) {
+        echo round($lastReport/3600/24).' days ago';
+    } else {
+        echo floor($lastReport/3600/24/30).' month ago';
+    }
+    echo '</td>';
+    echo '<td nowrap align="right"><small>'.round($line['dbsize']/1024/1024).' MB</small></td>';
+    echo '</tr>'."\n";
 }
 ?>
 </tbody>
 </table>
-<small><i> 
-Database size: <?php echo round(filesize($DBFILE)/1024/1024, 1).' MB';?> </i></small>
 
 <?php if (isset($VERSION)): ?>
 <br />
-<table>
-	<thead>
-	 <tr>
-	 <th>Test name</th>
-	 <th>Failed occurences</th>
-	 <th>Variations</th>
-	 <th>Reports</th>
-	</tr>
-	</thead>
-	<tbody>
+<style>
+#testList td {
+	padding: 3px;
+}
+</style>
+<table id="testList" class="sortable" style="width: 700px; border-collapse: collapse">
+    <thead>
+     <tr>
+     <th>Test name</th>
+     <th>Count</th>
+     <th>Variations</th>
+     <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
  <?php
  $i = 0;
  foreach ($failedTestsArray as $line) {
- 	echo ' <tr ';
- 	if ($i % 2) echo 'style="background-color: #ffcc66" ';
- 	echo '><td>'.$line['test_name'].'</td>';
- 	echo '<td align="right">'.$line['cpt'].'</td>';
- 	echo '<td align="right">'.$line['variations'].'</td>';
- 		echo '<td><a href="viewreports.php?version='.$VERSION.'&amp;test='.urlencode($line['test_name']).'">View reports</a></td>';
- 	echo '</tr>'."\n";
- 	$i++;
+     echo ' <tr ';
+     if ($i % 2) echo 'style="background-color: #ffcc66" ';
+     echo '><td>'.$line['test_name'].'</td>';
+     echo '<td align="right">'.$line['cpt'].'</td>';
+     echo '<td align="right">'.$line['variations'].'</td>';
+         echo '<td><a href="viewreports.php?version='.$VERSION.'&amp;test='.urlencode($line['test_name']).'">
+        <img src="report.png" title="View reports" border="0" /></a></td>';
+     echo '</tr>'."\n";
+     $i++;
  }
-				
-				?>
+                
+                ?>
 </tbody></table>
 <?php
+if (count($failedTestsArray) == 50) {
+	echo '<i>There are more failing tests not printed here (with less occurences)</i>';
+}
 endif; 
 ?>
 
 </div>
 <?php
-$SITE_UPDATE .= " Generated in ".round((microtime(true)-$startTime)*1000)." ms";
+$SITE_UPDATE = date('D M d H:i:s Y T', filemtime(__FILE__))."<br /> Generated in ".round((microtime(true)-$startTime)*1000)." ms";
 common_footer();
 

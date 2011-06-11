@@ -1,21 +1,37 @@
 <?php
+#  +----------------------------------------------------------------------+
+#  | PHP QA Website                                                       |
+#  +----------------------------------------------------------------------+
+#  | Copyright (c) 2005-2006 The PHP Group                                |
+#  +----------------------------------------------------------------------+
+#  | This source file is subject to version 3.01 of the PHP license,      |
+#  | that is bundled with this package in the file LICENSE, and is        |
+#  | available through the world-wide-web at the following url:           |
+#  | http://www.php.net/license/3_01.txt                                  |
+#  | If you did not receive a copy of the PHP license and are unable to   |
+#  | obtain it through the world-wide-web, please send a note to          |
+#  | license@php.net so we can mail you a copy immediately.               |
+#  +----------------------------------------------------------------------+
+#  | Author: Olivier Doucet <odoucet@php.net>                             |
+#  +----------------------------------------------------------------------+
+#   $Id$
+
 error_reporting(E_ALL);
 header('Content-Type: text/plain');
 
-// First install !
-$DBFILE = dirname(__FILE__).'/db/reports.sqlite';
+$dbfolder = dirname(__FILE__).'/db/';
 
-if (file_exists($DBFILE)) {
-	exit('install already done !');
+if (file_exists($dbfolder.'reports.sqlite'))
+	unlink($dbfolder.'reports.sqlite');
+
+$files = glob('/home/odoucet/*.sqlite');
+foreach ($files as $file) {
+    $dest = basename($file);
+    
+    if (!file_exists($dbfolder.$dest)) {
+        echo "copying file ".$file;
+        copy($file, $dbfolder.$dest);
+        echo "  OK\n";
+        
+    } else echo "skipping file ".$file."\n";
 }
-
-echo date('[d-m-y H:i:s]')."Downloading first version of DB ...\n";
-$data = file_get_contents('http://phpqa.ajeux.net/reports.sqlite');
-echo date('[d-m-y H:i:s]')."OK (Filesize: ".strlen($data)."\n";
-echo date('[d-m-y H:i:s]')."Putting data to sqlite file ...\n";
-file_put_contents($DBFILE, $data);
-echo date('[d-m-y H:i:s]')."OK\n";
-echo date('[d-m-y H:i:s]')."Changing chmod ...\n";
-chmod($DBFILE, 0755);
-chmod(dirname($DBFILE), 0755);
-echo date('[d-m-y H:i:s]')."Done\n";

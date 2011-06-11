@@ -1,4 +1,20 @@
 <?php
+#  +----------------------------------------------------------------------+
+#  | PHP QA Website                                                       |
+#  +----------------------------------------------------------------------+
+#  | Copyright (c) 2005-2006 The PHP Group                                |
+#  +----------------------------------------------------------------------+
+#  | This source file is subject to version 3.01 of the PHP license,      |
+#  | that is bundled with this package in the file LICENSE, and is        |
+#  | available through the world-wide-web at the following url:           |
+#  | http://www.php.net/license/3_01.txt                                  |
+#  | If you did not receive a copy of the PHP license and are unable to   |
+#  | obtain it through the world-wide-web, please send a note to          |
+#  | license@php.net so we can mail you a copy immediately.               |
+#  +----------------------------------------------------------------------+
+#  | Author: Olivier Doucet <odoucet@php.net>                             |
+#  +----------------------------------------------------------------------+
+#   $Id$
 
 function insertToDb_phpmaketest($array) 
 {
@@ -20,20 +36,23 @@ function insertToDb_phpmaketest($array)
         else 
             die('status unknown: '.$array['status']);
             
-        $DBFILE = dirname(__FILE__).'/db/reports.sqlite';
+        if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $array['version'])) {
+            return;
+        }
+        $DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
         $dbi = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
         
-        $query = "INSERT INTO `reports` (`id`, `date`, `version`, `status`, 
+        $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
         `nb_failed`, `nb_expected_fail`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
         datetime(".((int) $array['date']).", 'unixepoch', 'localtime'), 
-        '".addslashes($array['version'])."', 
         '".addslashes($array['status'])."', 
         '".count($array['failedTest'])."', 
         '".count($array['expectedFailedTest'])."', 
-        ('".$dbi->escapeString(gzdeflate($array['buildEnvironment'], 9))."'), 
-        ('".$dbi->escapeString(gzdeflate($array['phpinfo'], 9))."'), ".$array['userEmail']."
+        ('".$dbi->escapeString($array['buildEnvironment'])."'), 
+        ('".$dbi->escapeString($array['phpinfo'])."'), ".$array['userEmail']."
         )";
-        //not used : userEmail, 
+        // userEmail is already escaped on line 28
+        
         $dbi->query($query);
         if ($dbi->lastErrorCode() != '') {
             echo "ERROR: ".$dbi->error."\n";
@@ -44,15 +63,15 @@ function insertToDb_phpmaketest($array)
 
         foreach ($array['tests'] as $name => $test) {
             $query = "INSERT INTO `failed` 
-            (`id`, `id_report`, `test_name`, `phpversion`, signature, `output`, `diff`) VALUES    (null, 
-            '".$reportId."', '".$name."', '".$dbi->escapeString($array['version'])."', 
+            (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
+            '".$reportId."', '".$name."', 
             X'".md5($array['version'].'__'.$name)."',
-            ('".$dbi->escapeString(gzdeflate($test['output'], 9))."'), ('".$dbi->escapeString(gzdeflate($test['diff'], 9))."'))";
+            ('".$dbi->escapeString(gzdeflate($test['output'], 9))."'), ('".$dbi->escapeString(gzdeflate($test['diff'], 5))."'))";
             
             $dbi->query($query);
             if ($dbi->lastErrorCode() != '') {
-        echo "ERROR: ".$dbi->error."\n";
-        exit;
+                echo "ERROR: ".$dbi->error."\n";
+                exit;
             } 
             
         }
@@ -101,10 +120,10 @@ function parse_phpmaketest($version, $status, $file) {
     $currentTest = '';
         }
         elseif ($currentPart == 'failedTest' || $currentPart == 'expectedFailedTest') {
-    preg_match('@ \[([^\]]{1,})\]@', $row, $tab);
-    if (count($tab) == 2)
-        if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart])) 
-            $extract[$currentPart][] = $tab[1];
+            preg_match('@ \[([^\]]{1,})\]@', $row, $tab);
+            if (count($tab) == 2)
+                if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart])) 
+                    $extract[$currentPart][] = $tab[1];
         }
         elseif ($currentPart == 'buildEnvironment') {
     if (preg_match('@User\'s E-mail: (.*)$@', $row, $tab)) {
@@ -127,10 +146,10 @@ function parse_phpmaketest($version, $status, $file) {
     continue;
         }
         if ($currentPart == '' && $currentTest != '') {
-    if (!isset($extract['outputsRaw'][$currentTest])) 
-        $extract['outputsRaw'][$currentTest] = '';
+            if (!isset($extract['outputsRaw'][$currentTest])) 
+                $extract['outputsRaw'][$currentTest] = '';
         
-    $extract['outputsRaw'][$currentTest] .= $row."\n";
+            $extract['outputsRaw'][$currentTest] .= $row."\n";
         }
     }
     // 2nd try to cleanup name
@@ -139,12 +158,12 @@ function parse_phpmaketest($version, $status, $file) {
 
     foreach ($extract['outputsRaw'] as $name => $output) {
         if (strpos($name, '/ext/') !== false) {
-    $prefix = substr($name, 0, strpos($name, '/ext/'));
-    break;
+            $prefix = substr($name, 0, strpos($name, '/ext/'));
+            break;
         }
         if (strpos($name, '/Zend/') !== false) {
-    $prefix = substr($name, 0, strpos($name, '/Zend/'));
-    break;
+            $prefix = substr($name, 0, strpos($name, '/Zend/'));
+            break;
         }
     }
 
@@ -163,18 +182,22 @@ function parse_phpmaketest($version, $status, $file) {
         $output = explode("\n", $output);
         
         foreach ($output as $row) {
-    if (preg_match('@^={5,}\s+$@', $row)) {
-        if ($outputTest != '') $startDiff = true;
-    }
-    elseif ($startDiff === false) {
-        $outputTest .= $row;
-    }
-    elseif (preg_match('@^[0-9]{1,}@', $row)) {
-        $diff .= $row;
-    }
+            if (preg_match('@^={5,}\s+$@', $row)) {
+                if ($outputTest != '') $startDiff = true;
+            }
+            elseif ($startDiff === false) {
+                $outputTest .= $row;
+            }
+            elseif (preg_match('@^[0-9]{1,}@', $row)) {
+                $diff .= $row;
+            }
         }
         $extract['tests'][$name]['output'] = $outputTest;
         $extract['tests'][$name]['diff']   = rtrim( preg_replace('@ [^\s]{1,}'.substr($name, 0, -1).'@', ' %s/'.basename(substr($name, 0, -1)), $diff));
+        
+        //last cleanup attempt
+        //if ($extract['tests'][$name]['diff'] == '') unset($extract['tests'][$name]);
+        
     }
     unset($extract['outputsRaw']);
 
