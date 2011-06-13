@@ -40,6 +40,41 @@ function insertToDb_phpmaketest($array)
             return;
         }
         $DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
+		
+		if (!file_exists($DBFILE)) {
+			//Create DB
+			$dbi = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+			$query = 'CREATE TABLE failed (
+			  `id` integer PRIMARY KEY AUTOINCREMENT,
+			  `id_report` bigint(20) NOT NULL,
+			  `test_name` varchar(128) NOT NULL,
+			  `output` STRING NOT NULL,
+			  `diff` STRING NOT NULL,
+			  `signature` binary(16) NOT NULL
+			)';
+			$dbi->exec($query);
+			if ($dbi->lastErrorCode() != '') {
+				echo "ERROR: ".$dbi->lastErrorMsg()."\n";
+				exit;
+			}
+			
+			$query = 'CREATE TABLE reports (
+			  id integer primary key AUTOINCREMENT,
+			  date datetime NOT NULL,
+			  status smallint(1) not null,
+			  nb_failed unsigned int(10)  NOT NULL,
+			  nb_expected_fail unsigned int(10)  NOT NULL,
+			  build_env STRING NOT NULL,
+			  phpinfo STRING NOT NULL,
+			  user_email varchar(64) default null
+			)';
+			$dbi->exec($query);
+			if ($dbi->lastErrorCode() != '') {
+				echo "ERROR: ".$dbi->lastErrorMsg()."\n";
+				exit;
+			}
+			$dbi->close();
+		}
         $dbi = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
         
         $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
@@ -194,10 +229,6 @@ function parse_phpmaketest($version, $status, $file) {
         }
         $extract['tests'][$name]['output'] = $outputTest;
         $extract['tests'][$name]['diff']   = rtrim( preg_replace('@ [^\s]{1,}'.substr($name, 0, -1).'@', ' %s/'.basename(substr($name, 0, -1)), $diff));
-        
-        //last cleanup attempt
-        //if ($extract['tests'][$name]['diff'] == '') unset($extract['tests'][$name]);
-        
     }
     unset($extract['outputsRaw']);
 
