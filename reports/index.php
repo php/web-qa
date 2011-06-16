@@ -19,12 +19,13 @@
 $startTime = microtime(true);
 
 include "../include/functions.php";
+include "../include/release-qa.php";
 
 $TITLE = "PHP Test reports Summary";
 
 if (isset($_GET['version'])) {
     //sanity check
-    if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $_GET['version'])) {
+    if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
         exit('invalid version');
     }
     $VERSION = $_GET['version'];

@@ -18,12 +18,14 @@
 
 $startTime = microtime(true);
 include "../include/functions.php";
+include "../include/release-qa.php";
 
 // sanitize
 if (!preg_match('@^[a-z0-9]{32}$@', $_GET['signature'])) {
     exit('Invalid signature');
 }
-if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $_GET['version'])) {
+
+if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
     exit('invalid version');
 }
 

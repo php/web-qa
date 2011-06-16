@@ -162,4 +162,17 @@ function make_link($string, $text = "", $target = "") {
 	$buffer .= "</a>";
 	return $buffer;
 }
-?>
+
+function is_valid_php_version($version, $QA_RELEASES = array()) {
+	
+	if (isset($QA_RELEASES['reported']) && in_array($version, $QA_RELEASES['reported'])) {
+		return true;
+	}
+	
+	//@todo Add alpha/beta/RC for regex...
+	if (preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $version)) {
+		return true;
+	}
+	
+	return false;
+}

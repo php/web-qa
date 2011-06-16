@@ -36,12 +36,10 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         else 
             die('status unknown: '.$array['status']);
             
-        //@todo Consider alpha/beta/RC for regex
-        if (!in_array($array['version'], $QA_RELEASES['reported'])) {
-            if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $array['version'])) {
-                return;
-            }
-        }
+		if (!is_valid_php_version($array['version'], $QA_RELEASES)) {
+			exit('invalid version');
+		}
+        
         $DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
 		
 		if (!file_exists($DBFILE)) {
