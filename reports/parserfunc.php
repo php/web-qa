@@ -16,7 +16,7 @@
 #  +----------------------------------------------------------------------+
 #   $Id$
 
-function insertToDb_phpmaketest($array) 
+function insertToDb_phpmaketest($array, $QA_RELEASES = array()) 
 {
     if (!is_array($array)) {
         // impossible to fetch data. We'll record this error later ...
@@ -36,8 +36,11 @@ function insertToDb_phpmaketest($array)
         else 
             die('status unknown: '.$array['status']);
             
-        if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $array['version'])) {
-            return;
+        //@todo Consider alpha/beta/RC for regex
+        if (!in_array($array['version'], $QA_RELEASES['reported'])) {
+            if (!preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $array['version'])) {
+                return;
+            }
         }
         $DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
 		

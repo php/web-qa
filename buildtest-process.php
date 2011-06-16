@@ -30,7 +30,7 @@
 			// Aggregator (http://qa.php.net/reports/)
 			include 'reports/parserfunc.php';
 			$array = parse_phpmaketest($version, $status, base64_decode($_POST['php_test_data']));
-			insertToDb_phpmaketest($array);
+			insertToDb_phpmaketest($array, $QA_RELEASES);
 
 		}
 	}
