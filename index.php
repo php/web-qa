@@ -36,6 +36,10 @@ common_header();
               </li>
 
               <li>
+                Monitoring and analyzing the <a href="reports/">reported make test results</a>.
+              </li>
+
+              <li>
                 Upgrading the testsuite. This includes extending the testsuites with tests for every function,
                 collecting test data in a different way then mailing all output to the QA mailinglist.
               </li>
