@@ -88,7 +88,18 @@ if ($BugUrl != '') {
 }
 ?></h1>
 
-<b><i>There are <?php echo count($allDiffArray); ?> different diff reported by users for this test.</i></b><br /><br />
+<strong><em>
+<?php
+$count = count($allDiffArray);
+
+if ($count === 1) {
+    echo "There is 1 diff reported by users for this test.";
+} else {
+    echo "There are $count different diffs reported by users for this test.";
+}
+?>
+</em></strong>
+<br /><br />
 <style>
 .diffClass {
     overflow: auto; 

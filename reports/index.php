@@ -92,14 +92,19 @@ foreach ($reportsPerVersion as $version => $line) {
     $lastReport = time()-strtotime($line['lastReport']);
     
     if($lastReport < 3600) {
-        echo round($lastReport/60).' minutes ago';
+        $_tmp = round($lastReport/60);
+        echo "$_tmp ", ($_tmp == 1) ? 'minute' : 'minutes';
     } elseif ($lastReport < 3600*24) {
-        echo round($lastReport/3600).' hours ago';
+        $_tmp = round($lastReport/3600);
+        echo "$_tmp ", ($_tmp == 1) ? 'hour' : 'hours';
     } elseif  ($lastReport < 3600*24*60) {
-        echo round($lastReport/3600/24).' days ago';
+        $_tmp = round($lastReport/3600/24);
+        echo "$_tmp ", ($_tmp == 1) ? 'day' : 'days';
     } else {
-        echo floor($lastReport/3600/24/30).' month ago';
+        $_tmp = floor($lastReport/3600/24/30);
+        echo "$_tmp ", ($_tmp == 1) ? 'month' : 'months';
     }
+    echo " ago";
     echo '</td>';
     echo '<td nowrap align="right"><small>'.round($line['dbsize']/1024/1024).' MB</small></td>';
     echo '</tr>'."\n";
