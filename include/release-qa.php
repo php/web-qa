@@ -118,7 +118,8 @@ foreach ($QA_RELEASES as $pversion => $info) {
 				// php.net filename format for RC releases
 				// example: php-5.3.0RC2
 				$fn_base = 'php-' . $pversion . 'RC' . $info['rc']['number'];
-				
+
+				$QA_RELEASES[$pversion]['rc']['version'] = $pversion . 'RC' . $info['rc']['number'];
 				$QA_RELEASES[$pversion]['rc']['files']['bz2']['path']= $info['rc']['baseurl'] . $fn_base . '.tar.bz2'; 
 				$QA_RELEASES[$pversion]['rc']['files']['bz2']['md5'] = $info['rc']['md5_bz2'];
 				$QA_RELEASES[$pversion]['rc']['files']['gz']['path'] = $info['rc']['baseurl'] . $fn_base . '.tar.gz';
@@ -166,8 +167,8 @@ function show_release_qa($QA_RELEASES) {
 		foreach ($QA_RELEASES['rcs'] as $pversion => $info) {
 
 			// pure madness
-			echo "<li>$pversion : [<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] (md5 checksum: {$info['files']['bz2']['md5']})</li>\n";
-			echo "<li>$pversion : [<a href='{$info['files']['gz']['path']}'>tar.gz</a>] (md5 checksum: {$info['files']['gz']['md5']})</li>\n";
+			echo "<li>{$info['version']}: [<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] (md5 checksum: {$info['files']['bz2']['md5']})</li>\n";
+			echo "<li>{$info['version']}: [<a href='{$info['files']['gz']['path']}'>tar.gz</a>] (md5 checksum: {$info['files']['gz']['md5']})</li>\n";
 		}
 		
 		echo "</ul>\n</span>\n";
