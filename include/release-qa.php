@@ -112,7 +112,7 @@ foreach ($QA_RELEASES as $pversion => $info) {
 		// Allow -dev version of upcoming rcs
 		// @todo confirm this php version format for RC of all dev versions
 		if ((int)$info['rc']['number'] > 0) {
-			$QA_RELEASES['reported'][] = "{$pversion}RC{$info['rc']['number']}-dev";
+			$QA_RELEASES['reported'][] = "{$pversion}RC{$info['rc']['number']}";
 			if (!empty($info['rc']['baseurl'])) {
 				
 				// php.net filename format for RC releases
