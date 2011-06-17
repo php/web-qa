@@ -3,7 +3,7 @@
 	include("include/functions.php");
 
 	if (isset($_POST['php_test_data'])) {
-		if (strlen($_POST['php_test_data']) > 200000) {
+		if (strlen($_POST['php_test_data']) > 800000) {
 			die("can't handle input that large.");
 		}
 		if (isset($_GET['status'])) {
