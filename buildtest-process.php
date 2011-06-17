@@ -1,5 +1,6 @@
 <?php
 	include("include/release-qa.php");
+	include("include/functions.php");
 
 	if (isset($_POST['php_test_data'])) {
 		if (strlen($_POST['php_test_data']) > 200000) {
