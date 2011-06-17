@@ -83,6 +83,11 @@ common_header();
 <?php
 
 foreach ($reportsPerVersion as $version => $line) {
+
+    if (version_compare($version, '5.3.6', '<')) {
+        continue;
+    }
+    
     echo '<tr>';
     echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
     echo '<td align="right">'.$line['nbReports'].'</td>';
