@@ -48,9 +48,6 @@ function get_summary_data()
             $data[$version]['nbFailures'] = $row['nbFailures'];
             
             $database->close();
-            
-            // we will use dbsize elsewhere. Record it now somewhere
-            $data[$version]['dbsize'] = filesize(dirname(__FILE__).'/db/'.$entry);
         }
     }
     return $data;

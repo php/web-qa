@@ -47,9 +47,8 @@ if (isset($VERSION)) {
         die("Error opening DB file: ".$database->lastErrorMsg());
     }
     $failedTestsArray = array();
-    
-    $query = 'SELECT test_name,COUNT(id) as cpt,COUNT(DISTINCT diff) as variations FROM failed
-            GROUP BY test_name ORDER BY COUNT(id) DESC LIMIT 50';
+    $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, date(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
+            GROUP BY test_name ORDER BY cpt DESC LIMIT 50';
     $q = @$database->query($query);
     if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
     while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
@@ -68,15 +67,14 @@ common_header();
 
 <h1><a href="/reports/"><img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>Reports per version</h1>
 
-<table class="sortable" style="border: 1px solid black;padding:5px; width:700px">
+<table class="sortable" style="border: 1px solid black;padding:5px; width:800px">
 <thead>
  <tr>
   <th>PHP Version</th>
   <th>Reports</th>
-  <th>Failing tests</th>
-  <th>Failures</th>
-  <th>Last record</th>
-  <th class="sorttable_nosort">DB Size</th>
+  <th>Unique failed tests</th>
+  <th>Total failed tests</th>
+  <th>Last report date</th>
  </tr>
 </thead>
 <tbody>
@@ -112,7 +110,6 @@ foreach ($reportsPerVersion as $version => $line) {
     }
     echo " ago";
     echo '</td>';
-    echo '<td nowrap align="right"><small>'.round($line['dbsize']/1024/1024).' MB</small></td>';
     echo '</tr>'."\n";
 }
 ?>
@@ -126,12 +123,13 @@ foreach ($reportsPerVersion as $version => $line) {
     padding: 3px;
 }
 </style>
-<table id="testList" class="sortable" style="width: 700px; border-collapse: collapse">
+<table id="testList" class="sortable" style="width: 800px; border-collapse: collapse">
     <thead>
      <tr>
      <th>Test name</th>
      <th>Count</th>
      <th>Variations</th>
+     <th>Last reported date</th>
      <th>&nbsp;</th>
     </tr>
     </thead>
@@ -144,6 +142,7 @@ foreach ($reportsPerVersion as $version => $line) {
      echo '><td>'.$line['test_name'].'</td>';
      echo '<td align="right">'.$line['cpt'].'</td>';
      echo '<td align="right">'.$line['variations'].'</td>';
+     echo '<td align="right">'.$line['date'].'</td>';
          echo '<td><a href="viewreports.php?version='.$VERSION.'&amp;test='.urlencode($line['test_name']).'">
         <img src="report.png" title="View reports" border="0" /></a></td>';
      echo '</tr>'."\n";
