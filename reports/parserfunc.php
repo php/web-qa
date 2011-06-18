@@ -113,7 +113,9 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         }
         $dbi->close();
     }
+	return true;
 }
+
 function parse_phpmaketest($version, $status, $file) {
 
     $extract = array();
@@ -178,8 +180,8 @@ function parse_phpmaketest($version, $status, $file) {
     $extract[$currentPart] .= $row."\n";
         }
         elseif (substr(trim($row), -5) == '.phpt') {
-    $currentTest = trim($row);
-    continue;
+            $currentTest = trim($row);
+            continue;
         }
         if ($currentPart == '' && $currentTest != '') {
             if (!isset($extract['outputsRaw'][$currentTest])) 

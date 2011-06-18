@@ -1,0 +1,2527 @@
+=====================================================================
+BORKED TEST SUMMARY
+---------------------------------------------------------------------
+duplicated EXPECT section [/usr/src/php/php5.3-201106111430/ext/json/tests/bug54484.phpt]
+=====================================================================
+
+=====================================================================
+FAILED TEST SUMMARY
+---------------------------------------------------------------------
+function with many parameters [tests/func/010.phpt]
+Persistent case insensitive and user defined constants [Zend/tests/constants_005.phpt]
+DOMDocument::$validateOnParse - effectual determination (dom_document_validate_on_parse_read/dom_document_validate_on_parse_write) [ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt]
+mysql connect [ext/mysql/tests/001.phpt]
+mysql_connect() [ext/mysql/tests/mysql_connect.phpt]
+mysql_[p]connect() - max_links/max_persistent [ext/mysql/tests/mysql_max_links.phpt]
+mysql_[p]connect() - safe_mode [ext/mysql/tests/mysql_sql_safe_mode.phpt]
+mysqli_connect() [ext/mysqli/tests/mysqli_connect.phpt]
+new mysqli() [ext/mysqli/tests/mysqli_connect_oo.phpt]
+new mysqli() [ext/mysqli/tests/mysqli_connect_oo_defaults.phpt]
+preg_replace() with array of failing regular expressions [ext/pcre/tests/006.phpt]
+MySQL PDO->__construct(), options [ext/pdo_mysql/tests/pdo_mysql___construct_options.phpt]
+MySQL PDO->__construct(), libmysql only options [ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.phpt]
+PDO MySQL specific class constants [ext/pdo_mysql/tests/pdo_mysql_class_constants.phpt]
+MySQL PDO class interface [ext/pdo_mysql/tests/pdo_mysql_interface.phpt]
+Test for bug 52013 about Phar::decompressFiles(). [ext/phar/tests/bug52013.phpt]
+Phar and RecursiveDirectoryIterator [ext/phar/tests/phar_oo_005.phpt]
+Bug #32330 (session_destroy, "Failed to initialize storage module", custom session handler) [ext/session/tests/bug32330.phpt]
+Test session_module_name() function : variation [ext/session/tests/session_module_name_variation3.phpt]
+Test session_name() function : error functionality [ext/session/tests/session_name_basic.phpt]
+Test session_name() function : variation [ext/session/tests/session_name_variation1.phpt]
+Test session_save_path() function : error functionality [ext/session/tests/session_save_path_error.phpt]
+Test session_save_path() function : variation [ext/session/tests/session_save_path_variation1.phpt]
+Test session_set_save_handler() function : basic functionality [ext/session/tests/session_set_save_handler_basic.phpt]
+Test session_set_save_handler() function : using closures as callbacks [ext/session/tests/session_set_save_handler_closures.phpt]
+Test session_set_save_handler() function : error functionality [ext/session/tests/session_set_save_handler_error3.phpt]
+Test session_set_save_handler() function : variation [ext/session/tests/session_set_save_handler_variation4.phpt]
+Bug #48601 (xpath() returns FALSE for legitimate query) [ext/simplexml/tests/bug48601.phpt]
+SQLite3::open error test [ext/sqlite3/tests/sqlite3_15_open_error.phpt]
+chroot() [ext/standard/tests/file/chroot_001.phpt]
+Bug #44394 (Last two bytes missing from output) with session.use_trans_id [ext/standard/tests/general_functions/bug44394_2.phpt]
+Bug #49936 (crash with ftp stream in php_stream_context_get_option()) [ext/standard/tests/streams/bug49936.phpt]
+Bug #32001 (xml_parse*() goes into infinite loop when autodetection in effect), using UTF-* [ext/xml/tests/bug32001.phpt]
+=====================================================================
+
+=====================================================================
+EXPECTED FAILED TEST SUMMARY
+---------------------------------------------------------------------
+output buffering - fatalism [tests/output/ob_011.phpt]  XFAIL REASON: This test will fail until the fix in revision r214155 is backported from php 6
+
+Inconsistencies when accessing protected members [Zend/tests/access_modifiers_008.phpt]  XFAIL REASON: Discussion: http://marc.info/?l=php-internals&m=120221184420957&w=2
+
+Inconsistencies when accessing protected members - 2 [Zend/tests/access_modifiers_009.phpt]  XFAIL REASON: Discussion: http://marc.info/?l=php-internals&m=120221184420957&w=2
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770.phpt]  XFAIL REASON: See Bug #48770
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770_2.phpt]  XFAIL REASON: See Bug #48770
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770_3.phpt]  XFAIL REASON: See Bug #48770
+
+DateTime::diff() add() sub() -- fall type2 type2 [ext/date/tests/DateTime_diff_add_sub-fall-type2-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type2 type3 [ext/date/tests/DateTime_diff_add_sub-fall-type2-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type3 type2 [ext/date/tests/DateTime_diff_add_sub-fall-type3-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type3 type3 [ext/date/tests/DateTime_diff_add_sub-fall-type3-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type2 type2 [ext/date/tests/DateTime_diff_add_sub-spring-type2-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type2 type3 [ext/date/tests/DateTime_diff_add_sub-spring-type2-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type3 type2 [ext/date/tests/DateTime_diff_add_sub-spring-type3-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type3 type3 [ext/date/tests/DateTime_diff_add_sub-spring-type3-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+Bug #51994 (date_parse_from_format is parsing invalid date using 'yz' format) [ext/date/tests/bug51994.phpt]  XFAIL REASON: Bug #51994 isn't fixed yet
+
+Bug #42718 (unsafe_raw filter not applied when configured as default filter) [ext/filter/tests/bug42718.phpt]  XFAIL REASON: FILTER_UNSAFE_RAW not applied when configured as default filter, even with flags
+
+SimpleXML: array casting bug [ext/simplexml/tests/034.phpt]  XFAIL REASON: Does anyone know why?
+
+=====================================================================
+
+=====================================================================
+WARNED TEST SUMMARY
+---------------------------------------------------------------------
+via [ext/sqlite/tests/pdo/common.phpt]
+        SQLite2 PDO Common: Bug #34630 (inserting streams as LOBs) [ext/sqlite/tests/pdo/bug_34630.phpt] (warn: XFAIL section but test passes)
+=====================================================================
+
+
+=====================================================================
+TEST RESULT SUMMARY
+---------------------------------------------------------------------
+Exts skipped    :   45
+Exts tested     :   33
+---------------------------------------------------------------------
+
+Number of tests : 11527              8041
+Tests borked    :    1 (  0.0%) --------
+Tests skipped   : 3485 ( 30.2%) --------
+Tests warned    :    1 (  0.0%) (  0.0%)
+Tests failed    :   33 (  0.3%) (  0.4%)
+Expected fail   :   17 (  0.1%) (  0.2%)
+Tests passed    : 7990 ( 69.3%) ( 99.4%)
+---------------------------------------------------------------------
+Time taken      : 2720 seconds
+=====================================================================
+
+=====================================================================
+BORKED TEST SUMMARY
+---------------------------------------------------------------------
+duplicated EXPECT section [/usr/src/php/php5.3-201106111430/ext/json/tests/bug54484.phpt]
+=====================================================================
+
+=====================================================================
+FAILED TEST SUMMARY
+---------------------------------------------------------------------
+function with many parameters [tests/func/010.phpt]
+Persistent case insensitive and user defined constants [Zend/tests/constants_005.phpt]
+DOMDocument::$validateOnParse - effectual determination (dom_document_validate_on_parse_read/dom_document_validate_on_parse_write) [ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt]
+mysql connect [ext/mysql/tests/001.phpt]
+mysql_connect() [ext/mysql/tests/mysql_connect.phpt]
+mysql_[p]connect() - max_links/max_persistent [ext/mysql/tests/mysql_max_links.phpt]
+mysql_[p]connect() - safe_mode [ext/mysql/tests/mysql_sql_safe_mode.phpt]
+mysqli_connect() [ext/mysqli/tests/mysqli_connect.phpt]
+new mysqli() [ext/mysqli/tests/mysqli_connect_oo.phpt]
+new mysqli() [ext/mysqli/tests/mysqli_connect_oo_defaults.phpt]
+preg_replace() with array of failing regular expressions [ext/pcre/tests/006.phpt]
+MySQL PDO->__construct(), options [ext/pdo_mysql/tests/pdo_mysql___construct_options.phpt]
+MySQL PDO->__construct(), libmysql only options [ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.phpt]
+PDO MySQL specific class constants [ext/pdo_mysql/tests/pdo_mysql_class_constants.phpt]
+MySQL PDO class interface [ext/pdo_mysql/tests/pdo_mysql_interface.phpt]
+Test for bug 52013 about Phar::decompressFiles(). [ext/phar/tests/bug52013.phpt]
+Phar and RecursiveDirectoryIterator [ext/phar/tests/phar_oo_005.phpt]
+Bug #32330 (session_destroy, "Failed to initialize storage module", custom session handler) [ext/session/tests/bug32330.phpt]
+Test session_module_name() function : variation [ext/session/tests/session_module_name_variation3.phpt]
+Test session_name() function : error functionality [ext/session/tests/session_name_basic.phpt]
+Test session_name() function : variation [ext/session/tests/session_name_variation1.phpt]
+Test session_save_path() function : error functionality [ext/session/tests/session_save_path_error.phpt]
+Test session_save_path() function : variation [ext/session/tests/session_save_path_variation1.phpt]
+Test session_set_save_handler() function : basic functionality [ext/session/tests/session_set_save_handler_basic.phpt]
+Test session_set_save_handler() function : using closures as callbacks [ext/session/tests/session_set_save_handler_closures.phpt]
+Test session_set_save_handler() function : error functionality [ext/session/tests/session_set_save_handler_error3.phpt]
+Test session_set_save_handler() function : variation [ext/session/tests/session_set_save_handler_variation4.phpt]
+Bug #48601 (xpath() returns FALSE for legitimate query) [ext/simplexml/tests/bug48601.phpt]
+SQLite3::open error test [ext/sqlite3/tests/sqlite3_15_open_error.phpt]
+chroot() [ext/standard/tests/file/chroot_001.phpt]
+Bug #44394 (Last two bytes missing from output) with session.use_trans_id [ext/standard/tests/general_functions/bug44394_2.phpt]
+Bug #49936 (crash with ftp stream in php_stream_context_get_option()) [ext/standard/tests/streams/bug49936.phpt]
+Bug #32001 (xml_parse*() goes into infinite loop when autodetection in effect), using UTF-* [ext/xml/tests/bug32001.phpt]
+=====================================================================
+
+=====================================================================
+EXPECTED FAILED TEST SUMMARY
+---------------------------------------------------------------------
+output buffering - fatalism [tests/output/ob_011.phpt]  XFAIL REASON: This test will fail until the fix in revision r214155 is backported from php 6
+
+Inconsistencies when accessing protected members [Zend/tests/access_modifiers_008.phpt]  XFAIL REASON: Discussion: http://marc.info/?l=php-internals&m=120221184420957&w=2
+
+Inconsistencies when accessing protected members - 2 [Zend/tests/access_modifiers_009.phpt]  XFAIL REASON: Discussion: http://marc.info/?l=php-internals&m=120221184420957&w=2
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770.phpt]  XFAIL REASON: See Bug #48770
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770_2.phpt]  XFAIL REASON: See Bug #48770
+
+Bug #48770 (call_user_func_array() fails to call parent from inheriting class) [Zend/tests/bug48770_3.phpt]  XFAIL REASON: See Bug #48770
+
+DateTime::diff() add() sub() -- fall type2 type2 [ext/date/tests/DateTime_diff_add_sub-fall-type2-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type2 type3 [ext/date/tests/DateTime_diff_add_sub-fall-type2-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type3 type2 [ext/date/tests/DateTime_diff_add_sub-fall-type3-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- fall type3 type3 [ext/date/tests/DateTime_diff_add_sub-fall-type3-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type2 type2 [ext/date/tests/DateTime_diff_add_sub-spring-type2-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type2 type3 [ext/date/tests/DateTime_diff_add_sub-spring-type2-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type3 type2 [ext/date/tests/DateTime_diff_add_sub-spring-type3-type2.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+DateTime::diff() add() sub() -- spring type3 type3 [ext/date/tests/DateTime_diff_add_sub-spring-type3-type3.phpt]  XFAIL REASON: PHP < 5.4 has bugs
+
+Bug #51994 (date_parse_from_format is parsing invalid date using 'yz' format) [ext/date/tests/bug51994.phpt]  XFAIL REASON: Bug #51994 isn't fixed yet
+
+Bug #42718 (unsafe_raw filter not applied when configured as default filter) [ext/filter/tests/bug42718.phpt]  XFAIL REASON: FILTER_UNSAFE_RAW not applied when configured as default filter, even with flags
+
+SimpleXML: array casting bug [ext/simplexml/tests/034.phpt]  XFAIL REASON: Does anyone know why?
+
+=====================================================================
+
+=====================================================================
+WARNED TEST SUMMARY
+---------------------------------------------------------------------
+via [ext/sqlite/tests/pdo/common.phpt]
+        SQLite2 PDO Common: Bug #34630 (inserting streams as LOBs) [ext/sqlite/tests/pdo/bug_34630.phpt] (warn: XFAIL section but test passes)
+=====================================================================
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/tests/func/010.phpt
+================================================================================
+Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 31457280 bytes) in /usr/src/php/php5.3-201106111430/tests/func/010-file.php on line 13
+================================================================================
+001+ Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 31457280 bytes) in /usr/src/php/php5.3-201106111430/tests/func/010-file.php on line 13
+001- bool(true)
+002- bool(true)
+003- bool(true)
+004- bool(true)
+005- bool(true)
+006- bool(true)
+007- bool(true)
+008- Done
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/Zend/tests/constants_005.phpt
+================================================================================
+bool(false)
+int(123)
+================================================================================
+001+ bool(false)
+001- Notice: Use of undefined constant ZEND_THREAD_safe - assumed 'ZEND_THREAD_safe' in %s on line %d
+002- string(16) "ZEND_THREAD_safe"
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt
+================================================================================
+validateOnParse set to FALSE:
+
+ ** ERROR: process timed out **
+================================================================================
+002- No Error Report Above
+003- validateOnParse set to TRUE:
+003+  ** ERROR: process timed out **
+005- Warning: DOMDocument::loadXML(): Entity 'nbsp' not defined in Entity, line: %d in %s on line %d
+006-
+007- Warning: DOMDocument::loadXML(): Entity 'copy' not defined in Entity, line: %d in %s on line %d
+008-
+009- Warning: DOMDocument::loadXML(): No declaration for element NYPHP in Entity, line: %d in %s on line %d
+010-
+011- Warning: DOMDocument::loadXML(): Element body content does not follow the DTD, expecting (p | h1 | h2 | h3 | h4 | h5 | h6 | div | ul | ol | dl | pre | hr | blockquote | address | fieldset | table | form | noscript | ins | del | script)*, got (div div div div div NYPHP) in Entity, line: %d in %s on line %d
+012- Error Report Above
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysql/tests/001.phpt
+================================================================================
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 11
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 11
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 13
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 16
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 16
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 18
+string(2) "00"
+done!
+================================================================================
+001+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 11
+002+
+001- %unicode|string%(2) "11"
+002- done!
+003+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 11
+004+
+005+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 13
+006+
+007+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 16
+008+
+009+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 16
+010+
+011+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/001.php on line 18
+012+ string(2) "00"
+013+ done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.phpt
+================================================================================
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 12
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 12
+[002] Cannot connect to the server using host=localhost/localhost:3306, user=root, passwd=***, dbname=test, port=3306, socket=
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 16
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 18
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 18
+[003] Cannot connect to the server using host=localhost/localhost:3306, user=root, passwd=***, dbname=test, port=3306, socket=
+
+Warning: mysql_close(): no MySQL-Link resource supplied in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 22
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 24
+
+Warning: mysql_connect(): Access denied for user 'rootunknown_really'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 24
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 45
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 45
+[007] Usage of mysql.default_port failed
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 53
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 53
+[008] Usage of mysql.default_password failed
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 59
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 59
+[009] Usage of mysql.default_user failed
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 66
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 66
+[010] Usage of mysql.default_host failed
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 72
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 72
+[011] Usage of mysql.default_host failed
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 82
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 82
+[012] Usage of env MYSQL_TCP_PORT failed
+done!
+================================================================================
+001+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 12
+002+
+001- Warning: mysql_connect(): Access denied for user '%s'@'%s' (using password: YES) in %s on line %d
+002- done!
+003+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 12
+004+ [002] Cannot connect to the server using host=localhost/localhost:3306, user=root, passwd=***, dbname=test, port=3306, socket=
+005+
+006+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 16
+007+
+008+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 18
+009+
+010+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 18
+011+ [003] Cannot connect to the server using host=localhost/localhost:3306, user=root, passwd=***, dbname=test, port=3306, socket=
+012+
+013+ Warning: mysql_close(): no MySQL-Link resource supplied in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 22
+014+
+015+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 24
+016+
+017+ Warning: mysql_connect(): Access denied for user 'rootunknown_really'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 24
+018+
+019+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 45
+020+
+021+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 45
+022+ [007] Usage of mysql.default_port failed
+023+
+024+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 53
+025+
+026+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 53
+027+ [008] Usage of mysql.default_password failed
+028+
+029+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 59
+030+
+031+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 59
+032+ [009] Usage of mysql.default_user failed
+033+
+034+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 66
+035+
+036+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 66
+037+ [010] Usage of mysql.default_host failed
+038+
+039+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 72
+040+
+041+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 72
+042+ [011] Usage of mysql.default_host failed
+043+
+044+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 82
+045+
+046+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_connect.php on line 82
+047+ [012] Usage of env MYSQL_TCP_PORT failed
+048+ done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.phpt
+================================================================================
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+[010] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+[020] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+[030] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 33
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+[050] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+[060] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+array(3) {
+  [0]=>
+  bool(false)
+  [1]=>
+  bool(false)
+  [2]=>
+  bool(false)
+}
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 42
+
+Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 43
+done!
+================================================================================
+001+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+002+
+003+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+004+ [010] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+005+
+006+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+007+
+008+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+009+ [020] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+010+
+011+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+012+
+013+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+014+ [030] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+015+
+016+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 33
+017+
+018+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+019+
+020+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+021+ [050] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+022+
+023+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+001- Warning: mysql_connect(): Too many open links (2) in %s on line %s
+002- [030] Cannot connect using host '%s', user '%s', password '****', [0] 0
+004- Warning: mysql_connect(): Too many open links (2) in %s on line %s
+005- [060] Cannot connect using host '%s', user '%s', password '****', [0] 0
+008-   resource(%d) of type (mysql link)
+010-   resource(%d) of type (mysql link)
+025+ Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 10
+026+ [060] Cannot connect using host 'localhost:3306', user 'root', password '****', [0] 1045
+029+   bool(false)
+031+   bool(false)
+035+
+036+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 42
+037+
+038+ Warning: mysql_close() expects parameter 1 to be resource, boolean given in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_max_links.php on line 43
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.phpt
+================================================================================
+Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 8
+
+Notice: mysql_connect(): SQL safe mode in effect - ignoring host/user/password information in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 8
+
+Warning: mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 8
+
+Warning: mysql_pconnect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 13
+
+Notice: mysql_pconnect(): SQL safe mode in effect - ignoring host/user/password information in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 13
+
+Warning: mysql_pconnect(): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 13
+done!
+================================================================================
+001+ Warning: mysql_connect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 8
+002+
+007+ Warning: mysql_pconnect(): Headers and client library minor version mismatch. Headers:50150 Library:50513 in /usr/src/php/php5.3-201106111430/ext/mysql/tests/mysql_sql_safe_mode.php on line 13
+008+
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.phpt
+================================================================================
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 47
+[008] Cannot connect to the server using host=localhost, user=root, passwd=***, dbname=test, port=3306, socket=
+
+Warning: mysqli_close() expects parameter 1 to be mysqli, boolean given in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 51
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'rootunknown_really'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 53
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 62
+[011] Usage of mysqli.default_socket failed
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 73
+[013] Usage of mysqli.default_port failed
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 84
+[015] Usage of mysqli.default_pw failed
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 95
+[017] Usage of mysqli.default_user failed
+
+Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 106
+[019] Usage of mysqli.default_host failed
+done!
+================================================================================
+001+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 47
+002+ [008] Cannot connect to the server using host=localhost, user=root, passwd=***, dbname=test, port=3306, socket=
+003+
+004+ Warning: mysqli_close() expects parameter 1 to be mysqli, boolean given in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 51
+005+
+006+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'rootunknown_really'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 53
+007+
+008+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 62
+009+ [011] Usage of mysqli.default_socket failed
+010+
+011+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 73
+012+ [013] Usage of mysqli.default_port failed
+013+
+014+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 84
+015+ [015] Usage of mysqli.default_pw failed
+016+
+017+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 95
+018+ [017] Usage of mysqli.default_user failed
+019+
+020+ Warning: mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect.php on line 106
+021+ [019] Usage of mysqli.default_host failed
+001- Warning: mysqli_connect(): (%d/%d): Access denied for user '%s'@'%s' (using password: YES) in %s on line %d
+002- array(1) {
+003-   [%u|b%"testing"]=>
+004-   %unicode|string%(21) "mysqli.default_socket"
+005- }
+006- array(1) {
+007-   [%u|b%"testing"]=>
+008-   %unicode|string%(19) "mysqli.default_port"
+009- }
+010- array(1) {
+011-   [%u|b%"testing"]=>
+012-   %unicode|string%(17) "mysqli.default_pw"
+013- }
+014- array(2) {
+015-   [0]=>
+016-   %unicode|string%(19) "mysqli.default_user"
+017-   [%u|b%"testing"]=>
+018-   %unicode|string%(19) "mysqli.default_user"
+019- }
+020- array(1) {
+021-   [0]=>
+022-   %unicode|string%(19) "mysqli.default_host"
+023- }
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.phpt
+================================================================================
+Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'rootunknown_really'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 9
+
+Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 18
+[005] Usage of mysqli.default_socket failed
+
+Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 25
+[006] Usage of mysqli.default_port failed
+
+Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 32
+[007] Usage of mysqli.default_pw failed
+
+Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 39
+[008] Usage of mysqli.default_user failed
+[012] Failed to create mysqli object
+... and now Exceptions
+Access denied for user 'rootunknown_really'@'localhost' (using password: NO)
+Access denied for user 'root'@'localhost' (using password: NO)
+[017] Usage of mysqli.default_socket failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[018] Usage of mysqli.default_port failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[019] Usage of mysqli.default_pw failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[020] Usage of mysqli.default_user failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[021] Usage of mysqli.default_host failed
+done!
+================================================================================
+002+
+003+ Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 18
+004+ [005] Usage of mysqli.default_socket failed
+002- ... and now Exceptions
+003- Access denied for user '%s'@'%s' (using password: %s)
+004- done!
+005+
+006+ Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 25
+007+ [006] Usage of mysqli.default_port failed
+008+
+009+ Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 32
+010+ [007] Usage of mysqli.default_pw failed
+011+
+012+ Warning: mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo.php on line 39
+013+ [008] Usage of mysqli.default_user failed
+014+ [012] Failed to create mysqli object
+015+ ... and now Exceptions
+016+ Access denied for user 'rootunknown_really'@'localhost' (using password: NO)
+017+ Access denied for user 'root'@'localhost' (using password: NO)
+018+ [017] Usage of mysqli.default_socket failed
+019+ Access denied for user 'root'@'localhost' (using password: NO)
+020+ [018] Usage of mysqli.default_port failed
+021+ Access denied for user 'root'@'localhost' (using password: NO)
+022+ [019] Usage of mysqli.default_pw failed
+023+ Access denied for user 'root'@'localhost' (using password: NO)
+024+ [020] Usage of mysqli.default_user failed
+025+ Access denied for user 'root'@'localhost' (using password: NO)
+026+ [021] Usage of mysqli.default_host failed
+027+ done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/mysqli/tests/mysqli_connect_oo_defaults.phpt
+================================================================================
+Access denied for user 'root'@'localhost' (using password: NO)
+[004] Usage of mysqli.default_port failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[006] Usage of mysqli.default_pw failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[008] Usage of mysqli.default_user failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[012] Usage of mysqli.default_host failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[014] Usage of mysqli_connect() has failed
+Access denied for user 'root'@'localhost' (using password: NO)
+[016] Usage of mysqli_connect() has failed
+done!
+================================================================================
+001+ Access denied for user 'root'@'localhost' (using password: NO)
+002+ [004] Usage of mysqli.default_port failed
+003+ Access denied for user 'root'@'localhost' (using password: NO)
+004+ [006] Usage of mysqli.default_pw failed
+005+ Access denied for user 'root'@'localhost' (using password: NO)
+006+ [008] Usage of mysqli.default_user failed
+007+ Access denied for user 'root'@'localhost' (using password: NO)
+008+ [012] Usage of mysqli.default_host failed
+009+ Access denied for user 'root'@'localhost' (using password: NO)
+010+ [014] Usage of mysqli_connect() has failed
+011+ Access denied for user 'root'@'localhost' (using password: NO)
+012+ [016] Usage of mysqli_connect() has failed
+013+ done!
+001- array(1) {
+002-   [%u|b%"testing"]=>
+003-   %unicode|string%(19) "mysqli.default_port"
+004- }
+005- array(1) {
+006-   [%u|b%"testing"]=>
+007-   %unicode|string%(17) "mysqli.default_pw"
+008- }
+009- array(1) {
+010-   [%u|b%"testing"]=>
+011-   %unicode|string%(19) "mysqli.default_user"
+012- }
+013- array(1) {
+014-   [%u|b%"all_defaults"]=>
+015-   %unicode|string%(13) "have been set"
+016- }
+017- array(1) {
+018-   [%u|b%"all_defaults"]=>
+019-   %unicode|string%(13) "have been set"
+020- }
+021- done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/pcre/tests/006.phpt
+================================================================================
+string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+Done
+================================================================================
+002+ string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+003+ string(58) "[CODE]&lt;td align=&quot;$stylevar[right]&quot;&gt;[/CODE]"
+002- NULL
+004- NULL
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options.phpt
+================================================================================
+[001] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO), [n/a] n/a
+done!
+================================================================================
+001+ [001] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO), [n/a] n/a
+002+ done!
+001- [003] [TODO][CHANGEREQUEST] Please, lets not ignore invalid options and bail out!
+002- [003a] Expecting default value for 'PDO::ATTR_EMULATE_PREPARES' of '1'/integer, getAttribute() reports setting ''/boolean
+003- [003a] Expecting default value for 'PDO::MYSQL_ATTR_INIT_COMMAND' of ''/string, getAttribute() reports setting ''/boolean
+004-
+005- Warning: PDO::getAttribute(): SQLSTATE[IM001]: Driver does not support this function: driver does not support that attribute in %s on line %d
+006- [010] [TODO][CHANGEREQUEST] ATTR_EMULATE_PREPARES should be on
+007-
+008- Warning: PDO::getAttribute(): SQLSTATE[IM001]: Driver does not support this function: driver does not support that attribute in %s on line %d
+009-
+010- Warning: PDO::getAttribute(): SQLSTATE[IM001]: Driver does not support this function: driver does not support that attribute in %s on line %d
+011- [015] PDO::ATTR_EMULATE_PREPARES should be on
+012- [016] PDO::MYSQL_ATTR_DIRECT_QUERY should be on
+013-
+014- Warning: PDO::getAttribute(): SQLSTATE[IM001]: Driver does not support this function: driver does not support that attribute in %s on line %d
+015- [018] PDO::MYSQL_ATTR_DIRECT_QUERY should be off
+016- [021] Execting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_LOCAL_INFILE'
+017- [023] Execting 'SET @a=1'/string got ''/boolean' for options 'PDO::MYSQL_ATTR_INIT_COMMAND'
+018- [024] SQLSTATE[42000] [1065] Query was empty
+019- [025] SQLSTATE[42S02] [1146] Table '%s.nonexistent' doesn't exist
+020- done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.phpt
+================================================================================
+Notice: Undefined variable: db in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.php on line 63
+
+Notice: Undefined variable: db in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.php on line 64
+[001] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO), [n/a] n/a
+done!
+================================================================================
+001+ Notice: Undefined variable: db in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.php on line 63
+002+
+003+ Notice: Undefined variable: db in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.php on line 64
+004+ [001] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO), [n/a] n/a
+001- [001] Expecting default value for 'PDO::MYSQL_ATTR_INIT_COMMAND' of ''/string, getAttribute() reports setting ''/boolean
+002- [026] Execting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_READ_DEFAULT_FILE'
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql_class_constants.phpt
+================================================================================
+[001] Dumping list of unexpected constants
+array(5) {
+  ["MYSQL_ATTR_SSL_KEY"]=>
+  int(1010)
+  ["MYSQL_ATTR_SSL_CERT"]=>
+  int(1011)
+  ["MYSQL_ATTR_SSL_CA"]=>
+  int(1012)
+  ["MYSQL_ATTR_SSL_CAPATH"]=>
+  int(1013)
+  ["MYSQL_ATTR_SSL_CIPHER"]=>
+  int(1014)
+}
+done!
+================================================================================
+001+ [001] Dumping list of unexpected constants
+001- done!
+002+ array(5) {
+003+   ["MYSQL_ATTR_SSL_KEY"]=>
+004+   int(1010)
+005+   ["MYSQL_ATTR_SSL_CERT"]=>
+006+   int(1011)
+007+   ["MYSQL_ATTR_SSL_CA"]=>
+008+   int(1012)
+009+   ["MYSQL_ATTR_SSL_CAPATH"]=>
+010+   int(1013)
+011+   ["MYSQL_ATTR_SSL_CIPHER"]=>
+012+   int(1014)
+013+ }
+014+ done!
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql_interface.phpt
+================================================================================
+Fatal error: Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc:24
+Stack trace:
+#0 /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc(24): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql_interface.php(3): MySQLPDOTest::factory()
+#2 {main}
+  thrown in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc on line 24
+================================================================================
+001+ Fatal error: Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc:24
+001- done!
+002+ Stack trace:
+003+ #0 /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc(24): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+004+ #1 /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql_interface.php(3): MySQLPDOTest::factory()
+005+ #2 {main}
+006+   thrown in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/mysql_pdo_test.inc on line 24
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.phpt
+================================================================================
+Fatal error: Uncaught exception 'BadMethodCallException' with message 'unable to write contents of file "1.php" to new phar "/usr/src/php/php5.3-201106111430/ext/phar/tests/compressed.phar"' in /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php:9
+Stack trace:
+#0 /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php(9): Phar->decompressFiles()
+#1 {main}
+  thrown in /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php on line 9
+================================================================================
+001+ Fatal error: Uncaught exception 'BadMethodCallException' with message 'unable to write contents of file "1.php" to new phar "/usr/src/php/php5.3-201106111430/ext/phar/tests/compressed.phar"' in /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php:9
+001- ok
+002+ Stack trace:
+003+ #0 /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php(9): Phar->decompressFiles()
+004+ #1 {main}
+005+   thrown in /usr/src/php/php5.3-201106111430/ext/phar/tests/bug52013.php on line 9
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/phar/tests/phar_oo_005.phpt
+================================================================================
+string(14) "phar://*/a.php"
+string(14) "phar://*/a.php"
+string(0) ""
+string(5) "a.php"
+string(21) "phar_oo_test.phar.php"
+string(16) "phar://*/b/c.php"
+string(16) "phar://*/b/c.php"
+string(1) "b"
+string(7) "b/c.php"
+string(1) "b"
+string(16) "phar://*/b/d.php"
+string(16) "phar://*/b/d.php"
+string(1) "b"
+string(7) "b/d.php"
+string(1) "b"
+string(14) "phar://*/b.php"
+string(14) "phar://*/b.php"
+string(0) ""
+string(5) "b.php"
+string(21) "phar_oo_test.phar.php"
+string(14) "phar://*/e.php"
+string(14) "phar://*/e.php"
+string(0) ""
+string(5) "e.php"
+string(21) "phar_oo_test.phar.php"
+===DONE===
+================================================================================
+005+ string(21) "phar_oo_test.phar.php"
+005- string(5) "a.php"
+010+ string(1) "b"
+010- string(5) "c.php"
+015+ string(1) "b"
+015- string(5) "d.php"
+020+ string(21) "phar_oo_test.phar.php"
+020- string(5) "b.php"
+025+ string(21) "phar_oo_test.phar.php"
+025- string(5) "e.php"
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.phpt
+================================================================================
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 45
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 49
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 51
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 53
+================================================================================
+001+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 45
+002+
+003+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 49
+004+
+005+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 51
+006+
+007+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/bug32330.php on line 53
+001- open: path = /tmp, name = sid
+002- read: id = %s
+003- gc: maxlifetime = %d
+004- write: id = %s, data = A|s:1:"B";
+005- close
+006- open: path = /tmp, name = sid
+007- read: id = %s
+008- gc: maxlifetime = %d
+009- destroy: id = %s
+010- close
+011- open: path = /tmp, name = sid
+012- read: id = %s
+013- gc: maxlifetime = %d
+014- write: id = %s, data = E|s:1:"F";
+015- close
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_module_name_variation3.phpt
+================================================================================
+*** Testing session_module_name() : variation ***
+string(0) ""
+string(5) "files"
+bool(true)
+string(5) "files"
+bool(true)
+================================================================================
+002+ string(0) ""
+003- string(4) "user"
+004-
+005- Fatal error: Uncaught exception 'Exception' with message 'Stop...!' in %s:%d
+004+ bool(true)
+005+ string(5) "files"
+006+ bool(true)
+006- Stack trace:
+007- #0 [internal function]: open('', 'PHPSESSID')
+008- #1 %s(%d): session_start()
+009- #2 {main}
+010-   thrown in %s on line %d
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_name_basic.phpt
+================================================================================
+*** Testing session_name() : error functionality ***
+string(9) "PHPSESSID"
+string(9) "PHPSESSID"
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_basic.php on line 15
+bool(false)
+string(4) "blah"
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_basic.php on line 17
+bool(false)
+string(4) "blah"
+Done
+================================================================================
+004+
+005+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_basic.php on line 15
+006+ bool(false)
+004- bool(true)
+006- bool(true)
+008+
+009+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_basic.php on line 17
+010+ bool(false)
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.phpt
+================================================================================
+*** Testing session_name() : variation ***
+string(9) "PHPSESSID"
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 14
+bool(false)
+string(0) ""
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 16
+bool(false)
+string(0) ""
+string(0) ""
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 20
+bool(false)
+string(1) "     "
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 22
+bool(false)
+string(1) "     "
+string(1) "     "
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 26
+bool(false)
+string(0) ""
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 28
+bool(false)
+string(0) ""
+Done
+================================================================================
+003+
+004+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 14
+005+ bool(false)
+003- bool(true)
+005- bool(true)
+007+
+008+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 16
+009+ bool(false)
+008- bool(true)
+010- bool(true)
+012+
+013+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 20
+014+ bool(false)
+013- bool(true)
+015- bool(true)
+016+
+017+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 22
+018+ bool(false)
+021+
+022+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 26
+023+ bool(false)
+025+
+026+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_name_variation1.php on line 28
+027+ bool(false)
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.phpt
+================================================================================
+*** Testing session_save_path() : error functionality ***
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.php on line 78
+
+-- Iteration 1 --
+string(0) ""
+
+-- Iteration 2 --
+string(1) "0"
+
+-- Iteration 3 --
+string(1) "1"
+
+-- Iteration 4 --
+string(5) "12345"
+
+-- Iteration 5 --
+string(5) "-2345"
+
+-- Iteration 6 --
+string(4) "10.5"
+
+-- Iteration 7 --
+string(5) "-10.5"
+
+-- Iteration 8 --
+string(12) "123456789000"
+
+-- Iteration 9 --
+string(13) "1.23456789E-9"
+
+-- Iteration 10 --
+string(3) "0.5"
+
+-- Iteration 11 --
+string(0) ""
+
+-- Iteration 12 --
+string(0) ""
+
+-- Iteration 13 --
+string(1) "1"
+
+-- Iteration 14 --
+string(0) ""
+
+-- Iteration 15 --
+string(1) "1"
+
+-- Iteration 16 --
+string(0) ""
+
+-- Iteration 17 --
+string(0) ""
+
+-- Iteration 18 --
+string(0) ""
+
+-- Iteration 19 --
+string(7) "Nothing"
+
+-- Iteration 20 --
+string(7) "Nothing"
+
+-- Iteration 21 --
+string(12) "Hello World!"
+
+-- Iteration 22 --
+string(12) "Hello World!"
+
+-- Iteration 23 --
+string(0) ""
+
+-- Iteration 24 --
+
+Warning: session_save_path() expects parameter 1 to be string, resource given in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.php on line 83
+NULL
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.php on line 87
+Done
+================================================================================
+003+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.php on line 78
+004+
+078+
+079+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_error.php on line 87
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_variation1.phpt
+================================================================================
+*** Testing session_save_path() : variation ***
+string(0) ""
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_variation1.php on line 15
+bool(false)
+string(0) ""
+string(0) ""
+string(50) "/usr/src/php/php5.3-201106111430/ext/session/tests"
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_variation1.php on line 19
+bool(false)
+string(50) "/usr/src/php/php5.3-201106111430/ext/session/tests"
+Done
+================================================================================
+003+
+004+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_variation1.php on line 15
+005+ bool(false)
+003- bool(true)
+007- bool(true)
+009+
+010+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_save_path_variation1.php on line 19
+011+ bool(false)
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.phpt
+================================================================================
+*** Testing session_set_save_handler() : basic functionality ***
+
+string(0) ""
+
+Warning: session_module_name(): Cannot find named PHP session module () in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 15
+bool(false)
+
+Warning: session_module_name(): Cannot find named PHP session module (blah) in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 16
+bool(false)
+
+Warning: session_module_name(): Cannot find named PHP session module (foo) in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 17
+bool(false)
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 23
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+Starting session again..!
+
+Notice: Undefined variable: session_id in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 34
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 36
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+================================================================================
+003+ string(0) ""
+003- string(%d) "%s"
+013+
+014+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 23
+015+ array(3) {
+016+   ["Blah"]=>
+017+   string(12) "Hello World!"
+018+   ["Foo"]=>
+019+   bool(false)
+020+   ["Guff"]=>
+021+   int(1234567890)
+022+ }
+013- Open [%s,PHPSESSID]
+014- Read [%s,%s]
+023- Write [%s,%s,Blah|s:12:"Hello World!";Foo|b:0;Guff|i:1234567890;]
+024- Close [%s,PHPSESSID]
+031+ Starting session again..!
+032+
+033+ Notice: Undefined variable: session_id in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 34
+034+
+035+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_basic.php on line 36
+033- Starting session again..!
+034- Open [%s,PHPSESSID]
+035- Read [%s,%s]
+036- array(3) {
+037-   ["Blah"]=>
+038-   string(12) "Hello World!"
+039-   ["Foo"]=>
+040-   bool(false)
+041-   ["Guff"]=>
+042-   int(1234567890)
+043- }
+044- Write [%s,%s,Blah|s:12:"Hello World!";Foo|b:0;Guff|i:1234567890;]
+045- Close [%s,PHPSESSID]
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.phpt
+================================================================================
+*** Testing session_set_save_handler() : using closures as callbacks ***
+
+string(0) ""
+
+Warning: session_module_name(): Cannot find named PHP session module () in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 15
+bool(false)
+
+Warning: session_module_name(): Cannot find named PHP session module (blah) in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 16
+bool(false)
+
+Warning: session_module_name(): Cannot find named PHP session module (foo) in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 17
+bool(false)
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 23
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+Starting session again..!
+
+Notice: Undefined variable: session_id in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 34
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 36
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+================================================================================
+003+ string(0) ""
+003- string(%d) "%s"
+013+
+014+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 23
+015+ array(3) {
+016+   ["Blah"]=>
+017+   string(12) "Hello World!"
+018+   ["Foo"]=>
+019+   bool(false)
+020+   ["Guff"]=>
+021+   int(1234567890)
+022+ }
+013- Open [%s,PHPSESSID]
+014- Read [%s,%s]
+023- Write [%s,%s,Blah|s:12:"Hello World!";Foo|b:0;Guff|i:1234567890;]
+024- Close [%s,PHPSESSID]
+031+ Starting session again..!
+032+
+033+ Notice: Undefined variable: session_id in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 34
+034+
+035+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_closures.php on line 36
+033- Starting session again..!
+034- Open [%s,PHPSESSID]
+035- Read [%s,%s]
+036- array(3) {
+037-   ["Blah"]=>
+038-   string(12) "Hello World!"
+039-   ["Foo"]=>
+040-   bool(false)
+041-   ["Guff"]=>
+042-   int(1234567890)
+043- }
+044- Write [%s,%s,Blah|s:12:"Hello World!";Foo|b:0;Guff|i:1234567890;]
+045- Close [%s,PHPSESSID]
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_error3.phpt
+================================================================================
+*** Testing session_set_save_handler() : error functionality ***
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_error3.php on line 23
+================================================================================
+003+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_error3.php on line 23
+003- Fatal error: Uncaught exception 'Exception' with message 'Do something bad..!' in %s:%d
+004- Stack trace:
+005- #0 [internal function]: open('', 'PHPSESSID')
+006- #1 %s(%d): session_start()
+007- #2 {main}
+008-   thrown in %s on line %d
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.phpt
+================================================================================
+*** Testing session_set_save_handler() : variation ***
+
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 23
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+NULL
+
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 33
+array(3) {
+  ["Blah"]=>
+  string(12) "Hello World!"
+  ["Foo"]=>
+  bool(false)
+  ["Guff"]=>
+  int(1234567890)
+}
+
+Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 35
+bool(false)
+================================================================================
+003+
+004+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 23
+003- Open [%s,PHPSESSID]
+004- Read [%s,%s]
+005- GC [0]
+014+
+015+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 33
+014- Write [%s,%s,Blah|s:12:"Hello World!";Foo|b:0;Guff|i:1234567890;]
+015- Close [%s,PHPSESSID]
+017- Open [%s,PHPSESSID]
+018- Read [%s,%s]
+019- GC [0]
+025+ Warning: session_destroy(): Trying to destroy uninitialized session in /usr/src/php/php5.3-201106111430/ext/session/tests/session_set_save_handler_variation4.php on line 35
+026+ bool(false)
+028- Destroy [%s,%s]
+030- Warning: unlink(%s): No such file or directory in %s on line %d
+031- Close [%s,PHPSESSID]
+032- bool(true)
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/simplexml/tests/bug48601.phpt
+================================================================================
+An error occured
+================================================================================
+001+ An error occured
+001- Result Count: 0
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/sqlite3/tests/sqlite3_15_open_error.phpt
+================================================================================
+Done
+================================================================================
+001- exception 'Exception' with message 'Unable to open database: %s' in %ssqlite3_15_open_error.php:%d
+002- Stack trace:
+003- #0 %ssqlite3_15_open_error.php(%d): SQLite3->__construct('%s')
+004- #1 {main}
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/standard/tests/file/chroot_001.phpt
+================================================================================
+Warning: mkdir(): File exists in /usr/src/php/php5.3-201106111430/ext/standard/tests/file/chroot_001.php on line 2
+bool(true)
+bool(true)
+bool(false)
+string(1) "/"
+================================================================================
+001+ Warning: mkdir(): File exists in /usr/src/php/php5.3-201106111430/ext/standard/tests/file/chroot_001.php on line 2
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/standard/tests/general_functions/bug44394_2.phpt
+================================================================================
+Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/standard/tests/general_functions/bug44394_2.php on line 5
+<a href='a?q=1&a=b'>asd</a>
+================================================================================
+001+ Warning: session_start(): Cannot find save handler 'memcache' - session startup failed in /usr/src/php/php5.3-201106111430/ext/standard/tests/general_functions/bug44394_2.php on line 5
+001- <a href='a?q=1&PHPSESSID=%s&a=b'>asd</a>
+002+ <a href='a?q=1&a=b'>asd</a>
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/standard/tests/streams/bug49936.phpt
+================================================================================
+Warning: opendir(ftp://...@localhost/): failed to open dir: operation failed in /usr/src/php/php5.3-201106111430/ext/standard/tests/streams/bug49936.php on line 5
+bool(false)
+
+Warning: opendir(ftp://...@localhost/): failed to open dir: operation failed in /usr/src/php/php5.3-201106111430/ext/standard/tests/streams/bug49936.php on line 6
+bool(false)
+================================================================================
+001+ Warning: opendir(ftp://...@localhost/): failed to open dir: operation failed in /usr/src/php/php5.3-201106111430/ext/standard/tests/streams/bug49936.php on line 5
+002+ bool(false)
+001- Warning: opendir(): connect() failed: Connection refused in %s on line %d
+005-
+006- Warning: opendir(): connect() failed: Connection refused in %s on line %d
+007-
+008- Warning: opendir(ftp://...@localhost/): failed to open dir: operation failed in %s on line %d
+009- bool(false)
+================================================================================
+
+
+
+================================================================================
+/usr/src/php/php5.3-201106111430/ext/xml/tests/bug32001.phpt
+================================================================================
+libxml2 Version => 2.7.6
+Encoding: UTF-8
+XML Prologue: present
+Chunk size: all data at once
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: not present
+Chunk size: all data at once
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: not present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16BE
+XML Prologue: present
+Chunk size: all data at once
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16BE
+XML Prologue: present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16BE
+XML Prologue: not present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16LE
+XML Prologue: present
+Chunk size: all data at once
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16LE
+XML Prologue: present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16LE
+XML Prologue: not present
+Chunk size: all data at once
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: not present
+Chunk size: 1 byte(s)
+BOM: not prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-8
+XML Prologue: not present
+Chunk size: 1 byte(s)
+BOM: prepended
+array(3) {
+  [0]=>
+  string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+  [1]=>
+  string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+  [2]=>
+  string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+}
+Encoding: UTF-16BE
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: not prepended
+[Error] Processing Instruction not started
+Encoding: UTF-16BE
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: prepended
+[Error] XML_ERR_NAME_REQUIRED
+Encoding: UTF-16BE
+XML Prologue: not present
+Chunk size: 1 byte(s)
+BOM: prepended
+[Error] XML_ERR_NAME_REQUIRED
+Encoding: UTF-16LE
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: not prepended
+[Error] Processing Instruction not finished
+Encoding: UTF-16LE
+XML Prologue: present
+Chunk size: 1 byte(s)
+BOM: prepended
+[Error] Processing Instruction not finished
+Encoding: UTF-16LE
+XML Prologue: not present
+Chunk size: 1 byte(s)
+BOM: prepended
+[Error] > required
+================================================================================
+174+ [Error] Processing Instruction not started
+175+ Encoding: UTF-16BE
+176+ XML Prologue: present
+177+ Chunk size: 1 byte(s)
+178+ BOM: prepended
+179+ [Error] XML_ERR_NAME_REQUIRED
+180+ Encoding: UTF-16BE
+181+ XML Prologue: not present
+182+ Chunk size: 1 byte(s)
+183+ BOM: prepended
+184+ [Error] XML_ERR_NAME_REQUIRED
+185+ Encoding: UTF-16LE
+186+ XML Prologue: present
+187+ Chunk size: 1 byte(s)
+188+ BOM: not prepended
+189+ [Error] Processing Instruction not finished
+190+ Encoding: UTF-16LE
+174- array(3) {
+175-   [0]=>
+176-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+177-   [1]=>
+178-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+179-   [2]=>
+180-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+181- }
+182- Encoding: UTF-16BE
+186- array(3) {
+187-   [0]=>
+188-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+189-   [1]=>
+190-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+191-   [2]=>
+194+ [Error] Processing Instruction not finished
+195+ Encoding: UTF-16LE
+196+ XML Prologue: not present
+197+ Chunk size: 1 byte(s)
+198+ BOM: prepended
+199+ [Error] > required
+192-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+193- }
+194- Encoding: UTF-16BE
+195- XML Prologue: not present
+196- Chunk size: 1 byte(s)
+197- BOM: prepended
+198- array(3) {
+199-   [0]=>
+200-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+201-   [1]=>
+202-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+203-   [2]=>
+204-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+205- }
+206- Encoding: UTF-16LE
+207- XML Prologue: present
+208- Chunk size: 1 byte(s)
+209- BOM: not prepended
+210- array(3) {
+211-   [0]=>
+212-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+213-   [1]=>
+214-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+215-   [2]=>
+216-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+217- }
+218- Encoding: UTF-16LE
+219- XML Prologue: present
+220- Chunk size: 1 byte(s)
+221- BOM: prepended
+222- array(3) {
+223-   [0]=>
+224-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+225-   [1]=>
+226-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+227-   [2]=>
+228-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+229- }
+230- Encoding: UTF-16LE
+231- XML Prologue: not present
+232- Chunk size: 1 byte(s)
+233- BOM: prepended
+234- array(3) {
+235-   [0]=>
+236-   string(128) "e38386e382b9e383883ae38386e382b9e3838831: 687474703a2f2f7777772e6578616d706c652e636f6d2fe38386e382b9e383882f, e38386e382b9e38388"
+237-   [1]=>
+238-   string(60) "e38386e382b9e383883ae38386e382b9e3838832: e38386e382b9e38388"
+239-   [2]=>
+240-   string(42) "e38386e382b9e383883ae38386e382b9e3838833: "
+241- }
+================================================================================
+
+
+
+
+================================================================================
+BUILD ENVIRONMENT
+================================================================================
+OS:
+Linux - Linux ajeux.net 2.6.30.10-105.2.23.fc11.x86_64 #1 SMP Thu Feb 11 07:06:34 UTC 2010 x86_64
+
+Autoconf:
+autoconf (GNU Autoconf) 2.63
+Copyright (C) 2008 Free Software Foundation, Inc.
+License GPLv2+: GNU GPL version 2 or later
+<http://gnu.org/licenses/old-licenses/gpl-2.0.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David J. MacKenzie and Akim Demaille.
+
+Bundled Libtool:
+ltmain.sh (GNU libtool) 1.5.26 (1.1220.2.492 2008/01/30 06:40:56)
+
+Copyright (C) 2008  Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+System Libtool:
+ltmain.sh (GNU libtool) 2.2.6b
+Written by Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
+
+Copyright (C) 2008 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiler:
+Utilisation des specs internes.
+Target: x86_64-redhat-linux
+Configuré avec: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --enable-plugin --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i586 --build=x86_64-redhat-linux
+Modèle de thread: posix
+gcc version 4.4.1 20090725 (Red Hat 4.4.1-2) (GCC)
+
+Bison:
+bison (GNU Bison) 2.4.1
+Écrit par Robert Corbett et Richard Stallman.
+
+Copyright © 2008 Free Software Foundation, Inc.
+Ce logiciel est libre; voir les sources pour les conditions de
+reproduction. AUCUNE garantie n'est donnée; tant pour des raisons
+COMMERCIALES que pour RÉPONDRE À UN BESOIN PARTICULIER.
+
+Libraries:
+        linux-vdso.so.1 =>  (0x00007fff199ff000)
+        libcrypt.so.1 => /lib64/libcrypt.so.1 (0x00007fc02d410000)
+        libc-client.so.2007 => /usr/lib64/libc-client.so.2007 (0x00007fc02d0fd000)
+        libmysqlclient.so.18 => /usr/lib64/mysql/libmysqlclient.so.18 (0x00007fc02cc27000)
+        libpam.so.0 => /lib64/libpam.so.0 (0x00000034be000000)
+        libpng12.so.0 => /usr/lib64/libpng12.so.0 (0x0000003fbc000000)
+        libz.so.1 => /lib64/libz.so.1 (0x000000334d800000)
+        libjpeg.so.62 => /usr/lib64/libjpeg.so.62 (0x0000003352800000)
+        librt.so.1 => /lib64/librt.so.1 (0x000000334e000000)
+        libm.so.6 => /lib64/libm.so.6 (0x000000334d400000)
+        libdl.so.2 => /lib64/libdl.so.2 (0x000000334cc00000)
+        libnsl.so.1 => /lib64/libnsl.so.1 (0x0000003732e00000)
+        libxml2.so.2 => /usr/lib64/libxml2.so.2 (0x0000003356800000)
+        libgssapi_krb5.so.2 => /usr/lib64/libgssapi_krb5.so.2 (0x0000003fba400000)
+        libkrb5.so.3 => /usr/lib64/libkrb5.so.3 (0x0000003fba800000)
+        libk5crypto.so.3 => /usr/lib64/libk5crypto.so.3 (0x0000003fbac00000)
+        libcom_err.so.2 => /lib64/libcom_err.so.2 (0x0000003730400000)
+        libssl.so.8 => /usr/lib64/libssl.so.8 (0x0000003fbb800000)
+        libcrypto.so.8 => /usr/lib64/libcrypto.so.8 (0x0000003fba000000)
+        libnetsnmp.so.15 => /usr/lib64/libnetsnmp.so.15 (0x00007fc02c955000)
+        libsensors.so.4 => /usr/lib64/libsensors.so.4 (0x000000334d000000)
+        libc.so.6 => /lib64/libc.so.6 (0x000000334c800000)
+        libresolv.so.2 => /lib64/libresolv.so.2 (0x000000334fc00000)
+        libfreebl3.so => /lib64/libfreebl3.so (0x00007fc02c6f7000)
+        libpthread.so.0 => /lib64/libpthread.so.0 (0x00007fc02c4db000)
+        libstdc++.so.6 => /usr/lib64/libstdc++.so.6 (0x0000003350800000)
+        libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x000000334f400000)
+        libaudit.so.0 => /lib64/libaudit.so.0 (0x00000034bdc00000)
+        /lib64/ld-linux-x86-64.so.2 (0x000000334c400000)
+        libkrb5support.so.0 => /usr/lib64/libkrb5support.so.0 (0x0000003fbb000000)
+        libkeyutils.so.1 => /lib64/libkeyutils.so.1 (0x0000003351800000)
+        libselinux.so.1 => /lib64/libselinux.so.1 (0x000000334dc00000)
+
+User's E-mail: thisisatestmail@testdomain.com
+
+================================================================================
+PHPINFO
+================================================================================
+phpinfo()
+PHP Version => 5.3.7-dev
+
+System => Linux ajeux.net 2.6.30.10-105.2.23.fc11.x86_64 #1 SMP Thu Feb 11 07:06:34 UTC 2010 x86_64
+Build Date => Jun 13 2011 23:23:51
+Configure Command =>  './configure'  '--with-libdir=lib64' '--with-imap' '--with-imap-ssl' '--with-zlib' '--without-pdo-sqlite' '--with-pdo-mysql' '--with-snmp' '--with-mysql' '--with-mysqli' '--with-gd' '--with-jpeg-dir=/usr/lib64' '--enable-gcov' '--with-kerberos'
+Server API => Command Line Interface
+Virtual Directory Support => disabled
+Configuration File (php.ini) Path => /usr/local/lib
+Loaded Configuration File => /etc/php.ini
+Scan this dir for additional .ini files => (none)
+Additional .ini files parsed => (none)
+PHP API => 20090626
+PHP Extension => 20090626
+Zend Extension => 220090626
+Zend Extension Build => API220090626,NTS
+PHP Extension Build => API20090626,NTS
+Debug Build => no
+Thread Safety => disabled
+Zend Memory Manager => enabled
+Zend Multibyte Support => disabled
+IPv6 Support => enabled
+Registered PHP Streams => compress.zlib, php, file, glob, data, http, ftp, phar
+Registered Stream Socket Transports => tcp, udp, unix, udg
+Registered Stream Filters => zlib.*, convert.iconv.*, string.rot13, string.toupper, string.tolower, string.strip_tags, convert.*, consumed, dechunk
+
+
+This program makes use of the Zend Scripting Language Engine:
+Zend Engine v2.3.0, Copyright (c) 1998-2011 Zend Technologies
+
+
+ _______________________________________________________________________
+
+
+Configuration
+
+Core
+
+PHP Version => 5.3.7-dev
+
+Directive => Local Value => Master Value
+allow_call_time_pass_reference => Off => Off
+allow_url_fopen => On => On
+allow_url_include => Off => Off
+always_populate_raw_post_data => Off => Off
+arg_separator.input => & => &
+arg_separator.output => & => &
+asp_tags => Off => Off
+auto_append_file => no value => no value
+auto_globals_jit => On => On
+auto_prepend_file => no value => no value
+browscap => no value => no value
+default_charset => no value => no value
+default_mimetype => text/html => text/html
+define_syslog_variables => Off => Off
+disable_classes => no value => no value
+disable_functions => no value => no value
+display_errors => STDERR => STDERR
+display_startup_errors => Off => Off
+doc_root => no value => no value
+docref_ext => no value => no value
+docref_root => no value => no value
+enable_dl => On => On
+error_append_string => no value => no value
+error_log => no value => no value
+error_prepend_string => no value => no value
+error_reporting => 30711 => 30711
+exit_on_timeout => Off => Off
+expose_php => On => On
+extension_dir => /usr/local/lib/php/extensions/no-debug-non-zts-20090626 => /usr/local/lib/php/extensions/no-debug-non-zts-20090626
+file_uploads => On => On
+highlight.bg => <font style="color: #FFFFFF">#FFFFFF</font> => <font style="color: #FFFFFF">#FFFFFF</font>
+highlight.comment => <font style="color: #FF8000">#FF8000</font> => <font style="color: #FF8000">#FF8000</font>
+highlight.default => <font style="color: #0000BB">#0000BB</font> => <font style="color: #0000BB">#0000BB</font>
+highlight.html => <font style="color: #000000">#000000</font> => <font style="color: #000000">#000000</font>
+highlight.keyword => <font style="color: #007700">#007700</font> => <font style="color: #007700">#007700</font>
+highlight.string => <font style="color: #DD0000">#DD0000</font> => <font style="color: #DD0000">#DD0000</font>
+html_errors => Off => Off
+ignore_repeated_errors => Off => Off
+ignore_repeated_source => Off => Off
+ignore_user_abort => Off => Off
+implicit_flush => On => On
+include_path => .:/usr/local/lib/php => .:/usr/local/lib/php
+log_errors => On => On
+log_errors_max_len => 1024 => 1024
+magic_quotes_gpc => Off => Off
+magic_quotes_runtime => Off => Off
+magic_quotes_sybase => Off => Off
+mail.add_x_header => Off => Off
+mail.force_extra_parameters => no value => no value
+mail.log => no value => no value
+max_execution_time => 0 => 0
+max_file_uploads => 20 => 20
+max_input_nesting_level => 64 => 64
+max_input_time => -1 => -1
+memory_limit => 64M => 64M
+open_basedir => no value => no value
+output_buffering => 0 => 0
+output_handler => no value => no value
+post_max_size => 8M => 8M
+precision => 14 => 14
+realpath_cache_size => 16K => 16K
+realpath_cache_ttl => 120 => 120
+register_argc_argv => On => On
+register_globals => Off => Off
+register_long_arrays => Off => Off
+report_memleaks => On => On
+report_zend_debug => Off => Off
+request_order => no value => no value
+safe_mode => Off => Off
+safe_mode_exec_dir => no value => no value
+safe_mode_gid => Off => Off
+safe_mode_include_dir => no value => no value
+sendmail_from => no value => no value
+sendmail_path => /usr/sbin/sendmail -t -i => /usr/sbin/sendmail -t -i
+serialize_precision => 100 => 100
+short_open_tag => On => On
+SMTP => localhost => localhost
+smtp_port => 25 => 25
+sql.safe_mode => Off => Off
+track_errors => Off => Off
+unserialize_callback_func => no value => no value
+upload_max_filesize => 8M => 8M
+upload_tmp_dir => /tmp => /tmp
+user_dir => no value => no value
+user_ini.cache_ttl => 300 => 300
+user_ini.filename => .user.ini => .user.ini
+variables_order => EGPCS => EGPCS
+xmlrpc_error_number => 0 => 0
+xmlrpc_errors => Off => Off
+y2k_compliance => On => On
+zend.enable_gc => On => On
+
+ctype
+
+ctype functions => enabled
+
+date
+
+date/time support => enabled
+"Olson" Timezone Database Version => 2011.7
+Timezone Database => internal
+Default timezone => Europe/Berlin
+
+Directive => Local Value => Master Value
+date.default_latitude => 31.7667 => 31.7667
+date.default_longitude => 35.2333 => 35.2333
+date.sunrise_zenith => 90.583333 => 90.583333
+date.sunset_zenith => 90.583333 => 90.583333
+date.timezone => Europe/Berlin => Europe/Berlin
+
+dom
+
+DOM/XML => enabled
+DOM/XML API Version => 20031129
+libxml Version => 2.7.6
+HTML Support => enabled
+XPath Support => enabled
+XPointer Support => enabled
+Schema Support => enabled
+RelaxNG Support => enabled
+
+ereg
+
+Regex Library => Bundled library enabled
+
+fileinfo
+
+fileinfo support => enabled
+version => 1.0.5-dev
+
+filter
+
+Input Validation and Filtering => enabled
+Revision => $Revision: 310622 $
+
+Directive => Local Value => Master Value
+filter.default => unsafe_raw => unsafe_raw
+filter.default_flags => no value => no value
+
+gd
+
+GD Support => enabled
+GD Version => bundled (2.0.34 compatible)
+GIF Read Support => enabled
+GIF Create Support => enabled
+JPEG Support => enabled
+libJPEG Version => 6b
+PNG Support => enabled
+libPNG Version => 1.2.43
+WBMP Support => enabled
+XBM Support => enabled
+
+Directive => Local Value => Master Value
+gd.jpeg_ignore_warning => 0 => 0
+
+hash
+
+hash support => enabled
+Hashing Engines => md2 md4 md5 sha1 sha224 sha256 sha384 sha512 ripemd128 ripemd160 ripemd256 ripemd320 whirlpool tiger128,3 tiger160,3 tiger192,3 tiger128,4 tiger160,4 tiger192,4 snefru snefru256 gost adler32 crc32 crc32b salsa10 salsa20 haval128,3 haval160,3 haval192,3 haval224,3 haval256,3 haval128,4 haval160,4 haval192,4 haval224,4 haval256,4 haval128,5 haval160,5 haval192,5 haval224,5 haval256,5
+
+iconv
+
+iconv support => enabled
+iconv implementation => glibc
+iconv library version => 2.10.2
+
+Directive => Local Value => Master Value
+iconv.input_encoding => ISO-8859-1 => ISO-8859-1
+iconv.internal_encoding => ISO-8859-1 => ISO-8859-1
+iconv.output_encoding => ISO-8859-1 => ISO-8859-1
+
+imap
+
+IMAP c-Client Version => 2007e
+SSL Support => enabled
+Kerberos Support => enabled
+
+json
+
+json support => enabled
+json version => 1.2.1
+
+libxml
+
+libXML support => active
+libXML Compiled Version => 2.7.6
+libXML Loaded Version => 20706
+libXML streams => enabled
+
+memcache
+
+memcache support => enabled
+Active persistent connections => 0
+Version => 2.2.6
+Revision => $Revision: 303962 $
+
+Directive => Local Value => Master Value
+memcache.allow_failover => 1 => 1
+memcache.chunk_size => 8192 => 8192
+memcache.default_port => 11211 => 11211
+memcache.default_timeout_ms => 1000 => 1000
+memcache.hash_function => crc32 => crc32
+memcache.hash_strategy => standard => standard
+memcache.max_failover_attempts => 20 => 20
+
+mysql
+
+MySQL Support => enabled
+Active Persistent Links => 0
+Active Links => 0
+Client API version => 5.5.13
+MYSQL_MODULE_TYPE => external
+MYSQL_SOCKET => /var/lib/mysql/mysql.sock
+MYSQL_INCLUDE => -I/usr/include/mysql
+MYSQL_LIBS => -L/usr/lib64/mysql -lmysqlclient
+
+Directive => Local Value => Master Value
+mysql.allow_local_infile => On => On
+mysql.allow_persistent => On => On
+mysql.connect_timeout => 60 => 60
+mysql.default_host => no value => no value
+mysql.default_password => no value => no value
+mysql.default_port => no value => no value
+mysql.default_socket => /var/lib/mysql/mysql.sock => /var/lib/mysql/mysql.sock
+mysql.default_user => no value => no value
+mysql.max_links => Unlimited => Unlimited
+mysql.max_persistent => Unlimited => Unlimited
+mysql.trace_mode => Off => Off
+
+mysqli
+
+MysqlI Support => enabled
+Client API library version => 5.5.13
+Active Persistent Links => 0
+Inactive Persistent Links => 0
+Active Links => 0
+Client API header version => 5.5.13
+MYSQLI_SOCKET => /var/lib/mysql/mysql.sock
+
+Directive => Local Value => Master Value
+mysqli.allow_local_infile => On => On
+mysqli.allow_persistent => On => On
+mysqli.default_host => no value => no value
+mysqli.default_port => 3306 => 3306
+mysqli.default_pw => no value => no value
+mysqli.default_socket => /var/lib/mysql/mysql.sock => /var/lib/mysql/mysql.sock
+mysqli.default_user => no value => no value
+mysqli.max_links => Unlimited => Unlimited
+mysqli.max_persistent => Unlimited => Unlimited
+mysqli.reconnect => Off => Off
+
+pcre
+
+PCRE (Perl Compatible Regular Expressions) Support => enabled
+PCRE Library Version => 8.12 2011-01-15
+
+Directive => Local Value => Master Value
+pcre.backtrack_limit => 1000000 => 1000000
+pcre.recursion_limit => 100000 => 100000
+
+PDO
+
+PDO support => enabled
+PDO drivers => mysql, sqlite2
+
+pdo_mysql
+
+PDO Driver for MySQL => enabled
+Client API version => 5.5.13
+
+Phar
+
+Phar: PHP Archive support => enabled
+Phar EXT version => 2.0.1
+Phar API version => 1.1.1
+SVN revision => $Revision: 307915 $
+Phar-based phar archives => enabled
+Tar-based phar archives => enabled
+ZIP-based phar archives => enabled
+gzip compression => enabled
+bzip2 compression => disabled (install pecl/bz2)
+OpenSSL support => disabled (install ext/openssl)
+
+
+Phar based on pear/PHP_Archive, original concept by Davey Shafik.
+Phar fully realized by Gregory Beaver and Marcus Boerger.
+Portions of tar implementation Copyright (c) 2003-2009 Tim Kientzle.
+Directive => Local Value => Master Value
+phar.cache_list => no value => no value
+phar.readonly => On => On
+phar.require_hash => On => On
+
+posix
+
+Revision => $Revision: 306939 $
+
+Reflection
+
+Reflection => enabled
+Version => $Revision: 311990 $
+
+session
+
+Session Support => enabled
+Registered save handlers => files user sqlite memcache
+Registered serializer handlers => php php_binary
+
+Directive => Local Value => Master Value
+session.auto_start => Off => Off
+session.bug_compat_42 => Off => Off
+session.bug_compat_warn => On => On
+session.cache_expire => 180 => 180
+session.cache_limiter => nocache => nocache
+session.cookie_domain => no value => no value
+session.cookie_httponly => Off => Off
+session.cookie_lifetime => 0 => 0
+session.cookie_path => / => /
+session.cookie_secure => Off => Off
+session.entropy_file => no value => no value
+session.entropy_length => 0 => 0
+session.gc_divisor => 1000 => 1000
+session.gc_maxlifetime => 1440 => 1440
+session.gc_probability => 1 => 1
+session.hash_bits_per_character => 5 => 5
+session.hash_function => 0 => 0
+session.name => PHPSESSID => PHPSESSID
+session.referer_check => no value => no value
+session.save_handler => memcache => memcache
+session.save_path => tcp://127.0.0.1:11211?persistent=1 => tcp://127.0.0.1:11211?persistent=1
+session.serialize_handler => php => php
+session.use_cookies => On => On
+session.use_only_cookies => On => On
+session.use_trans_sid => 0 => 0
+
+SimpleXML
+
+Simplexml support => enabled
+Revision => $Revision: 311874 $
+Schema support => enabled
+
+snmp
+
+NET-SNMP Support => enabled
+NET-SNMP Version => 5.4.2.1
+
+SPL
+
+SPL support => enabled
+Interfaces => Countable, OuterIterator, RecursiveIterator, SeekableIterator, SplObserver, SplSubject
+Classes => AppendIterator, ArrayIterator, ArrayObject, BadFunctionCallException, BadMethodCallException, CachingIterator, DirectoryIterator, DomainException, EmptyIterator, FilesystemIterator, FilterIterator, GlobIterator, InfiniteIterator, InvalidArgumentException, IteratorIterator, LengthException, LimitIterator, LogicException, MultipleIterator, NoRewindIterator, OutOfBoundsException, OutOfRangeException, OverflowException, ParentIterator, RangeException, RecursiveArrayIterator, RecursiveCachingIterator, RecursiveDirectoryIterator, RecursiveFilterIterator, RecursiveIteratorIterator, RecursiveRegexIterator, RecursiveTreeIterator, RegexIterator, RuntimeException, SplDoublyLinkedList, SplFileInfo, SplFileObject, SplFixedArray, SplHeap, SplMinHeap, SplMaxHeap, SplObjectStorage, SplPriorityQueue, SplQueue, SplStack, SplTempFileObject, UnderflowException, UnexpectedValueException
+
+SQLite
+
+SQLite support => enabled
+PECL Module version => 2.0-dev $Id: sqlite.c 306939 2011-01-01 02:19:59Z felipe $
+SQLite Library => 2.8.17
+SQLite Encoding => iso8859
+
+Directive => Local Value => Master Value
+sqlite.assoc_case => 0 => 0
+
+sqlite3
+
+SQLite3 support => enabled
+SQLite3 module version => 0.7-dev
+SQLite Library => 3.7.6.2
+
+Directive => Local Value => Master Value
+sqlite3.extension_dir => no value => no value
+
+standard
+
+Dynamic Library Support => enabled
+Path to sendmail => /usr/sbin/sendmail -t -i
+
+Directive => Local Value => Master Value
+assert.active => 1 => 1
+assert.bail => 0 => 0
+assert.callback => no value => no value
+assert.quiet_eval => 0 => 0
+assert.warning => 1 => 1
+auto_detect_line_endings => 0 => 0
+default_socket_timeout => 60 => 60
+from => no value => no value
+safe_mode_allowed_env_vars => PHP_ => PHP_
+safe_mode_protected_env_vars => LD_LIBRARY_PATH => LD_LIBRARY_PATH
+url_rewriter.tags => a=href,area=href,frame=src,input=src,form=fakeentry => a=href,area=href,frame=src,input=src,form=fakeentry
+user_agent => no value => no value
+
+tokenizer
+
+Tokenizer Support => enabled
+
+xml
+
+XML Support => active
+XML Namespace Support => active
+libxml2 Version => 2.7.6
+
+xmlreader
+
+XMLReader => enabled
+
+xmlwriter
+
+XMLWriter => enabled
+
+zlib
+
+ZLib Support => enabled
+Stream Wrapper support => compress.zlib://
+Stream Filter support => zlib.inflate, zlib.deflate
+Compiled Version => 1.2.3
+Linked Version => 1.2.3
+
+Directive => Local Value => Master Value
+zlib.output_compression => Off => Off
+zlib.output_compression_level => -1 => -1
+zlib.output_handler => no value => no value
+
+Additional Modules
+
+Module Name
+
+Environment
+
+Variable => Value
+TEST_PHP_SRCDIR => /usr/src/php/php5.3-201106111430
+SHELL => /bin/bash
+TERM => screen
+MAKEFLAGS =>
+SSH_CLIENT => deleted
+QTDIR => /usr/lib64/qt-3.3
+QTINC => /usr/lib64/qt-3.3/include
+SSH_TTY => deleted
+USER => root
+LS_COLORS => rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+CCACHE_DIR => /var/cache/ccache
+SSH_AUTH_SOCK => deleted
+TERMCAP => SC|screen|VT 100/ANSI X3.64 virtual terminal:\
+        :DO=\E[%dB:LE=\E[%dD:RI=\E[%dC:UP=\E[%dA:bs:bt=\E[Z:\
+        :cd=\E[J:ce=\E[K:cl=\E[H\E[J:cm=\E[%i%d;%dH:ct=\E[3g:\
+        :do=^J:nd=\E[C:pt:rc=\E8:rs=\Ec:sc=\E7:st=\EH:up=\EM:\
+        :le=^H:bl=^G:cr=^M:it#8:ho=\E[H:nw=\EE:ta=^I:is=\E)0:\
+        :li#44:co#156:am:xn:xv:LP:sr=\EM:al=\E[L:AL=\E[%dL:\
+        :cs=\E[%i%d;%dr:dl=\E[M:DL=\E[%dM:dc=\E[P:DC=\E[%dP:\
+        :im=\E[4h:ei=\E[4l:mi:IC=\E[%d@:ks=\E[?1h\E=:\
+        :ke=\E[?1l\E>:vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l:\
+        :ti=\E[?1049h:te=\E[?1049l:us=\E[4m:ue=\E[24m:so=\E[3m:\
+        :se=\E[23m:mb=\E[5m:md=\E[1m:mr=\E[7m:me=\E[m:ms:\
+        :Co#8:pa#64:AF=\E[3%dm:AB=\E[4%dm:op=\E[39;49m:AX:\
+        :vb=\Eg:G0:as=\E(0:ae=\E(B:\
+        :ac=\140\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:\
+        :po=\E[5i:pf=\E[4i:Z0=\E[?3h:Z1=\E[?3l:k0=\E[10~:\
+        :k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS:k5=\E[15~:k6=\E[17~:\
+        :k7=\E[18~:k8=\E[19~:k9=\E[20~:k;=\E[21~:F1=\E[23~:\
+        :F2=\E[24~:F3=\E[1;2P:F4=\E[1;2Q:F5=\E[1;2R:F6=\E[1;2S:\
+        :F7=\E[15;2~:F8=\E[17;2~:F9=\E[18;2~:FA=\E[19;2~:kb:\
+        :K2=\EOE:kB=\E[Z:kF=\E[1;2B:kR=\E[1;2A:*4=\E[3;2~:\
+        :*7=\E[1;2F:#2=\E[1;2H:#3=\E[2;2~:#4=\E[1;2D:%c=\E[6;2~:\
+        :%e=\E[5;2~:%i=\E[1;2C:kh=\E[1~:@1=\E[1~:kH=\E[4~:\
+        :@7=\E[4~:kN=\E[6~:kP=\E[5~:kI=\E[2~:kD=\E[3~:ku=\EOA:\
+        :kd=\EOB:kr=\EOC:kl=\EOD:km:
+MAKELEVEL => 1
+MFLAGS =>
+PATH => /usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/lib64/ccache:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+MAIL => /var/mail/root
+STY => 25142.pts-1.ajeux
+_ => /usr/src/php/php5.3-201106111430/sapi/cli/php
+PWD => /usr/src/php/php5.3-201106111430
+EDITOR => vi
+CCACHE_UMASK => 002
+KDE_IS_PRELINKED => 1
+LANG => fr_FR
+TEST_PHP_EXECUTABLE => /usr/src/php/php5.3-201106111430/sapi/cli/php
+KDEDIRS => /usr
+HOME => /root
+SHLVL => 4
+KMIX_PULSEAUDIO_DISABLE => 1
+LOGNAME => root
+QTLIB => /usr/lib64/qt-3.3/lib
+WINDOW => 0
+CVS_RSH => ssh
+SSH_CONNECTION => deleted
+LESSOPEN => |/usr/bin/lesspipe.sh %s
+CC => gcc
+G_BROKEN_FILENAMES => 1
+
+PHP Variables
+
+Variable => Value
+_SERVER["TEST_PHP_SRCDIR"] => /usr/src/php/php5.3-201106111430
+_SERVER["SHELL"] => /bin/bash
+_SERVER["TERM"] => screen
+_SERVER["MAKEFLAGS"] =>
+_SERVER["SSH_CLIENT"] => deleted
+_SERVER["QTDIR"] => /usr/lib64/qt-3.3
+_SERVER["QTINC"] => /usr/lib64/qt-3.3/include
+_SERVER["SSH_TTY"] => deleted
+_SERVER["USER"] => root
+_SERVER["LS_COLORS"] => rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+_SERVER["CCACHE_DIR"] => /var/cache/ccache
+_SERVER["SSH_AUTH_SOCK"] => deleted
+_SERVER["TERMCAP"] => SC|screen|VT 100/ANSI X3.64 virtual terminal:\
+        :DO=\E[%dB:LE=\E[%dD:RI=\E[%dC:UP=\E[%dA:bs:bt=\E[Z:\
+        :cd=\E[J:ce=\E[K:cl=\E[H\E[J:cm=\E[%i%d;%dH:ct=\E[3g:\
+        :do=^J:nd=\E[C:pt:rc=\E8:rs=\Ec:sc=\E7:st=\EH:up=\EM:\
+        :le=^H:bl=^G:cr=^M:it#8:ho=\E[H:nw=\EE:ta=^I:is=\E)0:\
+        :li#44:co#156:am:xn:xv:LP:sr=\EM:al=\E[L:AL=\E[%dL:\
+        :cs=\E[%i%d;%dr:dl=\E[M:DL=\E[%dM:dc=\E[P:DC=\E[%dP:\
+        :im=\E[4h:ei=\E[4l:mi:IC=\E[%d@:ks=\E[?1h\E=:\
+        :ke=\E[?1l\E>:vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l:\
+        :ti=\E[?1049h:te=\E[?1049l:us=\E[4m:ue=\E[24m:so=\E[3m:\
+        :se=\E[23m:mb=\E[5m:md=\E[1m:mr=\E[7m:me=\E[m:ms:\
+        :Co#8:pa#64:AF=\E[3%dm:AB=\E[4%dm:op=\E[39;49m:AX:\
+        :vb=\Eg:G0:as=\E(0:ae=\E(B:\
+        :ac=\140\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:\
+        :po=\E[5i:pf=\E[4i:Z0=\E[?3h:Z1=\E[?3l:k0=\E[10~:\
+        :k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS:k5=\E[15~:k6=\E[17~:\
+        :k7=\E[18~:k8=\E[19~:k9=\E[20~:k;=\E[21~:F1=\E[23~:\
+        :F2=\E[24~:F3=\E[1;2P:F4=\E[1;2Q:F5=\E[1;2R:F6=\E[1;2S:\
+        :F7=\E[15;2~:F8=\E[17;2~:F9=\E[18;2~:FA=\E[19;2~:kb:\
+        :K2=\EOE:kB=\E[Z:kF=\E[1;2B:kR=\E[1;2A:*4=\E[3;2~:\
+        :*7=\E[1;2F:#2=\E[1;2H:#3=\E[2;2~:#4=\E[1;2D:%c=\E[6;2~:\
+        :%e=\E[5;2~:%i=\E[1;2C:kh=\E[1~:@1=\E[1~:kH=\E[4~:\
+        :@7=\E[4~:kN=\E[6~:kP=\E[5~:kI=\E[2~:kD=\E[3~:ku=\EOA:\
+        :kd=\EOB:kr=\EOC:kl=\EOD:km:
+_SERVER["MAKELEVEL"] => 1
+_SERVER["MFLAGS"] =>
+_SERVER["PATH"] => /usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/lib64/ccache:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+_SERVER["MAIL"] => /var/mail/root
+_SERVER["STY"] => 25142.pts-1.ajeux
+_SERVER["_"] => /usr/src/php/php5.3-201106111430/sapi/cli/php
+_SERVER["PWD"] => /usr/src/php/php5.3-201106111430
+_SERVER["EDITOR"] => vi
+_SERVER["CCACHE_UMASK"] => 002
+_SERVER["KDE_IS_PRELINKED"] => 1
+_SERVER["LANG"] => fr_FR
+_SERVER["TEST_PHP_EXECUTABLE"] => /usr/src/php/php5.3-201106111430/sapi/cli/php
+_SERVER["KDEDIRS"] => /usr
+_SERVER["HOME"] => /root
+_SERVER["SHLVL"] => 4
+_SERVER["KMIX_PULSEAUDIO_DISABLE"] => 1
+_SERVER["LOGNAME"] => root
+_SERVER["QTLIB"] => /usr/lib64/qt-3.3/lib
+_SERVER["WINDOW"] => 0
+_SERVER["CVS_RSH"] => ssh
+_SERVER["SSH_CONNECTION"] => deleted
+_SERVER["LESSOPEN"] => |/usr/bin/lesspipe.sh %s
+_SERVER["CC"] => gcc
+_SERVER["G_BROKEN_FILENAMES"] => 1
+_SERVER["PHP_SELF"] =>
+_SERVER["SCRIPT_NAME"] =>
+_SERVER["SCRIPT_FILENAME"] =>
+_SERVER["PATH_TRANSLATED"] =>
+_SERVER["DOCUMENT_ROOT"] =>
+_SERVER["REQUEST_TIME"] => 1308070464
+_SERVER["argv"] => Array
+(
+)
+
+_SERVER["argc"] => 0
+_ENV["TEST_PHP_SRCDIR"] => /usr/src/php/php5.3-201106111430
+_ENV["SHELL"] => /bin/bash
+_ENV["TERM"] => screen
+_ENV["MAKEFLAGS"] =>
+_ENV["SSH_CLIENT"] => deleted
+_ENV["QTDIR"] => /usr/lib64/qt-3.3
+_ENV["QTINC"] => /usr/lib64/qt-3.3/include
+_ENV["SSH_TTY"] => deleted
+_ENV["USER"] => root
+_ENV["LS_COLORS"] => rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+_ENV["CCACHE_DIR"] => /var/cache/ccache
+_ENV["SSH_AUTH_SOCK"] => deleted
+_ENV["TERMCAP"] => SC|screen|VT 100/ANSI X3.64 virtual terminal:\
+        :DO=\E[%dB:LE=\E[%dD:RI=\E[%dC:UP=\E[%dA:bs:bt=\E[Z:\
+        :cd=\E[J:ce=\E[K:cl=\E[H\E[J:cm=\E[%i%d;%dH:ct=\E[3g:\
+        :do=^J:nd=\E[C:pt:rc=\E8:rs=\Ec:sc=\E7:st=\EH:up=\EM:\
+        :le=^H:bl=^G:cr=^M:it#8:ho=\E[H:nw=\EE:ta=^I:is=\E)0:\
+        :li#44:co#156:am:xn:xv:LP:sr=\EM:al=\E[L:AL=\E[%dL:\
+        :cs=\E[%i%d;%dr:dl=\E[M:DL=\E[%dM:dc=\E[P:DC=\E[%dP:\
+        :im=\E[4h:ei=\E[4l:mi:IC=\E[%d@:ks=\E[?1h\E=:\
+        :ke=\E[?1l\E>:vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l:\
+        :ti=\E[?1049h:te=\E[?1049l:us=\E[4m:ue=\E[24m:so=\E[3m:\
+        :se=\E[23m:mb=\E[5m:md=\E[1m:mr=\E[7m:me=\E[m:ms:\
+        :Co#8:pa#64:AF=\E[3%dm:AB=\E[4%dm:op=\E[39;49m:AX:\
+        :vb=\Eg:G0:as=\E(0:ae=\E(B:\
+        :ac=\140\140aaffggjjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~..--++,,hhII00:\
+        :po=\E[5i:pf=\E[4i:Z0=\E[?3h:Z1=\E[?3l:k0=\E[10~:\
+        :k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS:k5=\E[15~:k6=\E[17~:\
+        :k7=\E[18~:k8=\E[19~:k9=\E[20~:k;=\E[21~:F1=\E[23~:\
+        :F2=\E[24~:F3=\E[1;2P:F4=\E[1;2Q:F5=\E[1;2R:F6=\E[1;2S:\
+        :F7=\E[15;2~:F8=\E[17;2~:F9=\E[18;2~:FA=\E[19;2~:kb:\
+        :K2=\EOE:kB=\E[Z:kF=\E[1;2B:kR=\E[1;2A:*4=\E[3;2~:\
+        :*7=\E[1;2F:#2=\E[1;2H:#3=\E[2;2~:#4=\E[1;2D:%c=\E[6;2~:\
+        :%e=\E[5;2~:%i=\E[1;2C:kh=\E[1~:@1=\E[1~:kH=\E[4~:\
+        :@7=\E[4~:kN=\E[6~:kP=\E[5~:kI=\E[2~:kD=\E[3~:ku=\EOA:\
+        :kd=\EOB:kr=\EOC:kl=\EOD:km:
+_ENV["MAKELEVEL"] => 1
+_ENV["MFLAGS"] =>
+_ENV["PATH"] => /usr/lib64/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/lib64/ccache:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+_ENV["MAIL"] => /var/mail/root
+_ENV["STY"] => 25142.pts-1.ajeux
+_ENV["_"] => /usr/src/php/php5.3-201106111430/sapi/cli/php
+_ENV["PWD"] => /usr/src/php/php5.3-201106111430
+_ENV["EDITOR"] => vi
+_ENV["CCACHE_UMASK"] => 002
+_ENV["KDE_IS_PRELINKED"] => 1
+_ENV["LANG"] => fr_FR
+_ENV["TEST_PHP_EXECUTABLE"] => /usr/src/php/php5.3-201106111430/sapi/cli/php
+_ENV["KDEDIRS"] => /usr
+_ENV["HOME"] => /root
+_ENV["SHLVL"] => 4
+_ENV["KMIX_PULSEAUDIO_DISABLE"] => 1
+_ENV["LOGNAME"] => root
+_ENV["QTLIB"] => /usr/lib64/qt-3.3/lib
+_ENV["WINDOW"] => 0
+_ENV["CVS_RSH"] => ssh
+_ENV["SSH_CONNECTION"] => deleted
+_ENV["LESSOPEN"] => |/usr/bin/lesspipe.sh %s
+_ENV["CC"] => gcc
+_ENV["G_BROKEN_FILENAMES"] => 1
+
+PHP License
+This program is free software; you can redistribute it and/or modify
+it under the terms of the PHP License as published by the PHP Group
+and included in the distribution in the file:  LICENSE
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+If you did not receive a copy of the PHP license, or have any
+questions about PHP licensing, please contact license@php.net.
