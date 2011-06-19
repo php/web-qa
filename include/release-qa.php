@@ -74,7 +74,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'alpha',
-			'number'	=> 1,
+			'number'	=> 0,
 			'md5_bz2'	=> '82bbe879b5379c60a68ee0ba025326a0',
 			'md5_gz'	=> '3e448c52ad779b5af17d9622ab87ac6d',
 			'date'		=> '20 June 2011',
