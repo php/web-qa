@@ -203,6 +203,10 @@ function parse_phpmaketest($version, $status, $file) {
             $prefix = substr($name, 0, strpos($name, '/Zend/'));
             break;
         }
+        if (strpos($name, '/lang/') !== false) {
+            $prefix = substr($name, 0, strpos($name, '/lang/'));
+            break;
+        }
     }
 
     if ($prefix == '' && count($extract['outputsRaw']) > 0) {
@@ -220,14 +224,14 @@ function parse_phpmaketest($version, $status, $file) {
         $output = explode("\n", $output);
         
         foreach ($output as $row) {
-            if (preg_match('@^={5,}\s+$@', $row)) {
+            if (preg_match('@^={5,}$@', $row)) {
                 if ($outputTest != '') $startDiff = true;
             }
             elseif ($startDiff === false) {
-                $outputTest .= $row;
+                $outputTest .= $row."\n";
             }
             elseif (preg_match('@^[0-9]{1,}@', $row)) {
-                $diff .= $row;
+                $diff .= $row."\n";
             }
         }
         $extract['tests'][$name]['output'] = $outputTest;
