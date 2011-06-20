@@ -23,7 +23,7 @@
 function get_summary_data()
 {
     $data = array();
-    $d = dir (dirname(__FILE__).'/db/');
+    $d = dir(dirname(__FILE__).'/db/');
     while (false !== ($entry = $d->read())) {
         if (substr($entry, -7) == '.sqlite') {
             //extract version from filename
@@ -33,14 +33,17 @@ function get_summary_data()
             $database = new SQLite3(dirname(__FILE__).'/db/'.$entry, SQLITE3_OPEN_READONLY);
             
             //retrieve data
-            $query = $database->query("SELECT COUNT(*) AS nbReports, MAX(`date`) AS lastReport 
-                     FROM reports");
+            $query = $database->query(
+                "SELECT COUNT(*) AS nbReports, MAX(`date`) AS lastReport FROM reports"
+            );
             if (!$query)
                 die("An error occured when reading a DB file.");
             $row = $query->fetchArray(SQLITE3_ASSOC);
             $data[$version] = $row;
             
-            $query = $database->query("select count(distinct test_name) as nbFailingTests, count(*) as nbFailures from failed");
+            $query = $database->query(
+                "select count(distinct test_name) as nbFailingTests, count(*) as nbFailures from failed"
+            );
             if (!$query)
                 die("An error occured when reading a DB file.");
             $row = $query->fetchArray(SQLITE3_ASSOC);

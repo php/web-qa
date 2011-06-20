@@ -32,13 +32,12 @@ if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
 $signature = $_GET['signature'];
 $version  = $_GET['version'];
 
-$DBFILE = dirname(__FILE__).'/db/'.$version.'.sqlite';
+$dbFile = dirname(__FILE__).'/db/'.$version.'.sqlite';
 
-$database = new SQLite3($DBFILE, SQLITE3_OPEN_READONLY);
+$database = new SQLite3($dbFile, SQLITE3_OPEN_READONLY);
 
 if (!$database) {
-    $error = (file_exists($yourfile)) ? "Impossible to open, check permissions" : "Impossible to create, check permissions";
-    die("Error: ".$error);
+    die("Error opening DB file: ".$database->lastErrorMsg());
 }
 
 // GET infos from DB
@@ -61,7 +60,9 @@ common_header();
 ?>
 <script src="sorttable.js"></script>
 <div style="margin:10px">
-<h1><a href="/reports/"><img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>List of reports associated</h1>
+<h1><a href="/reports/">
+<img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>
+List of reports associated</h1>
 <b>Test name: </b><?php echo $testName; ?><br />
 <b>Version: </b><?php echo $version; ?>
 <br /><br />
@@ -85,7 +86,8 @@ common_header();
         echo '    <td sorttable_customkey="'.strtotime($report['date']).'">'.$report['date'].'</td>'."\n";
         echo '    <td align="right" width="50">'.$report['nb_failed'].'</td>'."\n";
         echo '    <td>***'.strstr($report['user_email'], ' at ').'</td>'."\n";
-        echo '    <td><a href="details.php?version='.$version.'&signature='.$signature.'&idreport='.$report['id'].'"><img src="report.png" title="View phpinfo and environment" border="0" /></a></td>'."\n";
+        echo '    <td><a href="details.php?version='.$version.'&signature='.$signature.'&idreport='.$report['id'].'">';
+        echo '<img src="report.png" title="View phpinfo and environment" border="0" /></a></td>'."\n";
         echo '  </tr>'."\n";
     }
 
@@ -106,7 +108,11 @@ if (isset($_GET['idreport'])) {
     echo $reportsArray[$idreport]['phpinfo'];
     echo '</pre><hr size=1 />';
     echo '<a name="buildenv" /><h2>Build environment</h2><pre>';
-    echo str_replace($reportsArray[$idreport]['user_email'], '*** (truncated on purpose) ***', $reportsArray[$idreport]['build_env']);
+    echo str_replace(
+        $reportsArray[$idreport]['user_email'], 
+        '*** (truncated on purpose) ***', 
+        $reportsArray[$idreport]['build_env']
+    );
 
 }
 

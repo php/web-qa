@@ -28,7 +28,7 @@ if (isset($_GET['version'])) {
     if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
         exit('invalid version');
     }
-    $VERSION = $_GET['version'];
+    $getVersion = $_GET['version'];
     $TITLE .= ' - PHP Version '.$_GET['version'];
 }
 
@@ -37,17 +37,18 @@ require 'reportsfunctions.php';
 
 $reportsPerVersion = get_summary_data();
 
-if (isset($VERSION)) {
-    $DBFILE = dirname(__FILE__).'/db/'.$VERSION.'.sqlite';
-    if (!file_exists($DBFILE)) {
+if (isset($getVersion)) {
+    $dbFile = dirname(__FILE__).'/db/'.$getVersion.'.sqlite';
+    if (!file_exists($dbFile)) {
         die('no data for this version');
     }
-    $database = new SQLite3($DBFILE, SQLITE3_OPEN_READONLY);
+    $database = new SQLite3($dbFile, SQLITE3_OPEN_READONLY);
     if (!($database instanceof SQLite3)) {
         die("Error opening DB file: ".$database->lastErrorMsg());
     }
     $failedTestsArray = array();
-    $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, date(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
+    $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, 
+            date(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
             GROUP BY test_name ORDER BY cpt DESC LIMIT 50';
     $q = @$database->query($query);
     if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
@@ -58,14 +59,14 @@ if (isset($VERSION)) {
 }
 
 
-
-
 common_header();
 ?>
 <script src="sorttable.js"></script>
 <div style="margin:10px">
 
-<h1><a href="/reports/"><img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>Reports per version</h1>
+<h1><a href="/reports/">
+<img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>
+Reports per version</h1>
 
 <table class="sortable" style="border: 1px solid black;padding:5px; width:800px">
 <thead>
@@ -82,14 +83,14 @@ common_header();
 
 uksort($reportsPerVersion, 'version_compare');
 
-foreach ($reportsPerVersion as $version => $line) {
+foreach ($reportsPerVersion as $getVersion => $line) {
 
-    if (version_compare($version, '5.3.6', '<')) {
+    if (version_compare($getVersion, '5.3.6', '<')) {
         continue;
     }
     
     echo '<tr>';
-    echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
+    echo '<td><a href="./?version='.$getVersion.'">'.$getVersion.'</a></td>';
     echo '<td align="right">'.$line['nbReports'].'</td>';
     echo '<td align="right">'.$line['nbFailingTests'].'</td>';
     echo '<td align="right">'.$line['nbFailures'].'</td>';
@@ -97,19 +98,20 @@ foreach ($reportsPerVersion as $version => $line) {
     
     $lastReport = time()-strtotime($line['lastReport']);
     
-    if($lastReport < 3600) {
-        $_tmp = round($lastReport/60);
-        echo "$_tmp ", ($_tmp == 1) ? 'minute' : 'minutes';
+    if ($lastReport < 3600) {
+        $tmpValue = round($lastReport/60);
+        echo "$tmpValue ", ($tmpValue == 1) ? 'minute' : 'minutes';
     } elseif ($lastReport < 3600*24) {
-        $_tmp = round($lastReport/3600);
-        echo "$_tmp ", ($_tmp == 1) ? 'hour' : 'hours';
-    } elseif  ($lastReport < 3600*24*60) {
-        $_tmp = round($lastReport/3600/24);
-        echo "$_tmp ", ($_tmp == 1) ? 'day' : 'days';
+        $tmpValue = round($lastReport/3600);
+        echo "$tmpValue ", ($tmpValue == 1) ? 'hour' : 'hours';
+    } elseif ($lastReport < 3600*24*60) {
+        $tmpValue = round($lastReport/3600/24);
+        echo "$tmpValue ", ($tmpValue == 1) ? 'day' : 'days';
     } else {
-        $_tmp = floor($lastReport/3600/24/30);
-        echo "$_tmp ", ($_tmp == 1) ? 'month' : 'months';
+        $tmpValue = floor($lastReport/3600/24/30);
+        echo "$tmpValue ", ($tmpValue == 1) ? 'month' : 'months';
     }
+    unset($tmpValue);
     echo " ago";
     echo '</td>';
     echo '</tr>'."\n";
@@ -118,7 +120,7 @@ foreach ($reportsPerVersion as $version => $line) {
 </tbody>
 </table>
 
-<?php if (isset($VERSION)): ?>
+<?php if (isset($getVersion)): ?>
 <br />
 <style>
 #testList td {
@@ -145,7 +147,7 @@ foreach ($reportsPerVersion as $version => $line) {
      echo '<td align="right">'.$line['cpt'].'</td>';
      echo '<td align="right">'.$line['variations'].'</td>';
      echo '<td align="right">'.$line['date'].'</td>';
-         echo '<td><a href="viewreports.php?version='.$VERSION.'&amp;test='.urlencode($line['test_name']).'">
+         echo '<td><a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">
         <img src="report.png" title="View reports" border="0" /></a></td>';
      echo '</tr>'."\n";
      $i++;
@@ -162,6 +164,7 @@ endif;
 
 </div>
 <?php
-$SITE_UPDATE = date('D M d H:i:s Y T', filemtime(__FILE__))."<br /> Generated in ".round((microtime(true)-$startTime)*1000)." ms";
+$SITE_UPDATE = date('D M d H:i:s Y T', filemtime(__FILE__))."<br />".
+               "Generated in ".round((microtime(true)-$startTime)*1000)." ms";
 common_footer();
 

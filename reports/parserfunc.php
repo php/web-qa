@@ -36,47 +36,47 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         else 
             die('status unknown: '.$array['status']);
             
-		if (!is_valid_php_version($array['version'], $QA_RELEASES)) {
-			exit('invalid version');
-		}
+        if (!is_valid_php_version($array['version'], $QA_RELEASES)) {
+            exit('invalid version');
+        }
         
-        $DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
-		
-		if (!file_exists($DBFILE)) {
-			//Create DB
-			$dbi = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
-			$query = 'CREATE TABLE failed (
-			  `id` integer PRIMARY KEY AUTOINCREMENT,
-			  `id_report` bigint(20) NOT NULL,
-			  `test_name` varchar(128) NOT NULL,
-			  `output` STRING NOT NULL,
-			  `diff` STRING NOT NULL,
-			  `signature` binary(16) NOT NULL
-			)';
-			$dbi->exec($query);
-			if ($dbi->lastErrorCode() != '') {
-				echo "ERROR: ".$dbi->lastErrorMsg()."\n";
-				exit;
-			}
-			
-			$query = 'CREATE TABLE reports (
-			  id integer primary key AUTOINCREMENT,
-			  date datetime NOT NULL,
-			  status smallint(1) not null,
-			  nb_failed unsigned int(10)  NOT NULL,
-			  nb_expected_fail unsigned int(10)  NOT NULL,
-			  build_env STRING NOT NULL,
-			  phpinfo STRING NOT NULL,
-			  user_email varchar(64) default null
-			)';
-			$dbi->exec($query);
-			if ($dbi->lastErrorCode() != '') {
-				echo "ERROR: ".$dbi->lastErrorMsg()."\n";
-				exit;
-			}
-			$dbi->close();
-		}
-        $dbi = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
+        $dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
+        
+        if (!file_exists($dbFile)) {
+            //Create DB
+            $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+            $query = 'CREATE TABLE failed (
+              `id` integer PRIMARY KEY AUTOINCREMENT,
+              `id_report` bigint(20) NOT NULL,
+              `test_name` varchar(128) NOT NULL,
+              `output` STRING NOT NULL,
+              `diff` STRING NOT NULL,
+              `signature` binary(16) NOT NULL
+            )';
+            $dbi->exec($query);
+            if ($dbi->lastErrorCode() != '') {
+                echo "ERROR: ".$dbi->lastErrorMsg()."\n";
+                exit;
+            }
+            
+            $query = 'CREATE TABLE reports (
+              id integer primary key AUTOINCREMENT,
+              date datetime NOT NULL,
+              status smallint(1) not null,
+              nb_failed unsigned int(10)  NOT NULL,
+              nb_expected_fail unsigned int(10)  NOT NULL,
+              build_env STRING NOT NULL,
+              phpinfo STRING NOT NULL,
+              user_email varchar(64) default null
+            )';
+            $dbi->exec($query);
+            if ($dbi->lastErrorCode() != '') {
+                echo "ERROR: ".$dbi->lastErrorMsg()."\n";
+                exit;
+            }
+            $dbi->close();
+        }
+        $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
         
         $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
         `nb_failed`, `nb_expected_fail`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
@@ -113,11 +113,11 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         }
         $dbi->close();
     }
-	return true;
+    return true;
 }
 
-function parse_phpmaketest($version, $status, $file) {
-
+function parse_phpmaketest($version, $status, $file)
+{
     $extract = array();
 
     $extract['version'] = $version;
@@ -140,54 +140,52 @@ function parse_phpmaketest($version, $status, $file) {
 
     foreach ($rows as $row) {
         if (preg_match('@^={5,}@', $row) && $currentPart != 'phpinfo' && $currentPart != 'buildEnvironment') {
-    // =======
-    $currentPart = '';
-        }
-        elseif ($currentPart == '' && trim($row) == 'FAILED TEST SUMMARY') {
-    $currentPart = 'failedTest';    
-        }
-        elseif ($currentPart == '' && trim($row) == 'EXPECTED FAILED TEST SUMMARY') {
-    $currentPart = 'expectedFailedTest';    
-        }
-        elseif ($currentPart == '' && trim($row) == 'BUILD ENVIRONMENT') {
-    $currentPart = 'buildEnvironment';
-    $currentTest = '';
-        }
-        elseif (trim($row) == 'PHPINFO') {
-    $currentPart = 'phpinfo';
-    $currentTest = '';
-        }
-        elseif ($currentPart == 'failedTest' || $currentPart == 'expectedFailedTest') {
+            // =======
+            $currentPart = '';
+            
+        } elseif ($currentPart == '' && trim($row) == 'FAILED TEST SUMMARY') {
+            $currentPart = 'failedTest';    
+            
+        } elseif ($currentPart == '' && trim($row) == 'EXPECTED FAILED TEST SUMMARY') {
+            $currentPart = 'expectedFailedTest';
+            
+        } elseif ($currentPart == '' && trim($row) == 'BUILD ENVIRONMENT') {
+            $currentPart = 'buildEnvironment';
+            $currentTest = '';
+            
+        } elseif (trim($row) == 'PHPINFO') {
+            $currentPart = 'phpinfo';
+            $currentTest = '';
+            
+        } elseif ($currentPart == 'failedTest' || $currentPart == 'expectedFailedTest') {
             preg_match('@ \[([^\]]{1,})\]@', $row, $tab);
             if (count($tab) == 2)
                 if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart])) 
                     $extract[$currentPart][] = $tab[1];
-        }
-        elseif ($currentPart == 'buildEnvironment') {
-    if (preg_match('@User\'s E-mail: (.*)$@', $row, $tab)) {
-        //User's E-mail
-        $extract['userEmail'] = trim($tab[1]);
-    }
-    if (!isset($extract[$currentPart]))
-        $extract[$currentPart] = '';
-        
-    $extract[$currentPart] .= $row."\n";
-        }
-        elseif ($currentPart == 'phpinfo') {
-    if (!isset($extract[$currentPart]))
-        $extract[$currentPart] = '';
-        
-    $extract[$currentPart] .= $row."\n";
-        }
-        elseif (substr(trim($row), -5) == '.phpt') {
+                    
+        } elseif ($currentPart == 'buildEnvironment') {
+            if (preg_match('@User\'s E-mail: (.*)$@', $row, $tab)) {
+                //User's E-mail
+                $extract['userEmail'] = trim($tab[1]);
+            }
+            if (!isset($extract[$currentPart]))
+                $extract[$currentPart] = '';
+            $extract[$currentPart] .= $row."\n";
+            
+        } elseif ($currentPart == 'phpinfo') {
+            if (!isset($extract[$currentPart]))
+                $extract[$currentPart] = '';
+            $extract[$currentPart] .= $row."\n";
+            
+        } elseif (substr(trim($row), -5) == '.phpt') {
             $currentTest = trim($row);
             continue;
         }
         if ($currentPart == '' && $currentTest != '') {
             if (!isset($extract['outputsRaw'][$currentTest])) 
                 $extract['outputsRaw'][$currentTest] = '';
-        
             $extract['outputsRaw'][$currentTest] .= $row."\n";
+            
         }
     }
     // 2nd try to cleanup name
@@ -226,16 +224,18 @@ function parse_phpmaketest($version, $status, $file) {
         foreach ($output as $row) {
             if (preg_match('@^={5,}$@', $row)) {
                 if ($outputTest != '') $startDiff = true;
-            }
-            elseif ($startDiff === false) {
+                
+            } elseif ($startDiff === false) {
                 $outputTest .= $row."\n";
-            }
-            elseif (preg_match('@^[0-9]{1,}@', $row)) {
+                
+            } elseif (preg_match('@^[0-9]{1,}@', $row)) {
                 $diff .= $row."\n";
             }
         }
         $extract['tests'][$name]['output'] = $outputTest;
-        $extract['tests'][$name]['diff']   = rtrim( preg_replace('@ [^\s]{1,}'.substr($name, 0, -1).'@', ' %s/'.basename(substr($name, 0, -1)), $diff));
+        $extract['tests'][$name]['diff']   = rtrim(
+            preg_replace('@ [^\s]{1,}'.substr($name, 0, -1).'@', ' %s/'.basename(substr($name, 0, -1)), $diff)
+        );
     }
     unset($extract['outputsRaw']);
 

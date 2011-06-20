@@ -56,34 +56,38 @@ if (in_array('Zend/tests/bug48770_3.phpt', $array['expectedFailedTest'])) echo "
 else                        echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific failedTest");
-if (in_array('ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt', $array['failedTest'])) echo " <font color='green'>OK</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (in_array('ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt', $array['failedTest'])) 
+     echo " <font color='green'>OK</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test diff");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['diff']);
-if (isset($array['tests']['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (isset($array['tests']['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
+     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['output']);
-if (isset($array['tests']['/tests/func/010.phpt']['output']) && $strlen >= 165 ) echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (isset($array['tests']['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
+     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "phpinfo");
 if (strlen($array['phpinfo']) >= 27940) echo " <font color='green'>OK (size: ".strlen($array['phpinfo']).")</font> \n";
 else                        echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "buildEnvironment");
-if (strlen($array['buildEnvironment']) >= 4500) echo " <font color='green'>OK (size: ".strlen($array['buildEnvironment']).")</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (strlen($array['buildEnvironment']) >= 4500) 
+     echo " <font color='green'>OK (size: ".strlen($array['buildEnvironment']).")</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 // total diff / output, to see if we parsed everything Ok
 $totalDiff = 0;
 $totalOutput = 0;
 
 foreach ($array['tests'] as $name => $content) {
-	$totalDiff += strlen($content['diff']);
-	$totalOutput += strlen($content['output']);
+    $totalDiff += strlen($content['diff']);
+    $totalOutput += strlen($content['output']);
 }
 
 printf("%-30s", "Total diff length");
@@ -98,23 +102,22 @@ else                       echo " <font color='red'>KO</font> \n";
 // now insert data and check
 echo "\nTesting SQLite insertion ...\n";
 
-$return = insertToDb_phpmaketest ($array);
+$return = insertToDb_phpmaketest($array);
 printf("%-30s", "Function call");
 
 if ($return === true) echo " <font color='green'>OK</font> \n";
 else                  echo " <font color='red'>KO (return: ".$return.")</font> \n";
 
-$DBFILE = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
+$dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
 
 printf("%-30s", "DB file exists");
-if (file_exists($DBFILE)) echo " <font color='green'>OK</font> \n";
+if (file_exists($dbFile)) echo " <font color='green'>OK</font> \n";
 else                  echo " <font color='red'>KO</font> \n";
 
-$database = new SQLite3($DBFILE, SQLITE3_OPEN_READONLY);
+$database = new SQLite3($dbFile, SQLITE3_OPEN_READONLY);
 
 if (!$database) {
-    $error = (file_exists($yourfile)) ? "Impossible to open, check permissions" : "Impossible to create, check permissions";
-    die("Error: ".$error);
+    die("Error opening DB file: ".$database->lastErrorMsg());
 }
 
 // Check report ?
@@ -122,8 +125,9 @@ $query = 'SELECT * FROM reports WHERE user_email = \'thisisatestmail@testdomain.
 $q = $database->query($query);
 $sqlReport = $q->fetchArray(SQLITE3_ASSOC);
 printf("%-30s", "Found report in DB");
-if (is_array($sqlReport) && isset($sqlReport['id'])) echo " <font color='green'>OK (id: ".$sqlReport['id'].")</font> \n";
-else                       echo " <font color='red'>KO</font> \n";
+if (is_array($sqlReport) && isset($sqlReport['id'])) 
+     echo " <font color='green'>OK (id: ".$sqlReport['id'].")</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 // check how many failed ?
 if (!isset($sqlReport['id'])) die('cannot make more tests');
@@ -132,29 +136,35 @@ $query = 'SELECT * FROM failed WHERE id_report = '.$sqlReport['id'];
 $q = $database->query($query);
 $sqlFailed = array();
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
-	$sqlFailed[$tab['test_name']] = $tab;
+    $sqlFailed[$tab['test_name']] = $tab;
 }
 
 printf("%-30s", "Found 33 failedTest");
-if (count($sqlFailed) == 33) echo " <font color='green'>OK</font> \n";
-else                  { echo " <font color='red'>KO (found: ".count($sqlFailed).")</font> \n"; var_dump($sqlFailed); }
+if (count($sqlFailed) == 33) {
+    echo " <font color='green'>OK</font> \n";
+} else { 
+    echo " <font color='red'>KO (found: ".count($sqlFailed).")</font> \n"; 
+    var_dump($sqlFailed);
+}
 
 printf("%-30s", "specific test diff");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['diff']);
-if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
+     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['output']);
-if (isset($sqlFailed['/tests/func/010.phpt']['output']) && $strlen >= 165 ) echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
-else                        echo " <font color='red'>KO</font> \n";
+if (isset($sqlFailed['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
+     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
+else echo " <font color='red'>KO</font> \n";
 
 $totalDiff = 0;
 $totalOutput = 0;
 
 foreach ($sqlFailed as $name => $content) {
-	$totalDiff += strlen($content['diff']);
-	$totalOutput += strlen($content['output']);
+    $totalDiff += strlen($content['diff']);
+    $totalOutput += strlen($content['output']);
 }
 
 printf("%-30s", "Total diff length");
@@ -168,11 +178,9 @@ else                       echo " <font color='red'>KO</font> \n";
 // Cleanup
 $database->close();
 
-$database = new SQLite3($DBFILE, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to remove test');
+$database = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to remove test');
 $database->exec('DELETE FROM failed WHERE id_report = '.$sqlReport['id']);
 $database->exec('DELETE FROM reports WHERE id = '.$sqlReport['id']);
 $database->close();
 echo "<b>Cleanup done</b>";
-
-
 
