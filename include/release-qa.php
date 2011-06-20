@@ -23,7 +23,7 @@ Documentation:
 			- We define a prefix because our snapshot filenames are not consistent with version (e.g., php-trunk)
 			- File extensions .tar.gz and .tar.bz2 are assumed to be available
 		- release (array):
-			- type: rc, alpha, and beta are examples
+			- type: RC, alpha, and beta are examples (case should match filename case)
 			- version: 0 if no such release exists, otherwise an integer of the rc/alpha/beta number
 			- md5_bz2: md5 checksum of this downloadable .tar.bz2 file
 			- md5_gz:  md5 checksum of this downloadable .tar.gz file
@@ -57,7 +57,7 @@ $QA_RELEASES = array(
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
-			'type'		=> 'rc',
+			'type'		=> 'RC',
 			'number'	=> 1,
 			'md5_bz2'	=> '295a457505049cc75d723560715be5d6',
 			'md5_gz'	=> '4fd555292ea0a1bc3acd1d3ad4c98c27',
