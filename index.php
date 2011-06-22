@@ -24,30 +24,32 @@ common_header();
         <tr>
           <td width="10">&nbsp;</td>
           <td width="100%">
-            <br /><h3>The team is currently focused on:</h3>
+            <br />
+            <h3>Make test results:</h3>
+            <ul>
+            <li>
+              All users who compile PHP are encouraged to run '<a href="http://qa.php.net/running-tests.php">make test</a>', which
+              runs the test suite and optionally sends the <a href=" http://news.php.net/php.qa.reports">results here</a>.
+              <br /><br />
+            </li>
+            <li>
+              Compiled <a href="reports/">user submitted test result reports</a> for analysis
+              <br /><br />
+            </li>
+            <li>
+             Additional test results are available at <a href="http://gcov.php.net/">http://gcov.php.net/</a>
+            </li>
+           </ul>
+
+            <h3>The team is currently focused on:</h3>
             <ul>
 
               <li>
 <?php show_release_qa($QA_RELEASES); ?>
 
                 See <a href="http://windows.php.net/qa/">here</a> for the Windows builds.
-                <br><br>
-
-              </li>
-
-              <li>
-                Monitoring and analyzing the <a href="reports/">reported make test results</a>.
-              </li>
-
-              <li>
-                Upgrading the testsuite. This includes extending the testsuites with tests for every function,
-                collecting test data in a different way then mailing all output to the QA mailinglist.
               </li>
             </ul>
-            <p>
-             Anyone can help us by running the test framework, see:<br />
-             <a href="http://qa.php.net/running-tests.php">http://qa.php.net/running-tests.php</a>
-            </p>
           </td>
           <td width="10">&nbsp;</td>
         </tr>
