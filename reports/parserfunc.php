@@ -22,11 +22,6 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         // impossible to fetch data. We'll record this error later ...
         
     } else {
-        if ($array['userEmail'] == null) 
-            $array['userEmail'] = 'NULL';
-        else 
-            $array['userEmail'] = "'".addslashes($array['userEmail'])."'";
-        
         if (strtolower($array['status']) == 'failed') 
             $array['status'] = 0;
             
@@ -81,13 +76,13 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
         `nb_failed`, `nb_expected_fail`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
         datetime(".((int) $array['date']).", 'unixepoch', 'localtime'), 
-        '".addslashes($array['status'])."', 
-        '".count($array['failedTest'])."', 
-        '".count($array['expectedFailedTest'])."', 
+        ".((int)$array['status']).", 
+        ".count($array['failedTest']).", 
+        ".count($array['expectedFailedTest']).", 
         ('".$dbi->escapeString($array['buildEnvironment'])."'), 
-        ('".$dbi->escapeString($array['phpinfo'])."'), ".$array['userEmail']."
+        ('".$dbi->escapeString($array['phpinfo'])."'),
+        ".(!$array['userEmail'] ? "NULL" : "'".$dbi->escapeString($array['userEmail'])."'")."
         )";
-        // userEmail is already escaped on line 28
         
         $dbi->query($query);
         if ($dbi->lastErrorCode() != '') {
