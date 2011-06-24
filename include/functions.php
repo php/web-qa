@@ -169,8 +169,7 @@ function is_valid_php_version($version, $QA_RELEASES = array()) {
 		return true;
 	}
 	
-	//@todo Add alpha/beta/RC for regex...
-	if (preg_match('@^[0-9]{1}\.[0-9]{1}\.[0-9\.\-dev]{1,}$@', $version)) {
+	if (preg_match('@^\d{1}\.\d{1}\.\d{1,}(?:(?:RC|alpha|beta)\d{0,2})?(?:-dev)?$@i', $version)) {
 		return true;
 	}
 	
