@@ -104,10 +104,10 @@ if (isset($_GET['idreport'])) {
 <?php
 
     $idreport = (int) $_GET['idreport'];
-    echo '<a name="phpinfo" /><h2>PHPInfo</h2><pre>';
+    echo '<a name="phpinfo"></a><h2>PHPInfo</h2><pre>';
     echo $reportsArray[$idreport]['phpinfo'];
     echo '</pre><hr size=1 />';
-    echo '<a name="buildenv" /><h2>Build environment</h2><pre>';
+    echo '<a name="buildenv"></a><h2>Build environment</h2><pre>';
     echo str_replace(
         $reportsArray[$idreport]['user_email'], 
         '*** (truncated on purpose) ***', 
