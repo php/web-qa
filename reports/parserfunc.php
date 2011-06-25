@@ -196,10 +196,6 @@ function parse_phpmaketest($version, $status, $file)
             $prefix = substr($name, 0, strpos($name, '/Zend/'));
             break;
         }
-        if (strpos($name, '/lang/') !== false) {
-            $prefix = substr($name, 0, strpos($name, '/lang/'));
-            break;
-        }
     }
 
     if ($prefix == '' && count($extract['outputsRaw']) > 0) {
