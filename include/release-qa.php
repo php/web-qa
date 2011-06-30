@@ -58,11 +58,11 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'	=> 1,
-			'md5_bz2'	=> '295a457505049cc75d723560715be5d6',
-			'md5_gz'	=> '4fd555292ea0a1bc3acd1d3ad4c98c27',
-			'date'		=> '16 June 2011',
-			'baseurl'	=> 'http://downloads.php.net/johannes/',
+			'number'	=> 2,
+			'md5_bz2'	=> '1f4fba48807d5d6236b24ca1f1b63e69',
+			'md5_gz'	=> 'd57c2d49d4e9c8a90d31068d88605ef2',
+			'date'		=> '30 June 2011',
+			'baseurl'	=> 'https://downloads.php.net/ilia/',
 		),
 	),
 
