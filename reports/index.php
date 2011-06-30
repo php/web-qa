@@ -30,6 +30,13 @@ if (isset($_GET['version'])) {
     }
     $getVersion = $_GET['version'];
     $TITLE .= ' - PHP Version '.$_GET['version'];
+
+    $limit = 50;
+    if (!empty($_GET['limit'])) {
+        if (is_numeric($_GET['limit'])) {
+            $limit = (int) $_GET['limit'];
+        }
+    }
 }
 
 require 'reportsfunctions.php';
@@ -49,7 +56,7 @@ if (isset($getVersion)) {
     $failedTestsArray = array();
     $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, 
             date(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
-            GROUP BY test_name ORDER BY cpt DESC LIMIT 50';
+            GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
     $q = @$database->query($query);
     if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
     while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
@@ -156,8 +163,12 @@ foreach ($reportsPerVersion as $version => $line) {
                 ?>
 </tbody></table>
 <?php
-if (count($failedTestsArray) == 50) {
-    echo '<i>There are more failing tests not printed here (with less occurences)</i>';
+if (count($failedTestsArray) >= $limit) {
+    echo '<i>There are more failing tests ';
+    echo '(<a href="?version=' . $getVersion . '&limit=1000">view all)</i>';
+} else {
+    echo '<i>View only the most common failed tests ';
+    echo '(<a href="?version=' . $getVersion . '&limit=50">view 50)</i>';
 }
 endif; 
 ?>
