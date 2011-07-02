@@ -67,6 +67,9 @@ if (substr($version, 0, 3) == '5.2') {
 } elseif (substr($version, 0, 3) == '5.4') {
     $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_4/'.
                 ltrim($testName, '/').'?view=markup';
+} elseif (substr($version, 0, 3) == '5.5') {
+    $urlTest = 'http://svn.php.net/viewvc/php/php-src/trunk/'.
+                ltrim($testName, '/').'?view=markup';
 } else {
     $urlTest = '';
 }
