@@ -105,14 +105,14 @@ if (isset($_GET['idreport'])) {
 
     $idreport = (int) $_GET['idreport'];
     echo '<a name="phpinfo"></a><h2>PHPInfo</h2><pre>';
-    echo $reportsArray[$idreport]['phpinfo'];
+    echo htmlspecialchars($reportsArray[$idreport]['phpinfo'], ENT_QUOTES, 'UTF-8');
     echo '</pre><hr size=1 />';
     echo '<a name="buildenv"></a><h2>Build environment</h2><pre>';
-    echo str_replace(
+    echo htmlspecialchars(str_replace(
         $reportsArray[$idreport]['user_email'], 
         '*** (truncated on purpose) ***', 
         $reportsArray[$idreport]['build_env']
-    );
+    ), ENT_QUOTES, 'UTF-8');
 
 }
 
