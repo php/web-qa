@@ -50,19 +50,11 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.7' => array(
-		'active'		=> true,
+	'5.3.8' => array(
+		'active'		=> false,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
-		),
-		'release'		=> array(
-			'type'		=> 'RC',
-			'number'	=> 5,
-			'md5_bz2'	=> '2604b92812e213287fa0fbc5d61223db',
-			'md5_gz'	=> '2d3315be5ef7ab90ca359978f36c2001',
-			'date'		=> '11 August 2011',
-			'baseurl'	=> 'https://downloads.php.net/ilia/',
 		),
 	),
 
