@@ -50,7 +50,7 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.8' => array(
+	'5.3.9' => array(
 		'active'		=> false,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
