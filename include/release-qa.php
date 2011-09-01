@@ -51,7 +51,7 @@ TODO:
 $QA_RELEASES = array(
 	
 	'5.3.9' => array(
-		'active'		=> false,
+		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
