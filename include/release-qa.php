@@ -56,6 +56,14 @@ $QA_RELEASES = array(
 			'prefix'	=> 'php5.3-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
+		'release'		=> array(
+			'type'		=> 'RC',
+			'number'	=> 1,
+			'md5_bz2'	=> '5e8564008606edfab6a81137c1daf354',
+			'md5_gz'	=> '467c8c8ae6c5309c7bcb0dfbcb16795e',
+			'date'		=> '03 November 2011',
+			'baseurl'	=> 'http://downloads.php.net/johannes/',
+		),
 	),
 
 	'5.4.0' => array(
