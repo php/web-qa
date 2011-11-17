@@ -92,7 +92,7 @@ uksort($reportsPerVersion, 'version_compare');
 
 foreach ($reportsPerVersion as $version => $line) {
 
-    if (version_compare($version, '5.3.9', '<')) {
+    if (version_compare($version, '5.3.8', '<')) {
         continue;
     }
     
