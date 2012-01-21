@@ -6,7 +6,6 @@ GROUP BY VERSION,YEAR(DATE),WEEK(DATE)
 Use graph ?
 
 
-
 use http://svn.php.net/viewvc/web/php/trunk/include/version.inc?view=co
 
 
