@@ -50,7 +50,7 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.9' => array(
+	'5.3.11' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
@@ -58,9 +58,9 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'	=> 4,
-			'md5_bz2'	=> '9cb775a4df4a1b8f2638f5df76f4da96',
-			'md5_gz'	=> '68a79d6cb1d5296eb6ac2f5495c3400c',
+			'number'	=> 0,
+			'md5_bz2'	=> '',
+			'md5_gz'	=> '',
 			'date'		=> '23 December 2011',
 			'baseurl'	=> 'http://downloads.php.net/johannes/',
 		),
