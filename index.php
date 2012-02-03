@@ -37,7 +37,7 @@ common_header();
               <br /><br />
             </li>
             <li>
-             Additional test results are available at <a href="http://gcov.php.net/">http://gcov.php.net/</a>
+             Additional test results are available at <a href="http://gcov.php.net/">http://gcov.php.net/</a> and <a href="http://ci.qa.php.net">ci.qa.php.net</a>.
             </li>
            </ul>
 
