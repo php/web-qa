@@ -145,6 +145,7 @@ if ($bugId) {
 </table>
 <?php
     }
+    echo "<br>";
 }
 ?>
 
