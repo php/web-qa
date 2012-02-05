@@ -76,8 +76,10 @@ if (substr($version, 0, 3) == '5.2') {
 
 // BUG url
 if (preg_match('@bug([0-9]{1,}).phpt$@', $testName, $preg)) {
+    $bugId = (int)$preg[1];
     $bugUrl = 'http://bugs.php.net/'.$preg[1];
 } else {
+    $bugId = null;
     $bugUrl = '';
 }
 
@@ -103,6 +105,48 @@ if ($bugUrl != '') {
    echo '<img src="bug.png" title="View bug overview" /></a>';
 }
 ?></h1>
+
+<?php
+if ($bugId) {
+    if (!($bugxml = @simplexml_load_file("https://bugs.php.net/rss/bug.php?format=xml&id=".$bugId))) {
+        echo '<div style="width:100%; border:1px solid red;">Failed loading bug info. SimpleXML: '.(extension_loaded("simplexml") ? 'Yes' : 'No').', OpenSSL: '.(extension_loaded("openssl") ? 'Yes' : 'No').'</div>';
+    } else {
+?>
+<table style="width:100%; border-width=0">
+  <tr id="title">
+  <th class="details" id="number"><a href="http://bugs.php.net/<?php echo $bugId; ?>">Bug</a>&nbsp;#<?php echo $bugId; ?></th>
+    <td id="summary" colspan="5"><?php echo htmlentities($bugxml->sdesc);?></td>
+  </tr>
+  <tr id="submission">
+    <th class="details">Submitted:</th>
+    <td style="white-space: nowrap;"><?php echo htmlentities($bugxml->ts1);?></td>
+    <th class="details">Modified:</th>
+    <td style="white-space: nowrap;"><?php echo htmlentities($bugxml->ts2);?></td>
+    <td rowspan="6"></td>
+  </tr>
+  <tr id="submitter">
+    <th class="details">From:</th>
+    <td><?php echo htmlentities(strtok($bugxml->email, '@'));?></td>
+    <th class="details">Assigned:</th>
+    <td><a href="http://bugs.php.net/search.php?cmd=display&amp;assign=<?php echo htmlentities($bugxml->assign, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->assign); ?></a></td>
+  </tr>
+  <tr id="categorization">
+    <th class="details">Status:</th>
+    <td><?php echo htmlentities($bugxml->status);?></td>
+    <th class="details">Package:</th>
+    <td><a href="http://bugs.php.net/search.php?cmd=display&amp;package_name[]=<?php echo htmlentities($bugxml->package_name, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->package_name);?></a></td>
+  </tr>
+  <tr id="situation">
+    <th class="details">PHP Version:</th>
+    <td><?php echo htmlentities($bugxml->php_version);?></td>
+    <th class="details">OS:</th>
+    <td><?php echo htmlentities($bugxml->php_os);?></td>
+  </tr>
+</table>
+<?php
+    }
+}
+?>
 
 <strong><em>
 <?php
