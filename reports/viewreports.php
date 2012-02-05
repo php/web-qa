@@ -114,7 +114,7 @@ if ($bugId) {
 ?>
 <table style="width:100%; border-width=0">
   <tr id="title">
-  <th class="details" id="number"><a href="http://bugs.php.net/<?php echo $bugId; ?>">Bug</a>&nbsp;#<?php echo $bugId; ?></th>
+  <th class="details" id="number"><a href="http://bugs.php.net/<?php echo $bugId; ?>"><?php echo htmlentities($bugxml->bug_type);?>&nbsp;#<?php echo $bugId; ?></a></th>
     <td id="summary" colspan="5"><?php echo htmlentities($bugxml->sdesc);?></td>
   </tr>
   <tr id="submission">
