@@ -21,7 +21,9 @@ $startTime = microtime(true);
 include "../include/functions.php";
 include "../include/release-qa.php";
 
-$TITLE = "PHP Test reports Summary";
+require 'reportsfunctions.php';
+
+$getVersion = null;
 
 if (isset($_GET['version'])) {
     //sanity check
@@ -29,7 +31,7 @@ if (isset($_GET['version'])) {
         exit('invalid version');
     }
     $getVersion = $_GET['version'];
-    $TITLE .= ' - PHP Version '.$_GET['version'];
+    $TITLE .= 'PHP Test Reports For PHP Version '.$_GET['version'];
 
     $limit = 50;
     if (!empty($_GET['limit'])) {
@@ -37,14 +39,7 @@ if (isset($_GET['version'])) {
             $limit = (int) $_GET['limit'];
         }
     }
-}
 
-require 'reportsfunctions.php';
-
-
-$reportsPerVersion = get_summary_data();
-
-if (isset($getVersion)) {
     $dbFile = dirname(__FILE__).'/db/'.$getVersion.'.sqlite';
     if (!file_exists($dbFile)) {
         die('no data for this version');
@@ -63,8 +58,13 @@ if (isset($getVersion)) {
         $failedTestsArray[] = $tab;
     }
     $database->close();
-}
 
+} else {
+
+    $reportsPerVersion = get_summary_data();
+    $TITLE = "PHP Test Reports Summary";
+
+}
 
 common_header();
 ?>
@@ -73,8 +73,11 @@ common_header();
 
 <h1><a href="/reports/">
 <img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>
-Reports per version</h1>
+<?php echo $TITLE; ?></h1>
 
+<?php
+if (!$getVersion) {
+?>
 <table class="sortable" style="border: 1px solid black;padding:5px; width:800px">
 <thead>
  <tr>
@@ -127,8 +130,9 @@ foreach ($reportsPerVersion as $version => $line) {
 </tbody>
 </table>
 
-<?php if (isset($getVersion)): ?>
-<br />
+<?php 
+} else { /* $getVersion */
+?>
 <style>
 #testList td {
     padding: 3px;
@@ -163,14 +167,14 @@ foreach ($reportsPerVersion as $version => $line) {
                 ?>
 </tbody></table>
 <?php
-if (count($failedTestsArray) >= $limit) {
-    echo '<i>There are more failing tests ';
-    echo '(<a href="?version=' . $getVersion . '&limit=1000">view all)</i>';
-} else {
-    echo '<i>View only the most common failed tests ';
-    echo '(<a href="?version=' . $getVersion . '&limit=50">view 50)</i>';
-}
-endif; 
+    if (count($failedTestsArray) >= $limit) {
+        echo '<i>There are more failing tests ';
+        echo '(<a href="?version=' . $getVersion . '&limit=1000">view all)</i>';
+    } else {
+        echo '<i>View only the most common failed tests ';
+        echo '(<a href="?version=' . $getVersion . '&limit=50">view 50)</i>';
+    }
+} 
 ?>
 
 </div>
