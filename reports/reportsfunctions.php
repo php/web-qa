@@ -140,7 +140,7 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
             "SELECT COUNT(*) AS nbReports, MAX(`date`) AS lastReport FROM reports"
         );
         if (!$query)
-            die("An error occured when reading a DB file.");
+            die("An error occured when reading summary data from $version DB file.");
         $row = $query->fetchArray(SQLITE3_ASSOC);
         $data[$version] = $row;
             
@@ -148,7 +148,7 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
             "select count(distinct test_name) as nbFailingTests, count(*) as nbFailures from failed"
         );
         if (!$query)
-            die("An error occured when reading a DB file.");
+            die("An error occured when reading failingTest data from $version DB file.");
         $row = $query->fetchArray(SQLITE3_ASSOC);
         $data[$version]['nbFailingTests'] = $row['nbFailingTests'];
         $data[$version]['nbFailures'] = $row['nbFailures'];
