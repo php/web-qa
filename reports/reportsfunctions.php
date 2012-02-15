@@ -56,11 +56,19 @@ abstract class WhitelistedFilterIterator extends FilterIterator
     }
 }
 
-class RCFilterIterator extends WhitelistedFilterIterator
+class keywordFilterIterator extends WhitelistedFilterIterator
 {
+    private $keyword;
+
+    public function __construct(Traversable $inner, $keyword, array $whitelist)
+    {
+        parent::__construct($inner, $whitelist);
+	$this->keyword = preg_quote($keyword, ',');
+    }
+
     public function accept()
     {
-        return $this->inWhitelist() || !preg_match(',RC[0-9]+$,', $this->key());
+        return $this->inWhitelist() || !preg_match(','.$this->keyword.'[0-9]+$,', $this->key());
     }
 }
 
@@ -72,11 +80,13 @@ class devFilterIterator extends WhitelistedFilterIterator
     }
 }
 
-const QA_REPORT_FILTER_NONE = 0;
-const QA_REPORT_FILTER_RC   = 1;
-const QA_REPORT_FILTER_DEV  = 2;
+const QA_REPORT_FILTER_NONE  = 0;
+const QA_REPORT_FILTER_ALPHA = 1;
+const QA_REPORT_FILTER_BETA  = 2;
+const QA_REPORT_FILTER_RC    = 4;
+const QA_REPORT_FILTER_DEV   = 8;
 
-const QA_REPORT_FILTER_ALL  = 3;
+const QA_REPORT_FILTER_ALL   = 15;
 
 /**
  * Analyse sqlite files and retrieve data from it
@@ -89,8 +99,14 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
     $data = array();
     $it = new QaReportIterator(new DirectoryIterator(__DIR__.'/db/'));
 
+    if ($mode & QA_REPORT_FILTER_ALPHA) {
+        $it = new keywordFilterIterator($it, 'alpha', $QA_RELEASES['reported']);
+    }
+    if ($mode & QA_REPORT_FILTER_BETA) {
+        $it = new keywordFilterIterator($it, 'beta', $QA_RELEASES['reported']);
+    }
     if ($mode & QA_REPORT_FILTER_RC) {
-        $it = new RCFilterIterator($it, $QA_RELEASES['reported']);
+        $it = new keywordFilterIterator($it, 'RC', $QA_RELEASES['reported']);
     }
     if ($mode & QA_REPORT_FILTER_DEV) {
         $it = new devFilterIterator($it, $QA_RELEASES['reported']);
