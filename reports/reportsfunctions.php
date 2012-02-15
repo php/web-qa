@@ -36,7 +36,7 @@ class QaReportIterator extends FilterIterator
 
     public function current()
     {
-	return __DIR__.'/db/'.parent::current()." for ".$this->key()."\n";
+	return __DIR__.'/db/'.parent::current();
     }
 }
 
