@@ -134,7 +134,7 @@ foreach ($reportsPerVersion as $version => $line) {
 </tbody>
 </table>
 <p>(<a href="./?summary_filter=0">Show all versions</a> |
-    <a href="./?summary_filter=<?php echo QA_REPORT_FILTER_ALL; ?>">Show stable and current de only</a>)</p>
+    <a href="./?summary_filter=<?php echo QA_REPORT_FILTER_ALL; ?>">Show stable and current dev only</a>)</p>
 <?php 
 } else { /* $getVersion */
 ?>
