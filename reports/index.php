@@ -60,7 +60,11 @@ if (isset($_GET['version'])) {
     $database->close();
 
 } else {
-
+    if (!isset($_GET['summary_filter'])) {
+        $filter = QA_REPORT_FILTER_ALL;
+    } else {
+        $filter = $_GET['summary_filter'];
+    }
     $reportsPerVersion = get_summary_data();
     $TITLE = "PHP Test Reports Summary";
 
