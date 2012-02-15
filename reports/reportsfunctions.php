@@ -80,6 +80,22 @@ class devFilterIterator extends WhitelistedFilterIterator
     }
 }
 
+class minVersionFilterIterator extends FilterIterator
+{
+    private $min;
+
+    public function __construct(Traversable $inner, $minversion)
+    {
+        parent::__construct($inner);
+        $this->min = $minversion;
+    }
+
+    public function accept()
+    {
+        return version_compare($this->min, $this->key(), '<=');
+    }
+}
+
 const QA_REPORT_FILTER_NONE  = 0;
 const QA_REPORT_FILTER_ALPHA = 1;
 const QA_REPORT_FILTER_BETA  = 2;
@@ -87,6 +103,7 @@ const QA_REPORT_FILTER_RC    = 4;
 const QA_REPORT_FILTER_DEV   = 8;
 
 const QA_REPORT_FILTER_ALL   = 15;
+const QA_REPORT_FILTER_CURRENT_RELEASES = 16;
 
 /**
  * Analyse sqlite files and retrieve data from it
@@ -111,6 +128,10 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
     if ($mode & QA_REPORT_FILTER_DEV) {
         $it = new devFilterIterator($it, $QA_RELEASES['reported']);
     }
+    if ($mode & QA_REPORT_FILTER_CURRENT_RELEASES) {
+        $it = new minVersionFilterIterator($it, "5.3.10");
+    }
+
 
     foreach ($it as $version => $database_file) {
 	$database = new SQLite3($database_file, SQLITE3_OPEN_READONLY); 
