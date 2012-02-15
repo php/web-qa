@@ -65,7 +65,7 @@ if (isset($_GET['version'])) {
     } else {
         $filter = $_GET['summary_filter'];
     }
-    $reportsPerVersion = get_summary_data();
+    $reportsPerVersion = get_summary_data($filter);
     $TITLE = "PHP Test Reports Summary";
 
 }
