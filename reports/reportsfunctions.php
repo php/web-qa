@@ -101,9 +101,9 @@ const QA_REPORT_FILTER_ALPHA = 1;
 const QA_REPORT_FILTER_BETA  = 2;
 const QA_REPORT_FILTER_RC    = 4;
 const QA_REPORT_FILTER_DEV   = 8;
-
-const QA_REPORT_FILTER_ALL   = 15;
 const QA_REPORT_FILTER_CURRENT_RELEASES = 16;
+
+const QA_REPORT_FILTER_ALL   = 31;
 
 /**
  * Analyse sqlite files and retrieve data from it
