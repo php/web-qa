@@ -99,7 +99,7 @@ $ git push origin master     # everything okay? good, let's push it
   <div id="loginstatus">
     <span id="checkinglogin">(checking login state ...)</span>
     <span id="loggedin"></span>
-    <span id="notloggedin"><a href="#">Login</span>
+    <span id="notloggedin"><a href="#">Login</a></span>
   </div>
   <h1>Github Pull Requests</h1>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
