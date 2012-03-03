@@ -65,7 +65,7 @@ common_header();
 		   <div class="ghuser"><a href="{{=user.url}}"><img src="{{=user.avatar_url}}"><br>{{=user.login}}</a></div>
 		   <div>Created: {{=created_at}}, LastUpdated: {{=updated_at}}</div>
 		   <div>{{=body}}</div>
-		   <div><a href="{{=html_url}}"><img src="https://github.com/favicon.ico"> On GitHub</a> |
+		   <div><a href="{{=html_url}}"><img src="../gfx/github.ico"> On GitHub</a> |
 			<a href="{{=diff_url}}">Diff</a> |
 			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |
 			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="updatepullrequest">Update</a>
