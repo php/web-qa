@@ -2,6 +2,8 @@
 include("../include/functions.php");
 include("../include/release-qa.php");
 
+require("./config.php");
+
 $TITLE = "PHP-QA: GitHub Pull Requests";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
@@ -91,8 +93,8 @@ $ git push origin master     # everything okay? good, let's push it
 	<button>Go</button>
    </script>
    <script type="text/javascript">
-     var GITHUB_BASEURL = "https://api.github.com/";
-     var GITHUB_ORG     = "php";
+     var GITHUB_BASEURL = <?php echo json_encode(GITHUB_BASEURL); ?>;
+     var GITHUB_ORG     = <?php echo json_encode(GITHUB_ORG); ?>;
      var API_URL        = "api.php";
    </script>
    <script src="pullrequests.js"></script>

@@ -1,0 +1,5 @@
+<?php
+const GITHUB_BASEURL = 'https://api.github.com/';
+const GITHUB_ORG     = 'php';
+const GITHUB_USER    = '....';
+const GITHUB_PASS    = '....';
