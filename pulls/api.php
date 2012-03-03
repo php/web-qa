@@ -57,7 +57,7 @@ function verify_password_DEV($user, $pass)
 
 function ghpostcomment($pull, $comment)
 {
-	$post = json_encode(array("body" => "**Comment in behalf of $_SESSION[user] at php.net:**\n\n$comment"));
+	$post = json_encode(array("body" => "**Comment on behalf of $_SESSION[user] at php.net:**\n\n$comment"));
 
 
 	$opts = array(
