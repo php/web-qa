@@ -39,6 +39,11 @@ common_header();
 	     color: #ffcc66;
 	     text-decoration: none;
      }
+
+     #loginstatus {
+             width: 100%;
+             text-align: right;
+     }
    </style>
    <link href="http://code.jquery.com/ui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -62,7 +67,8 @@ common_header();
 		   <div>{{=body}}</div>
 		   <div><a href="{{=html_url}}"><img src="https://github.com/favicon.ico"> On GitHub</a> |
 			<a href="{{=diff_url}}">Diff</a> |
-			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="pullinstructions">Show Pull Instructions</a>
+			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |
+			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="updatepullrequest">Update</a>
 		   </div>
 	   </div>
    </script>
@@ -75,9 +81,19 @@ $ make test                  # you better don't forget that
 $ git push origin master     # everything okay? good, let's push it
 	   </pre>
    </script>
+   <script id="updatePullRequestTemplate" type="text/x-jquery-tmpl">
+       State: <select id="newState">
+                <option>open</option>
+                <option>closed</option>
+              </select><br>
+        Please provide a comment for your change:<br>
+	<textarea id="comment"></textarea><br>
+	<button>Go</button>
+   </script>
    <script type="text/javascript">
      var GITHUB_BASEURL = "https://api.github.com/";
      var GITHUB_ORG     = "php";
+     var API_URL        = "api.php";
 
      function repoList(baseurl, org) {
          this.url = baseurl+'orgs/'+org+'/repos';
@@ -113,8 +129,59 @@ $ git push origin master     # everything okay? good, let's push it
          this.refreshView();
      }
 
+     function loginHandler() {
+         var t = this;
+         this.user = false;
+         this.logindialog = $("#loginDialog").dialog({autoOpen: false});	 
+	 this.checkLoggedIn();
+	 $("#notloggedin").click(function() {
+             t.logindialog.dialog("open");
+	 } );
+	 $("#loginBtn").click(function() {
+             t.logindialog.dialog("close");
+             t.login();
+         } ); 
+     }
+
+     loginHandler.prototype.login = function() {
+         var user = $("#userField").attr("value");
+	 var pass = $("#passField").attr("value");
+	 var t = this;
+
+	 $.ajax({ url: API_URL, type: "POST", data: { action: 'login', user: user, pass: pass }, success: function(d) { t.updateLoginState(d); } });
+     }
+
+     loginHandler.prototype.checkLoggedIn = function() {
+         var t = this;
+         $("#checkinglogin").show();
+	 $("#loggedin").hide();
+	 $("#notloggedin").hide();
+	 $.ajax({ url: API_URL+'?action=loggedin', success: function(d) { t.updateLoginState(d); } });
+     }
+
+     loginHandler.prototype.updateLoginState = function(d) {
+         var t = this;
+         if (d.success && d.user) {
+             $("#checkinglogin").hide();
+	     $("#loggedin").html("Welcome "+d.user+" (<a href='#'>Logout</a>)").fadeIn();
+	     $("#notloggedin").hide();
+	     $("#loggedin a").click(function() {
+                 $.ajax({ url: API_URL+'?action=logout', success: function(d) { t.updateLoginState(d); } });
+	     });
+	     this.user = d.user;
+	 } else {
+             $("#checkinglogin").hide();
+             $("#loggedin").hide();
+	     $("#notloggedin").fadeIn();
+	     this.user = false;
+         }
+     }
+
      var repos;
+     var login;
+
      $(document).ready(function() {
+         login = new loginHandler();
          repos = new repoList(GITHUB_BASEURL, GITHUB_ORG);
          repos.update();
          repos.showList();
@@ -133,18 +200,50 @@ $ git push origin master     # everything okay? good, let's push it
 	     $(".pullinstructions").click(function() {
 		     $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
 		                     .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')', width: 800 });
-		     });
+             });
+             $(".updatepullrequest").click(function() {
+		     var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
+			     .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')' });
+		     $("button", dia).click(function(r, n, dia) { return function() { updateRepo(r, n, dia); }}(repo, $(this).attr("number"), dia) );
+	     });
 	     $("#repoPullList").accordion({ autoHeight: false });
 	     $("#repoContent").show();
 	     }
          });
          
-     }
+      }
+
+      function updateRepo(reponame, num, dia) {
+          var t = this;
+          if (!login.user) {
+              window.alert("Login First!");
+              return;
+          }
+          $("#loading").show();
+          $.ajax({ url: API_URL, type: "POST", data: {
+              action: 'ghupdate',
+              repo: reponame,
+              id: num,
+              state: $("select", dia).attr("value"),
+              comment: $("textarea", dia).attr("value")
+          }, success: function(d) { repos.update(); } });
+          dia.dialog("destroy");
+      }
    </script>
+  <div id="loginstatus">
+    <span id="checkinglogin">(checking login state ...)</span>
+    <span id="loggedin"></span>
+    <span id="notloggedin"><a href="#">Login</span>
+  </div>
   <h1>Github Pull Requests</h1>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
   <div id="mainContent"><ul id="repolist"></ul>The PHP project is using github to mirror its git repostories from <a href="http://git.php.net">git.php.net</a>.</div>
   <div id="repoContent"></div>
+  <div id="loginDialog" title="Login">
+    Username: <br><input id="userField"><br>
+    Password: <br><input id="passField" type="password"><br>
+    <button id="loginBtn">Login</button>
+  </div>
   <div id="loading">Loading</div>
 
           </td>
