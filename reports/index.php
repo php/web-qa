@@ -109,24 +109,7 @@ foreach ($reportsPerVersion as $version => $line) {
     echo '<td align="right">'.$line['nbFailingTests'].'</td>';
     echo '<td align="right">'.$line['nbFailures'].'</td>';
     echo '<td nowrap align="right" sorttable_customkey="'.strtotime($line['lastReport']).'">';
-    
-    $lastReport = time()-strtotime($line['lastReport']);
-    
-    if ($lastReport < 3600) {
-        $tmpValue = round($lastReport/60);
-        echo "$tmpValue ", ($tmpValue == 1) ? 'minute' : 'minutes';
-    } elseif ($lastReport < 3600*24) {
-        $tmpValue = round($lastReport/3600);
-        echo "$tmpValue ", ($tmpValue == 1) ? 'hour' : 'hours';
-    } elseif ($lastReport < 3600*24*60) {
-        $tmpValue = round($lastReport/3600/24);
-        echo "$tmpValue ", ($tmpValue == 1) ? 'day' : 'days';
-    } else {
-        $tmpValue = floor($lastReport/3600/24/30);
-        echo "$tmpValue ", ($tmpValue == 1) ? 'month' : 'months';
-    }
-    unset($tmpValue);
-    echo " ago";
+    echo format_readable_date(strtotime($line['lastReport']));
     echo '</td>';
     echo '</tr>'."\n";
 }
@@ -149,7 +132,7 @@ foreach ($reportsPerVersion as $version => $line) {
      <th>Test name</th>
      <th>Count</th>
      <th>Variations</th>
-     <th>Last reported date</th>
+     <th>Last report date</th>
      <th>&nbsp;</th>
     </tr>
     </thead>
@@ -162,7 +145,9 @@ foreach ($reportsPerVersion as $version => $line) {
      echo '><td>'.$line['test_name'].'</td>';
      echo '<td align="right">'.$line['cpt'].'</td>';
      echo '<td align="right">'.$line['variations'].'</td>';
-     echo '<td align="right">'.$line['date'].'</td>';
+     echo '<td align="right" sorttable_customkey="'.strtotime($line['date']).'">';
+	 echo format_readable_date(strtotime($line['date']));
+	 echo '</td>';
          echo '<td><a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">
         <img src="report.png" title="View reports" border="0" /></a></td>';
      echo '</tr>'."\n";

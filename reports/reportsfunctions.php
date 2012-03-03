@@ -157,3 +157,28 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
     }
     return $data;
 }
+
+
+/**
+ * Format date as we want
+ * @param unix timestamp
+ * @return string
+ */
+function format_readable_date($date) {
+    $lastReport = time()-$date;
+    $return = '';
+    if ($lastReport < 3600) {
+        $tmpValue = round($lastReport/60);
+        $return = "$tmpValue ", ($tmpValue == 1) ? 'minute' : 'minutes';
+    } elseif ($lastReport < 3600*24) {
+        $tmpValue = round($lastReport/3600);
+        $return = "$tmpValue ", ($tmpValue == 1) ? 'hour' : 'hours';
+    } elseif ($lastReport < 3600*24*60) {
+        $tmpValue = round($lastReport/3600/24);
+        $return = "$tmpValue ", ($tmpValue == 1) ? 'day' : 'days';
+    } else {
+        $tmpValue = floor($lastReport/3600/24/30);
+        $return = "$tmpValue ", ($tmpValue == 1) ? 'month' : 'months';
+    }
+    return $return." ago";
+}
