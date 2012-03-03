@@ -3,7 +3,7 @@
 const GITHUB_BASEURL = 'https://api.github.com/';
 const GITHUB_ORG     = 'php';
 const GITHUB_USER    = 'johannes';
-define('GITHUB_PASS', trim(file_get_contents('passwd'))); // FETCH FROM ENVIRONMENT
+define('GITHUB_PASS', include('passwd.php')); // FETCH FROM ENVIRONMENT
 
 if ($_SERVER['SERVER_NAME'] === 'schlueters.de') {
 	define('DEV', true);
