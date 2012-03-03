@@ -16,7 +16,10 @@
 #  +----------------------------------------------------------------------+
 #   $Id$
 
+error_reporting(E_ALL);
+
 require 'parserfunc.php';
+require '../include/functions.php';
 echo '<h1>Testing QA report parsing and database handling</h1>';
 echo '<pre>'."\n";
 
@@ -63,22 +66,22 @@ else echo " <font color='red'>KO</font> \n";
 printf("%-30s", "specific test diff");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['diff']);
 if (isset($array['tests']['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
-     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
-else echo " <font color='red'>KO</font> \n";
+     echo " <font color='green'>OK size:   ".$strlen." - optimal =   293</font> \n";
+else echo " <font color='red'>KO (length: $strlen should be > 290)</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['output']);
 if (isset($array['tests']['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
-     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
+     echo " <font color='green'>OK size:   ".$strlen." - optimal =   167</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "phpinfo");
-if (strlen($array['phpinfo']) >= 27940) echo " <font color='green'>OK (size: ".strlen($array['phpinfo']).")</font> \n";
+if (strlen($array['phpinfo']) >= 27940) echo " <font color='green'>OK size: ".strlen($array['phpinfo'])."</font> \n";
 else                        echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "buildEnvironment");
 if (strlen($array['buildEnvironment']) >= 4500) 
-     echo " <font color='green'>OK (size: ".strlen($array['buildEnvironment']).")</font> \n";
+     echo " <font color='green'>OK size:  ".strlen($array['buildEnvironment'])."</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 // total diff / output, to see if we parsed everything Ok
@@ -91,11 +94,11 @@ foreach ($array['tests'] as $name => $content) {
 }
 
 printf("%-30s", "Total diff length");
-if ($totalDiff >= 27900) echo " <font color='green'>OK (size: ".$totalDiff." - optimal = 27938)</font> \n";
+if ($totalDiff >= 27900) echo " <font color='green'>OK size: ".$totalDiff." - optimal = 27938</font> \n";
 else                     echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "Total output length");
-if ($totalOutput >= 31950) echo " <font color='green'>OK (size: ".$totalOutput." - optimal = 31971)</font> \n";
+if ($totalOutput >= 31950) echo " <font color='green'>OK size: ".$totalOutput." - optimal = 31971</font> \n";
 else                       echo " <font color='red'>KO</font> \n";
 
 
@@ -150,13 +153,13 @@ if (count($sqlFailed) == 33) {
 printf("%-30s", "specific test diff");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['diff']);
 if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
-     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==293</font> \n";
+     echo " <font color='green'>OK size:   ".$strlen." - optimal =   293</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['output']);
 if (isset($sqlFailed['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
-     echo " <font color='green'>OK (size: ".$strlen." ) - optimal==167</font> \n";
+     echo " <font color='green'>OK size:   ".$strlen." - optimal =   167</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 $totalDiff = 0;
@@ -168,11 +171,11 @@ foreach ($sqlFailed as $name => $content) {
 }
 
 printf("%-30s", "Total diff length");
-if ($totalDiff >= 27900) echo " <font color='green'>OK (size: ".$totalDiff." - optimal = 27938)</font> \n";
+if ($totalDiff >= 27900) echo " <font color='green'>OK size: ".$totalDiff." - optimal = 27938</font> \n";
 else                     echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "Total output length");
-if ($totalOutput >= 31950) echo " <font color='green'>OK (size: ".$totalOutput." - optimal = 31971)</font> \n";
+if ($totalOutput >= 31950) echo " <font color='green'>OK size: ".$totalOutput." - optimal = 31971</font> \n";
 else                       echo " <font color='red'>KO</font> \n";
 
 // Cleanup

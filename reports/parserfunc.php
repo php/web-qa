@@ -213,7 +213,7 @@ function parse_phpmaketest($version, $status, $file)
         $output = explode("\n", $output);
         
         foreach ($output as $row) {
-            if (preg_match('@^={5,}$@', $row)) {
+            if (preg_match('@^={5,}(\s)?$@', $row)) {
                 if ($outputTest != '') $startDiff = true;
                 
             } elseif ($startDiff === false) {
