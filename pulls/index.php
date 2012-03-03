@@ -51,6 +51,7 @@ common_header();
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
    <script type="text/javascript" src="jsrender.js"></script>
+   <script type="text/javascript" src="jquery.ba-bbq.min.js"></script>
    <script id="repoListItemTemplate" type="text/x-jquery-tmpl">
 	   <li repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
    </script>

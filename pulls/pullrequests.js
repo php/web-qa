@@ -2,7 +2,7 @@ function repoList(baseurl, org) {
     this.url = baseurl+'orgs/'+org+'/repos';
     this.data = {data:[]};
     var t = this;
-    $("#backToRepolist").click(function () { t.showList(); });
+    $("#backToRepolist").click(function () { $.bbq.removeState('repo'); });
 }
 
 repoList.prototype.showList = function() {
@@ -14,13 +14,14 @@ repoList.prototype.showList = function() {
 
 repoList.prototype.hideList = function() {
     $("#repolist").fadeOut();
+    $("#mainContent").hide();
     $("#backToRepolist").fadeIn();
 }
 
 repoList.prototype.refreshView = function() {
     $("#repolist").html($("#repoListItemTemplate").render(this.data.data));
     $("#mainContent").show();
-    $("li", $("#repolist")).click(function() { loadRepo($(this).attr("repo")); });
+    $("li", $("#repolist")).click(function() { var reponame = loadRepo($(this).attr("repo")); $.bbq.pushState({ repo: reponame }); });
 }
 repoList.prototype.update = function() {
     var t = this;
@@ -92,6 +93,16 @@ $(document).ready(function() {
     repos = new repoList(GITHUB_BASEURL, GITHUB_ORG);
     repos.update();
     repos.showList();
+
+    $(window).bind( "hashchange", function(e) {
+        if ($.bbq.getState( "repo" )) {
+            loadRepo($.bbq.getState("repo"));
+        } else {
+            repos.showList();
+        }
+    });
+
+    $(window).trigger( "hashchange" );
 });
 
 function loadRepo(repo) {
@@ -115,6 +126,7 @@ function loadRepo(repo) {
             });
             $("#repoPullList").accordion({ autoHeight: false });
             $("#repoContent").show();
+            $.bbq.pushState({ repo: repo });
         }
     });
          
