@@ -135,12 +135,16 @@ $ git push origin master     # everything okay? good, let's push it
          this.logindialog = $("#loginDialog").dialog({autoOpen: false});	 
          this.checkLoggedIn();
          $("#notloggedin").click(function() {
-             t.logindialog.dialog("open");
+             t.showLoginForm();
          } );
          $("#loginBtn").click(function() {
              t.logindialog.dialog("close");
              t.login();
          } ); 
+     }
+
+     loginHandler.prototype.showLoginForm = function() {
+         this.logindialog.dialog("open");
      }
 
      loginHandler.prototype.login = function() {
@@ -216,7 +220,7 @@ $ git push origin master     # everything okay? good, let's push it
       function updateRepo(reponame, num, dia) {
           var t = this;
           if (!login.user) {
-              window.alert("Login First!");
+              login.showLoginForm();
               return;
           }
           $("#loading").show();
