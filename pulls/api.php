@@ -180,11 +180,11 @@ $accepted_actions = array(
 	'loggedin',
 	'ghupdate'
 );
-if (in_array($_REQUEST['action'], $accepted_actions)) {
+if (isset($_REQUEST['action']) && in_array($_REQUEST['action'], $accepted_actions)) {
 	$action = $_REQUEST['action'];
 	$action();
 } else {
 	header('HTTP/1.0 400 Bad Request');
-	die(json_encode(array('success' => false, 'errors' => array("Unknown method $_REQUEST[action]"))));
+	die(json_encode(array('success' => false, 'errors' => array("Unknown method"))));
 }
 
