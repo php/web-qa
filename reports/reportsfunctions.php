@@ -169,16 +169,20 @@ function format_readable_date($date) {
     $return = '';
     if ($lastReport < 3600) {
         $tmpValue = round($lastReport/60);
-        $return = "$tmpValue ", ($tmpValue == 1) ? 'minute' : 'minutes';
+		$return = $tmpValue.' ';
+        $return .= ($tmpValue == 1) ? 'minute' : 'minutes';
     } elseif ($lastReport < 3600*24) {
         $tmpValue = round($lastReport/3600);
-        $return = "$tmpValue ", ($tmpValue == 1) ? 'hour' : 'hours';
+        $return = $tmpValue.' ';
+        $return .= ($tmpValue == 1) ? 'hour' : 'hours';
     } elseif ($lastReport < 3600*24*60) {
         $tmpValue = round($lastReport/3600/24);
-        $return = "$tmpValue ", ($tmpValue == 1) ? 'day' : 'days';
+        $return = $tmpValue.' ';
+        $return .= ($tmpValue == 1) ? 'day' : 'days';
     } else {
         $tmpValue = floor($lastReport/3600/24/30);
-        $return = "$tmpValue ", ($tmpValue == 1) ? 'month' : 'months';
+        $return = $tmpValue.' ';
+        $return .= ($tmpValue == 1) ? 'month' : 'months';
     }
     return $return." ago";
 }
