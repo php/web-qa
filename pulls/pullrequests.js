@@ -9,6 +9,7 @@ repoList.prototype.showList = function() {
     $("#repolist").fadeIn();
     $("#backToRepolist").hide();
     $("#repoContent").fadeOut();
+    $("#mainContent").show();
     this.refreshView();
 }
 
@@ -20,7 +21,6 @@ repoList.prototype.hideList = function() {
 
 repoList.prototype.refreshView = function() {
     $("#repolist").html($("#repoListItemTemplate").render(this.data.data));
-    $("#mainContent").show();
     $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).attr("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
 }
 repoList.prototype.update = function() {
@@ -115,7 +115,6 @@ function loadRepo(repo) {
         url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls",
         success: function (data) {
             $("#loading").hide();
-            $("#mainContent").hide();
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
             $(".pullinstructions").click(function(ev) {
                 $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
