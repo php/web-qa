@@ -2,7 +2,7 @@
 include("../include/functions.php");
 include("../include/release-qa.php");
 
-require("./config.php");
+@include("./config.php");
 
 $TITLE = "PHP-QA: GitHub Pull Requests";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
@@ -105,6 +105,18 @@ $ git push origin master     # everything okay? good, let's push it
     <span id="notloggedin"><a href="#">Login</a></span>
   </div>
   <h1>Github Pull Requests</h1>
+<?php
+if (empty($_ENV['AUTH_TOKEN'])) {
+    echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> AUTH_TOKEN not set</div><br>';
+}
+
+if (!constant('GITHUB_PASS')) {
+    echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> config.php not configured correctly.</div><br>';
+    common_footer();
+    exit;
+}
+
+?>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
   <div id="mainContent"><ul id="repolist"></ul>The PHP project is using github to mirror its git repostories from <a href="http://git.php.net">git.php.net</a>.</div>
   <div id="repoContent"></div>
