@@ -2,14 +2,14 @@ function repoList(baseurl, org) {
     this.url = baseurl+'orgs/'+org+'/repos';
     this.data = {data:[]};
     var t = this;
-    $("#backToRepolist").click(function () { $.bbq.removeState('repo'); });
+    $("#backToRepolist").click(function (ev) { $.bbq.removeState('repo'); ev.preventDefault();});
 }
 
 repoList.prototype.showList = function() {
     $("#repolist").fadeIn();
     $("#backToRepolist").hide();
     $("#repoContent").fadeOut();
-    repos.refreshView();
+    this.refreshView();
 }
 
 repoList.prototype.hideList = function() {
@@ -21,7 +21,7 @@ repoList.prototype.hideList = function() {
 repoList.prototype.refreshView = function() {
     $("#repolist").html($("#repoListItemTemplate").render(this.data.data));
     $("#mainContent").show();
-    $("li", $("#repolist")).click(function() { var reponame = loadRepo($(this).attr("repo")); $.bbq.pushState({ repo: reponame }); });
+    $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).attr("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
 }
 repoList.prototype.update = function() {
     var t = this;
@@ -38,12 +38,14 @@ function loginHandler() {
     this.user = false;
     this.logindialog = $("#loginDialog").dialog({autoOpen: false});	 
     this.checkLoggedIn();
-    $("#notloggedin").click(function() {
+    $("#notloggedin").click(function(ev) {
         t.showLoginForm();
+        ev.preventDefault();
     } );
-    $("#loginBtn").click(function() {
+    $("#loginBtn").click(function(ev) {
         t.logindialog.dialog("close");
         t.login();
+        ev.preventDefault();
     } ); 
 }
 
@@ -73,8 +75,9 @@ loginHandler.prototype.updateLoginState = function(d) {
         $("#checkinglogin").hide();
         $("#loggedin").html("Welcome "+d.user+" (<a href='#'>Logout</a>)").fadeIn();
         $("#notloggedin").hide();
-        $("#loggedin a").click(function() {
+        $("#loggedin a").click(function(ev) {
             $.ajax({ url: API_URL+'?action=logout', success: function(d) { t.updateLoginState(d); } });
+            ev.preventDefault();
         });
         this.user = d.user;
     } else {
@@ -119,10 +122,11 @@ function loadRepo(repo) {
                 $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
                                 .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')', width: 800 });
             });
-            $(".updatepullrequest").click(function() {
+            $(".updatepullrequest").click(function(ev) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
                                           .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')' });
-                $("button", dia).click(function(r, n, dia) { return function() { updateRepo(r, n, dia); }}(repo, $(this).attr("number"), dia) );
+                $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).attr("number"), dia) );
+                ev.preventDefault();
             });
             $("#repoPullList").accordion({ autoHeight: false });
             $("#repoContent").show();
@@ -145,7 +149,7 @@ function updateRepo(reponame, num, dia) {
         id: num,
         state: $("select", dia).attr("value"),
         comment: $("textarea", dia).attr("value")
-    }, success: function(d) { repos.update(); } });
+    }, success: function(d) { loadRepo(reponame); } });
     dia.dialog("destroy");
 }
 
