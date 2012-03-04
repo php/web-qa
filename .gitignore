@@ -1,1 +1,2 @@
 reports/db/*.sqlite
+reports/db/*.cache

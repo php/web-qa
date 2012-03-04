@@ -107,6 +107,10 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             
         }
         $dbi->close();
+        
+        // remove cache
+        if (file_exists($dbFile.'.cache'))
+            unlink($dbFile.'.cache');
     }
     return true;
 }

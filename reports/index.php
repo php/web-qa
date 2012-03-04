@@ -50,7 +50,7 @@ if (isset($_GET['version'])) {
     }
     $failedTestsArray = array();
     $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, 
-            date(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
+            datetime(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
             GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
     $q = @$database->query($query);
     if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
@@ -94,15 +94,14 @@ if (!$getVersion) {
 </thead>
 <tbody>
 <?php
-
 uksort($reportsPerVersion, 'version_compare');
-
+$maxReportDate = 0;
 foreach ($reportsPerVersion as $version => $line) {
 
     if (version_compare($version, '5.3.8', '<')) {
         continue;
     }
-    
+    if ($maxReportDate < strtotime($line['lastReport'])) $maxReportDate = strtotime($line['lastReport']);
     echo '<tr>';
     echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
     echo '<td align="right">'.$line['nbReports'].'</td>';
@@ -139,7 +138,10 @@ foreach ($reportsPerVersion as $version => $line) {
     <tbody>
  <?php
  $i = 0;
+ $maxReportDate = 0;
  foreach ($failedTestsArray as $line) {
+	if ($maxReportDate < strtotime($line['date'])) $maxReportDate = strtotime($line['date']);
+	
      echo ' <tr ';
      if ($i % 2) echo 'style="background-color: #ffcc66" ';
      echo '><td>'.$line['test_name'].'</td>';
@@ -169,7 +171,8 @@ foreach ($reportsPerVersion as $version => $line) {
 
 </div>
 <?php
-$SITE_UPDATE = date('D M d H:i:s Y T', filemtime(__FILE__))."<br />".
+// Last update = date of last report in this very page
+$SITE_UPDATE = date('D M d H:i:s Y T', $maxReportDate)."<br />".
                "Generated in ".round((microtime(true)-$startTime)*1000)." ms";
 common_footer();
 
