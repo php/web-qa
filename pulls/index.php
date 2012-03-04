@@ -106,7 +106,7 @@ $ git push origin master     # everything okay? good, let's push it
   </div>
   <h1>Github Pull Requests</h1>
 <?php
-if (empty($_ENV['AUTH_TOKEN'])) {
+if (!getenv('AUTH_TOKEN')) {
     echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> AUTH_TOKEN not set</div><br>';
 }
 
