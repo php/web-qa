@@ -95,11 +95,11 @@ $(document).ready(function() {
     login = new loginHandler();
     repos = new repoList(GITHUB_BASEURL, GITHUB_ORG);
     repos.update();
-    repos.showList();
 
     $(window).bind( "hashchange", function(e) {
         if ($.bbq.getState( "repo" )) {
             loadRepo($.bbq.getState("repo"));
+            repos.hideList();
         } else {
             repos.showList();
         }
@@ -114,7 +114,6 @@ function loadRepo(repo) {
         dataType: 'jsonp',
         url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls",
         success: function (data) {
-            repos.hideList();
             $("#loading").hide();
             $("#mainContent").hide();
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
