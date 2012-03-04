@@ -118,9 +118,10 @@ function loadRepo(repo) {
             $("#loading").hide();
             $("#mainContent").hide();
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
-            $(".pullinstructions").click(function() {
+            $(".pullinstructions").click(function(ev) {
                 $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
                                 .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')', width: 800 });
+                ev.preventDefault();
             });
             $(".updatepullrequest").click(function(ev) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
@@ -133,7 +134,7 @@ function loadRepo(repo) {
             $.bbq.pushState({ repo: repo });
         }
     });
-         
+ 
 }
 
 function updateRepo(reponame, num, dia) {
