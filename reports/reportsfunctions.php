@@ -80,6 +80,25 @@ class devFilterIterator extends WhitelistedFilterIterator
     }
 }
 
+class specificVersionFilterIterator extends WhitelistedFilterIterator
+{
+    private $keyword;
+
+    public function __construct(Traversable $inner, $keyword)
+    {
+        parent::__construct($inner, array());
+        if (!is_array($keyword)) 
+            $this->keyword = array($keyword);
+        else
+            $this->keyword = $keyword;
+    }
+
+    public function accept()
+    {
+        return $this->inWhitelist() || !in_array($this->key(), $this->keyword);
+    }
+}
+
 class minVersionFilterIterator extends FilterIterator
 {
     private $min;
@@ -103,7 +122,7 @@ const QA_REPORT_FILTER_RC    = 4;
 const QA_REPORT_FILTER_DEV   = 8;
 const QA_REPORT_FILTER_CURRENT_RELEASES = 16;
 
-define('QA_REPORT_FILTER_ALL', QA_REPORT_FILTER_ALPHA|QA_REPORT_FILTER_BETA|QA_REPORT_FILTER_RC|QA_REPORT_FILTER_DEV|QA_REPORT_FILTER_CURRENT_RELEASES);
+define('QA_REPORT_FILTER_ALL', QA_REPORT_FILTER_ALPHA|QA_REPORT_FILTER_BETA|QA_REPORT_FILTER_CURRENT_RELEASES);
 
 /**
  * Analyse sqlite files and retrieve data from it
@@ -115,7 +134,10 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
 
     $data = array();
     $it = new QaReportIterator(new DirectoryIterator(__DIR__.'/db/'));
-
+    
+    // temp fix
+    $it = new specificVersionFilterIterator($it, array('5.3.99-dev', '5.4.0-dev'));
+    
     if ($mode & QA_REPORT_FILTER_ALPHA) {
         $it = new keywordFilterIterator($it, 'alpha', $QA_RELEASES['reported']);
     }
