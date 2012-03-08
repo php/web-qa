@@ -190,7 +190,7 @@ function show_release_qa($QA_RELEASES) {
 		foreach ($QA_RELEASES['snaps'] as $pversion => $info) {
 			
 			// more madness
-			echo "<li>$pversion : ";
+			echo "<li>$pversion: ";
 			echo "[<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] or ";
 			echo "[<a href='{$info['files']['gz']['path']}'>tar.gz</a>]</li>\n";
 		}
