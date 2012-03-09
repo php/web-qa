@@ -1,4 +1,9 @@
 <?php
+if (empty($_SERVER['HTTPS'])) {
+    header('Location: https://'.$_SERER['HTTP_HOST'].'/pulls/');
+    exit;
+}
+
 include("../include/functions.php");
 include("../include/release-qa.php");
 
