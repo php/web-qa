@@ -1,6 +1,6 @@
 <?php
 if (empty($_SERVER['HTTPS'])) {
-    header('Location: https://'.$_SERER['HTTP_HOST'].'/pulls/');
+    header('Location: https://'.$_SERVER['HTTP_HOST'].'/pulls/');
     exit;
 }
 
