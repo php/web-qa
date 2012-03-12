@@ -1,6 +1,7 @@
 <?php
 if (empty($_SERVER['HTTPS'])) {
-    header('Location: https://'.$_SERVER['HTTP_HOST'].'/pulls/');
+    $host = preg_replace('/\s/', '', $_SERVER['HTTP_HOST']);
+    header("Location: https://$host/pulls/");
     exit;
 }
 
