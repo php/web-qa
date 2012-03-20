@@ -21,7 +21,7 @@ common_header();
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
 [<a href="#request_section">--REQUEST--</a>]<br/>
-[<a href="#post_section">--POST--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
+[<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
 [<a href="#cookie_section">--COOKIE--</a>]<br/>
 [<a href="#stdin_section">--STDIN--</a>]<br/>
 [<a href="#ini_section">--INI--</a>]<br/>
@@ -224,6 +224,27 @@ Content-Type: text/plain
 abcdef123456789
 --AaB03x--</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample006.php">sample006.phpt</a></p>
+</dd>
+
+<dt id="put_section">--PUT--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Similar to the section above, PUT data to be passed to the test script. 
+This section forces the use of the CGI binary instead of the usual CLI one.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Requirements:</b><br/>
+PHP CGI binary.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+Raw data optionally preceeded by a Content-Type header.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--PUT--
+Content-Type: text/json
+
+{"name":"default output handler","type":0,"flags":112,"level":0,"chunk_size":0,"buffer_size":16384,"buffer_used":3}</pre>
+</p>
 </dd>
 
 <dt id="gzip_post_section">--GZIP_POST--</dt>
