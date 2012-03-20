@@ -124,7 +124,7 @@ if (!constant('GITHUB_PASS')) {
 
 ?>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
-  <div id="mainContent"><ul id="repolist"></ul>The PHP project is using github to mirror its git repostories from <a href="http://git.php.net">git.php.net</a>.</div>
+  <div id="mainContent"><ul id="repolist"></ul>The PHP project is using github to mirror its git repositories from <a href="http://git.php.net">git.php.net</a>.</div>
   <div id="repoContent"></div>
   <div id="loginDialog" title="Login">
     Username: <br><input id="userField"><br>
