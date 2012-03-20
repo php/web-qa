@@ -160,7 +160,7 @@ function updateRepo(reponame, num, dia) {
             }
 	    window.alert(message);
         }
-    });
+    }});
     dia.dialog("destroy");
 }
 
