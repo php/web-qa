@@ -1,4 +1,5 @@
 <?php
+$errors = array();
 require('./config.php');
 
 if ($_SERVER['SERVER_NAME'] === 'schlueters.de') {
@@ -53,6 +54,8 @@ function verify_password_DEV($user, $pass)
 
 function ghpostcomment($pull, $comment)
 {
+	global $errors;
+
 	$post = json_encode(array("body" => "**Comment on behalf of $_SESSION[user] at php.net:**\n\n$comment"));
 
 
@@ -64,8 +67,21 @@ function ghpostcomment($pull, $comment)
 	$ctx = stream_context_create(array('http' => $opts));
 
 	$url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $pull->_links->comments->href);
+	$old_track_errors = ini_get('track_errors');
+	ini_set('track_errors', true);
 	$s = @file_get_contents($url, false, $ctx);
-	return (bool)$s;
+	ini_set('track_errors', $old_track_errors);
+
+	if (!$s) {
+		$errors[] = "Server responded: ".$http_response_header[0];
+		$errors[] = "Github user: ".GITHUB_USER;
+		if ($_SESSION['user'] === 'johannes') {
+			/* This might include the password or such, so not everybody should get it */
+			$errors[] = $php_errormsg;
+		}
+		return false;
+	}
+	return true;
 }
 
 function ghchangestate($pull, $state)
@@ -118,6 +134,8 @@ function loggedin()
 
 function ghupdate()
 {
+	global $errors;
+
 	if (empty($_SESSION['user'])) {
 		header('HTTP/1.0 401 Unauthorized');
 		die(json_encode(array('success' => false, 'errors' => array('Unauthorized'))));
@@ -154,13 +172,15 @@ function ghupdate()
 
 	if (!ghpostcomment($pull, $comment)) {
 		header('500 Internal Server Error');
-		die(json_encode(array('success' => false, 'errors' => array("Failed to add comment on GitHub"))));
+		$errors[] = "Failed to add comment on GitHub";
+		die(json_encode(array('success' => false, 'errors' => $errors)));
 	}
 
 	if (!empty($_POST['state'])) {
 		if (!ghchangestate($pull, $_POST['state'])) {
 			header('500 Internal Server Error');
-			die(json_encode(array('success' => false, 'errors' => array("Failed to set new state"))));
+			$errors[] = "Failed to set new state";
+			die(json_encode(array('success' => false, 'errors' => $errors)));
 		}
 	}
 

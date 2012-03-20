@@ -148,7 +148,19 @@ function updateRepo(reponame, num, dia) {
         id: num,
         state: $("select", dia).attr("value"),
         comment: $("textarea", dia).attr("value")
-    }, success: function(d) { loadRepo(reponame); } });
+    }, success: function(d) {
+        if (d.success) {
+            loadRepo(reponame);
+        } else {
+            /* This might be reported in a nicer way ... */
+            var message = "Failed while updating!";
+            var key;
+            for (key in d.errors) {
+                message += "\n"+d.errors[key];
+            }
+	    window.alert(message);
+        }
+    });
     dia.dialog("destroy");
 }
 
