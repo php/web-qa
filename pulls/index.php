@@ -135,10 +135,10 @@ if (!constant('GITHUB_PASS')) {
     while this tool helps with tasks which can't be done as we don't make contributors to
     PHP actual members of the "PHP Organization" on GitHub. The most important function might
     be closing pull requests without applying the changes (if the changes are applied GitHub
-    will close it automatically.
+    will close it automatically).
     </p>
     <p>Please note that this tool is in constant development and in an early state.
-    For a more detailed overview on the PHP Git process please check the <a href="https://wiki.php.net/vcs/gitworkflow">Git Workflow page</a> on the  Wiki.
+    For a more detailed overview on the PHP Git process please check the <a href="https://wiki.php.net/vcs/gitworkflow">Git Workflow page</a> on the Wiki.
     </p>
   </div>
   <div id="repoContent"></div>
