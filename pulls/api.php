@@ -52,6 +52,29 @@ function verify_password_DEV($user, $pass)
 	return $user === 'johannes';
 }
 
+function do_http_request($url, $ctxt)
+{
+	global $errors;
+
+	$old_track_errors = ini_get('track_errors');
+	ini_set('track_errors', true);
+	$s = @file_get_contents($url, false, $ctx);
+	ini_set('track_errors', $old_track_errors);
+
+	if (!$s) {
+		$errors[] = "Server responded: ".$http_response_header[0];
+		$errors[] = "Github user: ".GITHUB_USER;
+		if ($_SESSION['user'] === 'johannes') {
+			/* This might include the password or such, so not everybody should get it
+			   The good news is that the HTTP Status code usually is a good enough hint
+			*/
+			$errors[] = $php_errormsg;
+		}
+		return false;
+	}
+	return $s;
+}
+
 function ghpostcomment($pull, $comment)
 {
 	global $errors;
@@ -67,21 +90,7 @@ function ghpostcomment($pull, $comment)
 	$ctx = stream_context_create(array('http' => $opts));
 
 	$url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $pull->_links->comments->href);
-	$old_track_errors = ini_get('track_errors');
-	ini_set('track_errors', true);
-	$s = @file_get_contents($url, false, $ctx);
-	ini_set('track_errors', $old_track_errors);
-
-	if (!$s) {
-		$errors[] = "Server responded: ".$http_response_header[0];
-		$errors[] = "Github user: ".GITHUB_USER;
-		if ($_SESSION['user'] === 'johannes') {
-			/* This might include the password or such, so not everybody should get it */
-			$errors[] = $php_errormsg;
-		}
-		return false;
-	}
-	return true;
+	return (bool)do_http_request($url, $ctx);
 }
 
 function ghchangestate($pull, $state)
@@ -96,8 +105,7 @@ function ghchangestate($pull, $state)
 	$ctx = stream_context_create(array('http' => $opts));
 
 	$url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $pull->_links->self->href);
-	$s = @file_get_contents($url, false, $ctx);
-	return (bool)$s;
+	return (bool)do_http_request($url, $ctx);
 }
 
 function login()
