@@ -124,7 +124,12 @@ if (!constant('GITHUB_PASS')) {
 
 ?>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
-  <div id="mainContent"><ul id="repolist"></ul>The PHP project is using github to mirror its git repositories from <a href="http://git.php.net">git.php.net</a>.</div>
+  <div id="mainContent">
+    <ul id="repolist"></ul>
+    <p>Even though the PHP project is using <a href="http://git.php.net">git.php.net</a> as master location for Git repositories we provide official <a href="http://github.com/php">mirrors on GitHub</a>, which can be used to create and discuss feature branches. This tool here tries to assist with the handling of GitHub pull requests.</p>
+    <p>In general discussions about pull requests should be done in the appropriate places (the actual pull request on GitHub, the php.net bug tracker, the PHP internals list, etc.) while this tool helps with tasks which can't be done as we don't make contributors to PHP actual members of the "PHP Organization" on GitHub. The most important function might be closing pull requests without applying the changes (if the changes are applied GitHub will close it automatically.</p>
+    <p>Please note that this tool is in constant development and in an early state. For a more detailed overview on the PHP Git process please check the <a href="https://wiki.php.net/vcs/gitworkflow">Git Workflow page</a> on the  Wiki.</p>
+  </div>
   <div id="repoContent"></div>
   <div id="loginDialog" title="Login">
     Username: <br><input id="userField"><br>
