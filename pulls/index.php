@@ -66,7 +66,6 @@ common_header();
 	   <div id="repoPullList">
 		   {{=pullList!}}
 	   </div>
-	   <!-- iframe style='width:100%; height:300px;border-width:1px;' src='' id='ghframe' name='ghframe'></iframe -->
    </script>
    <script id="pullRequestListItem" type="text/x-jquery-tmpl">
 	   <h3><a href='#'>{{=number}}: {{=title}} ({{=state}})</a></h3>
