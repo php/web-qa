@@ -52,14 +52,26 @@ function verify_password_DEV($user, $pass)
 	return $user === 'johannes';
 }
 
-function do_http_request($url, $ctxt)
+function do_http_request($url, $opts)
 {
 	global $errors;
 
+	$ctxt = stream_context_create(array('http' => $opts));
+	$actual_url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $url);
+
 	$old_track_errors = ini_get('track_errors');
 	ini_set('track_errors', true);
-	$s = @file_get_contents($url, false, $ctx);
+	$s = @file_get_contents($actual_url, false, $ctx);
 	ini_set('track_errors', $old_track_errors);
+
+	if (isset($_SESSION['debug']['requests'])) {
+		$_SESSION['debug']['requests'][] = array(
+			'url' => $url,
+			'opts'=> $opts,
+			'headers' => $http_response_header,
+			'response' => $s
+		);
+	}
 
 	if (!$s) {
 		$errors[] = "Server responded: ".$http_response_header[0];
@@ -87,10 +99,7 @@ function ghpostcomment($pull, $comment)
 		'content'       => $post,
 	);
 
-	$ctx = stream_context_create(array('http' => $opts));
-
-	$url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $pull->_links->comments->href);
-	return (bool)do_http_request($url, $ctx);
+	return (bool)do_http_request($pull->_links->comments->href, $opts);
 }
 
 function ghchangestate($pull, $state)
@@ -102,10 +111,7 @@ function ghchangestate($pull, $state)
 		'content' => $content
 	);
 
-	$ctx = stream_context_create(array('http' => $opts));
-
-	$url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $pull->_links->self->href);
-	return (bool)do_http_request($url, $ctx);
+	return (bool)do_http_request($pull->_links->self->href, $opts);
 }
 
 function login()
@@ -195,6 +201,16 @@ function ghupdate()
 	die(json_encode(array('success' => true)));
 }
 
+function requestlog() {
+	if (!isset($_SESSION['debug']['requests'])) {
+		$_SESSION['debug']['requests'] = array();
+	}
+
+	header('Content-Type: text/plain');
+	var_dump($_SESSION['debug']['requests']);
+	exit;
+}
+
 header('Content-Type: application/json');
 session_start();
 
@@ -202,7 +218,8 @@ $accepted_actions = array(
 	'login',
 	'logout',
 	'loggedin',
-	'ghupdate'
+	'ghupdate',
+	'requestlog'
 );
 if (isset($_REQUEST['action']) && in_array($_REQUEST['action'], $accepted_actions)) {
 	$action = $_REQUEST['action'];
