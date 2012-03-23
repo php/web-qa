@@ -61,7 +61,7 @@ function do_http_request($url, $opts)
 
 	$old_track_errors = ini_get('track_errors');
 	ini_set('track_errors', true);
-	$s = @file_get_contents($actual_url, false, $ctx);
+	$s = @file_get_contents($actual_url, false, $ctxt);
 	ini_set('track_errors', $old_track_errors);
 
 	if (isset($_SESSION['debug']['requests'])) {
