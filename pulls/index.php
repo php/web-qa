@@ -52,6 +52,8 @@ common_header();
    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
    <script type="text/javascript" src="jsrender.js"></script>
    <script type="text/javascript" src="jquery.ba-bbq.min.js"></script>
+   <script type="text/javascript" src="Markdown.Converter.js"></script>
+   <script type="text/javascript" src="Markdown.Sanitizer.js"></script>
    <script id="repoListItemTemplate" type="text/x-jquery-tmpl">
 	   <li repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
    </script>
@@ -67,7 +69,7 @@ common_header();
 	   <div class="pullrequest">
 		   <div class="ghuser"><a href="{{=user.url}}"><img src="{{=user.avatar_url}}"><br>{{=user.login}}</a></div>
 		   <div>Created: {{=created_at}}, LastUpdated: {{=updated_at}}</div>
-		   <div>{{=body}}</div>
+		   <div>{{=body!}}</div>
 		   <div><a href="{{=html_url}}"><img src="../gfx/github.ico"> On GitHub</a> |
 			<a href="{{=diff_url}}">Diff</a> |
 			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |

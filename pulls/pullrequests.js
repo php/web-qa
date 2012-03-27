@@ -90,10 +90,12 @@ loginHandler.prototype.updateLoginState = function(d) {
 
 var repos;
 var login;
+var converter;
 
 $(document).ready(function() {
     login = new loginHandler();
     repos = new repoList(GITHUB_BASEURL, GITHUB_ORG);
+    converter = new Markdown.getSanitizingConverter();
     repos.update();
 
     $(window).bind( "hashchange", function(e) {
@@ -115,6 +117,9 @@ function loadRepo(repo) {
         url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls",
         success: function (data) {
             $("#loading").hide();
+            for (var key in data.data) {
+                data.data[key].body = converter.makeHtml(data.data[key].body);
+            }
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
             $(".pullinstructions").click(function(ev) {
                 $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
