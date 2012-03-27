@@ -52,6 +52,10 @@ common_header();
              width: 100%;
              text-align: right;
      }
+
+     #repoPullList code {
+             white-space: pre;
+     }
    </style>
    <link href="http://code.jquery.com/ui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
