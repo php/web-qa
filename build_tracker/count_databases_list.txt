@@ -1,8 +1,0 @@
-# The number of databases that the client is using
-0::None
-1::One Database
-2::Two Different Database Types
-3::Three Different Database Types
-4::Four Different Database Types
-5::Five Different Database Types
-6::Six Different Database Types

@@ -1,8 +1,0 @@
--- I am using PHP as a CGI --
-Apache
-ISAPI
-AOLserver
-Java Servlet
-Roxen
-thttpd
-
