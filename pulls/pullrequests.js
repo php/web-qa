@@ -121,6 +121,7 @@ function loadRepo(repo) {
                 data.data[key].body = converter.makeHtml(data.data[key].body);
             }
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
+            $("#repoContent code").parent('p').css('overflow', 'auto');
             $(".pullinstructions").click(function(ev) {
                 $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
                                 .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')', width: 800 });
