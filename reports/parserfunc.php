@@ -69,10 +69,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             'expectedfail' => 'CREATE TABLE IF NOT EXISTS expectedfail (
                   `id` integer PRIMARY KEY AUTOINCREMENT,
                   `id_report` bigint(20) NOT NULL,
-                  `test_name` varchar(128) NOT NULL,
-                  `output` STRING NOT NULL,
-                  `diff` STRING NOT NULL,
-                  `signature` binary(16) NOT NULL
+                  `test_name` varchar(128) NOT NULL
                 )',
             'success' => 'CREATE TABLE IF NOT EXISTS success (
                   `id` integer PRIMARY KEY AUTOINCREMENT,
@@ -112,10 +109,10 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         $dbi->exec($queriesCreate['success']);
         
         // patch add field success
-        @$dbi->exec('ALTER TABLE reports ADD COLUMN success unsigned int(10) NOT NULL');
+        @$dbi->exec('ALTER TABLE reports ADD COLUMN success unsigned int(10) NOT NULL default 0');
         
-		// handle tests with no success
-		if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
+        // handle tests with no success
+        if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
         
         $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
         `nb_failed`, `nb_expected_fail`, `success`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
@@ -123,7 +120,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         ".((int)$array['status']).", 
         ".count($array['failedTest']).", 
         ".count($array['expectedFailedTest']).", 
-		".count($array['succeededTest']).", 
+        ".count($array['succeededTest']).", 
         ('".$dbi->escapeString($array['buildEnvironment'])."'), 
         ('".$dbi->escapeString($array['phpinfo'])."'),
         ".(!$array['userEmail'] ? "NULL" : "'".$dbi->escapeString($array['userEmail'])."'")."
@@ -131,13 +128,15 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         
         $dbi->query($query);
         if ($dbi->lastErrorCode() != '') {
-            echo "ERROR: ".$dbi->error."\n";
+            echo "ERROR: ".$dbi->lastErrorMsg()."\n";
             exit;
         }
 
         $reportId = $dbi->lastInsertRowID();
 
         foreach ($array['failedTest'] as $name) {
+            if (substr($name, 0, 1) != '/') $name = '/'.$name;
+            
             $test = $array['tests'][$name];
             $query = "INSERT INTO `failed` 
             (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
@@ -147,35 +146,30 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             
             @$dbi->query($query);
             if ($dbi->lastErrorCode() != '') {
-                echo "ERROR when inserting failed test : ".$dbi->error."\n";
+                echo "ERROR when inserting failed test : ".$dbi->lastErrorMsg()."\n";
                 exit;
             } 
         }
         
         foreach ($array['expectedFailedTest'] as $name) {
-            $test = $array['tests'][$name];
             $query = "INSERT INTO `expectedfail` 
-            (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
-            '".$reportId."', '".$name."', 
-            X'".md5($name.'__'.$test['diff'])."',
-            ('".$dbi->escapeString($test['output'])."'), ('".$dbi->escapeString($test['diff'])."'))";
+            (`id`, `id_report`, `test_name`) VALUES (null, '".$reportId."', '".$name."')";
             
             @$dbi->query($query);
             if ($dbi->lastErrorCode() != '') {
-                echo "ERROR when inserting expected fail test : ".$dbi->error."\n";
+                echo "ERROR when inserting expected fail test : ".$dbi->lastErrorMsg()."\n";
                 exit;
             } 
         }
-        
+
         foreach ($array['succeededTest'] as $name) {
             $test = $array['tests'][$name];
             $query = "INSERT INTO `success` 
-            (`id`, `id_report`, `test_name`) VALUES (null, 
-            '".$reportId."', '".$name."')";
+            (`id`, `id_report`, `test_name`) VALUES (null, '".$reportId."', '".$name."')";
             
             @$dbi->query($query);
             if ($dbi->lastErrorCode() != '') {
-                echo "ERROR when inserting succeeded test : ".$dbi->error."\n";
+                echo "ERROR when inserting succeeded test : ".$dbi->lastErrorMsg()."\n";
                 exit;
             } 
         }
@@ -188,12 +182,28 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
     return true;
 }
 
-function parse_phpmaketest($version, $status, $file)
+/**
+ * Parse raw data from 'make test' and create array 
+ * suitable to function insertToDb_phpmaketest()
+ *
+ * @param $version string  PHP version (extracted from GET in buildtest-process.php \
+ *                         or from mail subject in mailing qa-reports)
+ * @param $status  enum (failed|success|unknown|null)  extracted from GET. Will be \
+ *                         completed based on the raw data if not specified
+ * @param $file   string   RAW data to parse (from POST in buildtest-process.php).
+ *                         Can also handle email content in mailing qa-reports
+ */
+function parse_phpmaketest($version, $status=null, $file)
 {
     $extract = array();
 
     $extract['version'] = $version;
-    $extract['status']  = $status;
+    
+    if (in_array($status, array('failed', 'success', 'unknown')))
+        $extract['status'] = $status;
+    else
+        $extract['status'] = null;
+        
     $extract['userEmail'] = null;
 
     $extract['date'] = time();
@@ -312,5 +322,13 @@ function parse_phpmaketest($version, $status, $file)
     $extract['buildEnvironment'] = trim(preg_replace('@^={1,}\s+@', '', $extract['buildEnvironment']));
     $extract['buildEnvironment'] = preg_replace('@={1,}$@', '', trim($extract['buildEnvironment']));
 
+    // define status if not set
+    if ($extract['status'] === null) {
+        if (isset($extract['failedTest']) && count($extract['failedTest']) > 0)
+            $extract['status'] = 'failed';
+        else
+            $extract['status'] = 'success';
+    }
+    
     return $extract;
 }

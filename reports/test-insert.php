@@ -150,6 +150,20 @@ if (count($sqlFailed) == 33) {
     var_dump($sqlFailed);
 }
 
+// expected fail
+$query = 'SELECT count(*) FROM expectedfail WHERE id_report = '.$sqlReport['id'];
+$q = $database->query($query);
+list($nbExpected) = $q->fetchArray();
+
+printf("%-30s", "Found 17 expectedFailedTests");
+if ($nbExpected == 17) {
+    echo " <font color='green'>OK</font> \n";
+} else { 
+    echo " <font color='red'>KO (found: ".$nbExpected.")</font> \n"; 
+}
+
+
+
 printf("%-30s", "specific test diff");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['diff']);
 if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
@@ -183,6 +197,7 @@ $database->close();
 
 $database = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to remove test');
 $database->exec('DELETE FROM failed WHERE id_report = '.$sqlReport['id']);
+$database->exec('DELETE FROM expectedfail WHERE id_report = '.$sqlReport['id']);
 $database->exec('DELETE FROM reports WHERE id = '.$sqlReport['id']);
 $database->close();
 echo "<b>Cleanup done</b>";

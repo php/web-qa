@@ -49,6 +49,20 @@ if (isset($_GET['version'])) {
         die("Error opening DB file: ".$database->lastErrorMsg());
     }
     $failedTestsArray = array();
+
+    // Do we add expected failed ?
+    if (!isset($_GET['noexpect']) || $_GET['noexpect'] == 0) {
+        $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations, 
+                datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id 
+                GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
+        $q = @$database->query($query);
+        if ($q) {
+            while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
+                $failedTestsArray[] = $tab;
+            }
+        }
+    }
+    
     $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, 
             datetime(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
             GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
@@ -125,7 +139,23 @@ foreach ($reportsPerVersion as $version => $line) {
     padding: 3px;
 }
 </style>
-<table id="testList" class="sortable" style="width: 800px; border-collapse: collapse">
+<script type="text/javascript">
+<!--
+function changeExpect() 
+{
+    var check = document.getElementById('noexpect').checked;
+    if (check == true) {
+        document.location.href = '?version=<?php echo $_GET['version']; ?>';
+    } else {
+        document.location.href = '?version=<?php echo $_GET['version']; ?>&noexpect=1';
+    }
+}
+// ->
+</script>
+<input type="checkbox" id="noexpect" onClick="javascript:changeExpect()" 
+<?php if (!isset($_GET['noexpect'])) echo ' checked'; ?> /><small>Show XFAIL</small><br />
+
+<table id="testList" class="sortable" style="margin-top:10px; width: 800px; border-collapse: collapse">
     <thead>
      <tr>
      <th>Test name</th>
@@ -140,18 +170,23 @@ foreach ($reportsPerVersion as $version => $line) {
  $i = 0;
  $maxReportDate = 0;
  foreach ($failedTestsArray as $line) {
-	if ($maxReportDate < strtotime($line['date'])) $maxReportDate = strtotime($line['date']);
-	
+    if ($maxReportDate < strtotime($line['date'])) $maxReportDate = strtotime($line['date']);
      echo ' <tr ';
      if ($i % 2) echo 'style="background-color: #ffcc66" ';
-     echo '><td>'.$line['test_name'].'</td>';
+     echo '><td>';
+     if (isset($line['xfail'])) echo '[XFAIL] ';
+     echo $line['test_name'].'</td>';
      echo '<td align="right">'.$line['cpt'].'</td>';
      echo '<td align="right">'.$line['variations'].'</td>';
      echo '<td align="right" sorttable_customkey="'.strtotime($line['date']).'">';
-	 echo format_readable_date(strtotime($line['date']));
-	 echo '</td>';
-         echo '<td><a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">
-        <img src="report.png" title="View reports" border="0" /></a></td>';
+     echo format_readable_date(strtotime($line['date']));
+     echo '</td>';
+     echo '<td>';
+     if (!isset($line['xfail'])) {
+         echo '<a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">
+         <img src="report.png" title="View reports" border="0" /></a>';
+     }
+     echo '</td>';
      echo '</tr>'."\n";
      $i++;
  }
