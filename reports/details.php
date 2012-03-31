@@ -71,7 +71,20 @@ List of reports associated</h1>
     padding: 3px;
 }
 </style>
-<table id="reportTable" class="sortable">
+<script type="text/javascript">
+function switchVisibility(elem)
+{
+    if (elem.style.display == '' || elem.style.display == 'block') {
+        elem.style.visibility = 'hidden';
+        elem.style.display = 'none';
+    } else {
+        elem.style.visibility = 'visible';
+        elem.style.display = 'block';
+    }
+}
+</script>
+<div id="reportLink"><a href="#" onClick="javascript:switchVisibility(document.getElementById('reportTable'));"><i>Show/Hide list of reports</i></a></div>
+<table id="reportTable" class="sortable" style="visibility:hidden ; display: none">
  <thead>
  <tr>
    <th>Date</th>

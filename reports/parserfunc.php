@@ -16,6 +16,26 @@
 #  +----------------------------------------------------------------------+
 #   $Id$
 
+/**
+ * Insert PHP make test results in SQLite database
+ *
+ * The following structure must be used as first array : 
+ *  [status]    => enum(failed, success)
+ *  [version]   => string   - example: 5.4.1-dev
+ *  [userEmail] => mangled
+ *  [date]      => unix timestamp
+ *  [phpinfo]   => string  - phpinfo() output (CLI)
+ *  [buildEnvironment] => build environment
+ *  [failedTest] => array: list of failed test. Example: array('/Zend/tests/declare_001.phpt')
+ *  [expectedFailedTest] => array of expected failed test (same format as failedTest)
+ *  [succeededTest] => array of successfull tests. Provided only when parsing ci.qa results (for now)
+ *  [tests] => array
+        testName => array (
+            'output' => string("Current output of test")
+            'diff'   => string("Diff with expected output of this test")
+ * @param array array to insert
+ * @param array releases we accept (so that we don't accept a report that claims to be PHP 8.1 for example)
+ */
 function insertToDb_phpmaketest($array, $QA_RELEASES = array()) 
 {
     if (!is_array($array)) {
@@ -37,48 +57,73 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         
         $dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
         
+        $queriesCreate = array (
+            'failed' => 'CREATE TABLE IF NOT EXISTS failed (
+                  `id` integer PRIMARY KEY AUTOINCREMENT,
+                  `id_report` bigint(20) NOT NULL,
+                  `test_name` varchar(128) NOT NULL,
+                  `output` STRING NOT NULL,
+                  `diff` STRING NOT NULL,
+                  `signature` binary(16) NOT NULL
+                )',
+            'expectedfail' => 'CREATE TABLE IF NOT EXISTS expectedfail (
+                  `id` integer PRIMARY KEY AUTOINCREMENT,
+                  `id_report` bigint(20) NOT NULL,
+                  `test_name` varchar(128) NOT NULL,
+                  `output` STRING NOT NULL,
+                  `diff` STRING NOT NULL,
+                  `signature` binary(16) NOT NULL
+                )',
+            'success' => 'CREATE TABLE IF NOT EXISTS success (
+                  `id` integer PRIMARY KEY AUTOINCREMENT,
+                  `id_report` bigint(20) NOT NULL,
+                  `test_name` varchar(128) NOT NULL
+                )',
+            'reports' => 'CREATE TABLE IF NOT EXISTS reports (
+                  id integer primary key AUTOINCREMENT,
+                  date datetime NOT NULL,
+                  status smallint(1) not null,
+                  nb_failed unsigned int(10)  NOT NULL,
+                  nb_expected_fail unsigned int(10)  NOT NULL,
+                  success unsigned int(10) NOT NULL,
+                  build_env STRING NOT NULL,
+                  phpinfo STRING NOT NULL,
+                  user_email varchar(64) default null
+            )',
+        );
+        
+        
         if (!file_exists($dbFile)) {
             //Create DB
             $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
-            $query = 'CREATE TABLE failed (
-              `id` integer PRIMARY KEY AUTOINCREMENT,
-              `id_report` bigint(20) NOT NULL,
-              `test_name` varchar(128) NOT NULL,
-              `output` STRING NOT NULL,
-              `diff` STRING NOT NULL,
-              `signature` binary(16) NOT NULL
-            )';
-            $dbi->exec($query);
-            if ($dbi->lastErrorCode() != '') {
-                echo "ERROR: ".$dbi->lastErrorMsg()."\n";
-                exit;
-            }
-            
-            $query = 'CREATE TABLE reports (
-              id integer primary key AUTOINCREMENT,
-              date datetime NOT NULL,
-              status smallint(1) not null,
-              nb_failed unsigned int(10)  NOT NULL,
-              nb_expected_fail unsigned int(10)  NOT NULL,
-              build_env STRING NOT NULL,
-              phpinfo STRING NOT NULL,
-              user_email varchar(64) default null
-            )';
-            $dbi->exec($query);
-            if ($dbi->lastErrorCode() != '') {
-                echo "ERROR: ".$dbi->lastErrorMsg()."\n";
-                exit;
+            foreach ($queriesCreate as $table => $query) {
+                $dbi->exec($query);
+                if ($dbi->lastErrorCode() != '') {
+                    echo "ERROR when creating table ".$table.": ".$dbi->lastErrorMsg()."\n";
+                    exit;
+                }
             }
             $dbi->close();
         }
         $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
         
+        // add expectedfail / success table if not exists
+        $dbi->exec($queriesCreate['expectedfail']);
+        $dbi->exec($queriesCreate['success']);
+        
+        // patch add field success
+        @$dbi->exec('ALTER TABLE reports ADD COLUMN success unsigned int(10) NOT NULL');
+        
+		// handle tests with no success
+		if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
+        
         $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
-        `nb_failed`, `nb_expected_fail`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
+        `nb_failed`, `nb_expected_fail`, `success`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
         datetime(".((int) $array['date']).", 'unixepoch', 'localtime'), 
         ".((int)$array['status']).", 
         ".count($array['failedTest']).", 
         ".count($array['expectedFailedTest']).", 
+		".count($array['succeededTest']).", 
         ('".$dbi->escapeString($array['buildEnvironment'])."'), 
         ('".$dbi->escapeString($array['phpinfo'])."'),
         ".(!$array['userEmail'] ? "NULL" : "'".$dbi->escapeString($array['userEmail'])."'")."
@@ -92,19 +137,47 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
 
         $reportId = $dbi->lastInsertRowID();
 
-        foreach ($array['tests'] as $name => $test) {
+        foreach ($array['failedTest'] as $name) {
+            $test = $array['tests'][$name];
             $query = "INSERT INTO `failed` 
             (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
             '".$reportId."', '".$name."', 
             X'".md5($name.'__'.$test['diff'])."',
             ('".$dbi->escapeString($test['output'])."'), ('".$dbi->escapeString($test['diff'])."'))";
             
-            $dbi->query($query);
+            @$dbi->query($query);
             if ($dbi->lastErrorCode() != '') {
-                echo "ERROR: ".$dbi->error."\n";
+                echo "ERROR when inserting failed test : ".$dbi->error."\n";
                 exit;
             } 
+        }
+        
+        foreach ($array['expectedFailedTest'] as $name) {
+            $test = $array['tests'][$name];
+            $query = "INSERT INTO `expectedfail` 
+            (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
+            '".$reportId."', '".$name."', 
+            X'".md5($name.'__'.$test['diff'])."',
+            ('".$dbi->escapeString($test['output'])."'), ('".$dbi->escapeString($test['diff'])."'))";
             
+            @$dbi->query($query);
+            if ($dbi->lastErrorCode() != '') {
+                echo "ERROR when inserting expected fail test : ".$dbi->error."\n";
+                exit;
+            } 
+        }
+        
+        foreach ($array['succeededTest'] as $name) {
+            $test = $array['tests'][$name];
+            $query = "INSERT INTO `success` 
+            (`id`, `id_report`, `test_name`) VALUES (null, 
+            '".$reportId."', '".$name."')";
+            
+            @$dbi->query($query);
+            if ($dbi->lastErrorCode() != '') {
+                echo "ERROR when inserting succeeded test : ".$dbi->error."\n";
+                exit;
+            } 
         }
         $dbi->close();
         
