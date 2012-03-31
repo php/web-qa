@@ -20,7 +20,7 @@ common_header();
   <tr>
     <td width="10"><img src="../gfx/spacer.gif" width="10" height="1"></td>
     <td width="100%">
-    <style>
+    <style type="text/css">
      #loading {
 	     position:fixed;
 	     top:50%;
@@ -33,7 +33,7 @@ common_header();
 	     background-color: black;
 	     color: white;
 	     text-align: center;
-	     vertical-align: center;
+	     vertical-align: middle;
      }
 
      .ghuser {
@@ -55,6 +55,10 @@ common_header();
 
      #repoPullList code {
              white-space: pre;
+     }
+
+     #repoContent {
+         width: 920px;
      }
    </style>
    <link href="http://code.jquery.com/ui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
