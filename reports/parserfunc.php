@@ -104,13 +104,6 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         }
         $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
         
-        // add expectedfail / success table if not exists
-        $dbi->exec($queriesCreate['expectedfail']);
-        $dbi->exec($queriesCreate['success']);
-        
-        // patch add field success
-        @$dbi->exec('ALTER TABLE reports ADD COLUMN success unsigned int(10) NOT NULL default 0');
-        
         // handle tests with no success
         if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
         

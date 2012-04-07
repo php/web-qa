@@ -145,9 +145,9 @@ function changeExpect()
 {
     var check = document.getElementById('noexpect').checked;
     if (check == true) {
-        document.location.href = '?version=<?php echo $_GET['version']; ?>';
+        document.location.href = '?version=<?php echo $getVersion; ?>';
     } else {
-        document.location.href = '?version=<?php echo $_GET['version']; ?>&noexpect=1';
+        document.location.href = '?version=<?php echo $getVersion; ?>&noexpect=1';
     }
 }
 // ->
