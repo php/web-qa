@@ -59,17 +59,17 @@ $database->close();
 
 //URL test
 if (substr($version, 0, 3) == '5.2') {
-    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_2/'.
-                ltrim($testName, '/').'?view=markup';
+    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.2;f='.
+                ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.3') {
-    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_3/'.
-                ltrim($testName, '/').'?view=markup';
+    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.3;f='.
+                ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.4') {
-    $urlTest = 'http://svn.php.net/viewvc/php/php-src/branches/PHP_5_4/'.
-                ltrim($testName, '/').'?view=markup';
+    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.4;f='.
+                ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.5') {
-    $urlTest = 'http://svn.php.net/viewvc/php/php-src/trunk/'.
-                ltrim($testName, '/').'?view=markup';
+    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/master;f='.
+                ltrim($testName, '/').'';
 } else {
     $urlTest = '';
 }
