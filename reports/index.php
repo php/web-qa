@@ -63,11 +63,15 @@ if (isset($_GET['version'])) {
         }
     }
     
-    $query = 'SELECT test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT diff) as variations, 
-            datetime(date) as date FROM failed,reports WHERE failed.id_report = reports.id 
-            GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
+    $query = 'SELECT failed.test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT failed.diff) as variations, 
+            datetime(reports.date) as date,success.id as success, f2.id as failedci FROM failed, reports 
+            LEFT JOIN success ON success.test_name=failed.test_name
+            LEFT JOIN failed f2  ON (f2.test_name=failed.test_name AND f2.output = "")
+            JOIN reports r2 ON (f2.id_report = r2.id)
+            WHERE failed.id_report = reports.id 
+            GROUP BY failed.test_name ORDER BY cpt DESC LIMIT ' . $limit;
     $q = @$database->query($query);
-    if (!$q) die("Error querying DB: ".$database->lastErrorMsg());
+    if (!$q) die("Error querying DB (error ".$database->lastErrorCode()."): ".$database->lastErrorMsg());
     while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
         $failedTestsArray[] = $tab;
     }
@@ -162,6 +166,7 @@ function changeExpect()
      <th>Count</th>
      <th>Variations</th>
      <th>Last report date</th>
+     <th>CIQA status</th>
      <th>&nbsp;</th>
     </tr>
     </thead>
@@ -181,6 +186,26 @@ function changeExpect()
      echo '<td align="right" sorttable_customkey="'.strtotime($line['date']).'">';
      echo format_readable_date(strtotime($line['date']));
      echo '</td>';
+     echo '<td style="';
+     $textCI = '';
+     if (!array_key_exists('success', $line)) {
+        // probably xfail
+        echo 'background-color: grey';
+     } elseif ($line['success'] === null) {
+        // no success. Check fail ?
+        if (array_key_exists('failedci', $line)) {
+            echo 'background-color: #c00000';
+            $textCI = 'FAIL';
+        } else {
+            echo 'background-color: grey';
+        }
+     } else {
+        // success
+        echo "background-color: #00c000";
+        $textCI = 'SUCCESS';
+     }
+     
+     echo '" align="center">'.$textCI.'</td>';
      echo '<td>';
      if (!isset($line['xfail'])) {
          echo '<a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">

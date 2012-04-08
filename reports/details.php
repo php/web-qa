@@ -98,7 +98,12 @@ function switchVisibility(elem)
         echo '  <tr>'."\n";
         echo '    <td sorttable_customkey="'.strtotime($report['date']).'">'.$report['date'].'</td>'."\n";
         echo '    <td align="right" width="50">'.$report['nb_failed'].'</td>'."\n";
-        echo '    <td>***'.strstr($report['user_email'], ' at ').'</td>'."\n";
+        if ($report['user_email'] == 'ciqa') {
+            echo '    <td><a href="http://ci.qa.php.net/" target="_blank">CI.QA.PHP.NET</a></td>'."\n";
+        } else {
+            echo '    <td>***'.strstr($report['user_email'], ' at ').'</td>'."\n";
+        }
+        
         echo '    <td><a href="details.php?version='.$version.'&signature='.$signature.'&idreport='.$report['id'].'">';
         echo '<img src="report.png" title="View phpinfo and environment" border="0" /></a></td>'."\n";
         echo '  </tr>'."\n";

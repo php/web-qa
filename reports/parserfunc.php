@@ -35,6 +35,7 @@
             'diff'   => string("Diff with expected output of this test")
  * @param array array to insert
  * @param array releases we accept (so that we don't accept a report that claims to be PHP 8.1 for example)
+ * @return boolean success or not (for the moment, error leads to a call to 'exit;' ... not good I know)
  */
 function insertToDb_phpmaketest($array, $QA_RELEASES = array()) 
 {
@@ -156,15 +157,22 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         }
 
         foreach ($array['succeededTest'] as $name) {
-            $test = $array['tests'][$name];
-            $query = "INSERT INTO `success` 
-            (`id`, `id_report`, `test_name`) VALUES (null, '".$reportId."', '".$name."')";
-            
-            @$dbi->query($query);
-            if ($dbi->lastErrorCode() != '') {
-                echo "ERROR when inserting succeeded test : ".$dbi->lastErrorMsg()."\n";
-                exit;
-            } 
+            // sqlite files too big .. For the moment, keep only one success over time
+            $res = $dbi->query('SELECT id, id_report FROM `success` WHERE test_name LIKE \''.
+                                $dbi->escapeString($name).'\'');
+                                
+            if ($res->numColumns() > 0) { 
+                // hit ! do nothing atm
+            } else {
+                $query = "INSERT INTO `success` (`id`, `id_report`, `test_name`)
+                VALUES (null, '".$reportId."', '".$dbi->escapeString($name)."')";
+                
+                @$dbi->query($query);
+                if ($dbi->lastErrorCode() != '') {
+                    echo "ERROR when inserting succeeded test : ".$dbi->lastErrorMsg()."\n";
+                    exit;
+                } 
+            }
         }
         $dbi->close();
         
@@ -242,6 +250,11 @@ function parse_phpmaketest($version, $status=null, $file)
             if (preg_match('@User\'s E-mail: (.*)$@', $row, $tab)) {
                 //User's E-mail
                 $extract['userEmail'] = trim($tab[1]);
+                
+                if ($extract['userEmail'] == 'ciqa') {
+                    //reserved value !
+                    $extract['userEmail'] = '';
+                }
             }
             if (!isset($extract[$currentPart]))
                 $extract[$currentPart] = '';

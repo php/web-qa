@@ -9,24 +9,6 @@ use http://svn.php.net/viewvc/web/php/trunk/include/version.inc?view=co
 -----------------------------------------
 Improve documentation functions, syntax, etc.
 -----------------------------------------
-add support for ci.qa junit reports : 
-http://ci.qa.php.net/job/php-src-5.3-matrix-build/architecture=x86,os=linux-debian-6.0/368/artifact/junit.xml
-
-List of builds by ci.qa : 
-http://ci.qa.php.net/rssAll
-
-Sample : 
-  <entry>
-   <title>php-src-5.3-matrix-build » x86,linux-debian-6.0 #357 (1 less test is failing (total 6))</title>
-   <link type="text/html" href="http://ci.qa.php.net/job/php-src-5.3-matrix-build/./architecture=x86,os=linux-debian-6.0/357/" rel="alternate"/>
-   <id>tag:hudson.dev.java.net,2012:architecture=x86,os=linux-debian-6.0:2012-03-02_19-23-46</id>
-   <published>2012-03-02T19:23:46Z</published>
-   <updated>2012-03-02T19:23:46Z</updated>
-  </entry>
-
-we need to store 'published' date to know where to start at each cron cycle.
--------------------
-add column http://qa.php.net/reports/?version=5.4.0 to know if a specific test always failed or not (compared to ci.qa)
 
 -------------------
 Vote : should env config in /reports/ be hidden to everyone except logged in php accounts ?
