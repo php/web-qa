@@ -64,10 +64,10 @@ if (isset($_GET['version'])) {
     }
     
     $query = 'SELECT failed.test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT failed.diff) as variations, 
-            datetime(reports.date) as date,success.id as success, f2.id as failedci FROM failed, reports 
+            datetime(reports.date) as date,success.id as success, r2.id as failedci FROM failed, reports 
             LEFT JOIN success ON success.test_name=failed.test_name
             LEFT JOIN failed f2  ON (f2.test_name=failed.test_name AND f2.output = "")
-            JOIN reports r2 ON (f2.id_report = r2.id)
+            LEFT JOIN reports r2 ON (f2.id_report = r2.id AND r2.user_email="ciqa")
             WHERE failed.id_report = reports.id 
             GROUP BY failed.test_name ORDER BY cpt DESC LIMIT ' . $limit;
     $q = @$database->query($query);

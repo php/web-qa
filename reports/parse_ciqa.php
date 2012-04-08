@@ -180,7 +180,7 @@ foreach ($successfulTests as $version => $successTests) {
     
     // tests
     foreach ($failingTests[$version] as $test => $diff) {
-        $firstArray['tests'][$test] = array ('output' => '', 'diff' => $diff);
+        $firstArray['tests'][$test] = array ('output' => '', 'diff' => str_replace("\n", "\x0d\n", $diff));
     }
     
     $status = insertToDb_phpmaketest($firstArray, $QA_RELEASES);
