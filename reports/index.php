@@ -51,7 +51,7 @@ if (isset($_GET['version'])) {
     $failedTestsArray = array();
 
     // Do we add expected failed ?
-    if (!isset($_GET['noexpect']) || $_GET['noexpect'] == 0) {
+    if (isset($_GET['expect']) & $_GET['expect'] == 1) {
         $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations, 
                 datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id 
                 GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
@@ -147,17 +147,17 @@ foreach ($reportsPerVersion as $version => $line) {
 <!--
 function changeExpect() 
 {
-    var check = document.getElementById('noexpect').checked;
+    var check = document.getElementById('expect').checked;
     if (check == true) {
-        document.location.href = '?version=<?php echo $getVersion; ?>';
+        document.location.href = '?version=<?php echo $getVersion; ?>&expect=1';
     } else {
-        document.location.href = '?version=<?php echo $getVersion; ?>&noexpect=1';
+        document.location.href = '?version=<?php echo $getVersion; ?>';
     }
 }
 // ->
 </script>
-<input type="checkbox" id="noexpect" onClick="javascript:changeExpect()" 
-<?php if (!isset($_GET['noexpect'])) echo ' checked'; ?> /><small>Show XFAIL</small><br />
+<input type="checkbox" id="expect" onClick="javascript:changeExpect()" 
+<?php if (isset($_GET['expect']) && $_GET['expect'] == '1') echo ' checked'; ?> /><small>Show XFAIL</small><br />
 
 <table id="testList" class="sortable" style="margin-top:10px; width: 800px; border-collapse: collapse">
     <thead>
@@ -166,7 +166,11 @@ function changeExpect()
      <th>Count</th>
      <th>Variations</th>
      <th>Last report date</th>
-     <th>CIQA status</th>
+     <?php
+     if (substr($getVersion, -4) == '-dev') {
+     echo '<th>CIQA status</th>';
+     }
+     ?>
      <th>&nbsp;</th>
     </tr>
     </thead>
@@ -186,26 +190,28 @@ function changeExpect()
      echo '<td align="right" sorttable_customkey="'.strtotime($line['date']).'">';
      echo format_readable_date(strtotime($line['date']));
      echo '</td>';
-     echo '<td style="';
-     $textCI = '';
-     if (!array_key_exists('success', $line)) {
-        // probably xfail
-        echo 'background-color: grey';
-     } elseif ($line['success'] === null) {
-        // no success. Check fail ?
-        if (array_key_exists('failedci', $line)) {
-            echo 'background-color: #c00000';
-            $textCI = 'FAIL';
-        } else {
+     if (substr($getVersion, -4) == '-dev') {
+         echo '<td style="';
+         $textCI = '';
+         if (!array_key_exists('success', $line)) {
+            // probably xfail
             echo 'background-color: grey';
-        }
-     } else {
-        // success
-        echo "background-color: #00c000";
-        $textCI = 'SUCCESS';
+         } elseif ($line['success'] === null) {
+            // no success. Check fail ?
+            if (isset($line['failedci'])) {
+                echo 'background-color: #c00000';
+                $textCI = 'FAIL';
+            } else {
+                echo 'background-color: grey';
+            }
+         } else {
+            // success
+            echo "background-color: #00c000";
+            $textCI = 'PASS';
+         }
+         
+         echo '" align="center">'.$textCI.'</td>';
      }
-     
-     echo '" align="center">'.$textCI.'</td>';
      echo '<td>';
      if (!isset($line['xfail'])) {
          echo '<a href="viewreports.php?version='.$getVersion.'&amp;test='.urlencode($line['test_name']).'">

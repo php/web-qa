@@ -200,7 +200,7 @@ function format_readable_date($date) {
     if ($lastReport < 3600) {
         $tmpValue = round($lastReport/60);
 		$return = $tmpValue.' ';
-        $return .= ($tmpValue == 1) ? 'minute' : 'minutes';
+        $return .= ($tmpValue <= 1) ? 'minute' : 'minutes';
     } elseif ($lastReport < 3600*24) {
         $tmpValue = round($lastReport/3600);
         $return = $tmpValue.' ';
