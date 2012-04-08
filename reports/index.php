@@ -51,7 +51,7 @@ if (isset($_GET['version'])) {
     $failedTestsArray = array();
 
     // Do we add expected failed ?
-    if (isset($_GET['expect']) & $_GET['expect'] == 1) {
+    if (isset($_GET['expect']) && $_GET['expect'] == 1) {
         $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations, 
                 datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id 
                 GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
