@@ -74,9 +74,9 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
-			'md5_bz2'   => 'b6d0e6a963df39634929b14f3aa4b357',
-			'md5_gz'    => '5cced8fd28a22ff119f997520b47fef4',
+			'number'    => 2,
+			'md5_bz2'   => 'faa791f5aa09e640a410051d5bb83619',
+			'md5_gz'    => '75408c825e21ccefb167774d6d9e5c8f',
 			'date'		=> '29 March 2012',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
