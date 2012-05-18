@@ -21,7 +21,7 @@ SOAP Server 20: compressed request (deflate)
 ?&gt;
 --INI--
 precision=14
---POST--
+--DEFLATE_POST--
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 &lt;SOAP-ENV:Envelope
   SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
@@ -33,8 +33,6 @@ precision=14
     &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
---DEFLATE_POST--
-1
 --FILE--
 &lt;?php
 function test() {

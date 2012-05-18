@@ -254,14 +254,12 @@ When this section exists, the POST data will be gzencode()'d. This section
 forces the use of the CGI binary instead of the usual CLI one.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Requirements:</b><br/>
-PHP CGI binary. Must be coupled with a --POST--.</p>
 <p><b>Test Script Support:</b><br/>
 run-tests.php</p>
 <p><b>Format:</b><br/>
-Simply use 1 as the section's content.</p>
+Just add the content to be gzencode()'d in the section.</p>
 <p><b>Example 1 (snippet):</b><br/>
-<pre>--POST--
+<pre>--GZIP_POST--
 &lt;SOAP-ENV:Envelope
   SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
   xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
@@ -272,8 +270,7 @@ Simply use 1 as the section's content.</p>
     &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
---GZIP_POST--
-1</pre></p>
+</p></pre>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample005.php">sample005.phpt</a></p>
 </dd>
 
@@ -285,13 +282,12 @@ forces the use of the CGI binary instead of the usual CLI one.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Requirements:</b><br/>
-PHP CGI binary. Must be coupled with a --POST--.</p>
 <p><b>Test Script Support:</b><br/>
 run-tests.php</p>
 <p><b>Format:</b><br/>
-Simply use 1 as the section's content.</p>
+Just add the content to be gzcompress()'ed in the section.</p>
 <p><b>Example 1 (snippet):</b><br/>
-<pre>--POST--
+<pre>--DEFLATE_POST--
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
 &lt;SOAP-ENV:Envelope
   SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;
@@ -303,8 +299,7 @@ Simply use 1 as the section's content.</p>
     &lt;ns1:test xmlns:ns1=&quot;http://testuri.org&quot; /&gt;
   &lt;/SOAP-ENV:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
---DEFLATE_POST--
-1</pre></p>
+</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample007.php">sample007.phpt</a></p>
 </dd>
 
@@ -376,7 +371,7 @@ No.</p>
 <p><b>Test Script Support:</b><br/>
 run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
-Key value pairs. One setting per line.</p>
+Key value pairs. One setting per line. Content that is not a valid ini setting may cause failures.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--INI--
 precision=14</pre></p>
