@@ -50,34 +50,34 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.14' => array(
+	'5.3.15' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
-			'type'		=> 'RC',
-			'number'	=> 2,
-			'md5_bz2'	=> '07dee3f326e7c2bac86c8e540a8914d4',
-			'md5_gz'	=> '7780f0650c36d5b5fbf428f325f3cac5',
-			'date'		=> '31 Jun 2012',
+			'type'		=> '',
+			'number'	=> 0,
+			'md5_bz2'	=> '',
+			'md5_gz'	=> '',
+			'date'		=> '28 Jun 2012',
 			'baseurl'	=> 'http://downloads.php.net/johannes/',
 		),
 	),
 
-	'5.4.4' => array(
+	'5.4.5' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
-			'type'		=> 'RC',
-			'number'    => 2,
-			'md5_bz2'   => 'b2f551968cf9a7c2d85b856893344905',
-			'md5_gz'    => '18c50e3398d4fe6587cd289f279eb844',
-			'date'		=> '30 May 2012',
+			'type'		=> '',
+			'number'    => 0,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'date'		=> '28 Jun 2012',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
