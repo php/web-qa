@@ -91,6 +91,7 @@ loginHandler.prototype.updateLoginState = function(d) {
 var repos;
 var login;
 var converter;
+var firstrun;
 
 $(document).ready(function() {
     login = new loginHandler();
@@ -100,7 +101,11 @@ $(document).ready(function() {
 
     $(window).bind( "hashchange", function(e) {
         if ($.bbq.getState( "repo" )) {
-            loadRepo($.bbq.getState("repo"));
+            if (!firstrun) {
+                loadRepo($.bbq.getState("repo"));
+                firstrun = 1;
+            }
+            $("#nextRepoPage").hide();
             repos.hideList();
         } else {
             repos.showList();
@@ -110,13 +115,28 @@ $(document).ready(function() {
     $(window).trigger( "hashchange" );
 });
 
-function loadRepo(repo) {
+function loadRepo(repo, url) {
+    url = url || GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls";
     $("#loading").show();
     $.ajax({
         dataType: 'jsonp',
-        url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls",
+        url: url,
         success: function (data) {
             $("#loading").hide();
+            if (data.meta && data.meta.Link) {
+               for (i=0; i<data.meta.Link.length; i++) {
+                   var link = data.meta.Link[i];
+                   if (link[1].rel == "next") {
+                       $("#nextRepoPage").show().click(function() {
+                             $(this).hide();
+                             loadRepo(repo, link[0]);
+                       });
+                       break;
+                   }
+               }
+            } else {
+               $("#nextRepoPage").hide();
+            }
             for (var key in data.data) {
                 data.data[key].body = converter.makeHtml(data.data[key].body);
             }
