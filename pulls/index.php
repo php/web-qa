@@ -57,8 +57,18 @@ common_header();
              white-space: pre;
      }
 
+     #backToRepolist {
+         float: left;
+     }
+
      #repoContent {
          width: 920px;
+         clear: both;
+     }
+
+     #nextRepoPage {
+         float: right;
+         display: none;
      }
    </style>
    <link href="http://code.jquery.com/ui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
@@ -133,6 +143,7 @@ if (!constant('GITHUB_PASS')) {
 
 ?>
   <div id="backToRepolist"><a href="#">&lt;&lt;&lt-- Repos</a></div>
+  <div id="nextRepoPage"><a href="javascript:void(0);">Next--&gt;&gt;&gt;</a></div>
   <div id="mainContent">
     <ul id="repolist"></ul>
     <p>Even though the PHP project is using <a href="http://git.php.net">git.php.net</a>

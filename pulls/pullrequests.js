@@ -99,24 +99,43 @@ $(document).ready(function() {
     repos.update();
 
     $(window).bind( "hashchange", function(e) {
-        if ($.bbq.getState( "repo" )) {
-            loadRepo($.bbq.getState("repo"));
+        if ($.bbq.getState("repo")) {
             repos.hideList();
         } else {
+            $("#nextRepoPage").hide();
             repos.showList();
         }
     });
 
     $(window).trigger( "hashchange" );
+
+    if ($.bbq.getState("repo")) {
+        loadRepo($.bbq.getState("repo"));
+    }
 });
 
-function loadRepo(repo) {
+function loadRepo(repo, url) {
     $("#loading").show();
+    url = url || GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls";
     $.ajax({
         dataType: 'jsonp',
-        url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls",
+        url: url,
         success: function (data) {
             $("#loading").hide();
+            if (data.meta && data.meta.Link) {
+               for (i=0; i<data.meta.Link.length; i++) {
+                   var link = data.meta.Link[i];
+                   if (link[1].rel == "next") {
+                       $("#nextRepoPage").show().click(function() {
+                             $(this).hide();
+                             loadRepo(repo, data.meta.Link[0][0]);
+                       });
+                       break;
+                   }
+               }
+            } else {
+               $("#nextRepoPage").hide();
+            }
             for (var key in data.data) {
                 data.data[key].body = converter.makeHtml(data.data[key].body);
             }
