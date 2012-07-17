@@ -128,7 +128,7 @@ function loadRepo(repo, url) {
                    if (link[1].rel == "next") {
                        $("#nextRepoPage").show().click(function() {
                              $(this).hide();
-                             loadRepo(repo, data.meta.Link[0][0]);
+                             loadRepo(repo, link[0]);
                        });
                        break;
                    }
