@@ -71,9 +71,9 @@ common_header();
          display: none;
      }
    </style>
-   <link href="http://code.jquery.com/ui/1.8.18/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
-   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-   <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+   <script type="text/javascript" src="jquery-ui.min.js"></script>
    <script type="text/javascript" src="jsrender.js"></script>
    <script type="text/javascript" src="jquery.ba-bbq.min.js"></script>
    <script type="text/javascript" src="Markdown.Converter.js"></script>
