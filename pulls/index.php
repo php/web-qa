@@ -105,7 +105,7 @@ common_header();
 $ git fetch git://github.com/php/{{=repo}} pull/{{=number}}/head:pull-request/{{=number}}
 $ git log -p pull-request/{{=number}} # REVIEW IT
 $ git merge pull-request/{{=number}}  # Merge it, add a GOOD commit message
-$ make test                  # you better don't forget that
+$ make test                  # you better not forget that
 $ git push origin master     # everything okay? good, let's push it
 	   </pre>
    </script>
