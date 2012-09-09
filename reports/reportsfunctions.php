@@ -151,7 +151,7 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
         $it = new devFilterIterator($it, $QA_RELEASES['reported']);
     }
     if ($mode & QA_REPORT_FILTER_CURRENT_RELEASES) {
-        $it = new minVersionFilterIterator($it, "5.3.10");
+        $it = new minVersionFilterIterator($it, "5.3.14");
     }
 
 
