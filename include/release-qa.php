@@ -82,6 +82,23 @@ $QA_RELEASES = array(
 		),
 	),
 	
+	'5.5.0' => array(
+		'active'		=> true,
+		'snaps'			=> array(
+			'prefix'	=> 'php5.5-latest',
+			'baseurl'	=> 'http://snaps.php.net/',
+		),
+		'release'		=> array(
+			'type'		=> 'alpha',
+			'number'    => 1,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'md5_xz'    => '',
+			'date'		=> '13 Nov 2012',
+			'baseurl'	=> 'http://downloads.php.net/dsp/',
+		),
+	),
+
 	'trunk' => array(
 		'active'		=> false,
 		'snaps'			=> array(
