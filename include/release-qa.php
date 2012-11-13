@@ -91,9 +91,9 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'		=> 'alpha',
 			'number'    => 1,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
+			'md5_bz2'   => 'b2dd7dbc8979d2c7e24b02a14bad3ccb',
+			'md5_gz'    => 'fbe9c00dfa9b65b5b5fd2cb85de95388',
+			'md5_xz'    => '2fb61817fad8e059d6fc846c69803e2d',
 			'date'		=> '13 Nov 2012',
 			'baseurl'	=> 'http://downloads.php.net/dsp/',
 		),
