@@ -195,7 +195,7 @@ function show_release_qa($QA_RELEASES) {
 			echo "<li>{$info['version']}: [<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] (md5 checksum: {$info['files']['bz2']['md5']})</li>\n";
 			echo "<li>{$info['version']}: [<a href='{$info['files']['gz']['path']}'>tar.gz</a>] (md5 checksum: {$info['files']['gz']['md5']})</li>\n";
 			if (isset($info['files']['xz'])) {
-				echo "<li>{$info['version']}: [<a href='{$info['files']['xz']['path']}'>tar.gz</a>] (md5 checksum: {$info['files']['xz']['md5']})</li>\n";
+				echo "<li>{$info['version']}: [<a href='{$info['files']['xz']['path']}'>tar.xz</a>] (md5 checksum: {$info['files']['xz']['md5']})</li>\n";
 			}
 		}
 		
