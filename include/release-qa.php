@@ -50,7 +50,7 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.19' => array(
+	'5.3.20' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
@@ -58,7 +58,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'	=> 1,
+			'number'	=> 0,
 			'md5_bz2'	=> '363509b3c83510ef469d0240f31a91ee',
 			'md5_gz'	=> '56d687dda2b1ca753f2de0082a718bb9',
 			'date'		=> '08 Nov 2012',
@@ -66,7 +66,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.9' => array(
+	'5.4.10' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
@@ -74,7 +74,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
+			'number'    => 0,
 			'md5_bz2'   => 'b2b132df621a5dbd26a5adce24c495eb',
 			'md5_gz'    => '3f143d66afbef4acd63efd39783ba102',
 			'date'		=> '08 Nov 2012',
