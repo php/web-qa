@@ -50,7 +50,7 @@ TODO:
 
 $QA_RELEASES = array(
 	
-	'5.3.21' => array(
+	'5.3.22' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
@@ -59,14 +59,14 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'		=> 'RC',
 			'number'	=> 1,
-			'md5_bz2'	=> 'f369371ec7b0dfc9a5f491819554dd8a',
-			'md5_gz'	=> 'd7f342046cf85a24347a29d8a57d60e7',
-			'date'		=> '03 Jan 2013',
+			'md5_bz2'	=> 'c6e2a2393ed17d469766266daeb705dc',
+			'md5_gz'	=> 'a2bae2f7c1ef04df49a56d3b4492e548',
+			'date'		=> '31 Jan 2013',
 			'baseurl'	=> 'http://downloads.php.net/johannes/',
 		),
 	),
 
-	'5.4.11' => array(
+	'5.4.12' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
@@ -75,9 +75,9 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'		=> 'RC',
 			'number'    => 1,
-			'md5_bz2'   => '1c645e16d131189a1237033681b5cb52',
-			'md5_gz'    => 'eae5e4767635455c61495ab874e8f6a8',
-			'date'		=> '03 Jan 2013',
+			'md5_bz2'   => 'd2b071166062f6008c34d76718773f0a',
+			'md5_gz'    => 'e5825285c8a9cdd7e7345fb760267261',
+			'date'		=> '31 Jan 2013',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
