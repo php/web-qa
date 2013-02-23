@@ -1,5 +1,5 @@
 function repoList(baseurl, org) {
-    this.url = baseurl+'orgs/'+org+'/repos';
+    this.url = baseurl+'orgs/'+org+'/repos?per_page=100';
     this.data = {data:[]};
     var t = this;
     $("#backToRepolist").click(function (ev) { $.bbq.removeState('repo'); ev.preventDefault();});
