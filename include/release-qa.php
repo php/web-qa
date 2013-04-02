@@ -62,7 +62,7 @@ $QA_RELEASES = array(
 			'md5_bz2'	=> '62d8f8b8e4673959bff3260ccc1602a4',
 			'md5_gz'	=> '5128501b4dc009c9ab4df8f2813da7a5',
 			'date'		=> '28 Mar 2013',
-			'baseurl'	=> 'http://downloads.php.net/stas/',
+			'baseurl'	=> 'http://downloads.php.net/johannes/',
 		),
 	),
 
