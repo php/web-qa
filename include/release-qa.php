@@ -91,9 +91,9 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'		=> 'beta',
 			'number'    => 4,
-			'md5_bz2'   => 'fbd8b5d72b118af0e50733f3ac775310',
-			'md5_gz'    => '4d0367b067e7fab910beebe779f2b7a8',
-			'md5_xz'    => '2fcab8846b3626250f9f1319e632fe02',
+			'md5_bz2'   => '96a1a53418daa96484828692ef085e7b',
+			'md5_gz'    => 'ea500ffd473977228333b4d8a9ee15de',
+			'md5_xz'    => 'cba102154280dd16462150232dad9487',
 			'date'		=> '25 Apr 2013',
 			'baseurl'	=> 'http://downloads.php.net/dsp/',
 		),
