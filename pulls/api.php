@@ -175,11 +175,19 @@ function ghupdate()
 		die(json_encode(array('success' => false, 'errors' => array("Invalid state"))));
 	}
 
-	$pull_raw = @file_get_contents(GITHUB_BASEURL.'repos/'.GITHUB_ORG.'/'.urlencode($_POST['repo']).'/pulls/'.$_POST['id']);
+	$url = GITHUB_BASEURL.'repos/'.GITHUB_ORG.'/'.urlencode($_POST['repo']).'/pulls/'.$_POST['id'];
+	$pull_raw = @file_get_contents($url);
 	$pull = $pull_raw ? json_decode($pull_raw) : false;
 	if (!$pull) {
 		header('HTTP/1.0 400 Bad Request');
-		die(json_encode(array('success' => false, 'errors' => array("Failed to get data from GitHub"))));
+		$_SESSION['debug'][] = array(
+			"message" => "Request to GitHub failed",
+			"url" => $url,
+			"http response" => $http_response_header,
+			"response" => $pull_raw,
+			"json error" => json_last_error()
+		);
+		die(json_encode(array('success' => false, 'errors' => array("Failed to get data from GitHub", "http" => $http_response_header, "json" => json_last_error()))));
 	}
 
 	$comment = @get_magic_quotes_gpc() ? stripslashes($_POST['comment']) : $_POST['comment'];
