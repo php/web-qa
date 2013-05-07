@@ -176,9 +176,14 @@ function ghupdate()
 	}
 
 	$url = GITHUB_BASEURL.'repos/'.GITHUB_ORG.'/'.urlencode($_POST['repo']).'/pulls/'.$_POST['id'];
-	$pull_raw = @file_get_contents($url);
+	$ctxt = stream_context_create(array(
+		'http' => array(
+			'ignore_errors' => '1'
+		)
+	));
+	$pull_raw = @file_get_contents($url, false, $ctxt);
 	$pull = $pull_raw ? json_decode($pull_raw) : false;
-	if (!$pull) {
+	if (!$pull || empty($pull['state'])) {
 		header('HTTP/1.0 400 Bad Request');
 		$_SESSION['debug'][] = array(
 			"message" => "Request to GitHub failed",
