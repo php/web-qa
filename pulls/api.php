@@ -215,7 +215,7 @@ function requestlog() {
 	}
 
 	header('Content-Type: text/plain');
-	var_dump($_SESSION['debug']['requests']);
+	var_dump($_SESSION['debug']);
 	exit;
 }
 
