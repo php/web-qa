@@ -185,13 +185,15 @@ function ghupdate()
 	$pull = $pull_raw ? json_decode($pull_raw) : false;
 	if (!$pull || empty($pull['state'])) {
 		header('HTTP/1.0 400 Bad Request');
-		$_SESSION['debug'][] = array(
-			"message" => "Request to GitHub failed",
-			"url" => $url,
-			"http response" => $http_response_header,
-			"response" => $pull_raw,
-			"json error" => json_last_error()
-		);
+		if (isset($_SESSION['debug']['requests'])) {
+			$_SESSION['debug']['requests'][] = array(
+				"message" => "Request to GitHub failed",
+				"url" => $url,
+				"http response" => $http_response_header,
+				"response" => $pull_raw,
+				"json error" => json_last_error()
+			);
+		}
 		die(json_encode(array('success' => false, 'errors' => array("Failed to get data from GitHub", "http" => $http_response_header, "json" => json_last_error()))));
 	}
 
