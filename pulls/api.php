@@ -183,7 +183,7 @@ function ghupdate()
 	));
 	$pull_raw = @file_get_contents($url, false, $ctxt);
 	$pull = $pull_raw ? json_decode($pull_raw) : false;
-	if (!$pull || empty($pull['state'])) {
+	if (!is_object($pull) || empty($pull->state)) {
 		header('HTTP/1.0 400 Bad Request');
 		if (isset($_SESSION['debug']['requests'])) {
 			$_SESSION['debug']['requests'][] = array(
