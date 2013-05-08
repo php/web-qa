@@ -57,6 +57,10 @@ function do_http_request($url, $opts)
 {
 	global $errors;
 
+	if (empty($opts['user_agent'])) {
+		$opts['user_agent'] = USER_AGENT;
+	}
+
 	$ctxt = stream_context_create(array('http' => $opts));
 	$actual_url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $url);
 
