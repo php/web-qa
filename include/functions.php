@@ -6,7 +6,7 @@ Read an Learn. Any Questions so ask.
 Version: $Id$
 */
 
-function common_header() {
+function common_header($extra_headers=NULL) {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
@@ -14,6 +14,13 @@ function common_header() {
  <title><?php echo $GLOBALS["TITLE"]; ?></title>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
  <meta name="MSSmartTagsPreventParsing" content="TRUE">
+<?php
+if(!empty($extra_headers)) {
+    foreach($extra_headers as $header) {
+      echo $header."\n";
+    }
+}
+?>
  <link rel="stylesheet" href="/styles.css" type="text/css">
 </head>
 
