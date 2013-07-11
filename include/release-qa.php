@@ -51,17 +51,17 @@ TODO:
 $QA_RELEASES = array(
 	
 	'5.3.27' => array(
-		'active'		=> true,
+		'active'		=> false,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.3-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'	=> 1,
-			'md5_bz2'	=> '3be8835e4d24e7b8ffe8a86e6404271b',
-			'md5_gz'	=> '3c82ff1732fc72950ad9213f3968f71d',
-			'date'		=> '20 Jun 2013',
+			'number'	=> 0,
+			'md5_bz2'	=> '',
+			'md5_gz'	=> '',
+			'date'		=> '?? ??? 2013',
 			'baseurl'	=> 'http://downloads.php.net/johannes/',
 		),
 	),
