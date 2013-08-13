@@ -111,7 +111,7 @@ Here are descriptions for each status:</p>
         <dd>
             Only bugs that affect most/all users and/or are in the engine or 
             ext/standard.  Only Verified and reproduced bugs in the latest 
-            CVS can be marked critical.
+            Git revision can be marked critical.
         </dd>
 
         <dt>Assigned</dt>
@@ -154,7 +154,7 @@ Here are descriptions for each status:</p>
         <dt>Feedback</dt>
         <dd>
             You're asking the reporter for more information such as please use
-            CVS/snap, and/or the smallest possible test script to reproduce the
+            Git revision/snap, and/or the smallest possible test script to reproduce the
             error, and/or a value for a certain PHP directive.
         </dd>
     
@@ -204,20 +204,20 @@ So, be sure to leave a comment.</p>
         <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="http://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
     </li>
     <li>
-        Look at the <a href="http://bugs.php.net/bugstats.php">raw bug stats</a>.
+        Look at the <a href="http://bugs.php.net/stats.php">raw bug stats</a>.
     </li>
     <li>
         Not leaving a comment means no email will be sent to the mailing list. 
         (all quickfix options leave comments)
     </li>
     <li>
-        If a version involves CVS or a snapshot be sure to label it in the form: 
-        <b>4.x.y-dev</b>  An example is: 4.3.0-dev.
+        If a version involves Git or a snapshot be sure to label it in the form: 
+        <b>5.x.y-dev</b>  An example is: 5.6.0-dev.
     </li>
     <li>
         If you have a question either email the 
-        <a href="mailto:php-dev@lists.php.net">php-dev@lists.php.net</a> 
-        mailing list or check out the #php.bugs channel in IRC on 
+        <a href="mailto:php-internals@lists.php.net">php-internals@lists.php.net</a> 
+        mailing list or check out the #php.pecl channel in IRC on 
         <a href="http://www.irchelp.org/irchelp/networks/efnet.txt">EFNET</a>.
     </li>
 </ul>
