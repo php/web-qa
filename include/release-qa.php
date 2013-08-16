@@ -74,7 +74,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 2,
+			'number'    => 0,
 			'md5_bz2'   => '6fd0f86cc2af850786721c1ca5487a08',
 			'md5_gz'    => '95d3cf23b6124a4c74e291b26d17ceb6',
 			'date'		=> '01 Aug 2013',
@@ -90,7 +90,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
+			'number'    => 0,
 			'md5_bz2'   => '3d5eaaf0dea65317569dd1743f8fa432',
 			'md5_gz'    => '09f1d68089d6359f902dee5b719b88f5',
 			'md5_xz'    => 'b309184051f859a721bf220dde53b758',
