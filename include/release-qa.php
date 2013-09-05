@@ -82,7 +82,7 @@ $QA_RELEASES = array(
 		),
 	),
 	
-	'5.5.2' => array(
+	'5.5.4' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.5-latest',
@@ -90,11 +90,11 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '3d5eaaf0dea65317569dd1743f8fa432',
-			'md5_gz'    => '09f1d68089d6359f902dee5b719b88f5',
-			'md5_xz'    => 'b309184051f859a721bf220dde53b758',
-			'date'      => '1 Aug 2013',
+			'number'    => 1,
+			'md5_bz2'   => '36200c326ac91e683e073d2cb9b3fa45',
+			'md5_gz'    => '00b182703c618ca77a60e087824e868d',
+			'md5_xz'    => 'c36bf7812526b1d5e90ba891e31a3b54',
+			'date'      => '5 Sep 2013',
 			'baseurl'	=> 'http://downloads.php.net/dsp/',
 		),
 	),
