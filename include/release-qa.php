@@ -95,7 +95,7 @@ $QA_RELEASES = array(
 			'md5_gz'    => '0ace378d26edbdeee4b77dc45ce78322',
 			'md5_xz'    => '1cd60486f76ce52f57b1c634a585702f',
 			'date'      => '03 Oct 2013',
-			'baseurl'	=> 'http://downloads.php.net/dsp/',
+			'baseurl'	=> 'http://downloads.php.net/jpauli/',
 		),
 	),
 
