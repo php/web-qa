@@ -32,7 +32,9 @@ common_header();
 [<a href="#cgi_section">--CGI--</a>]<br/>
 [<a href="#xfail_section">--XFAIL--</a>]<br/>
 [<a href="#expectheaders_section">--EXPECTHEADERS</a>--]<br/>
-<a href="#expect_section">--EXPECT--</a> | <a href="#expectf_section">--EXPECTF--</a> | <a href="#expectregex_section">--EXPECTREGEX--</a><br/>
+<a href="#expect_section">--EXPECT--</a> | <a href="#expectf_section">--EXPECTF--</a> | <a href="#expectregex_section">--EXPECTREGEX--</a>
+| <a href="#expect_external_section">--EXPECT_EXTERNAL--</a> | <a href="#expectf_external_section">--EXPECTF_EXTERNAL--</a> | <a href="#expectregex_external_section">--EXPECTREGEX_EXTERNAL--</a>
+<br/>
 [<a href="#clean_section">--CLEAN--</a>]
 </dd>
 
@@ -672,7 +674,28 @@ array(2) {
 }</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample002.php">sample002.phpt</a></p>
 </dd>
-
+<dt id="expect_external_section">--EXPECT_EXTERNAL--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Similar to to <a href="#expect_section">--EXPECT--</a> section, but just stating
+a filename where to load the expected output from.
+</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXPECT_EXTERNAL--
+test001.expected.txt
+</pre>
+<p><b>test001.expected.txt</b>
+<pre>array(2) {
+  [&quot;hello&quot;]=&gt;
+  string(5) &quot;World&quot;
+  [&quot;goodbye&quot;]=&gt;
+  string(7) &quot;MrChips&quot;
+}</pre></p>
+</dd>
 <dt id="expectf_section">--EXPECTF--</dt>
 <dd>
 <p><b>Description:</b><br/>
@@ -785,6 +808,19 @@ bool(false)</pre></p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample020.php">sample020.phpt</a></p>
 </dd>
 
+<dt id="expectf_external_section">--EXPECTF_EXTERNAL--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Similar to to <a href="#expectf_section">--EXPECTF--</a> section, but like the
+<a href="#expect_external">--EXPECT_EXTERNAL--</a> section just stating
+a filename where to load the expected output from.
+</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+</dd>
+
 <dt id="expectregex_section">--EXPECTREGEX--</dt>
 <dd>
 <p><b>Description:</b><br/>
@@ -842,6 +878,19 @@ string\(8\) \&quot;2d303132\&quot;
 (string\(13\) \&quot;   4294967284\&quot;|string\(20\) \&quot;18446744073709551604\&quot;)
 (string\(26\) \&quot;20202034323934393637323834\&quot;|string\(40\) \&quot;3138343436373434303733373039353531363034\&quot;)</pre></p>
 <p><b>Example 3 (full):</b> <a href="sample_tests/sample023.php">sample023.phpt</a></p>
+</dd>
+
+<dt id="expectregex_external_section">--EXPECTREGEX_EXTERNAL--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Similar to to <a href="#expectregex_section">--EXPECTREGEX--</a> section, but like the
+<a href="#expect_external">--EXPECT_EXTERNAL--</a> section just stating
+a filename where to load the expected output from.
+</p>
+<p><b>Required:</b><br/>
+One of the EXPECT type sections is required.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
 </dd>
 
 <dt id="clean_section">--CLEAN--</dt>
