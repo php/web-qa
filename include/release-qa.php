@@ -82,7 +82,7 @@ $QA_RELEASES = array(
 		),
 	),
 	
-	'5.5.6' => array(
+	'5.5.7' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.5-latest',
@@ -90,11 +90,11 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
-			'md5_bz2'   => 'c9689cab54990701bd9a20faaf5d781d',
-			'md5_gz'    => 'c92bdeccf7f622fcb40c532a0658609a',
-			'md5_xz'    => '64a9b09444293dc0ffb6f8fe2c3a35c5',
-			'date'      => '31 Oct 2013',
+			'number'    => 0,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'md5_xz'    => '',
+			'date'      => '',
 			'baseurl'	=> 'http://downloads.php.net/jpauli/',
 		),
 	),
