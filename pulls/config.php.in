@@ -1,5 +1,11 @@
 <?php
 const GITHUB_BASEURL = 'https://api.github.com/';
 const GITHUB_ORG     = 'php';
-const GITHUB_USER    = '....';
-const GITHUB_PASS    = '....';
+
+/*
+Github tokens can be generated using "Personal Access Tokens" on
+https://github.com/settings/applications after logging in as the user
+they should belong to. On php.net this is the php-pulls user. On
+test setups this might be your normal user.
+*/
+const GITHUB_TOKEN   = '....';

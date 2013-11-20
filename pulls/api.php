@@ -60,16 +60,19 @@ function do_http_request($url, $opts)
 	if (empty($opts['user_agent'])) {
 		$opts['user_agent'] = USER_AGENT;
 	}
+	// IMPORTANT $opts might be logged. Make sure token is removed from log!
+	$opts['header'] = 'Authorization: token '.GITHUB_TOKEN;
 
 	$ctxt = stream_context_create(array('http' => $opts));
-	$actual_url = str_replace('https://', 'https://'.GITHUB_USER.':'.GITHUB_PASS.'@', $url);
 
 	$old_track_errors = ini_get('track_errors');
 	ini_set('track_errors', true);
-	$s = @file_get_contents($actual_url, false, $ctxt);
+	$s = @file_get_contents($url, false, $ctxt);
 	ini_set('track_errors', $old_track_errors);
 
 	if (isset($_SESSION['debug']['requests'])) {
+		// The token shall not be leaked!
+		$opts['header'] = 'Authorization: token (secret)';
 		$_SESSION['debug']['requests'][] = array(
 			'url' => $url,
 			'opts'=> $opts,
@@ -80,13 +83,7 @@ function do_http_request($url, $opts)
 
 	if (!$s) {
 		$errors[] = "Server responded: ".$http_response_header[0];
-		$errors[] = "Github user: ".GITHUB_USER;
-		if ($_SESSION['user'] === 'johannes') {
-			/* This might include the password or such, so not everybody should get it
-			   The good news is that the HTTP Status code usually is a good enough hint
-			*/
-			$errors[] = $php_errormsg;
-		}
+		$errors[] = $php_errormsg;
 		return false;
 	}
 	return $s;

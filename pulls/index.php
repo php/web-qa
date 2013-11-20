@@ -135,7 +135,7 @@ if (!getenv('AUTH_TOKEN')) {
     echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> AUTH_TOKEN not set</div><br>';
 }
 
-if (!constant('GITHUB_PASS')) {
+if (!constant('GITHUB_TOKEN')) {
     echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> config.php not configured correctly.</div><br>';
     common_footer();
     exit;
