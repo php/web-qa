@@ -132,7 +132,7 @@ below illustrates a minimal test.</p>
 <i>ext/standard/tests/strings/strtr.phpt</i>
 <pre>
 --TEST--
-strtr() function - basic test for strstr()
+strtr() function - basic test for strtr()
 --FILE--
 &lt;?php
 /* Do not change this test it is a README.TESTING example. */
