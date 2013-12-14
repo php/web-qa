@@ -13,7 +13,6 @@ function common_header($extra_headers=NULL) {
 <head>
  <title><?php echo $GLOBALS["TITLE"]; ?></title>
  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
- <meta name="MSSmartTagsPreventParsing" content="TRUE">
 <?php
 if(!empty($extra_headers)) {
     foreach($extra_headers as $header) {
