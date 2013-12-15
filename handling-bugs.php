@@ -7,17 +7,7 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-	<table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
             <h1>Handling bug reports?</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">
 <h2>Introduction</h2>
 
 <p>
@@ -229,10 +219,6 @@ be better for it.  Also, bug reporters will not get their feelings hurt
 through miscommunication (e.g. a wrong quickfix or bogus status)  Thank you
 for reading this HOWTO and helping make PHP better.</p>
 <br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-      </table>
 <?php
 
 common_footer();

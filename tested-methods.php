@@ -18,32 +18,13 @@ function showHide(id){
 }
 </script>
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
             <h1>Tested PHP Functions and Methods</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">
             <p>This table lists core PHP functions and methods and specifies whether or not they are called from 
             a PHPT test. A "yes" in this table for a particular method is not an indication of good test coverage
              - it just means that that method is called from at least one PHPT test.</p>
             <p>The analysis used to generate this table does not differentiate between methods of the same name
             belonging to different classes. In cases where such a method call is detected, "verify" is listed
             in the Tested column, along with the list of test files containing calls to a method of that name.</p>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%">
 <?php
 
 // fields in the csv file
@@ -57,7 +38,6 @@ define("TESTS", 4);
 $fd = fopen("coverage_data/tested_methods.csv", "r");
 if (!$fd) {
 	echo "Can't find any data..";
-	echo '</td></tr></table>';
 	common_footer();
 	return;
 }
@@ -120,9 +100,6 @@ while (true) {
 echo "</table>\n";
 
 ?>
-      </td>
-      </tr>
-      </table>
 <?php
 common_footer();
 ?>

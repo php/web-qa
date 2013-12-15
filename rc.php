@@ -7,17 +7,7 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-    <table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
             <h1>Release Candidates</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-		  <td width="100%">
 			<h2>Basics</h2>
 			Release candidates are development packages released to check if any critical
 			problems have slipped into the code during the previous development period.
@@ -28,12 +18,6 @@ common_header();
 			release candidates on your own (<i>non-production!</i>) server.
             <br />
             <br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-		  <td width="100%">
 			<h2>Installation problems</h2>
 			First of all, make sure the build process (on *nix only) and installation went fine for you.
 			PHP supports quite a number of operating systems on different platforms and we continue
@@ -41,12 +25,6 @@ common_header();
 			If you encounter any problems during the installation, we would like to know about them.
 			<br/>
 			<br/>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-		  <td width="100%">
 			<h2>Testing the installation</h2>
 			When done with the build, please run the test engine by using the '<code>make test</code>' command
 			and send us the results (hit '<code>Y</code>' when it asks you whether to send the report).
@@ -56,12 +34,6 @@ common_header();
 			PHP group would hereby like to extend their gratitude for your effort.
 			<br/>
 			<br/>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-		  <td width="100%">
 			<h2>Real-life tests</h2>
 			We would also appreciate if you install the RC on your development server and run
 			your software. This would help us to detect any unintentional changes between
@@ -70,21 +42,10 @@ common_header();
 			cover every possible use case (but we're working on that).
             <br />
             <br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">
            <h2>Getting the Release Candidates</h2>
            The release candidates are available for download from <a href="http://qa.php.net/">the QA frontpage</a>.
            <br />
            <br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-
-      </table>
 <?php
 
 common_footer();

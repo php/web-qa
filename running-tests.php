@@ -7,10 +7,6 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-<table width="70%" border="0" cellspacing="0" cellpadding="0">
- <tr> 
-  <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-  <td width="100%">
    <h1>Test framework tests</h1>
    <p>
     Please run the tests from our test framework. You can do this by typing
@@ -25,9 +21,6 @@ common_header();
     enables us to ask you some more information if a test failed. Note that this script 
     also uploads php -i output so your hostname may be transmitted.
    </p>
-  </td>
- </tr>
-</table>
 <?php
 common_footer();
 ?>

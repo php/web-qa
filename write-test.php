@@ -7,17 +7,7 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-	<table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
             <h1>Creating new test files</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">
 <h2><a name="tests-basics" href="#tests-basics" class="anchor">#</a>phpt Test Basics</h2>
 <p> The first thing you need to know about tests is that we need more!!! Although PHP works just great 
 99.99% of the time, not having a very comprehensive test suite means that we take more risks every time
@@ -483,10 +473,6 @@ precision=14
 <p>If executed as PHP script the output will stop after the code on the --FILE-- section 
 has been run.</p>
 <p></p>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-      </table>
 <?php
 
 common_footer();

@@ -7,17 +7,8 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-    <table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr> 
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%"> 
             <h1>How You Can Help</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr> 
-          <td width="10">&nbsp;</td>
-          <td width="100%">So there you sit.  A PHP coder who loves PHP.  But lately
+          <p>So there you sit.  A PHP coder who loves PHP.  But lately
             you find yourself wanting to help the PHP community by contributing.  Only
             one problem - you aren't a uber 1337 coder - whether it is because you have
             only recently started to learn how to program in PHP or you just don't yet
@@ -29,13 +20,7 @@ common_header();
             about the PHP docs and the software it uses.  So where does that leave you.
             Have no fear there is still a way you can help with PHP - you can help the
             PHP Quality Assurance team.<br />
-            <br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-        <tr>
-          <td width="10">&nbsp;</td>
-          <td width="100%">
+          </p>
             <ul>
               <li class="lihack">You can <a href="write-test.php">Write testcases</a>:
               <ul>
@@ -58,10 +43,6 @@ common_header();
                 machine (hardware, operating system, installed software,
                 etc...). </li>
             </ul>
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-      </table>
 <?php
 
 common_footer();

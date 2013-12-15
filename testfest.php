@@ -7,20 +7,8 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 ?>
-    <table width="70%" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-          <td width="100%">
             <h1>TestFest 2009</h1>
-          </td>
-          <td width="10"><img src="gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-        <tr>
-          <td width="10">&nbsp;</td>
-          <td width="100%">
-            <table>
-              <tr>
-                <td width="65%">
+            <p>
                   The TestFest is an event that aims at improving the
                   <a href="http://gcov.php.net">code coverage</a> of the
                   <a href="/running-tests.php">test suite</a> for the PHP language
@@ -34,10 +22,7 @@ common_header();
                   <a href="/write-test.php">writing phpt tests</a>. The submissions will
                   then be reviewed by members of php.net before getting included in the
                   official test suite.
-                </td>
-                <td width="35%" align="center"><img src="gfx/testfest_big.png" width="200" /></td>
-              </tr>
-            </table>
+                </p>
 
             <h2>Participating Users Group</h2>
 
@@ -144,10 +129,6 @@ common_header();
             <h3>Do you also provide a smaller version of the logo?</h3>
             Yes, here you go (scale as needed):<a href="testfest_scalable.svg">
             scalable image</a><br />
-          </td>
-          <td width="10">&nbsp;</td>
-        </tr>
-      </table>
 <?php
 
 common_footer();
