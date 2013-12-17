@@ -8,7 +8,7 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__))."<br />\n".
 common_header();
 
 ?>
-           <h1>Welcome to the<br />PHP Quality Assurance Team Web Page.</h1>
+           <h1>Welcome to the PHP Quality Assurance Team Web Page.</h1>
            <p>
             The PHP Quality Assurance Team supports the PHP Development Team by
             providing them with information on compatibility and stability issues.
