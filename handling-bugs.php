@@ -206,7 +206,7 @@ So, be sure to leave a comment.</p>
     </li>
     <li>
         If you have a question either email the 
-        <a href="mailto:php-internals@lists.php.net">php-internals@lists.php.net</a> 
+        <a href="mailto:internals@lists.php.net">internals@lists.php.net</a> 
         mailing list or check out the #php.pecl channel in IRC on 
         <a href="http://www.irchelp.org/irchelp/networks/efnet.txt">EFNET</a>.
     </li>
