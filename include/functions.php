@@ -22,9 +22,11 @@ function common_header($extra_headers=NULL) {
         array("href" => "/pulls/",            "text" => "Pull Requests"),
     );
     include __DIR__ . "/../shared/templates/header.inc";
+    echo '<section class="mainscreen">';
 }
 
 function common_footer() {
+    echo "</section>";
     include __DIR__ . "/../shared/templates/footer.inc";
 }
 
