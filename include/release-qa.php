@@ -66,7 +66,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.23' => array(
+	'5.4.24' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
@@ -75,9 +75,9 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'		=> 'RC',
 			'number'    => 1,
-			'md5_bz2'   => '41a3421067a200668120610e44e12dbe',
-			'md5_gz'    => 'bc04dead67c6525d8ce35e7093efa6ce',
-			'date'		=> '28 Oct 2013',
+			'md5_bz2'   => '9f07820f9f7a5496efbcfe55d8e59b14',
+			'md5_gz'    => 'e5d15f2bbae2ec1ae073403ab757d7d1',
+			'date'		=> '27 Dec 2013',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
@@ -90,12 +90,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '',
-			'baseurl'	=> 'http://downloads.php.net/jpauli/',
+			'number'    => 1,
+			'md5_bz2'   => '62b0a6808e277f4eb69bfdacfe584253',
+			'md5_gz'    => '1bab72244a36c6095e7c0c09fd65f62e',
+			'md5_xz'    => 'd1d23feb4d6895283becbe6d02432ae3',
+			'date'      => '27 Dec 2013',
+			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
 
