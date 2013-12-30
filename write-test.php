@@ -141,8 +141,10 @@ the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
 
 <h3><a name="structure" href="#structure" class="anchor">#</a>PHPT structure details</h3>
+<p>
 A phpt test can have many more parts than just the minimum.  In fact some of the mandatory parts have
 alternatives that may be used if the situation warrants it. The phpt sections are documented <a href="phpt_details.php">here</a>.
+</p>
 <p>There is also a very useful set of slides, written by Marcus Boerger <a href="http://somabo.de/talks/">here</a>.
 Look at the talk entitled "The need for speed, ERM testing".</p>
 
@@ -198,11 +200,15 @@ the file section using:</p>
 <pre>
 date_default_timezone_set('UTC');
 </pre>
+<p>
 and not in the INI section. This is because of the order in which settings are checked which is:
+</p>
 <pre>
 date_default_timezone_set() -> TZ environmental -> INI setting -> System Setting
 </pre>
+<p>
 If a TZ environmental varaibale is found the INI setting will be ignored.
+</p>
 
 <p>Tests that run, or only have have matching EXPECT output, on 32bit
 platforms can use a SKIPIF section like:</p>
