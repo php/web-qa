@@ -22,7 +22,7 @@ function common_header($extra_headers=NULL) {
         array("href" => "/pulls/",            "text" => "Github PRs"),
     );
     include __DIR__ . "/../shared/templates/header.inc";
-    echo '<section class="mainscreen">';
+    echo '<section class="fullscreen">';
 }
 
 function common_footer() {
