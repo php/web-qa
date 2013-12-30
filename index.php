@@ -17,7 +17,7 @@ common_header();
             <h3>Make test results:</h3>
             <ul>
             <li>
-              All users who compile PHP are encouraged to run '<a href="http://qa.php.net/running-tests.php">make test</a>', which
+              All users who compile PHP are encouraged to run '<a href="/running-tests.php">make test</a>', which
               runs the test suite and optionally sends the <a href=" http://news.php.net/php.qa.reports">results here</a>.
             </li>
             <li>

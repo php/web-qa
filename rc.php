@@ -44,7 +44,7 @@ common_header();
 </p>
            <h2>Getting the Release Candidates</h2>
 <p>
-           The release candidates are available for download from <a href="http://qa.php.net/">the QA frontpage</a>.
+           The release candidates are available for download from <a href="/">the QA frontpage</a>.
 </p>
 <?php
 

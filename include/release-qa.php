@@ -185,7 +185,7 @@ function show_release_qa($QA_RELEASES) {
 		
 		// QA Releases
 		echo "<span class='lihack'>\n";
-		echo "Providing QA for the following <a href='http://qa.php.net/rc.php'>test release{$plural}</a>:\n";
+		echo "Providing QA for the following <a href='/rc.php'>test release{$plural}</a>:\n";
 		echo "<ul>\n";
 
 		// @todo check for vars, like if md5_* are set
