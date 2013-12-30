@@ -14,12 +14,12 @@ function common_header($extra_headers=NULL) {
     $SUBDOMAIN = "QA";
     $CSS = array("/shared/styles/qa.css");
     $LINKS = array(
-        array("href" => "/projects.php",      "text" => "Projects"),
-        array("href" => "/rc.php",            "text" => "Release Candidates"),
-        array("href" => "/howtohelp.php",     "text" => "How to Help"),
+        array("href" => "/projects.php",      "text" => "Goals"),
+        array("href" => "/rc.php",            "text" => "What is RC?"),
+        array("href" => "/howtohelp.php",     "text" => "Contributing"),
         array("href" => "/handling-bugs.php", "text" => "Handling Reports"),
         array("href" => "/reports/",          "text" => "Reports"),
-        array("href" => "/pulls/",            "text" => "Pull Requests"),
+        array("href" => "/pulls/",            "text" => "Github PRs"),
     );
     include __DIR__ . "/../shared/templates/header.inc";
     echo '<section class="mainscreen">';
