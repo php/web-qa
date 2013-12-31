@@ -16,10 +16,6 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 common_header();
 
 ?>
-<table width="70%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="10"><img src="../gfx/spacer.gif" width="10" height="1"></td>
-    <td width="100%">
     <style type="text/css">
      #loading {
 	     position:fixed;
@@ -168,11 +164,6 @@ if (!constant('GITHUB_TOKEN')) {
     <button id="loginBtn">Login</button>
   </div>
   <div id="loading">Loading</div>
-
-          </td>
-          <td width="10"><img src="http://qa.php.net/gfx/spacer.gif" width="10" height="1"></td>
-        </tr>
-      </table>
 <?php
 
 common_footer();
