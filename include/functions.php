@@ -12,7 +12,7 @@ function common_header($extra_headers=NULL) {
     }
     $TITLE = "Quality Assurance";
     $SUBDOMAIN = "QA";
-    $CSS = array("/shared/styles/qa.css");
+    $CSS = array("/styles/qa.css");
     $LINKS = array(
         array("href" => "/projects.php",      "text" => "Goals"),
         array("href" => "/rc.php",            "text" => "What is RC?"),
