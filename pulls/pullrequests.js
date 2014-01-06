@@ -43,8 +43,8 @@ function loginHandler() {
         ev.preventDefault();
     } );
     $("#loginBtn").click(function(ev) {
-        t.logindialog.dialog("close");
         t.login();
+        t.logindialog.dialog("close");
         ev.preventDefault();
     } ); 
 }
@@ -54,8 +54,8 @@ loginHandler.prototype.showLoginForm = function() {
 }
 
 loginHandler.prototype.login = function() {
-    var user = $("#userField").attr("value");
-    var pass = $("#passField").attr("value");
+    var user = $("#userField").val();
+    var pass = $("#passField").val();
     var t = this;
 
     $.ajax({ url: API_URL, type: "POST", data: { action: 'login', user: user, pass: pass }, success: function(d) { t.updateLoginState(d); } });
