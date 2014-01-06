@@ -67,13 +67,6 @@ common_header();
          display: none;
      }
    </style>
-   <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
-   <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
-   <script type="text/javascript" src="jquery-ui.min.js"></script>
-   <script type="text/javascript" src="jsrender.js"></script>
-   <script type="text/javascript" src="jquery.ba-bbq.min.js"></script>
-   <script type="text/javascript" src="Markdown.Converter.js"></script>
-   <script type="text/javascript" src="Markdown.Sanitizer.js"></script>
    <script id="repoListItemTemplate" type="text/x-jquery-tmpl">
 	   <li repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
    </script>
@@ -119,7 +112,6 @@ $ git push origin master     # everything okay? good, let's push it
      var GITHUB_ORG     = <?php echo json_encode(GITHUB_ORG); ?>;
      var API_URL        = "api.php";
    </script>
-   <script src="pullrequests.js"></script>
   <div id="loginstatus">
     <span id="checkinglogin">(checking login state ...)</span>
     <span id="loggedin"></span>
@@ -164,7 +156,17 @@ if (!constant('GITHUB_TOKEN')) {
     <button id="loginBtn">Login</button>
   </div>
   <div id="loading">Loading</div>
-<?php
 
-common_footer();
+  <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+<?php
+$JS = array(
+    "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js",
+    "//qa.php.net/pulls/jsrender.js",
+    "//qa.php.net/pulls/pullrequests.js",
+    "//qa.php.net/pulls/jquery.ba-bbq.min.js",
+    "//qa.php.net/pulls/Markdown.Converter.js",
+    "//qa.php.net/pulls/Markdown.Sanitizer.js",
+);
+
+common_footer($JS);
 
