@@ -66,7 +66,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.24' => array(
+	'5.4.25' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
@@ -74,7 +74,7 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
+			'number'    => 0,
 			'md5_bz2'   => '9f07820f9f7a5496efbcfe55d8e59b14',
 			'md5_gz'    => 'e5d15f2bbae2ec1ae073403ab757d7d1',
 			'date'		=> '27 Dec 2013',
