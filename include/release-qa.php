@@ -99,6 +99,23 @@ $QA_RELEASES = array(
 		),
 	),
 
+	'5.6.0' => array(
+		'active'		=> true,
+		'snaps'			=> array(
+			'prefix'	=> 'php5.6-latest',
+			'baseurl'	=> 'http://snaps.php.net/',
+		),
+		'release'		=> array(
+			'type'		=> 'alpha',
+			'number'    => 1,
+			'md5_bz2'   => 'd1ac1df6ff701546a005e2d9799d2002',
+			'md5_gz'    => 'e0b74b01b2da3dd0552b9c747eb2fc93',
+			'md5_xz'    => '4ce1be1e400fa061426285933e8f2cf5',
+			'date'      => '23 Jan 2014',
+			'baseurl'	=> 'http://downloads.php.net/tyrael/',
+		),
+	),
+
 	'trunk' => array(
 		'active'		=> false,
 		'snaps'			=> array(
