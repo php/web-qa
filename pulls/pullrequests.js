@@ -171,8 +171,8 @@ function updateRepo(reponame, num, dia) {
         action: 'ghupdate',
         repo: reponame,
         id: num,
-        state: $("select", dia).attr("value"),
-        comment: $("textarea", dia).attr("value")
+        state: $("select", dia).val(),
+        comment: $("textarea", dia).val()
     }, success: function(d) {
         if (d.success) {
             loadRepo(reponame);
