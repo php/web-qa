@@ -98,10 +98,16 @@ $report_file = dirname($_SERVER['SCRIPT_FILENAME']) . "/pftt-reports/$branch/$re
 $report_dir = dirname($report_file);
 
 // ensure dir exists
-@mkdir($report_dir, 0644, TRUE);
+mkdir($report_dir, 0644, TRUE);
 
 // report_file is stored locally in a temporary file, move that file to the permanent location
 move_uploaded_file($_FILES['report_file']['tmp_name'], $report_file);
+
+echo "Parent dir content:";
+var_dump(scandir(dirname($report_dir)));
+
+echo "Parent-Parent dir content:";
+var_dump(scandir(dirname(dirname($report_dir))));
 
 // done, successfully
 echo "Uploaded to $report_file";

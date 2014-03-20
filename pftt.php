@@ -18,7 +18,7 @@ define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/pftt-reports/")
 <?php
 var_dump(BASE_REPORT_DIR);
 var_dump(dirname($_SERVER['SCRIPT_FILENAME']));
-$branches = scandir(BASE_REPORT_DIR);
+/*$branches = scandir(BASE_REPORT_DIR);
 var_dump($branches);
 if ($branches!==FALSE) {
     foreach ( $branches as $branch ) {
@@ -47,19 +47,13 @@ if ($branches!==FALSE) {
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
-<?php /*	<tr>
-		<td>New Failures:</td>
-		<td></td>
-		<td>New Crashes:</td>
-		<td></td>
-	</tr>*/ ?>
 </table>
 <br/>	
 <?php
 
 	    } // end if
     }
-}
+}*/
 
 common_footer();
 ?>

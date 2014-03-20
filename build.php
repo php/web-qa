@@ -43,6 +43,7 @@ common_header();
 	</tr>
 	<?php
 	var_dump(BASE_REPORT_DIR);
+	var_dump(BASE_REPORT_DIR."/$branch/$revision");
 	var_dump(scandir(BASE_REPORT_DIR."/$branch/$revision"));
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	if (substr($report, 0, 4)=="PHPT" && is_file(BASE_REPORT_DIR."/$branch/$revision/$report")) {
