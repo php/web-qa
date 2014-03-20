@@ -16,25 +16,29 @@ define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/pftt-reports/")
 <p>Choose a PHP Branch</p>
 
 <?php
+var_dump(BASE_REPORT_DIR);
+var_dump(dirname($_SERVER['SCRIPT_FILENAME']));
+$branches = scandir(BASE_REPORT_DIR);
+var_dump($branches);
+if ($branches!==FALSE) {
+    foreach ( $branches as $branch ) {
+	    if ($branch=="." or $branch=="..")
+		    continue;
+	    if (is_dir(BASE_REPORT_DIR."/$branch")) {
+		    $latest_revision = '';
+		    $latest_revision_mtime = 0;
 
-foreach ( scandir(BASE_REPORT_DIR) as $branch ) {
-	if ($branch=="." or $branch=="..")
-		continue;
-	if (is_dir(BASE_REPORT_DIR."/$branch")) {
-		$latest_revision = '';
-		$mtime = 0;
-
-		foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
-			if ($revision=="." or $revision=="..")
-				continue;
-			if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-				$mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
-				if ($mtime > $latest_revision_mtime) {
-					$latest_revision = $revision;
-					$latest_revision_mtime = $mtime;
-				}
-			}
-		}
+		    foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
+			    if ($revision=="." or $revision=="..")
+				    continue;
+			    if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
+				    $mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
+				    if ($mtime > $latest_revision_mtime) {
+					    $latest_revision = $revision;
+					    $latest_revision_mtime = $mtime;
+				    }
+			    }
+		    }
 
 ?>
 <table>
@@ -53,7 +57,8 @@ foreach ( scandir(BASE_REPORT_DIR) as $branch ) {
 <br/>	
 <?php
 
-	} // end if
+	    } // end if
+    }
 }
 
 common_footer();
