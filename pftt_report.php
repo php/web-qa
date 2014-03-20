@@ -100,6 +100,10 @@ $report_dir = dirname($report_file);
 // ensure dir exists
 mkdir($report_dir, 0644, TRUE);
 
+$fh = fopen($report_file, "w");
+fwrite($fh, "<html>hello</html>");
+fclose($fh);
+
 // report_file is stored locally in a temporary file, move that file to the permanent location
 move_uploaded_file($_FILES['report_file']['tmp_name'], $report_file);
 
