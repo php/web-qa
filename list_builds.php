@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/pftt-reports/");
+define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
 $branch = $_GET['branch'];
 if (substr($branch, 0, 3)!='PHP') {

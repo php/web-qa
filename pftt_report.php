@@ -94,7 +94,7 @@ if (substr($report_name, -5) != ".html") {
 }
 
 // decide where to store it
-$report_file = dirname($_SERVER['SCRIPT_FILENAME']) . "/pftt-reports/$branch/$revision/$report_name";
+$report_file = dirname($_SERVER['SCRIPT_FILENAME']) . "/reports/db/$branch/$revision/$report_name";
 $report_dir = dirname($report_file);
 
 // ensure dir exists

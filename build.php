@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/pftt-reports/");
+define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
 $branch = $_GET['branch'];
 $revision = $_GET['revision'];
@@ -50,7 +50,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	
 	?>
 	<tr>
-		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/pftt-reports/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
 	</tr>
 	<?php
 	
@@ -71,7 +71,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	
 	?>
 	<tr>
-		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/pftt-reports/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
 	</tr>
 	<?php
 	
