@@ -98,7 +98,7 @@ $report_file = dirname($_SERVER['SCRIPT_FILENAME']) . "/reports/db/$branch/$revi
 $report_dir = dirname($report_file);
 
 // ensure dir exists
-mkdir($report_dir, 0644, TRUE);
+mkdir($report_dir, 666, TRUE);
 
 $fh = fopen($report_file, "w");
 fwrite($fh, "<html>hello</html>");
