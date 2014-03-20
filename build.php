@@ -42,7 +42,8 @@ common_header();
 		<td><strong>PHPT</strong>  <a href="howto_phpt.htm" target="_blank">How to</a></td>
 	</tr>
 	<?php
-	
+	var_dump(BASE_REPORT_DIR);
+	var_dump(scandir(BASE_REPORT_DIR."/$branch/$revision"));
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	if (substr($report, 0, 4)=="PHPT" && is_file(BASE_REPORT_DIR."/$branch/$revision/$report")) {
 	

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/pftt-reports/");
 
 $branch = $_GET['branch'];
@@ -25,7 +25,7 @@ common_header();
 
 $latest_revision = '';
 $mtime = 0;
-
+/*
 foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
@@ -36,13 +36,13 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 			$latest_revision_mtime = $mtime;
 		}
 	}
-}
+}*/
 
 ?>
 <table>
 	<tr>
 		<td>Latest:</td>
-		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $revision; ?>"><?php echo $latest_revision; ?></a></td>
+		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
 <?php /*	<tr>
 		<td>New Failures:</td>
@@ -53,7 +53,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 <table>
 	<?php
 	
-foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
+/*foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
 	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
@@ -66,7 +66,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	<?php
 	
 	} // end if
-} 
+} */
 	
 	
 	?>
