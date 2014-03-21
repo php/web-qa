@@ -25,7 +25,7 @@ function common_header($extra_headers=NULL) {
     echo '<section class="fullscreen">';
 }
 
-function common_footer($JS) {
+function common_footer($JS = array()) {
     echo "</section>";
     include __DIR__ . "/../shared/templates/footer.inc";
 }
