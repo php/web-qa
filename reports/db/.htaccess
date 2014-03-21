@@ -3,5 +3,6 @@ Options -Indexes
 # web user has write access to that
 #
 # should be safe to allow read access to SQLite db files
-#Order deny,allow
+Order deny,allow
 #deny from all
+Allow from all
