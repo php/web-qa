@@ -11,6 +11,13 @@ if (substr($revision, 0, 1)!='r') {
 	$revision = "";
 }
 
+if (!isset($build_type)) {
+    $build_type = "Unknown";
+}
+if (!isset($cpu)) {
+    $cpu = "Unknown";
+}
+
 
 include("include/functions.php");
 
