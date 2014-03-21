@@ -225,6 +225,6 @@ foreach ($allDiffArray as $diff) {
 </table>
 </div>
 <?php
-$SITE_UPDATE .= date('D M d H:i:s Y T', filemtime($dbFile))."<br />".
+$SITE_UPDATE = date('D M d H:i:s Y T', filemtime($dbFile))."<br />".
                 " Generated in ".round((microtime(true)-$startTime)*1000)." ms";
 common_footer();
