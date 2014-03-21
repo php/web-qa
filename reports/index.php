@@ -31,7 +31,7 @@ if (isset($_GET['version'])) {
         exit('invalid version');
     }
     $getVersion = $_GET['version'];
-    $TITLE .= 'PHP Test Reports For PHP Version '.$_GET['version'];
+    $TITLE = 'PHP Test Reports For PHP Version '.$_GET['version'];
 
     $limit = 50;
     if (!empty($_GET['limit'])) {
