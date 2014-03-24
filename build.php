@@ -45,10 +45,13 @@ common_header(NULL, $TITLE);
 	<?php
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	if (substr($report, 0, 4)=="PHPT" && is_file(BASE_REPORT_DIR."/$branch/$revision/$report")) {
+	    $report_name = $report;
+	    if (substr($report_name, strlen($report_name)-5, 5)==".html")
+		$report_name = substr($report_name, 0, strlen($report_name)-5);
 	
 	?>
 	<tr>
-		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report_name; ?></a></td>
 	</tr>
 	<?php
 	
@@ -66,10 +69,13 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	if (substr($report, 0, 7)=="PhpUnit" && is_file(BASE_REPORT_DIR."/$branch/$revision/$report")) {
+	    $report_name = $report;
+	    if (substr($report_name, strlen($report_name)-5, 5)==".html")
+		$report_name = substr($report_name, 0, strlen($report_name)-5);
 	
 	?>
 	<tr>
-		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report_name; ?></a></td>
 	</tr>
 	<?php
 	

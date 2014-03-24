@@ -16,8 +16,6 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 common_header(NULL, $TITLE);
 
 
-// TODO include info about PFTT, link to download build of PFTT
-
 ?>
 <h1><a href="pftt.php"><?php echo $branch; ?></a></h1>
 
@@ -26,15 +24,9 @@ common_header(NULL, $TITLE);
 
 $r = scandir(BASE_REPORT_DIR."/$branch");
 
-//var_dump($r);
 
-
-
-$r = sort($r);
-var_dump($r);
-//*/
-
-/*
+if ($r!==FALSE) {
+sort($r);
 
 $latest_revision = '';
 $mtime = 0;
@@ -43,13 +35,14 @@ foreach ( $r as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
 	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-		$mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
+		$s = stat(BASE_REPORT_DIR."/$branch/$revision");
+		$mtime = $s['mtime'];
 		if ($mtime > $latest_revision_mtime) {
 			$latest_revision = $revision;
 			$latest_revision_mtime = $mtime;
 		}
 	}
-}
+} // end foreach
 
 
 ?>
@@ -58,10 +51,10 @@ foreach ( $r as $revision ) {
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
-<?php 	<tr>
+<?php 	/*<tr>
 		<td>New Failures:</td>
 		<td>New Crashes:</td>
-	</tr>  ?>
+	</tr>*/  ?>
 </table>
 <br/>
 <table>
@@ -80,13 +73,15 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	<?php
 	
 	} // end if
-}
+} // end foreach
 	
 	
 	?>
 </table>
 <?php
-*/
+
+} // end if
+
 
 common_footer();
 

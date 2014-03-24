@@ -10,6 +10,9 @@ common_header(NULL, $TITLE);
 
 define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
+
+// TODO include info about PFTT, link to download build of PFTT
+
 ?>
 <h1>PFTT</h1>
 
