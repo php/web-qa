@@ -13,7 +13,7 @@ $TITLE = "PHP: QA: PFTT: $branch";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 /* $Id$ */
 
-common_header();
+common_header(NULL, $TITLE);
 
 
 // TODO include info about PFTT, link to download build of PFTT

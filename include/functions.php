@@ -6,11 +6,10 @@ Read an Learn. Any Questions so ask.
 Version: $Id$
 */
 
-function common_header($extra_headers=NULL) {
+function common_header($extra_headers=NULL, $TITLE = "Quality Assurance") {
     if ($extra_headers) {
         $HEAD_RAND = join("\n", $extra_headers);
     }
-    $TITLE = "Quality Assurance";
     $SUBDOMAIN = "QA";
     $CSS = array("/styles/qa.css");
     $LINKS = array(
