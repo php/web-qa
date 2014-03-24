@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: Quality Assurance</title>
+  <link type="text/css" media="all" rel="stylesheet" href="qa-reports_files/defaults.css">
+
+  <link type="text/css" media="all" rel="stylesheet" href="qa-reports_files/qa.css">
+
+  <link href="qa-reports_files/css.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="http://php.net/favicon.ico">
+  </head>
+<body id="QA">
+
+<header>
+  <div id="mainmenu-toggle-overlay"></div>
+  <input id="mainmenu-toggle" type="checkbox">
+  <nav class="fullscreen">
+    <div class="mainscreen">
+      <a href="http://qa.php.net/" class="home"><img src="qa-reports_files/logo.jpg" alt="php" height="36" width="72"><span class="subdomain">QA</span></a>
+      <ul>
+        <li><a href="http://qa.php.net/projects.php">Goals</a></li>
+        <li><a href="http://qa.php.net/rc.php">What is RC?</a></li>
+        <li><a href="http://qa.php.net/howtohelp.php">Contributing</a></li>
+        <li><a href="http://qa.php.net/handling-bugs.php">Handling Reports</a></li>
+        <li><a href="qa-reports.htm">Reports</a></li>
+        <li><a href="http://qa.php.net/pulls/">Github PRs</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div id="flash-message"></div>
+<nav id="megadropdown"></nav>
+
+<section class="fullscreen">
+
+
+
+<section class="fullscreen"><script src="qa-reports_files/sorttable.js"></script>
+<div style="margin:10px">
+
+<p><img src="howto_phpunit.png" /></p>
+
+<p><strong>Application</strong> - Application tested (Symfony, Joomla-Platform, Drupal, Mediawiki, Wordpress)</p>
+<p><strong>Scenario Set</strong> - Scenarios that are tested (CLI, Apache mod_php ; Opcache, Filesystem, etc...)</p>
+
+<p><strong>ERROR</strong> - PhpUnit tests that finished with Error(s)</p>
+<p><strong>FAILURE</strong> - PhpUnit tests that failed</p>
+<p><strong>TIMEOUT</strong> - Tests that did not finish after the maximum amount of time passed (usually one minute)</p>
+<p><strong>CRASH</strong> - Tests that Crashed PHP</p>
+
+<p>Report compares ERROR, FAILURE, TIMEOUT, CRASH and PASS for two PHP Builds, the <strong>Base Build</strong> with the <strong>Test Build</strong>. A +X indicates the count increased from Base to Test. A -X indicates the count decreased from Base to Test. If the difference is <font color="green">good</font>, it is shown in <font color="green">green</font> (fe increase in PASS, decrease in ERROR). If the difference is <font color="red">bad</font>, it is shown in <font color="red">red</font> (fe increase in FAILURE).</p>
+
+<p><a href="https://github.com/OSTC/PFTT2/blob/master/src/com/mostc/pftt/model/app/EPhpUnitTestStatus.java" target="_blank">Full Info on PFTT's PHPUnit Test Statuses</a></p>
+
+<p><strong>Result-Pack</strong> All the test logs are compressed into result-packs, which can be downloaded using the two links in the report.</p>
+
+</div>
+</section>
+</section><!-- .fullscreen -->
+<footer>
+  <nav class="fullscreen">
+    <ul>
+      <li><a href="http://php.net/copyright">Copyright ?2001-2014 The PHP Group</a></li>
+      <li><a href="http://php.net/sites">Other PHP.net sites</a></li>
+      <li><a href="http://php.net/privacy">Privacy policy</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script src="qa-reports_files/jquery.js"></script>
+<script src="qa-reports_files/mousetrap.js"></script>
+<script src="qa-reports_files/common.js"></script>
+
+
+</body></html>
