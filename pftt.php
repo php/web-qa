@@ -16,10 +16,7 @@ define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 <p>Choose a PHP Branch</p>
 
 <?php
-var_dump(BASE_REPORT_DIR);
-var_dump(dirname($_SERVER['SCRIPT_FILENAME']));
-/*$branches = scandir(BASE_REPORT_DIR);
-var_dump($branches);
+$branches = scandir(BASE_REPORT_DIR);
 if ($branches!==FALSE) {
     foreach ( $branches as $branch ) {
 	    if ($branch=="." or $branch=="..")
@@ -53,7 +50,7 @@ if ($branches!==FALSE) {
 
 	    } // end if
     }
-}*/
+}
 
 common_footer();
 ?>

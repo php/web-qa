@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL);
 define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
 $branch = $_GET['branch'];
@@ -17,6 +16,8 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 common_header();
 
 
+// TODO include info about PFTT, link to download build of PFTT
+
 ?>
 <h1><a href="pftt.php"><?php echo $branch; ?></a></h1>
 
@@ -25,7 +26,7 @@ common_header();
 
 $latest_revision = '';
 $mtime = 0;
-/*
+
 foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
@@ -36,7 +37,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 			$latest_revision_mtime = $mtime;
 		}
 	}
-}*/
+}
 
 ?>
 <table>
@@ -53,7 +54,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 <table>
 	<?php
 	
-/*foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
+foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
 	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
@@ -66,7 +67,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	<?php
 	
 	} // end if
-} */
+}
 	
 	
 	?>

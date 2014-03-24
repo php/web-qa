@@ -7,16 +7,10 @@ $revision = $_GET['revision'];
 if (substr($branch, 0, 3)!='PHP') {
 	$branch = "PHP_5_6";
 }
-if (substr($revision, 0, 1)!='r') {
+if (substr($revision, 0, 1)!='r' and strpos($revision, ".")===FALSE) {
 	$revision = "";
 }
 
-if (!isset($build_type)) {
-    $build_type = "Unknown";
-}
-if (!isset($cpu)) {
-    $cpu = "Unknown";
-}
 
 
 include("include/functions.php");
@@ -36,7 +30,7 @@ common_header();
 
 <table>
 	<tr>
-		<td><?php echo $branch; ?> <?php echo $revision; ?> <?php echo $build_type; ?> <?php echo $cpu; ?></td>
+		<td><?php echo $branch; ?> <?php echo $revision; ?> </td>
 	</tr>
 </table>
 
@@ -46,18 +40,15 @@ common_header();
 
 <table>
 	<tr>
-		<td><strong>PHPT</strong>  <a href="howto_phpt.htm" target="_blank">How to</a></td>
+		<td><strong>PHPT</strong>  <a href="howto_phpt.html" target="_blank">How to</a></td>
 	</tr>
 	<?php
-	var_dump(BASE_REPORT_DIR);
-	var_dump(BASE_REPORT_DIR."/$branch/$revision");
-	var_dump(scandir(BASE_REPORT_DIR."/$branch/$revision"));
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	if (substr($report, 0, 4)=="PHPT" && is_file(BASE_REPORT_DIR."/$branch/$revision/$report")) {
 	
 	?>
 	<tr>
-		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
 	</tr>
 	<?php
 	
@@ -69,7 +60,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 <br/>
 <table>
 	<tr>
-		<td><strong>PhpUnit</strong>  <a href="howto_phpunit.htm" target="_blank">How to</a></td>
+		<td><strong>PhpUnit</strong>  <a href="howto_phpunit.html" target="_blank">How to</a></td>
 	</tr>
 	<?php
 
@@ -78,7 +69,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	
 	?>
 	<tr>
-		<td>with <a href="<?php echo dirname($_SERVER['PHP_SELF']); ?>/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report; ?></a></td>
 	</tr>
 	<?php
 	
