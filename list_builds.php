@@ -26,13 +26,13 @@ common_header(NULL, $TITLE);
 
 $r = scandir(BASE_REPORT_DIR."/$branch");
 
-var_dump($r);
+//var_dump($r);
 
-/*
+
 
 $r = sort($r);
 var_dump($r);
-*/
+//*/
 
 /*
 

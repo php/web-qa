@@ -26,16 +26,16 @@ if ($branches!==FALSE) {
 		    $latest_revision_mtime = 0;
 
 		    foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
-			    if ($revision=="." or $revision=="..")
+			    if ($revision=="." or $revision==".." or $revision==".svn")
 				    continue;
 			    if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
 				    $s = stat(BASE_REPORT_DIR."/$branch/$revision");
-				    var_dump($s);
-				    /*$mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
+				    //var_dump($s);
+				    $mtime = $s['mtime'];//stat(BASE_REPORT_DIR."/$branch/$revision")[9];
 				    if ($mtime > $latest_revision_mtime) {
 					    $latest_revision = $revision;
 					    $latest_revision_mtime = $mtime;
-				    }*/
+				    }//*/
 			    }
 		    }
 
