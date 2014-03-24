@@ -24,10 +24,16 @@ common_header();
 <p>Choose a PHP revision or build</p>
 <?php
 
+$r = scandir(BASE_REPORT_DIR."/$branch");
+
+var_dump($r);
+
+/*
+
 $latest_revision = '';
 $mtime = 0;
 
-foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
+foreach ( $r as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
 	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
@@ -39,16 +45,17 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	}
 }
 
+
 ?>
 <table>
 	<tr>
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
-<?php /*	<tr>
+<?php 	<tr>
 		<td>New Failures:</td>
 		<td>New Crashes:</td>
-	</tr> */ ?>
+	</tr>  ?>
 </table>
 <br/>
 <table>
@@ -73,6 +80,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	?>
 </table>
 <?php
+*/
 
 common_footer();
 

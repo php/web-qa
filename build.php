@@ -40,7 +40,7 @@ common_header();
 
 <table>
 	<tr>
-		<td><strong>PHPT</strong>  <a href="howto_phpt.html" target="_blank">How to</a></td>
+		<td><strong>PHPT</strong>  <a href="howto_phpt.php" target="_blank">How to</a></td>
 	</tr>
 	<?php
 foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
@@ -60,7 +60,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 <br/>
 <table>
 	<tr>
-		<td><strong>PhpUnit</strong>  <a href="howto_phpunit.html" target="_blank">How to</a></td>
+		<td><strong>PhpUnit</strong>  <a href="howto_phpunit.php" target="_blank">How to</a></td>
 	</tr>
 	<?php
 
