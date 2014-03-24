@@ -19,7 +19,7 @@ define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 $branches = scandir(BASE_REPORT_DIR);
 if ($branches!==FALSE) {
     foreach ( $branches as $branch ) {
-	    if ($branch=="." or $branch=="..")
+	    if ($branch=="." or $branch==".." or $branch==".svn")
 		    continue;
 	    if (is_dir(BASE_REPORT_DIR."/$branch")) {
 		    $latest_revision = '';
@@ -28,13 +28,15 @@ if ($branches!==FALSE) {
 		    foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 			    if ($revision=="." or $revision=="..")
 				    continue;
-			    /*if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-				    $mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
+			    if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
+				    $s = stat(BASE_REPORT_DIR."/$branch/$revision");
+				    var_dump($s);
+				    /*$mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
 				    if ($mtime > $latest_revision_mtime) {
 					    $latest_revision = $revision;
 					    $latest_revision_mtime = $mtime;
-				    }
-			    }*/
+				    }*/
+			    }
 		    }
 
 ?>
