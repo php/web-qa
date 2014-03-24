@@ -28,13 +28,13 @@ if ($branches!==FALSE) {
 		    foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 			    if ($revision=="." or $revision=="..")
 				    continue;
-			    if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
+			    /*if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
 				    $mtime = stat(BASE_REPORT_DIR."/$branch/$revision")[9];
 				    if ($mtime > $latest_revision_mtime) {
 					    $latest_revision = $revision;
 					    $latest_revision_mtime = $mtime;
 				    }
-			    }
+			    }*/
 		    }
 
 ?>
