@@ -11,7 +11,7 @@ common_header();
 <p>QA reports and test data are generated using two different tools, run-test.php and PFTT:</p>
 
 <p>
-<a href="http://qa.php.net/reports/">run-test.php</a>  The standard tool for running PHPT tests against PHP core on the command-line (CLI scenario). Whenever users build PHP for install, they should run `make test`, which runs run-test.php on their build.
+<a href="/reports/">run-tests.php</a>  The standard tool for running PHPT tests against PHP core on the command-line (CLI scenario). Whenever users build PHP for install, they should run `make test`, which runs run-test.php on their build.
 </p>
 
 <p>
