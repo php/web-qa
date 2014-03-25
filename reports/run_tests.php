@@ -93,7 +93,7 @@ common_header();
 <script src="sorttable.js"></script>
 <div style="margin:10px">
 
-<h1><a href="/reports/">
+<h1><a href="run_tests.php">
 <img title="Go back home" src="home.png" border="0" style="vertical-align:middle;" /></a>
 <?php echo $TITLE; ?></h1>
 
@@ -121,7 +121,7 @@ foreach ($reportsPerVersion as $version => $line) {
     }
     if ($maxReportDate < strtotime($line['lastReport'])) $maxReportDate = strtotime($line['lastReport']);
     echo '<tr>';
-    echo '<td><a href="./?version='.$version.'">'.$version.'</a></td>';
+    echo '<td><a href="run_tests.php?version='.$version.'">'.$version.'</a></td>';
     echo '<td align="right">'.$line['nbReports'].'</td>';
     echo '<td align="right">'.$line['nbFailingTests'].'</td>';
     echo '<td align="right">'.$line['nbFailures'].'</td>';
@@ -133,8 +133,8 @@ foreach ($reportsPerVersion as $version => $line) {
 ?>
 </tbody>
 </table>
-<p>(<a href="./?summary_filter=0">Show all versions</a> |
-    <a href="./?summary_filter=<?php echo QA_REPORT_FILTER_ALL; ?>">Show stable and current dev only</a>)</p>
+<p>(<a href="run_tests.php?summary_filter=0">Show all versions</a> |
+    <a href="run_tests.php?summary_filter=<?php echo QA_REPORT_FILTER_ALL; ?>">Show stable and current dev only</a>)</p>
 <?php 
 } else { /* $getVersion */
 ?>
@@ -149,9 +149,9 @@ function changeExpect()
 {
     var check = document.getElementById('expect').checked;
     if (check == true) {
-        document.location.href = '?version=<?php echo $getVersion; ?>&expect=1';
+        document.location.href = 'run_tests.php?version=<?php echo $getVersion; ?>&expect=1';
     } else {
-        document.location.href = '?version=<?php echo $getVersion; ?>';
+        document.location.href = 'run_tests.php?version=<?php echo $getVersion; ?>';
     }
 }
 // ->
@@ -227,10 +227,10 @@ function changeExpect()
 <?php
     if (count($failedTestsArray) >= $limit) {
         echo '<i>There are more failing tests ';
-        echo '(<a href="?version=' . $getVersion . '&limit=1000">view all)</i>';
+        echo '(<a href="run_tests.php?version=' . $getVersion . '&limit=1000">view all)</i>';
     } else {
         echo '<i>View only the most common failed tests ';
-        echo '(<a href="?version=' . $getVersion . '&limit=50">view 50)</i>';
+        echo '(<a href="run_tests.php?version=' . $getVersion . '&limit=50">view 50)</i>';
     }
 } 
 ?>
