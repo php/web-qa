@@ -10,9 +10,6 @@ common_header(NULL, $TITLE);
 
 define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
-
-// TODO include info about PFTT, link to download build of PFTT
-
 ?>
 <h1>PFTT</h1>
 
@@ -33,12 +30,11 @@ if ($branches!==FALSE) {
 				    continue;
 			    if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
 				    $s = stat(BASE_REPORT_DIR."/$branch/$revision");
-				    //var_dump($s);
-				    $mtime = $s['mtime'];//stat(BASE_REPORT_DIR."/$branch/$revision")[9];
+				    $mtime = $s['mtime'];
 				    if ($mtime > $latest_revision_mtime) {
 					    $latest_revision = $revision;
 					    $latest_revision_mtime = $mtime;
-				    }//*/
+				    }
 			    }
 		    }
 
@@ -56,6 +52,14 @@ if ($branches!==FALSE) {
 	    } // end if
     }
 }
+
+?>
+
+<p><strong>PFTT Source Code:</strong> <a href="http://git.php.net/?p=pftt2.git">http://git.php.net/?p=pftt2.git</a></p>
+    
+<p><strong>PFTT Binaries:</strong> <a href="http://windows.php.net/downloads/snaps/ostc/pftt/" target="_blank">http://windows.php.net/downloads/snaps/ostc/pftt/</a></p>
+
+<?php
 
 common_footer();
 ?>
