@@ -66,18 +66,18 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.27' => array(
+	'5.4.28' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
-			'type'		=> 'RC',
-			'number'    => 1,
+			'type'		=> '',
+			'number'    => 0,
 			'md5_bz2'   => '565e9ac3cdc138d0006a47131783085f',
 			'md5_gz'    => '239c35d4bd0fc242a3bbf7e7f31b796a',
-			'date'		=> '20 Mar 2013',
+			'date'		=> '',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
