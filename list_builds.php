@@ -48,14 +48,14 @@ $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
 
 ?>
-<table style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
+<table class="pftt" style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 	<tr>
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
 </table>
 <br/>
-<table style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
+<table class="pftt" style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 	<?php
 	
 foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {

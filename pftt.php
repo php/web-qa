@@ -41,11 +41,11 @@ if ($branches!==FALSE) {
 		    $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
 ?>
-<table style="background:<?php echo $red ? '#ff0000;' : '#ccff66'; ?>">
+<table class="pftt" style="background:<?php echo $red ? '#ff0000;' : '#ccff66'; ?>">
 	<tr>
 		<td style="width:300px"><a href="list_builds.php?branch=<?php echo $branch; ?>"><?php echo $branch; ?></a></td>
-		<td>Latest:</td>
-		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
+		<td style="width:100px">Latest:</td>
+		<td style="width:300px"><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
 </table>
 <br/>	
