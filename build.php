@@ -49,8 +49,10 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	    if (substr($report_name, strlen($report_name)-5, 5)==".html")
 		$report_name = substr($report_name, 0, strlen($report_name)-5);
 	
+		$has_fails_crashes = is_file("$report_name.txt");
+		    
 	?>
-	<tr>
+	<tr<?php if ($has_fails_crashes) { echo ' style="background:#ff0000"'; } ?>>
 		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report_name; ?></a></td>
 	</tr>
 	<?php

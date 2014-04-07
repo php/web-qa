@@ -44,20 +44,18 @@ foreach ( $r as $revision ) {
 	}
 } // end foreach
 
+$red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
+
 
 ?>
-<table>
+<table style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 	<tr>
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
-<?php 	/*<tr>
-		<td>New Failures:</td>
-		<td>New Crashes:</td>
-	</tr>*/  ?>
 </table>
 <br/>
-<table>
+<table style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 	<?php
 	
 foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
@@ -78,6 +76,8 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	
 	?>
 </table>
+<br/>
+<br/>
 <?php
 
 } // end if

@@ -41,6 +41,7 @@ if (md5($_POST['token'])!="b1cab611a6a4ae40693c0f0f9df16692") {
 
 $branch = strtoupper($_POST['branch']);
 $revision = strtolower($_POST['revision']);
+$fail_crash_count = $_POST['fail_crash_count'];
 
 // do a bunch of validation on the input
 switch($branch) {
@@ -100,6 +101,15 @@ $report_dir = dirname($report_file);
 
 // ensure dir exists
 mkdir($report_dir, 0777, TRUE);
+
+if ($fail_crash_count > 0) {
+    $fh = fopen("$report_dir/FAIL_CRASH.txt", "w");
+    fwrite($fh, "$fail_crash_count");
+    fclose($fh);
+    $fh = fopen("$$report_name.txt", "w");
+    fwrite($fh, "$fail_crash_count");
+    fclose($fh);
+}
 
 // report_file is stored locally in a temporary file, move that file to the permanent location
 move_uploaded_file($_FILES['report_file']['tmp_name'], $report_file);

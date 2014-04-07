@@ -37,11 +37,13 @@ if ($branches!==FALSE) {
 				    }
 			    }
 		    }
+		    
+		    $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
 ?>
-<table>
+<table style="background:<?php echo $red ? '#ff0000;' : '#ccff66'; ?>">
 	<tr>
-		<td colspan="2"><a href="list_builds.php?branch=<?php echo $branch; ?>"><?php echo $branch; ?></a></td>
+		<td style="width:300px"><a href="list_builds.php?branch=<?php echo $branch; ?>"><?php echo $branch; ?></a></td>
 		<td>Latest:</td>
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
 	</tr>
@@ -59,6 +61,8 @@ if ($branches!==FALSE) {
     
 <p><strong>PFTT Binaries:</strong> <a href="http://windows.php.net/downloads/snaps/ostc/pftt/" target="_blank">http://windows.php.net/downloads/snaps/ostc/pftt/</a></p>
 
+<br/>
+<br/>
 <?php
 
 common_footer();
