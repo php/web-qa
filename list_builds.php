@@ -55,17 +55,17 @@ $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 	</tr>
 </table>
 <br/>
-<table class="pftt" style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
+<table class="pftt">
 	<?php
 	
 foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
 	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-	
+	    $red = is_file(BASE_REPORT_DIR."/$branch/$revision/FAIL_CRASH.txt");
 	
 	?>
-	<tr>
+	<tr style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $revision; ?>"><?php echo $revision; ?></a></td>
 	</tr>
 	<?php
