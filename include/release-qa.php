@@ -107,12 +107,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'	    => 'beta',
-			'number'    => 1,
-			'md5_bz2'   => 'f93394cf0035842265421665b770dd05',
-			'md5_gz'    => 'e81576e9270ef89edce82c7f9a222fd1',
-			'md5_xz'    => '08321c0d7315db679aa255081b8615b2',
-			'date'      => '11 April 2014',
-			'baseurl'	=> 'http://downloads.php.net/tyrael/',
+			'number'    => 2,
+			'md5_bz2'   => '38613127c9f1a60a566bab23abe7d965',
+			'md5_gz'    => 'f793c7bf592cb281a9772297d6d28024',
+			'md5_xz'    => '3c355bc98c9c4eefacd5ef15e36574c7',
+			'date'      => '01 May 2014',
+			'baseurl'   => 'http://downloads.php.net/tyrael/',
 		),
 	),
 
