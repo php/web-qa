@@ -31,6 +31,8 @@ sort($r);
 $latest_revision = '';
 $mtime = 0;
 
+$revisions_by_mtime = array();
+
 foreach ( $r as $revision ) {
 	if ($revision=="." or $revision=="..")
 		continue;
@@ -41,8 +43,19 @@ foreach ( $r as $revision ) {
 			$latest_revision = $revision;
 			$latest_revision_mtime = $mtime;
 		}
+		$revisions_by_mtime[$mtime] = $revision;
 	}
 } // end foreach
+
+$mtimes = array_keys($revisions_by_mtime);
+
+sort($mtimes);
+
+$revisions = array();
+
+foreach ($mtimes as $mtime) {
+    array_push($revisions, $revisions_by_mtime[$mtime]);
+}
 
 $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
@@ -58,11 +71,8 @@ $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 <table class="pftt">
 	<?php
 	
-foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
-	if ($revision=="." or $revision=="..")
-		continue;
-	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-	    $red = is_file(BASE_REPORT_DIR."/$branch/$revision/FAIL_CRASH.txt");
+foreach ( $revisions as $revision ) {
+	$red = is_file(BASE_REPORT_DIR."/$branch/$revision/FAIL_CRASH.txt");
 	
 	?>
 	<tr style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
@@ -70,7 +80,6 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch") as $revision ) {
 	</tr>
 	<?php
 	
-	} // end if
 } // end foreach
 	
 	
