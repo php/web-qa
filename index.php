@@ -18,11 +18,7 @@ common_header();
             <ul>
             <li>
               All users who compile PHP are encouraged to run '<a href="/running-tests.php">make test</a>', which
-              runs the test suite and optionally sends the <a href=" http://news.php.net/php.qa.reports">results here</a>.
-            </li>
-            <li>
-              Compiled <a href="reports/">user submitted test result reports</a> for analysis
-              <br /><br />
+              runs the test suite and optionally sends the results to this site to be compiled into <a href="reports/">reports for analysis</a>.
             </li>
             <li>
              Additional test results are available at <a href="http://gcov.php.net/">gcov.php.net</a> and <a href="http://ci.qa.php.net">ci.qa.php.net</a>.
