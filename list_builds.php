@@ -70,6 +70,8 @@ $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 <br/>
 <table class="pftt">
 	<?php
+
+$revisions = array_reverse($revisions);
 	
 foreach ( $revisions as $revision ) {
 	$red = is_file(BASE_REPORT_DIR."/$branch/$revision/FAIL_CRASH.txt");
