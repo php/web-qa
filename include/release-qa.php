@@ -66,23 +66,23 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.29' => array(
+	'5.4.30' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
 			'baseurl'	=> 'http://snaps.php.net/',
 		),
 		'release'		=> array(
-			'type'		=> '',
+			'type'		=> 'RC',
 			'number'    => 0,
-			'md5_bz2'   => '565e9ac3cdc138d0006a47131783085f',
-			'md5_gz'    => '239c35d4bd0fc242a3bbf7e7f31b796a',
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
 			'date'		=> '',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
 	
-	'5.5.13' => array(
+	'5.5.14' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.5-latest',
@@ -107,11 +107,11 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'	    => 'beta',
-			'number'    => 2,
-			'md5_bz2'   => '38613127c9f1a60a566bab23abe7d965',
-			'md5_gz'    => 'f793c7bf592cb281a9772297d6d28024',
-			'md5_xz'    => '3c355bc98c9c4eefacd5ef15e36574c7',
-			'date'      => '01 May 2014',
+			'number'    => 4,
+			'md5_bz2'   => '76b4dd5c12de746ac03c39226d99575f',
+			'md5_gz'    => '4683539925db0b5eb8b7400b7068480b',
+			'md5_xz'    => '2d46a6f4468ff36d75166f74497b7ef5',
+			'date'      => '05 Jun 2014',
 			'baseurl'   => 'http://downloads.php.net/tyrael/',
 		),
 	),
