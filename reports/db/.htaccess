@@ -1,4 +1,5 @@
 Options -Indexes
+#
 # need to allow read access to /reports/db/ because that's where PFTT files will be stored because
 # web user has write access to that
 #
