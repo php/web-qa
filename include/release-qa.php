@@ -67,7 +67,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.31' => array(
+	'5.4.32' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
@@ -75,10 +75,10 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '658a2c63ab4d7d0a3afca649ccd759d7',
-			'md5_gz'    => '71ad747da1b6918476285c9023b1c895',
-			'date'		=> '10 Jul 2014',
+			'number'    => 1,
+			'md5_bz2'   => '214f27d5eb38060f807b36dd19e92ab9',
+			'md5_gz'    => '994124a6cf0f03319fe464098280ce11',
+			'date'		=> '07 Aug 2014',
 			'baseurl'	=> 'http://downloads.php.net/stas/',
 		),
 	),
