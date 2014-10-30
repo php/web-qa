@@ -100,9 +100,9 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'	    => 'RC',
 			'number'    => 1,
-			'md5_bz2'   => '0732fd0b76f24cc04b5a7a068cf93ee2',
-			'md5_gz'    => '0095a0319399c80f22e1ada865cd28cf',
-			'md5_xz'    => 'f7f93c4b5f8255b56f60eed9259b1929',
+			'md5_bz2'   => '1d7392821cc4ba85e4d055c7dcf307f3',
+			'md5_gz'    => '158745acf76f7639987a6058a6a98e74',
+			'md5_xz'    => 'a4cadd97b42dae23d278daacb68b7d32',
 			'date'      => '30 Oct 2014',
 			'baseurl'   => 'http://server.famillecollet.com/php/',
 		),
