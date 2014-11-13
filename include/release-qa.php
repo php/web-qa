@@ -74,7 +74,7 @@ $QA_RELEASES = array(
 		),
 	),
 	
-	'5.5.19' => array(
+	'5.5.20' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.5-latest',
@@ -82,11 +82,11 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 1,
-			'md5_bz2'   => 'ed084c92039c323b74e7749214b097a6',
-			'md5_gz'    => '58b9e24ad0d0064f2c08b31b40d6e9e1',
-			'md5_xz'    => 'ff6782d92ef7719646a45a97a21e59d6',
-			'date'      => '30 Oct 2014',
+			'number'    => 0,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'md5_xz'    => '',
+			'date'      => '',
 			'baseurl'	=> 'http://server.famillecollet.com/php/',
 		),
 	),
