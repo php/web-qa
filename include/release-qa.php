@@ -99,12 +99,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'	    => 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '',
-			'baseurl'   => 'http://server.famillecollet.com/php/',
+			'number'    => 1,
+			'md5_bz2'   => 'ac51810153705f004c6c4dc8101ef495',
+			'md5_gz'    => 'cebd43332b49207985f77587038c3a74',
+			'md5_xz'    => 'ca16837fc1ff6d309d7178644a29e9a4',
+			'date'      => '27 Nov 2014',
+			'baseurl'   => 'https://downloads.php.net/~tyrael/',
 		),
 	),
 
