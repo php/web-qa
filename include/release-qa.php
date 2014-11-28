@@ -82,12 +82,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '',
-			'baseurl'	=> 'http://server.famillecollet.com/php/',
+			'number'    => 1,
+			'md5_bz2'   => '4333eb84a4ce5f684a6f91ae205b5532',
+			'md5_gz'    => '6d2b0f617cae8b7fd62ca5592758fdf5',
+			'md5_xz'    => '0e9ac5ff2596671148151a7331a82608',
+			'date'      => '27 Nov 2014',
+			'baseurl'	=> 'http://downloads.php.net/jpauli/',
 		),
 	),
 
