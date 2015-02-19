@@ -18,6 +18,7 @@ define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 <?php
 $branches = scandir(BASE_REPORT_DIR);
 if ($branches!==FALSE) {
+    $branches = array_reverse($branches);
     foreach ( $branches as $branch ) {
 	    if ($branch=="." or $branch==".." or $branch==".svn")
 		    continue;
