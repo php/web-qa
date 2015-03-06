@@ -99,12 +99,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'	    => 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '',
-			'baseurl'   => 'https://downloads.php.net/jpauli/',
+			'number'    => 1,
+			'md5_bz2'   => 'b5bcff89c1670d63f9c45ca743f1bf20',
+			'md5_gz'    => 'ffae22e158d442aa3375e5ebde71cf46',
+			'md5_xz'    => '5035ed9991e7e8e339f8c729de1bde22',
+			'date'      => '05 Mar 2015',
+			'baseurl'   => 'http://downloads.php.net/tyrael/',
 		),
 	),
 
