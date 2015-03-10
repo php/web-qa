@@ -185,6 +185,11 @@ Considering your test file is named foo.phpt, these files provide you with infor
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
 			The php code that was executed for this test.
 		</li>
+                <li>
+			<i>foo.sh</i><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+			An executable file that executes the test for you as it was executed during failure.
+		</li>
         </ul>
 </p>
 
