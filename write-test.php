@@ -155,6 +155,40 @@ some typing and ensure that you get a good basic format.
 See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
 
 
+<h3><a name="debugging-tests" href="#debugging-tests" class="anchor">#</a>Debugging tests</h3>
+<p>While writing tests you will probably run into tests not passing while you think they should. The 'make test' command
+provides you with debug information. Several files will be added per test in the same directory as the .phpt file itself.
+Considering your test file is named foo.phpt, these files provide you with information that can help you find out what went wrong:
+        <ul type="none">
+                <li>
+			<i>foo.diff</i><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Give me some space! -->
+			A diff file between the expected output (be it in EXPECT, EXPECTF or another option) and the actual output.
+		</li>
+                <li>
+			<i>foo.exp</i><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+			The expected output.
+		</li>
+                <li>
+			<i>foo.log</i><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+			A log containing expected output, actual output and results. Most likely very similar to info in the other files.
+		</li>
+                <li>
+			<i>foo.out</i><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+			The actual output of your .phpt test part.
+		</li>
+                <li>
+			<i>foo.php</i><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!-- Give me some space! -->
+			The php code that was executed for this test.
+		</li>
+        </ul>
+</p>
+
+
 <h3><a name="testing-tests" href="#testing-tests" class="anchor">#</a> Testing your test cases</h3>
 <p>Most people who write tests for PHP don't have access to a huge number of operating systems but the tests are run
 on every system that runs PHP. It's good to test your test on as many platforms as you can - Linux and Windows
