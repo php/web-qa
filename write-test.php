@@ -155,7 +155,7 @@ some typing and ensure that you get a good basic format.
 See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
 
 
-<h3><a name="debugging-tests" href="#debugging-tests" class="anchor">#</a>Debugging tests</h3>
+<h3><a name="analyzing-failing-tests" href="#analyzing-failing-tests" class="anchor">#</a>Analyzing failing tests</h3>
 <p>While writing tests you will probably run into tests not passing while you think they should. The 'make test' command
 provides you with debug information. Several files will be added per test in the same directory as the .phpt file itself.
 Considering your test file is named foo.phpt, these files provide you with information that can help you find out what went wrong:
