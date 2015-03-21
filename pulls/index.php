@@ -32,16 +32,9 @@ common_header();
 	     vertical-align: middle;
      }
 
-     .ghuser {
-	     border: 1px solid #ffcc66;
-	     float: right;
-	     margin-left: 5px;
-	     margin-bottom: 5px;
-     }
-
-     .ghuser a {
-	     color: #ffcc66;
-	     text-decoration: none;
+     .pr-meta {
+         font-size: 0.9em;
+         margin-bottom: 20px;
      }
 
      #loginstatus {
@@ -68,7 +61,7 @@ common_header();
      }
    </style>
    <script id="repoListItemTemplate" type="text/x-jquery-tmpl">
-	   <li repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
+	   <li data-repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
    </script>
    <script id="repoOverviewTemplate" type="text/x-jquery-tmpl">
 	   <h2>{{=repoName}}</h2>
@@ -79,13 +72,12 @@ common_header();
    <script id="pullRequestListItem" type="text/x-jquery-tmpl">
 	   <h3><a href='#'>{{=number}}: {{=title}} ({{=state}})</a></h3>
 	   <div class="pullrequest">
-		   <div class="ghuser"><a href="{{=user.url}}"><img src="{{=user.avatar_url}}"><br>{{=user.login}}</a></div>
-		   <div>Created: {{=created_at}}, LastUpdated: {{=updated_at}}</div>
+		   <div class="pr-meta">Created by <a href="{{=user.html_url}}">{{=user.login}}</a> on {{=created_at}} (last updated {{=updated_at}})</div>
 		   <div>{{=body!}}</div>
 		   <div><a href="{{=html_url}}"><img src="../gfx/github.ico"> On GitHub</a> |
 			<a href="{{=diff_url}}">Diff</a> |
-			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |
-			<a href="#" number="{{=number}}" state="{{=state}}" title="{{=title}}" class="updatepullrequest">Update</a>
+			<a href="#" data-number="{{=number}}" data-state="{{=state}}" data-title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |
+			<a href="#" data-number="{{=number}}" data-state="{{=state}}" data-title="{{=title}}" class="updatepullrequest">Update</a>
 		   </div>
 	   </div>
    </script>

@@ -21,7 +21,7 @@ repoList.prototype.hideList = function() {
 
 repoList.prototype.refreshView = function() {
     $("#repolist").html($("#repoListItemTemplate").render(this.data.data));
-    $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).attr("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
+    $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).data("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
 }
 repoList.prototype.update = function() {
     var t = this;
@@ -142,14 +142,14 @@ function loadRepo(repo, url) {
             $("#repoContent").html( $("#repoOverviewTemplate").render([{repoName: repo, pullList: $("#pullRequestListItem").render(data.data)}]));
             $("#repoContent code").parent('p').css('overflow', 'auto');
             $(".pullinstructions").click(function(ev) {
-                $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).attr("number")}))
-                                .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')', width: 800 });
+                $('<div></div>').html($("#pullInstructionTemplate").render({ repo: repo, number: $(this).data("number")}))
+                                .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')', width: 800 });
                 ev.preventDefault();
             });
             $(".updatepullrequest").click(function(ev) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
-                                          .dialog({title: $(this).attr("number")+': '+$(this).attr("title")+' ('+$(this).attr("state")+')' });
-                $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).attr("number"), dia) );
+                                          .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')' });
+                $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).data("number"), dia) );
                 ev.preventDefault();
             });
             $("#repoPullList").accordion({ autoHeight: false });
