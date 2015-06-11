@@ -108,6 +108,23 @@ $QA_RELEASES = array(
 		),
 	),
 
+        '7.0.0' => array(
+                'active'                => true,
+                'snaps'                 => array(
+                        'prefix'        => 'php7.0-latest',
+                        'baseurl'       => 'http://snaps.php.net/',
+                ),
+                'release'               => array(
+                        'type'      => 'alpha',
+                        'number'    => 1,
+                        'md5_bz2'   => 'e164f85887a4f5e663e09c74e63e4538',
+                        'md5_gz'    => 'f8fc444bbfeb43043f6b52894505fb6b',
+                        'md5_xz'    => 'bd56863c6412a7c302adfb80983b3e5e',
+                        'date'      => '11 Jun 2015',
+                        'baseurl'   => 'http://downloads.php.net/ab/',
+                ),
+        ),
+
 	'trunk' => array(
 		'active'		=> false,
 		'snaps'			=> array(
