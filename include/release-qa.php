@@ -82,12 +82,12 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '',
-			'baseurl'	=> '',
+			'number'    => 1,
+			'md5_bz2'   => '30495c0080b74b4f7eafe815bc6490c0',
+			'md5_gz'    => 'cc1a8d2d0bea85a7e5b493c2888af63f',
+			'md5_xz'    => '8741e5bcc1e8d74caba6dc6cf82618ca',
+			'date'      => '25 Jun 2015',
+			'baseurl'	=> 'http://downloads.php.net/jpauli/',
 		),
 	),
 
