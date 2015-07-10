@@ -58,7 +58,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.4.43' => array(
+	'5.4.44' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.4-latest',
