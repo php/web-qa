@@ -108,7 +108,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.1' => array(
+        '7.0.2' => array(
                 'active'                => true,
                 'snaps'                 => array(
                         'prefix'        => 'php7.0-latest',
@@ -116,10 +116,10 @@ $QA_RELEASES = array(
                 ),
                 'release'               => array(
                         'type'      => 'RC',
-                        'number'    => 1,
-                        'md5_bz2'   => 'ddacfc3eb14a1fefc37e1f5c114eabc2',
-                        'md5_gz'    => '46e72f4ece70c6750bbced6a83a4e080',
-                        'md5_xz'    => '158cab21cdabcd88a4841a05dfa7cdcc',
+                        'number'    => 0,
+                        'md5_bz2'   => '',
+                        'md5_gz'    => '',
+                        'md5_xz'    => '',
                         'date'      => '10 Dec 2015',
                         'baseurl'   => 'http://downloads.php.net/ab/',
                 ),
