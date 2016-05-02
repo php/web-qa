@@ -115,6 +115,7 @@ $(document).ready(function() {
 });
 
 function loadRepo(repo, url) {
+    $("#nextRepoPage").off();
     $("#loading").show();
     url = url || GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/pulls";
     $.ajax({
