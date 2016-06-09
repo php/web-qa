@@ -125,6 +125,23 @@ $QA_RELEASES = array(
                 ),
         ),
 
+        '7.1.0' => array(
+                'active'                => true,
+                'snaps'                 => array(
+                        'prefix'        => 'php7.1-latest',
+                        'baseurl'       => 'http://snaps.php.net/',
+                ),
+                'release'               => array(
+                        'type'      => 'alpha',
+                        'number'    => 0,
+                        'md5_bz2'   => '',
+                        'md5_gz'    => '',
+                        'md5_xz'    => '',
+                        'date'      => '09 June 2016',
+                        'baseurl'   => 'http://downloads.php.net/krakjoe/',
+                ),
+	),
+
 	'trunk' => array(
 		'active'		=> false,
 		'snaps'			=> array(
