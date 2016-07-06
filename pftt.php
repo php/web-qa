@@ -44,9 +44,9 @@ if ($branches!==FALSE) {
 ?>
 <table class="pftt" style="background:<?php echo $red ? '#ff0000;' : '#ccff66'; ?>">
 	<tr>
-		<td style="width:300px"><a href="list_builds.php?branch=<?php echo $branch; ?>"><?php echo $branch; ?></a></td>
+		<td style="width:300px"><a href="list_builds.php?branch=<?php echo urlencode($branch); ?>"><?php echo htmlentities($branch); ?></a></td>
 		<td style="width:100px">Latest:</td>
-		<td style="width:300px"><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
+		<td style="width:300px"><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($latest_revision); ?>"><?php echo htmlentities($latest_revision); ?></a></td>
 	</tr>
 </table>
 <br/>	

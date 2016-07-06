@@ -15,9 +15,8 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header(NULL, $TITLE);
 
-
 ?>
-<h1><a href="pftt.php"><?php echo $branch; ?></a></h1>
+<h1><a href="pftt.php"><?php echo htmlentities($branch); ?></a></h1>
 
 <p>Choose a PHP revision or build</p>
 <?php
@@ -59,12 +58,11 @@ foreach ($mtimes as $mtime) {
 
 $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
-
 ?>
 <table class="pftt" style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
 	<tr>
 		<td>Latest:</td>
-		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $latest_revision; ?>"><?php echo $latest_revision; ?></a></td>
+		<td><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($latest_revision); ?>"><?php echo htmlentities($latest_revision); ?></a></td>
 	</tr>
 </table>
 <br/>
@@ -78,7 +76,7 @@ foreach ( $revisions as $revision ) {
 	
 	?>
 	<tr style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
-		<td><a href="build.php?branch=<?php echo $branch; ?>&revision=<?php echo $revision; ?>"><?php echo $revision; ?></a></td>
+		<td><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($revision); ?>"><?php echo htmlentities($revision); ?></a></td>
 	</tr>
 	<?php
 	

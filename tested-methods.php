@@ -63,10 +63,11 @@ while (true) {
         continue;
     }
 
-    $extension = $line[EXTENSION];
-    $class = $line[CLASS_NAME];
-    $method = $line[METHOD_NAME];
-    $tested = $line[TESTED];
+    $extension = htmlentities($line[EXTENSION]);
+    $class     = htmlentities($line[CLASS_NAME]);
+    $method    = htmlentities($line[METHOD_NAME]);
+    $tested    = htmlentities($line[TESTED]);
+    $tests     = htmlentities($line[TESTS]);
 
     $bgcolor = "red";
     $test_files_exist = false;
@@ -80,7 +81,6 @@ while (true) {
         $test_files_exist = true;
     }
 
-    $tests = $line[TESTS];
 
     echo "<tr>";
     echo "<td>$extension</td>";

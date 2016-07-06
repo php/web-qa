@@ -21,16 +21,20 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header(NULL, $TITLE);
 
-
+$branchHTML   = htmlentities($branch);
+$branchURL    = urlencode($branch);
+$revisionHTML = htmlentities($revision);
+$revisionURL  = urlencode($revision);
 
 ?>
-<h1><a href="list_builds.php?branch=<?php echo $branch; ?>"><?php echo $branch; ?></a> <?php echo $revision; ?></h1>
+<h1><a href="list_builds.php?branch=<?php echo $branchURL; ?>">
+<?php echo $branchHTML; ?></a> <?php echo $revisionHTML; ?></h1>
 
 <h2>Summary</h2>
 
 <table>
 	<tr>
-		<td><?php echo $branch; ?> <?php echo $revision; ?> </td>
+		<td><?php echo $branchHTML; ?> <?php echo $revisionHTML; ?> </td>
 	</tr>
 </table>
 
@@ -53,7 +57,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 		    
 	?>
 	<tr<?php if ($has_fails_crashes) { echo ' style="background:#ff0000"'; } ?>>
-		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report_name; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branchURL; ?>/<?php echo $revisionURL; ?>/<?php echo urlencode($report); ?>" target="_blank"><?php echo htmlentities($report_name); ?></a></td>
 	</tr>
 	<?php
 	
@@ -77,7 +81,7 @@ foreach ( scandir(BASE_REPORT_DIR."/$branch/$revision") as $report ) {
 	
 	?>
 	<tr>
-		<td>with <a href="/reports/db/<?php echo $branch; ?>/<?php echo $revision; ?>/<?php echo $report; ?>" target="_blank"><?php echo $report_name; ?></a></td>
+		<td>with <a href="/reports/db/<?php echo $branchURL; ?>/<?php echo $revisionURL; ?>/<?php echo urlencode($report); ?>" target="_blank"><?php echo htmlentities($report_name); ?></a></td>
 	</tr>
 	<?php
 	
