@@ -15,7 +15,7 @@ if (substr($revision, 0, 1)!='r' and strpos($revision, ".")===FALSE) {
 
 include("include/functions.php");
 
-$TITLE = "PHP: QA: PFTT: $branch: $revision";
+$TITLE = htmlentities("PHP: QA: PFTT: $branch: $revision");
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 /* $Id$ */
 
