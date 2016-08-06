@@ -138,7 +138,7 @@ $QA_RELEASES = array(
                         'md5_gz'    => '7a89ec92011a6eb60ea34ae96912ac20',
                         'md5_xz'    => 'f0761186d551658bb9dc07af827ef1c0',
                         'date'      => '04 August  2016',
-                        'baseurl'   => 'http://downloads.php.net/ab/',
+                        'baseurl'   => 'http://downloads.php.net/~davey/',
                 ),
 	),
 
