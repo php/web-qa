@@ -51,6 +51,8 @@ case "PHP_5_5":
 case "PHP_5_6":
 case "PHP_5_7":
 case "PHP_7_0":
+case "PHP_7_1":
+case "PHP_7_2":
 case "PHP_MASTER":
 case "MASTER":
 case "STR_SIZE_AND_INT64":
