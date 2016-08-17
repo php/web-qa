@@ -26,7 +26,12 @@ common_header();
     Specific tests can also be executed, like running tests for a certain extension. To do 
     this you can do like so (for example the standard library): 
     <code>make test TESTS=ext/standard</code>. Where <code>TESTS=</code> points to a 
-    directory containing <code>.phpt</code> files.
+    directory containing <code>.phpt</code> files or a single <code>.phpt</code> file like: 
+    <code>make test TESTS=tests/basic/001.phpt</code>. You can also pass options directly 
+    to the underlaying script that runs the test suite (<code>run-tests.phpt</code>) using 
+    <code>TESTS=</code>, for example to check for memory leaks using Valgrind, the <code>-m</code> 
+    option can be passed along: <code>make test TESTS="-m Zend/"</code>. For a full list 
+    of options that can be passed along, then run <code>make test TESTS=-h</code>.
    </p>
 
    <p>
