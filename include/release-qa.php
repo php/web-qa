@@ -91,7 +91,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.6.25' => array(
+	'5.6.26' => array(
 		'active'		=> true,
 		'snaps'			=> array(
 			'prefix'	=> 'php5.6-latest',
@@ -99,10 +99,10 @@ $QA_RELEASES = array(
 		),
 		'release'		=> array(
 			'type'	    => 'RC',
-			'number'    => 1,
-			'md5_bz2'   => '61c149fe6f9eba14048f2025e6532f48',
-			'md5_gz'    => '9753f7856193b2075895a6c7645b309e',
-			'md5_xz'    => '62c19672e30da97aa555616fa6beb347',
+			'number'    => 0,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'md5_xz'    => '',
 			'date'      => '04 Aug 2016',
 			'baseurl'   => 'http://downloads.php.net/tyrael/',
 		),
