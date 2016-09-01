@@ -121,7 +121,7 @@ Here are descriptions for each status:</p>
         <dt>Verified</dt>
         <dd>
             If you're able to reproduce this bug with the information given.
-            Be sure to test with the latest CVS.  Typically you aren't sure why
+            Be sure to test with the latest Git.  Typically you aren't sure why
             it exists you just know it does and have confirmed it.
         </dd>
     
@@ -138,7 +138,7 @@ Here are descriptions for each status:</p>
         <dd>
             If no answer have been given by the reporter after we've asked them
             something.  Sometimes you will ask for an example script or ask the 
-            reporter to test using CVS or the latest snap.
+            reporter to test using Git or the latest snap.
         </dd>
     
         <dt>Feedback</dt>
