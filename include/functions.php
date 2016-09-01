@@ -1,9 +1,6 @@
 <?php
 /* 
-(c)'2001 by Marco Kaiser (bate@php.net) and the PHP Group 	
-Read an Learn. Any Questions so ask. 						
-
-Version: $Id$
+(c) 2001 by Marco Kaiser (bate@php.net) and the PHP Group
 */
 
 function common_header($extra_headers=NULL, $TITLE = "Quality Assurance") {
