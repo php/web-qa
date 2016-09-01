@@ -31,7 +31,8 @@ common_header();
               <li>
 <?php show_release_qa($QA_RELEASES); ?>
 
-                See <a href="http://windows.php.net/qa/">here</a> for the Windows builds.
+                See <a href="http://windows.php.net/qa/">here</a> for the Windows QA builds and ¨
+                <a href="http://windows.php.net/snaps/">here</a> for the Windows Snapshot builds.
               </li>
             </ul>
           <p>
