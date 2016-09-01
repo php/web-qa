@@ -16,12 +16,6 @@ Documentation:
 			- It's active and being tested here 
 			- Meaning, the version will be reported to the qa.reports list, and be linked at qa.php.net
 			- File extensions .tar.gz and .tar.bz2 are assumed to be available
-		- snap (array):
-			- Define the array to link at qa.php.net, otherwise array() to not list it
-			- prefix: prefix of the filename, minus the .tar.gz/bz2 extensions
-			- baseurl: base url of snaps server
-			- We define a prefix because our snapshot filenames are not consistent with version (e.g., php-trunk)
-			- File extensions .tar.gz and .tar.bz2 are assumed to be available
 		- release (array):
 			- type: RC, alpha, and beta are examples (case should match filename case)
 			- version: 0 if no such release exists, otherwise an integer of the rc/alpha/beta number
@@ -32,15 +26,13 @@ Documentation:
 		Other variables within $QA_RELEASES are later defined including:
 			- reported: versions that make it to the qa.reports mailing list
 			- release: all current qa releases, including paths to dl urls (w/ md5 info)
-			- snaps: all current snaps, including paths to dl urls
 			- dev_version: dev version
 			- $QA_RELEASES is made available at qa.php.net/api.php
 
 TODO:
 	- Save all reports (on qa server) for all tests, categorize by PHP version (see buildtest-process.php)
 	- Consider storing rc downloads at one location, independent of release master
-	- Consider not linking to snaps if rcs exist
-	- Determine best way to handle snap/rc baseurl, currently assumes .tar.gz/tar.bz2 will exist
+	- Determine best way to handle rc baseurl, currently assumes .tar.gz/tar.bz2 will exist
 	- Determine if $QA_RELEASES is compatible with all current, and most future configurations
 	- Determine if $QA_RELEASES can be simplified
 	- Determine if alpha/beta options are desired
@@ -51,19 +43,11 @@ TODO:
 $QA_RELEASES = array(
 	
 	'5.3.30' => array(
-		'active'		=> false,
-		'snaps'			=> array(
-			'prefix'	=> 'php5.3-latest',
-			'baseurl'	=> 'http://snaps.php.net/',
-		),
+		'active'		=> false
 	),
 
 	'5.4.45' => array(
 		'active'		=> false,
-		'snaps'			=> array(
-			'prefix'	=> 'php5.4-latest',
-			'baseurl'	=> 'http://snaps.php.net/',
-		),
 		'release'		=> array(
 			'type'		=> 'RC',
 			'number'    => 0,
@@ -76,10 +60,6 @@ $QA_RELEASES = array(
 	
 	'5.5.38' => array(
 		'active'		=> false,
-		'snaps'			=> array(
-			'prefix'	=> 'php5.5-latest',
-			'baseurl'	=> 'http://snaps.php.net/',
-		),
 		'release'		=> array(
 			'type'		=> 'RC',
 			'number'    => 0,
@@ -93,10 +73,6 @@ $QA_RELEASES = array(
 
 	'5.6.26' => array(
 		'active'		=> true,
-		'snaps'			=> array(
-			'prefix'	=> 'php5.6-latest',
-			'baseurl'	=> 'http://snaps.php.net/',
-		),
 		'release'		=> array(
 			'type'	    => 'RC',
 			'number'    => 0,
@@ -110,10 +86,6 @@ $QA_RELEASES = array(
 
         '7.0.11' => array(
                 'active'                => true,
-                'snaps'                 => array(
-                        'prefix'        => 'php7.0-latest',
-                        'baseurl'       => 'http://snaps.php.net/',
-                ),
                 'release'               => array(
                         'type'      => 'RC',
                         'number'    => 0,
@@ -127,10 +99,6 @@ $QA_RELEASES = array(
 
         '7.1.0' => array(
                 'active'                => true,
-                'snaps'                 => array(
-                        'prefix'        => 'php7.1-latest',
-                        'baseurl'       => 'http://snaps.php.net/',
-                ),
                 'release'               => array(
                         'type'      => 'beta',
                         'number'    => 3,
@@ -142,12 +110,8 @@ $QA_RELEASES = array(
                 ),
 	),
 
-	'trunk' => array(
+	'master' => array(
 		'active'		=> false,
-		'snaps'			=> array(
-			'prefix'	=> 'php-trunk-latest',
-			'baseurl'	=> 'http://snaps.php.net/',
-		),
 	),
 );
 /*** End Configuration *******************************************************************/
@@ -155,7 +119,6 @@ $QA_RELEASES = array(
 // $QA_RELEASES eventually contains just about everything, also for external use
 // release  : These are encouraged for use (e.g., linked at qa.php.net)
 // reported : These are allowed to report @ the php.qa.reports mailing list
-// snap     : Snapshots that are being monitored by the QA team
 
 foreach ($QA_RELEASES as $pversion => $info) {
 
@@ -165,12 +128,6 @@ foreach ($QA_RELEASES as $pversion => $info) {
 		// Example: 5.3.6-dev
 		$QA_RELEASES['reported'][] = "{$pversion}-dev";
 		$QA_RELEASES[$pversion]['dev_version'] = "{$pversion}-dev";
-
-		// Allowed snaps, unless 'snaps' => array() (empty)
-		if (!empty($info['snaps'])) {
-			$QA_RELEASES[$pversion]['snaps']['files']['bz2']['path'] = $info['snaps']['baseurl'] . $info['snaps']['prefix'] . '.tar.bz2';
-			$QA_RELEASES[$pversion]['snaps']['files']['gz']['path']  = $info['snaps']['baseurl'] . $info['snaps']['prefix'] . '.tar.gz';
-		}
 		
 		// Allow -dev version of upcoming qa releases (rc/alpha/beta)
 		// @todo confirm this php version format for all dev versions
@@ -202,18 +159,10 @@ foreach ($QA_RELEASES as $pversion => $info) {
 // Sorted information for later use
 // @todo need these?
 // $QA_RELEASES['releases']   : All current versions with active qa releases
-// $QA_RELEASES['snaps']      : All current versions with active snaps
 foreach ($QA_RELEASES as $pversion => $info) {
 	
-	if (isset($info['active']) && $info['active']) {
-
-		if (!empty($info['release']['number'])) {
-			$QA_RELEASES['releases'][$pversion] = $info['release'];
-		}
-	
-		if (!empty($info['snaps'])) {
-			$QA_RELEASES['snaps'][$pversion] = $info['snaps'];
-		}
+	if (isset($info['active']) && $info['active'] && !empty($info['release']['number'])) {
+		$QA_RELEASES['releases'][$pversion] = $info['release'];
 	}
 }
 
@@ -240,27 +189,6 @@ function show_release_qa($QA_RELEASES) {
 			if (isset($info['files']['xz'])) {
 				echo "<li>{$info['version']}: [<a href='{$info['files']['xz']['path']}'>tar.xz</a>] (md5 checksum: {$info['files']['xz']['md5']})</li>\n";
 			}
-		}
-		
-		echo "</ul>\n</span>\n";
-	}
-	
-	if (!empty($QA_RELEASES['snaps'])) {
-	
-		$plural = count($QA_RELEASES['snaps']) > 1 ? 's' : '';
-		
-		// Snap for dev releases
-		echo "Providing QA for the following snapshot{$plural} of future PHP versions:\n";
-		echo "<span class='lihack'>\n";
-		echo "<ul>\n";
-
-		// @todo check for vars, like if md5_* are set
-		foreach ($QA_RELEASES['snaps'] as $pversion => $info) {
-			
-			// more madness
-			echo "<li>$pversion: ";
-			echo "[<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] or ";
-			echo "[<a href='{$info['files']['gz']['path']}'>tar.gz</a>]</li>\n";
 		}
 		
 		echo "</ul>\n</span>\n";

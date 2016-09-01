@@ -138,13 +138,13 @@ Here are descriptions for each status:</p>
         <dd>
             If no answer have been given by the reporter after we've asked them
             something.  Sometimes you will ask for an example script or ask the 
-            reporter to test using Git or the latest snap.
+            reporter to test using Git.
         </dd>
     
         <dt>Feedback</dt>
         <dd>
             You're asking the reporter for more information such as please use
-            Git revision/snap, and/or the smallest possible test script to reproduce the
+            Git revision, and/or the smallest possible test script to reproduce the
             error, and/or a value for a certain PHP directive.
         </dd>
     
@@ -201,8 +201,8 @@ So, be sure to leave a comment.</p>
         (all quickfix options leave comments)
     </li>
     <li>
-        If a version involves Git or a snapshot be sure to label it in the form: 
-        <b>5.x.y-dev</b>  An example is: 5.6.0-dev.
+        If a version is from Git be sure to label it in the form: 
+        <b>x.y.z-dev</b>  An example is: 5.6.0-dev or 7.0.0-dev.
     </li>
     <li>
         If you have a question either email the 
