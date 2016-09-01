@@ -100,12 +100,12 @@ $QA_RELEASES = array(
         '7.1.0' => array(
                 'active'                => true,
                 'release'               => array(
-                        'type'      => 'beta',
-                        'number'    => 3,
-                        'md5_bz2'   => 'a10c0b46a83c34f8c0423ef70ac941bd',
-                        'md5_gz'    => '17d8f9eb26cd2a39d6ecb52110a85a0b',
-                        'md5_xz'    => 'a8dac6900b017f2036c8b5a2770c3091',
-                        'date'      => '18 August 2016',
+                        'type'      => 'RC',
+                        'number'    => 1,
+                        'md5_bz2'   => '96c6be17868b927332c278c73e088640',
+                        'md5_gz'    => '4d2ad9ef0dd98d1f49528f09c19d8c27',
+                        'md5_xz'    => 'd9e84872f2ab73d00d3eb250ae8941d1',
+                        'date'      => '01 September 2016',
                         'baseurl'   => 'http://downloads.php.net/~davey/',
                 ),
 	),
