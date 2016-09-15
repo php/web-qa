@@ -84,14 +84,14 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.11' => array(
+        '7.0.12' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      => 'RC',
-                        'number'    => 1,
-                        'md5_bz2'   => '5ac7b567b6915dd0cdf7426ab2c97117',
-                        'md5_gz'    => 'deb5bd99f60b829f69bfafe861d4a06c',
-                        'md5_xz'    => '67314fa8496154d6212f4dab9fce27ce',
+                        'number'    => 0,
+                        'md5_bz2'   => '',
+                        'md5_gz'    => '',
+                        'md5_xz'    => '',
                         'date'      => '04 August 2016',
                         'baseurl'   => 'http://downloads.php.net/ab/',
                 ),
