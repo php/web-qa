@@ -71,14 +71,14 @@ $QA_RELEASES = array(
 		),
 	),
 
-	'5.6.26' => array(
+	'5.6.27' => array(
 		'active'		=> true,
 		'release'		=> array(
 			'type'	    => 'RC',
-			'number'    => 1,
-			'md5_bz2'   => '1c4e68a3c322e7aa8499863faa777d2a',
-			'md5_gz'    => 'f3f33becd0becfb8b784631a9ef66d0f',
-			'md5_xz'    => '506d74935323b5ad8c2a58ac090ab544',
+			'number'    => 0,
+			'md5_bz2'   => '',
+			'md5_gz'    => '',
+			'md5_xz'    => '',
 			'date'      => '01 Sep 2016',
 			'baseurl'   => 'http://downloads.php.net/tyrael/',
 		),
