@@ -92,7 +92,7 @@ $QA_RELEASES = array(
                         'md5_bz2'   => 'ea455c49e21b091375b7ab11d6cdcdc8',
                         'md5_gz'    => '307a21764ff62a8fb24285d096dd68c8',
                         'md5_xz'    => '6c4470fa3f6364b586ea87f5ef7856a1',
-                        'date'      => '13 September 2016',
+                        'date'      => '29 September 2016',
                         'baseurl'   => 'http://downloads.php.net/ab/',
                 ),
         ),
