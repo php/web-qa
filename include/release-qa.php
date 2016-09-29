@@ -102,9 +102,9 @@ $QA_RELEASES = array(
                 'release'               => array(
                         'type'      => 'RC',
                         'number'    => 3,
-                        'md5_bz2'   => 'a1680ec10ec54745472752185000a2a6',
-                        'md5_gz'    => '4e8e0f7b1af0fdff51a013876354a09b',
-                        'md5_xz'    => 'dfcab33482bc8d1975774e6a4d61c7ce',
+                        'md5_bz2'   => 'b3550496e58a67cac813c8c2e498ff99',
+                        'md5_gz'    => '5a9dab8563062512acb3d2c159938d99',
+                        'md5_xz'    => '2bfa0ad51de4fce87d0175d655f6bf69',
                         'date'      => '29 September 2016',
                         'baseurl'   => 'http://downloads.php.net/~davey/',
                 ),
