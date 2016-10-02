@@ -61,13 +61,7 @@ common_header();
      }
    </style>
    <script id="repoListItemTemplate" type="text/x-jquery-tmpl">
-	<li data-repo="{{=name}}">
-		<b><a href="#">{{=name}}:</a></b> {{=description}}
-
-		{{if open_issues > 0}}
-			({{=open_issues}})
-		{{/if}}
-   	</li>
+	   <li data-repo="{{=name}}"><b><a href="#">{{=name}}:</a></b> {{=description}} ({{=open_issues}})</li>
    </script>
    <script id="repoOverviewTemplate" type="text/x-jquery-tmpl">
 	   <h2>{{=repoName}}</h2>
