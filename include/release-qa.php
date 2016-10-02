@@ -21,8 +21,10 @@ Documentation:
 			- version: 0 if no such release exists, otherwise an integer of the rc/alpha/beta number
 			- md5_bz2: md5 checksum of this downloadable .tar.bz2 file
 			- md5_gz:  md5 checksum of this downloadable .tar.gz file
+			- md5_xz: md5 checksum of this downloadble .xz file
 			- date: date of release e.g., 21 May 2011
 			- baseurl: base url of where these downloads are located
+			- Multiple checksums can be available, see the $QA_CHECKSUM_TYPES array below
 		Other variables within $QA_RELEASES are later defined including:
 			- reported: versions that make it to the qa.reports mailing list
 			- release: all current qa releases, including paths to dl urls (w/ md5 info)
@@ -41,79 +43,70 @@ TODO:
 */
 
 $QA_RELEASES = array(
-	
-	'5.3.30' => array(
-		'active'		=> false
-	),
-
-	'5.4.45' => array(
-		'active'		=> false,
-		'release'		=> array(
-			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'date'		=> '04 Aug 2014',
-			'baseurl'	=> 'http://downloads.php.net/stas/',
-		),
-	),
-	
-	'5.5.38' => array(
-		'active'		=> false,
-		'release'		=> array(
-			'type'		=> 'RC',
-			'number'    => 0,
-			'md5_bz2'   => '',
-			'md5_gz'    => '',
-			'md5_xz'    => '',
-			'date'      => '25 Jun 2015',
-			'baseurl'	=> 'http://downloads.php.net/jpauli/',
-		),
-	),
-
 	'5.6.27' => array(
 		'active'		=> true,
 		'release'		=> array(
-			'type'	    => 'RC',
-			'number'    => 1,
-			'md5_bz2'   => '61bed3ec3361272492bd45779d2d381e',
-			'md5_gz'    => '25bf2732bbe87cacc5d2c9640f2d04bb',
-			'md5_xz'    => '66f6fec4eed3c1d866476f1a60ff6001',
-			'date'      => '29 Sep 2016',
-			'baseurl'   => 'http://downloads.php.net/tyrael/',
+			'type'	    	=> 'RC',
+			'number'    	=> 1,
+			'md5_bz2'   	=> '61bed3ec3361272492bd45779d2d381e',
+			'md5_gz'    	=> '25bf2732bbe87cacc5d2c9640f2d04bb',
+			'md5_xz'    	=> '66f6fec4eed3c1d866476f1a60ff6001',
+			'sha256_bz2'	=> '', 
+			'sha256_gz'	=> '', 
+			'sha256_xz'	=> '', 
+			'date'      	=> '29 Sep 2016',
+			'baseurl'   	=> 'http://downloads.php.net/tyrael/',
 		),
 	),
 
         '7.0.12' => array(
                 'active'                => true,
                 'release'               => array(
-                        'type'      => 'RC',
-                        'number'    => 1,
-                        'md5_bz2'   => 'ea455c49e21b091375b7ab11d6cdcdc8',
-                        'md5_gz'    => '307a21764ff62a8fb24285d096dd68c8',
-                        'md5_xz'    => '6c4470fa3f6364b586ea87f5ef7856a1',
-                        'date'      => '29 September 2016',
-                        'baseurl'   => 'http://downloads.php.net/ab/',
+                        'type'      	=> 'RC',
+                        'number'    	=> 1,
+                        'md5_bz2'   	=> 'ea455c49e21b091375b7ab11d6cdcdc8',
+                        'md5_gz'    	=> '307a21764ff62a8fb24285d096dd68c8',
+                        'md5_xz'    	=> '6c4470fa3f6364b586ea87f5ef7856a1',
+			'sha256_bz2'	=> '', 
+			'sha256_gz'	=> '', 
+			'sha256_xz'	=> '', 
+                        'date'      	=> '29 September 2016',
+                        'baseurl'   	=> 'http://downloads.php.net/ab/',
                 ),
         ),
 
         '7.1.0' => array(
                 'active'                => true,
-                'release'               => array(
-                        'type'      => 'RC',
-                        'number'    => 3,
-                        'md5_bz2'   => 'b3550496e58a67cac813c8c2e498ff99',
-                        'md5_gz'    => '5a9dab8563062512acb3d2c159938d99',
-                        'md5_xz'    => '2bfa0ad51de4fce87d0175d655f6bf69',
-                        'date'      => '29 September 2016',
-                        'baseurl'   => 'http://downloads.php.net/~davey/',
+                'release'		=> array(
+                        'type'      	=> 'RC',
+                        'number'    	=> 3,
+                        'md5_bz2'   	=> 'b3550496e58a67cac813c8c2e498ff99',
+                        'md5_gz'    	=> '5a9dab8563062512acb3d2c159938d99',
+                        'md5_xz' 	=> '2bfa0ad51de4fce87d0175d655f6bf69',
+			'sha256_bz2'	=> '', 
+			'sha256_gz'	=> '', 
+			'sha256_xz'	=> '', 
+                        'date'		=> '29 September 2016',
+                        'baseurl'   	=> 'http://downloads.php.net/~davey/',
                 ),
-	),
-
-	'master' => array(
-		'active'		=> false,
-	),
+	)
 );
+
+// This is a list of the possible checksum values that can be supplied with a QA release. Any 
+// new algorithm is read from the $QA_RELEASES array under the 'release' index for each version 
+// in the form of "$algorithm_$filetype".
+//
+// For example, if SHA256 were to be supported, the following indices would have to be added:
+//
+// 'sha256_bz2' => 'xxx', 
+// 'sha256_gz'	=> 'xxx', 
+// 'sha256_xz'	=> 'xxx', 
+
+$QA_CHECKSUM_TYPES = Array(
+				'md5', 
+				'sha256'
+				);
+
 /*** End Configuration *******************************************************************/
 
 // $QA_RELEASES eventually contains just about everything, also for external use
@@ -141,13 +134,21 @@ foreach ($QA_RELEASES as $pversion => $info) {
 
 				$QA_RELEASES[$pversion]['release']['version'] = $pversion . $info['release']['type'] . $info['release']['number'];
 				$QA_RELEASES[$pversion]['release']['files']['bz2']['path']= $info['release']['baseurl'] . $fn_base . '.tar.bz2'; 
-				$QA_RELEASES[$pversion]['release']['files']['bz2']['md5'] = $info['release']['md5_bz2'];
 				$QA_RELEASES[$pversion]['release']['files']['gz']['path'] = $info['release']['baseurl'] . $fn_base . '.tar.gz';
-				$QA_RELEASES[$pversion]['release']['files']['gz']['md5']  = $info['release']['md5_gz'];
 
-				if (!empty($info['release']['md5_xz'])) {
-					$QA_RELEASES[$pversion]['release']['files']['xz']['path'] = $info['release']['baseurl'] . $fn_base . '.tar.xz';
-					$QA_RELEASES[$pversion]['release']['files']['xz']['md5']  = $info['release']['md5_xz'];
+				foreach($QA_CHECKSUM_TYPES as $algo)
+				{
+					$QA_RELEASES[$pversion]['release']['files']['bz2'][$algo] = $info['release'][$algo . '_bz2'];
+					$QA_RELEASES[$pversion]['release']['files']['gz'][$algo]  = $info['release'][$algo . '_gz'];
+
+					if (!empty($info['release'][$algo . '_xz'])) {
+						if(!isset($QA_RELEASES[$pversion]['release']['files']['xz']))
+						{
+							$QA_RELEASES[$pversion]['release']['files']['xz']['path'] = $info['release']['baseurl'] . $fn_base . '.tar.xz';
+						}
+
+						$QA_RELEASES[$pversion]['release']['files']['xz'][$algo]  = $info['release'][$algo . '_xz'];
+					}
 				}
 			}
 		} else {
@@ -160,7 +161,6 @@ foreach ($QA_RELEASES as $pversion => $info) {
 // @todo need these?
 // $QA_RELEASES['releases']   : All current versions with active qa releases
 foreach ($QA_RELEASES as $pversion => $info) {
-	
 	if (isset($info['active']) && $info['active'] && !empty($info['release']['number'])) {
 		$QA_RELEASES['releases'][$pversion] = $info['release'];
 	}
@@ -168,7 +168,9 @@ foreach ($QA_RELEASES as $pversion => $info) {
 
 /* Content */
 function show_release_qa($QA_RELEASES) {
-	
+	// The checksum configuration array
+	global $QA_CHECKSUM_TYPES;
+
 	echo "<!-- RELEASE QA -->\n";
 	
 	if (!empty($QA_RELEASES['releases'])) {
@@ -177,21 +179,45 @@ function show_release_qa($QA_RELEASES) {
 		
 		// QA Releases
 		echo "<span class='lihack'>\n";
-		echo "Providing QA for the following <a href='/rc.php'>test release{$plural}</a>:\n";
-		echo "<ul>\n";
+		echo "Providing QA for the following <a href='/rc.php'>test release{$plural}</a>:<br> <br>\n";
+		echo "</span>\n";
+		echo "<table>\n";
 
 		// @todo check for vars, like if md5_* are set
 		foreach ($QA_RELEASES['releases'] as $pversion => $info) {
 
-			// pure madness
-			echo "<li>{$info['version']}: [<a href='{$info['files']['bz2']['path']}'>tar.bz2</a>] (md5 checksum: {$info['files']['bz2']['md5']})</li>\n";
-			echo "<li>{$info['version']}: [<a href='{$info['files']['gz']['path']}'>tar.gz</a>] (md5 checksum: {$info['files']['gz']['md5']})</li>\n";
-			if (isset($info['files']['xz'])) {
-				echo "<li>{$info['version']}: [<a href='{$info['files']['xz']['path']}'>tar.xz</a>] (md5 checksum: {$info['files']['xz']['md5']})</li>\n";
+			echo "<tr>\n";
+			echo "<td colspan=\"" . (sizeof($QA_CHECKSUM_TYPES) + 1) . "\">\n";
+			echo "<h3 style=\"margin: 0px;\">{$info['version']}</h3>\n";
+			echo "</td>\n";
+			echo "</tr>\n";
+
+			foreach (Array('bz2', 'gz', 'xz') as $file_type) {
+				if (!isset($info['files'][$file_type])) {
+					continue;
+				}
+
+				echo "<tr>\n";
+				echo "<td width=\"20%\"><a href=\"{$info['files'][$file_type]['path']}\">php-{$info['version']}.tar.{$file_type}</a></td>\n";
+
+				foreach ($QA_CHECKSUM_TYPES as $algo) {
+					echo '<td>';
+					echo '<strong>' . strtoupper($algo) . ':</strong> ';
+
+					if (isset($info['files'][$file_type][$algo]) && !empty($info['files'][$file_type][$algo])) {
+						echo $info['files'][$file_type][$algo];
+					} else {
+						echo '(<em><small>No checksum value available</small></em>)&nbsp;';
+					}
+
+					echo "</td>\n";
+				}
+
+				echo "</tr>\n";
 			}
 		}
-		
-		echo "</ul>\n</span>\n";
+
+		echo "</table>\n";
 	}
 
 	echo "<!-- END -->\n";

@@ -25,20 +25,20 @@ common_header();
             </li>
            </ul>
 
-            <h3>The team is currently focused on:</h3>
-            <ul>
-
-              <li>
+            <h3>Available QA Releases:</h3>
 <?php show_release_qa($QA_RELEASES); ?>
+             <p>
+              <br>
+              <strong>Windows users:</strong>
+              See <a href="http://windows.php.net/qa/">here</a> for the Windows QA builds and 
+              <a href="http://windows.php.net/snaps/">here</a> for the Windows Snapshot builds.
+             </p>
 
-                See <a href="http://windows.php.net/qa/">here</a> for the Windows QA builds and 
-                <a href="http://windows.php.net/snaps/">here</a> for the Windows Snapshot builds.
-              </li>
-            </ul>
-          <p>
-           If you would like to contribute to these efforts, please
-           visit our <a href="howtohelp.php">How To Help</a> page.
-          </p>
+             <h3>How To Help</h3>
+             <p>
+              If you would like to contribute to these efforts, please
+              visit our <a href="howtohelp.php">How To Help</a> page.
+             </p>
 <?php
 
 common_footer();
