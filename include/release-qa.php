@@ -59,14 +59,14 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.12' => array(
+        '7.0.13' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      	=> 'RC',
-                        'number'    	=> 1,
-                        'md5_bz2'   	=> 'ea455c49e21b091375b7ab11d6cdcdc8',
-                        'md5_gz'    	=> '307a21764ff62a8fb24285d096dd68c8',
-                        'md5_xz'    	=> '6c4470fa3f6364b586ea87f5ef7856a1',
+                        'number'    	=> 0,
+                        'md5_bz2'   	=> '',
+                        'md5_gz'    	=> '',
+                        'md5_xz'    	=> '',
 			'sha256_bz2'	=> '', 
 			'sha256_gz'	=> '', 
 			'sha256_xz'	=> '', 
