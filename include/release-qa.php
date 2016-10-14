@@ -43,14 +43,14 @@ TODO:
 */
 
 $QA_RELEASES = array(
-	'5.6.27' => array(
+	'5.6.28' => array(
 		'active'		=> true,
 		'release'		=> array(
 			'type'	    	=> 'RC',
-			'number'    	=> 1,
-			'md5_bz2'   	=> '61bed3ec3361272492bd45779d2d381e',
-			'md5_gz'    	=> '25bf2732bbe87cacc5d2c9640f2d04bb',
-			'md5_xz'    	=> '66f6fec4eed3c1d866476f1a60ff6001',
+			'number'    	=> 0,
+			'md5_bz2'   	=> '',
+			'md5_gz'    	=> '',
+			'md5_xz'    	=> '',
 			'sha256_bz2'	=> '', 
 			'sha256_gz'	=> '', 
 			'sha256_xz'	=> '', 
