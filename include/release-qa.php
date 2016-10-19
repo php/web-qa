@@ -78,16 +78,16 @@ $QA_RELEASES = array(
         '7.1.0' => array(
                 'active'                => true,
                 'release'		=> array(
-                        'type'      	=> 'RC',
-                        'number'    	=> 3,
-                        'md5_bz2'   	=> 'b3550496e58a67cac813c8c2e498ff99',
-                        'md5_gz'    	=> '5a9dab8563062512acb3d2c159938d99',
-                        'md5_xz' 	=> '2bfa0ad51de4fce87d0175d655f6bf69',
-			'sha256_bz2'	=> '', 
-			'sha256_gz'	=> '', 
-			'sha256_xz'	=> '', 
-                        'date'		=> '29 September 2016',
-                        'baseurl'   	=> 'http://downloads.php.net/~davey/',
+                        'type'          => 'RC',
+                        'number'        => 4,
+                        'md5_bz2'       => '21bdc3de1f744b382d237986975edc5b',
+                        'md5_gz'        => '02bc07feb41c5888062a304d0678fbfe',
+                        'md5_xz'        => '3493df23aa02af833198df94227cb6d9',
+                        'sha256_bz2'    => 'ed2ef6dec04d1f8745b6212c55684cfd1350fad28db4c659ff99e9c6d16d3f36',
+                        'sha256_gz'     => '8701d826d210abaa0d54d9a8344d14f00f1fb34d918b14e61f4fdd1b19226c46',
+                        'sha256_xz'     => 'aa06af4cd4674b4a57969d39566497d700c291f433209f8c83b75ffc1128d258',
+                        'date'          => '19 October 2016',
+                        'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
 	)
 );
