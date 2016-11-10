@@ -43,17 +43,17 @@ TODO:
 */
 
 $QA_RELEASES = array(
-	'5.6.28' => array(
+	'5.6.29' => array(
 		'active'		=> true,
 		'release'		=> array(
 			'type'	    	=> 'RC',
-			'number'    	=> 1,
-			'md5_bz2'   	=> 'b8b8d4b16ae6c5874e97f528e679ccfd',
-			'md5_gz'    	=> 'a2fce1e62d669d5106f3285f58adc1a7',
-			'md5_xz'    	=> '6c96394d39b2185a18f415ae001999a7',
-			'sha256_bz2'	=> 'c023e37406db91953892b07a9f9880f90a2d617e8c14a24d27cf44d5f23684e3',
-			'sha256_gz'	=> '3dc7ee05dd11da3aa7504469815903fa9a17128d8e4f22214e73ae61ea5e89fc',
-			'sha256_xz'	=> '16e10687cf963c09c7a2e6baf6430325c18a6d40961d1720b4b9bf766413c355',
+			'number'    	=> 0,
+			'md5_bz2'   	=> '',
+			'md5_gz'    	=> '',
+			'md5_xz'    	=> '',
+			'sha256_bz2'	=> '',
+			'sha256_gz'	=> '',
+			'sha256_xz'	=> '',
 			'date'      	=> '28 October 2016',
 			'baseurl'   	=> 'http://downloads.php.net/tyrael/',
 		),
