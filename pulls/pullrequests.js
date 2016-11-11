@@ -163,17 +163,18 @@ function loadRepo(repo, url) {
 						var ul_el = $("dd", dia).append('<ul style="list-style: none;">');
 						for (var i in repo_labels.data) {
 
-							var li_el, input_html;
+							var li_el, input_html, was_checked;
 							
 							li_el = ul_el.append('<li style="display: block;">')
 
 							$('[id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"]').each(function(i, v) {
-									$(v).remove();
+								was_checked = v.checked;
+								$(v).remove();
 							});
 
 							input_html ='<input type="checkbox" id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"';
 							for (var k in issue_labels.data) {
-								if (repo_labels.data[i].id == issue_labels.data[k].id) {
+								if (repo_labels.data[i].id == issue_labels.data[k].id || was_checked) {
 									input_html += ' checked="checked"';
 									break;
 								}
