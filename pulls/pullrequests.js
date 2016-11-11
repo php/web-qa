@@ -158,9 +158,6 @@ function loadRepo(repo, url) {
 					   success: function(issue_labels) {
 						$("#loading").hide();
 
-						console.log(repo_labels.data);
-						console.log(issue_labels.data);
-
 						var dia = $('<div></div>').html($("#labelsDialogTemplate").render({}))
 									  .dialog({title: that.data("number")+': '+that.data("title")+' ('+that.data("state")+')' });
 						var ul_el = $("dd", dia).append('<ul style="list-style: none;">');
@@ -199,7 +196,6 @@ function loadRepo(repo, url) {
                 $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).data("number"), dia) );
 
 		var labels = $('[id^="pr-' + $(this).data("number") + '-label"]');
-		console.log(labels);
 		if (0 == labels.length) {
 			$("span", dia).append("<span>Unchanged</span>");
 		} else {
