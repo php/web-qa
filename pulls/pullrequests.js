@@ -156,8 +156,6 @@ function loadRepo(repo, url) {
 				    $.ajax({dataType: "jsonp",
 					   url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/issues/" + that.data("number") + "/labels",
 					   success: function(issue_labels) {
-						$("#loading").hide();
-
 						var dia = $('<div></div>').html($("#labelsDialogTemplate").render({}))
 									  .dialog({title: that.data("number")+': '+that.data("title")+' ('+that.data("state")+')' });
 						var ul_el = $("dd", dia).append('<ul style="list-style: none;">');
@@ -187,7 +185,10 @@ function loadRepo(repo, url) {
 						$("button", dia).click(function() { dia.dialog("close"); });
 					   }
 				    });
-			   }
+			 },
+			 complete: function() {
+				$("#loading").hide();
+			}
 		    });
 		    ev.preventDefault();
             });
@@ -251,6 +252,8 @@ function updateRepo(reponame, num, dia) {
             }
 	    window.alert(message);
         }
+    }, complete: function() {
+	$("#loading").hide();
     }});
     dia.dialog("destroy");
 }
