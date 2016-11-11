@@ -147,6 +147,52 @@ function loadRepo(repo, url) {
                                 .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')', width: 800 });
                 ev.preventDefault();
             });
+            $(".handlelabels").click(function(ev) {
+		    var that = $(this);
+		    $("#loading").show();
+		    $.ajax({dataType: "jsonp",
+			   url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/labels",
+			   success: function(repo_labels) {
+				    $.ajax({dataType: "jsonp",
+					   url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/issues/" + that.data("number") + "/labels",
+					   success: function(issue_labels) {
+						$("#loading").hide();
+
+						console.log(repo_labels.data);
+						console.log(issue_labels.data);
+
+						var dia = $('<div></div>').html($("#labelsDialogTemplate").render({}))
+									  .dialog({title: that.data("number")+': '+that.data("title")+' ('+that.data("state")+')' });
+						var ul_el = $("dd", dia).append('<ul style="list-style: none;">');
+						for (var i in repo_labels.data) {
+
+							var li_el, input_html;
+							
+							li_el = ul_el.append('<li style="display: block;">')
+
+							$('[id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"]').each(function(i, v) {
+									$(v).remove();
+							});
+
+							input_html ='<input type="checkbox" id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"';
+							for (var k in issue_labels.data) {
+								if (repo_labels.data[i].id == issue_labels.data[k].id) {
+									input_html += ' checked="checked"';
+									break;
+								}
+							}
+							input_html += ' value="' + repo_labels.data[i].name + '"';
+							input_html += " />";
+							li_el.append(input_html +  repo_labels.data[i].name);
+						}
+						
+						$("button", dia).click(function() { dia.dialog("close"); });
+					   }
+				    });
+			   }
+		    });
+		    ev.preventDefault();
+            });
             $(".updatepullrequest").click(function(ev) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
                                           .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')' });
