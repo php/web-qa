@@ -218,12 +218,10 @@ function ghupdate()
 
 	$comment = @get_magic_quotes_gpc() ? stripslashes($_POST['comment']) : $_POST['comment'];
 
-	if (!is_array($_POST['labels'])) {
-		if (!ghpostcomment($pull, $comment)) {
-			header('500 Internal Server Error');
-			$errors[] = "Failed to add comment on GitHub";
-			die(json_encode(array('success' => false, 'errors' => $errors)));
-		}
+	if (!ghpostcomment($pull, $comment)) {
+		header('500 Internal Server Error');
+		$errors[] = "Failed to add comment on GitHub";
+		die(json_encode(array('success' => false, 'errors' => $errors)));
 	}
 
 	if (!empty($_POST['state'])) {
