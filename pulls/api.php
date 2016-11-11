@@ -116,6 +116,22 @@ function ghchangestate($pull, $state)
 	return (bool)do_http_request($pull->_links->self->href, $opts);
 }
 
+function ghsetlabels($pull, $labels)
+{
+	if (!is_array($labels)) {
+		return true;
+	}
+
+	$opts = array(
+		'method'  => 'PUT',
+		'content' => json_encode($labels),
+	);
+
+	$url = $pull->issue_url . "/labels";
+
+	return (bool)do_http_request($url, $opts);
+}
+
 function login()
 {
 	global $errors;
@@ -202,16 +218,26 @@ function ghupdate()
 
 	$comment = @get_magic_quotes_gpc() ? stripslashes($_POST['comment']) : $_POST['comment'];
 
-	if (!ghpostcomment($pull, $comment)) {
-		header('500 Internal Server Error');
-		$errors[] = "Failed to add comment on GitHub";
-		die(json_encode(array('success' => false, 'errors' => $errors)));
+	if (!is_array($_POST['labels'])) {
+		if (!ghpostcomment($pull, $comment)) {
+			header('500 Internal Server Error');
+			$errors[] = "Failed to add comment on GitHub";
+			die(json_encode(array('success' => false, 'errors' => $errors)));
+		}
 	}
 
 	if (!empty($_POST['state'])) {
 		if (!ghchangestate($pull, $_POST['state'])) {
 			header('500 Internal Server Error');
 			$errors[] = "Failed to set new state";
+			die(json_encode(array('success' => false, 'errors' => $errors)));
+		}
+	}
+
+	if (is_array($_POST['labels'])) {
+		if (!ghsetlabels($pull, $_POST['labels'])) {
+			header('500 Internal Server Error');
+			$errors[] = "Failed to set labels";
 			die(json_encode(array('success' => false, 'errors' => $errors)));
 		}
 	}

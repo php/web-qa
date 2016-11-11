@@ -96,6 +96,7 @@ $ git push origin master     # everything okay? good, let's push it
 	<button>OK</button>
    </script>
    <script id="updatePullRequestTemplate" type="text/x-jquery-tmpl">
+       Labels: <span></span>
        State: <select id="newState">
                 <option>open</option>
                 <option>closed</option>

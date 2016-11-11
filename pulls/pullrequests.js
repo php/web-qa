@@ -181,7 +181,7 @@ function loadRepo(repo, url) {
 									break;
 								}
 							}
-							input_html += ' value="' + repo_labels.data[i].name + '"';
+							input_html += ' name="' + repo_labels.data[i].name + '"';
 							input_html += " />";
 							li_el.append(input_html +  repo_labels.data[i].name);
 						}
@@ -197,6 +197,19 @@ function loadRepo(repo, url) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
                                           .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')' });
                 $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).data("number"), dia) );
+
+		var labels = $('[id^="pr-' + $(this).data("number") + '-label"]');
+		console.log(labels);
+		if (0 == labels.length) {
+			$("span", dia).append("<span>Unchanged</span>");
+		} else {
+			labels.each(function(i, v) {
+				if (v.checked) {
+					$("span", dia).append(v.name + " ");
+				}
+			});
+		}
+		$("span", dia).append("<br />");
                 ev.preventDefault();
             });
             $("#repoPullList").accordion({ autoHeight: false });
@@ -213,13 +226,22 @@ function updateRepo(reponame, num, dia) {
         login.showLoginForm();
         return;
     }
+
+    var labs_arg = null;
+    var labs = $('[id^="pr-' + num + '-label"]');
+    if (0 < labs.length) {
+	labs_arg = [];
+	labs.each(function(i, v){if(v.checked){labs_arg.push(v.name);}});
+    }
+
     $("#loading").show();
     $.ajax({ url: API_URL, type: "POST", data: {
         action: 'ghupdate',
         repo: reponame,
         id: num,
         state: $("select", dia).val(),
-        comment: $("textarea", dia).val()
+        comment: $("textarea", dia).val(),
+        labels: labs_arg
     }, success: function(d) {
         if (d.success) {
             loadRepo(reponame);
