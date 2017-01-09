@@ -77,6 +77,7 @@ common_header();
 		   <div><a href="{{=html_url}}"><img src="../gfx/github.ico"> On GitHub</a> |
 			<a href="{{=diff_url}}">Diff</a> |
 			<a href="#" data-number="{{=number}}" data-state="{{=state}}" data-title="{{=title}}" class="pullinstructions">Show Pull Instructions</a> |
+			<a href="#" data-number="{{=number}}" data-state="{{=state}}" data-title="{{=title}}" class="handlelabels">Labels</a> |
 			<a href="#" data-number="{{=number}}" data-state="{{=state}}" data-title="{{=title}}" class="updatepullrequest">Update</a>
 		   </div>
 	   </div>
@@ -90,7 +91,12 @@ $ make test                  # you better not forget that
 $ git push origin master     # everything okay? good, let's push it
 	   </pre>
    </script>
+   <script id="labelsDialogTemplate" type="text/x-jquery-tmpl">
+	<dd></dd>
+	<button>OK</button>
+   </script>
    <script id="updatePullRequestTemplate" type="text/x-jquery-tmpl">
+       Labels: <span></span>
        State: <select id="newState">
                 <option>open</option>
                 <option>closed</option>

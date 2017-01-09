@@ -147,10 +147,67 @@ function loadRepo(repo, url) {
                                 .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')', width: 800 });
                 ev.preventDefault();
             });
+            $(".handlelabels").click(function(ev) {
+		    var that = $(this);
+		    $("#loading").show();
+		    $.ajax({dataType: "jsonp",
+			   url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/labels",
+			   success: function(repo_labels) {
+				    $.ajax({dataType: "jsonp",
+					   url: GITHUB_BASEURL+'repos/'+GITHUB_ORG+"/"+repo+"/issues/" + that.data("number") + "/labels",
+					   success: function(issue_labels) {
+						var dia = $('<div></div>').html($("#labelsDialogTemplate").render({}))
+									  .dialog({title: that.data("number")+': '+that.data("title")+' ('+that.data("state")+')' });
+						var ul_el = $("dd", dia).append('<ul style="list-style: none;">');
+						for (var i in repo_labels.data) {
+
+							var li_el, input_html, was_checked;
+							
+							li_el = ul_el.append('<li style="display: block;">')
+
+							$('[id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"]').each(function(i, v) {
+								was_checked = v.checked;
+								$(v).remove();
+							});
+
+							input_html ='<input type="checkbox" id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"';
+							for (var k in issue_labels.data) {
+								if (repo_labels.data[i].id == issue_labels.data[k].id || was_checked) {
+									input_html += ' checked="checked"';
+									break;
+								}
+							}
+							input_html += ' name="' + repo_labels.data[i].name + '"';
+							input_html += " />";
+							li_el.append(input_html +  repo_labels.data[i].name);
+						}
+						
+						$("button", dia).click(function() { dia.dialog("close"); });
+					   }
+				    });
+			 },
+			 complete: function() {
+				$("#loading").hide();
+			}
+		    });
+		    ev.preventDefault();
+            });
             $(".updatepullrequest").click(function(ev) {
                 var dia = $('<div></div>').html($("#updatePullRequestTemplate").render({}))
                                           .dialog({title: $(this).data("number")+': '+$(this).data("title")+' ('+$(this).data("state")+')' });
                 $("button", dia).click(function(r, n, dia) { return function(ev) { updateRepo(r, n, dia); ev.preventDefault();}}(repo, $(this).data("number"), dia) );
+
+		var labels = $('[id^="pr-' + $(this).data("number") + '-label"]');
+		if (0 == labels.length) {
+			$("span", dia).append("<span>Unchanged</span>");
+		} else {
+			labels.each(function(i, v) {
+				if (v.checked) {
+					$("span", dia).append(v.name + " ");
+				}
+			});
+		}
+		$("span", dia).append("<br />");
                 ev.preventDefault();
             });
             $("#repoPullList").accordion({ autoHeight: false });
@@ -167,13 +224,22 @@ function updateRepo(reponame, num, dia) {
         login.showLoginForm();
         return;
     }
+
+    var labs_arg = null;
+    var labs = $('[id^="pr-' + num + '-label"]');
+    if (0 < labs.length) {
+	labs_arg = [];
+	labs.each(function(i, v){if(v.checked){labs_arg.push(v.name);}});
+    }
+
     $("#loading").show();
     $.ajax({ url: API_URL, type: "POST", data: {
         action: 'ghupdate',
         repo: reponame,
         id: num,
         state: $("select", dia).val(),
-        comment: $("textarea", dia).val()
+        comment: $("textarea", dia).val(),
+        labels: labs_arg
     }, success: function(d) {
         if (d.success) {
             loadRepo(reponame);
@@ -186,6 +252,8 @@ function updateRepo(reponame, num, dia) {
             }
 	    window.alert(message);
         }
+    }, complete: function() {
+	$("#loading").hide();
     }});
     dia.dialog("destroy");
 }
