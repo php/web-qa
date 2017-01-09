@@ -75,18 +75,18 @@ $QA_RELEASES = array(
                 ),
         ),
 
-        '7.1.0' => array(
+        '7.1.1' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 6,
-                        'md5_bz2'       => 'f9242579d2305b005c84c515e2f57b2a',
-                        'md5_gz'        => '1239bc0566d0b8fd18165fdd3aed354f',
-                        'md5_xz'        => '26bb2d5dc690b3463a0fea3d71fcf935',
-                        'sha256_bz2'    => '7ed531c0697350ee22ac2b5ae3caf6c50643e773a2a61aace990afe9be305d1b',
-                        'sha256_gz'     => '82207f7954f5e35da24072f296dd204d261e61df16eca925c8d4e2280173705b',
-                        'sha256_xz'     => '3812b54ff84b32cb3750994088161e9c6455000499f4716b635b7c1e64a75a2c',
-                        'date'          => '10 November 2016',
+                        'number'        => 1,
+                        'md5_bz2'       => 'bead9e967813ca3205569fc8152f33b2',
+                        'md5_gz'        => '060b2b0fc711c6a6244bbffc3a2f1f70',
+                        'md5_xz'        => 'f8a8cec6610e40795d01b3441b0dc22f',
+                        'sha256_bz2'    => 'd23a09581d71ea3fd37555977ca67551982abe2658d03169eae2dbf3644be9f5',
+                        'sha256_gz'     => '3a1e0d62453d3cc75de892b36750618c23a6eef6054f707c65aa1b94d1e086b0',
+                        'sha256_xz'     => '118e6a9d2d3c06d820a95887a16fa45904244091233751403d06cf6c84c47b27',
+                        'date'          => '5 January 2017',
                         'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
 	)
