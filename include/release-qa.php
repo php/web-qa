@@ -75,17 +75,17 @@ $QA_RELEASES = array(
                 ),
         ),
 
-        '7.1.1' => array(
+        '7.1.2' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 1,
-                        'md5_bz2'       => 'bead9e967813ca3205569fc8152f33b2',
-                        'md5_gz'        => '060b2b0fc711c6a6244bbffc3a2f1f70',
-                        'md5_xz'        => 'f8a8cec6610e40795d01b3441b0dc22f',
-                        'sha256_bz2'    => 'd23a09581d71ea3fd37555977ca67551982abe2658d03169eae2dbf3644be9f5',
-                        'sha256_gz'     => '3a1e0d62453d3cc75de892b36750618c23a6eef6054f707c65aa1b94d1e086b0',
-                        'sha256_xz'     => '118e6a9d2d3c06d820a95887a16fa45904244091233751403d06cf6c84c47b27',
+                        'number'        => 0,
+                        'md5_bz2'       => '',
+                        'md5_gz'        => '',
+                        'md5_xz'        => '',
+                        'sha256_bz2'    => '',
+                        'sha256_gz'     => '',
+                        'sha256_xz'     => '',
                         'date'          => '5 January 2017',
                         'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
