@@ -422,19 +422,19 @@ Will fail to clean up
 This will remove temporary files
 --FILE--
 &lt;?php
-	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	$temp_filename = __DIR__."/fred.tmp";
 	$fp = fopen($temp_filename, "w");
 	fwrite ($fp, "Hello Boys!\n");
 	fclose($fp);
 ?&gt;
 --CLEAN--
 &lt;?php
-	$temp_filename = dirname(__FILE__)."/fred.tmp";
+	$temp_filename = __DIR__."/fred.tmp";
 	unlink($temp_filename);
 ?>
 --EXPECT--
 </pre>
-<p> Note the use of the dirname(__FILE__) construct which will ensure that the temporary file is created in the same directory as
+<p> Note the use of the __DIR__ construct which will ensure that the temporary file is created in the same directory as
 the phpt test script. </p>
 
 <p> When creating temporary files it is a good idea to use an extension that indicates the use of the file, eg .tmp. It's also a good
