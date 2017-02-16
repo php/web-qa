@@ -59,17 +59,17 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.16' => array(
+        '7.0.17' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      	=> 'RC',
-                        'number'    	=> 1,
-                        'md5_bz2'   	=> '74144b0afa32674d97da8124df0a439c',
-                        'md5_gz'    	=> '6cebdeb8789e964c79980db823eae9ce',
-                        'md5_xz'    	=> '2b6fb8ba85d528eeb2110abf9b25fd08',
-			'sha256_bz2'	=> 'c9264c41d9114cf049eab9ee8e5dea5248a47f7a88dc3eb1468a263c5d913374',
-			'sha256_gz'	=> 'eb08ac9fe4d65046de8f10e72432e75d7f557772a9f197e6444ef3c697efbf29',
-			'sha256_xz'	=> '4a8c815d78fa32b7cb9192c0f696b5778b6d972b88a6da77c7ef78c8fa24cb73',
+                        'number'    	=> 0,
+                        'md5_bz2'   	=> '',
+                        'md5_gz'    	=> '',
+                        'md5_xz'    	=> '',
+			'sha256_bz2'	=> '',
+			'sha256_gz'	=> '',
+			'sha256_xz'	=> '',
                         'date'      	=> '02 February 2017',
                         'baseurl'   	=> 'http://downloads.php.net/ab/',
                 ),
