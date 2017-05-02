@@ -1,3 +1,17 @@
+// Workaround for jquery.ba-bbq problems with newer jQuery version
+// This library should be replaced with something what isn't unmaintained
+// since 2010, though.
+// @see https://github.com/cowboy/jquery-bbq/issues/52
+jQuery.browser = {};
+(function () {
+    jQuery.browser.msie = false;
+    jQuery.browser.version = 0;
+    if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+        jQuery.browser.msie = true;
+        jQuery.browser.version = RegExp.$1;
+    }
+})();
+
 function repoList(baseurl, org) {
     this.url = baseurl+'orgs/'+org+'/repos?per_page=100';
     this.data = {data:[]};
