@@ -89,7 +89,23 @@ $QA_RELEASES = array(
                         'date'          => '25 May 2017',
                         'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
-	)
+	),
+
+        '7.2.0' => array(
+                'active'                => true,
+                'release'		=> array(
+                        'type'          => 'alpha',
+                        'number'        => 1,
+                        'md5_bz2'       => '29b9dc4fc0aaacdb158c29eff51df55e',
+                        'md5_gz'        => 'd3f018291c11b85ff3f6ded9cb82f84f',
+                        'md5_xz'        => 'a4d8ba7723089162defcd92d61ca7860',
+                        'sha256_bz2'    => '85b8e87982104659a99374af9932fc3f75ffa5dee244c7244837ab052674577e',
+                        'sha256_gz'     => '15c03c5b9511607b27f0c57a159263e6313a2002387d8cd7e94885e1218f3f88',
+                        'sha256_xz'     => '4f2c389a4d7795f77af4e6f4b6f8268fb7b427367f29a4b74bc36973f72931c9',
+                        'date'          => '8 Jun 2017',
+                        'baseurl'       => 'http://downloads.php.net/~pollita/',
+                ),
+        ),
 );
 
 // This is a list of the possible checksum values that can be supplied with a QA release. Any 
