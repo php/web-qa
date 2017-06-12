@@ -112,16 +112,13 @@ $QA_RELEASES = array(
 // new algorithm is read from the $QA_RELEASES array under the 'release' index for each version 
 // in the form of "$algorithm_$filetype".
 //
-// For example, if SHA256 were to be supported, the following indices would have to be added:
+// For example, if SHA512 were to be supported, the following indices would have to be added:
 //
-// 'sha256_bz2' => 'xxx', 
-// 'sha256_gz'	=> 'xxx', 
-// 'sha256_xz'	=> 'xxx', 
+// 'sha512_bz2' => 'xxx',
+// 'sha512_gz'	=> 'xxx',
+// 'sha512_xz'	=> 'xxx',
 
-$QA_CHECKSUM_TYPES = Array(
-				'md5', 
-				'sha256'
-				);
+$QA_CHECKSUM_TYPES = [ 'md5', 'sha256' ];
 
 /*** End Configuration *******************************************************************/
 
@@ -129,58 +126,59 @@ $QA_CHECKSUM_TYPES = Array(
 // release  : These are encouraged for use (e.g., linked at qa.php.net)
 // reported : These are allowed to report @ the php.qa.reports mailing list
 
-foreach ($QA_RELEASES as $pversion => $info) {
+(function () use (&$QA_RELEASES, $QA_CHECKSUM_TYPES) {
+	foreach ($QA_RELEASES as $pversion => $info) {
 
-	if (isset($info['active']) && $info['active']) {
+		if (isset($info['active']) && $info['active']) {
 	
-		// Allow -dev versions of all active types
-		// Example: 5.3.6-dev
-		$QA_RELEASES['reported'][] = "{$pversion}-dev";
-		$QA_RELEASES[$pversion]['dev_version'] = "{$pversion}-dev";
+			// Allow -dev versions of all active types
+			// Example: 5.3.6-dev
+			$QA_RELEASES['reported'][] = "{$pversion}-dev";
+			$QA_RELEASES[$pversion]['dev_version'] = "{$pversion}-dev";
 		
-		// Allow -dev version of upcoming qa releases (rc/alpha/beta)
-		// @todo confirm this php version format for all dev versions
-		if ((int)$info['release']['number'] > 0) {
-			$QA_RELEASES['reported'][] = "{$pversion}{$info['release']['type']}{$info['release']['number']}";
-			if (!empty($info['release']['baseurl'])) {
+			// Allow -dev version of upcoming qa releases (rc/alpha/beta)
+			// @todo confirm this php version format for all dev versions
+			if ((int)$info['release']['number'] > 0) {
+				$QA_RELEASES['reported'][] = "{$pversion}{$info['release']['type']}{$info['release']['number']}";
+				if (!empty($info['release']['baseurl'])) {
 				
-				// php.net filename format for qa releases
-				// example: php-5.3.0RC2
-				$fn_base = 'php-' . $pversion . $info['release']['type'] . $info['release']['number'];
+					// php.net filename format for qa releases
+					// example: php-5.3.0RC2
+					$fn_base = 'php-' . $pversion . $info['release']['type'] . $info['release']['number'];
 
-				$QA_RELEASES[$pversion]['release']['version'] = $pversion . $info['release']['type'] . $info['release']['number'];
-				$QA_RELEASES[$pversion]['release']['files']['bz2']['path']= $info['release']['baseurl'] . $fn_base . '.tar.bz2'; 
-				$QA_RELEASES[$pversion]['release']['files']['gz']['path'] = $info['release']['baseurl'] . $fn_base . '.tar.gz';
-
-				foreach($QA_CHECKSUM_TYPES as $algo)
-				{
-					$QA_RELEASES[$pversion]['release']['files']['bz2'][$algo] = $info['release'][$algo . '_bz2'];
-					$QA_RELEASES[$pversion]['release']['files']['gz'][$algo]  = $info['release'][$algo . '_gz'];
-
-					if (!empty($info['release'][$algo . '_xz'])) {
-						if(!isset($QA_RELEASES[$pversion]['release']['files']['xz']))
-						{
-							$QA_RELEASES[$pversion]['release']['files']['xz']['path'] = $info['release']['baseurl'] . $fn_base . '.tar.xz';
+					$QA_RELEASES[$pversion]['release']['version'] = $pversion . $info['release']['type'] . $info['release']['number'];
+					foreach ([ 'bz2', 'gz', 'xz' ] as $file_type) {
+						foreach ($QA_CHECKSUM_TYPES as $algo) {
+							if (isset($info['release'][$algo . '_' . $file_type])) {
+								$QA_RELEASES[$pversion]['release']['files'][$file_type][$algo] = $info['release'][$algo . '_' . $file_type];
+							}
 						}
+						if (!empty($QA_RELEASES[$pversion]['release']['files'][$file_type])) {
+							$QA_RELEASES[$pversion]['release']['files'][$file_type]['path']= $info['release']['baseurl'] . $fn_base . '.tar.' . $file_type;
+						}
+					}
 
-						$QA_RELEASES[$pversion]['release']['files']['xz'][$algo]  = $info['release'][$algo . '_xz'];
+					if (empty($QA_RELEASES[$pversion]['release']['files'])) {
+						$QA_RELEASES[$pversion]['release']['enabled'] = false;
 					}
 				}
+			} else {
+				$QA_RELEASES[$pversion]['release']['enabled'] = false;
 			}
-		} else {
-			$QA_RELEASES[$pversion]['release']['enabled'] = false;
+
 		}
 	}
-}
 
-// Sorted information for later use
-// @todo need these?
-// $QA_RELEASES['releases']   : All current versions with active qa releases
-foreach ($QA_RELEASES as $pversion => $info) {
-	if (isset($info['active']) && $info['active'] && !empty($info['release']['number'])) {
-		$QA_RELEASES['releases'][$pversion] = $info['release'];
+	// Sorted information for later use
+	// @todo need these?
+	// $QA_RELEASES['releases']   : All current versions with active qa releases
+	foreach ($QA_RELEASES as $pversion => $info) {
+		if (isset($info['active']) && $info['active'] && !empty($info['release']['number'])) {
+			$QA_RELEASES['releases'][$pversion] = $info['release'];
+		}
 	}
-}
+
+})();
 
 /* Content */
 function show_release_qa($QA_RELEASES) {
@@ -199,7 +197,6 @@ function show_release_qa($QA_RELEASES) {
 		echo "</span>\n";
 		echo "<table>\n";
 
-		// @todo check for vars, like if md5_* are set
 		foreach ($QA_RELEASES['releases'] as $pversion => $info) {
 
 			echo "<tr>\n";
@@ -208,20 +205,16 @@ function show_release_qa($QA_RELEASES) {
 			echo "</td>\n";
 			echo "</tr>\n";
 
-			foreach (Array('bz2', 'gz', 'xz') as $file_type) {
-				if (!isset($info['files'][$file_type])) {
-					continue;
-				}
-
+			foreach ($info['files'] as $file_type => $file_info) {
 				echo "<tr>\n";
-				echo "<td width=\"20%\"><a href=\"{$info['files'][$file_type]['path']}\">php-{$info['version']}.tar.{$file_type}</a></td>\n";
+				echo "<td width=\"20%\"><a href=\"{$file_info['path']}\">php-{$info['version']}.tar.{$file_type}</a></td>\n";
 
 				foreach ($QA_CHECKSUM_TYPES as $algo) {
 					echo '<td>';
 					echo '<strong>' . strtoupper($algo) . ':</strong> ';
 
-					if (isset($info['files'][$file_type][$algo]) && !empty($info['files'][$file_type][$algo])) {
-						echo $info['files'][$file_type][$algo];
+					if (isset($file_info[$algo]) && strlen($file_info[$algo])) {
+						echo $file_info[$algo];
 					} else {
 						echo '(<em><small>No checksum value available</small></em>)&nbsp;';
 					}
