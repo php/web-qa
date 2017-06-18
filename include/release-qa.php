@@ -126,7 +126,7 @@ $QA_CHECKSUM_TYPES = [ 'md5', 'sha256' ];
 // release  : These are encouraged for use (e.g., linked at qa.php.net)
 // reported : These are allowed to report @ the php.qa.reports mailing list
 
-(function () use (&$QA_RELEASES, $QA_CHECKSUM_TYPES) {
+$qa_releases_process = function () use (&$QA_RELEASES, $QA_CHECKSUM_TYPES) {
 	foreach ($QA_RELEASES as $pversion => $info) {
 
 		if (isset($info['active']) && $info['active']) {
@@ -178,7 +178,8 @@ $QA_CHECKSUM_TYPES = [ 'md5', 'sha256' ];
 		}
 	}
 
-})();
+};
+$qa_releases_process();
 
 /* Content */
 function show_release_qa($QA_RELEASES) {
