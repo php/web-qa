@@ -19,15 +19,15 @@ Documentation:
 		- release (array):
 			- type: RC, alpha, and beta are examples (case should match filename case)
 			- version: 0 if no such release exists, otherwise an integer of the rc/alpha/beta number
-			- md5_bz2: md5 checksum of this downloadable .tar.bz2 file
-			- md5_gz:  md5 checksum of this downloadable .tar.gz file
-			- md5_xz: md5 checksum of this downloadble .xz file
+			- sha256_bz2: sha256 checksum of this downloadable .tar.bz2 file
+			- sha256_gz:  sha256 checksum of this downloadable .tar.gz file
+			- sha256_xz: sha256 checksum of this downloadble .xz file
 			- date: date of release e.g., 21 May 2011
 			- baseurl: base url of where these downloads are located
 			- Multiple checksums can be available, see the $QA_CHECKSUM_TYPES array below
 		Other variables within $QA_RELEASES are later defined including:
 			- reported: versions that make it to the qa.reports mailing list
-			- release: all current qa releases, including paths to dl urls (w/ md5 info)
+			- release: all current qa releases, including paths to dl urls (w/ sha256 info)
 			- dev_version: dev version
 			- $QA_RELEASES is made available at qa.php.net/api.php
 
@@ -48,9 +48,6 @@ $QA_RELEASES = array(
 		'release'		=> array(
 			'type'	    	=> 'RC',
 			'number'    	=> 0,
-			'md5_bz2'   	=> '',
-			'md5_gz'    	=> '',
-			'md5_xz'    	=> '',
 			'sha256_bz2'	=> '',
 			'sha256_gz'	=> '',
 			'sha256_xz'	=> '',
@@ -64,9 +61,6 @@ $QA_RELEASES = array(
                 'release'               => array(
                         'type'      	=> 'RC',
                         'number'    	=> 1,
-                        'md5_bz2'   	=> 'a205484bdaf2a58e031861cb22eba4e6',
-                        'md5_gz'    	=> 'ed2e7e22cbc6313db88e65d19d0a92b8',
-                        'md5_xz'    	=> 'e37a28689626385630615cf49a6f3983',
                         'sha256_bz2'	=> '0fc5210314bf3a9d110683bf3e27799108af5ff760bd4f18ab7b8c9fb4e0a53e',
                         'sha256_gz'     => '4acb712df856c8303dbb9c8cd20b9839021e36194520500984557bfa41f711cc',
                         'sha256_xz'     => '0093d288a10ddcd69f06b2fad7ea8068217ad37b55589bfa6e3ee20ae7708239',
@@ -80,9 +74,6 @@ $QA_RELEASES = array(
                 'release'		=> array(
                         'type'          => 'RC',
                         'number'        => 1,
-                        'md5_bz2'       => '18de7af73bf99a8d5093493cef084ed9',
-                        'md5_gz'        => '28b86e81df03ea10749484e0e97974f1',
-                        'md5_xz'        => 'ad7404a0024069f6edf3e73b47b21c7b',
                         'sha256_bz2'    => '24e8a62077ba1cb415cb13327f607f725ce46969f0e198c4ec994b72940ba28f',
                         'sha256_gz'     => 'd8d3af5f35e8cba7583e217b87fb39198489d80f64d0fae2c5e098492c944968',
                         'sha256_xz'     => '125050947d0c1ad714769e53508e16584a2db3482d2f867f8797cdd326249e5d',
@@ -96,9 +87,6 @@ $QA_RELEASES = array(
                 'release'		=> array(
                         'type'          => 'alpha',
                         'number'        => 2,
-                        'md5_bz2'       => '77d6f6da4e15c3389ef9c8b09e679edc',
-                        'md5_gz'        => '09ca0e0654a686037957f343c62677d8',
-                        'md5_xz'        => '40171c6257097371fbd23096e77aeffc',
                         'sha256_bz2'    => 'f084bcbf26cdbd5fa56ba3b396f0d4e8d2dcf94e593f0629d080dc11a67e18cc',
                         'sha256_gz'     => 'e772fc95e67fa5e01972228d6a65626fb84f3ef3ee28d13c509f5ab0eafb662e',
                         'sha256_xz'     => '4f815f49ddc32f250b6fd5e812145ddf0c25c3f714577a30f9a84a1d033ab55d',
@@ -118,7 +106,7 @@ $QA_RELEASES = array(
 // 'sha512_gz'	=> 'xxx',
 // 'sha512_xz'	=> 'xxx',
 
-$QA_CHECKSUM_TYPES = [ 'md5', 'sha256' ];
+$QA_CHECKSUM_TYPES = [ 'sha256' ];
 
 /*** End Configuration *******************************************************************/
 
