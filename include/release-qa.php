@@ -86,12 +86,12 @@ $QA_RELEASES = array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'alpha',
-                        'number'        => 2,
-                        'sha256_bz2'    => 'f084bcbf26cdbd5fa56ba3b396f0d4e8d2dcf94e593f0629d080dc11a67e18cc',
-                        'sha256_gz'     => 'e772fc95e67fa5e01972228d6a65626fb84f3ef3ee28d13c509f5ab0eafb662e',
-                        'sha256_xz'     => '4f815f49ddc32f250b6fd5e812145ddf0c25c3f714577a30f9a84a1d033ab55d',
-                        'date'          => '22 Jun 2017',
-                        'baseurl'       => 'http://downloads.php.net/~pollita/',
+                        'number'        => 3,
+                        'sha256_bz2'    => '05b95efe75b66608b717bb2f6e5588d5f0d57bcf6957a6beb94ffa207d3a33fa',
+                        'sha256_gz'     => '4ca81dba4e6fc8c94c484e8af90a1e6c80254c7bdb4ef4201d2aa7aefb1a2ecd',
+                        'sha256_xz'     => '68abd6fc51cc5cfc7a7b1c2153644c7052f3ed841c21519095dda24eee67f63b',
+                        'date'          => '6 Jul 2017',
+                        'baseurl'       => 'http://downloads.php.net/~remi/',
                 ),
         ),
 );
