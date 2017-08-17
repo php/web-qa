@@ -43,7 +43,7 @@ TODO:
 */
 
 $QA_RELEASES = array(
-	'5.6.31' => array(
+	'5.6.32' => array(
 		'active'		=> true,
 		'release'		=> array(
 			'type'	    	=> 'RC',
@@ -56,7 +56,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.22' => array(
+        '7.0.23' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      	=> 'RC',
@@ -64,20 +64,20 @@ $QA_RELEASES = array(
                         'sha256_bz2'	=> '',
                         'sha256_gz'     => '',
                         'sha256_xz'     => '',
-                        'date'      	=> '22 June 2017',
+                        'date'      	=> '20 July 2017',
                         'baseurl'   	=> 'http://downloads.php.net/ab/',
                 ),
         ),
 
-        '7.1.7' => array(
+        '7.1.9' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 1,
-                        'sha256_bz2'    => '24e8a62077ba1cb415cb13327f607f725ce46969f0e198c4ec994b72940ba28f',
-                        'sha256_gz'     => 'd8d3af5f35e8cba7583e217b87fb39198489d80f64d0fae2c5e098492c944968',
-                        'sha256_xz'     => '125050947d0c1ad714769e53508e16584a2db3482d2f867f8797cdd326249e5d',
-                        'date'          => '22 Jun 2017',
+                        'number'        => 0,
+                        'sha256_bz2'    => '',
+                        'sha256_gz'     => '',
+                        'sha256_xz'     => '',
+                        'date'          => '20 Jul 2017',
                         'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
 	),
@@ -85,13 +85,13 @@ $QA_RELEASES = array(
         '7.2.0' => array(
                 'active'                => true,
                 'release'		=> array(
-                        'type'          => 'alpha',
-                        'number'        => 3,
-                        'sha256_bz2'    => '05b95efe75b66608b717bb2f6e5588d5f0d57bcf6957a6beb94ffa207d3a33fa',
-                        'sha256_gz'     => '4ca81dba4e6fc8c94c484e8af90a1e6c80254c7bdb4ef4201d2aa7aefb1a2ecd',
-                        'sha256_xz'     => '68abd6fc51cc5cfc7a7b1c2153644c7052f3ed841c21519095dda24eee67f63b',
-                        'date'          => '6 Jul 2017',
-                        'baseurl'       => 'http://downloads.php.net/~remi/',
+                        'type'          => 'beta',
+                        'number'        => 2,
+                        'sha256_bz2'    => '0f4ac92c3d432f9984706546f95b994f7151a8fc46ca1f5ff1317e869f6a9849',
+                        'sha256_gz'     => '557f13109bfcac0cd8a35fafa9e3a87b0eb9dcf39967e9cc916b8a48528f1f68',
+                        'sha256_xz'     => '0e2ac8e68c6fa92e9e14c610d78e162a711ba0e83987ecc9d02a6b898616c92d',
+                        'date'          => '3 Aug 2017',
+                        'baseurl'       => 'http://downloads.php.net/~pollita/',
                 ),
         ),
 );

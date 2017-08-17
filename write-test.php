@@ -415,7 +415,7 @@ Will fail to clean up
 ?&gt;
 --EXPECT--
 </pre>
-<p>will not remove the temporary file because the variable $filename is not defined in the --CLEAN-- section.</p>
+<p>will not remove the temporary file because the variable $temp_filename is not defined in the --CLEAN-- section.</p>
 <p>Here is a better way to write the code:
 <pre>
 --TEST--
