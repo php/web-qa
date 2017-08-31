@@ -85,12 +85,12 @@ $QA_RELEASES = array(
         '7.2.0' => array(
                 'active'                => true,
                 'release'		=> array(
-                        'type'          => 'beta',
-                        'number'        => 3,
-                        'sha256_bz2'    => '8024c87474c30af90ede1fb86868a6fcd2fb1c5c6f1db3fb3227b9683acee7b7',
-                        'sha256_gz'     => 'dd151469f9589fea47b7334c692ce2bc6a0be9d2d674eacba398c6a2ffb442fc',
-                        'sha256_xz'     => '86ab60f96223768d2cb6b3669ce5d048ce904beccf532119aa02058e7cc9e498',
-                        'date'          => '17 Aug 2017',
+                        'type'          => 'RC',
+                        'number'        => 1,
+                        'sha256_bz2'    => '20dcc8cdb357fad473881eed8fd19b7f4f66c2876867fadf0609a5efa7e83153',
+                        'sha256_gz'     => '3cc1a0a0c2a69497dcdf5c4ca62a3996c0ff93963469a3ec61bf1f1c58ff5c94',
+                        'sha256_xz'     => '04f68d9accb60e56adecc34a80b84bde16edb255a13eef701ea2d6c2b13dc15b',
+                        'date'          => '31 Aug 2017',
                         'baseurl'       => 'https://downloads.php.net/~remi/',
                 ),
         ),
