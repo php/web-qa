@@ -56,14 +56,14 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.26' => array(
+        '7.0.27' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      	=> 'RC',
                         'number'    	=> 1,
-                        'sha256_bz2'	=> 'a502161e43dd8d01ecd3b781a5cef3197ddb429df65d59a0cf75544268f7a100',
-                        'sha256_gz'     => '29f8c125314e28e1a625da7b5d4b01ae07d0bd24bb36893fffaee7e83240c9fb',
-                        'sha256_xz'     => '5fbfdb2e5f1e8451f9a4728e35109e966d2354011ed3e1a6ee6c477db743e74a',
+                        'sha256_bz2'	=> '',
+                        'sha256_gz'     => '',
+                        'sha256_xz'     => '',
                         'date'      	=> '09 November 2017',
                         'baseurl'   	=> 'http://downloads.php.net/ab/',
                 ),
