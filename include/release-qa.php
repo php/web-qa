@@ -216,6 +216,8 @@ function show_release_qa($QA_RELEASES) {
 		}
 
 		echo "</table>\n";
+	} else {
+		echo "<span class='lihack'>There are no QA releases available at the moment to test.</span>";
 	}
 
 	echo "<!-- END -->\n";
