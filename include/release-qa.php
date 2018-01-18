@@ -78,7 +78,7 @@ $QA_RELEASES = array(
                         'sha256_gz'     => 'e523bdd3956dd3e9314fc69edc6c83e1a6dfa3fcde41fad03c5bd3d58b3470f4',
                         'sha256_xz'     => '3d954de9cd4dff7dc8631f214928b2635b81cea80999c1b4593e7effc92b4b47',
                         'date'          => '18 January 2018',
-                        'baseurl'       => 'http://downloads.php.net/~krakjoe/',
+                        'baseurl'       => 'http://downloads.php.net/ab/',
                 ),
 	),
 
