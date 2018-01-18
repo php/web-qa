@@ -70,7 +70,7 @@ $QA_RELEASES = array(
         ),
 
         '7.1.14' => array(
-                'active'                => false,
+                'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
                         'number'        => 1,
@@ -83,7 +83,7 @@ $QA_RELEASES = array(
 	),
 
         '7.2.2' => array(
-                'active'                => false,
+                'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
                         'number'        => 1,
