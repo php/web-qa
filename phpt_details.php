@@ -231,7 +231,7 @@ abcdef123456789
 <dt id="put_section">--PUT--</dt>
 <dd>
 <p><b>Description:</b><br/>
-Similar to the section above, PUT data to be passed to the test script. 
+Similar to the section above, PUT data to be passed to the test script.
 This section forces the use of the CGI binary instead of the usual CLI one.</p>
 <p><b>Required:</b><br/>
 No.</p>
@@ -515,7 +515,7 @@ files/file012.php</pre></p>
 <dd>
 <p><b>Description:</b><br/>
 This block allows you to redirect from one test to a bunch of other tests. It
-also allows you to set configurations which are used on all tests in your 
+also allows you to set configurations which are used on all tests in your
 destination.</p>
 <p><b>Required:</b><br/>
 One of the FILE type sections is required.</p>
@@ -732,14 +732,6 @@ when run on different platforms.</p>
 <li>%c: A single character of any sort (.).</li>
 <li>%r...%r: Any string (...) enclosed between two %r will be treated as a regular
   expression.</li>
-<li>%unicode|string%: Matches the string 'unicode' in PHP6 test output and 'string'
-  in PHP5 test output.</li>
-<li>%binary_string_optional%: Matches 'Binary string' in PHP6 output, 'string' in
-  PHP5 output. Used in PHP Warning messages.</li>
-<li>%unicode_string_optional%: Matches 'Unicode string' in PHP6 output, 'string' in
-  PHP5 output. Used in PHP Warning messages.</li>
-<li>%u|b%: Matches a single 'u' in PHP6 test output where the PHP5 output from the
-  same test hs no character in that position.</li>
 </ul>
 </p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -922,7 +914,7 @@ PHP source code enclosed by PHP tags.</p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample024.php">sample024.phpt</a></p>
 <p><b>Example 2 (snippet):</b><br/>
 <pre>--CLEAN--
-&lt;?php 
+&lt;?php
 require_once('clean.inc');
 ?&gt;</pre></p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample025.php">sample025.phpt</a></p>
@@ -941,4 +933,3 @@ shm_remove($s);
 
 <?php
 common_footer();
-
