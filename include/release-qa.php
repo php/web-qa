@@ -69,7 +69,7 @@ $QA_RELEASES = array(
                 ),
         ),
 
-        '7.1.16' => array(
+        '7.1.18' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
@@ -78,7 +78,7 @@ $QA_RELEASES = array(
                         'sha256_gz'     => '',
                         'sha256_xz'     => '',
                         'date'          => '15 March 2018',
-                        'baseurl'       => 'http://downloads.php.net/ab/',
+                        'baseurl'       => 'http://downloads.php.net/~krakjoe/',
                 ),
 	),
 
