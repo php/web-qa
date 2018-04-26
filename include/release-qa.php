@@ -56,7 +56,7 @@ $QA_RELEASES = array(
 		),
 	),
 
-        '7.0.28' => array(
+        '7.0.31' => array(
                 'active'                => true,
                 'release'               => array(
                         'type'      	=> 'RC',
