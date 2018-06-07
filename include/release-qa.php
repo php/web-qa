@@ -94,6 +94,18 @@ $QA_RELEASES = array(
                         'baseurl'       => 'https://downloads.php.net/~pollita/',
                 ),
         ),
+		'7.3.0' => array(
+            'active'                => true,
+            'release'		=> array(
+                    'type'          => 'alpha',
+                    'number'        => 1,
+                    'sha256_bz2'    => '8e27df8cf9db49cd2b56fa545b962e8f9ff31889c5429f77b4cf7d94ddab5a09',
+                    'sha256_gz'     => 'bf3d089d876ac817aecd6afca7ef801cda5c809d4954871e8e6be38bea656f2c',
+                    'sha256_xz'     => 'a229d0bf48a3f91d1751ec859473abc70e7fd0f6befc2dc6578b3a128bd0e025',
+                    'date'          => '7 Jun 2018',
+                    'baseurl'       => 'https://downloads.php.net/~stas/',
+            ),
+		),
 );
 
 // This is a list of the possible checksum values that can be supplied with a QA release. Any 
