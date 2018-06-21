@@ -5,7 +5,7 @@ $branch = $_GET['branch'];
 if (substr($branch, 0, 3)!='PHP') {
 	$branch = "PHP_5_6";
 }
-
+$branch = preg_replace("#\.\./|\.\.#","",$branch);
 
 include("include/functions.php");
 
