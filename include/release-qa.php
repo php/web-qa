@@ -98,12 +98,12 @@ $QA_RELEASES = array(
             'active'                => true,
             'release'		=> array(
                     'type'          => 'alpha',
-                    'number'        => 1,
-                    'sha256_bz2'    => '8e27df8cf9db49cd2b56fa545b962e8f9ff31889c5429f77b4cf7d94ddab5a09',
-                    'sha256_gz'     => 'bf3d089d876ac817aecd6afca7ef801cda5c809d4954871e8e6be38bea656f2c',
-                    'sha256_xz'     => 'a229d0bf48a3f91d1751ec859473abc70e7fd0f6befc2dc6578b3a128bd0e025',
-                    'date'          => '7 Jun 2018',
-                    'baseurl'       => 'https://downloads.php.net/~stas/',
+                    'number'        => 2,
+                    'sha256_bz2'    => '92229e690593b537b2d775901a7db17ddfb568e9537e81c72b481d982bc6db26',
+                    'sha256_gz'     => 'eeb9bd49b2250888535aab8385aa908d9704b0caa7adc4ff980b317d6c71d52c',
+                    'sha256_xz'     => '63e74a67228ec2239fda57d9c47749e5d917c50d76e4002092b145ee8d40ac39',
+                    'date'          => '21 Jun 2018',
+                    'baseurl'       => 'https://downloads.php.net/~cmb/',
             ),
 		),
 );
