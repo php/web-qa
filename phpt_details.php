@@ -91,7 +91,7 @@ run-tests.php, server-tests.php</p>
 Name Email<br/>
 [Event]</p>
 <p><b>Example 1 (snippet):</b><br/>
-<pre>--CREDIT--
+<pre>--CREDITS--
 Felipe Pena <felipe@php.net></pre>
 </p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
