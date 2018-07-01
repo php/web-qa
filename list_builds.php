@@ -7,7 +7,6 @@ isValidBranch($branch) or $branch = 'PHP_5_6';
 
 $TITLE = "PHP: QA: PFTT: $branch";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
-/* $Id$ */
 
 common_header(NULL, $TITLE);
 

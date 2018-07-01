@@ -11,7 +11,6 @@ isValidRevision($revision) or $revision = '';
 
 $TITLE = htmlentities("PHP: QA: PFTT: $branch: $revision");
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
-/* $Id$ */
 
 common_header(NULL, $TITLE);
 

@@ -3,7 +3,6 @@ include("include/functions.php");
 
 $TITLE = "Handling Bug Reports [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
-/* $Id$ */
 
 common_header();
 ?>

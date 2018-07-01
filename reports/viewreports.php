@@ -14,7 +14,6 @@
 #  +----------------------------------------------------------------------+
 #  | Author: Olivier Doucet <odoucet@php.net>                             |
 #  +----------------------------------------------------------------------+
-#   $Id$
 
 $startTime = microtime(true);
 include "../include/functions.php";
