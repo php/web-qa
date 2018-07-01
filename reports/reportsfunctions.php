@@ -15,7 +15,6 @@
 #  | Author: Olivier Doucet <odoucet@php.net>                             |
 #  |         Johannes Schlüter <johannes@php.net>                         |
 #  +----------------------------------------------------------------------+
-#   $Id$
 
 class QaReportIterator extends FilterIterator
 {

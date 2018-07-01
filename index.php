@@ -2,8 +2,7 @@
 include("include/functions.php");
 include("include/release-qa.php");
 
-$SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__))."<br />\n".
-'/* $Id$ */';
+$SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header();
 
