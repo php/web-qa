@@ -82,16 +82,16 @@ $QA_RELEASES = array(
                 ),
 	),
 
-        '7.2.7' => array(
+        '7.2.8' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 0,
-                        'sha256_bz2'    => '',
-                        'sha256_gz'     => '',
-                        'sha256_xz'     => '',
-                        'date'          => '7 Jun 2018',
-                        'baseurl'       => 'https://downloads.php.net/~pollita/',
+                        'number'        => 1,
+                        'sha256_bz2'    => '0daab96b5b52dd6f0621a6369ff7943428325259d4cd037175274f50dee9357d',
+                        'sha256_gz'     => '7124c5095e151cab5e9124467da98357a9b9e551ac7ef87255bcb83b8a10d41e',
+                        'sha256_xz'     => '2729ac5f408e7378dbbe04cbb588f2fe10ffc61e0b054d7cc65688b1b5de3df1',
+                        'date'          => '5 July 2018',
+                        'baseurl'       => 'https://downloads.php.net/~remi/',
                 ),
         ),
 		'7.3.0' => array(
