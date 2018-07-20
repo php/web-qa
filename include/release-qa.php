@@ -43,7 +43,7 @@ TODO:
 */
 
 $QA_RELEASES = array(
-	'5.6.37' => array(
+	'5.6.38' => array(
 		'active'		=> true,
 		'release'		=> array(
 			'type'	    	=> 'RC',
