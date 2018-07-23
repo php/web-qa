@@ -42,6 +42,11 @@ TODO:
 	- Add option to allow current releases (e.g., retrieve current release info via daily cron, cache, check, configure ~ALLOW_CURRENT_RELEASES)
 */
 
+
+/**********************************************************************/
+/****** REMEMBER TO UPDATE "functions.php" WHEN BRANCHES CHANGE! ******/
+/**********************************************************************/
+
 $QA_RELEASES = array(
 	'5.6.38' => array(
 		'active'		=> true,

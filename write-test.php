@@ -44,9 +44,22 @@ version</a> of the git repository (ext/standard/tests/ is a good place to start 
 <i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you 
 can see which functions have lots of tests and which need more, although these pages only
 show which lines of code are covered by test cases so even if the coverage looks good there may 
-be more interesting tests to write - for example covering error cases. There is also a table 
-<a href="tested-methods.php">here</a> that shows which functions and methods are called from PHPT tests.  
-<p>If you want more guidance than that you can always ask
+be more interesting tests to write - for example covering error cases.</p>
+
+		<p>
+			You can find a list of functionality coverage on GCOV for the following, active branches: 
+
+			<ul style="list-style-type: square;">
+<?php
+	foreach(get_active_branches() as $gcov_version => $php_version) {
+?>
+				<li><a href="http://gcov.php.net/viewer.php?version=<?php echo($gcov_version); ?>&func=tested_functions">PHP <?php echo($php_version); ?></a></li>
+<?php
+	}
+?>
+			</ul>
+		</p>
+		<p>If you want more guidance than that you can always ask
 the PHP Quality Assurance Team on their mailing list 
 (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) where they 
 would like you to direct your attentions.</p>
