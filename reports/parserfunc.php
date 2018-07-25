@@ -159,6 +159,7 @@ SQL;
         }
         
         foreach ($array['expectedFailedTest'] as $name) {
+            if (substr($name, 0, 1) != '/') $name = '/'.$name;
             $query = <<<'SQL'
 INSERT INTO `expectedfail` (`id`, `id_report`, `test_name`)
 VALUES (null, :id_report, :test_name)
