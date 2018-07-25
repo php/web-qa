@@ -265,7 +265,7 @@ function parse_phpmaketest($version, $status=null, $file)
             $currentTest = '';
             
         } elseif ($currentPart == 'failedTest' || $currentPart == 'expectedFailedTest') {
-            preg_match('@ \[([^\]]{1,})\]@', $row, $tab);
+            preg_match('@(?<!via) \[([^\]]{1,})\]\s*(?:$|XFAIL)@', $row, $tab);
             if (count($tab) == 2)
                 if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart])) 
                     $extract[$currentPart][] = $tab[1];
