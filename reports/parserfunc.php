@@ -108,19 +108,28 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         // handle tests with no success
         if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
         
-        $query = "INSERT INTO `reports` (`id`, `date`, `status`, 
-        `nb_failed`, `nb_expected_fail`, `success`, `build_env`, `phpinfo`, user_email) VALUES    (null, 
-        datetime(".((int) $array['date']).", 'unixepoch', 'localtime'), 
-        ".((int)$array['status']).", 
-        ".count($array['failedTest']).", 
-        ".count($array['expectedFailedTest']).", 
-        ".count($array['succeededTest']).", 
-        ('".$dbi->escapeString($array['buildEnvironment'])."'), 
-        ('".$dbi->escapeString($array['phpinfo'])."'),
-        ".(!$array['userEmail'] ? "NULL" : "'".$dbi->escapeString($array['userEmail'])."'")."
-        )";
-        
-        $dbi->query($query);
+        $query = <<<'SQL'
+INSERT INTO `reports` (
+    `id`, `date`, `status`, `nb_failed`, `nb_expected_fail`, `success`, `build_env`, `phpinfo`, `user_email`
+) VALUES (
+    null, datetime(:date, 'unixepoch', 'localtime'), :status, :nb_failed, 
+    :nb_expected_fail, :success, :build_env, :phpinfo, :user_email
+)
+SQL;
+        $stmt = $dbi->prepare($query);
+        $stmt->bindValue(':date', (int) $array['date'], SQLITE3_INTEGER);
+        $stmt->bindValue(':status', (int)$array['status'], SQLITE3_INTEGER);
+        $stmt->bindValue(':nb_failed', count($array['failedTest']), SQLITE3_INTEGER);
+        $stmt->bindValue(':nb_expected_fail', count($array['expectedFailedTest']), SQLITE3_INTEGER);
+        $stmt->bindValue(':success', count($array['succeededTest']), SQLITE3_INTEGER);
+        $stmt->bindValue(':build_env', $array['buildEnvironment'], SQLITE3_TEXT);
+        $stmt->bindValue(':phpinfo', $array['phpinfo'], SQLITE3_TEXT);
+        if (!$array['userEmail']) {
+            $stmt->bindValue(':user_email', NULL, SQLITE3_NULL);
+        } else {
+            $stmt->bindValue(':user_email', $array['userEmail'], SQLITE3_TEXT);
+        }
+        $stmt->execute();
         if ($dbi->lastErrorCode() != '') {
             echo "ERROR: ".$dbi->lastErrorMsg()."\n";
             exit;
@@ -132,13 +141,17 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             if (substr($name, 0, 1) != '/') $name = '/'.$name;
             
             $test = $array['tests'][$name];
-            $query = "INSERT INTO `failed` 
-            (`id`, `id_report`, `test_name`, signature, `output`, `diff`) VALUES    (null, 
-            '".$reportId."', '".$name."', 
-            X'".md5($name.'__'.$test['diff'])."',
-            ('".$dbi->escapeString($test['output'])."'), ('".$dbi->escapeString($test['diff'])."'))";
-            
-            @$dbi->query($query);
+            $query = <<<'SQL'
+INSERT INTO `failed` (`id`, `id_report`, `test_name`, `signature`, `output`, `diff`)
+VALUES (null, :id_report, :test_name, :signature, :output, :diff)
+SQL;
+            $stmt = $dbi->prepare($query);
+            $stmt->bindValue(':id_report', $reportId, SQLITE3_INTEGER);
+            $stmt->bindValue(':test_name', $name, SQLITE3_TEXT);
+            $stmt->bindValue(':signature', md5($name.'__'.$test['diff'], true), SQLITE3_BLOB);
+            $stmt->bindValue(':output', $test['output'], SQLITE3_TEXT);
+            $stmt->bindValue(':diff', $test['diff'], SQLITE3_TEXT);
+            @$stmt->execute();
             if ($dbi->lastErrorCode() != '') {
                 echo "ERROR when inserting failed test : ".$dbi->lastErrorMsg()."\n";
                 exit;
@@ -146,10 +159,14 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         }
         
         foreach ($array['expectedFailedTest'] as $name) {
-            $query = "INSERT INTO `expectedfail` 
-            (`id`, `id_report`, `test_name`) VALUES (null, '".$reportId."', '".$name."')";
-            
-            @$dbi->query($query);
+            $query = <<<'SQL'
+INSERT INTO `expectedfail` (`id`, `id_report`, `test_name`)
+VALUES (null, :id_report, :test_name)
+SQL;
+            $stmt = $dbi->prepare($query);
+            $stmt->bindValue(':id_report', $reportId, SQLITE3_INTEGER);
+            $stmt->bindValue(':test_name', $name, SQLITE3_TEXT);
+            @$stmt->execute();
             if ($dbi->lastErrorCode() != '') {
                 echo "ERROR when inserting expected fail test : ".$dbi->lastErrorMsg()."\n";
                 exit;
@@ -158,16 +175,23 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
 
         foreach ($array['succeededTest'] as $name) {
             // sqlite files too big .. For the moment, keep only one success over time
-            $res = $dbi->query('SELECT id, id_report FROM `success` WHERE test_name LIKE \''.
-                                $dbi->escapeString($name).'\'');
+            $query = 'SELECT id, id_report FROM `success` WHERE test_name LIKE :name';
+            $stmt = $dbi->prepare($query);
+            $stmt->bindValue(':name', $name, SQLITE3_TEXT);
+            $res = $stmt->execute();
                                 
             if ($res->numColumns() > 0) { 
                 // hit ! do nothing atm
             } else {
-                $query = "INSERT INTO `success` (`id`, `id_report`, `test_name`)
-                VALUES (null, '".$reportId."', '".$dbi->escapeString($name)."')";
+                $query = <<<'SQL'
+INSERT INTO `success` (`id`, `id_report`, `test_name`)
+VALUES (null, :id_report, :test_name)
+SQL;
+                $stmt = $dbi->prepare($query);
+                $stmt->bindValue(':id_report', $reportId, SQLITE3_INTEGER);
+                $stmt->bindValue(':test_name', $name, SQLITE3_TEXT);
                 
-                @$dbi->query($query);
+                @$stmt->execute();
                 if ($dbi->lastErrorCode() != '') {
                     echo "ERROR when inserting succeeded test : ".$dbi->lastErrorMsg()."\n";
                     exit;

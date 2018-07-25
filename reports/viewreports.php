@@ -42,10 +42,11 @@ if (!$database) {
 
 // GET infos from DB
 $query = 'SELECT id,signature, COUNT(*) as cpt, output, diff FROM failed 
-WHERE test_name="'.$database->escapeString($testName).'"
+WHERE test_name=:test_name
 GROUP BY diff ORDER BY COUNT(*) desc';
-
-$q = $database->query($query);
+$stmt = $database->prepare($query);
+$stmt->bindValue(':test_name', $testName, SQLITE3_TEXT);
+$q = $stmt->execute();
 $allDiffArray = array();
 $sumCount = 0;
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {

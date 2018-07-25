@@ -41,15 +41,19 @@ if (!$database) {
 }
 
 // GET infos from DB
-$query = 'SELECT reports.* FROM failed JOIN reports ON reports.id=failed.id_report WHERE signature=X\''.$signature.'\'';
-
-$q = $database->query($query);
+$query = 'SELECT reports.* FROM failed JOIN reports ON reports.id=failed.id_report WHERE signature=:signature';
+$stmt = $database->prepare($query);
+$stmt->bindValue(':signature', hex2bin($signature), SQLITE3_BLOB);
+$q = $stmt->execute();
 $reportsArray = array();
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
     $reportsArray[$tab['id']] = $tab;
 }
 
-$tab = $database->query('SELECT test_name FROM failed WHERE signature=X\''.$signature.'\' LIMIT 1');
+$query = 'SELECT test_name FROM failed WHERE signature=:signature LIMIT 1';
+$stmt = $database->prepare($query);
+$stmt->bindValue(':signature', hex2bin($signature), SQLITE3_BLOB);
+$tab = $database->query($query);
 list($testName) = $tab->fetchArray(SQLITE3_NUM);
 
 // We stop everything

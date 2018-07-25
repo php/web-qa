@@ -54,8 +54,10 @@ if (isset($_GET['version'])) {
     if (isset($_GET['expect']) && $_GET['expect'] == 1) {
         $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations, 
                 datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id 
-                GROUP BY test_name ORDER BY cpt DESC LIMIT ' . $limit;
-        $q = @$database->query($query);
+                GROUP BY test_name ORDER BY cpt DESC LIMIT :limit';
+        $stmt = $database->prepare($query);
+        $stmt->bindValue(':limit', $limit, SQLITE3_INTEGER);
+        $q = @$stmt->execute();
         if ($q) {
             while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
                 $failedTestsArray[] = $tab;
@@ -69,8 +71,10 @@ if (isset($_GET['version'])) {
             LEFT JOIN failed f2  ON (f2.test_name=failed.test_name AND f2.output = "")
             LEFT JOIN reports r2 ON (f2.id_report = r2.id AND r2.user_email="ciqa")
             WHERE failed.id_report = reports.id 
-            GROUP BY failed.test_name ORDER BY cpt DESC LIMIT ' . $limit;
-    $q = @$database->query($query);
+            GROUP BY failed.test_name ORDER BY cpt DESC LIMIT :limit';
+    $stmt = $database->prepare($query);
+    $stmt->bindValue(':limit', $limit, SQLITE3_INTEGER);
+    $q = @$stmt->execute();
     if (!$q) die("Error querying DB (error ".$database->lastErrorCode()."): ".$database->lastErrorMsg());
     while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
         $failedTestsArray[] = $tab;
