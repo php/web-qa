@@ -113,25 +113,24 @@ $QA_RELEASES = array(
 		),
 );
 
-// This is a list of the possible checksum values that can be supplied with a QA release. Any 
-// new algorithm is read from the $QA_RELEASES array under the 'release' index for each version 
-// in the form of "$algorithm_$filetype".
-//
-// For example, if SHA512 were to be supported, the following indices would have to be added:
-//
-// 'sha512_bz2' => 'xxx',
-// 'sha512_gz'	=> 'xxx',
-// 'sha512_xz'	=> 'xxx',
-
-$QA_CHECKSUM_TYPES = [ 'sha256' ];
-
 /*** End Configuration *******************************************************************/
 
 // $QA_RELEASES eventually contains just about everything, also for external use
 // release  : These are encouraged for use (e.g., linked at qa.php.net)
 // reported : These are allowed to report @ the php.qa.reports mailing list
 
-$qa_releases_process = function () use (&$QA_RELEASES, $QA_CHECKSUM_TYPES) {
+(function(&$QA_RELEASES) {
+	// This is a list of the possible checksum values that can be supplied with a QA release. Any 
+	// new algorithm is read from the $QA_RELEASES array under the 'release' index for each version 
+	// in the form of "$algorithm_$filetype".
+	//
+	// For example, if SHA512 were to be supported, the following indices would have to be added:
+	//
+	// 'sha512_bz2' => 'xxx',
+	// 'sha512_gz'	=> 'xxx',
+	// 'sha512_xz'	=> 'xxx',
+	$QA_CHECKSUM_TYPES = [ 'sha256' ];
+
 	foreach ($QA_RELEASES as $pversion => $info) {
 
 		if (isset($info['active']) && $info['active']) {
@@ -183,8 +182,7 @@ $qa_releases_process = function () use (&$QA_RELEASES, $QA_CHECKSUM_TYPES) {
 		}
 	}
 
-};
-$qa_releases_process();
+})($QA_RELEASES);
 
 /* Content */
 function show_release_qa($QA_RELEASES) {
