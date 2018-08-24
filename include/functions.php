@@ -53,6 +53,7 @@ function get_active_branches() {
 		'PHP_5_6' 	=> '5.6', 
 		'PHP_7_1' 	=> '7.1', 
 		'PHP_7_2' 	=> '7.2', 
-		'PHP_HEAD' 	=> '7.3'
+		'PHP_7_3'	=> '7.3',
+		'PHP_HEAD' 	=> '7.4',
 		];
 }
