@@ -46,14 +46,3 @@ function is_valid_php_version($version, $QA_RELEASES = array()) {
 	
 	return false;
 }
-
-// This is used for linking to GCOV (Format: GCOV version => Human readable version)
-function get_active_branches() {
-	return [
-		'PHP_5_6' 	=> '5.6', 
-		'PHP_7_1' 	=> '7.1', 
-		'PHP_7_2' 	=> '7.2', 
-		'PHP_7_3'	=> '7.3',
-		'PHP_HEAD' 	=> '7.4',
-		];
-}
