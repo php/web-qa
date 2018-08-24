@@ -26,14 +26,6 @@ function common_footer($JS = array()) {
     include __DIR__ . "/../shared/templates/footer.inc";
 }
 
-function make_link($string, $text = "", $target = "") {
-	$buffer = "<a href=\"$string\"";
-	if ($target!="") $buffer .= " target=\"$target\">"; else $buffer .= ">";
-	if ($text!="") $buffer .= "$text"; else $buffer .= "$string";
-	$buffer .= "</a>";
-	return $buffer;
-}
-
 function is_valid_php_version($version, $QA_RELEASES = array()) {
 	
 	if (isset($QA_RELEASES['reported']) && in_array($version, $QA_RELEASES['reported'])) {
