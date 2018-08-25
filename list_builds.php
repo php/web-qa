@@ -1,11 +1,10 @@
 <?php
-define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
-$branch = $_GET['branch'];
-if (substr($branch, 0, 3)!='PHP') {
-	$branch = "PHP_5_6";
+$branch = $_GET['branch'] ?? '';
+if ((substr($branch, 0, 3) !== 'PHP') ||
+	(strpbrk($branch, '\\/') !== false)) {
+	$branch = 'PHP_5_6';
 }
-$branch = preg_replace("#\.\./|\.\.#","",$branch);
 
 include("include/functions.php");
 
@@ -15,83 +14,42 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
 common_header(NULL, $TITLE);
 
-?>
-<h1><a href="pftt.php"><?php echo htmlentities($branch); ?></a></h1>
+echo '<h1><a href="pftt.php">', htmlentities($branch), "</a></h1>\n";
+echo "<p>Choose a PHP revision or build</p>\n";
 
-<p>Choose a PHP revision or build</p>
-<?php
+(function() use ($branch) {
+	$branchdir = __DIR__ . "/reports/db/$branch";
+	if (!is_dir($branchdir)) { return; }
 
-$r = scandir(BASE_REPORT_DIR."/$branch");
+	$revisions = scandir($branchdir);
+	if ($revisions === false) { return; }
 
+	$revisions = array_filter($revisions, function($rev) use ($branchdir) {
+		return ($rev !== '.') && ($rev !== '..') && is_dir("$branchdir/$rev");
+	});
+	if (empty($revisions)) { return; }
 
-if ($r!==FALSE) {
-sort($r);
-
-$latest_revision = '';
-$mtime = 0;
-
-$revisions_by_mtime = array();
-
-foreach ( $r as $revision ) {
-	if ($revision=="." or $revision=="..")
-		continue;
-	if (is_dir(BASE_REPORT_DIR."/$branch/$revision")) {
-		$s = stat(BASE_REPORT_DIR."/$branch/$revision");
-		$mtime = $s['mtime'];
-		if ($mtime > $latest_revision_mtime) {
-			$latest_revision = $revision;
-			$latest_revision_mtime = $mtime;
-		}
-		$revisions_by_mtime[$mtime] = $revision;
+	// Create an array of [ $rev => $mtime] pairs,
+	// sorted by mtime from most recent to least.
+	$revisions = array_flip($revisions);
+	foreach ($revisions as $revision => &$mtime) {
+		$mtime = filemtime("$branchdir/$revision");
 	}
-} // end foreach
+	unset($mtime);
+	arsort($revisions, SORT_NUMERIC);
 
-$mtimes = array_keys($revisions_by_mtime);
-
-sort($mtimes);
-
-$revisions = array();
-
-foreach ($mtimes as $mtime) {
-    array_push($revisions, $revisions_by_mtime[$mtime]);
-}
-
-$red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
-
-?>
-<table class="pftt" style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
-	<tr>
-		<td>Latest:</td>
-		<td><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($latest_revision); ?>"><?php echo htmlentities($latest_revision); ?></a></td>
-	</tr>
-</table>
-<br/>
-<table class="pftt">
-	<?php
-
-$revisions = array_reverse($revisions);
-	
-foreach ( $revisions as $revision ) {
-	$red = is_file(BASE_REPORT_DIR."/$branch/$revision/FAIL_CRASH.txt");
-	
-	?>
-	<tr style="background:<?php echo $red ? '#ff0000' : '#ccff66'; ?>">
-		<td><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($revision); ?>"><?php echo htmlentities($revision); ?></a></td>
-	</tr>
-	<?php
-	
-} // end foreach
-	
-	
-	?>
-</table>
-<br/>
-<br/>
-<?php
-
-} // end if
-
+	// Output revisions, from most recent to least.
+	echo "<table class=\"pftt\">\n";
+	foreach ($revisions as $revision => $mtime) {
+		$style = 'background: ' .
+			(is_file("$branchdir/$revision/FAIL_CRASH.txt") ? '#ff0000' : '#ccff66');
+		echo "<tr style=\"$style\">";
+		echo '<td><a href="build.php?branch=', urlencode($branch),
+		     '&revision=', urlencode($revision), '">',
+		     htmlentities($revision), "</a></td></tr>\n";
+	}
+	echo "</table>\n";
+	echo "<br/><br/>\n";
+})();
 
 common_footer();
-
-?>
