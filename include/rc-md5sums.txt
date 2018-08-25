@@ -1,2 +1,0 @@
-0514f947e4358d1381a67  php-5.3.6RC3.tar.bz2
-e4d756d89d89844b1da49c1ad41e0aac  php-5.3.6RC3.tar.gz
