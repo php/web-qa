@@ -1,22 +1,13 @@
 <?php
 
+include("include/functions.php");
+include("reports/reportsfunctions.php");
+
 $branch = $_GET['branch'] ?? '';
-if ((substr($branch, 0, 3) !== 'PHP') || strpbrk($branch, './\\') !== false) {
-	$branch = "PHP_5_6";
-}
+isValidBranch($branch) or $branch = 'PHP_5_6';
 
 $revision = $_GET['revision'] ?? '';
-if ((substr($revision, 0, 1)!='r') && (strpos($revision, ".") === false)) {
-	// $revision may be an svn ID (i.e. r12345),
-	// or a release version (i.e 7.2.9)
-	$revision = '';
-}
-if (strpbrk($revision, '/\\') !== false) {
-	// Lightweight directory traversal guard
-	$revision = '';
-}
-
-include("include/functions.php");
+isValidRevision($revision) or $revision = '';
 
 $TITLE = htmlentities("PHP: QA: PFTT: $branch: $revision");
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
@@ -64,7 +55,7 @@ common_footer();
 
 // Generator function to ennumerate structured data from reports/db
 function genReports(string $type, string $branch, string $revision) {
-	$dir = __DIR__ . "/reports/db/$branch/$revision/";
+	$dir = makeRevisionPath($branch, $revision);
 	if (!is_dir($dir)) { return; }
 
 	$baseURL = '/reports/db/' . urlencode($branch) . '/' . urlencode($revision) . '/';
@@ -80,7 +71,7 @@ function genReports(string $type, string $branch, string $revision) {
 			yield [
 				'url' => $baseURL . urlencode($report),
 				'name' => $reportName,
-				'has_fails_crashes' => file_exists("$dir/$reportName.txt"),
+				'has_fails_crashes' => file_exists("$dir/FAIL_CRASH.txt"),
 			];
 		}
 	}

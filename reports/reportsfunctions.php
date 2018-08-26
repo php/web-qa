@@ -216,3 +216,47 @@ function format_readable_date($date) {
     }
     return $return." ago";
 }
+
+// In a report/ or pfft script, the 'branch' parameter
+// takes the form PHP_{$major}_{$minor} (i.e. PHP_7_2)
+// or PHP_MASTER, indicating the current master branch
+function isValidBranch(string $branch, bool $verifyExists = true): bool {
+	return ($branch === 'PHP_MASTER') ||
+		preg_match('@^PHP_\d{1,10}_\d{1,10}$@', $branch);
+}
+
+// In a report/ or pftt script, the 'revision' parameter
+// may be either the letter 'r' followed by hexits,
+// indicating a GIT hash (or possibly a SVN revision?)
+// Or they may be a release version (e.g. '7.2.9', '7.3.0-beta2')
+function isValidRevision(string $revision): bool {
+	// 41 characters ought to be enough for any revision (haha)
+	if ((strlen($revision) < 1) || (strlen($revision) > 41)) {
+		return false;
+	}
+
+	// Allow r(HEXIT+) form.
+	if (($revision[0] === 'r') && ctype_xdigit(substr($revision, 1))) {
+		return true;
+	}
+
+	// Allow release version form.
+	if (preg_match('@^\d+\.\d+\.\d+(-alpha\d+|-beta\d+|RC\d+|-dev)?$@i', $revision)) {
+		return true;
+	}
+
+	return false;
+}
+
+// Generate a path from a branch name
+function makeBranchPath(string $branch) /* : ?sting */ {
+	if (!isValidBranch($branch)) return null;
+	return __DIR__ . "/db/$branch/";
+}
+
+// Generate a path from a branch and revision
+function makeRevisionPath(string $branch, string $revision) /* : ?string */ {
+	$path = makeBranchPath($branch);
+	if (($path === null) || !isValidRevision($revision)) { return false; }
+	return "$path/$revision/";
+}
