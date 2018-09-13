@@ -102,12 +102,12 @@ $QA_RELEASES = array(
 		'7.3.0' => array(
             'active'                => true,
             'release'		=> array(
-                    'type'          => 'beta',
-                    'number'        => 3,
-                    'sha256_bz2'    => '0e65f98f905258214f0749bc9994f498e38f50d7a2fd1d59b313b6a15c628da5',
-                    'sha256_gz'     => '877101bd5b21ec786c6685b0962381b0baa7b2367af4be0b5e118881c25e6649',
-                    'sha256_xz'     => '062111b400939d26f3a6ec41925b52b93feb1a5e70e3ccade12496cea9fb190f',
-                    'date'          => '30 Aug 2018',
+                    'type'          => 'RC',
+                    'number'        => 1,
+                    'sha256_bz2'    => '17896b17df8827463cf0c70e107e63b39b42cdf0a2b33ce32367b573ef6a2646',
+                    'sha256_gz'     => '09589750295e9f56e1c9fe5b75c65318c382093e4b89c2325973075afb469e85',
+                    'sha256_xz'     => 'f6af9e4e2376f1aadee8d1b4b7a60c5080bf53fe8816e141c78d4f72c93c5075',
+                    'date'          => '13 Sep 2018',
                     'baseurl'       => 'https://downloads.php.net/~cmb/',
             ),
 		),
