@@ -96,7 +96,7 @@ $QA_RELEASES = array(
                         'sha256_gz'     => 'bab813bfbc0b3b853a917440e350432608998125f1578a1078508fc06d62c416',
                         'sha256_xz'     => '52b14d1017863da157e7126a01fa46e11a9c0ceacef0fbcd5e84b1246235d805',
                         'date'          => '27 Sep 2018',
-                        'baseurl'       => 'https://downloads.php.net/~remi/',
+                        'baseurl'       => 'https://downloads.php.net/~pollita/',
                 ),
         ),
 		'7.3.0' => array(
