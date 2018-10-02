@@ -594,11 +594,11 @@ END;</pre></p>
 <p><b>Description:</b><br/>
 This section takes no value.  It merely provides a simple marker for tests that
 MUST be run as CGI, even if there is no --POST-- or --GET-- sections in the test
-file. Currently only available with server-tests.php.</p>
+file.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Test Script Support:</b><br/>
-server-tests.php</p>
+run-tests.php (as of PHP 7.3.0), server-tests.php</p>
 <p><b>Format:</b><br/>
 No value, just the --CGI-- statement.</p>
 <p><b>Example 1 (snippet):</b><br/>
