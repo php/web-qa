@@ -21,6 +21,7 @@ common_header();
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
 [<a href="#capture_stdio_section">--CAPTURE_STDIO--</a>]<br/>
+[<a href="#extensions_section">--EXTENSIONS--</a>]<br/>
 [<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
 [<a href="#cookie_section">--COOKIE--</a>]<br/>
 [<a href="#stdin_section">--STDIN--</a>]<br/>
@@ -156,6 +157,27 @@ STDIN STDOUT</pre>
 STDIN STDOUT STDERR</pre>
 </p>
 <p><b>Example 3(full):</b> <a href="sample_tests/capture_stdio_3.php">capture_stdio_3.phpt</a></p>
+
+<dt id="extensions_section">--EXTENSIONS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+Additional required shared extensions to be loaded when running the test. When
+the run-tests.php script is executed it loads all the extensions that are
+available and enabled for that particular PHP at the time. If the test requires
+additional extension to be loaded and they aren't loaded prior to running the
+test, this section loads them.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Format:</b><br/>
+A case sensitive newline separated list of extension names.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--EXTENSIONS--
+curl
+imagick
+tokenizer
+</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/extensions.php">extensions.phpt</a></p>
 </dd>
 
 <dt id="post_section">--POST--</dt>
