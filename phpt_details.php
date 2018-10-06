@@ -20,7 +20,6 @@ common_header();
 [<a href="#description_section">--DESCRIPTION--</a>]<br/>
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
-[<a href="#request_section">--REQUEST--</a>]<br/>
 [<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
 [<a href="#cookie_section">--COOKIE--</a>]<br/>
 [<a href="#stdin_section">--STDIN--</a>]<br/>
@@ -28,7 +27,6 @@ common_header();
 [<a href="#args_section">--ARGS--</a>]<br/>
 [<a href="#env_section">--ENV--</a>]<br/>
 <a href="#file_section">--FILE--</a> | <a href="#fileeof_section">--FILEEOF--</a> | <a href="#file_external_section">--FILE_EXTERNAL--</a> | <a href="#redirecttest_section">--REDIRECTTEST--</a><br/>
-[<a href="#headers_section">--HEADERS--</a>]<br/>
 [<a href="#cgi_section">--CGI--</a>]<br/>
 [<a href="#xfail_section">--XFAIL--</a>]<br/>
 [<a href="#expectheaders_section">--EXPECTHEADERS</a>--]<br/>
@@ -44,8 +42,6 @@ common_header();
 Title of test as a single line short description.</p>
 <p><b>Required:</b><br/>
 Yes</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Plain text. We recommend a single line only.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -64,8 +60,6 @@ besides being used for information, this section is completely ignored by the
 test binary.</p>
 <p><b>Required:</b><br/>
 No</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Plain text, multiple lines.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -85,8 +79,6 @@ If the test is part of a TesFest event, then # followed by the name of the event
 and the date (YYYY-MM-DD) on the second line.</p>
 <p><b>Required:</b><br/>
 It's required for credit during TestFests.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Name Email<br/>
 [Event]</p>
@@ -115,8 +107,6 @@ criteria into a file call skipif.inc and then including that file in the
 and reduces future code maintenance.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 PHP code enclosed by PHP tags.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -131,38 +121,6 @@ PHP code enclosed by PHP tags.</p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
 </dd>
 
-<dt id="request_section">--REQUEST--</dt>
-<dd>
-<p><b>Description:</b><br/>
-Settings used for building the URL in an HTTP request. Currently only available
-with server-tests.php.</p>
-<p><b>Required:</b><br/>
-No.</p>
-<p><b>Test Script Support:</b><br/>
-server-tests.php</p>
-<p><b>Format:</b><br/>
-PHP source which is run through eval() and then split into key value pairs, one
-pair per line. Do not use &lt;?php and ?&gt; wrapper tags.</p>
-<p>Valid settings for this section include:
-<ul>
-<li>SCRIPT_NAME - The inital part of the request url</li>
-<li>PATH_INFO - The pathinfo part of a request url</li>
-<li>FRAGMENT - The fragment section of a url (after #)</li>
-<li>QUERY_STRING - The query part of a url (after ?)</li>
-</ul>
-</p>
-<p><b>Example 1 (snippet):</b><br/>
-<pre>--REQUEST--
-return &lt;&lt;&lt;END
-SCRIPT_NAME=/nothing.php
-QUERY_STRING=$filename
-END;</pre>
-</p>
-<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
-<p><b></b><br/>
-</p>
-</dd>
-
 <dt id="post_section">--POST--</dt>
 <dd>
 <p><b>Description:</b><br/>
@@ -172,8 +130,6 @@ use of the CGI binary instead of the usual CLI one.</p>
 No.</p>
 <p><b>Requirements:</b><br/>
 PHP CGI binary.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Follows the HTTP post data format.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -314,8 +270,6 @@ the CGI binary instead of the usual CLI one.</p>
 No.</p>
 <p><b>Requirements:</b><br/>
 PHP CGI binary.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 A single line of text passed as the GET data to the script.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -370,8 +324,6 @@ use this to input some thing to the php script</pre></p>
 To be used if you need a specific php.ini setting for the test.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Key value pairs. One setting per line. Content that is not a valid ini setting may cause failures.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -394,8 +346,6 @@ session.save_handler=files</pre></p>
 A single line defining the arguments passed to php.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 A single line of text that is passed as the argument(s) to the PHP CLI.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -411,32 +361,14 @@ Configures environment variables such as those found in the $_SERVER global
 array.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
-PHP source which is run through eval() and then split into key value pairs, one
-pair per line. Do not use &lt;?php and ?&gt; tags.</p>
-<p>Some variables are made easily available for use in this section, they include:</p>
-<ul>
-<li>$filename - full native path to file, will become PATH_TRANSLATED</li>
-<li>$filepath - =dirname($filename)</li>
-<li>$scriptname - this is what will become SCRIPT_NAME unless you override it</li>
-<li>$docroot - the equivelant of DOCUMENT_ROOT under Apache</li>
-<li>$cwd - the directory that the test is being initiated from</li>
-<li>$this-&gt;conf - all server-tests configuration vars</li>
-<li>$this-&gt;env - all environment variables that will get passed to the test</li>
-</ul>
+Key value pairs. One setting per line.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--ENV--
-return &lt;&lt;&lt;END
-REDIRECT_URL=$scriptname
-PATH_TRANSLATED=c:\apache\1.3.27\htdocs\nothing.php
-QUERY_STRING=$filename
-PATH_INFO=/nothing.php
-SCRIPT_NAME=/phpexe/php.exe/nothing.php
-SCRIPT_FILENAME=c:\apache\1.3.27\htdocs\nothing.php
-END;</pre></p>
-<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
+SCRIPT_NAME=/frontcontroller10.php
+REQUEST_URI=/frontcontroller10.php/hi
+PATH_INFO=/hi</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample018.php">sample018.phpt</a></p>
 </dd>
 
 <dt id="file_section">--FILE--</dt>
@@ -445,8 +377,6 @@ END;</pre></p>
 The test source code.</p>
 <p><b>Required:</b><br/>
 One of the FILE type sections is required.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 PHP source code enclosed by PHP tags.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -568,37 +498,14 @@ Note: The destination tests for this example are not included. See the PDO
 extension tests for reference to live tests using this section.</p>
 </dd>
 
-<dt id="headers_section">--HEADERS--</dt>
-<dd>
-<p><b>Description:</b><br/>
-Header to be used when sending the request. Currently only available with
-server-tests.php.</p>
-<p><b>Required:</b><br/>
-No.</p>
-<p><b>Test Script Support:</b><br/>
-server-tests.php</p>
-<p><b>Format:</b><br/>
-PHP source which is run through eval() and then split into key value pairs. Do
-not use &lt;?php and ?&gt; wrapper tags.</p>
-<p><b>Example 1 (snippet):</b><br/>
-<pre>--HEADERS--
-return &lt;&lt;&lt;END
-Content-Type=multipart/form-data; boundary=---------------------------240723202011929
-Content-Length=862
-END;</pre></p>
-<p><b>Example 1 (full):</b> <a href="sample_tests/sample015.php">sample015.phpt</a></p>
-</dd>
-
 <dt id="cgi_section">--CGI--</dt>
 <dd>
 <p><b>Description:</b><br/>
 This section takes no value.  It merely provides a simple marker for tests that
 MUST be run as CGI, even if there is no --POST-- or --GET-- sections in the test
-file.</p>
+file.  Available as of PHP 7.3.0.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php (as of PHP 7.3.0), server-tests.php</p>
 <p><b>Format:</b><br/>
 No value, just the --CGI-- statement.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -636,19 +543,16 @@ have the same value or the test fails. Additional headers found in the actual
 tests while running are ignored.</p>
 <p><b>Required:</b><br/>
 No.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 HTTP style headers. May include multiple lines.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--EXPECTHEADERS--
 Status: 404</pre></p>
-<p><b>Example 1 (full):</b> <a href="sample_tests/sample004.php">sample004.phpt</a></p>
-<p><b>Example 2 (snippet):</b><br/>
+<p><b>Example 1 (snippet):</b><br/>
 <pre>--EXPECTHEADERS--
 Content-type: text/html; charset=UTF-8
 Status: 403 Access Denied</pre></p>
-<p><b>Example 2 (full):</b> <a href="sample_tests/sample018.php">sample018.phpt</a><br/>
+<p><b>Example 1 (full):</b> <a href="sample_tests/sample018.php">sample018.phpt</a><br/>
 Note: The destination tests for this example are not included. See the phar
 extension tests for reference to live tests using this section.</p>
 </dd>
@@ -660,8 +564,6 @@ The expected output from the test script. This must match the actual output from
 the test script exactly for the test to pass.</p>
 <p><b>Required:</b><br/>
 One of the EXPECT type sections is required.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Plain text. Multiple lines of text are allowed.</p>
 <p><b>Example 1 (snippet):</b><br/>
@@ -706,8 +608,6 @@ of this is to use %s and %d to match the file path and line number which are
 output by PHP Warnings.</p>
 <p><b>Required:</b><br/>
 One of the EXPECT type sections is required.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Plain text including tags which are inserted to represent different types of
 output which are not guaranteed to have the same value on subsequent runs or
@@ -820,8 +720,6 @@ An alternative of --EXPECT--. This form allows the tester to specify the result
 in a regular expression.</p>
 <p><b>Required:</b><br/>
 One of the EXPECT type sections is required.</p>
-<p><b>Test Script Support:</b><br/>
-run-tests.php, server-tests.php</p>
 <p><b>Format:</b><br/>
 Plain text including regular expression patterns which represent data that can
 vary between subsequent runs of a test or when run on different platforms.</p>
