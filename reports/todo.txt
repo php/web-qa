@@ -1,5 +1,5 @@
 Reports per week :
-SELECT VERSION,COUNT(id),  YEAR(DATE),WEEK(DATE) FROM reports 
+SELECT VERSION,COUNT(id),  YEAR(DATE),WEEK(DATE) FROM reports
 GROUP BY VERSION,YEAR(DATE),WEEK(DATE)
 
 If we have time : graph to see reports sent by version and by date

@@ -12,9 +12,9 @@ common_header();
 <h1>Sample Test: sample025.phpt</h1>
 <p>Back to &quot;<a href="../phpt_details.php">PHPT Test File Layout</a>&quot;</p>
 <pre>--TEST--
-Test imap_append() function : basic functionality 
+Test imap_append() function : basic functionality
 --SKIPIF--
-&lt;?php 
+&lt;?php
 require_once(dirname(__FILE__).&#039;/skipif.inc&#039;);
 ?&gt;
 --FILE--
@@ -35,7 +35,7 @@ if (!is_resource($imap_stream)) {
 }
 
 $mb_details = imap_mailboxmsginfo($imap_stream);
-echo &quot;Add a couple of msgs to new mailbox &quot; . $mb_details-&gt;Mailbox . &quot;\n&quot;; 
+echo &quot;Add a couple of msgs to new mailbox &quot; . $mb_details-&gt;Mailbox . &quot;\n&quot;;
 var_dump(imap_append($imap_stream, $mb_details-&gt;Mailbox
                    , &quot;From: webmaster@something.com\r\n&quot;
                    . &quot;To: info@something.com\r\n&quot;
@@ -43,15 +43,15 @@ var_dump(imap_append($imap_stream, $mb_details-&gt;Mailbox
                    . &quot;\r\n&quot;
                    . &quot;this is a test message, please ignore\r\n&quot;
                    ));
-                   
+
 var_dump(imap_append($imap_stream, $mb_details-&gt;Mailbox
                    , &quot;From: webmaster@something.com\r\n&quot;
                    . &quot;To: info@something.com\r\n&quot;
                    . &quot;Subject: Another test\r\n&quot;
                    . &quot;\r\n&quot;
                    . &quot;this is another test message, please ignore it too!!\r\n&quot;
-                   ));     
-                   
+                   ));
+
 $check = imap_check($imap_stream);
 echo &quot;Msg Count after append : &quot;. $check-&gt;Nmsgs . &quot;\n&quot;;
 
@@ -61,7 +61,7 @@ var_dump(imap_headers($imap_stream));
 imap_close($imap_stream);
 ?&gt;
 --CLEAN--
-&lt;?php 
+&lt;?php
 require_once(&#039;clean.inc&#039;);
 ?&gt;
 --EXPECTF--

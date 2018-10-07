@@ -28,7 +28,7 @@
 		if (in_array($version, $QA_RELEASES['reported'])) {
 			mail ("qa-reports@lists.php.net", "Test results for $version [$status]", base64_decode($_POST['php_test_data']), "From: noreply@php.net");
 		}
-			
+
 		// Aggregator (http://qa.php.net/reports/)
 		include 'reports/parserfunc.php';
 		$array = parse_phpmaketest($version, $status, base64_decode($_POST['php_test_data']));

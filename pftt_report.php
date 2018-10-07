@@ -68,7 +68,7 @@ if ((strpos($revision, ".")===FALSE and substr($revision, 0, 1)!="r") or strlen(
 }
 
 // validate report_file
-if ($_FILES['report_file']['size'] > 600000 or $_FILES['report_file']['size'] < 100 ) {	
+if ($_FILES['report_file']['size'] > 600000 or $_FILES['report_file']['size'] < 100 ) {
 	// some PhpUnit reports can be quite large
 	exit_error('Invalid report file size');
 } else if ($_FILES['report_file']['type']!="text/html") {

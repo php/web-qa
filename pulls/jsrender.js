@@ -98,7 +98,7 @@ function View( context, path, parentView, data, template ) {
 		// Set additional context on this view (which will modify the context inherited from the parent, and be inherited by child views)
 		ctx : context && context === parentContext
 			? parentContext
-			: (parentContext ? extend( extend( {}, parentContext ), context ) : context||{}), 
+			: (parentContext ? extend( extend( {}, parentContext ), context ) : context||{}),
 			// If no jQuery, extend does not support chained copies - so limit to two parameters
 		parent: parentView
 	};
@@ -129,7 +129,7 @@ extend( $, {
 				return view.onElse ? view.onElse( this, arguments ) : "";
 			},
 			each: function() {
-				var i, 
+				var i,
 					self = this,
 					result = "",
 					args = arguments,
@@ -139,7 +139,7 @@ extend( $, {
 				for ( i = 0; i < l; i++ ) {
 					result += args[ i ] ? render( args[ i ], content, self.ctx || view.ctx, view, self._path, self._ctor ) : "";
 				}
-				return l ? result 
+				return l ? result
 					// If no data parameter, use the current $data from view, and render once
 					:  result + render( view.data, content, view.ctx, view, self._path, self.tag );
 			},
@@ -268,27 +268,27 @@ extend( $, {
 			if ( !tagFn ) {
 				return "";
 			}
-			
+
 			content = content && view.tmpl.nested[ content - 1 ];
 			tagProperties.tmpl = tagProperties.tmpl || content || undefined;
 			// Set the tmpl property to the content of the block tag, unless set as an override property on the tag
-		
+
 			if ( presenters && presenters[ tag ]) {
-				ctx = extend( extend( {}, tagProperties.ctx ), tagProperties );  
-				delete ctx.ctx;  
-				delete ctx._path;  
+				ctx = extend( extend( {}, tagProperties.ctx ), tagProperties );
+				delete ctx.ctx;
+				delete ctx._path;
 				delete ctx.tmpl;
-				tagProperties.ctx = ctx;  
+				tagProperties.ctx = ctx;
 				tagProperties._ctor = tag + (hash ? "=" + hash.slice( 0, -1 ) : "");
 
 				tagProperties = extend( extend( {}, tagFn ), tagProperties );
 				tagFn = viewsNs.tags.each; // Use each to render the layout template against the data
-			} 
+			}
 
 			tagProperties._encode = encode;
 			tagProperties._view = view;
 			ret = tagFn.apply( tagProperties, args.length > 5 ? slice.call( args, 5 ) : [view.data] );
-			return ret || (ret === undefined ? "" : ret.toString()); // (If ret is the value 0 or false or null, will render to string) 
+			return ret || (ret === undefined ? "" : ret.toString()); // (If ret is the value 0 or false or null, will render to string)
 		}
 	},
 

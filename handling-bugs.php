@@ -91,7 +91,7 @@ Here are descriptions for each status:</p>
         <dd>
 			This status is deprecated and can no longer be selected during
 			modifications of bugs. Always use "Not a Bug" instead now. The originial
-			use was: 
+			use was:
             <i>If this almost the same bug, both bugs are found 'duplicate' later
             on and have both useful information.  Also mention what bug it's a
             duplicate of with a full url to the report this is duplicate of.</i>
@@ -99,8 +99,8 @@ Here are descriptions for each status:</p>
 
         <dt>Critical</dt>
         <dd>
-            Only bugs that affect most/all users and/or are in the engine or 
-            ext/standard.  Only Verified and reproduced bugs in the latest 
+            Only bugs that affect most/all users and/or are in the engine or
+            ext/standard.  Only Verified and reproduced bugs in the latest
             Git revision can be marked critical.
         </dd>
 
@@ -117,37 +117,37 @@ Here are descriptions for each status:</p>
             have just analyzed it.  Also, add a comment.  If you are unsure why it
             exists then use 'verified' instead.
         </dd>
-    
+
         <dt>Verified</dt>
         <dd>
             If you're able to reproduce this bug with the information given.
             Be sure to test with the latest Git.  Typically you aren't sure why
             it exists you just know it does and have confirmed it.
         </dd>
-    
+
         <dt>Suspended</dt>
         <dd>
-            Usually used when there might be a fix in future and/or it relies on 
+            Usually used when there might be a fix in future and/or it relies on
             something external to be fixed first.
         </dd>
-    
+
         <dt>Wont fix</dt>
         <dd>When something is not considered a bug or the bug is not fixable.</dd>
-    
+
         <dt>No feedback</dt>
         <dd>
             If no answer have been given by the reporter after we've asked them
-            something.  Sometimes you will ask for an example script or ask the 
+            something.  Sometimes you will ask for an example script or ask the
             reporter to test using Git.
         </dd>
-    
+
         <dt>Feedback</dt>
         <dd>
             You're asking the reporter for more information such as please use
             Git revision, and/or the smallest possible test script to reproduce the
             error, and/or a value for a certain PHP directive.
         </dd>
-    
+
         <dt>Not a Bug (old: Bogus)</dt>
         <dd>
 		   This bug is not a bug, support related or just an assumed bug or the
@@ -183,31 +183,31 @@ php-bugs@lists.php.net being the default (most go here).  Here's a list:</p>
         <dd><a href="http://news.php.net/group.php?group=php.mirrors">php-mirrors@lists.php.net</a></dd>
 </dl>
 
-<p>Reclassifying will immediatly change which mailing list is used.  If you 
-reclassify a bug and don't leave a comment then no email is sent to the mailing list.  
+<p>Reclassifying will immediatly change which mailing list is used.  If you
+reclassify a bug and don't leave a comment then no email is sent to the mailing list.
 So, be sure to leave a comment.</p>
 
 <h2>Tips and links</h2>
 <ul>
     <li>
-        The Jani Javascript bug popup window (right click to bookmark): 
+        The Jani Javascript bug popup window (right click to bookmark):
         <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="http://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
     </li>
     <li>
         Look at the <a href="http://bugs.php.net/stats.php">raw bug stats</a>.
     </li>
     <li>
-        Not leaving a comment means no email will be sent to the mailing list. 
+        Not leaving a comment means no email will be sent to the mailing list.
         (all quickfix options leave comments)
     </li>
     <li>
-        If a version is from Git be sure to label it in the form: 
+        If a version is from Git be sure to label it in the form:
         <b>x.y.z-dev</b>  An example is: 5.6.0-dev or 7.0.0-dev.
     </li>
     <li>
-        If you have a question either email the 
-        <a href="mailto:internals@lists.php.net">internals@lists.php.net</a> 
-        mailing list or check out the #php.pecl channel in IRC on 
+        If you have a question either email the
+        <a href="mailto:internals@lists.php.net">internals@lists.php.net</a>
+        mailing list or check out the #php.pecl channel in IRC on
         <a href="http://www.irchelp.org/irchelp/networks/efnet.txt">EFNET</a>.
     </li>
 </ul>

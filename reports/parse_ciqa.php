@@ -41,12 +41,12 @@ foreach ($rss->entry as $test) {
                    .'./architecture=([^/]{1,})/([0-9]{1,})@', (string) $linkAttr['href'], $pos);
 
     if (!$z) continue;
-    
+
     // check if we already did this
     if (isset($latestVersion[ $pos[1] ]) && $latestVersion[ $pos[1] ] >= (int) $pos[3]) {
         continue;
     }
-    
+
 
     $elem = array(
         'id' => (int) $pos[3],
@@ -57,11 +57,11 @@ foreach ($rss->entry as $test) {
     );
     //keep it !
     $buildArray[] = $elem;
-    
+
     //  update what has been done so far
     if (!isset($newLatestVersion[ $pos[1] ]) || $newLatestVersion[ $pos[1] ] < $elem['id'])
         $newLatestVersion[ $pos[1] ] = $elem['id'];
-    
+
     // stop at 5 reports (take time to parse)
     if (count($buildArray) == 5) break;
 }
@@ -77,33 +77,33 @@ echo "We have ".count($buildArray)." builds to parse ... \n\n";
  */
 $failingTests = array();
 $successfulTests = array();
- 
+
 foreach ($buildArray as $build) {
     printf(" * #%s (%5s) - %-30s ", $build['id'], $build['version'], $build['archi']);
-    
-    // retrieve and parse junit artefact    
+
+    // retrieve and parse junit artefact
     $junitxml = new SimpleXMLElement($build['url'].'/artifact/junit.xml', 0, true);
     //$junitxml = new SimpleXMLElement('sample-junit.xml', LIBXML_NOCDATA, true);
-    
+
     foreach ($junitxml->testsuite as $suite) {
         foreach ($suite->testsuite as $subsuite) {
             foreach ($subsuite->testcase as $case) {
                 $attr = $case->attributes();
-                
+
                 if (substr($attr['classname'], 0, 8) == 'php-src.') {
                     $uri = '/'.str_replace('.', '/', substr($attr['classname'], 8)).'/'.
                            substr($attr['name'], 0, strpos($attr['name'], '.phpt')+5);
                 } else continue;
-                
+
                 // add it to array
                 if (isset($case->failure)) {
                     $fail = $case->failure->attributes();
-                    
-                    if ($fail->type == 'FAILED') 
+
+                    if ($fail->type == 'FAILED')
                         $failingTests[$build['version']][$uri] = trim(
                             preg_replace(
-                                '@ [^\s]{1,}'.substr($uri, 0, -1).'@', 
-                                ' %s/'.basename(substr($uri, 0, -1)), 
+                                '@ [^\s]{1,}'.substr($uri, 0, -1).'@',
+                                ' %s/'.basename(substr($uri, 0, -1)),
                                 (string) $case->failure
                             )
                         );
@@ -113,7 +113,7 @@ foreach ($buildArray as $build) {
                     }
                 } elseif (isset($case->skipped)) {
                     // do nothing
-                    
+
                 } else {
                     // success
                     $successfulTests[$build['version']][$uri] = true;
@@ -122,9 +122,9 @@ foreach ($buildArray as $build) {
         }
     }
     unset($junitxml); // free memory
-    
-    printf("Success: %5s   Fail: %5s  (from all builds parsed)\n", 
-        count($successfulTests[$build['version']]), 
+
+    printf("Success: %5s   Fail: %5s  (from all builds parsed)\n",
+        count($successfulTests[$build['version']]),
         count($failingTests[$build['version']])
     );
 }
@@ -137,15 +137,15 @@ require '../include/functions.php';
 
 foreach ($successfulTests as $version => $successTests) {
     echo "* ".$version." ";
-    
+
     $firstArray = array ();
-    
+
     // determine status (success or failure ?)
-    if (count($failingTests[$version]) == 0) 
+    if (count($failingTests[$version]) == 0)
         $firstArray['status'] = 'success';
-    else 
+    else
         $firstArray['status'] = 'failed';
-    
+
     // determine correct version
     // hard because we only have "5.4" and we know it's dev, so find next coming version ?
     foreach ($QA_RELEASES as $ver => $releaseData) {
@@ -154,35 +154,35 @@ foreach ($successfulTests as $version => $successTests) {
             break;
         }
     }
-    
+
     if (!isset($firstArray['version'])) {
         // for trunk atm
         die('cannot determine version for '.$version);
     }
-    
+
     // email
     $firstArray['userEmail'] = 'ciqa'; // magic value
-    
+
     // date
     $firstArray['date'] = time();
-    
+
     $firstArray['phpinfo'] = '';
     $firstArray['buildEnvironment'] = '';
-    
+
     // failed tests
     $firstArray['failedTest'] = array_keys($failingTests[$version]);
-    
+
     // expected Failed Test
     $firstArray['expectedFailedTest'] = array();
-    
+
     // success
     $firstArray['succeededTest'] = array_keys($successTests);
-    
+
     // tests
     foreach ($failingTests[$version] as $test => $diff) {
         $firstArray['tests'][$test] = array ('output' => '', 'diff' => str_replace("\n", "\x0d\n", $diff));
     }
-    
+
     $status = insertToDb_phpmaketest($firstArray, $QA_RELEASES);
     if ($status === true) echo "SUCCESS !\n";
     else echo " ERROR :(  \n";

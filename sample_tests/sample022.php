@@ -41,7 +41,7 @@ $key = ftok(dirname(__FILE__).&quot;/003.phpt&quot;, &#039;q&#039;);
 $s = shm_attach($key);
 shm_remove($s);
 ?&gt;
---EXPECTF--	
+--EXPECTF--
 Warning: shm_detach() expects exactly 1 parameter, 0 given in %ssample022.php on line %d
 NULL
 

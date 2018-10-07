@@ -10,8 +10,8 @@ common_header();
     if (count($_POST) > 0) {
         mail ("php-qa@lists.php.net", "PHP Test results", $d, "From: noreply@php.net");
         print("thank you for your submission.");
-    } else {    
-        print("Your submission was empty, please try again.");  
-    }  
+    } else {
+        print("Your submission was empty, please try again.");
+    }
 common_footer();
 ?>

@@ -2,7 +2,7 @@
 
 class BaseClass {
 	var $class_name = "BaseClass";
-	
+
 	function BaseClass($value) {
 		print "value is '$value'\n";
 	}
@@ -14,7 +14,7 @@ class BaseClass {
 
 class ChildClass {
 	var $class_name = "ChildClass";
-	
+
 	function ChildClass($value, $new_value) {
 		BaseClass::BaseClass($value);
 		print "new value is '$new_value'\n";

@@ -19,7 +19,7 @@
 /**
  * Insert PHP make test results in SQLite database
  *
- * The following structure must be used as first array : 
+ * The following structure must be used as first array :
  *  [status]    => enum(failed, success)
  *  [version]   => string   - example: 5.4.1-dev
  *  [userEmail] => mangled
@@ -37,27 +37,27 @@
  * @param array releases we accept (so that we don't accept a report that claims to be PHP 8.1 for example)
  * @return boolean success or not (for the moment, error leads to a call to 'exit;' ... not good I know)
  */
-function insertToDb_phpmaketest($array, $QA_RELEASES = array()) 
+function insertToDb_phpmaketest($array, $QA_RELEASES = array())
 {
     if (!is_array($array)) {
         // impossible to fetch data. We'll record this error later ...
-        
+
     } else {
-        if (strtolower($array['status']) == 'failed') 
+        if (strtolower($array['status']) == 'failed')
             $array['status'] = 0;
-            
-        elseif (strtolower($array['status']) == 'success') 
+
+        elseif (strtolower($array['status']) == 'success')
             $array['status'] = 1;
-            
-        else 
+
+        else
             die('status unknown: '.$array['status']);
-            
+
         if (!is_valid_php_version($array['version'], $QA_RELEASES)) {
             exit('invalid version');
         }
-        
+
         $dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
-        
+
         $queriesCreate = array (
             'failed' => 'CREATE TABLE IF NOT EXISTS failed (
                   `id` integer PRIMARY KEY AUTOINCREMENT,
@@ -89,8 +89,8 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
                   user_email varchar(64) default null
             )',
         );
-        
-        
+
+
         if (!file_exists($dbFile)) {
             //Create DB
             $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
@@ -104,15 +104,15 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             $dbi->close();
         }
         $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
-        
+
         // handle tests with no success
         if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
-        
+
         $query = <<<'SQL'
 INSERT INTO `reports` (
     `id`, `date`, `status`, `nb_failed`, `nb_expected_fail`, `success`, `build_env`, `phpinfo`, `user_email`
 ) VALUES (
-    null, datetime(:date, 'unixepoch', 'localtime'), :status, :nb_failed, 
+    null, datetime(:date, 'unixepoch', 'localtime'), :status, :nb_failed,
     :nb_expected_fail, :success, :build_env, :phpinfo, :user_email
 )
 SQL;
@@ -139,7 +139,7 @@ SQL;
 
         foreach ($array['failedTest'] as $name) {
             if (substr($name, 0, 1) != '/') $name = '/'.$name;
-            
+
             $test = $array['tests'][$name];
             $query = <<<'SQL'
 INSERT INTO `failed` (`id`, `id_report`, `test_name`, `signature`, `output`, `diff`)
@@ -155,9 +155,9 @@ SQL;
             if ($dbi->lastErrorCode() != '') {
                 echo "ERROR when inserting failed test : ".$dbi->lastErrorMsg()."\n";
                 exit;
-            } 
+            }
         }
-        
+
         foreach ($array['expectedFailedTest'] as $name) {
             if (substr($name, 0, 1) != '/') $name = '/'.$name;
             $query = <<<'SQL'
@@ -171,7 +171,7 @@ SQL;
             if ($dbi->lastErrorCode() != '') {
                 echo "ERROR when inserting expected fail test : ".$dbi->lastErrorMsg()."\n";
                 exit;
-            } 
+            }
         }
 
         foreach ($array['succeededTest'] as $name) {
@@ -180,8 +180,8 @@ SQL;
             $stmt = $dbi->prepare($query);
             $stmt->bindValue(':name', $name, SQLITE3_TEXT);
             $res = $stmt->execute();
-                                
-            if ($res->numColumns() > 0) { 
+
+            if ($res->numColumns() > 0) {
                 // hit ! do nothing atm
             } else {
                 $query = <<<'SQL'
@@ -191,16 +191,16 @@ SQL;
                 $stmt = $dbi->prepare($query);
                 $stmt->bindValue(':id_report', $reportId, SQLITE3_INTEGER);
                 $stmt->bindValue(':test_name', $name, SQLITE3_TEXT);
-                
+
                 @$stmt->execute();
                 if ($dbi->lastErrorCode() != '') {
                     echo "ERROR when inserting succeeded test : ".$dbi->lastErrorMsg()."\n";
                     exit;
-                } 
+                }
             }
         }
         $dbi->close();
-        
+
         // remove cache
         if (file_exists($dbFile.'.cache'))
             unlink($dbFile.'.cache');
@@ -209,7 +209,7 @@ SQL;
 }
 
 /**
- * Parse raw data from 'make test' and create array 
+ * Parse raw data from 'make test' and create array
  * suitable to function insertToDb_phpmaketest()
  *
  * @param $version string  PHP version (extracted from GET in buildtest-process.php \
@@ -224,12 +224,12 @@ function parse_phpmaketest($version, $status=null, $file)
     $extract = array();
 
     $extract['version'] = $version;
-    
+
     if (in_array($status, array('failed', 'success', 'unknown')))
         $extract['status'] = $status;
     else
         $extract['status'] = null;
-        
+
     $extract['userEmail'] = null;
 
     $extract['date'] = time();
@@ -250,32 +250,32 @@ function parse_phpmaketest($version, $status=null, $file)
         if (preg_match('@^={5,}@', $row) && $currentPart != 'phpinfo' && $currentPart != 'buildEnvironment') {
             // =======
             $currentPart = '';
-            
+
         } elseif ($currentPart == '' && trim($row) == 'FAILED TEST SUMMARY') {
-            $currentPart = 'failedTest';    
-            
+            $currentPart = 'failedTest';
+
         } elseif ($currentPart == '' && trim($row) == 'EXPECTED FAILED TEST SUMMARY') {
             $currentPart = 'expectedFailedTest';
-            
+
         } elseif ($currentPart == '' && trim($row) == 'BUILD ENVIRONMENT') {
             $currentPart = 'buildEnvironment';
             $currentTest = '';
-            
+
         } elseif (trim($row) == 'PHPINFO') {
             $currentPart = 'phpinfo';
             $currentTest = '';
-            
+
         } elseif ($currentPart == 'failedTest' || $currentPart == 'expectedFailedTest') {
             preg_match('@(?<!via) \[([^\]]{1,})\]\s*(?:$|XFAIL)@', $row, $tab);
             if (count($tab) == 2)
-                if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart])) 
+                if (!isset($extract[$currentPart])  || !in_array($tab[1], $extract[$currentPart]))
                     $extract[$currentPart][] = $tab[1];
-                    
+
         } elseif ($currentPart == 'buildEnvironment') {
             if (preg_match('@User\'s E-mail: (.*)$@', $row, $tab)) {
                 //User's E-mail
                 $extract['userEmail'] = trim($tab[1]);
-                
+
                 if ($extract['userEmail'] == 'ciqa') {
                     //reserved value !
                     $extract['userEmail'] = '';
@@ -284,21 +284,21 @@ function parse_phpmaketest($version, $status=null, $file)
             if (!isset($extract[$currentPart]))
                 $extract[$currentPart] = '';
             $extract[$currentPart] .= $row."\n";
-            
+
         } elseif ($currentPart == 'phpinfo') {
             if (!isset($extract[$currentPart]))
                 $extract[$currentPart] = '';
             $extract[$currentPart] .= $row."\n";
-            
+
         } elseif (substr(trim($row), -5) == '.phpt') {
             $currentTest = trim($row);
             continue;
         }
         if ($currentPart == '' && $currentTest != '') {
-            if (!isset($extract['outputsRaw'][$currentTest])) 
+            if (!isset($extract['outputsRaw'][$currentTest]))
                 $extract['outputsRaw'][$currentTest] = '';
             $extract['outputsRaw'][$currentTest] .= $row."\n";
-            
+
         }
     }
     // 2nd try to cleanup name
@@ -329,14 +329,14 @@ function parse_phpmaketest($version, $status=null, $file)
         $diff = '';
         $startDiff = false;
         $output = explode("\n", $output);
-        
+
         foreach ($output as $row) {
             if (preg_match('@^={5,}(\s)?$@', $row)) {
                 if ($outputTest != '') $startDiff = true;
-                
+
             } elseif ($startDiff === false) {
                 $outputTest .= $row."\n";
-                
+
             } elseif (preg_match('@^[0-9]{1,}@', $row)) {
                 $diff .= $row."\n";
             }
@@ -360,6 +360,6 @@ function parse_phpmaketest($version, $status=null, $file)
         else
             $extract['status'] = 'success';
     }
-    
+
     return $extract;
 }

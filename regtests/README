@@ -58,7 +58,7 @@ directory
 
 
 #:>. ./test/compare
-this will run diff over the outputs and put the results in 
+this will run diff over the outputs and put the results in
 test/compare.out
 
 

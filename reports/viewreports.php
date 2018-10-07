@@ -41,7 +41,7 @@ if (!$database) {
 }
 
 // GET infos from DB
-$query = 'SELECT id,signature, COUNT(*) as cpt, output, diff FROM failed 
+$query = 'SELECT id,signature, COUNT(*) as cpt, output, diff FROM failed
 WHERE test_name=:test_name
 GROUP BY diff ORDER BY COUNT(*) desc';
 $stmt = $database->prepare($query);
@@ -93,7 +93,7 @@ common_header();
 <script src="sorttable.js"></script>
 <div style="margin:10px">
 <h1><a href="/reports/">
-<img title="Go back home" src="home.png" border="0" 
+<img title="Go back home" src="home.png" border="0"
 style="vertical-align:middle;" /></a>
 <?php
 echo 'Test: '.$testName.' - Version '.$version.' &nbsp; &nbsp; ';
@@ -164,8 +164,8 @@ if ($count === 1) {
 <br /><br />
 <style>
 .diffClass {
-    overflow: auto; 
-    max-height: 200px; 
+    overflow: auto;
+    max-height: 200px;
     max-width: 100%;
     border: 1px solid #c0c0c0;
     padding-left: 5px;
@@ -203,20 +203,20 @@ foreach ($allDiffArray as $diff) {
     foreach ($diffExploded as $line) {
         if (preg_match('@([0-9]{2,})(\-{1}) @', $line)) {
             echo '<div class="diffminus">'.htmlentities($line).'</div>'."\n";
-    
+
         } elseif (preg_match('@[0-9]{2,}[\+]{1,} @', $line)) {
             echo '<div class="diffplus">'.htmlentities($line).'</div>'."\n";
-            
+
         } else {
             // Should not happen. But print it anyway
             echo $line;
         }
     }
     echo '</div></td>'."\n  ";
-    
+
     // Complete output will be available in the future (present in DB file)
     //echo '<td width="80" align="center"><a href="#">View complete output</a></td>';
-    
+
     echo '</tr>'."\n";
     echo '<tr><td colspan="2" style="background-color: #c0c0c0;height:1px"></td></tr>';
     $i++;
