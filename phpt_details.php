@@ -20,6 +20,7 @@ common_header();
 [<a href="#description_section">--DESCRIPTION--</a>]<br/>
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
+[<a href="#capture_stdio_section">--CAPTURE_STDIO--</a>]<br/>
 [<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
 [<a href="#cookie_section">--COOKIE--</a>]<br/>
 [<a href="#stdin_section">--STDIN--</a>]<br/>
@@ -120,6 +121,41 @@ PHP code enclosed by PHP tags.</p>
 &lt;?php include('skipif.inc'); ?&gt;</pre>
 </p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
+</dd>
+
+<dt id="capture_stdio_section">--CAPTURE_STDIO--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This section enables which I/O streams the run-tests.php test script will use
+when comparing executed file to the expected output. The STDIN is the standard
+input stream. When STDOUT is enabled, the test script will also check the
+contents of the standard output. When STDERR is enabled, the test script will
+also compare the contents of the standard error I/O stream.</p>
+<p>If this section is left out of the test, by default, all three streams are
+enabled, so the tests without this section capture all and is the same as enabling
+all three manually.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Format:</b><br/>
+A case insensitive space, newline or otherwise delimited list of one or more
+strings of STDIN, STDOUT, and/or STDERR.
+</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--CAPTURE_STDIO--
+STDIN STDERR
+</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/capture_stdio_1.php">capture_stdio_1.phpt</a></p>
+<p><b>Example 2 (snippet):</b><br/>
+<pre>--CAPTURE_STDIO--
+STDIN STDOUT</pre>
+</p>
+<p><b>Example 2 (full):</b> <a href="sample_tests/capture_stdio_2.php">capture_stdio_2.phpt</a></p>
+<p><b>Example 3 (snippet):</b><br/>
+<pre>--CAPTURE_STDIO--
+STDIN STDOUT STDERR</pre>
+</p>
+<p><b>Example 3(full):</b> <a href="sample_tests/capture_stdio_3.php">capture_stdio_3.phpt</a></p>
 </dd>
 
 <dt id="post_section">--POST--</dt>
