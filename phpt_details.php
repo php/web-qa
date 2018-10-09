@@ -26,6 +26,7 @@ common_header();
 [<a href="#ini_section">--INI--</a>]<br/>
 [<a href="#args_section">--ARGS--</a>]<br/>
 [<a href="#env_section">--ENV--</a>]<br/>
+[<a href="#phpdbg_section">--PHPDBG--</a>]<br/>
 <a href="#file_section">--FILE--</a> | <a href="#fileeof_section">--FILEEOF--</a> | <a href="#file_external_section">--FILE_EXTERNAL--</a> | <a href="#redirecttest_section">--REDIRECTTEST--</a><br/>
 [<a href="#cgi_section">--CGI--</a>]<br/>
 [<a href="#xfail_section">--XFAIL--</a>]<br/>
@@ -369,6 +370,29 @@ SCRIPT_NAME=/frontcontroller10.php
 REQUEST_URI=/frontcontroller10.php/hi
 PATH_INFO=/hi</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample018.php">sample018.phpt</a></p>
+</dd>
+
+<dt id="phpdbg_section">--PHPDBG--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This section takes arbitrary phpdbg commands and executes the test file
+according to them as it would be run in the phpdbg prompt.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Format:</b><br/>
+arbitrary phpdbg commands</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--PHPDBG--
+b 4
+b del 0
+b 5
+r
+b del 1
+r
+y
+q
+</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/phpdbg_1.php">phpdbg_1.phpt</a></p>
 </dd>
 
 <dt id="file_section">--FILE--</dt>
