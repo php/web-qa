@@ -375,12 +375,12 @@ PATH_INFO=/hi</pre></p>
 <dt id="phpdbg_section">--PHPDBG--</dt>
 <dd>
 <p><b>Description:</b><br/>
-This section takes phpdbg prompt break points and executes the test file
+This section takes arbitrary phpdbg commands and executes the test file
 according to them as it would be run in the phpdbg prompt.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Format:</b><br/>
-breakpoints</p>
+arbitrary phpdbg commands</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--PHPDBG--
 b 4
