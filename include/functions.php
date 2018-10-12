@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 (c) 2001 by Marco Kaiser (bate@php.net) and the PHP Group
 */
 
@@ -27,14 +27,14 @@ function common_footer($JS = array()) {
 }
 
 function is_valid_php_version($version, $QA_RELEASES = array()) {
-	
+
 	if (isset($QA_RELEASES['reported']) && in_array($version, $QA_RELEASES['reported'])) {
 		return true;
 	}
-	
+
 	if (preg_match('@^\d{1}\.\d{1}\.\d{1,}(?:(?:RC|alpha|beta)\d{0,2})?(?:-dev)?$@i', $version)) {
 		return true;
 	}
-	
+
 	return false;
 }

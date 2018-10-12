@@ -62,19 +62,19 @@ if (in_array('Zend/tests/bug48770_3.phpt', $array['expectedFailedTest'])) echo "
 else                        echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific failedTest");
-if (in_array('ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt', $array['failedTest'])) 
+if (in_array('ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt', $array['failedTest']))
      echo " <font color='green'>OK</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test diff");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['diff']);
-if (isset($array['tests']['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
+if (isset($array['tests']['/tests/func/010.phpt']['diff']) && $strlen >= 290 )
      echo " <font color='green'>OK size:   ".$strlen." - optimal =   293</font> \n";
 else echo " <font color='red'>KO (length: $strlen should be > 290)</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($array['tests']['/tests/func/010.phpt']['output']);
-if (isset($array['tests']['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
+if (isset($array['tests']['/tests/func/010.phpt']['output']) && $strlen >= 165 )
      echo " <font color='green'>OK size:   ".$strlen." - optimal =   167</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
@@ -83,7 +83,7 @@ if (strlen($array['phpinfo']) >= 27940) echo " <font color='green'>OK size: ".st
 else                        echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "buildEnvironment");
-if (strlen($array['buildEnvironment']) >= 4500) 
+if (strlen($array['buildEnvironment']) >= 4500)
      echo " <font color='green'>OK size:  ".strlen($array['buildEnvironment'])."</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
@@ -131,7 +131,7 @@ $query = 'SELECT * FROM reports WHERE user_email = \'thisisatestmail@testdomain.
 $q = $database->query($query);
 $sqlReport = $q->fetchArray(SQLITE3_ASSOC);
 printf("%-30s", "Found report in DB");
-if (is_array($sqlReport) && isset($sqlReport['id'])) 
+if (is_array($sqlReport) && isset($sqlReport['id']))
      echo " <font color='green'>OK (id: ".$sqlReport['id'].")</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
@@ -148,8 +148,8 @@ while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
 printf("%-30s", "Found 33 failedTest");
 if (count($sqlFailed) == 33) {
     echo " <font color='green'>OK</font> \n";
-} else { 
-    echo " <font color='red'>KO (found: ".count($sqlFailed).")</font> \n"; 
+} else {
+    echo " <font color='red'>KO (found: ".count($sqlFailed).")</font> \n";
     var_dump($sqlFailed);
 }
 
@@ -161,21 +161,21 @@ list($nbExpected) = $q->fetchArray();
 printf("%-30s", "Found 17 expectedFailedTests");
 if ($nbExpected == 17) {
     echo " <font color='green'>OK</font> \n";
-} else { 
-    echo " <font color='red'>KO (found: ".$nbExpected.")</font> \n"; 
+} else {
+    echo " <font color='red'>KO (found: ".$nbExpected.")</font> \n";
 }
 
 
 
 printf("%-30s", "specific test diff");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['diff']);
-if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 ) 
+if (isset($sqlFailed['/tests/func/010.phpt']['diff']) && $strlen >= 290 )
      echo " <font color='green'>OK size:   ".$strlen." - optimal =   293</font> \n";
 else echo " <font color='red'>KO</font> \n";
 
 printf("%-30s", "specific test output");
 $strlen = strlen($sqlFailed['/tests/func/010.phpt']['output']);
-if (isset($sqlFailed['/tests/func/010.phpt']['output']) && $strlen >= 165 ) 
+if (isset($sqlFailed['/tests/func/010.phpt']['output']) && $strlen >= 165 )
      echo " <font color='green'>OK size:   ".$strlen." - optimal =   167</font> \n";
 else echo " <font color='red'>KO</font> \n";
 

@@ -15,7 +15,7 @@ common_header();
 </p>
 
 <p>
-<a href="/pftt.php">PFTT</a>   
+<a href="/pftt.php">PFTT</a>
 
 The Php Full Test Tool (PFTT) is a cross-platform test tool for PHP Core and Applications developed by Microsoft, primarily for PHP on Microsoft Windows, Windows Server and Azure.
 PFTT covers the PHP ecosystem and is designed for convenience, thoroughness and speed: PFTT can run PHPT and PhpUnit tests across a variety of scenarios, including on Apache.

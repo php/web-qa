@@ -3,7 +3,7 @@ Database format
 In db/ folder, there is one file for each PHP version.
 The sqlite files CANNOT be access directly (forced to use the report interface).
 
-Each sqlite file has the following schema : 
+Each sqlite file has the following schema :
 
 CREATE TABLE failed (
     `id` integer PRIMARY KEY AUTOINCREMENT,
@@ -24,10 +24,10 @@ CREATE TABLE reports (
     user_email varchar(64) default null
 )
 
-The SQLite file is created in parserfunc.php:insertToDb_phpmaketest() 
+The SQLite file is created in parserfunc.php:insertToDb_phpmaketest()
 if the sqlite file '$VERSION.sqlite' does not exist.
 
-Each report adds a line in `reports` table with the following fields : 
+Each report adds a line in `reports` table with the following fields :
   - id : integer auto incremented
   - date : date the report was sent
   - status : 0 = failed, 1 = success. If status is something else (should not !), we exit()
@@ -37,15 +37,15 @@ Each report adds a line in `reports` table with the following fields :
   - phpinfo : phpinfo() output
   - user_email : email mangled (user at domain dot com)
 
-Then, for each failed test, we add a line in `failed` table : 
+Then, for each failed test, we add a line in `failed` table :
  - id : integer auto increment
  - id_report : id of the report
  - test_name : path of the test. Example : "/ext/hash/tests/mhash_001.phpt"
  - output : full output of test
  - diff : diff of test compared to what was expected. There may be some glitches with spaces and %s
  - signature : binary(16) built with md5($name.'__'.$test['diff'])
-   In URLs, the binary md5 is transformed as base64 (like 03410e89b1d2737ce178a795f298ae64). 
-   It is used to track differencies between each failed test in DB : we compare only the signature, 
+   In URLs, the binary md5 is transformed as base64 (like 03410e89b1d2737ce178a795f298ae64).
+   It is used to track differencies between each failed test in DB : we compare only the signature,
    which is simpler than checking every diff.
 
 
@@ -55,7 +55,7 @@ When you do a 'make test' on your PHP sourcedir, you can send a report when some
 If you do this, the test program will build a flat file containing all failed tests output/diff
 and send it to http://qa.php.net/buildtest-process.php (via POST method).
 Previously, this page only sent the report to a dedicated mailing list (qa-reports at lists.php.net).
-We now add a parser that intercept the data and send it to the function located in 
+We now add a parser that intercept the data and send it to the function located in
 reports/parserfunc.php:parse_phpmaketest()
 This function transforms (with much regexp) the data (a big string in php format) to an array.
 This array is then given to reports/parserfunc.php:insertToDb_phpmaketest() that insert it to the

@@ -107,7 +107,7 @@ function switchVisibility(elem)
         } else {
             echo '    <td>***'.strstr($report['user_email'], ' at ').'</td>'."\n";
         }
-        
+
         echo '    <td><a href="details.php?version='.$version.'&signature='.$signature.'&idreport='.$report['id'].'">';
         echo '<img src="report.png" title="View phpinfo and environment" border="0" /></a></td>'."\n";
         echo '  </tr>'."\n";
@@ -131,8 +131,8 @@ if (isset($_GET['idreport'])) {
     echo '</pre><hr size=1 />';
     echo '<a name="buildenv"></a><h2>Build environment</h2><pre>';
     echo htmlspecialchars(str_replace(
-        $reportsArray[$idreport]['user_email'], 
-        '*** (truncated on purpose) ***', 
+        $reportsArray[$idreport]['user_email'],
+        '*** (truncated on purpose) ***',
         $reportsArray[$idreport]['build_env']
     ), ENT_QUOTES, 'UTF-8');
 

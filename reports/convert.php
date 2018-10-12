@@ -23,7 +23,7 @@ while (false !== ($entry = $d->read())) {
     if (substr($entry, -6) == 'sqlite') {
         printf("%-20s ", $entry);
         $dbi = new SQLite3('db/'.$entry, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
-        
+
         foreach ($queriesCreate as $table => $query) {
             $dbi->exec($query);
             if ($dbi->lastErrorCode() != '') echo $dbi->lastErrorMsg();
@@ -31,7 +31,7 @@ while (false !== ($entry = $d->read())) {
         // patch add field success
         @$dbi->exec('ALTER TABLE reports ADD COLUMN success unsigned int(10) NOT NULL default 0');
         echo $dbi->lastErrorMsg();
-        
+
         $dbi->close();
         echo "\n";
     }

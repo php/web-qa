@@ -20,45 +20,45 @@ common_header();
 ?>
             <h1>Creating new test files</h1>
 <h2><a name="tests-basics" href="#tests-basics" class="anchor">#</a>phpt Test Basics</h2>
-<p> The first thing you need to know about tests is that we need more!!! Although PHP works just great 
+<p> The first thing you need to know about tests is that we need more!!! Although PHP works just great
 99.99% of the time, not having a very comprehensive test suite means that we take more risks every time
-we add to or modify the PHP implementation. The second 
-thing you need to know is that if you can write PHP you can write tests. Thirdly - we are a friendly 
+we add to or modify the PHP implementation. The second
+thing you need to know is that if you can write PHP you can write tests. Thirdly - we are a friendly
 and welcoming community, don't be scared about writing to
  (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) - we won't bite!
 </p>
 <ul>
 	<li>
-  		<b>So what are phpt tests?</b>  
-		<p>A phpt test is a little script used by the php internal and quality 
-assurance teams to test PHP's functionality.  It can be used with new releases to make 
-sure they can do all the things that previous releases can, or to help find bugs in current 
+  		<b>So what are phpt tests?</b>
+		<p>A phpt test is a little script used by the php internal and quality
+assurance teams to test PHP's functionality.  It can be used with new releases to make
+sure they can do all the things that previous releases can, or to help find bugs in current
 releases.  By writing phpt tests you are helping to make PHP more stable.</p>
 	</li>
 
 	<li>
-		<b>What skills are needed to write a phpt test?</b>  
-		<p>All that is really needed to write a phpt test 
+		<b>What skills are needed to write a phpt test?</b>
+		<p>All that is really needed to write a phpt test
 is a basic understanding of the PHP language, a text editor, and a way to get the results
-of your code.  That is it.  So if you have been writing and running PHP scripts already - 
+of your code.  That is it.  So if you have been writing and running PHP scripts already -
 you have everything you need.</p>
 	</li>
 
 	<li>
-		<b>What do you write phpt tests on?</b>  
-		<p>Basically you can write a phpt test on one of the various 
-php functions available.  You can  write a test on a basic language function (a string 
-function or an array function) , or a function provided by one of PHP's numerous extensions 
+		<b>What do you write phpt tests on?</b>
+		<p>Basically you can write a phpt test on one of the various
+php functions available.  You can  write a test on a basic language function (a string
+function or an array function) , or a function provided by one of PHP's numerous extensions
 (a mysql function or a image function or a mcrypt function).</p>
-<p>You can find out what functions already have phpt tests by looking in the <a href="http://git.php.net/?p=php-src.git;a=tree;">html 
+<p>You can find out what functions already have phpt tests by looking in the <a href="http://git.php.net/?p=php-src.git;a=tree;">html
 version</a> of the git repository (ext/standard/tests/ is a good place to start looking - though not
-<i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you 
+<i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you
 can see which functions have lots of tests and which need more, although these pages only
-show which lines of code are covered by test cases so even if the coverage looks good there may 
+show which lines of code are covered by test cases so even if the coverage looks good there may
 be more interesting tests to write - for example covering error cases.</p>
 
 		<p>
-			You can find a list of functionality coverage on GCOV for the following, active branches: 
+			You can find a list of functionality coverage on GCOV for the following, active branches:
 
 			<ul style="list-style-type: square;">
 <?php
@@ -71,15 +71,15 @@ be more interesting tests to write - for example covering error cases.</p>
 			</ul>
 		</p>
 		<p>If you want more guidance than that you can always ask
-the PHP Quality Assurance Team on their mailing list 
-(<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) where they 
+the PHP Quality Assurance Team on their mailing list
+(<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) where they
 would like you to direct your attentions.</p>
 	</li>
 
 	<li>
-		<b>How is a phpt test is used?</b>  
-		<p>When a test is called by the run-tests.php script it takes various 
-parts of the phpt file to name and create a .php file.  That .php file is then executed.  The 
+		<b>How is a phpt test is used?</b>
+		<p>When a test is called by the run-tests.php script it takes various
+parts of the phpt file to name and create a .php file.  That .php file is then executed.  The
 output of the .php file is then compared to a different section of the phpt file.  If the output of
 the script "matches" the output provided in the phpt script - it passes.</p>
 	</li>
@@ -115,21 +115,21 @@ test is for.  Tests should be named according to the following list:
 			&lt;extname&gt;&lt;no&gt;.phpt (dba_003.phpt)</li>
 	</ul>
 </p>
-<p> The convention of using _basic, _error and _variation was introduced when we 
-found that writing a single test case for each function resulted in unacceptably large 
+<p> The convention of using _basic, _error and _variation was introduced when we
+found that writing a single test case for each function resulted in unacceptably large
 test cases. It's quite hard to debug problems when the test case generates 100s of lines of output.
-<p>The "basic" test case for a function should just address the single most simple 
-thing that the function is designed to do. For example, if writing a test for the sin() function 
+<p>The "basic" test case for a function should just address the single most simple
+thing that the function is designed to do. For example, if writing a test for the sin() function
 a basic test would just be to check that sin() returns the correct values for some known angles
 - eg 30, 90, 180. </p>
-<p>The "error" tests for a function are test cases which are designed to provoke errors, warnings or notices. 
-There can be more than one error case, if so the convention is to name the test cases mytest_error1.phpt, 
+<p>The "error" tests for a function are test cases which are designed to provoke errors, warnings or notices.
+There can be more than one error case, if so the convention is to name the test cases mytest_error1.phpt,
 mytest_error2.phpt and so on.<p>
-<p>The "variation" tests are any tests that don't fit into "basic" or "error" tests. For example one might 
+<p>The "variation" tests are any tests that don't fit into "basic" or "error" tests. For example one might
 use a variation tests to test boundary conditions.</p>
 
 <h3><a name="howbig" href="#howbig" class="anchor">#</a>How big is a test case?</h3>
-<p>Small. Really - the smaller the better, a good guide is no more than 10 lines of output. The reason 
+<p>Small. Really - the smaller the better, a good guide is no more than 10 lines of output. The reason
 for this is that if we break something in PHP and it breaks your test case we need to be able to find
 out quite quickly what we broke, going through 1000s of line of test case output is not easy. Having said that
 it's sometimes just not practical to stay within the 10 line guideline, in this case you can help a lot
@@ -141,7 +141,7 @@ that we learnt over time, in fact we are slowly going through and splitting test
 obvious to you as you write it, but it might not be to someone looking at it later on</p>
 
 <h3><a name="basic-format" href="#basic-format" class="anchor">#</a>Basic Format</h3>
-<p>A test must contain the sections TEST, FILE and either EXPECT or EXPECTF at a minimum.  The example 
+<p>A test must contain the sections TEST, FILE and either EXPECT or EXPECTF at a minimum.  The example
 below illustrates a minimal test.</p>
 <i>ext/standard/tests/strings/strtr.phpt</i>
 <pre>
@@ -159,8 +159,8 @@ string(32) "# hello All, I sAid hi planet! #"
 
 <p>As you can see the file is divided into several sections.  The TEST section holds a one line title
 of the phpt test, this shoudl be a simple description and shouldn't ever excede one line, if you need to write more explanation
-add comments in the body of the test case. The phpt files name is used when generating a .php file.  The FILE section is used 
-as the body of the .php file, so don't forget to open and close your php tags.  The EXPECT section is 
+add comments in the body of the test case. The phpt files name is used when generating a .php file.  The FILE section is used
+as the body of the .php file, so don't forget to open and close your php tags.  The EXPECT section is
 the part used as a comparison to see if the test passes.  It is a
 good idea to generate output with var_dump() calls.</p>
 
@@ -174,8 +174,8 @@ Look at the talk entitled "The need for speed, ERM testing".</p>
 
 <h3><a name="autogen-tests" href="#autogen-tests" class="anchor">#</a>Autogenerating test cases</h3>
 <p> It isn't possible (or even sensible) to try and generate complete test cases for PHP. However
-there is a script in PHP5.3 which will help to generate the framework. It can save you 
-some typing and ensure that you get a good basic format. 
+there is a script in PHP5.3 which will help to generate the framework. It can save you
+some typing and ensure that you get a good basic format.
 See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
 
 
@@ -227,17 +227,17 @@ of failures on other platforms. If you don't have karma to commit have a look at
 <p>When you are testing your test case it's <b>really</b> important to make sure that you
 clean up any temporary resources (eg files) that you used in the test. There is a special --CLEAN-- section
 to help you do this - see <a href="#clean">here</a>.
-<p>Another good check is to look at what lines of code in the PHP source your test case covers. 
+<p>Another good check is to look at what lines of code in the PHP source your test case covers.
 This is easy to do, there are some instructions on the <a href="http://wiki.php.net/doc/articles/writing-tests">PHP Wiki</a>.</p>
 
 <h3><a name="whattodo" href="#whattodo" class="anchor">#</a>What should I do with my test case when I've written and tested it?</h3>
 <p>The next step is to get someone to review it. If it's short you can paste it into a note and
-send it to php-qa@lists.php.net. If the test is a bit too 
-long for that then put it somewhere were people can download it (<a href="http://www.pastebin.ca/">pastebin</a> is 
+send it to php-qa@lists.php.net. If the test is a bit too
+long for that then put it somewhere were people can download it (<a href="http://www.pastebin.ca/">pastebin</a> is
 sometimes used). Appending tests to notes as files doesn't work well - so please don't do that. Your
-note to  php-qa@lists.php.net should say 
-what level of PHP you have tested it on and what platform(s) you've run it on. Someone from 
-the PHP QA group will review your test and reply to you. They may ask for some changes 
+note to  php-qa@lists.php.net should say
+what level of PHP you have tested it on and what platform(s) you've run it on. Someone from
+the PHP QA group will review your test and reply to you. They may ask for some changes
 or suggest better ways to do things, or they may commit it to PHP.
 
 
@@ -258,7 +258,7 @@ use an appropriate PHP function to sort them befor printing.  Both of
 these examples have affected PHP tests in the past.</p>
 
 <p>Make sure that any test touching parsing or display of dates uses a
-hard-defined timezone - preferable 'UTC'. It is important tha this is defined in 
+hard-defined timezone - preferable 'UTC'. It is important tha this is defined in
 the file section using:</p>
 <pre>
 date_default_timezone_set('UTC');
@@ -278,7 +278,7 @@ platforms can use a SKIPIF section like:</p>
 
 <pre>
 --SKIPIF--
-&lt;?php 
+&lt;?php
 if (PHP_INT_SIZE != 4) die("skip this test is for 32bit platforms only");
 ?&gt;
 </pre>
@@ -287,7 +287,7 @@ if (PHP_INT_SIZE != 4) die("skip this test is for 32bit platforms only");
 
 <pre>
 --SKIPIF--
-&lt;?php 
+&lt;?php
 if (PHP_INT_SIZE != 8) die("skip this test is for 64bit platforms only");
 ?&gt;
 </pre>
@@ -296,7 +296,7 @@ if (PHP_INT_SIZE != 8) die("skip this test is for 64bit platforms only");
 
 <pre>
 --SKIPIF--
-&lt;?php 
+&lt;?php
 if (substr(PHP_OS, 0, 3) != 'WIN') die("skip this test is for Windows platforms only");
 ?&gt;
 </pre>
@@ -305,7 +305,7 @@ if (substr(PHP_OS, 0, 3) != 'WIN') die("skip this test is for Windows platforms 
 
 <pre>
 --SKIPIF--
-&lt;?php 
+&lt;?php
 if (!stristr(PHP_OS, "Linux")) die("skip this test is Linux platforms only");
 ?&gt;
 </pre>
@@ -315,7 +315,7 @@ if (!stristr(PHP_OS, "Linux")) die("skip this test is Linux platforms only");
 
 <pre>
 --SKIPIF--
-&lt;?php 
+&lt;?php
 if (!stristr(PHP_OS, "Darwin")) die("skip this test is for Mac OS X platforms only");
 ?&gt;
 </pre>
@@ -323,10 +323,10 @@ if (!stristr(PHP_OS, "Darwin")) die("skip this test is for Mac OS X platforms on
 <h2><a name="examples" href="#examples" class="anchor">#</a>Examples</h2>
 
 <h3><a name="expectf" href="#expectf" class="anchor">#</a>EXPECTF</h3>
-<p>/ext/standard/tests/strings/str_shuffle.phpt is a good example for using 
-EXPECTF instead of EXPECT. From time to time the algorithm used for shuffle 
-changed and sometimes the machine used to execute the code has influence 
-on the result of shuffle. But it always returns a three character string 
+<p>/ext/standard/tests/strings/str_shuffle.phpt is a good example for using
+EXPECTF instead of EXPECT. From time to time the algorithm used for shuffle
+changed and sometimes the machine used to execute the code has influence
+on the result of shuffle. But it always returns a three character string
 detectable by %s (that matches any string until the end of the line). Other scan-able
 forms are %a for any amount of chars (at least one), %i for integers, %d for numbers
 only, %f for floating point values, %c for single characters, %x for
@@ -351,9 +351,9 @@ string(3) "123"
 </pre>
 
 <h3><a name="expectregex" href="#expectregex" class="anchor">#</a>EXPECTREGEX</h3>
-<p>/ext/standard/tests/strings/strings001.phpt is a good example for using 
-EXPECTREGEX instead of EXPECT. This test also shows that in EXPECTREGEX 
-some characters need to be escaped since otherwise they would be 
+<p>/ext/standard/tests/strings/strings001.phpt is a good example for using
+EXPECTREGEX instead of EXPECT. This test also shows that in EXPECTREGEX
+some characters need to be escaped since otherwise they would be
 interpreted as a regular expression.</p>
 
 <i>/ext/standard/tests/strings/strings001.phpt</i>
@@ -373,8 +373,8 @@ string\(19\) \" nica\x00turska panica\"
 </pre>
 
 <h3><a name="skipif" href="#skipif" class="anchor">#</a>SKIPIF</h3>
-<p>Some tests depend on modules or functions available only in certain versions 
-or they even require minimum version of php or zend. These tests should be 
+<p>Some tests depend on modules or functions available only in certain versions
+or they even require minimum version of php or zend. These tests should be
 skipped when the requirement cannot be fulfilled. To achieve this you can
 use the SKIPIF section. To tell run-tests.php that your test should be skipped
 the SKIPIF section must print out the word "skip" followed by a reason why
@@ -385,7 +385,7 @@ the test should skip.</p>
 --TEST--
 Check for exif_read_data, unusual IFD start
 --SKIPIF--
-&lt;?php 
+&lt;?php
 	if (!extension_loaded('exif')) print 'skip exif extension not available';
 ?&gt;
 --FILE--
@@ -405,16 +405,16 @@ array(2) {
 }
 </pre>
 
-<p>Test script and SKIPIF code should be directly written into *.phpt. However, 
-it is recommended to use include files when more test scripts depend on the 
-same SKIPIF code or when certain test files need the same values for some 
+<p>Test script and SKIPIF code should be directly written into *.phpt. However,
+it is recommended to use include files when more test scripts depend on the
+same SKIPIF code or when certain test files need the same values for some
 input. </p>
 
 
 <p>
-<b>Note:</b> no file used by any test should have one of the following extensions: 
+<b>Note:</b> no file used by any test should have one of the following extensions:
 ".php", ".log", ".mem", ".exp", ".out" or ".diff".  When you use an include file for the
-SKIPIF section it should be named "skipif.inc" and an include file used in the 
+SKIPIF section it should be named "skipif.inc" and an include file used in the
 FILE section of many tests should be named "test.inc".</p>
 
 <h2><a name="finalnotes" href="#finalnotes" class="anchor">#</a>Final Notes</h2>
@@ -466,29 +466,29 @@ idea to avoid using extensions that are already used for other purposes, eg .inc
 that is clearly related to the test case. For example, mytest.phpt should create mytest.tmp (or mytestN.tmp, N=1, 2,3,...) then if by any
 chance the temporary file isnt't removed properly it will be obvious which test case created it.</p>
 
-<p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section 
-is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE-- 
-section is run from a file called mytest.php and code from the --CLEAN-- section is run from a file called mytest.clean.php. If the test passes, 
-both the .php and .clean.php files are removed by run-tests.php. You can prevent the removal by using the --keep option of run-tests.php, 
+<p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section
+is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE--
+section is run from a file called mytest.php and code from the --CLEAN-- section is run from a file called mytest.clean.php. If the test passes,
+both the .php and .clean.php files are removed by run-tests.php. You can prevent the removal by using the --keep option of run-tests.php,
 this is a very useful option if you need to check that the --CLEAN-- section code is working as you intended.
 
-<p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file - 
+<p> Finally - if you are using CVS it's helpful to add the extension that you use for test-related temporary files to the .cvsignore file -
 this will help to prevent you from accidentally checking temporary files into CVS. </p>
 
 <h3><a name="redirecting" href="#redirecting" class="anchor">#</a>Redirecting tests</h3>
-<p>Using --REDIRECTTEST-- it is possible to redirect from one test to a bunch 
-of other tests. That way multiple extensions can refer to the same set of 
+<p>Using --REDIRECTTEST-- it is possible to redirect from one test to a bunch
+of other tests. That way multiple extensions can refer to the same set of
 test scripts probably using it with a different configuration.</p>
 
-<p>The block is eval'd and supposed to return an array describing how to 
-redirect. The resulting array must contain the key 'TEST' that stores the 
-redirect target as a string. This string usually is the directory where the 
-test scripts are located and should be relative. Optionally you can use 
-the 'ENV' as an array configuring the environment to be set when executing 
+<p>The block is eval'd and supposed to return an array describing how to
+redirect. The resulting array must contain the key 'TEST' that stores the
+redirect target as a string. This string usually is the directory where the
+test scripts are located and should be relative. Optionally you can use
+the 'ENV' as an array configuring the environment to be set when executing
 the tests. This way you can pass configuration to the executed tests.
 </p>
 
-<p>Redirect tests may especially contain --SKIPIF--, --ENV-- and --ARGS-- 
+<p>Redirect tests may especially contain --SKIPIF--, --ENV-- and --ARGS--
 sections but they no not use any --EXPECT-- section.</p>
 
 <p>The redirected tests themselves are just normal tests.</p>
@@ -504,17 +504,17 @@ $php_errormsg variable, which you can then output. This will result in a
 consistent error message output across all platforms and PHP configurations,
 preventing your test from failing due inconsistencies in the error message
 content. Alternatively you can use --EXPECTF-- and check for the message by
-replacing the path of the source of the message with "%s" and the line number 
-with "%d". The end of a message in a test file "example.phpt" then looks like 
-"in %sexample.php on line %d". We explicitly dropped the last path devider as 
+replacing the path of the source of the message with "%s" and the line number
+with "%d". The end of a message in a test file "example.phpt" then looks like
+"in %sexample.php on line %d". We explicitly dropped the last path devider as
 that is a system dependent character '/' or '\'.</p>
 
 <h3><a name="lastbit" href="#lastbit" class="anchor">#</a>Last bit</h3>
 <p>Often you want to run test scripts without run-tests.php by
 simply executing them on command line like any other php script. But sometimes
-it disturbs having a long --EXPECT-- block, so that you don't see the actual 
+it disturbs having a long --EXPECT-- block, so that you don't see the actual
 output as it scrolls away overwritten by the blocks following the actual file
-block. The workaround is to use terminate the --FILE-- section with the two 
+block. The workaround is to use terminate the --FILE-- section with the two
 lines "===DONE===" and "&lt;?php exit(0); ?&gt;.
 When doing so run-tests.php does not execute the line containing the exit call
 as that would suppress leak messages. Actually run-tests.php ignores any part
@@ -522,7 +522,7 @@ after a line consisting only of "===DONE===".</p>
 <p>Here is an example:</p>
 <pre>
 --TEST--
-Test hypot() - dealing with mixed number/character input 
+Test hypot() - dealing with mixed number/character input
 --INI--
 precision=14
 --FILE--
@@ -539,7 +539,7 @@ precision=14
 23abc :-33 float(40.224370722238)
 ===DONE===
 </pre>
-<p>If executed as PHP script the output will stop after the code on the --FILE-- section 
+<p>If executed as PHP script the output will stop after the code on the --FILE-- section
 has been run.</p>
 <p></p>
 <?php

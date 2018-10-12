@@ -22,7 +22,7 @@ function verify_password($user, $pass)
                     'password' => $pass,
             )
     );
- 
+
     $opts = array(
             'method'        => 'POST',
             'header'        => 'Content-type: application/x-www-form-urlencoded',

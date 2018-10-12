@@ -113,8 +113,8 @@ function outputTestReportsForVersion(string $getVersion) {
 
     // Do we add expected failed ?
     if (($_GET['expect'] ?? 0) == 1) {
-        $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations, 
-                datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id 
+        $query = 'SELECT \'xfail\' as xfail, test_name,COUNT(expectedfail.id) as cpt,\'-\' as variations,
+                datetime(date) as date FROM expectedfail,reports WHERE expectedfail.id_report = reports.id
                 GROUP BY test_name ORDER BY cpt DESC LIMIT :limit';
         $stmt = $database->prepare($query);
         $stmt->bindValue(':limit', $limit, SQLITE3_INTEGER);
@@ -125,13 +125,13 @@ function outputTestReportsForVersion(string $getVersion) {
             }
         }
     }
-    
-    $query = 'SELECT failed.test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT failed.diff) as variations, 
-            datetime(reports.date) as date,success.id as success, r2.id as failedci FROM failed, reports 
+
+    $query = 'SELECT failed.test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT failed.diff) as variations,
+            datetime(reports.date) as date,success.id as success, r2.id as failedci FROM failed, reports
             LEFT JOIN success ON success.test_name=failed.test_name
             LEFT JOIN failed f2  ON (f2.test_name=failed.test_name AND f2.output = "")
             LEFT JOIN reports r2 ON (f2.id_report = r2.id AND r2.user_email="ciqa")
-            WHERE failed.id_report = reports.id 
+            WHERE failed.id_report = reports.id
             GROUP BY failed.test_name ORDER BY cpt DESC LIMIT :limit';
     $stmt = $database->prepare($query);
     $stmt->bindValue(':limit', $limit, SQLITE3_INTEGER);
@@ -154,7 +154,7 @@ function outputTestReportsForVersion(string $getVersion) {
 </style>
 <script type="text/javascript">
 <!--
-function changeExpect() 
+function changeExpect()
 {
     var check = document.getElementById('expect').checked;
     if (check == true) {

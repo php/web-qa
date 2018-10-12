@@ -2,16 +2,16 @@
 #
 ##################################################################
 #
-# TITLE: maketests.pl 
-# 
+# TITLE: maketests.pl
+#
 # This PERL script scans for files in a directory of tests,
 # and sets up two batch scripts from them.  One to run the
 # tests, and another to compare actual results with ideal
-# results for each test.  
+# results for each test.
 #
 # ASSUMPTIONS:
 #
-#   - The test files are executable, and produce results in 
+#   - The test files are executable, and produce results in
 #     a readable form to standard output.
 #
 # AUTHOR:
@@ -93,10 +93,10 @@ $compareExitCmds   = "$echoPgm Compare log end...   >> $compareLogPath\n";
 
 
 # ----------------------------------------------------------------
-# Read in the test suite bin entries and save a) test file names 
+# Read in the test suite bin entries and save a) test file names
 # and b) test file prefixes, for use in finding other related
 # files, in an associative array.  The keys are the file names,
-# and the values are the 
+# and the values are the
 #
 
 opendir (BIN_DIR, $testSuiteBin) || die "Aborting:  Can't read dir $testSuiteBin\n";
@@ -105,7 +105,7 @@ while ( $filename = readdir(BIN_DIR) ) {
         # Note that $prefix will be the same name as $filename
         # in cases where there is no 'prefix.suffix' form to
         # the file name.  This is OK, and expected on UNIX machines.
-        
+
         ($prefix) = split( /\./, $filename ) ;
         $testFilePrefixes{$filename} = $prefix ;
     }
@@ -146,17 +146,17 @@ print TMASTER "$scriptEntryCmds";
 
 open (TCOMPARE, "> $compareScriptPath") || die "Aborting:  Can't create $comparePath\n";
 print TCOMPARE "$compareEntryCmds";
- 
+
 foreach $test (keys(%testFilePrefixes)) {
     print "Adding drop-in test $test...\n";
 
     print TMASTER "$echoPgm $test...\n";
 
     # --------------------------------------------------------
-    # Create preprocessing entries for this test.  If it's a 
+    # Create preprocessing entries for this test.  If it's a
     # PHP file, invoke it using the $phpExecCmd
     #
-    
+
     foreach $preFile (@testPreFiles) {
         ($prefix) = split( /\./, $preFile ) ;
         if ($prefix eq $testFilePrefixes{$test}) {
@@ -168,7 +168,7 @@ foreach $test (keys(%testFilePrefixes)) {
     # -----------------------------------------------------
     # Create master script main entry for this test
     #
-    
+
     $logFile   = "$testFilePrefixes{$test}$logSuffix";
     $logActual = "$testActuals/$logFile";
     $logIdeal  = "$testIdeals/$logFile";
@@ -177,10 +177,10 @@ foreach $test (keys(%testFilePrefixes)) {
     print TMASTER "$testSuiteBin/$test > $logActual\n";
 
     # --------------------------------------------------------
-    # Create postprocessing entries for this test.  If it’s a 
+    # Create postprocessing entries for this test.  If it’s a
     # batch file, invoke it using the $batExecCmd
     #
-    
+
     foreach $postFile (@testPostFiles) {
         ($prefix) = split( /\./, $postFile ) ;
         if ($prefix eq $testFilePrefixes{$test}) {
@@ -197,9 +197,9 @@ foreach $test (keys(%testFilePrefixes)) {
     # placeholder for the ideal file contents that will
     # be exposed during the compare step.
     #
-    
-    print TCOMPARE "$echoPgm **** $logIdeal vs. $logActual **** >> $compareLogPath\n"; 
-    print TCOMPARE "$diffPgm $logIdeal $logActual >> $compareLogPath\n\n"; 
+
+    print TCOMPARE "$echoPgm **** $logIdeal vs. $logActual **** >> $compareLogPath\n";
+    print TCOMPARE "$diffPgm $logIdeal $logActual >> $compareLogPath\n\n";
 
     if (! -e $logIdeal) {
         open (IDEAL, "> $logIdeal") || die "Aborting:  Can't create $logIdeal\n";
