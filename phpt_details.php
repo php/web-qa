@@ -670,9 +670,9 @@ One of the EXPECT type sections is required.</p>
 run-tests.php</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--EXPECT_EXTERNAL--
-test001.expected.txt
+test001.expected.data
 </pre>
-<p><b>test001.expected.txt</b>
+<p><b>test001.expected.data</b>
 <pre>array(2) {
   [&quot;hello&quot;]=&gt;
   string(5) &quot;World&quot;
