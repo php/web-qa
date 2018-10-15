@@ -3,7 +3,6 @@ include("include/functions.php");
 
 $TITLE = "Writing Tests [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
-/* $Id$ */
 
 // This is used below for linking to GCOV (Format: GCOV version => Human readable version)
 function get_active_branches() {

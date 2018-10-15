@@ -14,7 +14,6 @@
 #  +----------------------------------------------------------------------+
 #  | Author: Olivier Doucet <odoucet@php.net>                             |
 #  +----------------------------------------------------------------------+
-#   $Id$
 
 header('HTTP/1.0 403 Forbidden');
 die('This script is for local testing purposes only! Uncomment these lines to use it.');
