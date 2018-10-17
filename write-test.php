@@ -171,13 +171,6 @@ alternatives that may be used if the situation warrants it. The phpt sections ar
 <p>There is also a very useful set of slides, written by Marcus Boerger <a href="http://somabo.de/talks/">here</a>.
 Look at the talk entitled "The need for speed, ERM testing".</p>
 
-<h3><a name="autogen-tests" href="#autogen-tests" class="anchor">#</a>Autogenerating test cases</h3>
-<p> It isn't possible (or even sensible) to try and generate complete test cases for PHP. However
-there is a script in PHP5.3 which will help to generate the framework. It can save you
-some typing and ensure that you get a good basic format.
-See <a href="autogenerate.php">test case generation</a> for instructions on how to use it.</p>
-
-
 <h3><a name="analyzing-failing-tests" href="#analyzing-failing-tests" class="anchor">#</a>Analyzing failing tests</h3>
 <p>While writing tests you will probably run into tests not passing while you think they should. The 'make test' command
 provides you with debug information. Several files will be added per test in the same directory as the .phpt file itself.
