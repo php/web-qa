@@ -9,12 +9,12 @@ common_header();
 <h2>Auto-generating test cases</h2>
 <p>
 Although it's not possible to generate a complete PHPT test, it's quite easy to generate the
- standard sections and some simple functions automatically, creating a test case "frame". 
+ standard sections and some simple functions automatically, creating a test case "frame".
  To do this, you need: <ul>
 <li> A build pf PHP53
 </li> <li> The file generate-phpt.phar, located in the PHP53 source under scripts/dev
 
-</li></ul> 
+</li></ul>
 <p />
 <p />
 <p />
@@ -29,7 +29,7 @@ Test function cos() by calling it with its expected arguments
 
 echo "*** Test by calling method or function with its expected arguments ***\n"
 
-$number = 
+$number =
 
 
 
@@ -45,7 +45,7 @@ var_dump(cos( $number ) );
 <p />
 <h3>Completing the .phpt test file: </h3>
 <p />
-To turn this into a complete test case, all the developer has to do is to initialise $number to something reasonable 
+To turn this into a complete test case, all the developer has to do is to initialise $number to something reasonable
 and to add a section for the expected output.
 <p />
 
@@ -71,7 +71,7 @@ Use -h to list them, this is the output:
 -h ............................... Print this message
 </pre></div>
 <h3>Implementation notes</h3>
-<p>The source code is under scripts/dev/generate-phpt/src. The phar file is generated using the script gtPackage.php. 
+<p>The source code is under scripts/dev/generate-phpt/src. The phar file is generated using the script gtPackage.php.
 The script works by using Reflection to work out what arguments a function or method expects and then setting up a function/method
 invocation.
 The catch with generating tests this way is that the script has to be run *using the level of PHP that you want to test*,

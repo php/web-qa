@@ -11,7 +11,7 @@ common_header();
 <h1>Sample Test: sample008.phpt</h1>
 <p>Back to &quot;<a href="../phpt_details.php">PHPT Test File Layout</a>&quot;</p>
 <pre>--TEST--
-GET/POST/REQUEST Test with input_filter 
+GET/POST/REQUEST Test with input_filter
 --SKIPIF--
 &lt;?php if (!extension_loaded(&quot;filter&quot;)) die(&quot;skip&quot;); ?&gt;
 --POST--

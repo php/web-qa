@@ -37,7 +37,7 @@ if ($branches!==FALSE) {
 				    }
 			    }
 		    }
-		    
+
 		    $red = is_file(BASE_REPORT_DIR."/$branch/$latest_revision/FAIL_CRASH.txt");
 
 ?>
@@ -48,7 +48,7 @@ if ($branches!==FALSE) {
 		<td style="width:300px"><a href="build.php?branch=<?php echo urlencode($branch); ?>&revision=<?php echo urlencode($latest_revision); ?>"><?php echo htmlentities($latest_revision); ?></a></td>
 	</tr>
 </table>
-<br/>	
+<br/>
 <?php
 
 	    } // end if
@@ -58,7 +58,7 @@ if ($branches!==FALSE) {
 ?>
 
 <p><strong>PFTT Source Code:</strong> <a href="http://git.php.net/?p=pftt2.git">http://git.php.net/?p=pftt2.git</a></p>
-    
+
 <p><strong>PFTT Binaries:</strong> <a href="http://windows.php.net/downloads/snaps/ostc/pftt/" target="_blank">http://windows.php.net/downloads/snaps/ostc/pftt/</a></p>
 
 <br/>

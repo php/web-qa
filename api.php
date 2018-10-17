@@ -41,8 +41,8 @@ $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 common_header();
 ?>
 <p>
-The QA API is simple, and is based on the query string. 
-Pass in type=qa-releases (the only type currently), along with the desired format (serialize or json). 
+The QA API is simple, and is based on the query string.
+Pass in type=qa-releases (the only type currently), along with the desired format (serialize or json).
 </p>
 
 <p>

@@ -12,8 +12,8 @@ Documentation:
 		- Key is future PHP version number
 			- Example: If 5.3.6 is the latest stable release, then use 5.3.7 because 5.3.7-dev is our qa version
 			- Typically, this is the only part needing changed
-		- active (bool): 
-			- It's active and being tested here 
+		- active (bool):
+			- It's active and being tested here
 			- Meaning, the version will be reported to the qa.reports list, and be linked at qa.php.net
 			- File extensions .tar.gz and .tar.bz2 are assumed to be available
 		- release (array):
@@ -115,8 +115,8 @@ $QA_RELEASES = array(
 
 /*** End Configuration *******************************************************************/
 
-// This is a list of the possible checksum values that can be supplied with a QA release. Any 
-// new algorithm is read from the $QA_RELEASES array under the 'release' index for each version 
+// This is a list of the possible checksum values that can be supplied with a QA release. Any
+// new algorithm is read from the $QA_RELEASES array under the 'release' index for each version
 // in the form of "$algorithm_$filetype".
 //
 // For example, if SHA512 were to be supported, the following indices would have to be added:
@@ -134,18 +134,18 @@ $QA_CHECKSUM_TYPES = [ 'sha256' ];
 	foreach ($QA_RELEASES as $pversion => $info) {
 
 		if (isset($info['active']) && $info['active']) {
-	
+
 			// Allow -dev versions of all active types
 			// Example: 5.3.6-dev
 			$QA_RELEASES['reported'][] = "{$pversion}-dev";
 			$QA_RELEASES[$pversion]['dev_version'] = "{$pversion}-dev";
-		
+
 			// Allow -dev version of upcoming qa releases (rc/alpha/beta)
 			// @todo confirm this php version format for all dev versions
 			if ((int)$info['release']['number'] > 0) {
 				$QA_RELEASES['reported'][] = "{$pversion}{$info['release']['type']}{$info['release']['number']}";
 				if (!empty($info['release']['baseurl'])) {
-				
+
 					// php.net filename format for qa releases
 					// example: php-5.3.0RC2
 					$fn_base = 'php-' . $pversion . $info['release']['type'] . $info['release']['number'];

@@ -50,7 +50,7 @@ repoList.prototype.setData = function(data) {
 function loginHandler() {
     var t = this;
     this.user = false;
-    this.logindialog = $("#loginDialog").dialog({autoOpen: false});	 
+    this.logindialog = $("#loginDialog").dialog({autoOpen: false});
     this.checkLoggedIn();
     $("#notloggedin").click(function(ev) {
         t.showLoginForm();
@@ -60,7 +60,7 @@ function loginHandler() {
         t.login();
         t.logindialog.dialog("close");
         ev.preventDefault();
-    } ); 
+    } );
 }
 
 loginHandler.prototype.showLoginForm = function() {
@@ -176,7 +176,7 @@ function loadRepo(repo, url) {
 						for (var i in repo_labels.data) {
 
 							var li_el, input_html, was_checked;
-							
+
 							li_el = ul_el.append('<li style="display: block;">')
 
 							$('[id="pr-' + that.data("number") + '-label-' + repo_labels.data[i].name + '"]').each(function(i, v) {
@@ -195,7 +195,7 @@ function loadRepo(repo, url) {
 							input_html += " />";
 							li_el.append(input_html +  repo_labels.data[i].name);
 						}
-						
+
 						$("button", dia).click(function() { dia.dialog("close"); });
 					   }
 				    });
@@ -229,7 +229,7 @@ function loadRepo(repo, url) {
             $.bbq.pushState({ repo: repo });
         }
     });
- 
+
 }
 
 function updateRepo(reponame, num, dia) {

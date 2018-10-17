@@ -124,7 +124,7 @@ function outputTestReportsForVersion(string $getVersion) {
             }
         }
     }
-    
+
     $query = 'SELECT failed.test_name,COUNT(failed.id) as cpt,COUNT(DISTINCT failed.diff) as variations, 
             datetime(reports.date) as date,success.id as success, r2.id as failedci FROM failed, reports 
             LEFT JOIN success ON success.test_name=failed.test_name

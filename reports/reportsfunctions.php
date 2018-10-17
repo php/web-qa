@@ -86,7 +86,7 @@ class specificVersionFilterIterator extends WhitelistedFilterIterator
     public function __construct(Traversable $inner, $keyword)
     {
         parent::__construct($inner, array());
-        if (!is_array($keyword)) 
+        if (!is_array($keyword))
             $this->keyword = array($keyword);
         else
             $this->keyword = $keyword;
@@ -133,10 +133,10 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
 
     $data = array();
     $it = new QaReportIterator(new DirectoryIterator(__DIR__.'/db/'));
-    
+
     // temp fix
     $it = new specificVersionFilterIterator($it, array('5.3.99-dev', '5.4.0-dev'));
-    
+
     if ($mode & QA_REPORT_FILTER_ALPHA) {
         $it = new keywordFilterIterator($it, 'alpha', $QA_RELEASES['reported']);
     }
@@ -155,10 +155,10 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
 
 
     foreach ($it as $version => $database_file) {
-        if (!file_exists($database_file.'.cache') || 
+        if (!file_exists($database_file.'.cache') ||
             !($dataSerialize = unserialize(file_get_contents($database_file.'.cache')))) {
 
-            $database = new SQLite3($database_file, SQLITE3_OPEN_READONLY); 
+            $database = new SQLite3($database_file, SQLITE3_OPEN_READONLY);
             //retrieve data
             $query = $database->query(
                 "SELECT COUNT(*) AS nbReports, MAX(`date`) AS lastReport FROM reports"
@@ -167,7 +167,7 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
                 die("An error occured when reading summary data from $version DB file.");
             $row = $query->fetchArray(SQLITE3_ASSOC);
             $data[$version] = $row;
-                
+
             $query = $database->query(
                 "select count(distinct test_name) as nbFailingTests, count(*) as nbFailures from failed"
             );
@@ -176,7 +176,7 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
             $row = $query->fetchArray(SQLITE3_ASSOC);
             $data[$version]['nbFailingTests'] = $row['nbFailingTests'];
             $data[$version]['nbFailures'] = $row['nbFailures'];
-                
+
             $database->close();
             // write cache data
             file_put_contents($database_file.'.cache', serialize($data[$version]));

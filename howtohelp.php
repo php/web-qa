@@ -32,7 +32,7 @@ common_header();
                 regular schedule, we're currently setting up a system to do
                 this all automatically.<br /><br />
               </li>
-              <li class="lihack">Give a PHP/QA Team member access to a server that 
+              <li class="lihack">Give a PHP/QA Team member access to a server that
                 you administrate, especially on ones running some of the more
                 exotic Operation Systems.  <br /><br /> To do this, please send
                 mail to the PHP/QA email list (<a

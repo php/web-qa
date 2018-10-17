@@ -9,7 +9,7 @@ common_header();
             <h1>EXPECTF substitution options</h1>
 <p>The --EXPECTF-- section uses a number of substitution tags for strings or digits
 that appear in test case output but which may vary between test runs. The most common
-example of this is to use %s and %d to match the file path and line number which are 
+example of this is to use %s and %d to match the file path and line number which are
 output by PHP Warnings.</p>
 
 <p>The substitution tags and their meanings are summarised below</p>
@@ -85,7 +85,7 @@ output by PHP Warnings.</p>
 </tr>
 </table>
 
- 
+
 <?php
 
 common_footer();
