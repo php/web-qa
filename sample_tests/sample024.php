@@ -31,14 +31,13 @@ $title = $root-&gt;appendChild($title);
 $text = $doc-&gt;createTextNode(&#039;This is the title&#039;);
 $text = $title-&gt;appendChild($text);
 
-$temp_filename = dirname(__FILE__).&quot;/DomDocument_save_basic.tmp&quot;;
+$temp_filename = __DIR__.&#039;/DomDocument_save_basic.tmp&#039;;
 
 echo &#039;Wrote: &#039; . $doc-&gt;save($temp_filename) . &#039; bytes&#039;; // Wrote: 72 bytes
 ?&gt;
 --CLEAN--
 &lt;?php
-  $temp_filename = dirname(__FILE__).&quot;/DomDocument_save_basic.tmp&quot;;
-  unlink($temp_filename);
+  unlink(__DIR__.&#039;/DomDocument_save_basic.tmp&#039;);
 ?&gt;
 --EXPECTF--
 Wrote: 72 bytes

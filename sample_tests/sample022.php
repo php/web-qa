@@ -17,7 +17,7 @@ shm_detach() tests
 --FILE--
 &lt;?php
 
-$key = ftok(dirname(__FILE__).&quot;/003.phpt&quot;, &#039;q&#039;);
+$key = ftok(__DIR__.&#039;/003.phpt&#039;, &#039;q&#039;);
 
 var_dump(shm_detach());
 var_dump(shm_detach(1,1));
@@ -36,7 +36,7 @@ echo &quot;Done\n&quot;;
 ?&gt;
 --CLEAN--
 &lt;?php
-$key = ftok(dirname(__FILE__).&quot;/003.phpt&quot;, &#039;q&#039;);
+$key = ftok(__DIR__.&quot;/003.phpt&quot;, &#039;q&#039;);
 $s = shm_attach($key);
 shm_remove($s);
 ?&gt;

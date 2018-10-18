@@ -113,7 +113,7 @@ printf("%-30s", "Function call");
 if ($return === true) echo " <font color='green'>OK</font> \n";
 else                  echo " <font color='red'>KO (return: ".$return.")</font> \n";
 
-$dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
+$dbFile = __DIR__.'/db/'.$array['version'].'.sqlite';
 
 printf("%-30s", "DB file exists");
 if (file_exists($dbFile)) echo " <font color='green'>OK</font> \n";

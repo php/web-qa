@@ -11,7 +11,7 @@ common_header();
 <h1>Sample Test: clean.inc</h1>
 <p>Back to &quot;<a href="../phpt_details.php">PHPT Test File Layout</a>&quot;</p>
 <pre>&lt;?php
-include_once(dirname(__FILE__) . &#039;/imap_include.inc&#039;);
+include_once(__DIR__ . &#039;/imap_include.inc&#039;);
 
 $imap_stream = imap_open($default_mailbox, $username, $password);
 

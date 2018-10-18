@@ -14,7 +14,7 @@ common_header();
 Test imap_append() function : basic functionality
 --SKIPIF--
 &lt;?php
-require_once(dirname(__FILE__).&#039;/skipif.inc&#039;);
+require_once(__DIR__.&#039;/skipif.inc&#039;);
 ?&gt;
 --FILE--
 &lt;?php
@@ -25,7 +25,7 @@ require_once(dirname(__FILE__).&#039;/skipif.inc&#039;);
 
 echo &quot;*** Testing imap_append() : basic functionality ***\n&quot;;
 
-require_once(dirname(__FILE__).&#039;/imap_include.inc&#039;);
+require_once(__DIR__.&#039;/imap_include.inc&#039;);
 
 echo &quot;Create a new mailbox for test\n&quot;;
 $imap_stream = setup_test_mailbox(&quot;&quot;, 0);

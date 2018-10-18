@@ -31,7 +31,7 @@ if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
 $testName = $_GET['test'];
 $version  = $_GET['version'];
 
-$dbFile = dirname(__FILE__).'/db/'.$version.'.sqlite';
+$dbFile = __DIR__.'/db/'.$version.'.sqlite';
 $siteUpdate =  date("D M d H:i:s Y T", filemtime($dbFile))."<br />\n";
 $database = new SQLite3($dbFile, SQLITE3_OPEN_READONLY);
 

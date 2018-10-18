@@ -22,7 +22,7 @@ PDOTest::skip();
 ?&gt;
 --FILE--
 &lt;?php
-if (getenv(&#039;REDIR_TEST_DIR&#039;) === false) putenv(&#039;REDIR_TEST_DIR=&#039;.dirname(__FILE__) . &#039;/../../pdo/tests/&#039;);
+if (getenv(&#039;REDIR_TEST_DIR&#039;) === false) putenv(&#039;REDIR_TEST_DIR=&#039;.__DIR__ . &#039;/../../pdo/tests/&#039;);
 require_once getenv(&#039;REDIR_TEST_DIR&#039;) . &#039;pdo_test.inc&#039;;
 $db = PDOTest::factory();
 

@@ -887,8 +887,7 @@ PHP source code enclosed by PHP tags.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--CLEAN--
 &lt;?php
-  $temp_filename = dirname(__FILE__).&quot;/DomDocument_save_basic.tmp&quot;;
-  unlink($temp_filename);
+unlink(__DIR__.&#039;/DomDocument_save_basic.tmp&#039;);
 ?&gt;</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample024.php">sample024.phpt</a></p>
 <p><b>Example 2 (snippet):</b><br/>
@@ -900,7 +899,7 @@ require_once('clean.inc');
 <p><b>Example 3 (snippet):</b><br/>
 <pre>--CLEAN--
 &lt;?php
-$key = ftok(dirname(__FILE__).&quot;/003.phpt&quot;, 'q');
+$key = ftok(__DIR__.&#039;/003.phpt&#039;, 'q');
 $s = shm_attach($key);
 shm_remove($s);
 ?&gt;</pre></p>

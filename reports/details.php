@@ -31,7 +31,7 @@ if (!is_valid_php_version($_GET['version'], $QA_RELEASES)) {
 $signature = $_GET['signature'];
 $version  = $_GET['version'];
 
-$dbFile = dirname(__FILE__).'/db/'.$version.'.sqlite';
+$dbFile = __DIR__.'/db/'.$version.'.sqlite';
 
 $database = new SQLite3($dbFile, SQLITE3_OPEN_READONLY);
 

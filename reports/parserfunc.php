@@ -55,7 +55,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
             exit('invalid version');
         }
 
-        $dbFile = dirname(__FILE__).'/db/'.$array['version'].'.sqlite';
+        $dbFile = __DIR__.'/db/'.$array['version'].'.sqlite';
 
         $queriesCreate = array (
             'failed' => 'CREATE TABLE IF NOT EXISTS failed (
