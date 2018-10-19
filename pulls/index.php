@@ -84,6 +84,7 @@ common_header();
    </script>
    <script id="pullInstructionTemplate" type="text/x-jquery-tmpl">
 	   <pre>
+$ git checkout master     
 $ wget https://github.com/php/{{=repo}}/pull/{{=number}}.patch # Download it
 $ git am -3 {{=number}}.patch  # Merge it with a GOOD commit message
 $ make test                    # you better not forget that
