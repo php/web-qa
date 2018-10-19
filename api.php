@@ -54,4 +54,3 @@ Example URLs:
 </p>
 <?php
 common_footer();
-

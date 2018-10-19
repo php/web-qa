@@ -271,4 +271,3 @@ function updateRepo(reponame, num, dia) {
     }});
     dia.dialog("destroy");
 }
-

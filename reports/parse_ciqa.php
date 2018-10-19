@@ -187,5 +187,3 @@ foreach ($successfulTests as $version => $successTests) {
     if ($status === true) echo "SUCCESS !\n";
     else echo " ERROR :(  \n";
 }
-
-

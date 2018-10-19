@@ -213,5 +213,3 @@ close (TMASTER);
 
 print TCOMPARE "$compareExitCmds";
 close (TCOMPARE);
-
-

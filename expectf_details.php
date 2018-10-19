@@ -89,4 +89,3 @@ output by PHP Warnings.</p>
 <?php
 
 common_footer();
-

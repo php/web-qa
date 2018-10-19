@@ -270,4 +270,3 @@ if (isset($_REQUEST['action']) && in_array($_REQUEST['action'], $accepted_action
 	header('HTTP/1.0 400 Bad Request');
 	die(json_encode(array('success' => false, 'errors' => array("Unknown method"))));
 }
-

@@ -93,4 +93,3 @@ function outputReportTable(string $type, string $branch, string $revision) {
 	echo "</table>\n";
 	echo "<br/>\n";
 }
-

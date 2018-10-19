@@ -203,4 +203,3 @@ $database->exec('DELETE FROM expectedfail WHERE id_report = '.$sqlReport['id']);
 $database->exec('DELETE FROM reports WHERE id = '.$sqlReport['id']);
 $database->close();
 echo "<b>Cleanup done</b>";
-
