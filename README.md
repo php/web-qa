@@ -12,5 +12,6 @@ Please clone that repo into this websites root directory.
 git clone git://git.php.net/web/qa.git qa
 cd qa
 git clone git://git.php.net/web/shared.git shared
+cp pulls/config.php.in pulls/config.php
 php -S localhost:8080
 ```
