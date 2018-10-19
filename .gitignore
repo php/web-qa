@@ -2,3 +2,4 @@ reports/db/*.sqlite
 reports/db/*.cache
 pftt-reports/*
 pulls/config.php
+shared/
