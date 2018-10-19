@@ -84,12 +84,13 @@ common_header();
    </script>
    <script id="pullInstructionTemplate" type="text/x-jquery-tmpl">
 	   <pre>
-$ git fetch git://github.com/php/{{=repo}} pull/{{=number}}/head:pull-request/{{=number}}
-$ git log -p pull-request/{{=number}} # REVIEW IT
-$ git merge pull-request/{{=number}}  # Merge it, add a GOOD commit message
-$ make test                  # you better not forget that
-$ git push origin master     # everything okay? good, let's push it
+$ git checkout master     
+$ wget https://github.com/php/{{=repo}}/pull/{{=number}}.patch # Download it
+$ git am -3 {{=number}}.patch  # Merge it with a GOOD commit message
+$ make test                    # you better not forget that
+$ git push origin master       # everything okay? good, let's push it
 	   </pre>
+     <p>For a full detailed steps in how to merge into lower branches, check <a href="https://wiki.php.net/vcs/gitworkflow#reviewing_and_closing_pull_requests">our Git Workflow.</a></p>
    </script>
    <script id="labelsDialogTemplate" type="text/x-jquery-tmpl">
 	<dd></dd>
@@ -167,4 +168,3 @@ $JS = array(
 );
 
 common_footer($JS);
-
