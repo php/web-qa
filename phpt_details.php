@@ -518,7 +518,7 @@ run-tests.php</p>
 path/to/file. Single line.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--FILE_EXTERNAL--
-files/file012.php</pre></p>
+files/file012.inc</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample012.php">sample012.phpt</a></p>
 </dd>
 

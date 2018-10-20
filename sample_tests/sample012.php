@@ -13,7 +13,7 @@ common_header();
 <pre>--TEST--
 sample test for file_external
 --FILE_EXTERNAL--
-files/<a href="files/file012.php">file012.php</a>
+files/<a href="file012.php">file012.inc</a>
 --EXPECT--
 hello world
 </pre>
