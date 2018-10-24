@@ -151,7 +151,7 @@ function outputTestReportsForVersion(string $getVersion) {
     padding: 3px;
 }
 </style>
-<script type="text/javascript">
+<script>
 <!--
 function changeExpect() 
 {

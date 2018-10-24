@@ -74,7 +74,7 @@ List of reports associated</h1>
     padding: 3px;
 }
 </style>
-<script type="text/javascript">
+<script>
 function switchVisibility(elem)
 {
     if (elem.style.display == '' || elem.style.display == 'block') {

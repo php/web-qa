@@ -106,7 +106,7 @@ $ git push origin master       # everything okay? good, let's push it
 	<textarea id="comment"></textarea><br>
 	<button>Go</button>
    </script>
-   <script type="text/javascript">
+   <script>
      var GITHUB_BASEURL = <?php echo json_encode(GITHUB_BASEURL); ?>;
      var GITHUB_ORG     = <?php echo json_encode(GITHUB_ORG); ?>;
      var API_URL        = "api.php";
