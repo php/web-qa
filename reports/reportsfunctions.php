@@ -85,9 +85,9 @@ class specificVersionFilterIterator extends WhitelistedFilterIterator
 
     public function __construct(Traversable $inner, $keyword)
     {
-        parent::__construct($inner, array());
+        parent::__construct($inner, []);
         if (!is_array($keyword))
-            $this->keyword = array($keyword);
+            $this->keyword = [$keyword];
         else
             $this->keyword = $keyword;
     }
@@ -131,11 +131,11 @@ function get_summary_data($mode = QA_REPORT_FILTER_ALL)
 {
     global $QA_RELEASES;
 
-    $data = array();
+    $data = [];
     $it = new QaReportIterator(new DirectoryIterator(__DIR__.'/db/'));
 
     // temp fix
-    $it = new specificVersionFilterIterator($it, array('5.3.99-dev', '5.4.0-dev'));
+    $it = new specificVersionFilterIterator($it, ['5.3.99-dev', '5.4.0-dev']);
 
     if ($mode & QA_REPORT_FILTER_ALPHA) {
         $it = new keywordFilterIterator($it, 'alpha', $QA_RELEASES['reported']);

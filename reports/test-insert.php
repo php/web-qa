@@ -139,7 +139,7 @@ if (!isset($sqlReport['id'])) die('cannot make more tests');
 
 $query = 'SELECT * FROM failed WHERE id_report = '.$sqlReport['id'];
 $q = $database->query($query);
-$sqlFailed = array();
+$sqlFailed = [];
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
     $sqlFailed[$tab['test_name']] = $tab;
 }

@@ -8,25 +8,25 @@ function common_header($extra_headers=NULL, $TITLE = "Quality Assurance") {
         $HEAD_RAND = join("\n", $extra_headers);
     }
     $SUBDOMAIN = "QA";
-    $CSS = array("/styles/qa.css");
-    $LINKS = array(
-        array("href" => "/projects.php",      "text" => "Goals"),
-        array("href" => "/rc.php",            "text" => "What is RC?"),
-        array("href" => "/howtohelp.php",     "text" => "Contributing"),
-        array("href" => "/handling-bugs.php", "text" => "Handling Reports"),
-        array("href" => "/reports/",          "text" => "Reports"),
-        array("href" => "/pulls/",            "text" => "Github PRs"),
-    );
+    $CSS = ["/styles/qa.css"];
+    $LINKS = [
+        ["href" => "/projects.php",      "text" => "Goals"],
+        ["href" => "/rc.php",            "text" => "What is RC?"],
+        ["href" => "/howtohelp.php",     "text" => "Contributing"],
+        ["href" => "/handling-bugs.php", "text" => "Handling Reports"],
+        ["href" => "/reports/",          "text" => "Reports"],
+        ["href" => "/pulls/",            "text" => "Github PRs"],
+    ];
     include __DIR__ . "/../shared/templates/header.inc";
     echo '<section class="mainscreen">';
 }
 
-function common_footer($JS = array()) {
+function common_footer($JS = []) {
     echo "</section>";
     include __DIR__ . "/../shared/templates/footer.inc";
 }
 
-function is_valid_php_version($version, $QA_RELEASES = array()) {
+function is_valid_php_version($version, $QA_RELEASES = []) {
 
 	if (isset($QA_RELEASES['reported']) && in_array($version, $QA_RELEASES['reported'])) {
 		return true;

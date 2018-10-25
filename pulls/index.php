@@ -158,13 +158,13 @@ if (!constant('GITHUB_TOKEN')) {
 
   <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
 <?php
-$JS = array(
+$JS = [
     "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js",
     "//qa.php.net/pulls/jsrender.js",
     "//qa.php.net/pulls/pullrequests.js",
     "//qa.php.net/pulls/jquery.ba-bbq.min.js",
     "//qa.php.net/pulls/Markdown.Converter.js",
     "//qa.php.net/pulls/Markdown.Sanitizer.js",
-);
+];
 
 common_footer($JS);

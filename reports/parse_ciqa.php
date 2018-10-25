@@ -26,14 +26,14 @@ $rss = new SimpleXMLElement('http://ci.qa.php.net/rssAll', 0, true);
 
 // get latest build done
 if (!file_exists('db/ciqaversion.txt')) {
-    $latestVersion = array();
+    $latestVersion = [];
 } else {
     $latestVersion = unserialize(file_get_contents('db/ciqaversion.txt'));
 }
-$newLatestVersion = array(); // this array will erase latestVersion at the end of the next loop
+$newLatestVersion = []; // this array will erase latestVersion at the end of the next loop
 
 // we grab builds in this array
-$buildArray = array();
+$buildArray = [];
 
 foreach ($rss->entry as $test) {
     $linkAttr = $test->link->attributes();
@@ -48,13 +48,13 @@ foreach ($rss->entry as $test) {
     }
 
 
-    $elem = array(
+    $elem = [
         'id' => (int) $pos[3],
         'date' => strtotime($test->updated),
         'version' => $pos[1],
         'archi' => $pos[2],
         'url'  => $pos[0],
-    );
+    ];
     //keep it !
     $buildArray[] = $elem;
 
@@ -75,8 +75,8 @@ echo "We have ".count($buildArray)." builds to parse ... \n\n";
  * we do not add each report to QA (sqlite files will be too big)
  * We choose to pack them based on version parsed
  */
-$failingTests = array();
-$successfulTests = array();
+$failingTests = [];
+$successfulTests = [];
 
 foreach ($buildArray as $build) {
     printf(" * #%s (%5s) - %-30s ", $build['id'], $build['version'], $build['archi']);
@@ -138,7 +138,7 @@ require '../include/functions.php';
 foreach ($successfulTests as $version => $successTests) {
     echo "* ".$version." ";
 
-    $firstArray = array ();
+    $firstArray = [];
 
     // determine status (success or failure ?)
     if (count($failingTests[$version]) == 0)
@@ -173,14 +173,14 @@ foreach ($successfulTests as $version => $successTests) {
     $firstArray['failedTest'] = array_keys($failingTests[$version]);
 
     // expected Failed Test
-    $firstArray['expectedFailedTest'] = array();
+    $firstArray['expectedFailedTest'] = [];
 
     // success
     $firstArray['succeededTest'] = array_keys($successTests);
 
     // tests
     foreach ($failingTests[$version] as $test => $diff) {
-        $firstArray['tests'][$test] = array ('output' => '', 'diff' => str_replace("\n", "\x0d\n", $diff));
+        $firstArray['tests'][$test] = ['output' => '', 'diff' => str_replace("\n", "\x0d\n", $diff)];
     }
 
     $status = insertToDb_phpmaketest($firstArray, $QA_RELEASES);
