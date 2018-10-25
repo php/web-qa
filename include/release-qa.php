@@ -74,29 +74,29 @@ $QA_RELEASES = array(
                 ),
         ),
 
-        '7.1.23' => array(
+        '7.1.24' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 0,
-                        'sha256_bz2'    => '',
-                        'sha256_gz'     => '',
-                        'sha256_xz'     => '',
-                        'date'          => '27 Sep 2018',
-                        'baseurl'       => 'http://downloads.php.net/~pollita/',
+                        'number'        => 1,
+                        'sha256_bz2'    => 'ef53c6c5e4124a943bbf4bc5db40fcce1ece6d97fb8c623a6ee9f32499c348cc',
+                        'sha256_gz'     => '35fb2ad8279bbb26810d32bc71d78f55482dd6b3e2f401b46c155ee80a235cff',
+                        'sha256_xz'     => '994185b8b395a3f0448364999e72a7fe42c14daa978ba6a6a446a8039dad10a8',
+                        'date'          => '25 Oct 2018',
+                        'baseurl'       => 'http://downloads.php.net/~remi/',
                 ),
 		),
 
-        '7.2.11' => array(
+        '7.2.12' => array(
                 'active'                => true,
                 'release'		=> array(
                         'type'          => 'RC',
-                        'number'        => 0,
-                        'sha256_bz2'    => '',
-                        'sha256_gz'     => '',
-                        'sha256_xz'     => '',
-                        'date'          => '27 Sep 2018',
-                        'baseurl'       => 'https://downloads.php.net/~pollita/',
+                        'number'        => 1,
+                        'sha256_bz2'    => '59bbcd35e576be8838c588c5a0d17b4b9886e89355ba168bf525a0066eddebca',
+                        'sha256_gz'     => 'b281ab7f286f310d35ffb5b72b88b04c06918180009987769d9d4c6dc906c7f8',
+                        'sha256_xz'     => 'cbc000432efea35f323d4b8edaae5633e44fa2a0a87f56293d12afe72416d8b1',
+                        'date'          => '25 Oct 2018',
+                        'baseurl'       => 'https://downloads.php.net/~remi/',
                 ),
         ),
 		'7.3.0' => array(
