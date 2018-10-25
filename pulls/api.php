@@ -1,7 +1,7 @@
 <?php
 $errors = [];
 require('./config.php');
-define('USER_AGENT', 'PHP Pull Request Admin (http://qa.php.net/pulls php-qa@lists.php.net)');
+define('USER_AGENT', 'PHP Pull Request Admin (https://qa.php.net/pulls php-qa@lists.php.net)');
 
 if ($_SERVER['SERVER_NAME'] === 'schlueters.de') {
 	define('DEV', true);

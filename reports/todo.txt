@@ -4,7 +4,7 @@ GROUP BY VERSION,YEAR(DATE),WEEK(DATE)
 
 If we have time : graph to see reports sent by version and by date
 
-use http://svn.php.net/viewvc/web/php/trunk/include/version.inc?view=co
+use https://svn.php.net/viewvc/web/php/trunk/include/version.inc?view=co
 
 -----------------------------------------
 Improve documentation functions, syntax, etc.

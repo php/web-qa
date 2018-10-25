@@ -57,7 +57,7 @@ $QA_RELEASES = [
             'sha256_gz'  => '',
             'sha256_xz'  => '',
             'date'       => '05 January 2017',
-            'baseurl'    => 'http://downloads.php.net/tyrael/',
+            'baseurl'    => 'https://downloads.php.net/tyrael/',
         ],
     ],
 
@@ -70,7 +70,7 @@ $QA_RELEASES = [
             'sha256_gz'  => '',
             'sha256_xz'  => '',
             'date'       => '07 December 2017',
-            'baseurl'    => 'http://downloads.php.net/ab/',
+            'baseurl'    => 'https://downloads.php.net/ab/',
         ],
     ],
 
@@ -83,7 +83,7 @@ $QA_RELEASES = [
             'sha256_gz'  => '35fb2ad8279bbb26810d32bc71d78f55482dd6b3e2f401b46c155ee80a235cff',
             'sha256_xz'  => '994185b8b395a3f0448364999e72a7fe42c14daa978ba6a6a446a8039dad10a8',
             'date'       => '25 Oct 2018',
-            'baseurl'    => 'http://downloads.php.net/~remi/',
+            'baseurl'    => 'https://downloads.php.net/~remi/',
         ],
     ],
 

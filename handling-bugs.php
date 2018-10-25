@@ -11,7 +11,7 @@ common_header();
 
 <p>
 Welcome to the HOWTO on managing PHP bugs via <a
-href="http://bugs.php.net/">bugs.php.net</a>.  PHP is a large project with many
+href="https://bugs.php.net/">bugs.php.net</a>.  PHP is a large project with many
 bugs being submitted daily.  Bug topics range from the PHP website itself,
 various PHP extensions, PEAR, etc.  This document is for all PHP developers
 using the bug system.  Because there are so many members using the system it's
@@ -36,7 +36,7 @@ so (with 20406 being an example):</p>
 
 <ul>
     <li>
-        <a href="http://bugs.php.net/20406">http://bugs.php.net/20406</a>
+        <a href="https://bugs.php.net/20406">https://bugs.php.net/20406</a>
     </li>
 </ul>
 
@@ -44,7 +44,7 @@ so (with 20406 being an example):</p>
 
 <ul>
     <li>
-        <a href="http://bugs.php.net/bug.php?id=20406">http://bugs.php.net/bug.php?id=20406</a>
+        <a href="https://bugs.php.net/bug.php?id=20406">https://bugs.php.net/bug.php?id=20406</a>
     </li>
 </ul>
 
@@ -53,7 +53,7 @@ will choose the developer option which will then put you here:</p>
 
 <ul>
     <li>
-        <a href="http://bugs.php.net/bug.php?id=20406&amp;edit=1">http://bugs.php.net/bug.php?id=20406&amp;edit=1</a>
+        <a href="https://bugs.php.net/bug.php?id=20406&amp;edit=1">https://bugs.php.net/bug.php?id=20406&amp;edit=1</a>
     </li>
 </ul>
 
@@ -64,7 +64,7 @@ the bug report and change the bug status.  Please understand what text and
 status will be used and only choose a quickfix option if an appropriate
 quickfix exists.  Choosing a quickfix that's not 100% correct will confuse
 and sometimes irritate the reporter.  The following table lists them (see
-also <a href="http://bugs.php.net/quick-fix-desc.php">quick-fix-desc.php</a>):</p>
+also <a href="https://bugs.php.net/quick-fix-desc.php">quick-fix-desc.php</a>):</p>
 
 
 <h2>Manual answers</h2>
@@ -190,10 +190,10 @@ So, be sure to leave a comment.</p>
 <ul>
     <li>
         The Jani Javascript bug popup window (right click to bookmark):
-        <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="http://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
+        <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="https://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
     </li>
     <li>
-        Look at the <a href="http://bugs.php.net/stats.php">raw bug stats</a>.
+        Look at the <a href="https://bugs.php.net/stats.php">raw bug stats</a>.
     </li>
     <li>
         Not leaving a comment means no email will be sent to the mailing list.

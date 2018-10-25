@@ -86,7 +86,7 @@ ext/myext/tests/myext.diff  - diff of .out and .exp (D)
 factors applying to the tester's environment, or there is a bug in PHP. If this
 is a known bug, we strive to provide bug numbers, in either the test name or the
 file name. You can check the status of such a bug, by going to:
-http://bugs.php.net/12345 where 12345 is the bug number. For clarity and
+https://bugs.php.net/12345 where 12345 is the bug number. For clarity and
 automated processing, bug numbers are prefixed by a hash sign '#' in test names
 and/or test cases are named bug12345.phpt.</p>
 

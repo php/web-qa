@@ -88,7 +88,7 @@ else
     // caused an exception (and hence stopped the rendering) when the user entered
     // e.g. [push] or [__proto__]. Adding a prefix to the actual key prevents this
     // (since no builtin property starts with "s_"). See
-    // http://meta.stackoverflow.com/questions/64655/strange-wmd-bug
+    // https://meta.stackoverflow.com/questions/64655/strange-wmd-bug
     // (granted, switching from Array() to Object() alone would have left only __proto__
     // to be a problem)
     function SaveHash() { }
@@ -331,7 +331,7 @@ else
                 [ ]{0,3}                                        // attacklab: g_tab_width - 1
                 (                                               // save in $1
                     <!
-                    (--(?:|(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)   // see http://www.w3.org/TR/html-markup/syntax.html#comments and http://meta.stackoverflow.com/q/95256
+                    (--(?:|(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)   // see https://www.w3.org/TR/html-markup/syntax.html#comments and https://meta.stackoverflow.com/q/95256
                     >
                     [ \t]*
                     (?=\n{2,})                                  // followed by a blank line
@@ -421,7 +421,7 @@ else
             text = _DoImages(text);
             text = _DoAnchors(text);
 
-            // Make links out of things like `<http://example.com/>`
+            // Make links out of things like `<https://example.com/>`
             // Must come after _DoAnchors(), because you can use < and >
             // delimiters in inline links like [this](<url>).
             text = _DoAutoLinks(text);
@@ -452,7 +452,7 @@ else
 
             text = text.replace(regex, function (wholeMatch) {
                 var tag = wholeMatch.replace(/(.)<\/?code>(?=.)/g, "$1`");
-                tag = escapeCharacters(tag, wholeMatch.charAt(1) == "!" ? "\\`*_/" : "\\`*_"); // also escape slashes in comments to prevent autolinking there -- http://meta.stackoverflow.com/questions/95987
+                tag = escapeCharacters(tag, wholeMatch.charAt(1) == "!" ? "\\`*_/" : "\\`*_"); // also escape slashes in comments to prevent autolinking there -- https://meta.stackoverflow.com/questions/95987
                 return tag;
             });
 
@@ -760,7 +760,7 @@ else
             //
 
             // attacklab: add sentinel to hack around khtml/safari bug:
-            // http://bugs.webkit.org/show_bug.cgi?id=11231
+            // https://bugs.webkit.org/show_bug.cgi?id=11231
             text += "~0";
 
             // Re-usable pattern to match any entirel ul or ol list:
@@ -1198,13 +1198,13 @@ else
         function _DoAutoLinks(text) {
 
             // note that at this point, all other URL in the text are already hyperlinked as <a href=""></a>
-            // *except* for the <http://www.foo.com> case
+            // *except* for the <https://www.foo.com> case
 
             // automatically add < and > around unadorned raw hyperlinks
             // must be preceded by space/BOF and followed by non-word/EOF character
             text = text.replace(/(^|\s)(https?|ftp)(:\/\/[-A-Z0-9+&@#\/%?=~_|\[\]\(\)!:,\.;]*[-A-Z0-9+&@#\/%=~_|\[\]])($|\W)/gi, "$1<$2$3>$4");
 
-            //  autolink anything like <http://example.com>
+            //  autolink anything like <https://example.com>
 
             var replacer = function (wholematch, m1) { return "<a href=\"" + m1 + "\">" + pluginHooks.plainLinkText(m1) + "</a>"; }
             text = text.replace(/<((https?|ftp):[^'">\s]+)>/gi, replacer);

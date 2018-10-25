@@ -23,7 +23,7 @@ precision=14
 --SKIPIF--
 &lt;?php if (!extension_loaded(&quot;filter&quot;)) die(&quot;Skipped: filter extension required.&quot;); ?&gt;
 --GET--
-a=&lt;b&gt;test&lt;/b&gt;&amp;b=http://example.com
+a=&lt;b&gt;test&lt;/b&gt;&amp;b=https://example.com
 --POST--
 c=&lt;p&gt;string&lt;/p&gt;&amp;d=12345.7
 --FILE--
@@ -45,7 +45,7 @@ echo &quot;Done\n&quot;;
 ?&gt;
 --EXPECTF--
 string(4) &quot;test&quot;
-string(18) &quot;http://example.com&quot;
+string(19) &quot;https://example.com&quot;
 string(27) &quot;&amp;#60;b&amp;#62;test&amp;#60;/b&amp;#62;&quot;
 
 Notice: Object of class stdClass could not be converted to int in %ssample001.php on line %d

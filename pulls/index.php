@@ -133,8 +133,8 @@ if (!constant('GITHUB_TOKEN')) {
   <div id="nextRepoPage"><a href="javascript:void(0);">Next--&gt;&gt;&gt;</a></div>
   <div id="mainContent">
     <ul id="repolist"></ul>
-    <p>Even though the PHP project is using <a href="http://git.php.net">git.php.net</a>
-    as master location for Git repositories we provide official <a href="http://github.com/php">mirrors on GitHub</a>,
+    <p>Even though the PHP project is using <a href="https://git.php.net">git.php.net</a>
+    as master location for Git repositories we provide official <a href="https://github.com/php">mirrors on GitHub</a>,
     which can be used to create and discuss feature branches. This tool here tries to assist with the handling of GitHub pull requests.
     </p>
     <p>In general discussions about pull requests should be done in the appropriate places

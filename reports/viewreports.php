@@ -7,7 +7,7 @@
 #  | This source file is subject to version 3.01 of the PHP license,      |
 #  | that is bundled with this package in the file LICENSE, and is        |
 #  | available through the world-wide-web at the following url:           |
-#  | http://www.php.net/license/3_01.txt                                  |
+#  | https://php.net/license/3_01.txt                                     |
 #  | If you did not receive a copy of the PHP license and are unable to   |
 #  | obtain it through the world-wide-web, please send a note to          |
 #  | license@php.net so we can mail you a copy immediately.               |
@@ -59,16 +59,16 @@ $database->close();
 
 //URL test
 if (substr($version, 0, 3) == '5.2') {
-    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.2;f='.
+    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.2;f='.
                 ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.3') {
-    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.3;f='.
+    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.3;f='.
                 ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.4') {
-    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.4;f='.
+    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.4;f='.
                 ltrim($testName, '/').'';
 } elseif (substr($version, 0, 3) == '5.5') {
-    $urlTest = 'http://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/master;f='.
+    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/master;f='.
                 ltrim($testName, '/').'';
 } else {
     $urlTest = '';
@@ -77,7 +77,7 @@ if (substr($version, 0, 3) == '5.2') {
 // BUG url
 if (preg_match('@bug([0-9]{1,}).phpt$@', $testName, $preg)) {
     $bugId = (int)$preg[1];
-    $bugUrl = 'http://bugs.php.net/'.$preg[1];
+    $bugUrl = 'https://bugs.php.net/'.$preg[1];
 } else {
     $bugId = null;
     $bugUrl = '';
@@ -114,7 +114,7 @@ if ($bugId) {
 ?>
 <table style="width:100%; border-width=0">
   <tr id="title">
-  <th class="details" id="number"><a href="http://bugs.php.net/<?php echo $bugId; ?>"><?php echo htmlentities($bugxml->bug_type);?>&nbsp;#<?php echo $bugId; ?></a></th>
+  <th class="details" id="number"><a href="https://bugs.php.net/<?php echo $bugId; ?>"><?php echo htmlentities($bugxml->bug_type);?>&nbsp;#<?php echo $bugId; ?></a></th>
     <td id="summary" colspan="5"><?php echo htmlentities($bugxml->sdesc);?></td>
   </tr>
   <tr id="submission">
@@ -128,13 +128,13 @@ if ($bugId) {
     <th class="details">From:</th>
     <td><?php echo htmlentities(strtok($bugxml->email, '@'));?></td>
     <th class="details">Assigned:</th>
-    <td><a href="http://bugs.php.net/search.php?cmd=display&amp;assign=<?php echo htmlentities($bugxml->assign, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->assign); ?></a></td>
+    <td><a href="https://bugs.php.net/search.php?cmd=display&amp;assign=<?php echo htmlentities($bugxml->assign, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->assign); ?></a></td>
   </tr>
   <tr id="categorization">
     <th class="details">Status:</th>
     <td><?php echo htmlentities($bugxml->status);?></td>
     <th class="details">Package:</th>
-    <td><a href="http://bugs.php.net/search.php?cmd=display&amp;package_name[]=<?php echo htmlentities($bugxml->package_name, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->package_name);?></a></td>
+    <td><a href="https://bugs.php.net/search.php?cmd=display&amp;package_name[]=<?php echo htmlentities($bugxml->package_name, ENT_QUOTES);?>"><?php echo htmlentities($bugxml->package_name);?></a></td>
   </tr>
   <tr id="situation">
     <th class="details">PHP Version:</th>

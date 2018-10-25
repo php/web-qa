@@ -29,8 +29,8 @@ common_header();
              <p>
               <br>
               <strong>Windows users:</strong>
-              See <a href="http://windows.php.net/qa/">here</a> for the Windows QA builds and
-              <a href="http://windows.php.net/snaps/">here</a> for the Windows Snapshot builds.
+              See <a href="https://windows.php.net/qa/">here</a> for the Windows QA builds and
+              <a href="https://windows.php.net/snaps/">here</a> for the Windows Snapshot builds.
              </p>
 
              <h3>How To Help</h3>

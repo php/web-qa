@@ -1,3 +1,3 @@
 <?php
-header("Location: http://qa.php.net/running-tests.php");
+header("Location: https://qa.php.net/running-tests.php");
 ?>

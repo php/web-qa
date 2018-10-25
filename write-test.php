@@ -49,7 +49,7 @@ you have everything you need.</p>
 php functions available.  You can  write a test on a basic language function (a string
 function or an array function) , or a function provided by one of PHP's numerous extensions
 (a mysql function or a image function or a mcrypt function).</p>
-<p>You can find out what functions already have phpt tests by looking in the <a href="http://git.php.net/?p=php-src.git;a=tree;">html
+<p>You can find out what functions already have phpt tests by looking in the <a href="https://git.php.net/?p=php-src.git;a=tree;">html
 version</a> of the git repository (ext/standard/tests/ is a good place to start looking - though not
 <i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you
 can see which functions have lots of tests and which need more, although these pages only
@@ -220,7 +220,7 @@ of failures on other platforms. If you don't have karma to commit have a look at
 clean up any temporary resources (eg files) that you used in the test. There is a special --CLEAN-- section
 to help you do this - see <a href="#clean">here</a>.
 <p>Another good check is to look at what lines of code in the PHP source your test case covers.
-This is easy to do, there are some instructions on the <a href="http://wiki.php.net/doc/articles/writing-tests">PHP Wiki</a>.</p>
+This is easy to do, there are some instructions on the <a href="https://wiki.php.net/doc/articles/writing-tests">PHP Wiki</a>.</p>
 
 <h3><a name="whattodo" href="#whattodo" class="anchor">#</a>What should I do with my test case when I've written and tested it?</h3>
 <p>The next step is to get someone to review it. If it's short you can paste it into a note and

@@ -53,7 +53,7 @@ When do we have new reports ?
 -----------------------------
 When you do a 'make test' on your PHP sourcedir, you can send a report when something went wrong.
 If you do this, the test program will build a flat file containing all failed tests output/diff
-and send it to http://qa.php.net/buildtest-process.php (via POST method).
+and send it to https://qa.php.net/buildtest-process.php (via POST method).
 Previously, this page only sent the report to a dedicated mailing list (qa-reports at lists.php.net).
 We now add a parser that intercept the data and send it to the function located in
 reports/parserfunc.php:parse_phpmaketest()
