@@ -180,7 +180,7 @@ function ghupdate()
 
 	if (empty($_POST['id']) || !is_numeric($_POST['id'])) {
 		header('HTTP/1.0 400 Bad Request');
-		die(json_encode(['success' => false, 'errors' => ["No or inalid id provided"]]));
+		die(json_encode(['success' => false, 'errors' => ["No or invalid id provided"]]));
 	}
 
 	if (empty($_POST['comment']) || !($comment = trim($_POST['comment']))) {
