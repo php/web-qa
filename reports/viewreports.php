@@ -46,7 +46,7 @@ GROUP BY diff ORDER BY COUNT(*) desc';
 $stmt = $database->prepare($query);
 $stmt->bindValue(':test_name', $testName, SQLITE3_TEXT);
 $q = $stmt->execute();
-$allDiffArray = array();
+$allDiffArray = [];
 $sumCount = 0;
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
     $allDiffArray[] = $tab;

@@ -44,7 +44,7 @@ $query = 'SELECT reports.* FROM failed JOIN reports ON reports.id=failed.id_repo
 $stmt = $database->prepare($query);
 $stmt->bindValue(':signature', hex2bin($signature), SQLITE3_BLOB);
 $q = $stmt->execute();
-$reportsArray = array();
+$reportsArray = [];
 while ($tab = $q->fetchArray(SQLITE3_ASSOC)) {
     $reportsArray[$tab['id']] = $tab;
 }
@@ -59,7 +59,7 @@ list($testName) = $tab->fetchArray(SQLITE3_NUM);
 $database->close();
 
 $TITLE = "Report details";
-common_header(array('<meta name="robots" content="noindex">'));
+common_header(['<meta name="robots" content="noindex">']);
 ?>
 <script src="sorttable.js"></script>
 <div style="margin:10px">

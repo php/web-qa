@@ -3,7 +3,7 @@
 if (file_exists('db/update_20120407.lock')) {
     exit('SQLite files has already been updated with new scheme (date 2012-04-07)');
 }
-        $queriesCreate = array (
+        $queriesCreate = [
             'dropexpected' => 'DROP TABLE IF exists expectedfail',
             'expectedfail' => 'CREATE TABLE IF NOT EXISTS expectedfail (
                   `id` integer PRIMARY KEY AUTOINCREMENT,
@@ -15,7 +15,7 @@ if (file_exists('db/update_20120407.lock')) {
                   `id_report` bigint(20) NOT NULL,
                   `test_name` varchar(128) NOT NULL
                 )',
-        );
+        ];
 header('Content-Type: text/plain');
 
 $d = dir('db');

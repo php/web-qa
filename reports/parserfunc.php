@@ -36,7 +36,7 @@
  * @param array releases we accept (so that we don't accept a report that claims to be PHP 8.1 for example)
  * @return boolean success or not (for the moment, error leads to a call to 'exit;' ... not good I know)
  */
-function insertToDb_phpmaketest($array, $QA_RELEASES = array())
+function insertToDb_phpmaketest($array, $QA_RELEASES = [])
 {
     if (!is_array($array)) {
         // impossible to fetch data. We'll record this error later ...
@@ -57,7 +57,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
 
         $dbFile = __DIR__.'/db/'.$array['version'].'.sqlite';
 
-        $queriesCreate = array (
+        $queriesCreate = [
             'failed' => 'CREATE TABLE IF NOT EXISTS failed (
                   `id` integer PRIMARY KEY AUTOINCREMENT,
                   `id_report` bigint(20) NOT NULL,
@@ -87,7 +87,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
                   phpinfo STRING NOT NULL,
                   user_email varchar(64) default null
             )',
-        );
+        ];
 
 
         if (!file_exists($dbFile)) {
@@ -105,7 +105,7 @@ function insertToDb_phpmaketest($array, $QA_RELEASES = array())
         $dbi = new SQLite3($dbFile, SQLITE3_OPEN_READWRITE) or exit('cannot open DB to record results');
 
         // handle tests with no success
-        if (!isset($array['succeededTest'])) $array['succeededTest'] = array();
+        if (!isset($array['succeededTest'])) $array['succeededTest'] = [];
 
         $query = <<<'SQL'
 INSERT INTO `reports` (
@@ -220,11 +220,11 @@ SQL;
  */
 function parse_phpmaketest($version, $status=null, $file)
 {
-    $extract = array();
+    $extract = [];
 
     $extract['version'] = $version;
 
-    if (in_array($status, array('failed', 'success', 'unknown')))
+    if (in_array($status, ['failed', 'success', 'unknown']))
         $extract['status'] = $status;
     else
         $extract['status'] = null;
@@ -233,10 +233,10 @@ function parse_phpmaketest($version, $status=null, $file)
 
     $extract['date'] = time();
 
-    $extract['expectedFailedTest'] = array();
-    $extract['failedTest'] = array();
-    $extract['outputsRaw'] = array();
-    $extract['tests']      = array();
+    $extract['expectedFailedTest'] = [];
+    $extract['failedTest'] = [];
+    $extract['outputsRaw'] = [];
+    $extract['tests']      = [];
     $extract['phpinfo']    = '';
     $extract['buildEnvironment']    = '';
 
@@ -323,7 +323,7 @@ function parse_phpmaketest($version, $status=null, $file)
     // 2nd loop on outputs
     foreach ($extract['outputsRaw'] as $name => $output) {
         $name = substr($name, strlen($prefix));
-        $extract['tests'][$name] = array ('output' => '', 'diff' => '');
+        $extract['tests'][$name] = ['output' => '', 'diff' => ''];
         $outputTest = '';
         $diff = '';
         $startDiff = false;
