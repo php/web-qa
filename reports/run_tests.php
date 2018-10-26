@@ -152,8 +152,7 @@ function outputTestReportsForVersion(string $getVersion) {
 }
 </style>
 <script>
-<!--
-function changeExpect() 
+function changeExpect()
 {
     var check = document.getElementById('expect').checked;
     if (check == true) {
@@ -162,7 +161,6 @@ function changeExpect()
         document.location.href = 'run_tests.php?version=$getVersionURL';
     }
 }
-// ->
 </script>
 <input type="checkbox" id="expect" onClick="javascript:changeExpect()" $expectCHECKED />
 <small>Show XFAIL</small><br />
