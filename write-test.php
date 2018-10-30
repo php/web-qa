@@ -225,7 +225,7 @@ This is easy to do, there are some instructions on the <a href="https://wiki.php
 <h3><a name="whattodo" href="#whattodo" class="anchor">#</a>What should I do with my test case when I've written and tested it?</h3>
 <p>The next step is to get someone to review it. If it's short you can paste it into a note and
 send it to php-qa@lists.php.net. If the test is a bit too
-long for that then put it somewhere were people can download it (<a href="http://www.pastebin.ca/">pastebin</a> is
+long for that then put it somewhere were people can download it (<a href="https://pastebin.com/">pastebin</a> is
 sometimes used). Appending tests to notes as files doesn't work well - so please don't do that. Your
 note to  php-qa@lists.php.net should say
 what level of PHP you have tested it on and what platform(s) you've run it on. Someone from

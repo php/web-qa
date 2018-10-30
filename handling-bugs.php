@@ -170,16 +170,16 @@ php-bugs@lists.php.net being the default (most go here).  Here's a list:</p>
 
 <dl>
         <dt>Default</dt>
-        <dd><a href="http://news.php.net/group.php?group=php.bugs">php-bugs@lists.php.net</a></dd>
+        <dd><a href="http://news.php.net/php.bugs">php-bugs@lists.php.net</a></dd>
 
         <dt>Documentation</dt>
-        <dd><a href="http://marc.theaimsgroup.com/?l=phpdoc">phpdoc@lists.php.net</a></dd>
+        <dd><a href="http://news.php.net/php.doc">phpdoc@lists.php.net</a></dd>
 
         <dt>PEAR</dt>
-        <dd><a href="http://marc.theaimsgroup.com/?l=pear-dev">pear-dev@lists.php.net</a></dd>
+        <dd><a href="http://news.php.net/php.pear.dev">pear-dev@lists.php.net</a></dd>
 
         <dt>PHP.net Website</dt>
-        <dd><a href="http://news.php.net/group.php?group=php.mirrors">php-mirrors@lists.php.net</a></dd>
+        <dd><a href="http://news.php.net/php.mirrors">php-mirrors@lists.php.net</a></dd>
 </dl>
 
 <p>Reclassifying will immediatly change which mailing list is used.  If you
@@ -207,7 +207,7 @@ So, be sure to leave a comment.</p>
         If you have a question either email the
         <a href="mailto:internals@lists.php.net">internals@lists.php.net</a>
         mailing list or check out the #php.pecl channel in IRC on
-        <a href="http://www.irchelp.org/irchelp/networks/efnet.txt">EFNET</a>.
+        <a href="http://www.irchelp.org/networks/efnet/">EFNET</a>.
     </li>
 </ul>
 
