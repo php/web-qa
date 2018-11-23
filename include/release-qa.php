@@ -74,29 +74,29 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.1.24' => [
+    '7.1.25' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '25 Oct 2018',
-            'baseurl'    => 'https://downloads.php.net/~remi/',
+            'number'     => 1,
+            'sha256_bz2' => '7740697e7a270b8556696ae31ddaf5ee8893a7cda92149bc263d6558ed83d7f8',
+            'sha256_gz'  => '4e4d14c3dfcda7fcec3f16e059293ff1bd0e5c29d288fc5751cc6f047bb3a087',
+            'sha256_xz'  => '45a0222e72d70232981f8587dcd8fddbebf1130b00b97988e229a3385c5fc5d2',
+            'date'       => '06 Dec 2018',
+            'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
 
-    '7.2.12' => [
+    '7.2.13' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '25 Oct 2018',
-            'baseurl'    => 'https://downloads.php.net/~remi/',
+            'number'     => 1,
+            'sha256_bz2' => '66c107be8d433eb817565ed0ed4d7a5540c6952c212f2e0847effdee2c66b703',
+            'sha256_gz'  => '24b270b6b08018968ab8770e52f97fdb718f70800dc6bc8db81580424c467518',
+            'sha256_xz'  => '2a923059289c72db8e4268d11727f68c3d7c7e3ef5cbe920c740e78dfe515e35',
+            'date'       => '06 Dec 2018',
+            'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
 
