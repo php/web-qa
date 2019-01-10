@@ -48,19 +48,6 @@ TODO:
 /**********************************************************************/
 
 $QA_RELEASES = [
-    '5.6.40' => [
-        'active'  => true,
-        'release' => [
-            'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '05 January 2017',
-            'baseurl'    => 'https://downloads.php.net/tyrael/',
-        ],
-    ],
-
     '7.0.33' => [
         'active'  => true,
         'release' => [
