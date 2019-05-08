@@ -383,7 +383,11 @@ To be used if you need a specific php.ini setting for the test.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Format:</b><br/>
-Key value pairs. One setting per line. Content that is not a valid ini setting may cause failures.</p>
+Key value pairs including automatically replaced tags. One setting per line. Content that is not a valid ini setting may cause failures.</p>
+<p>The following is a list of all tags and what they are used to represent:</p>
+<ul>
+<li>{PWD}: Represents the directory of the file containing the --INI-- section.</li>
+</ul>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--INI--
 precision=14</pre></p>
