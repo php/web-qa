@@ -387,6 +387,7 @@ Key value pairs including automatically replaced tags. One setting per line. Con
 <p>The following is a list of all tags and what they are used to represent:</p>
 <ul>
 <li>{PWD}: Represents the directory of the file containing the --INI-- section.</li>
+<li>{TMP}: Represents the system's temporary directory. Available as of PHP 7.2.19 and 7.3.6.</li>
 </ul>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--INI--
