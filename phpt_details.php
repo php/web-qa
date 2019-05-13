@@ -19,6 +19,7 @@ common_header();
 [<a href="#description_section">--DESCRIPTION--</a>]<br/>
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
+[<a href="#conflicts_section">--CONFLICTS--</a>]<br/>
 [<a href="#capture_stdio_section">--CAPTURE_STDIO--</a>]<br/>
 [<a href="#extensions_section">--EXTENSIONS--</a>]<br/>
 [<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
@@ -121,6 +122,28 @@ PHP code enclosed by PHP tags.</p>
 &lt;?php include('skipif.inc'); ?&gt;</pre>
 </p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
+</dd>
+
+<dt id="conflicts_section">--CONFLICTS--</dt>
+<dd>
+<p><b>Description:</b><br/>
+<p>This section is only relevant for parallel test execution (available as of
+PHP 7.4.0), and allows to specify conflict keys. While a test that conflicts
+with key K is running, no other test that conflicts with K is run.
+For tests conflicting with "all", no other tests are run in parallel.</p>
+<p>An alternative to have a --CONFLICTS-- section is to add a file named
+CONFLICTS to the directory containing the tests. The contents of the CONFLICTS
+file must have the same format as the contents of the --CONFLICTS-- section.
+</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Format:</b><br/>
+One conflict key per line. Comment lines starting with # are also allowed.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--CONFLICTS--
+server</pre>
+</p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/conflicts_1.php">conflicts_1.phpt</a></p>
 </dd>
 
 <dt id="capture_stdio_section">--CAPTURE_STDIO--</dt>
