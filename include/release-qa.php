@@ -61,16 +61,16 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.2.18' => [
+    '7.2.19' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '18 Apr 2019',
-            'baseurl'    => 'https://downloads.php.net/~remi/',
+            'number'     => 1,
+            'sha256_bz2' => '504007b1a3d9712d2a175e8cd8ad19dfe0ecca63d5c4b3a1e35485f33e726f37',
+            'sha256_gz'  => 'db36b570b069ac61f17f01a4c25827fd261fc745560a6fe7b1af2ba03c4014b3',
+            'sha256_xz'  => 'a63199b5fa09e39c935d3dc23ce22c66a943b68966e8db1e1800950f51234e89',
+            'date'       => '16 May 2019',
+            'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
 
