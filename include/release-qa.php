@@ -86,6 +86,19 @@ $QA_RELEASES = [
             'baseurl'    => 'https://downloads.php.net/~cmb/',
         ],
     ],
+
+    '7.4.0alpha1' => [
+        'active'  => true,
+        'release' => [
+            'type'       => 'alpha',
+            'number'     => 1,
+            'sha256_bz2' => 'b431ac5c35946657be97294951f88fe251a279f0a9eaac3d445b61b71674db36',
+            'sha256_gz'  => 'b199158e0cd2823b4e39379c7f83f41e7e8142b268f48acfc5bb6d48437a1ef1',
+            'sha256_xz'  => '378400b6eced6e358f5db750413a7f9959517b0daef6580b16d640190b7dc364',
+            'date'       => '13 Jun 2019',
+            'baseurl'    => 'https://downloads.php.net/~derick/',
+        ],
+    ],
 ];
 
 /*** End Configuration *******************************************************************/
