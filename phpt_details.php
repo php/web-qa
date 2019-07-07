@@ -77,11 +77,13 @@ and several differnet filter sanitizers.</pre>
 <dt id="credits_section">--CREDITS--</dt>
 <dd>
 <p><b>Description:</b><br/>
-If you don't have CVS commit rights, put your name and email on the first line.
-If the test is part of a TesFest event, then # followed by the name of the event
+Used to credit contributors without CVS commit rights, who put their name and email on the first line.
+If the test was part of a TestFest event, then # followed by the name of the event
 and the date (YYYY-MM-DD) on the second line.</p>
 <p><b>Required:</b><br/>
-It's required for credit during TestFests.</p>
+No. For newly created tests this section should no longer be included, as test authorship is already
+accurately tracked by Git. If multiple authors should be credited, the `Co-authored-by` tag in the
+commit message may be used.</p>
 <p><b>Format:</b><br/>
 Name Email<br/>
 [Event]</p>
