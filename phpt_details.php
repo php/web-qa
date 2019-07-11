@@ -113,7 +113,9 @@ and reduces future code maintenance.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Format:</b><br/>
-PHP code enclosed by PHP tags.</p>
+PHP code enclosed by PHP tags. If the output of this scripts starts with "skip",
+the test is skipped. If the output starts with "xfail", the test is marked as
+expected failure. The "xfail" convention is supported as of PHP 7.2.0.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--SKIPIF--
 &lt;?php if (!extension_loaded("filter")) die("Skipped: filter extension required."); ?&gt;</pre>
@@ -124,7 +126,12 @@ PHP code enclosed by PHP tags.</p>
 &lt;?php include('skipif.inc'); ?&gt;</pre>
 </p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
-</dd>
+<<p><b>Example 3 (snippet):</b><br/>
+<pre>--SKIPIF--
+&lt;?php if (getenv('SKIP_ASAN')) die('xfail Startup failure leak'); ?&gt;</pre>
+</p>
+<p><b>Example 3 (full):</b> <a href="sample_tests/xfailif.php">xfailif.phpt</a></p>
+/dd>
 
 <dt id="conflicts_section">--CONFLICTS--</dt>
 <dd>
