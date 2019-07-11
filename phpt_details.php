@@ -126,12 +126,12 @@ expected failure. The "xfail" convention is supported as of PHP 7.2.0.</p>
 &lt;?php include('skipif.inc'); ?&gt;</pre>
 </p>
 <p><b>Example 2 (full):</b> <a href="sample_tests/sample003.php">sample003.phpt</a></p>
-<<p><b>Example 3 (snippet):</b><br/>
+<p><b>Example 3 (snippet):</b><br/>
 <pre>--SKIPIF--
 &lt;?php if (getenv('SKIP_ASAN')) die('xfail Startup failure leak'); ?&gt;</pre>
 </p>
 <p><b>Example 3 (full):</b> <a href="sample_tests/xfailif.php">xfailif.phpt</a></p>
-/dd>
+</dd>
 
 <dt id="conflicts_section">--CONFLICTS--</dt>
 <dd>
