@@ -90,12 +90,12 @@ $QA_RELEASES = [
     '7.4.0' => [
         'active'  => true,
         'release' => [
-            'type'       => 'alpha',
-            'number'     => 3,
-            'sha256_bz2' => '0d7c20fbdbe6af0a085f47bbcfcb00c0c4047cbc62070e8182e46f64043dc393',
-            'sha256_gz'  => '1b72de3ffe5a3860d6eb5e1996c9532780ff37cbc7a24e98f598ae46d0db0159',
-            'sha256_xz'  => '03babbfc1ae5069e25fae8d91cd664d97108632fcdf877dfe142e606874247b8',
-            'date'       => '11 Jul 2019',
+            'type'       => 'beta1',
+            'number'     => 1,
+            'sha256_bz2' => 'e9760571837a92f33fe82610df6269f2b4c15d39e269ddeeb4c66adbcde033e5',
+            'sha256_gz'  => 'e6d18850fe5ccc25b908bfad18707b97a6f6b3132df52560b64914841a3dea46',
+            'sha256_xz'  => '399727399ac3c98c981e623ce2f4e55940ee1f99829cfcbca914d878a6910d30',
+            'date'       => '25 Jul 2019',
             'baseurl'    => 'https://downloads.php.net/~derick/',
         ],
     ],
