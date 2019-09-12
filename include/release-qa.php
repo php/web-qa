@@ -61,15 +61,15 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.2.21' => [
+    '7.2.23' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '15 Aug 2019',
+            'number'     => 1,
+            'sha256_bz2' => '26561a9fe07d2b935ecea5be79a108be97bec570b63fe1ec55cbff05966a3758',
+            'sha256_gz'  => '2f99d104c427fe7f2d475fb3e6c6d30695a8d0f2d3f7fdc249baa4b43c183938',
+            'sha256_xz'  => 'dbeae85dff28654c8029223cb9c3ed3446ed3214cf6be3964d1f365ad91066a8',
+            'date'       => '12 Sep 2019',
             'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
