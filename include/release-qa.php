@@ -48,19 +48,6 @@ TODO:
 /**********************************************************************/
 
 $QA_RELEASES = [
-    '7.1.25' => [
-        'active'  => true,
-        'release' => [
-            'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '06 Dec 2018',
-            'baseurl'    => 'https://downloads.php.net/~pollita/',
-        ],
-    ],
-
     '7.2.26' => [
         'active'  => true,
         'release' => [
