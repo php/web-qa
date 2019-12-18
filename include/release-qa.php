@@ -74,8 +74,8 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.4.1' => [
-        'active'  => true,
+    '7.4.2' => [
+        'active'  => false,
         'release' => [
             'type'       => 'RC',
             'number'     => 1,
