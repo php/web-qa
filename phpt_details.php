@@ -20,7 +20,7 @@ common_header();
 [<a href="#credits_section">--CREDITS--</a>]<br/>
 [<a href="#skipif_section">--SKIPIF--</a>]<br/>
 [<a href="#conflicts_section">--CONFLICTS--</a>]<br/>
-[<a href="whitespace_sensitive_section">--WHITESPACE_SENSITIVE--</a>]<br/>
+[<a href="#whitespace_sensitive_section">--WHITESPACE_SENSITIVE--</a>]<br/>
 [<a href="#capture_stdio_section">--CAPTURE_STDIO--</a>]<br/>
 [<a href="#extensions_section">--EXTENSIONS--</a>]<br/>
 [<a href="#post_section">--POST--</a> | <a href="#put_section">--PUT--</a> | <a href="#post_raw_section">--POST_RAW--</a> | <a href="#gzip_post_section">--GZIP_POST--</a> | <a href="#deflate_post_section">--DEFLATE_POST--</a> | <a href="#get_section">--GET--</a>]<br/>
@@ -156,7 +156,7 @@ server</pre>
 <p><b>Example 1 (full):</b> <a href="sample_tests/conflicts_1.php">conflicts_1.phpt</a></p>
 </dd>
 
-<dt id="conflicts_section">--WHITESPACE_SENSITIVE--</dt>
+<dt id="whitespace_sensitive_section">--WHITESPACE_SENSITIVE--</dt>
 <dd>
 <p><b>Description:</b><br/>
 <p>This flag is used to indicate that the test should not be changed by
