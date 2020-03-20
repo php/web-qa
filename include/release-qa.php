@@ -62,7 +62,7 @@ $QA_RELEASES = [
     ],
 
     '7.3.17' => [
-        'active'  => false,
+        'active'  => true,
         'release' => [
             'type'       => 'RC',
             'number'     => 0,
@@ -75,7 +75,7 @@ $QA_RELEASES = [
     ],
 
     '7.4.5' => [
-        'active'  => false,
+        'active'  => true,
         'release' => [
             'type'       => 'RC',
             'number'     => 0,
