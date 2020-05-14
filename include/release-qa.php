@@ -74,15 +74,15 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.4.6' => [
+    '7.4.7' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_gz'  => '6137a335c38ae6b6213823b8c61838e1ca631b52821d9a27899c70aa343829a4',
-            'sha256_bz2' => '412da33558d0f35361d7f6e9b31d1eadaaca94decaa95a9de5b3ba3c5ef165e2',
-            'sha256_xz'  => 'a4fe35b69f9bba7d307bb8c6676fd83bd960d01973cac73292f2eee97dba3c28',
-            'date'       => '30 Apr 2020',
+            'number'     => 0,
+            'sha256_gz'  => '',
+            'sha256_bz2' => '',
+            'sha256_xz'  => '',
+            'date'       => '28 May 2020',
             'baseurl'    => 'https://downloads.php.net/~derick/',
         ],
     ],
