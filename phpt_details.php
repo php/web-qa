@@ -755,7 +755,7 @@ when run on different platforms.</p>
 <li>%A: Zero or more of anything (character or white space) including the end of line
   character.</li>
 <li>%w: Zero or more white space characters.</li>
-<li>%i: A signed integer value, for example +3142, -3142.</li>
+<li>%i: A signed integer value, for example +3142, -3142, 3142.</li>
 <li>%d: An unsigned integer value, for example 123456.</li>
 <li>%x: One or more hexadecimal character. That is, characters in the range 0-9, a-f,
   A-F.</li>
