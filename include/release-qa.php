@@ -70,15 +70,15 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.4.9' => [
+    '7.4.10' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_gz'  => 'e1aed9aa930d5153ad658225e4794e5e30c4ec8b1c7295c139aa13725542a472',
-            'sha256_bz2' => '77d584cef9b167c5b2d2d72167995d7bd9c1f5bdd314db2b404665068094a3bf',
-            'sha256_xz'  => '218eabb56713489b11f74c294dd6df27a1f389efaaf8687eeb5e36ee2e9efcbb',
-            'date'       => '23 Jul 2020',
+            'number'     => 0,
+            'sha256_gz'  => '',
+            'sha256_bz2' => '',
+            'sha256_xz'  => '',
+            'date'       => '18 Aug 2020',
             'baseurl'    => 'https://downloads.php.net/~derick/',
         ],
     ],
@@ -91,7 +91,7 @@ $QA_RELEASES = [
             'sha256_gz'  => '5c9f888b101e31540074b83c1c2b24771dab0f64c0ef1e3d217ade3306148d7c',
             'sha256_bz2' => '1f2101789aee0384ff6712bb11d1875c8361359ee780fb41b2f1e073916dc331',
             'sha256_xz'  => 'd71592128156060501e4ba513a899a91bca25946e566f7ca34345ccd5945d072',
-            'date'       => '06 August 2020',
+            'date'       => '06 Aug 2020',
             'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
