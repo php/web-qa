@@ -86,12 +86,12 @@ $QA_RELEASES = [
     '8.0.0' => [
         'active'  => true,
         'release' => [
-            'type'       => 'alpha',
-            'number'     => 3,
-            'sha256_gz'  => '5bd1074e844ef85063c997d6372ae654080fff27b0ccb36d5597d16994cee1e0',
-            'sha256_bz2' => '41ef5740c8cb8d33839c4d7392b9b6a7694105a650aa93be9dfda1287fe27df1',
-            'sha256_xz'  => '83dac88c90bf47fad89bb2425d76243fa0356e462954d652893d05b9593ac6d0',
-            'date'       => '23 July 2020',
+            'type'       => 'beta',
+            'number'     => 1,
+            'sha256_gz'  => '5c9f888b101e31540074b83c1c2b24771dab0f64c0ef1e3d217ade3306148d7c',
+            'sha256_bz2' => '1f2101789aee0384ff6712bb11d1875c8361359ee780fb41b2f1e073916dc331',
+            'sha256_xz'  => 'd71592128156060501e4ba513a899a91bca25946e566f7ca34345ccd5945d072',
+            'date'       => '06 August 2020',
             'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
