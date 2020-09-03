@@ -87,12 +87,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'beta',
-            'number'     => 2,
-            'sha256_gz'  => '846121b46616ace8bf2a9e047b57919ca873fc95445041be3e1fd593fd58527e',
-            'sha256_bz2' => '641545beec305855f0facd27760f80d14bf7dc976363bc5adb799619aba536f8',
-            'sha256_xz'  => '466b2519f54e819bc8907206b30e0e21196a3609e80f27a112c434c7ede3a965',
-            'date'       => '20 Aug 2020',
-            'baseurl'    => 'https://downloads.php.net/~pollita/',
+            'number'     => 3,
+            'sha256_gz'  => 'e7fa12065221d654d423e46d95155d2a0f20727e3a30d3355dc2a59793cf7906',
+            'sha256_bz2' => '88da661bf24d14ca17fc21822433cfa95d6540c00e57d6a56def348305121250',
+            'sha256_xz'  => 'a52b4e07e14a3986482e08fdd82df027acc46acaffb6409bef8290dd218fbcec',
+            'date'       => '3 Sep 2020',
+            'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
 ];
