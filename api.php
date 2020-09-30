@@ -46,7 +46,7 @@ Pass in type=qa-releases (the only type currently), along with the desired forma
 </p>
 
 <p>
-Example URLs:
+Example  of URLs:
 <ul>
 <li>All information, serialized: <a href="api.php?type=qa-releases&format=serialize">https://qa.php.net/api.php?type=qa-releases&format=serialize</a></li>
 <li>Only dev version numbers, json: <a href="api.php?type=qa-releases&format=json&only=dev_versions">https://qa.php.net/api.php?type=qa-releases&format=json&only=dev_versions</a></li>
