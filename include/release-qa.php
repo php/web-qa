@@ -86,13 +86,13 @@ $QA_RELEASES = [
     '8.0.0' => [
         'active'  => true,
         'release' => [
-            'type'       => 'rc',
-            'number'     => 1,
-            'sha256_gz'  => '19f859109540f6bc7f5bf4de71c1f363cd4f171a7c1f0e5f4f0abe5d40f271de',
-            'sha256_bz2' => '87e0afa3e6a33a2c16f5a0db6978a5a31745629501d7590d2d2f3bbac4dc4934',
-            'sha256_xz'  => '350a80e26561ec5b926e84d4f6cbbd76d54d7cb77444fd1b1a16310201fc0f7b',
-            'date'       => '01 Oct 2020',
-            'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
+            'type'       => 'RC',
+            'number'     => 2,
+            'sha256_gz'  => '0cebc11c61c0f153bd866eab76c424404b3ccc779417cdfde1061e550c3e364c',
+            'sha256_bz2' => '21b5cd10f02a901669e7696029cf97c496cdd55aefa2dce3160047791aff4cba',
+            'sha256_xz'  => '97d8031ba1095c3222fc5725710ac18dc4f584e526cbcbfb2817146abb6891ec',
+            'date'       => '16 Oct 2020',
+            'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
 ];
