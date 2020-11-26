@@ -57,14 +57,14 @@ $QA_RELEASES = [
         ],
     ],
 
-    '7.3.25' => [
+    '7.3.26' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_bz2' => '155f4c14b1d32dc1e0b3a34f066489098ab69877438ae3c699cbdf4af8153502',
-            'sha256_gz'  => 'c4e80ea9be9be3791c610aa425117427f51f3b80ea22ba13d4260aed834e35f2',
-            'sha256_xz'  => 'c381a70c64f11837c0480a7a73387d38a1f118d6f64e0c0d94ea578a3a67fde9',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
             'date'       => '12 Nov 2020',
             'baseurl'    => 'https://downloads.php.net/~cmb/',
         ],
