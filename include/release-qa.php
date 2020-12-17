@@ -44,19 +44,6 @@ TODO:
 
 
 $QA_RELEASES = [
-    '7.2.26' => [
-        'active'  => false,
-        'release' => [
-            'type'       => 'RC',
-            'number'     => 0,
-            'sha256_bz2' => '',
-            'sha256_gz'  => '',
-            'sha256_xz'  => '',
-            'date'       => '5 Dec 2019',
-            'baseurl'    => 'https://downloads.php.net/~remi/',
-        ],
-    ],
-
     '7.3.26' => [
         'active'  => true,
         'release' => [
