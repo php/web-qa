@@ -15,7 +15,6 @@ jQuery.browser = {};
 function repoList(baseurl, org) {
     this.reposPerPage = 100;
     this.page = 1;
-    this.showLoadMoreButton = false;
     this.url = baseurl+'orgs/'+org+'/repos?per_page='+this.reposPerPage+'&sort=updated'
     this.data = {data:[]};
     var t = this;
@@ -39,7 +38,6 @@ repoList.prototype.hideList = function() {
 repoList.prototype.refreshView = function() {
     $("#repolist").append($("#repoListItemTemplate").render(this.data.data));
     $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).data("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
-    $('#loadMore').css('display', this.showLoadMoreButton ? 'block' : 'none');
 }
 repoList.prototype.update = function() {
     var t = this;
@@ -48,12 +46,11 @@ repoList.prototype.update = function() {
 }
 repoList.prototype.setData = function(data) {
     this.data = data;
-    this.showLoadMoreButton = data.data.length === this.reposPerPage;
     this.refreshView();
-}
-repoList.prototype.loadMore = function() {
-    this.page++;
-    this.update();
+    if(data.data.length === this.reposPerPage) {
+      this.page++;
+      this.update()
+    }
 }
 
 function loginHandler() {
@@ -135,11 +132,6 @@ $(document).ready(function() {
     if ($.bbq.getState("repo")) {
         loadRepo($.bbq.getState("repo"));
     }
-
-    $('#loadMore').on('click', function(e) {
-        e.preventDefault();
-        repos.loadMore();
-    })
 });
 
 function loadRepo(repo, url) {
