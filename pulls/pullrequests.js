@@ -13,7 +13,9 @@ jQuery.browser = {};
 })();
 
 function repoList(baseurl, org) {
-    this.url = baseurl+'orgs/'+org+'/repos?per_page=100';
+    this.reposPerPage = 100;
+    this.page = 1;
+    this.url = baseurl+'orgs/'+org+'/repos?per_page='+this.reposPerPage+'&sort=updated'
     this.data = {data:[]};
     var t = this;
     $("#backToRepolist").click(function (ev) { $.bbq.removeState('repo'); ev.preventDefault();});
@@ -34,17 +36,21 @@ repoList.prototype.hideList = function() {
 }
 
 repoList.prototype.refreshView = function() {
-    $("#repolist").html($("#repoListItemTemplate").render(this.data.data));
+    $("#repolist").append($("#repoListItemTemplate").render(this.data.data));
     $("li", $("#repolist")).click(function(ev) { var reponame = loadRepo($(this).data("repo")); $.bbq.pushState({ repo: reponame }); ev.preventDefault(); });
 }
 repoList.prototype.update = function() {
     var t = this;
     $("#loading").show();
-    $.ajax({ dataType: 'jsonp', url: this.url, success: function(d) { t.setData(d); $("#loading").hide(); } });
+    $.ajax({ dataType: 'jsonp', url: this.url + '&page=' + this.page, success: function(d) { t.setData(d); $("#loading").hide(); } });
 }
 repoList.prototype.setData = function(data) {
     this.data = data;
     this.refreshView();
+    if(data.data.length === this.reposPerPage) {
+      this.page++;
+      this.update()
+    }
 }
 
 function loginHandler() {
