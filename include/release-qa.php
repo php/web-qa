@@ -45,13 +45,13 @@ TODO:
 
 $QA_RELEASES = [
     '7.3.26' => [
-        'active'  => true,
+        'active'  => false,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_bz2' => 'ca99a95da64a88d95021ff486e1acc816f7c48a9d66b378f1f6ac8d008c09354',
-            'sha256_gz'  => '8b6ec69040d6750194fcbb53e6f62baa0ec8d7543439191307705786d91da7b3',
-            'sha256_xz'  => '60f760379ce6c75673a4cbc87e46077be25fdfe6db6e075abbb407049264d8a7',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
             'date'       => '17 Dec 2020',
             'baseurl'    => 'https://downloads.php.net/~cmb/',
         ],
