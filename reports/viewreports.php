@@ -58,21 +58,8 @@ $database->close();
 
 
 //URL test
-if (substr($version, 0, 3) == '5.2') {
-    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.2;f='.
-                ltrim($testName, '/').'';
-} elseif (substr($version, 0, 3) == '5.3') {
-    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.3;f='.
-                ltrim($testName, '/').'';
-} elseif (substr($version, 0, 3) == '5.4') {
-    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/PHP-5.4;f='.
-                ltrim($testName, '/').'';
-} elseif (substr($version, 0, 3) == '5.5') {
-    $urlTest = 'https://git.php.net/?p=php-src.git;a=blob;hb=refs/heads/master;f='.
-                ltrim($testName, '/').'';
-} else {
-    $urlTest = '';
-}
+$v = substr($version, 0, 3);
+$urlTest = "https://github.com/php/php-src/blob/PHP-$v/".ltrim($testName, '/');
 
 // BUG url
 if (preg_match('@bug([0-9]{1,}).phpt$@', $testName, $preg)) {

@@ -116,7 +116,7 @@ $ git push origin master       # everything okay? good, let's push it
     <span id="loggedin"></span>
     <span id="notloggedin"><a href="#">Login</a></span>
   </div>
-  <h1>Github Pull Requests</h1>
+  <h1>Github Pull Requests (deprecated - github.com is now canonical)</h1>
 <?php
 if (!getenv('AUTH_TOKEN')) {
     echo '<div style="width: 100%; border: 2px solid red; padding:10px;"><b>Error:</b> AUTH_TOKEN not set</div><br>';

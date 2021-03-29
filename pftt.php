@@ -57,7 +57,7 @@ if ($branches!==FALSE) {
 
 ?>
 
-<p><strong>PFTT Source Code:</strong> <a href="https://git.php.net/?p=pftt2.git">https://git.php.net/?p=pftt2.git</a></p>
+<p><strong>PFTT Source Code:</strong> <a href="https://github.com/php/pftt2">https://github.com/php/pftt2</a></p>
 
 <p><strong>PFTT Binaries:</strong> <a href="https://windows.php.net/downloads/snaps/ostc/pftt/" target="_blank">https://windows.php.net/downloads/snaps/ostc/pftt/</a></p>
 

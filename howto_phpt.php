@@ -23,7 +23,7 @@ common_header(NULL, $TITLE);
 
 <p>Report compares ERROR, FAILURE, TIMEOUT, CRASH and PASS for two PHP Builds, the <strong>Base Build</strong> with the <strong>Test Build</strong>. A +X indicates the count increased from Base to Test. A -X indicates the count decreased from Base to Test. If the difference is <font color="green">good</font>, it is shown in <font color="green">green</font> (fe increase in PASS, decrease in FAIL). If the difference is <font color="red">bad</font>, it is shown in <font color="red">red</font> (fe increase in FAIL).</p>
 
-<p><a href="https://git.php.net/?p=pftt2.git;a=blob;f=src/com/mostc/pftt/model/core/EPhptTestStatus.java;h=9c0e00a92b05e1f0bd21601e197ccb4466e2b6d4;hb=HEAD" target="_blank">Full info on PHPT Test Statuses</a></p>
+<p><a href="https://github.com/php/pftt2/blob/master/src/com/mostc/pftt/model/app/EPhpUnitTestStatus.java#L28-L230" target="_blank">Full info on PHPT Test Statuses</a></p>
 
 <p><strong>Result-Pack</strong> All the test logs are compressed into result-packs, which can be downloaded using the two links in the report.</p>
 
