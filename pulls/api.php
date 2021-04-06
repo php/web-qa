@@ -31,11 +31,11 @@ function verify_password($user, $pass)
 
     $ctx = stream_context_create(['http' => $opts]);
 
-    $s = @file_get_contents('https://master.php.net/fetch/cvsauth.php', false, $ctx);
+    $s = @file_get_contents('https://main.php.net/fetch/cvsauth.php', false, $ctx);
 
     $a = @unserialize($s);
     if (!is_array($a)) {
-            $errors[] = "Failed to get authentication information.\nMaybe master is down?\n";
+            $errors[] = "Failed to get authentication information.\nMaybe main.php.net is down?\n";
             return false;
     }
     if (isset($a['errno'])) {
