@@ -15,7 +15,6 @@ function common_header($extra_headers=NULL, $TITLE = "Quality Assurance") {
         ["href" => "/howtohelp.php",     "text" => "Contributing"],
         ["href" => "/handling-bugs.php", "text" => "Handling Reports"],
         ["href" => "/reports/",          "text" => "Reports"],
-        ["href" => "/pulls/",            "text" => "Github PRs"],
     ];
     include __DIR__ . "/../shared/templates/header.inc";
     echo '<section class="mainscreen">';
