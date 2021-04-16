@@ -70,15 +70,15 @@ $QA_RELEASES = [
         ],
     ],
 
-    '8.0.4' => [
+    '8.0.5' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
             'number'     => 1,
-            'sha256_gz'  => '30562034a57a9c347b103fbf1617fc2d3fc4f1bd197e84e1827239524883b5d3',
-            'sha256_bz2' => '399af14c9251e651b478d4633638b99585bde2e45baf9ecacf9fa84c4cfb2c7a',
-            'sha256_xz'  => 'df693aad4cb3967a85dc8470674562e65333239a47162ee24e9c534ef0559cdc',
-            'date'       => '18 Mar 2021',
+            'sha256_gz'  => '344bde64fb10f7b8a335c242dd18804ff0c51e4bf7b4290dca846bb73727b76f',
+            'sha256_bz2' => '2eee3ff188e2a1ecf09ccf98653ff1f418c3311a8b843afa7a0b5f68fe51f7d7',
+            'sha256_xz'  => '9edd6be5e5700628d2ed9e9526530eab736c8ebc653df20b0d7b7e48ace4866c',
+            'date'       => '15 Apr 2021',
             'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
