@@ -74,12 +74,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_gz'  => 'd93e1f26cce090119fe43645da9f2493c720ce85d6744965fda143a5e7cdd416',
-            'sha256_bz2' => '3e114755059c204af29a2f1044f7001ce42773ae10f5d6657b730ee11356b1d2',
-            'sha256_xz'  => '86371e7cf3d9bb3831b68d0615aa3c6a989554022096c63c8f7eefd3b5c43575',
+            'number'     => 0,
+            'sha256_gz'  => '',
+            'sha256_bz2' => '',
+            'sha256_xz'  => '',
             'date'       => '20 May 2021',
-            'baseurl'    => 'https://downloads.php.net/~pollita/',
+            'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
 ];
