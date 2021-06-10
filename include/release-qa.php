@@ -82,6 +82,19 @@ $QA_RELEASES = [
             'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
+
+    '8.1.0' => [
+        'active'  => true,
+        'release' => [
+            'type'       => 'alpha',
+            'number'     => 1,
+            'sha256_gz'  => '279edf3226e562aedad5caf593782964c430a1ebfd367221e2488e54d1be3c74',
+            'sha256_bz2' => '38fb766220c4e18da24db404812d343d34bb16256e621c629aafa7395b5e72f6',
+            'sha256_xz'  => '131a81ef9e0d62ba3b5ed81d530a4ff38d256ff12acec243d6afb5b39a85cb79',
+            'date'       => '10 Jun 2021',
+            'baseurl'    => 'https://downloads.php.net/~patrickallaert/',
+        ],
+    ],
 ];
 
 /*** End Configuration *******************************************************************/
