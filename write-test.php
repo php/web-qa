@@ -364,6 +364,25 @@ string\(18\) \"nica\x00turska panica\"
 string\(19\) \" nica\x00turska panica\"
 </pre>
 
+<h3><a name="extensions" href="#extensions" class="anchor">#</a>EXTENSIONS</h3>
+<p>Some tests depend on PHP extensions that may be unavailable. These extensions should
+be listed in the EXTENSIONS section. If an extension is missing, PHP will try to find it in a
+shared module and skip the test if it's not there.
+</p>
+
+<i>/ext/sodium/tests/crypto_scalarmult.phpt</i>
+<pre>
+--TEST--
+Check for libsodium scalarmult
+--EXTENSIONS--
+sodium
+--FILE--
+&lt;?php
+$n = sodium_hex2bin("5dab087e624a8a4b79e17f8b83800ee66f3bb1292618b6fd1c2f8b27ff88e0eb");
+
+[snip]
+</pre>
+
 <h3><a name="skipif" href="#skipif" class="anchor">#</a>SKIPIF</h3>
 <p>Some tests depend on modules or functions available only in certain versions
 or they even require minimum version of php or zend. These tests should be
@@ -372,29 +391,17 @@ use the SKIPIF section. To tell run-tests.php that your test should be skipped
 the SKIPIF section must print out the word "skip" followed by a reason why
 the test should skip.</p>
 
-<i>/ext/exif/tests/exif005.phpt</i>
+<i>ext/sodium/tests/pwhash_argon2i.phpt</i>
 <pre>
 --TEST--
-Check for exif_read_data, unusual IFD start
+Check for libsodium argon2i
+--EXTENSIONS--
+sodium
 --SKIPIF--
 &lt;?php
-	if (!extension_loaded('exif')) print 'skip exif extension not available';
-?&gt;
+if (!defined('SODIUM_CRYPTO_PWHASH_SALTBYTES')) print "skip libsodium without argon2i"; ?&gt;
 --FILE--
-&lt;?php
-/* Do not change this test it is a README.TESTING example.
- * test5.jpg is a 1*1 image that contains an Exif section with ifd = 00000009h
- */
-$image  = exif_read_data('./ext/exif/tests/test5.jpg','',true,false);
-var_dump($image['IFD0']);
-?&gt;
---EXPECT--
-array(2) {
-  ["ImageDescription"]=>
-  string(11) "Ifd00000009"
-  ["DateTime"]=>
-  string(19) "2002:10:18 20:06:00"
-}
+[snip]
 </pre>
 
 <p>Test script and SKIPIF code should be directly written into *.phpt. However,
