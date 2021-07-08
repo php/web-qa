@@ -87,12 +87,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'alpha',
-            'number'     => 2,
-            'sha256_gz'  => '9faa18e155e75ae9d40d09ddf4cab567321bd3673cbe9ff2a49b8ef357a768c1',
-            'sha256_bz2' => 'd19be34a14f0472199cccb33b43addbec9a271c427c1db8c98544464fd8b95ee',
-            'sha256_xz'  => '916e96eda029198134dd20e50a98b539d70ef204aa241e017c8b2c736222e4c6',
-            'date'       => '24 Jun 2021',
-            'baseurl'    => 'https://downloads.php.net/~patrickallaert/',
+            'number'     => 3,
+            'sha256_gz'  => '0a28c8923baf4d57a8f1b03b8bc8fe51225632cf9e0b6622470e2938965f4874',
+            'sha256_bz2' => '9317bb70d09c7a24643e7a6813a9b6b95bbd70c5776d2dd8c498abe5c15bfbbd',
+            'sha256_xz'  => 'cd260d6492649582fbe49ea69ba88d8da844e25f8307c9d9a8b759d65377db93',
+            'date'       => '8 Jul 2021',
+            'baseurl'    => 'https://downloads.php.net/~ramsey/',
         ],
     ],
 ];
