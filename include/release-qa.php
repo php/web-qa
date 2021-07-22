@@ -86,12 +86,12 @@ $QA_RELEASES = [
     '8.1.0' => [
         'active'  => true,
         'release' => [
-            'type'       => 'alpha',
-            'number'     => 3,
-            'sha256_gz'  => '0a28c8923baf4d57a8f1b03b8bc8fe51225632cf9e0b6622470e2938965f4874',
-            'sha256_bz2' => '9317bb70d09c7a24643e7a6813a9b6b95bbd70c5776d2dd8c498abe5c15bfbbd',
-            'sha256_xz'  => 'cd260d6492649582fbe49ea69ba88d8da844e25f8307c9d9a8b759d65377db93',
-            'date'       => '8 Jul 2021',
+            'type'       => 'beta',
+            'number'     => 1,
+            'sha256_gz'  => '97c039f059f0918658f9b5ebab5eca3af981afd50bdd078b56a38cd2ca408cc7',
+            'sha256_bz2' => '3bd4c7251a6e32931f7029a569ed2e444f163dc7ed3c458119a3af9cea41f588',
+            'sha256_xz'  => 'e2b0e50750544754e48dbee298637566f335874b470d5d5a62470bfc70eefe28',
+            'date'       => '22 Jul 2021',
             'baseurl'    => 'https://downloads.php.net/~ramsey/',
         ],
     ],
