@@ -74,12 +74,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_gz'  => '64e5b143cc1abfb6510a1a8cb4e8d1b8fabadbe0b941beeada0d4cb6112d48ef',
-            'sha256_bz2' => '2de8cd75a318e09e0161c8d1487699439cf888d55ff55fb19f8ba6450ad6fdeb',
-            'sha256_xz'  => '94017b41295eabf9e222e3420927b8f17e6fcd22e6700e095c5fe7897fd97509',
+            'number'     => 0,
+            'sha256_gz'  => '',
+            'sha256_bz2' => '',
+            'sha256_xz'  => '',
             'date'       => '12 Aug 2021',
-            'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
+            'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
 
