@@ -70,16 +70,16 @@ $QA_RELEASES = [
         ],
     ],
 
-    '8.0.12' => [
+    '8.0.13' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_gz'  => '',
-            'sha256_bz2' => '',
-            'sha256_xz'  => '',
-            'date'       => '07 Oct 2021',
-            'baseurl'    => 'https://downloads.php.net/',
+            'number'     => 1,
+            'sha256_gz'  => '44274daf3ab5ffa75df88e555a502ac13262e12f5e3626d84241157964f95c1d',
+            'sha256_bz2' => '7af147c7f81e35942126b1a9e6a8b7eef6e5bd67df011b151178ccebb598346c',
+            'sha256_xz'  => '1365f02150495661647ad14f011ff73cf113109fc8a2c5a21f2e982753b62389',
+            'date'       => '04 Nov 2021',
+            'baseurl'    => 'https://downloads.php.net/~pollita/',
         ],
     ],
 
