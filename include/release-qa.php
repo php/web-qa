@@ -70,16 +70,16 @@ $QA_RELEASES = [
         ],
     ],
 
-    '8.0.17' => [
+    '8.0.19' => [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 0,
-            'sha256_gz'  => '',
-            'sha256_bz2' => '',
-            'sha256_xz'  => '',
-            'date'       => '03 Mar 2022',
-            'baseurl'    => 'https://downloads.php.net/',
+            'number'     => 1,
+            'sha256_gz'  => '13536d2cb80c74f008ad90a7738e2eae7b4b308ea928d0effcf61976f18ec9f0',
+            'sha256_bz2' => 'f0a2008abd531b617c648da0e24cac285db044bbb642dac4c63680582d80e034',
+            'sha256_xz'  => 'b5692120ce7826d10de26eedf14893b426ee1a8fd5b2946df2c0e57c535eb8f9',
+            'date'       => '28 Apr 2022',
+            'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
 
