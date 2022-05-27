@@ -21,6 +21,7 @@ include __DIR__ . '/../include/release-qa.php';
 include __DIR__ . '/../include/functions.php';
 require __DIR__ . '/reportsfunctions.php';
 
+$CURRENT_PAGE = "Reports";
 common_header();
 echo "<script src=\"sorttable.js\"></script>\n";
 echo "<div style=\"margin:10px\">\n";
