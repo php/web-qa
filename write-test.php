@@ -4,17 +4,6 @@ include("include/functions.php");
 $TITLE = "Writing Tests [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
-// This is used below for linking to GCOV (Format: GCOV version => Human readable version)
-function get_active_branches() {
-  return [
-    'PHP_7_1'   => '7.1',
-    'PHP_7_2'   => '7.2',
-    'PHP_7_3'   => '7.3',
-    'PHP_7_4'   => '7.4',
-    'PHP_HEAD'  => '8.0'
-  ];
-}
-
 common_header();
 ?>
             <h1>Creating new test files</h1>
@@ -51,24 +40,8 @@ function or an array function) , or a function provided by one of PHP's numerous
 (a mysql function or a image function or a mcrypt function).</p>
 <p>You can find out what functions already have phpt tests by looking in the <a href="https://github.com/php/php-src">html
 version</a> of the git repository (ext/standard/tests/ is a good place to start looking - though not
-<i>all</i> the tests currently written are in there).  If you look at the <a href="http://gcov.php.net">gcov pages</a> you
-can see which functions have lots of tests and which need more, although these pages only
-show which lines of code are covered by test cases so even if the coverage looks good there may
-be more interesting tests to write - for example covering error cases.</p>
+<i>all</i> the tests currently written are in there).</p>
 
-		<p>
-			You can find a list of functionality coverage on GCOV for the following, active branches:
-
-			<ul style="list-style-type: square;">
-<?php
-	foreach(get_active_branches() as $gcov_version => $php_version) {
-?>
-				<li><a href="http://gcov.php.net/viewer.php?version=<?php echo($gcov_version); ?>&func=tested_functions">PHP <?php echo($php_version); ?></a></li>
-<?php
-	}
-?>
-			</ul>
-		</p>
 		<p>If you want more guidance than that you can always ask
 the PHP Quality Assurance Team on their mailing list
 (<a href="mailto:php-qa@lists.php.net">php-qa@lists.php.net</a>) where they
