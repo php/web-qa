@@ -4,6 +4,8 @@ include("include/functions.php");
 $TITLE = "Release Candidates";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
+$CURRENT_PAGE = "What is RC?";
+
 common_header();
 ?>
             <h1>Release Candidates</h1>
