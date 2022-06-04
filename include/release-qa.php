@@ -95,6 +95,20 @@ $QA_RELEASES = [
             'baseurl'    => 'https://downloads.php.net/~patrickallaert/',
         ],
     ],
+
+    '8.2.0' => [
+        'active'  => false,
+        'release' => [
+            'type'       => 'alpha',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
+            'date'       => '9 Jun 2022',
+            'baseurl'    => 'https://downloads.php.net/~ramsey/',
+        ],
+    ],
+
 ];
 
 /*** End Configuration *******************************************************************/
