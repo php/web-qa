@@ -3,7 +3,9 @@
 (c) 2001 by Marco Kaiser (bate@php.net) and the PHP Group
 */
 
-function common_header($extra_headers=NULL, $TITLE = "Quality Assurance") {
+function common_header($extra_headers=NULL) {
+    global $TITLE, $CURRENT_PAGE, $SEARCH;
+    isset($TITLE) || $TITLE = "Quality Assurance";
     if ($extra_headers) {
         $HEAD_RAND = join("\n", $extra_headers);
     }
