@@ -97,7 +97,7 @@ $QA_RELEASES = [
     ],
 
     '8.2.0' => [
-        'active'  => false,
+        'active'  => true,
         'release' => [
             'type'       => 'alpha',
             'number'     => 1,
