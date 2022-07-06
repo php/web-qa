@@ -5,7 +5,7 @@ include("include/functions.php");
 $TITLE = "PHP: QA: PFTT";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
-common_header(NULL, $TITLE);
+common_header(NULL);
 
 define('BASE_REPORT_DIR', dirname($_SERVER['SCRIPT_FILENAME'])."/reports/db/");
 
