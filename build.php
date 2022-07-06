@@ -12,7 +12,7 @@ isValidRevision($revision) or $revision = '';
 $TITLE = htmlentities("PHP: QA: PFTT: $branch: $revision");
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
-common_header(NULL, $TITLE);
+common_header(NULL);
 
 echo '<h1><a href="list_builds.php?branch=', urlencode($branch), '">',
 	 htmlentities($branch), '</a>', htmlentities($revision), "</h1>\n";

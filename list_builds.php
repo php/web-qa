@@ -8,7 +8,7 @@ isValidBranch($branch) or $branch = 'PHP_5_6';
 $TITLE = "PHP: QA: PFTT: $branch";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
-common_header(NULL, $TITLE);
+common_header(NULL);
 
 echo '<h1><a href="pftt.php">', htmlentities($branch), "</a></h1>\n";
 echo "<p>Choose a PHP revision or build</p>\n";

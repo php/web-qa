@@ -4,6 +4,7 @@ include("include/functions.php");
 $TITLE = "Writing Tests [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
+$CURRENT_PAGE = "Contributing";
 common_header();
 ?>
             <h1>Creating new test files</h1>

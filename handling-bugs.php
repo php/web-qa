@@ -4,6 +4,8 @@ include("include/functions.php");
 $TITLE = "Handling Bug Reports [PHP-QAT: Quality Assurance Team]";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
 
+$CURRENT_PAGE = "Handling Reports";
+
 common_header();
 ?>
             <h1>Handling bug reports?</h1>

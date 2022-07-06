@@ -59,6 +59,7 @@ list($testName) = $tab->fetchArray(SQLITE3_NUM);
 $database->close();
 
 $TITLE = "Report details";
+$CURRENT_PAGE = "Reports";
 common_header(['<meta name="robots" content="noindex">']);
 ?>
 <script src="sorttable.js"></script>

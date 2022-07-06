@@ -74,6 +74,9 @@ if (preg_match('@bug([0-9]{1,}).phpt$@', $testName, $preg)) {
 
 
 $TITLE = "Reports for test ".$testName;
+
+$CURRENT_PAGE = "Reports";
+
 common_header();
 ?>
 <script src="sorttable.js"></script>
