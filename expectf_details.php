@@ -25,19 +25,19 @@ output by PHP Warnings.</p>
 </tr>
 <tr>
   <td> %s </td>
-  <td> One or more of anything (charater or white space) except the end of line character. </td>
+  <td> One or more of anything (character or white space) except the end of line character. </td>
 </tr>
 <tr>
   <td> %S </td>
-  <td> Zero or more of anything (charater or white space) except the end of line character. </td>
+  <td> Zero or more of anything (character or white space) except the end of line character. </td>
 </tr>
 <tr>
   <td> %a </td>
-  <td> One or more of anything (charater or white space) including the end of line character. </td>
+  <td> One or more of anything (character or white space) including the end of line character. </td>
 </tr>
 <tr>
   <td> %A </td>
-  <td> Zero or more of anything (charater or white space) including the end of line character. </td>
+  <td> Zero or more of anything (character or white space) including the end of line character. </td>
 </tr>
 <tr>
   <td> %w </td>
@@ -81,7 +81,7 @@ output by PHP Warnings.</p>
 </tr>
  <tr>
   <td> %u|b% </td>
-  <td> Matches a single 'u' in PHP6 test output where the PHP5 output from the same test hs no character in that position.</td>
+  <td> Matches a single 'u' in PHP6 test output where the PHP5 output from the same test has no character in that position.</td>
 </tr>
 </table>
 
