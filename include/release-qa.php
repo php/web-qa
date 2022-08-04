@@ -100,12 +100,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'beta',
-            'number'     => 1,
-            'sha256_bz2' => 'ab7292701c12393892cfc7c2d93f8d2701946d073c87a1e05619da3e04a009a7',
-            'sha256_gz'  => '0eea12122debf8e291cec2d82059a29e61ad1a145458d0ae82d7cd11e10277c1',
-            'sha256_xz'  => '46ebb4be04b98833bab649314775cc100bdd825c73d9bc3646df5c1ec7ebb2a6',
-            'date'       => '21 Jul 2022',
-            'baseurl'    => 'https://downloads.php.net/~pierrick/',
+            'number'     => 2,
+            'sha256_bz2' => '7d33b0b9ac97d0f821462b1d6a24916e0654d35051300a4b9d34ee84a34c7356',
+            'sha256_gz'  => 'a8ed49485b836e2d559fb37d76d968bc154c32e6693034b2312a8423d6a09e17',
+            'sha256_xz'  => 'cffb46d5458b52e93876584c77631620003e420cbe119fe864925fca188e01bd',
+            'date'       => '04 Aug 2022',
+            'baseurl'    => 'https://downloads.php.net/~sergey/',
         ],
     ],
 
