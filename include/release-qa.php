@@ -79,7 +79,7 @@ $QA_RELEASES = [
             'sha256_bz2' => 'b3a11e162afb33420239390a8be75a2777d1e3466cdc0dd55db30cc46a56f1b1',
             'sha256_xz'  => '9894c06504e162e7402fcc21b08b513f5501b22766dde073249c03fe4f11fd77',
             'date'       => '18 Aug 2022',
-            'baseurl'    => 'https://downloads.php.net/~carusogabriel',
+            'baseurl'    => 'https://downloads.php.net/~carusogabriel/',
         ],
     ],
 
