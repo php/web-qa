@@ -84,6 +84,19 @@ $QA_RELEASES = [
         ],
     ],
 
+
+    '8.3.0alpha1' => [
+        'active'  => false,
+        'release' => [
+            'type'       => 'alpha',
+            'number'     => 1,
+            'sha256_bz2' => 'cb931d09ebacd9c773baebd0d714153c657d6a3a5fc63a1c2fc67728d10efa3c',
+            'sha256_gz'  => '741a9da205a18a754902a39e3cd7c4e66ef2611975a0f94027be001b6a8ed020',
+            'sha256_xz'  => '7df01cbae615cccdc01a811094a74326119080e1141988fd57aeefd6b751165c',
+            'date'       => '08 Jun 2023',
+            'baseurl'    => 'https://downloads.php.net/~jakub/',
+        ],
+    ],
 ];
 
 /*** End Configuration *******************************************************************/
