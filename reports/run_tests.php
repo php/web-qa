@@ -72,7 +72,7 @@ HTML;
             continue;
         }
         $tmLastReport = strtotime($line['lastReport']);
-        if ($maxReportDate < $tmLastRport) $maxReportDate = $tmLastReport;
+        if ($maxReportDate < $tmLastReport) $maxReportDate = $tmLastReport;
            echo '<tr>';
            echo '<td><a href="run_tests.php?version=', urlencode($version), '">',
              htmlentities($version).'</a></td>';
