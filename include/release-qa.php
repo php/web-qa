@@ -89,12 +89,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 6,
-            'sha256_bz2' => '1084c95886b0541d357e84a42e1ab4c4b9aaf9dc47249f189cce6b4a36800ee0',
-            'sha256_gz'  => '83e838f91a0b6370caff3dacf0d80275234ace7f9892212732807a4c5e33c6ed',
-            'sha256_xz'  => '1e7b5dcfebc4921ec44209c1e08ae71b6b10e5b1b6b895bb4f76b44486c705ed',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
             'date'       => '09 Nov 2023',
-            'baseurl'    => 'https://downloads.php.net/~eric/',
+            'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
 ];
