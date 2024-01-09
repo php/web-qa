@@ -45,19 +45,6 @@ TODO:
 
 $QA_RELEASES = [
 
-    '8.0.29' => [
-        'active'  => true,
-        'release' => [
-            'type'       => 'RC',
-            'number'     => 0,
-            'sha256_gz'  => '',
-            'sha256_bz2' => '',
-            'sha256_xz'  => '',
-            'date'       => '08 Jun 2023',
-            'baseurl'    => 'https://downloads.php.net/',
-        ],
-    ],
-
     '8.1.27' => [
         'active'  => true,
         'release' => [
