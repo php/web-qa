@@ -62,12 +62,12 @@ $QA_RELEASES = [
         'active'  => true,
         'release' => [
             'type'       => 'RC',
-            'number'     => 1,
-            'sha256_bz2' => '3a0fb03ed2a1d9eff836803414158954bdf33386ed3d9d3e8d5f0a052902caf3',
-            'sha256_gz'  => '900f37e159bd17f50ff0bdbdedff91c07f2808cbff3e458806766d28e6f8149a',
-            'sha256_xz'  => '53c4b7af85b41699bf1e8f049e0fe84a7f556025f43938f090f13e30ccb56180',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
             'date'       => '28 Mar 2024',
-            'baseurl'    => 'https://downloads.php.net/~pierrick/',
+            'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
 
