@@ -239,7 +239,7 @@ date_default_timezone_set() -> TZ environmental -> INI setting -> System Setting
 If a TZ environmental varaibale is found the INI setting will be ignored.
 </p>
 
-<p>Tests that run, or only have have matching EXPECT output, on 32bit
+<p>Tests that run, or only have matching EXPECT output, on 32bit
 platforms can use a SKIPIF section like:</p>
 
 <pre>
