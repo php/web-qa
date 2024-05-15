@@ -131,7 +131,7 @@ string(32) "# hello All, I sAid hi planet! #"
 </pre>
 
 <p>As you can see the file is divided into several sections.  The TEST section holds a one line title
-of the phpt test, this should be a simple description and shouldn't ever excede one line, if you need to write more explanation
+of the phpt test, this should be a simple description and shouldn't ever exceed one line, if you need to write more explanation
 add comments in the body of the test case. The phpt files name is used when generating a .php file.  The FILE section is used
 as the body of the .php file, so don't forget to open and close your php tags.  The EXPECT section is
 the part used as a comparison to see if the test passes.  It is a
