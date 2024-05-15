@@ -52,7 +52,7 @@ outputReportTable('PhpUnit', $branch, $revision);
 
 common_footer();
 
-// Generator function to ennumerate structured data from reports/db
+// Generator function to enumerate structured data from reports/db
 function genReports(string $type, string $branch, string $revision) {
 	$dir = makeRevisionPath($branch, $revision);
 	if (!is_dir($dir)) { return; }
