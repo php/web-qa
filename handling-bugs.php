@@ -91,7 +91,7 @@ Here are descriptions for each status:</p>
         <dt>Duplicate</dt>
         <dd>
 			This status is deprecated and can no longer be selected during
-			modifications of bugs. Always use "Not a Bug" instead now. The originial
+			modifications of bugs. Always use "Not a Bug" instead now. The original
 			use was:
             <i>If this almost the same bug, both bugs are found 'duplicate' later
             on and have both useful information.  Also mention what bug it's a
