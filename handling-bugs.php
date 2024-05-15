@@ -191,7 +191,7 @@ So, be sure to leave a comment.</p>
 <h2>Tips and links</h2>
 <ul>
     <li>
-        The Jani Javascript bug popup window (right click to bookmark):
+        The Jani JavaScript bug popup window (right click to bookmark):
         <a href='javascript:void(t=prompt("Get BUG report # ..",""));if(t){ void(top.location.href="https://bugs.php.net/bug.php?edit=1&amp;id="+t);}'>here</a>
     </li>
     <li>
