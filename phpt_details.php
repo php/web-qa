@@ -299,7 +299,7 @@ PHP CGI binary.</p>
 <p><b>Test Script Support:</b><br/>
 run-tests.php</p>
 <p><b>Format:</b><br/>
-Raw data optionally preceeded by a Content-Type header.</p>
+Raw data optionally preceded by a Content-Type header.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--PUT--
 Content-Type: text/json
