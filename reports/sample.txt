@@ -734,8 +734,8 @@ done!
 013-
 014- Warning: PDO::getAttribute(): SQLSTATE[IM001]: Driver does not support this function: driver does not support that attribute in %s on line %d
 015- [018] PDO::MYSQL_ATTR_DIRECT_QUERY should be off
-016- [021] Execting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_LOCAL_INFILE'
-017- [023] Execting 'SET @a=1'/string got ''/boolean' for options 'PDO::MYSQL_ATTR_INIT_COMMAND'
+016- [021] Expecting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_LOCAL_INFILE'
+017- [023] Expecting 'SET @a=1'/string got ''/boolean' for options 'PDO::MYSQL_ATTR_INIT_COMMAND'
 018- [024] SQLSTATE[42000] [1065] Query was empty
 019- [025] SQLSTATE[42S02] [1146] Table '%s.nonexistent' doesn't exist
 020- done!
@@ -757,7 +757,7 @@ done!
 003+ Notice: Undefined variable: db in /usr/src/php/php5.3-201106111430/ext/pdo_mysql/tests/pdo_mysql___construct_options_libmysql.php on line 64
 004+ [001] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO), [n/a] n/a
 001- [001] Expecting default value for 'PDO::MYSQL_ATTR_INIT_COMMAND' of ''/string, getAttribute() reports setting ''/boolean
-002- [026] Execting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_READ_DEFAULT_FILE'
+002- [026] Expecting '1'/boolean got ''/boolean' for options 'PDO::MYSQL_ATTR_READ_DEFAULT_FILE'
 ================================================================================
 
 
