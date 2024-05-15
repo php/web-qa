@@ -584,7 +584,7 @@ One of the FILE type sections is required.</p>
 run-tests.php</p>
 <p><b>Format:</b><br/>
 PHP source which is run through eval(). The tests destination is the value of an
-array index 'TESTS'. Also, keep in mind, you can not use a REDIRECTTEST which is
+array index 'TESTS'. Also, keep in mind, you cannot use a REDIRECTTEST which is
 being pointed to by another test which contains a REDIRECTTEST. In other words,
 no nesting.</p>
 <p>The relative path declared in 'TESTS' is relative to the base directory for the
