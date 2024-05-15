@@ -27,7 +27,7 @@
  *  [buildEnvironment] => build environment
  *  [failedTest] => array: list of failed test. Example: array('/Zend/tests/declare_001.phpt')
  *  [expectedFailedTest] => array of expected failed test (same format as failedTest)
- *  [succeededTest] => array of successfull tests. Provided only when parsing ci.qa results (for now)
+ *  [succeededTest] => array of successful tests. Provided only when parsing ci.qa results (for now)
  *  [tests] => array
         testName => array (
             'output' => string("Current output of test")
