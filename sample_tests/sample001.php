@@ -15,7 +15,7 @@ Test filter_input() with GET and POST data.
 --DESCRIPTION--
 This test covers both valid and invalid usages of
 filter_input() with INPUT_GET and INPUT_POST data
-and several differnt filter sanitizers.
+and several different filter sanitizers.
 --CREDITS--
 Felipe Pena &lt;felipe@php.net&gt;
 --INI--

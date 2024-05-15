@@ -70,7 +70,7 @@ Plain text, multiple lines.</p>
 <pre>--DESCRIPTION--
 This test covers both valid and invalid usages of
 filter_input() with INPUT_GET and INPUT_POST data
-and several differnet filter sanitizers.</pre>
+and several different filter sanitizers.</pre>
 </p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample001.php">sample001.phpt</a></p>
 </dd>
