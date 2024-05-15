@@ -437,7 +437,7 @@ the phpt test script. </p>
 <p> When creating temporary files it is a good idea to use an extension that indicates the use of the file, eg .tmp. It's also a good
 idea to avoid using extensions that are already used for other purposes, eg .inc, .php. Similarly, it is helpful to give the temporary file a name
 that is clearly related to the test case. For example, mytest.phpt should create mytest.tmp (or mytestN.tmp, N=1, 2,3,...) then if by any
-chance the temporary file isnt't removed properly it will be obvious which test case created it.</p>
+chance the temporary file isn't removed properly it will be obvious which test case created it.</p>
 
 <p>When writing and debugging a test case with a --CLEAN-- section it is helpful to remember that the php code in the  --CLEAN-- section
 is executed separately from the code in the --FILE-- section. For example, in a test case called mytest.phpt, code from the --FILE--
