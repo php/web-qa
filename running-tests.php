@@ -144,7 +144,7 @@ fi
 <p>NOTE: The exit status of <code>run-tests.php</code> will be 1 when
 REPORT_EXIT_STATUS is set. The result of <code>make test</code> may be higher
 than that. At present, gmake 3.79.1 returns 2, so it is advised to test for
-non-zero, rather then a specific value.</p>
+non-zero, rather than a specific value.</p>
 
 <p>When <code>make test</code> finished running tests, and if there are any failed
 tests, the script asks to send the logs to the PHP QA mailinglist. Please answer
