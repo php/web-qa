@@ -919,7 +919,7 @@ run-tests.php</p>
 <p><b>Description:</b><br/>
 Code that is executed after a test completes. It's main purpose is to allow you
 to clean up after yourself. You might need to remove files created during the
-test or close sockets or database connections following a test. Infact, even
+test or close sockets or database connections following a test. In fact, even
 if a test fails or encounters a fatal error during the test, the code found in
 the --CLEAN-- section will still run.</p>
 <p>Code in the clean section is run in a completely different process than the
