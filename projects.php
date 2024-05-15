@@ -19,7 +19,7 @@ common_header();
             <h3>Modify The Bug Database Interface</h3>
             <h4>The interface should:</h4>
             <ul>
-              <li><span class="lihack">reduce the occurance of multiple reports on the same bug</span></li>
+              <li><span class="lihack">reduce the occurrence of multiple reports on the same bug</span></li>
               <li><span class="lihack">improve the accuracy of the reports </span></li>
               <li><span class="lihack">make it easier for the QAT to reproduce the bug </span></li>
               <li><span class="lihack">track the solution to the bug </span></li>
