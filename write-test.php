@@ -479,7 +479,7 @@ preventing your test from failing due inconsistencies in the error message
 content. Alternatively you can use --EXPECTF-- and check for the message by
 replacing the path of the source of the message with "%s" and the line number
 with "%d". The end of a message in a test file "example.phpt" then looks like
-"in %sexample.php on line %d". We explicitly dropped the last path devider as
+"in %sexample.php on line %d". We explicitly dropped the last path divider as
 that is a system dependent character '/' or '\'.</p>
 
 <h3><a name="lastbit" href="#lastbit" class="anchor">#</a>Last bit</h3>
