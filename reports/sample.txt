@@ -8,7 +8,7 @@ duplicated EXPECT section [/usr/src/php/php5.3-201106111430/ext/json/tests/bug54
 FAILED TEST SUMMARY
 ---------------------------------------------------------------------
 function with many parameters [tests/func/010.phpt]
-Persistent case insensitive and user defined constants [Zend/tests/constants_005.phpt]
+Persistent case-insensitive and user defined constants [Zend/tests/constants_005.phpt]
 DOMDocument::$validateOnParse - effectual determination (dom_document_validate_on_parse_read/dom_document_validate_on_parse_write) [ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt]
 mysql connect [ext/mysql/tests/001.phpt]
 mysql_connect() [ext/mysql/tests/mysql_connect.phpt]
@@ -117,7 +117,7 @@ duplicated EXPECT section [/usr/src/php/php5.3-201106111430/ext/json/tests/bug54
 FAILED TEST SUMMARY
 ---------------------------------------------------------------------
 function with many parameters [tests/func/010.phpt]
-Persistent case insensitive and user defined constants [Zend/tests/constants_005.phpt]
+Persistent case-insensitive and user defined constants [Zend/tests/constants_005.phpt]
 DOMDocument::$validateOnParse - effectual determination (dom_document_validate_on_parse_read/dom_document_validate_on_parse_write) [ext/dom/tests/DOMDocument_validate_on_parse_variation.phpt]
 mysql connect [ext/mysql/tests/001.phpt]
 mysql_connect() [ext/mysql/tests/mysql_connect.phpt]

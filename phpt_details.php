@@ -182,7 +182,7 @@ all three manually.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Format:</b><br/>
-A case insensitive space, newline or otherwise delimited list of one or more
+A case-insensitive space, newline or otherwise delimited list of one or more
 strings of STDIN, STDOUT, and/or STDERR.
 </p>
 <p><b>Example 1 (snippet):</b><br/>
