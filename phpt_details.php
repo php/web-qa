@@ -213,7 +213,7 @@ test, this section loads them.</p>
 <p><b>Required:</b><br/>
 No.</p>
 <p><b>Format:</b><br/>
-A case sensitive newline separated list of extension names.</p>
+A case-sensitive newline separated list of extension names.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--EXTENSIONS--
 curl
