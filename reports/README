@@ -45,7 +45,7 @@ Then, for each failed test, we add a line in `failed` table :
  - diff : diff of test compared to what was expected. There may be some glitches with spaces and %s
  - signature : binary(16) built with md5($name.'__'.$test['diff'])
    In URLs, the binary md5 is transformed as base64 (like 03410e89b1d2737ce178a795f298ae64).
-   It is used to track differencies between each failed test in DB : we compare only the signature,
+   It is used to track differences between each failed test in DB : we compare only the signature,
    which is simpler than checking every diff.
 
 
