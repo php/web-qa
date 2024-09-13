@@ -33,6 +33,7 @@ common_header();
 <a href="#file_section">--FILE--</a> | <a href="#fileeof_section">--FILEEOF--</a> | <a href="#file_external_section">--FILE_EXTERNAL--</a> | <a href="#redirecttest_section">--REDIRECTTEST--</a><br/>
 [<a href="#cgi_section">--CGI--</a>]<br/>
 [<a href="#xfail_section">--XFAIL--</a>]<br/>
+[<a href="#flaky_section">--FLAKY--</a>]<br/>
 [<a href="#expectheaders_section">--EXPECTHEADERS</a>--]<br/>
 <a href="#expect_section">--EXPECT--</a> | <a href="#expectf_section">--EXPECTF--</a> | <a href="#expectregex_section">--EXPECTREGEX--</a>
 | <a href="#expect_external_section">--EXPECT_EXTERNAL--</a> | <a href="#expectf_external_section">--EXPECTF_EXTERNAL--</a> | <a href="#expectregex_external_section">--EXPECTREGEX_EXTERNAL--</a>
@@ -664,6 +665,28 @@ A short plain text description of why this test is currently expected to fail.</
 <pre>--XFAIL--
 This bug might be still open on aix5.2-ppc64 and hpux11.23-ia64</pre></p>
 <p><b>Example 1 (full):</b> <a href="sample_tests/sample017.php">sample017.phpt</a></p>
+</dd>
+
+<dt id="flaky_section">--FLAKY--</dt>
+<dd>
+<p><b>Description:</b><br/>
+This section identifies this test as one that occassionally fails. If the test
+actually fails, it will be retried one more time, and that result will be reported.
+The section should include a brief description of why the test is flaky. Reasons for
+this include tests that rely on relatively precise timing, or
+temporary disc states. Available as of PHP 8.1.22 and 8.2.9, respectively.</p>
+<p>Please do NOT include a --FLAKY-- section without providing a text description for
+the reason it is being used.</p>
+<p><b>Required:</b><br/>
+No.</p>
+<p><b>Test Script Support:</b><br/>
+run-tests.php</p>
+<p><b>Format:</b><br/>
+A short plain text description of why this test is flaky.</p>
+<p><b>Example 1 (snippet):</b><br/>
+<pre>--FLAKY--
+This test frequently fails in CI</pre></p>
+<p><b>Example 1 (full):</b> <a href="sample_tests/flaky.php">flaky.phpt</a></p>
 </dd>
 
 <dt id="expectheaders_section">--EXPECTHEADERS--</dt>
