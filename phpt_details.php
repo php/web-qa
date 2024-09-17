@@ -117,7 +117,10 @@ No.</p>
 <p><b>Format:</b><br/>
 PHP code enclosed by PHP tags. If the output of this scripts starts with "skip",
 the test is skipped. If the output starts with "xfail", the test is marked as
-expected failure. The "xfail" convention is supported as of PHP 7.2.0.</p>
+<a href="#xfail_section">expected failure</a>. If the output starts with "flaky",
+the test is marked as <a href="#flaky_section">flaky test</a>.
+The "xfail" convention is supported as of PHP 7.2.0.
+The "flaky" convention is supported as of PHP 8.2.25 and PHP 8.3.13, respectively.</p>
 <p><b>Example 1 (snippet):</b><br/>
 <pre>--SKIPIF--
 &lt;?php if (!extension_loaded("filter")) die("Skipped: filter extension required."); ?&gt;</pre>
@@ -133,6 +136,15 @@ expected failure. The "xfail" convention is supported as of PHP 7.2.0.</p>
 &lt;?php if (getenv('SKIP_ASAN')) die('xfail Startup failure leak'); ?&gt;</pre>
 </p>
 <p><b>Example 3 (full):</b> <a href="sample_tests/xfailif.php">xfailif.phpt</a></p>
+<p><b>Example 4 (snippet):</b><br/>
+<pre>--SKIPIF--
+&lt;?php
+if (getenv("GITHUB_ACTIONS") &amp;&amp; PHP_OS_FAMILY === "Darwin") {
+    die("flaky Occasionally segfaults on macOS for unknown reasons");
+}
+&gt;></pre>
+</p>
+<p><b>Example 4 (full):</b> <a href="sample_tests/flakyif.php">flakyif.phpt</a></p>
 </dd>
 
 <dt id="conflicts_section">--CONFLICTS--</dt>
