@@ -88,13 +88,13 @@ $QA_RELEASES = [
     '8.4.0' => [
         'active'  => true,
         'release' => [
-            'type'       => 'beta',
-            'number'     => 5,
-            'sha256_bz2' => '2317bba50cb30b08743d7a03065b6f9cc8b1138edc075a498416a9c743006adb',
-            'sha256_gz'  => 'bf989b7bb8efba58344e5d1c893881303f0f0eaf7e0782201dd714b10ff6b88d',
-            'sha256_xz'  => '86c9e6fe9b4ab2046832ab65f955c50d663a6fccb3f6d6fbddc4aa9b96a561b7',
-            'date'       => '12 Sep 2024',
-            'baseurl'    => 'https://downloads.php.net/~calvinb/',
+            'type'       => 'RC',
+            'number'     => 1,
+            'sha256_bz2' => '92ba323685d02504a391f092b4fccd9e4df5b300725c9ad19565ccca447c54fd',
+            'sha256_gz'  => 'ff924ce24493cd546c7227c2cedf75c32d23815b0a6e5c1658d9b005837631ff',
+            'sha256_xz'  => '0b3db6af3e0643e310c9c32b407faf4be6fe265c0f37c5b2fed911d6e9ab046e',
+            'date'       => '26 Sep 2024',
+            'baseurl'    => 'https://downloads.php.net/~saki/',
         ],
     ],
 ];
