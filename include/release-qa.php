@@ -74,13 +74,13 @@ $QA_RELEASES = [
     '8.3.13' => [
         'active'  => true,
         'release' => [
-            'type'       => 'RC',
-            'number'     => 1,
-            'sha256_bz2' => '8f6342b354e16eb262a12c60a5ba04a011f1fca2edf950c2ae97193b7f20e3cd',
-            'sha256_gz'  => '5eb82ce81b81c930f3ac406616b70a5d4b9efc0915b60411d9838933a4b2ebf6',
-            'sha256_xz'  => 'e516a2cf754502ce5e97e4b559a6346111bc4465f8aead5ecb21f290c999698b',
+            'type'       => '',
+            'number'     => 0,
+            'sha256_bz2' => '',
+            'sha256_gz'  => '',
+            'sha256_xz'  => '',
             'date'       => '10 Oct 2024',
-            'baseurl'    => 'https://downloads.php.net/~jakub/',
+            'baseurl'    => 'https://downloads.php.net/',
         ],
     ],
 
