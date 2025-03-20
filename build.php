@@ -30,11 +30,11 @@ outputReportTable('PhpUnit', $branch, $revision);
 ?>
 
 <h2>Abbreviations</h2>
-<p><b>NTS</b> - Non-Thread Safe build, use for CLI or IIS (PHP on Windows uses 2 types of builds, TS and NTS)</p>
-<p><b>TS</b> - Thread Safe build, use for CLI or Apache mod_php on Windows</p>
-<p><b>VC11</b> - Build compiled using VC11 (Visual Studio 2012)</p>
-<p><b>VC9</b> - Build compiled using VC9 (Visual Studio 2008)</p>
-<p><b>GCC</b> - Build compiled using GCC</p>
+<p><abbr>NTS</abbr> - Non-Thread Safe build, use for CLI or IIS (PHP on Windows uses 2 types of builds, TS and NTS)</p>
+<p><abbr>TS</abbr> - Thread Safe build, use for CLI or Apache mod_php on Windows</p>
+<p><abbr>VC11</abbr> - Build compiled using VC11 (Visual Studio 2012)</p>
+<p><abbr>VC9</abbr> - Build compiled using VC9 (Visual Studio 2008)</p>
+<p><abbr>GCC</abbr> - Build compiled using GCC</p>
 <br/>
 <h2>Common Scenario Sets</h2>
 <p><b>Local-FileSystem_MySQL_Apache-ModPHP-ApacheLounge-2.4.4-VC9-OpenSS</b> - Tests run on local file system, using Apache with MySQL</p>
