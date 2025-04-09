@@ -4,7 +4,7 @@ include("include/functions.php");
 include("reports/reportsfunctions.php");
 
 $branch = $_GET['branch'] ?? '';
-isValidBranch($branch) or $branch = 'PHP_5_6';
+isValidBranch($branch) or $branch = 'PHP_MASTER';
 
 $revision = $_GET['revision'] ?? '';
 isValidRevision($revision) or $revision = '';
