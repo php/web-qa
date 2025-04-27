@@ -3,7 +3,7 @@
 include("include/functions.php");
 include("reports/reportsfunctions.php");
 $branch = $_GET['branch'] ?? '';
-isValidBranch($branch) or $branch = 'PHP_5_6';
+isValidBranch($branch) or $branch = 'PHP_MASTER';
 
 $TITLE = "PHP: QA: PFTT: $branch";
 $SITE_UPDATE = date("D M d H:i:s Y T", filectime(__FILE__));
